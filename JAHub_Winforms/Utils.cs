@@ -9,6 +9,7 @@ namespace JAHub_Winforms
 {
     public static class Utils
     {
+        //Returns true or false if there is instance of the form (form name) passed is already running
         public static bool IsFormOpen(string formName)
         {
             var OpenForms = Application.OpenForms.Cast<Form>();
