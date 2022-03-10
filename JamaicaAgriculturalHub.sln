@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAHub_Winforms", "JAHub_Winforms\JAHub_Winforms.csproj", "{49668B7A-0B73-4EC3-B632-8CBC3E776725}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAHubLib", "JAHubLib\JAHubLib.csproj", "{E6EBD710-ADD0-4617-B005-8A7067FC1883}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{49668B7A-0B73-4EC3-B632-8CBC3E776725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49668B7A-0B73-4EC3-B632-8CBC3E776725}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49668B7A-0B73-4EC3-B632-8CBC3E776725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
