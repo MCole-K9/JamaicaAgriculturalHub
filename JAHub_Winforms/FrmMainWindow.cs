@@ -16,5 +16,17 @@ namespace JAHub_Winforms
         {
             InitializeComponent();
         }
+       
+        private void shopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen("FrmShop")){
+
+                FrmShop frmShop = new FrmShop();
+                frmShop.MdiParent = this;
+                frmShop.Show();
+            }
+
+ 
+        }
     }
 }
