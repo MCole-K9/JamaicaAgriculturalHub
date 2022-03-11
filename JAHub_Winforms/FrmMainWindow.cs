@@ -25,6 +25,10 @@ namespace JAHub_Winforms
                 frmShop.MdiParent = this;
                 frmShop.Show();
             }
+            else
+            {
+                MessageBox.Show("An Instance is Already Running");
+            }
 
  
         }
