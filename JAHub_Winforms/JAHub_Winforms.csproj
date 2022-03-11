@@ -65,6 +65,18 @@
     <Compile Include="FrmShop.Designer.cs">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shop_Controls\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\ucPriceLablel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\ucPriceLablel.Designer.cs">
+      <DependentUpon>ucPriceLablel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
@@ -104,6 +116,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Shop_Controls\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop_Controls\ucPriceLablel.resx">
+      <DependentUpon>ucPriceLablel.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
