@@ -16,5 +16,23 @@ namespace JAHub_Winforms
         {
             InitializeComponent();
         }
+        public void LoadProducts()
+        {
+            Shop_Controls.ucProduct ucProduct = new Shop_Controls.ucProduct();
+            fpnlProducts.Controls.Add(ucProduct);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmProducts_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                LoadProducts();
+            }
+        }
     }
 }
