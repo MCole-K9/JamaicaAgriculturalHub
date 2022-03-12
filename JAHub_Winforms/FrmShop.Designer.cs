@@ -93,6 +93,7 @@
             this.btnCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCart.UseVisualStyleBackColor = false;
+            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
             // 
             // btnProducts
             // 

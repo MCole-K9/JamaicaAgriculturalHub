@@ -46,6 +46,9 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmProducts());
         }
 
-        
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmCart());
+        }
     }
 }
