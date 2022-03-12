@@ -13,13 +13,22 @@ namespace JAHub_Winforms.Shop_Controls
 {
     public partial class UcProduct : UserControl
     {
+        private FrmProducts _frmProducts;
         private Product product;
+
         public UcProduct(Product product)
         {
             InitializeComponent();
             this.product = product;
-        }
 
+        }
+        public UcProduct(Product product, FrmProducts frmProducts)
+        {
+            InitializeComponent();
+            this.product = product;
+            this._frmProducts = frmProducts;
+
+        }
         public void PopulateFields()
         {
             lblItemName.Text = product.Name;
@@ -30,6 +39,11 @@ namespace JAHub_Winforms.Shop_Controls
         private void UcProduct_Load(object sender, EventArgs e)
         {
             PopulateFields();
+        }
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            this._frmProducts._frmShop.Cart.Add(product);
         }
     }
 }
