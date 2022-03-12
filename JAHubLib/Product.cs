@@ -8,6 +8,7 @@ namespace JAHubLib
 {
     public class Product
     {
+        private int id;
         private string name;
         private string description;
         private string category;
@@ -19,5 +20,6 @@ namespace JAHubLib
         public string Category { get => category; set => category = value; }
         public string Image { get => image; set => image = value; }
         public float Price { get => price; set => price = value; }
+        public int Id { get => id; set => id = value; }
     }
 }
