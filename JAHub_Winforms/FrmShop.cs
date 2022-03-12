@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
     public partial class FrmShop : Form
     {
         private Form CurrentChildForm;
+        public List<Product> Cart;
         public FrmShop()
         {
             InitializeComponent();
             CurrentChildForm = null;
+            Cart = new List<Product>();
         }
 
         // Opens Form inside of Panel
@@ -43,12 +46,12 @@ namespace JAHub_Winforms
         }
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmProducts());
+            OpenChildForm(new FrmProducts(this));
         }
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmCart());
+            OpenChildForm(new FrmCart(this));
         }
     }
 }
