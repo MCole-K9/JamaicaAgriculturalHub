@@ -20,3 +20,4 @@ namespace JAHubLib
         public string Image { get => image; set => image = value; }
         public float Price { get => price; set => price = value; }
     }
+}
