@@ -65,17 +65,11 @@
     <Compile Include="FrmShop.Designer.cs">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shop_Controls\Product.cs">
+    <Compile Include="Shop_Controls\UcProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Shop_Controls\Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Shop_Controls\ucPriceLablel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Shop_Controls\ucPriceLablel.Designer.cs">
-      <DependentUpon>ucPriceLablel.cs</DependentUpon>
+    <Compile Include="Shop_Controls\UcProduct.Designer.cs">
+      <DependentUpon>UcProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="FrmHome.cs">
@@ -116,11 +110,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Shop_Controls\Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Shop_Controls\ucPriceLablel.resx">
-      <DependentUpon>ucPriceLablel.cs</DependentUpon>
+    <EmbeddedResource Include="Shop_Controls\UcProduct.resx">
+      <DependentUpon>UcProduct.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -135,6 +126,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JAHubLib\JAHubLib.csproj">
+      <Project>{e6ebd710-add0-4617-b005-8a7067fc1883}</Project>
+      <Name>JAHubLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\yam-g91011fb33_640.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
