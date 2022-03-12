@@ -7,22 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using JAHubLib
+using JAHubLib;
 
 namespace JAHub_Winforms.Shop_Controls
 {
     public partial class UcCartItem : UserControl
     {
+        private FrmCart _frmCart;
         private Product _product;
-        public UcCartItem(Product product = null)
+        public UcCartItem(Product product)
         {
             InitializeComponent();
             this._product = product;
         }
-
+        public UcCartItem(Product product, FrmCart frmCart)
+        {
+            InitializeComponent();
+            this._product = product;
+            this._frmCart = frmCart;
+        }
+        public void PopulateFields()
+        {
+            lblItemName.Text = _product.Name;
+            lblPrice.Text = $"${_product.Price} Per Lbs";
+            pcbImage.Image = Image.FromFile(_product.Image);
+        }
         private void UcCartItem_Load(object sender, EventArgs e)
         {
-
+            PopulateFields();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -68,6 +80,7 @@ namespace JAHub_Winforms.Shop_Controls
             this.Hide();
 
             //To-Do: Remove Item From Cart List
+            this._frmCart._frmShop.Cart.Remove(_product);
         }
     }
 }
