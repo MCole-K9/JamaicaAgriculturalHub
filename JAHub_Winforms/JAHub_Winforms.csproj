@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCart.Designer.cs">
+      <DependentUpon>FrmCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="FrmShop.Designer.cs">
       <DependentUpon>FrmShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UcCartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UcCartItem.Designer.cs">
+      <DependentUpon>UcCartItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UcProduct.cs">
       <SubType>UserControl</SubType>
@@ -92,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCart.resx">
+      <DependentUpon>FrmCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMainWindow.resx">
       <DependentUpon>FrmMainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +125,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Shop_Controls\UcCartItem.resx">
+      <DependentUpon>UcCartItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UcProduct.resx">
       <DependentUpon>UcProduct.cs</DependentUpon>
     </EmbeddedResource>
