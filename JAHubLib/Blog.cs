@@ -10,17 +10,24 @@ namespace JAHubLib
 {
     public class Blog
     {
-        Panel BlogPostContainer = new Panel();
-        Panel BlogPost = new Panel();
-        Button viewBlog = new Button();
-        Label BlogTitle = new Label();
-        Label BlogAuthor = new Label();
-        DateTime date = DateTime.Now;//simulated time object to be passed for each blog
-        Label BlogDate = new Label();
+        public Panel BlogPostContainer = new Panel();
+        public Panel BlogPost = new Panel();
+        public Button viewBlog = new Button();
+        public Label BlogTitle = new Label();
+        public Label BlogAuthor = new Label();
+        public DateTime PublishDate = DateTime.Now;//simulated time object to be passed for each blog
+        public Label BlogDate = new Label();
+        public String BlogBody { get; set; }
+        public String Title { get; set; }
+        public String Description { get; set; }
+        public String Author { get; set; }
 
         public Blog()
         {
-            
+            Author = "John Doe";
+            BlogBody = "";
+            Title = "";
+            Description = "";
             BlogPostContainer.Height = 130;
             BlogPostContainer.BorderStyle = BorderStyle.None;
             BlogPostContainer.Padding = new Padding(10, 0, 10, 10);
@@ -58,7 +65,7 @@ namespace JAHubLib
             //Author Label
             //DateTime date = DateTime.Now;//simulated time object to be passed for each blog
             
-            BlogDate.Text = date.ToShortDateString();
+            BlogDate.Text = PublishDate.ToShortDateString();
             BlogDate.Font = new Font("Calibri", 10, FontStyle.Italic);
             BlogDate.AutoSize = true;
             BlogDate.Top = BlogTitle.Height + BlogAuthor.Height;

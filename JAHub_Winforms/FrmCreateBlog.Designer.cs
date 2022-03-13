@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPublishDate = new System.Windows.Forms.DateTimePicker();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
+            this.rtbBody = new System.Windows.Forms.RichTextBox();
             this.btnPost = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,14 +54,14 @@
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Title";
             // 
-            // textBox1
+            // txtTitle
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(254, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(800, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(254, 41);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(800, 20);
+            this.txtTitle.TabIndex = 3;
             // 
             // lblDate
             // 
@@ -73,13 +73,13 @@
             this.lblDate.TabIndex = 4;
             this.lblDate.Text = "Date";
             // 
-            // dateTimePicker1
+            // dtpPublishDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(254, 146);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpPublishDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPublishDate.Location = new System.Drawing.Point(254, 146);
+            this.dtpPublishDate.Name = "dtpPublishDate";
+            this.dtpPublishDate.Size = new System.Drawing.Size(236, 22);
+            this.dtpPublishDate.TabIndex = 5;
             // 
             // lblDescription
             // 
@@ -91,24 +91,24 @@
             this.lblDescription.TabIndex = 6;
             this.lblDescription.Text = "Decription";
             // 
-            // richTextBox1
+            // rtbDescription
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(254, 77);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(800, 46);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.rtbDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbDescription.Location = new System.Drawing.Point(254, 77);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.Size = new System.Drawing.Size(800, 46);
+            this.rtbDescription.TabIndex = 7;
+            this.rtbDescription.Text = "";
             // 
-            // richTextBox2
+            // rtbBody
             // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(254, 207);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox2.Size = new System.Drawing.Size(800, 316);
-            this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "";
+            this.rtbBody.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbBody.Location = new System.Drawing.Point(254, 207);
+            this.rtbBody.Name = "rtbBody";
+            this.rtbBody.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbBody.Size = new System.Drawing.Size(800, 316);
+            this.rtbBody.TabIndex = 8;
+            this.rtbBody.Text = "";
             // 
             // btnPost
             // 
@@ -120,6 +120,7 @@
             this.btnPost.TabIndex = 9;
             this.btnPost.Text = "Post";
             this.btnPost.UseVisualStyleBackColor = false;
+            this.btnPost.Click += new System.EventHandler(this.btnPost_Click);
             // 
             // pnlNav
             // 
@@ -133,14 +134,6 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(141, 619);
             this.pnlNav.TabIndex = 21;
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
-            this.pnlLogo.TabIndex = 0;
             // 
             // iconButton2
             // 
@@ -211,6 +204,14 @@
             this.btnBlogs.UseVisualStyleBackColor = false;
             this.btnBlogs.Click += new System.EventHandler(this.btnBlogs_Click);
             // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
+            this.pnlLogo.TabIndex = 0;
+            // 
             // FrmCreateBlog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,12 +219,12 @@
             this.ClientSize = new System.Drawing.Size(1100, 619);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.btnPost);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbBody);
+            this.Controls.Add(this.rtbDescription);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpPublishDate);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblTitle);
             this.Name = "FrmCreateBlog";
             this.Text = "FrmCreateBlog";
@@ -235,12 +236,12 @@
 
         #endregion
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpPublishDate;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtbDescription;
+        private System.Windows.Forms.RichTextBox rtbBody;
         private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.Panel pnlNav;
         private FontAwesome.Sharp.IconButton iconButton2;
