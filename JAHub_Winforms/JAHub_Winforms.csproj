@@ -77,11 +77,29 @@
     <Compile Include="FrmCreateBlog.Designer.cs">
       <DependentUpon>FrmCreateBlog.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashboard.designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProducts.Designer.cs">
       <DependentUpon>FrmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProfile.designer.cs">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProfileHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProfileHome.designer.cs">
+      <DependentUpon>FrmProfileHome.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmShop.cs">
       <SubType>Form</SubType>
@@ -145,11 +163,20 @@
     <EmbeddedResource Include="FrmCreateBlog.resx">
       <DependentUpon>FrmCreateBlog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMainWindow.resx">
       <DependentUpon>FrmMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProducts.resx">
       <DependentUpon>FrmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProfile.resx">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProfileHome.resx">
+      <DependentUpon>FrmProfileHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
