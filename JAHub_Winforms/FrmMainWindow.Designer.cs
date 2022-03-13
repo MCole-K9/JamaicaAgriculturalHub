@@ -32,6 +32,7 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.shopToolStripMenuItem,
-            this.blogToolStripMenuItem});
+            this.blogToolStripMenuItem,
+            this.userProfileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -67,6 +69,13 @@
             this.blogToolStripMenuItem.Text = "Blog";
             this.blogToolStripMenuItem.Click += new System.EventHandler(this.blogToolStripMenuItem_Click);
             // 
+            // userProfileToolStripMenuItem
+            // 
+            this.userProfileToolStripMenuItem.Name = "userProfileToolStripMenuItem";
+            this.userProfileToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.userProfileToolStripMenuItem.Text = "User Profile";
+            this.userProfileToolStripMenuItem.Click += new System.EventHandler(this.userProfileToolStripMenuItem_Click);
+            // 
             // FrmMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +99,7 @@
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userProfileToolStripMenuItem;
     }
 }
 

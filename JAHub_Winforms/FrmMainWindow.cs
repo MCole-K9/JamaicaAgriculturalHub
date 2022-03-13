@@ -48,5 +48,16 @@ namespace JAHub_Winforms
                 MessageBox.Show("An Instance is Already Running");
             }
         }
+
+        private void userProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen("Profile")) 
+            {
+                FrmProfile frmProfile = new FrmProfile();
+                frmProfile.MdiParent = this;
+                frmProfile.Show();
+            }
+            
+        }
     }
 }
