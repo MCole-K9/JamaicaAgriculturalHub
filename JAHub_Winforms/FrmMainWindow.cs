@@ -32,5 +32,12 @@ namespace JAHub_Winforms
 
  
         }
+
+        private void blogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBlogDetails frmBlog = new FrmBlogDetails();
+            frmBlog.MdiParent = this;
+            frmBlog.Show();
+        }
     }
 }

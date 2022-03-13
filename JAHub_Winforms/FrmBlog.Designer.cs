@@ -160,7 +160,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormBlog.Properties.Resources.outline_thumb_up_alt_black_24dp;
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_up_alt_black_24dp;
             this.pictureBox1.Location = new System.Drawing.Point(743, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);

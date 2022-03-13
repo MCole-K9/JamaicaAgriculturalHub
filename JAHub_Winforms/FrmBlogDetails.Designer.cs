@@ -134,7 +134,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::WindowsFormBlog.Properties.Resources.outline_thumb_down_alt_black_24dp;
+            this.button2.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_down_alt_black_24dp;
             this.button2.Location = new System.Drawing.Point(1056, 550);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(38, 42);
@@ -143,7 +143,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::WindowsFormBlog.Properties.Resources.outline_thumb_up_alt_black_24dp;
+            this.button1.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_up_alt_black_24dp;
             this.button1.Location = new System.Drawing.Point(1012, 550);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(38, 42);
