@@ -17,5 +17,10 @@ namespace JAHubLib
 
             return path;
         }
+
+        public static void SomeMethodName()
+        {
+
+        }
     }
 }
