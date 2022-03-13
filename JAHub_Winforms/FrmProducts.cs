@@ -26,11 +26,12 @@ namespace JAHub_Winforms
             _frmShop = frmShop;
         }
         // Create Instances of product using the data that comes from Product Class
-        public void LoadProducts(List<Product> products = null)
+        public void LoadProducts(int num, List<Product> products = null)
         {
             
             Product product = new Product
             {
+                Id = num,
                 Name = "Yam",
                 Price = 100,
                 Image = Utilities.GetFilePath() + @"\Images\yam-g91011fb33_640.jpg",
@@ -46,9 +47,9 @@ namespace JAHub_Winforms
 
         private void FrmProducts_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 1; i < 6; i++)
             {
-                LoadProducts();
+                LoadProducts(i);
             }
             
         }
