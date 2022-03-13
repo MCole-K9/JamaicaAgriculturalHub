@@ -46,59 +46,7 @@
     <Compile Include="Blog.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Verification\usrAddressBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrAddressBlock.Designer.cs" />
-    <Compile Include="Verification\usrContactBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrContactBlock.Designer.cs" />
-    <Compile Include="Verification\usrDateOfBirthBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrDateOfBirthBlock.Designer.cs" />
-    <Compile Include="Verification\usrHoldingsBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrHoldingsBlock.Designer.cs" />
-    <Compile Include="Verification\usrIndustryBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrIndustryBlock.Designer.cs" />
-    <Compile Include="Verification\usrLandBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrLandBlock.Designer.cs" />
-    <Compile Include="Verification\usrNameBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrNameBlock.Designer.cs" />
-    <Compile Include="Verification\usrPhoneNumberBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrPhoneNumberBlock.Designer.cs" />
-    <Compile Include="Verification\usrProductsBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrProductsBlock.Designer.cs" />
-    <Compile Include="Verification\usrTrnBlock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Verification\usrTrnBlock.Designer.cs" />
     <Compile Include="Utilities.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Verification\usrAddressBlock.resx" />
-    <EmbeddedResource Include="Verification\usrContactBlock.resx" />
-    <EmbeddedResource Include="Verification\usrDateOfBirthBlock.resx" />
-    <EmbeddedResource Include="Verification\usrHoldingsBlock.resx" />
-    <EmbeddedResource Include="Verification\usrIndustryBlock.resx" />
-    <EmbeddedResource Include="Verification\usrLandBlock.resx" />
-    <EmbeddedResource Include="Verification\usrNameBlock.resx" />
-    <EmbeddedResource Include="Verification\usrPhoneNumberBlock.resx" />
-    <EmbeddedResource Include="Verification\usrProductsBlock.resx" />
-    <EmbeddedResource Include="Verification\usrTrnBlock.resx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
