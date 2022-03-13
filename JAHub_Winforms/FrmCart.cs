@@ -23,10 +23,23 @@ namespace JAHub_Winforms
             InitializeComponent();
             _frmShop = frmShop;
         }
-
-        public void LoadCart(List<Product> cart)
+        public void CaluculateSubtotal(Dictionary<Product, int> cart)
         {
-            foreach (var item in cart)
+            float total = 0.0f;
+            
+            foreach (KeyValuePair<Product, int> item in cart)
+            {
+                total += item.Key.Price * item.Value;
+            }
+
+            lblSubTotal.Text = $"Subtotal (Items: {cart.Count}): ${total}" ;
+            
+        }
+
+        public void LoadCart(Dictionary<Product, int> cart)
+        {
+            //Makes Keys in the dictionary a list then access the values in the list using foreach-loop 
+            foreach (Product item in cart.Keys.ToList())
             {
                 Shop_Controls.UcCartItem ucCartItem = new Shop_Controls.UcCartItem(item, this);
                 fpnlCart.Controls.Add(ucCartItem);
@@ -36,8 +49,10 @@ namespace JAHub_Winforms
 
         private void FrmCart_Load(object sender, EventArgs e)
         {
-           LoadCart(_frmShop.Cart);
-            
+            LoadCart(_frmShop.Cart);
+
+            CaluculateSubtotal(_frmShop.Cart);
+
         }
     }
 }
