@@ -17,10 +17,5 @@ namespace JAHubLib
 
             return path;
         }
-
-        public static void SomeMethodName()
-        {
-            // Matthew Added Comment Here
-        }
     }
 }
