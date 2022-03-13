@@ -28,7 +28,9 @@ namespace JAHub_Winforms
         // Create Instances of product using the data that comes from Product Class
         public void LoadProducts(List<Product> products = null)
         {
-            
+            String path = Directory.GetCurrentDirectory();
+
+            path = path.Substring(0, path.Length - 10);
             Product product = new Product
             {
                 Name = "Yam",
