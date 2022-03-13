@@ -220,6 +220,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\yam-g91011fb33_640.jpg" />
+    <None Include="Resources\revenue.png" />
+    <None Include="Resources\profit.png" />
+    <None Include="Resources\order-delivery.png" />
+    <None Include="Resources\farmer icon.png" />
     <None Include="Resources\outline_thumb_up_alt_black_24dp.png" />
     <None Include="Resources\outline_thumb_down_alt_black_24dp.png" />
   </ItemGroup>
