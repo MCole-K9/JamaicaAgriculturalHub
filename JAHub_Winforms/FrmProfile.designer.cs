@@ -1,4 +1,4 @@
-﻿namespace JAH_Desktop
+﻿namespace JAHub_Winforms
 {
     partial class FrmProfile
     {
@@ -179,7 +179,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::JAH_Desktop.Properties.Resources.farmer_icon;
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
             this.pictureBox1.Location = new System.Drawing.Point(3, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 50);

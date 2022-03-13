@@ -1,4 +1,4 @@
-﻿namespace JAH_Desktop
+﻿namespace JAHub_Winforms
 {
     partial class FrmProfileHome
     {

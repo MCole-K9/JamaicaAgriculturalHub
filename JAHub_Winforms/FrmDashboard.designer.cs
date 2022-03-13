@@ -1,4 +1,4 @@
-﻿namespace JAH_Desktop
+﻿namespace JAHub_Winforms
 {
     partial class FrmDashboard
     {
@@ -315,7 +315,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::JAH_Desktop.Properties.Resources.farmer_icon;
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 61);
@@ -325,7 +325,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::JAH_Desktop.Properties.Resources.profit;
+            this.pictureBox4.Image = global::JAHub_Winforms.Properties.Resources.profit;
             this.pictureBox4.Location = new System.Drawing.Point(6, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(51, 46);
@@ -335,7 +335,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::JAH_Desktop.Properties.Resources.revenue;
+            this.pictureBox3.Image = global::JAHub_Winforms.Properties.Resources.revenue;
             this.pictureBox3.Location = new System.Drawing.Point(10, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(51, 46);
@@ -345,7 +345,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::JAH_Desktop.Properties.Resources.order_delivery;
+            this.pictureBox2.Image = global::JAHub_Winforms.Properties.Resources.order_delivery;
             this.pictureBox2.Location = new System.Drawing.Point(9, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 44);

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JAH_Desktop
+namespace JAHub_Winforms
 {
     public partial class FrmProfile : Form
     {
