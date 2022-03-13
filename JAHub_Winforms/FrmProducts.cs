@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,11 +28,13 @@ namespace JAHub_Winforms
         // Create Instances of product using the data that comes from Product Class
         public void LoadProducts(List<Product> products = null)
         {
+            String path = Path.GetDirectoryName(Application.ExecutablePath);
+            path = path.Substring(0, 65);
             Product product = new Product
             {
                 Name = "Yam",
                 Price = 100,
-                Image = "C:/Users/Matthew Cole/source/repos/JamaicaAgricultualHub/JAHub_Winforms/Images/yam-g91011fb33_640.jpg",
+                Image = path + @"\Images\yam-g91011fb33_640.jpg",
             };
             Shop_Controls.UcProduct ucProduct = new Shop_Controls.UcProduct(product, this);
             fpnlProducts.Controls.Add(ucProduct);
