@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCreate = new System.Windows.Forms.Button();
             this.lblAgriblogTitle = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
@@ -41,45 +37,18 @@
             this.lblSortBy = new System.Windows.Forms.Label();
             this.btnMyBlogs = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
+            this.pnlNav = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
+            this.btnBlogs = new FontAwesome.Sharp.IconButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlNav.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
-            this.homeToolStripMenuItem,
-            this.dashboardToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(82, 653);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(69, 19);
-            this.profileToolStripMenuItem.Text = "Profile";
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(69, 19);
-            this.homeToolStripMenuItem.Text = "Home";
-            // 
-            // dashboardToolStripMenuItem
-            // 
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(69, 19);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnCreate.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCreate.Location = new System.Drawing.Point(951, 30);
@@ -167,11 +136,99 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlNav.Controls.Add(this.iconButton2);
+            this.pnlNav.Controls.Add(this.btnCreateBlog);
+            this.pnlNav.Controls.Add(this.btnBlogs);
+            this.pnlNav.Controls.Add(this.pnlLogo);
+            this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlNav.Location = new System.Drawing.Point(0, 0);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(141, 653);
+            this.pnlNav.TabIndex = 20;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.iconButton2.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(0, 217);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.iconButton2.Size = new System.Drawing.Size(141, 47);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.Text = "My Blogs";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // btnCreateBlog
+            // 
+            this.btnCreateBlog.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnCreateBlog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateBlog.FlatAppearance.BorderSize = 0;
+            this.btnCreateBlog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateBlog.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCreateBlog.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnCreateBlog.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCreateBlog.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCreateBlog.IconSize = 30;
+            this.btnCreateBlog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateBlog.Location = new System.Drawing.Point(0, 170);
+            this.btnCreateBlog.Name = "btnCreateBlog";
+            this.btnCreateBlog.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.btnCreateBlog.Size = new System.Drawing.Size(141, 47);
+            this.btnCreateBlog.TabIndex = 3;
+            this.btnCreateBlog.Text = "Create";
+            this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreateBlog.UseVisualStyleBackColor = false;
+            // 
+            // btnBlogs
+            // 
+            this.btnBlogs.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnBlogs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBlogs.FlatAppearance.BorderSize = 0;
+            this.btnBlogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlogs.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBlogs.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.btnBlogs.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBlogs.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBlogs.IconSize = 30;
+            this.btnBlogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBlogs.Location = new System.Drawing.Point(0, 123);
+            this.btnBlogs.Name = "btnBlogs";
+            this.btnBlogs.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.btnBlogs.Size = new System.Drawing.Size(141, 47);
+            this.btnBlogs.TabIndex = 1;
+            this.btnBlogs.Text = "Blogs";
+            this.btnBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBlogs.UseVisualStyleBackColor = false;
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
+            this.pnlLogo.TabIndex = 0;
+            // 
             // FrmBlog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 653);
+            this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnMyBlogs);
             this.Controls.Add(this.lblSortBy);
@@ -181,24 +238,16 @@
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblAgriblogTitle);
             this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmBlog";
             this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlNav.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label lblAgriblogTitle;
         private System.Windows.Forms.Panel pnlContainer;
@@ -208,6 +257,11 @@
         private System.Windows.Forms.Label lblSortBy;
         private System.Windows.Forms.Button btnMyBlogs;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnlNav;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnCreateBlog;
+        private FontAwesome.Sharp.IconButton btnBlogs;
+        private System.Windows.Forms.Panel pnlLogo;
     }
 }
 

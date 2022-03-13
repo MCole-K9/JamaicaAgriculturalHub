@@ -35,9 +35,18 @@ namespace JAHub_Winforms
 
         private void blogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBlogDetails frmBlog = new FrmBlogDetails();
-            frmBlog.MdiParent = this;
-            frmBlog.Show();
+            
+            if (!Utils.IsFormOpen("FrmBlog"))
+            {
+
+                FrmBlog frmBlog = new FrmBlog();
+                frmBlog.MdiParent = this;
+                frmBlog.Show();
+            }
+            else
+            {
+                MessageBox.Show("An Instance is Already Running");
+            }
         }
     }
 }

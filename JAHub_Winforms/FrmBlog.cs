@@ -17,7 +17,9 @@ namespace JAHub_Winforms
             InitializeComponent();
             
         }
-
+        //Check if form is running to prevetn multiple
+        //Redo Side panel
+        //Create Blog Class in JA_Hub Libs
         private void btnCreate_Click(object sender, EventArgs e)
         {
             //cotainer panel for individual blogs
