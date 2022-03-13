@@ -1,4 +1,4 @@
-﻿namespace JAHubLib.Verification
+﻿namespace JAHub_Winforms.Verification
 {
     partial class usrPhoneNumberBlock
     {

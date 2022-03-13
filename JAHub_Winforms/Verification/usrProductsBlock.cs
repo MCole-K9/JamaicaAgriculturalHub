@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JAHubLib.Verification
+namespace JAHub_Winforms.Verification
 {
     public partial class usrProductsBlock : UserControl
     {

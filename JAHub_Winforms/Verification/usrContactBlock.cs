@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
 
-namespace JAHubLib.Verification
+namespace JAHub_Winforms.Verification
 {
     /* TO-DO
      * [x] write email validation

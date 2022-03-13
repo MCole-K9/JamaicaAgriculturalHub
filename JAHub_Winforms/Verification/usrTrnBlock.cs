@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JAHubLib.Verification
+namespace JAHub_Winforms.Verification
 {
     /* TO-DO
      * [] write the validation for the trn

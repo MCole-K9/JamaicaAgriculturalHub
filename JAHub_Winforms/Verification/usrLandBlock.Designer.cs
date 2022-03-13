@@ -1,4 +1,4 @@
-﻿namespace JAHubLib.Verification
+﻿namespace JAHub_Winforms.Verification
 {
     partial class usrLandBlock
     {
@@ -33,7 +33,7 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblLandMeasurement = new System.Windows.Forms.Label();
             this.landBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.usrAddressBlock1 = new JAHubLib.Verification.usrAddressBlock();
+            this.usrAddressBlock1 = new JAHub_Winforms.Verification.usrAddressBlock();
             this.nudLandMeasurement = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.landBlockErrorProvider)).BeginInit();

@@ -1,4 +1,4 @@
-﻿namespace JAHubLib.Verification
+﻿namespace JAHub_Winforms.Verification
 {
     partial class usrHoldingsBlock
     {
@@ -30,10 +30,10 @@
         {
             this.flwHoldingBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHoldings = new System.Windows.Forms.Label();
-            this.usrProductsBlock1 = new JAHubLib.Verification.usrProductsBlock();
+            this.usrProductsBlock1 = new JAHub_Winforms.Verification.usrProductsBlock();
             this.btnAddAnotherProduct = new System.Windows.Forms.Button();
             this.btnRemoveLastProduct = new System.Windows.Forms.Button();
-            this.usrLandBlock1 = new JAHubLib.Verification.usrLandBlock();
+            this.usrLandBlock1 = new JAHub_Winforms.Verification.usrLandBlock();
             this.flwHoldingBlock.SuspendLayout();
             this.SuspendLayout();
             // 

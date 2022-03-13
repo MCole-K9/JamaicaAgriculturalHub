@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
 
-namespace JAHubLib.Verification
+namespace JAHub_Winforms.Verification
 {
     public partial class usrNameBlock : UserControl
     {

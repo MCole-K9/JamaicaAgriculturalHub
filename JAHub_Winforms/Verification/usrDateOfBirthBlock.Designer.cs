@@ -1,4 +1,4 @@
-﻿namespace JAHubLib.Verifcation
+﻿namespace JAHub_Winforms.Verifcation
 {
     partial class usrDateOfBirthBlock
     {

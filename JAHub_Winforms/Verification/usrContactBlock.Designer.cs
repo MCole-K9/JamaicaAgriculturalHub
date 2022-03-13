@@ -1,4 +1,4 @@
-﻿namespace JAHubLib.Verification
+﻿namespace JAHub_Winforms.Verification
 {
     partial class usrContactBlock
     {
@@ -37,7 +37,7 @@
             this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
             this.contactBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnRemoveNumber = new System.Windows.Forms.Button();
-            this.usrPhoneNumberBlock1 = new JAHubLib.Verification.usrPhoneNumberBlock();
+            this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
             this.flwContactBlock.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactBlockErrorProvider)).BeginInit();
