@@ -28,14 +28,12 @@ namespace JAHub_Winforms
         // Create Instances of product using the data that comes from Product Class
         public void LoadProducts(List<Product> products = null)
         {
-            String path = Directory.GetCurrentDirectory();
-
-            path = path.Substring(0, path.Length - 10);
+            
             Product product = new Product
             {
                 Name = "Yam",
                 Price = 100,
-                Image = path + @"\Images\yam-g91011fb33_640.jpg",
+                Image = Utilities.GetFilePath() + @"\Images\yam-g91011fb33_640.jpg",
             };
             Shop_Controls.UcProduct ucProduct = new Shop_Controls.UcProduct(product, this);
             fpnlProducts.Controls.Add(ucProduct);
