@@ -43,7 +43,7 @@ namespace JAHub_Winforms.Shop_Controls
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            this._frmProducts._frmShop.Cart.Add(product);
+            this._frmProducts._frmShop.Cart.Add(product, 1);
         }
     }
 }
