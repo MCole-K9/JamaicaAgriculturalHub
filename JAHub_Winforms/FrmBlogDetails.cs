@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
@@ -15,6 +16,15 @@ namespace JAHub_Winforms
         public FrmBlogDetails()
         {
             InitializeComponent();
+        }
+        public FrmBlogDetails(Blog blog)
+        {
+            
+            InitializeComponent();
+            lblTitle.Text = blog.Title;
+            lblAuthor.Text = blog.Author;
+            lblPublishDate.Text = blog.PublishDate.ToString();
+            rtbBlogBody.Text = blog.BlogBody;
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {

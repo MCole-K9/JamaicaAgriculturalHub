@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
@@ -77,6 +78,18 @@ namespace JAHub_Winforms
                     }
                 }
             }
+        }
+
+        private void btnPost_Click(object sender, EventArgs e)
+        {
+            Blog newBlog = new Blog();
+            newBlog.Title = txtTitle.Text;
+            newBlog.Description = rtbDescription.Text;
+            newBlog.PublishDate = dtpPublishDate.Value;
+            newBlog.BlogBody = rtbBody.Text;
+            FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
+            blogDetails.MdiParent = this.MdiParent;
+            blogDetails.Show();
         }
     }
 }
