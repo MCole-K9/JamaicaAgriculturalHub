@@ -42,7 +42,7 @@ namespace JAHub_Winforms
 
         private void FrmShop_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmProducts());
+            OpenChildForm(new FrmProducts(this));
         }
         private void btnProducts_Click(object sender, EventArgs e)
         {
