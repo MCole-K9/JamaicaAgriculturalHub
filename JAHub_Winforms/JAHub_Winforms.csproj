@@ -89,6 +89,12 @@
     <Compile Include="FrmShop.Designer.cs">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUserBlogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserBlogs.Designer.cs">
+      <DependentUpon>FrmUserBlogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserBlogs.resx">
+      <DependentUpon>FrmUserBlogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -31,7 +31,7 @@ namespace JAHub_Winforms
             //Panel for the individual blogs
             Panel BlogPost = new Panel();
             BlogPost.Width = 880;
-            BlogPost.BackColor = Color.DarkSeaGreen;
+            BlogPost.BackColor = Color.LightSeaGreen;
             BlogPost.BorderStyle = BorderStyle.FixedSingle;
             BlogPost.Height = 120;
 
@@ -89,6 +89,69 @@ namespace JAHub_Winforms
             
 
 
+        }
+
+        private void btnCreateBlog_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen("FrmCreateBlog"))
+            {
+
+                FrmCreateBlog createBlog = new FrmCreateBlog();
+                createBlog.MdiParent = this.MdiParent;
+                createBlog.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmCreateBlog")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+            
+        }
+
+        private void btnMyBlogs_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen("FrmUserBlogs"))
+            {
+
+                FrmUserBlogs userBlogs = new FrmUserBlogs();
+                userBlogs.MdiParent = this.MdiParent;
+                userBlogs.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmUserBlogs")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+        }
+
+        private void btnBlogs_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen("FrmBlog"))
+            {
+                FrmBlog blogs = new FrmBlog();
+                blogs.MdiParent = this.MdiParent;
+                blogs.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmBlog")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
         }
     }
 }

@@ -37,10 +37,10 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.btnPost = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.pnlLogo = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,14 @@
             this.pnlNav.Size = new System.Drawing.Size(141, 619);
             this.pnlNav.TabIndex = 21;
             // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
+            this.pnlLogo.TabIndex = 0;
+            // 
             // iconButton2
             // 
             this.iconButton2.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -155,6 +163,7 @@
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.btnMyBlogs_Click);
             // 
             // btnCreateBlog
             // 
@@ -177,6 +186,7 @@
             this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateBlog.UseVisualStyleBackColor = false;
+            this.btnCreateBlog.Click += new System.EventHandler(this.btnCreateBlog_Click);
             // 
             // btnBlogs
             // 
@@ -199,14 +209,7 @@
             this.btnBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBlogs.UseVisualStyleBackColor = false;
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
-            this.pnlLogo.TabIndex = 0;
+            this.btnBlogs.Click += new System.EventHandler(this.btnBlogs_Click);
             // 
             // FrmCreateBlog
             // 

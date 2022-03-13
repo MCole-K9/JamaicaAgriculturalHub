@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms
 {
-    public partial class FrmBlogDetails : Form
+    public partial class FrmUserBlogs : Form
     {
-        public FrmBlogDetails()
+        public FrmUserBlogs()
         {
             InitializeComponent();
         }
@@ -27,7 +27,13 @@ namespace JAHub_Winforms
             }
             else
             {
-                MessageBox.Show("An Instance is Already Running");
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmCreateBlog")
+                    {
+                        form.BringToFront();
+                    }
+                }
             }
 
         }
@@ -43,7 +49,13 @@ namespace JAHub_Winforms
             }
             else
             {
-                MessageBox.Show("An Instance is Already Running");
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmUserBlogs")
+                    {
+                        form.BringToFront();
+                    }
+                }
             }
         }
 
@@ -57,9 +69,14 @@ namespace JAHub_Winforms
             }
             else
             {
-                MessageBox.Show("An Instance is Already Running");
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmBlog")
+                    {
+                        form.BringToFront();
+                    }
+                }
             }
         }
     }
-
 }
