@@ -8,25 +8,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
     public partial class FrmBlog : Form
     {
+        
+        
         public FrmBlog()
         {
             InitializeComponent();
             
-        }
-        //Check if form is running to prevetn multiple
-        //Redo Side panel
-        //Create Blog Class in JA_Hub Libs
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
-            Blog blog = new Blog();
-            blog.CreateBlogPost(pnlContainer);
+            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            //SqlCommand cmd = new SqlCommand("SELECT * FROM BlogDetailsTable", connection);
+            //connection.Open();
+            //SqlDataReader sqlData = cmd.ExecuteReader();
+            
+            //while (sqlData.Read())
+            //{
+            //    Blog blog = new Blog();
+
+            //    blog.Title = sqlData["Title"].ToString();
+            //    blog.Author = sqlData["Author"].ToString();
+            //    blog.Description = sqlData["Description"].ToString();
+            //    blog.BlogBody = sqlData["BlogBody"].ToString();
+            //    blog.PublishDateString = sqlData["PublishDateString"].ToString();
+            //    blog.Rating = Convert.ToInt16(sqlData["Rating"]);
+            //    blog.CreateBlogPost(pnlContainer);
+            //    blog.ViewBlog.Click += ViewBlog_Click;
+            //    void ViewBlog_Click(object sender, EventArgs e)
+            //    {
+            //         FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
+            //         DisplayedBlog.Show();
+            //    }
+            //}
         }
 
+        
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen("FrmCreateBlog"))

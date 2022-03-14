@@ -39,8 +39,10 @@
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRatingDown = new System.Windows.Forms.Button();
+            this.btnRatingUp = new System.Windows.Forms.Button();
+            this.lblUpOrDownVote = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +81,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblDescription);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.lblPublishDate);
             this.panel1.Controls.Add(this.lblAuthor);
@@ -191,23 +194,43 @@
             this.pnlLogo.Size = new System.Drawing.Size(141, 123);
             this.pnlLogo.TabIndex = 0;
             // 
-            // button2
+            // btnRatingDown
             // 
-            this.button2.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_down_alt_black_24dp;
-            this.button2.Location = new System.Drawing.Point(1056, 550);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 42);
-            this.button2.TabIndex = 9;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRatingDown.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_down_alt_black_24dp;
+            this.btnRatingDown.Location = new System.Drawing.Point(1056, 550);
+            this.btnRatingDown.Name = "btnRatingDown";
+            this.btnRatingDown.Size = new System.Drawing.Size(38, 42);
+            this.btnRatingDown.TabIndex = 9;
+            this.btnRatingDown.UseVisualStyleBackColor = true;
+            this.btnRatingDown.Click += new System.EventHandler(this.btnRatingDown_Click);
             // 
-            // button1
+            // btnRatingUp
             // 
-            this.button1.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_up_alt_black_24dp;
-            this.button1.Location = new System.Drawing.Point(1012, 550);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 42);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRatingUp.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_up_alt_black_24dp;
+            this.btnRatingUp.Location = new System.Drawing.Point(1012, 550);
+            this.btnRatingUp.Name = "btnRatingUp";
+            this.btnRatingUp.Size = new System.Drawing.Size(38, 42);
+            this.btnRatingUp.TabIndex = 8;
+            this.btnRatingUp.UseVisualStyleBackColor = true;
+            this.btnRatingUp.Click += new System.EventHandler(this.btnRatingUp_Click);
+            // 
+            // lblUpOrDownVote
+            // 
+            this.lblUpOrDownVote.AutoSize = true;
+            this.lblUpOrDownVote.Location = new System.Drawing.Point(904, 565);
+            this.lblUpOrDownVote.Name = "lblUpOrDownVote";
+            this.lblUpOrDownVote.Size = new System.Drawing.Size(102, 13);
+            this.lblUpOrDownVote.TabIndex = 22;
+            this.lblUpOrDownVote.Text = "Found This Helpful?";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(16, 54);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(79, 13);
+            this.lblDescription.TabIndex = 6;
+            this.lblDescription.Text = "Decription here";
             // 
             // FrmBlogDetails
             // 
@@ -215,9 +238,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1148, 604);
+            this.Controls.Add(this.lblUpOrDownVote);
             this.Controls.Add(this.pnlNav);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRatingDown);
+            this.Controls.Add(this.btnRatingUp);
             this.Controls.Add(this.rtbBlogBody);
             this.Controls.Add(this.panel1);
             this.Name = "FrmBlogDetails";
@@ -226,6 +250,7 @@
             this.panel1.PerformLayout();
             this.pnlNav.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -235,12 +260,14 @@
         private System.Windows.Forms.Label lblPublishDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox rtbBlogBody;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRatingUp;
+        private System.Windows.Forms.Button btnRatingDown;
         private System.Windows.Forms.Panel pnlNav;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton btnCreateBlog;
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblUpOrDownVote;
     }
 }

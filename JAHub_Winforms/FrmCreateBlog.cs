@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -82,14 +83,29 @@ namespace JAHub_Winforms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            Blog newBlog = new Blog();
-            newBlog.Title = txtTitle.Text;
-            newBlog.Description = rtbDescription.Text;
-            newBlog.PublishDate = dtpPublishDate.Value;
-            newBlog.BlogBody = rtbBody.Text;
-            FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
-            blogDetails.MdiParent = this.MdiParent;
-            blogDetails.Show();
+            //Blog newBlog = new Blog();
+            //newBlog.Title = txtTitle.Text;
+            //newBlog.Description = rtbDescription.Text;
+            //newBlog.PublishDate = dtpPublishDate.Value;
+            //newBlog.BlogBody = rtbBody.Text;
+            //FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
+            //blogDetails.MdiParent = this.MdiParent;
+            //blogDetails.Show();
+            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            //connection.Open();
+            //SqlCommand cmd = new SqlCommand("INSERT INTO BlogDetailsTable VALUES ('" + newBlog.Title + "','" + newBlog.Author + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");");
+
+
+            //cmd.Connection = connection;
+            //int i = cmd.ExecuteNonQuery();
+            //if (i != 0)
+            //{
+            //    MessageBox.Show("Saved To Database!");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Something Went Wrong");
+            //}
         }
     }
 }

@@ -8,26 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
-
+using System.Data.SqlClient;
 namespace JAHub_Winforms
 {
     public partial class FrmBlogDetails : Form
     {
+        Blog displayedBlog = new Blog();
         public FrmBlogDetails()
         {
             InitializeComponent();
         }
         public FrmBlogDetails(Blog blog)
         {
-            
+            displayedBlog = blog;
             InitializeComponent();
-            lblTitle.Text = blog.Title;
-            lblAuthor.Text = blog.Author;
-            lblPublishDate.Text = blog.PublishDate.ToString();
-            rtbBlogBody.Text = blog.BlogBody;
+            lblTitle.Text = displayedBlog.Title;
+            lblAuthor.Text = displayedBlog.Author;
+            lblPublishDate.Text = displayedBlog.PublishDateString;
+            lblDescription.Text = displayedBlog.Description;
+            rtbBlogBody.Text = displayedBlog.BlogBody;
+
+            
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
+            //displayedBlog.Rating++;
+            
             if (!Utils.IsFormOpen("FrmCreateBlog"))
             {
 
@@ -69,6 +75,29 @@ namespace JAHub_Winforms
             {
                 MessageBox.Show("An Instance is Already Running");
             }
+        }
+
+        private void btnRatingUp_Click(object sender, EventArgs e)
+        {
+            //displayedBlog.Rating++;
+            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            //connection.Open();
+            //SqlCommand cmd = new SqlCommand("UPDATE BlogDetailsTable SET Rating = " + displayedBlog.Rating + " WHERE Title = '" + displayedBlog.Title + "'");
+            //cmd.Connection = connection;
+            //cmd.ExecuteNonQuery();
+        }
+
+        private void btnRatingDown_Click(object sender, EventArgs e)
+        {
+            //if(displayedBlog.Rating > 0)
+            //{
+            //    displayedBlog.Rating--;
+            //    SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            //    connection.Open();
+            //    SqlCommand cmd = new SqlCommand("UPDATE BlogDetailsTable SET Rating = " + displayedBlog.Rating + " WHERE Title = '" + displayedBlog.Title + "'");
+            //    cmd.Connection = connection;
+            //    cmd.ExecuteNonQuery();
+            //}
         }
     }
 

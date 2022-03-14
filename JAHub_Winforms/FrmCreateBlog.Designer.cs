@@ -37,7 +37,7 @@
             this.rtbBody = new System.Windows.Forms.RichTextBox();
             this.btnPost = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnMyBlogs = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -125,7 +125,7 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlNav.Controls.Add(this.iconButton2);
+            this.pnlNav.Controls.Add(this.btnMyBlogs);
             this.pnlNav.Controls.Add(this.btnCreateBlog);
             this.pnlNav.Controls.Add(this.btnBlogs);
             this.pnlNav.Controls.Add(this.pnlLogo);
@@ -135,28 +135,28 @@
             this.pnlNav.Size = new System.Drawing.Size(141, 619);
             this.pnlNav.TabIndex = 21;
             // 
-            // iconButton2
+            // btnMyBlogs
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.iconButton2.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 217);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
-            this.iconButton2.Size = new System.Drawing.Size(141, 47);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.Text = "My Blogs";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.btnMyBlogs_Click);
+            this.btnMyBlogs.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnMyBlogs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMyBlogs.FlatAppearance.BorderSize = 0;
+            this.btnMyBlogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyBlogs.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMyBlogs.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnMyBlogs.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMyBlogs.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMyBlogs.IconSize = 30;
+            this.btnMyBlogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyBlogs.Location = new System.Drawing.Point(0, 217);
+            this.btnMyBlogs.Name = "btnMyBlogs";
+            this.btnMyBlogs.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.btnMyBlogs.Size = new System.Drawing.Size(141, 47);
+            this.btnMyBlogs.TabIndex = 4;
+            this.btnMyBlogs.Text = "My Blogs";
+            this.btnMyBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMyBlogs.UseVisualStyleBackColor = false;
+            this.btnMyBlogs.Click += new System.EventHandler(this.btnMyBlogs_Click);
             // 
             // btnCreateBlog
             // 
@@ -244,7 +244,7 @@
         private System.Windows.Forms.RichTextBox rtbBody;
         private System.Windows.Forms.Button btnPost;
         private System.Windows.Forms.Panel pnlNav;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnMyBlogs;
         private FontAwesome.Sharp.IconButton btnCreateBlog;
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;

@@ -35,14 +35,11 @@
             this.btnSearchBar = new System.Windows.Forms.Button();
             this.lblSortBy = new System.Windows.Forms.Label();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnMyBlogs = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAgriblogTitle
@@ -117,14 +114,6 @@
             this.pnlNav.Size = new System.Drawing.Size(141, 653);
             this.pnlNav.TabIndex = 20;
             // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
-            this.pnlLogo.TabIndex = 0;
-            // 
             // btnMyBlogs
             // 
             this.btnMyBlogs.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -194,36 +183,20 @@
             this.btnBlogs.UseVisualStyleBackColor = false;
             this.btnBlogs.Click += new System.EventHandler(this.btnBlogs_Click);
             // 
-            // pictureBox1
+            // pnlLogo
             // 
-            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.outline_thumb_up_alt_black_24dp;
-            this.pictureBox1.Location = new System.Drawing.Point(743, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCreate.Location = new System.Drawing.Point(917, 30);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(105, 33);
-            this.btnCreate.TabIndex = 21;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = false;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
+            this.pnlLogo.TabIndex = 0;
             // 
             // FrmBlog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 653);
-            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.pnlNav);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSortBy);
             this.Controls.Add(this.btnSearchBar);
             this.Controls.Add(this.txtSearchBar);
@@ -233,7 +206,6 @@
             this.Name = "FrmBlog";
             this.Text = "FrmBlog";
             this.pnlNav.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,13 +218,11 @@
         private System.Windows.Forms.TextBox txtSearchBar;
         private System.Windows.Forms.Button btnSearchBar;
         private System.Windows.Forms.Label lblSortBy;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlNav;
         private FontAwesome.Sharp.IconButton btnMyBlogs;
         private FontAwesome.Sharp.IconButton btnCreateBlog;
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.Button btnCreate;
     }
 }
 
