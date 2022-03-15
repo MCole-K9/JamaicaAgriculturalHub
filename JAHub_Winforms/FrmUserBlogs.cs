@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -14,8 +16,43 @@ namespace JAHub_Winforms
     {
         public FrmUserBlogs()
         {
+           
             InitializeComponent();
+            //string Username = "Elliot Morrison";
+            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            //SqlCommand cmd = new SqlCommand("SELECT * FROM BlogDetailsTable WHERE Author = '" + Username + "'", connection);
+            //connection.Open();
+            //SqlDataReader sqlData = cmd.ExecuteReader();
+
+            //while (sqlData.Read())
+            //{
+            //    Blog blog = new Blog();
+
+            //    blog.Title = sqlData["Title"].ToString();
+            //    blog.Author = sqlData["Author"].ToString();
+            //    blog.Description = sqlData["Description"].ToString();
+            //    blog.BlogBody = sqlData["BlogBody"].ToString();
+            //    blog.PublishDateString = sqlData["PublishDateString"].ToString();
+            //    blog.Rating = Convert.ToInt16(sqlData["Rating"]);
+            //    blog.CreateBlogPost(pnlContainer);
+            //    blog.ViewBlog.Click += ViewBlog_Click;
+            //    void ViewBlog_Click(object sender, EventArgs e)
+            //    {
+            //        FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
+            //        DisplayedBlog.Show();
+            //    }
+            //}
         }
+
+
+
+
+
+
+
+
+
+
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen("FrmCreateBlog"))

@@ -33,6 +33,7 @@
             this.lblAuthor = new System.Windows.Forms.Label();
             this.lblPublishDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.rtbBlogBody = new System.Windows.Forms.RichTextBox();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,6 @@
             this.btnRatingDown = new System.Windows.Forms.Button();
             this.btnRatingUp = new System.Windows.Forms.Button();
             this.lblUpOrDownVote = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
@@ -90,10 +90,22 @@
             this.panel1.Size = new System.Drawing.Size(953, 130);
             this.panel1.TabIndex = 6;
             // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(16, 54);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(79, 13);
+            this.lblDescription.TabIndex = 6;
+            this.lblDescription.Text = "Decription here";
+            // 
             // rtbBlogBody
             // 
             this.rtbBlogBody.BackColor = System.Drawing.Color.White;
             this.rtbBlogBody.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbBlogBody.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtbBlogBody.DetectUrls = false;
+            this.rtbBlogBody.Enabled = false;
             this.rtbBlogBody.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbBlogBody.Location = new System.Drawing.Point(164, 202);
             this.rtbBlogBody.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
@@ -222,15 +234,6 @@
             this.lblUpOrDownVote.Size = new System.Drawing.Size(102, 13);
             this.lblUpOrDownVote.TabIndex = 22;
             this.lblUpOrDownVote.Text = "Found This Helpful?";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(16, 54);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(79, 13);
-            this.lblDescription.TabIndex = 6;
-            this.lblDescription.Text = "Decription here";
             // 
             // FrmBlogDetails
             // 

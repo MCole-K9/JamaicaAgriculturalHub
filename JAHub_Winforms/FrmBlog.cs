@@ -19,12 +19,12 @@ namespace JAHub_Winforms
         public FrmBlog()
         {
             InitializeComponent();
-            
+
             //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
             //SqlCommand cmd = new SqlCommand("SELECT * FROM BlogDetailsTable", connection);
             //connection.Open();
             //SqlDataReader sqlData = cmd.ExecuteReader();
-            
+
             //while (sqlData.Read())
             //{
             //    Blog blog = new Blog();
@@ -39,8 +39,8 @@ namespace JAHub_Winforms
             //    blog.ViewBlog.Click += ViewBlog_Click;
             //    void ViewBlog_Click(object sender, EventArgs e)
             //    {
-            //         FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
-            //         DisplayedBlog.Show();
+            //        FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
+            //        DisplayedBlog.Show();
             //    }
             //}
         }

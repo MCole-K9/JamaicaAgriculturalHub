@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.lblMyBlogs = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.lblMyBlogs = new System.Windows.Forms.Label();
+            this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,33 +48,8 @@
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNav.Location = new System.Drawing.Point(0, 0);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(141, 555);
+            this.pnlNav.Size = new System.Drawing.Size(141, 621);
             this.pnlNav.TabIndex = 22;
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
-            this.pnlLogo.TabIndex = 0;
-            // 
-            // lblMyBlogs
-            // 
-            this.lblMyBlogs.AutoSize = true;
-            this.lblMyBlogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyBlogs.Location = new System.Drawing.Point(188, 35);
-            this.lblMyBlogs.Name = "lblMyBlogs";
-            this.lblMyBlogs.Size = new System.Drawing.Size(155, 37);
-            this.lblMyBlogs.TabIndex = 23;
-            this.lblMyBlogs.Text = "My Blogs";
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(195, 123);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 393);
-            this.panel1.TabIndex = 24;
             // 
             // iconButton2
             // 
@@ -145,12 +120,37 @@
             this.btnBlogs.UseVisualStyleBackColor = false;
             this.btnBlogs.Click += new System.EventHandler(this.btnBlogs_Click);
             // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(141, 123);
+            this.pnlLogo.TabIndex = 0;
+            // 
+            // lblMyBlogs
+            // 
+            this.lblMyBlogs.AutoSize = true;
+            this.lblMyBlogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMyBlogs.Location = new System.Drawing.Point(167, 9);
+            this.lblMyBlogs.Name = "lblMyBlogs";
+            this.lblMyBlogs.Size = new System.Drawing.Size(155, 37);
+            this.lblMyBlogs.TabIndex = 23;
+            this.lblMyBlogs.Text = "My Blogs";
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Location = new System.Drawing.Point(174, 123);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(900, 400);
+            this.pnlContainer.TabIndex = 24;
+            // 
             // FrmUserBlogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 555);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1112, 621);
+            this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblMyBlogs);
             this.Controls.Add(this.pnlNav);
             this.Name = "FrmUserBlogs";
@@ -169,6 +169,6 @@
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Label lblMyBlogs;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlContainer;
     }
 }

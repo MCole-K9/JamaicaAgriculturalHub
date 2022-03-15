@@ -32,7 +32,6 @@ namespace JAHub_Winforms
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
-            //displayedBlog.Rating++;
             
             if (!Utils.IsFormOpen("FrmCreateBlog"))
             {
@@ -89,15 +88,15 @@ namespace JAHub_Winforms
 
         private void btnRatingDown_Click(object sender, EventArgs e)
         {
-            //if(displayedBlog.Rating > 0)
-            //{
-            //    displayedBlog.Rating--;
-            //    SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
-            //    connection.Open();
-            //    SqlCommand cmd = new SqlCommand("UPDATE BlogDetailsTable SET Rating = " + displayedBlog.Rating + " WHERE Title = '" + displayedBlog.Title + "'");
-            //    cmd.Connection = connection;
-            //    cmd.ExecuteNonQuery();
-            //}
+            if (displayedBlog.Rating > 0)
+            {
+                //displayedBlog.Rating--;
+                //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+                //connection.Open();
+                //SqlCommand cmd = new SqlCommand("UPDATE BlogDetailsTable SET Rating = " + displayedBlog.Rating + " WHERE Title = '" + displayedBlog.Title + "'");
+                //cmd.Connection = connection;
+                //cmd.ExecuteNonQuery();
+            }
         }
     }
 

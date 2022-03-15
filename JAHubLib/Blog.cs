@@ -30,7 +30,7 @@ namespace JAHubLib
         public Blog()
         {
             PublishDateString = DateTime.Now.ToString();
-            Author = "John Doe";
+            Author = "Elliot Morrison";
             BlogBody = "";
             Title = "Title";
             Description = "desc";
@@ -102,7 +102,7 @@ namespace JAHubLib
             BlogAuthor.Text = Author;
             BlogAuthor.Font = new Font("Calibri", 10, FontStyle.Italic);
             BlogAuthor.AutoSize = true;
-            BlogAuthor.Top = 5 + BlogTitle.Height;
+            BlogAuthor.Top = 30;
             BlogAuthor.Left = 10;
 
             //Author Label
@@ -111,7 +111,7 @@ namespace JAHubLib
             BlogDate.Text = PublishDate.ToShortDateString();
             BlogDate.Font = new Font("Calibri", 10, FontStyle.Italic);
             BlogDate.AutoSize = true;
-            BlogDate.Top = BlogTitle.Height + BlogAuthor.Height;
+            BlogDate.Top = 50;
             BlogDate.Left = 10;
 
             //Desc Label
