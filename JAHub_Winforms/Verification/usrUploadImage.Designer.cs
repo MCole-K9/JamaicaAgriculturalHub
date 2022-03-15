@@ -29,34 +29,25 @@
         private void InitializeComponent()
         {
             this.flwImageBlock = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblUploadedImagePreview = new System.Windows.Forms.Label();
             this.tblUploadDialog = new System.Windows.Forms.TableLayoutPanel();
             this.lblUploadPrompt = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.picProfileImage = new System.Windows.Forms.PictureBox();
             this.flwImageBlock.SuspendLayout();
             this.tblUploadDialog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfileImage)).BeginInit();
             this.SuspendLayout();
             // 
             // flwImageBlock
             // 
             this.flwImageBlock.AutoSize = true;
             this.flwImageBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwImageBlock.Controls.Add(this.lblUploadedImagePreview);
+            this.flwImageBlock.Controls.Add(this.picProfileImage);
             this.flwImageBlock.Controls.Add(this.tblUploadDialog);
             this.flwImageBlock.Location = new System.Drawing.Point(3, 3);
             this.flwImageBlock.Name = "flwImageBlock";
             this.flwImageBlock.Size = new System.Drawing.Size(312, 106);
             this.flwImageBlock.TabIndex = 0;
-            // 
-            // lblUploadedImagePreview
-            // 
-            this.lblUploadedImagePreview.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lblUploadedImagePreview.Location = new System.Drawing.Point(3, 0);
-            this.lblUploadedImagePreview.Name = "lblUploadedImagePreview";
-            this.lblUploadedImagePreview.Size = new System.Drawing.Size(100, 100);
-            this.lblUploadedImagePreview.TabIndex = 0;
-            this.lblUploadedImagePreview.Text = "img";
-            this.lblUploadedImagePreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tblUploadDialog
             // 
@@ -91,6 +82,16 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Upload Image";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // picProfileImage
+            // 
+            this.picProfileImage.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.picProfileImage.Location = new System.Drawing.Point(3, 3);
+            this.picProfileImage.Name = "picProfileImage";
+            this.picProfileImage.Size = new System.Drawing.Size(100, 100);
+            this.picProfileImage.TabIndex = 2;
+            this.picProfileImage.TabStop = false;
             // 
             // usrUploadImageBlock
             // 
@@ -104,6 +105,7 @@
             this.flwImageBlock.ResumeLayout(false);
             this.tblUploadDialog.ResumeLayout(false);
             this.tblUploadDialog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfileImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,9 +114,9 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flwImageBlock;
-        private System.Windows.Forms.Label lblUploadedImagePreview;
         private System.Windows.Forms.TableLayoutPanel tblUploadDialog;
         private System.Windows.Forms.Label lblUploadPrompt;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox picProfileImage;
     }
 }

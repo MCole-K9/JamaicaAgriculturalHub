@@ -16,5 +16,13 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // broadly: OpenFileDialog or whatever
+            // (make sure it's only set to allow png, jpg/jpeg, gif)
+            // get and store the image (in what?)
+            // display a small version of the image in the box on the left
+        }
     }
 }
