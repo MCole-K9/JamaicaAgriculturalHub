@@ -152,6 +152,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Verification\usrUploadImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Verification\usrUploadImage.Designer.cs">
+      <DependentUpon>usrUploadImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Verification\usrOrganizationsBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Verification\usrTrnBlock.resx">
       <DependentUpon>usrTrnBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Verification\usrUploadImage.resx">
+      <DependentUpon>usrUploadImage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
