@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblOrganizations = new System.Windows.Forms.Label();
             this.btnAddAnotherOrganization = new System.Windows.Forms.Button();
             this.lblPleaseListOrganizations = new System.Windows.Forms.Label();
@@ -36,10 +35,8 @@
             this.flwOrganizationBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.flwOrganizationsTextHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRemoveOrganization = new System.Windows.Forms.Button();
-            this.errOrganizationsBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.flwOrganizationBlock.SuspendLayout();
             this.flwOrganizationsTextHolder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errOrganizationsBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOrganizations
@@ -59,6 +56,7 @@
             this.btnAddAnotherOrganization.TabIndex = 2;
             this.btnAddAnotherOrganization.Text = "Add Another Organization";
             this.btnAddAnotherOrganization.UseVisualStyleBackColor = true;
+            this.btnAddAnotherOrganization.Click += new System.EventHandler(this.btnAddAnotherOrganization_Click);
             // 
             // lblPleaseListOrganizations
             // 
@@ -110,10 +108,8 @@
             this.btnRemoveOrganization.TabIndex = 3;
             this.btnRemoveOrganization.Text = "Remove Last Organization";
             this.btnRemoveOrganization.UseVisualStyleBackColor = true;
-            // 
-            // errOrganizationsBlock
-            // 
-            this.errOrganizationsBlock.ContainerControl = this;
+            this.btnRemoveOrganization.Visible = false;
+            this.btnRemoveOrganization.Click += new System.EventHandler(this.btnRemoveOrganization_Click);
             // 
             // usrOrganizationsBlock
             // 
@@ -128,7 +124,6 @@
             this.flwOrganizationBlock.PerformLayout();
             this.flwOrganizationsTextHolder.ResumeLayout(false);
             this.flwOrganizationsTextHolder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errOrganizationsBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,6 +137,5 @@
         private System.Windows.Forms.FlowLayoutPanel flwOrganizationBlock;
         private System.Windows.Forms.FlowLayoutPanel flwOrganizationsTextHolder;
         private System.Windows.Forms.Button btnRemoveOrganization;
-        private System.Windows.Forms.ErrorProvider errOrganizationsBlock;
     }
 }
