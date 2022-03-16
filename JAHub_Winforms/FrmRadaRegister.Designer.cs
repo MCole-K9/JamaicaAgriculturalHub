@@ -34,15 +34,15 @@
             this.btnNewRegistration = new System.Windows.Forms.Button();
             this.btnConnectExistingAccount = new System.Windows.Forms.Button();
             this.lblOr = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flwFormEntryControls = new System.Windows.Forms.FlowLayoutPanel();
             this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
-            this.usrDateOfBirthBlock1 = new JAHub_Winforms.Verifcation.usrDateOfBirthBlock();
+            this.usrDateOfBirthBlock1 = new JAHub_Winforms.Verification.usrDateOfBirthBlock();
             this.usrContactBlock1 = new JAHub_Winforms.Verification.usrContactBlock();
             this.usrTrnBlock1 = new JAHub_Winforms.Verification.usrTrnBlock();
             this.usrIndustryBlock1 = new JAHub_Winforms.Verifcation.usrIndustryBlock();
             this.flwRadaRegister.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flwFormEntryControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // flwRadaRegister
@@ -50,9 +50,10 @@
             this.flwRadaRegister.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwRadaRegister.Controls.Add(this.lblRegisterWithRada);
             this.flwRadaRegister.Controls.Add(this.tableLayoutPanel1);
-            this.flwRadaRegister.Controls.Add(this.flowLayoutPanel1);
+            this.flwRadaRegister.Controls.Add(this.flwFormEntryControls);
             this.flwRadaRegister.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwRadaRegister.Location = new System.Drawing.Point(0, 0);
+            this.flwRadaRegister.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaRegister.Name = "flwRadaRegister";
             this.flwRadaRegister.Size = new System.Drawing.Size(776, 627);
             this.flwRadaRegister.TabIndex = 0;
@@ -62,6 +63,7 @@
             this.lblRegisterWithRada.AutoSize = true;
             this.lblRegisterWithRada.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterWithRada.Location = new System.Drawing.Point(3, 0);
+            this.lblRegisterWithRada.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.lblRegisterWithRada.Name = "lblRegisterWithRada";
             this.lblRegisterWithRada.Size = new System.Drawing.Size(227, 29);
             this.lblRegisterWithRada.TabIndex = 1;
@@ -70,13 +72,13 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btnNewRegistration, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnConnectExistingAccount, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblOr, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 32);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 44);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -85,42 +87,48 @@
             // 
             // btnNewRegistration
             // 
-            this.btnNewRegistration.Location = new System.Drawing.Point(3, 3);
+            this.btnNewRegistration.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnNewRegistration.Location = new System.Drawing.Point(78, 5);
             this.btnNewRegistration.Name = "btnNewRegistration";
             this.btnNewRegistration.Size = new System.Drawing.Size(125, 23);
             this.btnNewRegistration.TabIndex = 0;
             this.btnNewRegistration.Text = "New Registration";
             this.btnNewRegistration.UseVisualStyleBackColor = true;
+            this.btnNewRegistration.Click += new System.EventHandler(this.btnNewRegistration_Click);
             // 
             // btnConnectExistingAccount
             // 
-            this.btnConnectExistingAccount.Location = new System.Drawing.Point(159, 3);
+            this.btnConnectExistingAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnConnectExistingAccount.Location = new System.Drawing.Point(241, 5);
             this.btnConnectExistingAccount.Name = "btnConnectExistingAccount";
             this.btnConnectExistingAccount.Size = new System.Drawing.Size(180, 23);
             this.btnConnectExistingAccount.TabIndex = 1;
             this.btnConnectExistingAccount.Text = "Connect Existing Account";
             this.btnConnectExistingAccount.UseVisualStyleBackColor = true;
+            this.btnConnectExistingAccount.Click += new System.EventHandler(this.btnConnectExistingAccount_Click);
             // 
             // lblOr
             // 
             this.lblOr.AutoSize = true;
-            this.lblOr.Location = new System.Drawing.Point(134, 0);
+            this.lblOr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblOr.Location = new System.Drawing.Point(209, 0);
             this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(19, 16);
+            this.lblOr.Size = new System.Drawing.Size(26, 34);
             this.lblOr.TabIndex = 2;
             this.lblOr.Text = "or";
+            this.lblOr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // flowLayoutPanel1
+            // flwFormEntryControls
             // 
-            this.flowLayoutPanel1.Controls.Add(this.usrNameBlock1);
-            this.flowLayoutPanel1.Controls.Add(this.usrDateOfBirthBlock1);
-            this.flowLayoutPanel1.Controls.Add(this.usrContactBlock1);
-            this.flowLayoutPanel1.Controls.Add(this.usrTrnBlock1);
-            this.flowLayoutPanel1.Controls.Add(this.usrIndustryBlock1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 72);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(445, 525);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flwFormEntryControls.Controls.Add(this.usrNameBlock1);
+            this.flwFormEntryControls.Controls.Add(this.usrDateOfBirthBlock1);
+            this.flwFormEntryControls.Controls.Add(this.usrContactBlock1);
+            this.flwFormEntryControls.Controls.Add(this.usrTrnBlock1);
+            this.flwFormEntryControls.Controls.Add(this.usrIndustryBlock1);
+            this.flwFormEntryControls.Location = new System.Drawing.Point(3, 84);
+            this.flwFormEntryControls.Name = "flwFormEntryControls";
+            this.flwFormEntryControls.Size = new System.Drawing.Size(445, 525);
+            this.flwFormEntryControls.TabIndex = 2;
             // 
             // usrNameBlock1
             // 
@@ -184,8 +192,8 @@
             this.flwRadaRegister.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.flwFormEntryControls.ResumeLayout(false);
+            this.flwFormEntryControls.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,9 +206,9 @@
         private System.Windows.Forms.Button btnNewRegistration;
         private System.Windows.Forms.Button btnConnectExistingAccount;
         private System.Windows.Forms.Label lblOr;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flwFormEntryControls;
         private Verification.usrNameBlock usrNameBlock1;
-        private Verifcation.usrDateOfBirthBlock usrDateOfBirthBlock1;
+        private Verification.usrDateOfBirthBlock usrDateOfBirthBlock1;
         private Verification.usrContactBlock usrContactBlock1;
         private Verification.usrTrnBlock usrTrnBlock1;
         private Verifcation.usrIndustryBlock usrIndustryBlock1;
