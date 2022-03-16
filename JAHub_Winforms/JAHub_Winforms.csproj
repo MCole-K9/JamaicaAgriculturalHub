@@ -54,6 +54,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmRadaRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRadaRegister.Designer.cs">
+      <DependentUpon>FrmRadaRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBlog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProfileHome.resx">
       <DependentUpon>FrmProfileHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRadaRegister.resx">
+      <DependentUpon>FrmRadaRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
