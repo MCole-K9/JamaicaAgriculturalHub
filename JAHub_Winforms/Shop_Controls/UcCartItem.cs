@@ -37,6 +37,8 @@ namespace JAHub_Winforms.Shop_Controls
             PopulateFields();
 
             // Quantity
+            //Defualt Quntity value is 1, code below stops the quantity from being set to 1 if it was already changed
+            //Quantiy Retention While Browsering the application
             if(_frmCart._frmShop.Cart[_product] < 1)
             {
                this._frmCart._frmShop.Cart[_product] = 1;
@@ -105,6 +107,26 @@ namespace JAHub_Winforms.Shop_Controls
             this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
 
 
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            //int qtyValue;
+            //bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+
+            //if (inputIsInt && qtyValue > 0)
+            //{
+            //    txtQty.Text = qtyValue.ToString();
+            //    //Assigns Quantity
+            //    this._frmCart._frmShop.Cart[_product] = qtyValue;
+
+            //    this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please Ensure that only a postitive number is inputed");
+            //}
         }
     }
 }

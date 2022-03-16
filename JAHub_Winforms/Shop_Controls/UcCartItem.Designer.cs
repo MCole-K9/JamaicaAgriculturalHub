@@ -31,10 +31,10 @@
             this.pcbImage = new System.Windows.Forms.PictureBox();
             this.lblItemName = new System.Windows.Forms.Label();
             this.gbQty = new System.Windows.Forms.GroupBox();
-            this.btnMinus = new FontAwesome.Sharp.IconButton();
-            this.btnPlus = new FontAwesome.Sharp.IconButton();
-            this.LblQty = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
+            this.btnPlus = new FontAwesome.Sharp.IconButton();
+            this.btnMinus = new FontAwesome.Sharp.IconButton();
+            this.LblQty = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnRemove = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImage)).BeginInit();
@@ -72,19 +72,15 @@
             this.gbQty.TabIndex = 3;
             this.gbQty.TabStop = false;
             // 
-            // btnMinus
+            // txtQty
             // 
-            this.btnMinus.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnMinus.IconColor = System.Drawing.Color.Black;
-            this.btnMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinus.IconSize = 14;
-            this.btnMinus.Location = new System.Drawing.Point(3, 19);
-            this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(43, 24);
-            this.btnMinus.TabIndex = 0;
-            this.btnMinus.UseVisualStyleBackColor = true;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            this.txtQty.Location = new System.Drawing.Point(63, 19);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(40, 23);
+            this.txtQty.TabIndex = 2;
+            this.txtQty.Text = "1";
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
             // 
             // btnPlus
             // 
@@ -100,6 +96,20 @@
             this.btnPlus.UseVisualStyleBackColor = true;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
+            // btnMinus
+            // 
+            this.btnMinus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMinus.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMinus.IconColor = System.Drawing.Color.Black;
+            this.btnMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinus.IconSize = 14;
+            this.btnMinus.Location = new System.Drawing.Point(3, 19);
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.Size = new System.Drawing.Size(43, 24);
+            this.btnMinus.TabIndex = 0;
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            // 
             // LblQty
             // 
             this.LblQty.AutoSize = true;
@@ -109,15 +119,6 @@
             this.LblQty.Size = new System.Drawing.Size(33, 20);
             this.LblQty.TabIndex = 1;
             this.LblQty.Text = "Qty";
-            // 
-            // txtQty
-            // 
-            this.txtQty.Location = new System.Drawing.Point(63, 19);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(40, 23);
-            this.txtQty.TabIndex = 2;
-            this.txtQty.Text = "1";
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblPrice
             // 
