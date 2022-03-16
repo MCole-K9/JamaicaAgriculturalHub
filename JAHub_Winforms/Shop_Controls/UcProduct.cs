@@ -54,5 +54,10 @@ namespace JAHub_Winforms.Shop_Controls
             }
             
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            this._frmProducts._frmShop.OpenProductDetails(product);
+        }
     }
 }
