@@ -43,7 +43,16 @@ namespace JAHub_Winforms.Shop_Controls
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            this._frmProducts._frmShop.Cart.Add(product, 1);
+            try
+            {
+                this._frmProducts._frmShop.Cart.Add(product, 1);
+            }
+            catch (ArgumentException)
+            {
+
+                MessageBox.Show("This Item is already in your cart");
+            }
+            
         }
     }
 }
