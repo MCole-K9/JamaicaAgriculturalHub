@@ -12,6 +12,8 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrUploadImageBlock : UserControl
     {
+        Bitmap profilePicture;
+
         public usrUploadImageBlock()
         {
             InitializeComponent();
@@ -19,10 +21,14 @@ namespace JAHub_Winforms.Verification
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // broadly: OpenFileDialog or whatever
-            // (make sure it's only set to allow png, jpg/jpeg, gif)
-            // get and store the image (in what?)
-            // display a small version of the image in the box on the left
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+
+                profilePicture = new Bitmap(ofd.FileName);
+
+                picProfileImage.Image = profilePicture;
+            }
         }
     }
 }
