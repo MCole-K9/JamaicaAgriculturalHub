@@ -12,13 +12,15 @@ using JAHubLib;
 namespace JAHub_Winforms.Verification
 {
     /* TO-DO
-     * [x] write email validation
-     * [x] write the code to add a phone number block on click
-     * [x] write a method to remove a phone number block when not necessary
+     * [] Put all phone numbers in their own block
+     * [] Rewrite add and remove buttons to put new phone blocks in the new container
      * [] wrap method to wrap all of the information into an object
     */
     public partial class usrContactBlock : UserControl
     {
+        bool isEmailValid;
+        List<bool> isPhoneValid;
+
         public usrContactBlock()
         {
             InitializeComponent();
@@ -61,6 +63,11 @@ namespace JAHub_Winforms.Verification
             {
                 btnRemoveNumber.Hide();
             }
+        }
+
+        public bool IsBlockValid()
+        {
+            return true;
         }
     }
 }

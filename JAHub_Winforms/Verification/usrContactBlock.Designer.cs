@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.flwContactBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.lblContantInformation = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblEmailSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
-            this.contactBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnRemoveNumber = new System.Windows.Forms.Button();
             this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
+            this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
+            this.btnRemoveNumber = new System.Windows.Forms.Button();
+            this.contactBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.flwContactBlock.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tblEmailSection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactBlockErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.flwContactBlock.AutoSize = true;
             this.flwContactBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwContactBlock.Controls.Add(this.lblContantInformation);
-            this.flwContactBlock.Controls.Add(this.tableLayoutPanel1);
+            this.flwContactBlock.Controls.Add(this.tblEmailSection);
             this.flwContactBlock.Controls.Add(this.usrPhoneNumberBlock1);
             this.flwContactBlock.Controls.Add(this.btnAddAnotherPhoneNumber);
             this.flwContactBlock.Controls.Add(this.btnRemoveNumber);
@@ -56,86 +56,96 @@
             this.flwContactBlock.Location = new System.Drawing.Point(0, 0);
             this.flwContactBlock.Margin = new System.Windows.Forms.Padding(0);
             this.flwContactBlock.Name = "flwContactBlock";
-            this.flwContactBlock.Size = new System.Drawing.Size(314, 152);
+            this.flwContactBlock.Size = new System.Drawing.Size(392, 202);
             this.flwContactBlock.TabIndex = 0;
             // 
             // lblContantInformation
             // 
             this.lblContantInformation.AutoSize = true;
+            this.lblContantInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContantInformation.Location = new System.Drawing.Point(3, 0);
             this.lblContantInformation.Name = "lblContantInformation";
-            this.lblContantInformation.Size = new System.Drawing.Size(120, 16);
+            this.lblContantInformation.Size = new System.Drawing.Size(181, 25);
             this.lblContantInformation.TabIndex = 0;
             this.lblContantInformation.Text = "Contact Information";
             // 
-            // tableLayoutPanel1
+            // tblEmailSection
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 32);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tblEmailSection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblEmailSection.ColumnCount = 2;
+            this.tblEmailSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tblEmailSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tblEmailSection.Controls.Add(this.lblEmail, 0, 0);
+            this.tblEmailSection.Controls.Add(this.txtEmail, 1, 0);
+            this.tblEmailSection.Location = new System.Drawing.Point(3, 28);
+            this.tblEmailSection.Name = "tblEmailSection";
+            this.tblEmailSection.RowCount = 1;
+            this.tblEmailSection.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblEmailSection.Size = new System.Drawing.Size(386, 46);
+            this.tblEmailSection.TabIndex = 1;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(3, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(138, 32);
+            this.lblEmail.Size = new System.Drawing.Size(180, 40);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email (If Different from Sign-Up Email)";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(153, 3);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(193, 9);
             this.txtEmail.MaxLength = 65;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(125, 22);
+            this.txtEmail.Size = new System.Drawing.Size(159, 27);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
+            // usrPhoneNumberBlock1
+            // 
+            this.usrPhoneNumberBlock1.AutoSize = true;
+            this.usrPhoneNumberBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrPhoneNumberBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrPhoneNumberBlock1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrPhoneNumberBlock1.Location = new System.Drawing.Point(3, 80);
+            this.usrPhoneNumberBlock1.Name = "usrPhoneNumberBlock1";
+            this.usrPhoneNumberBlock1.Size = new System.Drawing.Size(386, 43);
+            this.usrPhoneNumberBlock1.TabIndex = 3;
+            // 
             // btnAddAnotherPhoneNumber
             // 
-            this.btnAddAnotherPhoneNumber.Location = new System.Drawing.Point(3, 97);
+            this.btnAddAnotherPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAnotherPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnotherPhoneNumber.Location = new System.Drawing.Point(3, 129);
             this.btnAddAnotherPhoneNumber.Name = "btnAddAnotherPhoneNumber";
-            this.btnAddAnotherPhoneNumber.Size = new System.Drawing.Size(167, 23);
+            this.btnAddAnotherPhoneNumber.Size = new System.Drawing.Size(386, 32);
             this.btnAddAnotherPhoneNumber.TabIndex = 2;
             this.btnAddAnotherPhoneNumber.Text = "Add Another Phone Number";
             this.btnAddAnotherPhoneNumber.UseVisualStyleBackColor = true;
             this.btnAddAnotherPhoneNumber.Click += new System.EventHandler(this.btnAddAnotherPhoneNumber_Click);
             // 
-            // contactBlockErrorProvider
-            // 
-            this.contactBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.contactBlockErrorProvider.ContainerControl = this;
-            // 
             // btnRemoveNumber
             // 
-            this.btnRemoveNumber.Location = new System.Drawing.Point(3, 126);
+            this.btnRemoveNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemoveNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveNumber.Location = new System.Drawing.Point(3, 167);
             this.btnRemoveNumber.Name = "btnRemoveNumber";
-            this.btnRemoveNumber.Size = new System.Drawing.Size(167, 23);
+            this.btnRemoveNumber.Size = new System.Drawing.Size(386, 32);
             this.btnRemoveNumber.TabIndex = 4;
             this.btnRemoveNumber.Text = "Remove a Number";
             this.btnRemoveNumber.UseVisualStyleBackColor = true;
             this.btnRemoveNumber.Visible = false;
             this.btnRemoveNumber.Click += new System.EventHandler(this.btnRemoveNumber_Click);
             // 
-            // usrPhoneNumberBlock1
+            // contactBlockErrorProvider
             // 
-            this.usrPhoneNumberBlock1.AutoSize = true;
-            this.usrPhoneNumberBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrPhoneNumberBlock1.Location = new System.Drawing.Point(3, 57);
-            this.usrPhoneNumberBlock1.Name = "usrPhoneNumberBlock1";
-            this.usrPhoneNumberBlock1.Size = new System.Drawing.Size(308, 34);
-            this.usrPhoneNumberBlock1.TabIndex = 3;
+            this.contactBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.contactBlockErrorProvider.ContainerControl = this;
             // 
             // usrContactBlock
             // 
@@ -146,11 +156,11 @@
             this.Controls.Add(this.flwContactBlock);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "usrContactBlock";
-            this.Size = new System.Drawing.Size(314, 152);
+            this.Size = new System.Drawing.Size(392, 202);
             this.flwContactBlock.ResumeLayout(false);
             this.flwContactBlock.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tblEmailSection.ResumeLayout(false);
+            this.tblEmailSection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactBlockErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,7 +171,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flwContactBlock;
         private System.Windows.Forms.Label lblContantInformation;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblEmailSection;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnAddAnotherPhoneNumber;
         private System.Windows.Forms.TextBox txtEmail;

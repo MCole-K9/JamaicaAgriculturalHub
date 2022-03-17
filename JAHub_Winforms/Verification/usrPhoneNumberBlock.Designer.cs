@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tblPhoneNumber = new System.Windows.Forms.TableLayoutPanel();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.numberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.mskPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.numberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblPhoneNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +41,7 @@
             // 
             this.tblPhoneNumber.AutoSize = true;
             this.tblPhoneNumber.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.tblPhoneNumber.ColumnCount = 2;
             this.tblPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tblPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
@@ -50,33 +51,36 @@
             this.tblPhoneNumber.Name = "tblPhoneNumber";
             this.tblPhoneNumber.RowCount = 1;
             this.tblPhoneNumber.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPhoneNumber.Size = new System.Drawing.Size(302, 28);
+            this.tblPhoneNumber.Size = new System.Drawing.Size(302, 33);
             this.tblPhoneNumber.TabIndex = 0;
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumber.Location = new System.Drawing.Point(3, 0);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(144, 28);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(144, 33);
             this.lblPhoneNumber.TabIndex = 0;
             this.lblPhoneNumber.Text = "Phone Number";
             this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mskPhoneNumber
+            // 
+            this.mskPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskPhoneNumber.Location = new System.Drawing.Point(153, 3);
+            this.mskPhoneNumber.Mask = "1(999) 000-0000";
+            this.mskPhoneNumber.Name = "mskPhoneNumber";
+            this.mskPhoneNumber.Size = new System.Drawing.Size(125, 27);
+            this.mskPhoneNumber.TabIndex = 1;
+            this.mskPhoneNumber.Validating += new System.ComponentModel.CancelEventHandler(this.mskPhoneNumber_Validating);
             // 
             // numberErrorProvider
             // 
             this.numberErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.numberErrorProvider.ContainerControl = this;
-            // 
-            // mskPhoneNumber
-            // 
-            this.mskPhoneNumber.Location = new System.Drawing.Point(153, 3);
-            this.mskPhoneNumber.Mask = "1(999) 000-0000";
-            this.mskPhoneNumber.Name = "mskPhoneNumber";
-            this.mskPhoneNumber.Size = new System.Drawing.Size(125, 22);
-            this.mskPhoneNumber.TabIndex = 1;
-            this.mskPhoneNumber.Validating += new System.ComponentModel.CancelEventHandler(this.mskPhoneNumber_Validating);
             // 
             // usrPhoneNumberBlock
             // 
@@ -84,9 +88,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblPhoneNumber);
             this.Name = "usrPhoneNumberBlock";
-            this.Size = new System.Drawing.Size(308, 34);
+            this.Size = new System.Drawing.Size(308, 39);
             this.tblPhoneNumber.ResumeLayout(false);
             this.tblPhoneNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberErrorProvider)).EndInit();

@@ -10,14 +10,9 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms.Verification
 {
-    /* TO-DO
-     * [x] Write the flag for if the number isn't entered (validating)
-     * ~[~] Figure out the Regex for number validation
-     * [x] figure out how to create a number mask for a phone
-    */
-
     public partial class usrPhoneNumberBlock : UserControl
     {
+        bool isPhoneNumberValid;
         public usrPhoneNumberBlock()
         {
             InitializeComponent();
@@ -29,12 +24,25 @@ namespace JAHub_Winforms.Verification
             if (mskPhoneNumber.MaskFull)
             {
                 numberErrorProvider.SetError(mskPhoneNumber, "");
+
+                isPhoneNumberValid = true;
             }
             else
             {
                 numberErrorProvider.SetIconAlignment(mskPhoneNumber, ErrorIconAlignment.MiddleRight);
                 numberErrorProvider.SetError(mskPhoneNumber, "Please enter a valid number");
+
+                isPhoneNumberValid = false;
             }
+        }
+
+        public bool IsPhoneNumberValid()
+        {
+            if (isPhoneNumberValid)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

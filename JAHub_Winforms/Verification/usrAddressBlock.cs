@@ -77,7 +77,7 @@ namespace JAHub_Winforms.Verification
             }
         }
 
-        public bool validateAllFields()
+        public bool IsBlockValid()
         {
             if (isTownValid)
             {
