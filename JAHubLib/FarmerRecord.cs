@@ -8,9 +8,9 @@ namespace JAHubLib
 {
     public class FarmerRecord
     {
-        String FirstName { get; set; };
-        String LastName { get; set; };
-        String MiddleName { get; set; };
+        String FirstName { get; set; }
+        String LastName { get; set; }
+        String MiddleName { get; set; }
 
 
     }
