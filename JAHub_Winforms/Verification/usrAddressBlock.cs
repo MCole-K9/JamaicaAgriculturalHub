@@ -12,6 +12,10 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrAddressBlock : UserControl
     {
+        bool isTownValid = false;
+        bool isPoBoxValid = false;
+        bool isParishValid = false;
+
         public usrAddressBlock()
         {
             InitializeComponent();
@@ -26,10 +30,14 @@ namespace JAHub_Winforms.Verification
             {
                 addressBlockErrorProvider.SetIconAlignment(txtAddressTown, ErrorIconAlignment.MiddleRight);
                 addressBlockErrorProvider.SetError(txtAddressTown, "Field Cannot be Blank unless the entire address is blank");
+
+                isTownValid = false;
             }
             else
             {
                 addressBlockErrorProvider.SetError(txtAddressTown, "");
+
+                isTownValid = true;
             }
         }
 
@@ -40,10 +48,14 @@ namespace JAHub_Winforms.Verification
             {
                 addressBlockErrorProvider.SetIconAlignment(txtAddressPostOffice, ErrorIconAlignment.MiddleRight);
                 addressBlockErrorProvider.SetError(txtAddressPostOffice, "Field Cannot be Blank unless the entire address is blank");
+
+                isPoBoxValid = false;
             }
             else
             {
                 addressBlockErrorProvider.SetError(txtAddressTown, "");
+
+                isPoBoxValid = true;
             }
         }
 
@@ -54,11 +66,32 @@ namespace JAHub_Winforms.Verification
             {
                 addressBlockErrorProvider.SetIconAlignment(txtAddressParish, ErrorIconAlignment.MiddleRight);
                 addressBlockErrorProvider.SetError(txtAddressTown, "Field Cannot be Blank unless the entire address is blank");
+
+                isParishValid = false;
             }
             else
             {
                 addressBlockErrorProvider.SetError(txtAddressParish, "");
+
+                isParishValid = true;
             }
+        }
+
+        public bool validateAllFields()
+        {
+            if (isTownValid)
+            {
+                if (isPoBoxValid)
+                {
+                    if (isParishValid)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+            
         }
     }
 }
