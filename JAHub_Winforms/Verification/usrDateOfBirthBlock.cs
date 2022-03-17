@@ -12,6 +12,9 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrDateOfBirthBlock : UserControl
     {
+        bool isYearValid;
+        bool isMonthValid;
+        bool isDayValid;
         public usrDateOfBirthBlock()
         {
             InitializeComponent();
@@ -23,10 +26,14 @@ namespace JAHub_Winforms.Verification
             {
                 dateBlockErrorProvider.SetIconAlignment(cmbYear, ErrorIconAlignment.MiddleRight);
                 dateBlockErrorProvider.SetError(cmbYear, "Field Cannot be Blank");
+
+                isYearValid = false;
             }
             else
             {
                 dateBlockErrorProvider.SetError(cmbYear, String.Empty);
+
+                isYearValid = true;
             }
         }
 
@@ -36,10 +43,14 @@ namespace JAHub_Winforms.Verification
             {
                 dateBlockErrorProvider.SetIconAlignment(cmbMonth, ErrorIconAlignment.MiddleRight);
                 dateBlockErrorProvider.SetError(cmbMonth, "Field Cannot be Blank");
+
+                isMonthValid = false;
             }
             else
             {
                 dateBlockErrorProvider.SetError(cmbMonth, String.Empty);
+
+                isMonthValid = true;
             }
 
             // method to see what month it is and change the number of days accordingly
@@ -107,7 +118,8 @@ namespace JAHub_Winforms.Verification
 
                 dateBlockErrorProvider.SetIconAlignment(cmbDay, ErrorIconAlignment.MiddleRight);
                 dateBlockErrorProvider.SetError(cmbDay, "Ensure that you have chosen the correct date");
-                
+
+                isDayValid = false;                
             }
         }
 
@@ -117,10 +129,14 @@ namespace JAHub_Winforms.Verification
             {
                 dateBlockErrorProvider.SetIconAlignment(cmbDay, ErrorIconAlignment.MiddleRight);
                 dateBlockErrorProvider.SetError(cmbDay, "Field Cannot Be Blank");
+
+                isDayValid = false;
             }
             else
             {
                 dateBlockErrorProvider.SetError(cmbDay, String.Empty);
+
+                isDayValid = true;
             }
         }
 
@@ -139,14 +155,20 @@ namespace JAHub_Winforms.Verification
             dateBlockErrorProvider.SetError(cmbYear, String.Empty);
         }
 
-
-        // TO DO
-        // [x] Add error provider for "this is blank"
-        // [x] Add Validation for "this is blank"
-        // [] Write method to wrap this information into an object
-        // [x] Write method to limit the amount of days in the day box depending on month
-        // ~[~] Change the selected value of cmbDay according to the maximum amount of days in a given month~
-        // [x] Turn off the error provider when an input is chosen
-        // [x] Replace the error provider with a non-blinking version
+        public bool IsBlockValid()
+        {
+            if (isYearValid)
+            {
+                if (isMonthValid)
+                {
+                    if (isDayValid)
+                    {
+                        return true;
+                    }
+                }
+            }
+            
+            return false;
+        }
     }
 }

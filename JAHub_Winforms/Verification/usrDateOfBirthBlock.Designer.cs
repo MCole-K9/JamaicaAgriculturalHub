@@ -46,6 +46,7 @@
             // 
             this.tblDateOfBirth.AutoSize = true;
             this.tblDateOfBirth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblDateOfBirth.BackColor = System.Drawing.Color.Transparent;
             this.tblDateOfBirth.ColumnCount = 3;
             this.tblDateOfBirth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tblDateOfBirth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
@@ -64,17 +65,19 @@
             this.tblDateOfBirth.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblDateOfBirth.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblDateOfBirth.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblDateOfBirth.Size = new System.Drawing.Size(298, 90);
+            this.tblDateOfBirth.Size = new System.Drawing.Size(298, 102);
             this.tblDateOfBirth.TabIndex = 0;
             // 
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.BackColor = System.Drawing.Color.Transparent;
             this.tblDateOfBirth.SetColumnSpan(this.lblDateOfBirth, 3);
             this.lblDateOfBirth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.Location = new System.Drawing.Point(3, 0);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(292, 30);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(292, 34);
             this.lblDateOfBirth.TabIndex = 0;
             this.lblDateOfBirth.Text = "Date of Birth";
             this.lblDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,10 +85,12 @@
             // lblDay
             // 
             this.lblDay.AutoSize = true;
+            this.lblDay.BackColor = System.Drawing.Color.Transparent;
             this.lblDay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDay.Location = new System.Drawing.Point(3, 60);
+            this.lblDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDay.Location = new System.Drawing.Point(3, 68);
             this.lblDay.Name = "lblDay";
-            this.lblDay.Size = new System.Drawing.Size(74, 30);
+            this.lblDay.Size = new System.Drawing.Size(74, 34);
             this.lblDay.TabIndex = 1;
             this.lblDay.Text = "Day";
             this.lblDay.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -93,10 +98,12 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
+            this.lblMonth.BackColor = System.Drawing.Color.Transparent;
             this.lblMonth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMonth.Location = new System.Drawing.Point(83, 60);
+            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(83, 68);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(118, 30);
+            this.lblMonth.Size = new System.Drawing.Size(118, 34);
             this.lblMonth.TabIndex = 2;
             this.lblMonth.Text = "Month";
             this.lblMonth.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -104,10 +111,12 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
+            this.lblYear.BackColor = System.Drawing.Color.Transparent;
             this.lblYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblYear.Location = new System.Drawing.Point(207, 60);
+            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYear.Location = new System.Drawing.Point(207, 68);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(88, 30);
+            this.lblYear.Size = new System.Drawing.Size(88, 34);
             this.lblYear.TabIndex = 3;
             this.lblYear.Text = "Year";
             this.lblYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -115,6 +124,7 @@
             // cmbDay
             // 
             this.cmbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDay.FormattingEnabled = true;
             this.cmbDay.Items.AddRange(new object[] {
             "1",
@@ -148,10 +158,10 @@
             "29",
             "30",
             "31"});
-            this.cmbDay.Location = new System.Drawing.Point(3, 33);
+            this.cmbDay.Location = new System.Drawing.Point(3, 37);
             this.cmbDay.MaximumSize = new System.Drawing.Size(52, 0);
             this.cmbDay.Name = "cmbDay";
-            this.cmbDay.Size = new System.Drawing.Size(48, 24);
+            this.cmbDay.Size = new System.Drawing.Size(48, 28);
             this.cmbDay.TabIndex = 4;
             this.cmbDay.SelectedIndexChanged += new System.EventHandler(this.cmbDay_SelectedIndexChanged);
             this.cmbDay.Validating += new System.ComponentModel.CancelEventHandler(this.cmbDay_Validating);
@@ -159,6 +169,7 @@
             // cmbMonth
             // 
             this.cmbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMonth.FormattingEnabled = true;
             this.cmbMonth.Items.AddRange(new object[] {
             "January",
@@ -173,9 +184,9 @@
             "October",
             "November",
             "December"});
-            this.cmbMonth.Location = new System.Drawing.Point(83, 33);
+            this.cmbMonth.Location = new System.Drawing.Point(83, 37);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(92, 24);
+            this.cmbMonth.Size = new System.Drawing.Size(92, 28);
             this.cmbMonth.TabIndex = 5;
             this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
             this.cmbMonth.Validating += new System.ComponentModel.CancelEventHandler(this.cmbMonth_Validating);
@@ -183,6 +194,7 @@
             // cmbYear
             // 
             this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbYear.FormattingEnabled = true;
             this.cmbYear.Items.AddRange(new object[] {
             "1900",
@@ -307,18 +319,18 @@
             "2019",
             "2020",
             "2021"});
-            this.cmbYear.Location = new System.Drawing.Point(207, 33);
+            this.cmbYear.Location = new System.Drawing.Point(207, 37);
             this.cmbYear.MaximumSize = new System.Drawing.Size(64, 0);
             this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Size = new System.Drawing.Size(64, 24);
+            this.cmbYear.Size = new System.Drawing.Size(64, 28);
             this.cmbYear.TabIndex = 6;
             this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
             this.cmbYear.Validating += new System.ComponentModel.CancelEventHandler(this.cmbYear_Validating);
             // 
             // dateBlockErrorProvider
             // 
-            this.dateBlockErrorProvider.ContainerControl = this;
             this.dateBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.dateBlockErrorProvider.ContainerControl = this;
             // 
             // usrDateOfBirthBlock
             // 
@@ -326,10 +338,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblDateOfBirth);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "usrDateOfBirthBlock";
-            this.Size = new System.Drawing.Size(301, 93);
+            this.Size = new System.Drawing.Size(301, 105);
             this.tblDateOfBirth.ResumeLayout(false);
             this.tblDateOfBirth.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateBlockErrorProvider)).EndInit();
