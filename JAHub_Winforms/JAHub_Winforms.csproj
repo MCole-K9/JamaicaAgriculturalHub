@@ -347,6 +347,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\yam-g91011fb33_640.jpg" />
+    <None Include="Resources\icons8-customer-96.png" />
+    <None Include="Resources\Avatar.png" />
     <None Include="Resources\revenue.png" />
     <None Include="Resources\profit.png" />
     <None Include="Resources\order-delivery.png" />
