@@ -18,9 +18,32 @@ namespace JAHubLib
         String addressPoBox;
         String addressParish;
 
-        String AddressTown { get; set; }
-        String AddressPoBox { get; set; }
-        String AddressParish { get; set; }
+        String AddressTown { 
+            get {
+                return addressTown;
+            } 
+            set {
+                addressTown = value;
+            } 
+        }
+        String AddressPoBox { 
+            get { 
+                return addressPoBox;
+            } 
+            set {
+                addressPoBox = value;
+            }
+        }
+        String AddressParish {
+            get {
+                return addressParish;
+            }
+            set
+            {
+                addressParish = value;
+            }
+                
+        }
 
         String FirstName { get; set; }
         String LastName { get; set; }
