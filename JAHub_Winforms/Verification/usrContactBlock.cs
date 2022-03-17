@@ -12,8 +12,8 @@ using JAHubLib;
 namespace JAHub_Winforms.Verification
 {
     /* TO-DO
-     * [] Put all phone numbers in their own block
-     * [] Rewrite add and remove buttons to put new phone blocks in the new container
+     * [x] Put all phone numbers in their own block
+     * [x] Rewrite add and remove buttons to put new phone blocks in the new container
      * [] wrap method to wrap all of the information into an object
     */
     public partial class usrContactBlock : UserControl
@@ -50,16 +50,15 @@ namespace JAHub_Winforms.Verification
         private void btnAddAnotherPhoneNumber_Click(object sender, EventArgs e)
         {
 
-            flwContactBlock.Controls.Add( new usrPhoneNumberBlock());
+            flwPhoneNumbers.Controls.Add( new usrPhoneNumberBlock());
             btnRemoveNumber.Visible = true;
-            flwContactBlock.Controls.SetChildIndex(flwContactBlock.Controls[flwContactBlock.Controls.Count-1], 3);
         }
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            flwContactBlock.Controls.RemoveAt(flwContactBlock.Controls.Count - 3);
+            flwPhoneNumbers.Controls.RemoveAt(flwContactBlock.Controls.Count - 1);
             
-            if(flwContactBlock.Controls.Count <= 5)
+            if(flwPhoneNumbers.Controls.Count == 1)
             {
                 btnRemoveNumber.Hide();
             }
@@ -67,7 +66,13 @@ namespace JAHub_Winforms.Verification
 
         public bool IsBlockValid()
         {
-            return true;
+            if (isEmailValid)
+            {
+                
+                return true;
+            }
+
+            return false;
         }
     }
 }
