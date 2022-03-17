@@ -73,6 +73,16 @@ namespace JAHub_Winforms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_customer_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_customer_96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap order_delivery {
             get {
                 object obj = ResourceManager.GetObject("order_delivery", resourceCulture);
