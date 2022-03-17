@@ -72,9 +72,9 @@
             // userProfileToolStripMenuItem
             // 
             this.userProfileToolStripMenuItem.Name = "userProfileToolStripMenuItem";
-            this.userProfileToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.userProfileToolStripMenuItem.Text = "User Profile";
-            this.userProfileToolStripMenuItem.Click += new System.EventHandler(this.userProfileToolStripMenuItem_Click);
+            this.userProfileToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.userProfileToolStripMenuItem.Text = "User Portal";
+            this.userProfileToolStripMenuItem.Click += new System.EventHandler(this.userPortalToolStripMenuItem_Click);
             // 
             // FrmMainWindow
             // 

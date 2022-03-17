@@ -63,6 +63,16 @@ namespace JAHub_Winforms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap concept_of_user_profile {
+            get {
+                object obj = ResourceManager.GetObject("concept_of_user_profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap farmer_icon {
             get {
                 object obj = ResourceManager.GetObject("farmer_icon", resourceCulture);
@@ -126,6 +136,36 @@ namespace JAHub_Winforms.Properties {
         internal static System.Drawing.Bitmap revenue {
             get {
                 object obj = ResourceManager.GetObject("revenue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrows__2_ {
+            get {
+                object obj = ResourceManager.GetObject("right_arrows__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user__3___1_ {
+            get {
+                object obj = ResourceManager.GetObject("user__3___1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_0_ {
+            get {
+                object obj = ResourceManager.GetObject("user_0_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

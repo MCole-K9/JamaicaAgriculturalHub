@@ -18,22 +18,26 @@ namespace JAHub_Winforms
             
         }
 
-        private void btnProfileHome_Click(object sender, EventArgs e)
-        {
-             
-
-            FrmProfileHome home = new FrmProfileHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true}; 
-            this.panelHomeContainer.Controls.Add(home);
-            home.Show();
-        }
-
         private void FrmProfile_Load(object sender, EventArgs e)
         {
-            FrmProfileHome home = new FrmProfileHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.panelHomeContainer.Controls.Add(home);
-            home.Show();
+            FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelHomeContainer.Controls.Add(frmDashboard);
+            frmDashboard.Show();
         }
 
+        private void btnProfileHome_Click(object sender, EventArgs e)
+        {
+            
+             btnProfileHome.BackColor = Color.Aqua; 
+            
+            
+                FrmProfileHome frmHome = new FrmProfileHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.panelHomeContainer.Controls.Add(frmHome);
+                frmHome.Show();
+            
+        }
+
+        
         private void btnDashboard_Leave(object sender, EventArgs e)
         {
             
@@ -42,8 +46,16 @@ namespace JAHub_Winforms
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            FrmDashboard frmDashboard = new FrmDashboard();
-                frmDashboard.Show();
+            FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelHomeContainer.Controls.Add(frmDashboard);
+            frmDashboard.Show();
+        }
+
+        private void btnMyAccount_Click(object sender, EventArgs e)
+        {
+            FrmAccount frmAccount = new FrmAccount() { Dock = DockStyle.Fill,TopLevel = false, TopMost = true};
+            this.panelHomeContainer.Controls.Add(frmAccount);
+            frmAccount.Show();
         }
     }
 }

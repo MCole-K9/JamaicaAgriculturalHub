@@ -54,6 +54,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAccount.designer.cs">
+      <DependentUpon>FrmAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashboard.designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRadaRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,12 +95,6 @@
     </Compile>
     <Compile Include="FrmCreateBlog.Designer.cs">
       <DependentUpon>FrmCreateBlog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDashboard.designer.cs">
-      <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProductDetail.cs">
       <SubType>Form</SubType>
@@ -236,6 +242,9 @@
     <Compile Include="Verification\usrTrnBlock.Designer.cs">
       <DependentUpon>usrTrnBlock.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAccount.resx">
+      <DependentUpon>FrmAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBlog.resx">
       <DependentUpon>FrmBlog.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +356,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\yam-g91011fb33_640.jpg" />
+    <None Include="Resources\concept-of-user-profile.png" />
+    <None Include="Resources\right-arrows %282%29.png" />
+    <None Include="Resources\user %283%29 %281%29.png" />
+    <None Include="Resources\user 0%29.png" />
     <None Include="Resources\icons8-customer-96.png" />
     <None Include="Resources\Avatar.png" />
     <None Include="Resources\revenue.png" />
