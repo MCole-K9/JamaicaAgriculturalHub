@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHub_Winforms.Verification;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
@@ -48,11 +49,17 @@ namespace JAHub_Winforms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            FarmerRecord record = new FarmerRecord();
+
             // Broadly:
             // - Check to see if all controls validate correctly
+            // Every block that can validate has its own "IsBlockValid()" method
+            // Run the blocks
+
+            // use properties to expose all of the relevant data to this form
+
+
             //  - If there are *necessary* invalid controls, stop process, raise errors
-            // - Build a corresponding data object for every control
-            // - Assemble the completed object
             // - Write object to database (consult "old and new registration" file)
             // - Indicate process completion (probably via messagebox)
             // - Take user back to wherever they came from (tbd)
