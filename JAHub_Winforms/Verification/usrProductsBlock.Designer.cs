@@ -41,6 +41,7 @@
             // 
             this.tblProductBlock.AutoSize = true;
             this.tblProductBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblProductBlock.BackColor = System.Drawing.Color.Transparent;
             this.tblProductBlock.ColumnCount = 2;
             this.tblProductBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tblProductBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -87,6 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblProductBlock);
             this.Name = "usrProductsBlock";
             this.Size = new System.Drawing.Size(300, 33);

@@ -12,9 +12,7 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
-        bool isLandMeasurementValid;
         List<bool> isProductListValid;
-        bool isWorkAddressValid;
 
         public usrHoldingsBlock()
         {
