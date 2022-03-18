@@ -22,12 +22,12 @@ namespace JAHub_Winforms.Verification
         {
             if (txtFirstName.Text == "")
             {
-                nameBlockErrorProvider.SetIconAlignment(txtFirstName, ErrorIconAlignment.MiddleRight);
-                nameBlockErrorProvider.SetError(txtFirstName, "Field Cannot be Blank");
+                errNameBlock.SetIconAlignment(txtFirstName, ErrorIconAlignment.MiddleRight);
+                errNameBlock.SetError(txtFirstName, "Field Cannot be Blank");
             }
             else
             {
-                nameBlockErrorProvider.SetError(txtFirstName, String.Empty);
+                errNameBlock.SetError(txtFirstName, String.Empty);
             }
         }
 
@@ -35,12 +35,12 @@ namespace JAHub_Winforms.Verification
         {
             if (txtMiddleName.Text == "")
             {
-                nameBlockErrorProvider.SetIconAlignment(txtMiddleName, ErrorIconAlignment.MiddleRight);
-                nameBlockErrorProvider.SetError(txtMiddleName, "Field Cannot be Blank");
+                errNameBlock.SetIconAlignment(txtMiddleName, ErrorIconAlignment.MiddleRight);
+                errNameBlock.SetError(txtMiddleName, "Field Cannot be Blank");
             }
             else
             {
-                nameBlockErrorProvider.SetError(txtMiddleName, String.Empty);
+                errNameBlock.SetError(txtMiddleName, String.Empty);
             }
         }
 
@@ -48,12 +48,12 @@ namespace JAHub_Winforms.Verification
         {
             if (txtLastName.Text == "")
             {
-                nameBlockErrorProvider.SetIconAlignment(txtLastName, ErrorIconAlignment.MiddleRight);
-                nameBlockErrorProvider.SetError(txtLastName, "Field Cannot be Blank");
+                errNameBlock.SetIconAlignment(txtLastName, ErrorIconAlignment.MiddleRight);
+                errNameBlock.SetError(txtLastName, "Field Cannot be Blank");
             }
             else
             {
-                nameBlockErrorProvider.SetError(txtLastName, String.Empty);
+                errNameBlock.SetError(txtLastName, String.Empty);
             }
         }
 

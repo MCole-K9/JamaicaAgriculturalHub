@@ -32,9 +32,9 @@
             this.tblPhoneNumber = new System.Windows.Forms.TableLayoutPanel();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.mskPhoneNumber = new System.Windows.Forms.MaskedTextBox();
-            this.numberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errPhoneNumber = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblPhoneNumber.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPhoneNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // tblPhoneNumber
@@ -77,10 +77,10 @@
             this.mskPhoneNumber.TabIndex = 1;
             this.mskPhoneNumber.Validating += new System.ComponentModel.CancelEventHandler(this.mskPhoneNumber_Validating);
             // 
-            // numberErrorProvider
+            // errPhoneNumber
             // 
-            this.numberErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.numberErrorProvider.ContainerControl = this;
+            this.errPhoneNumber.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errPhoneNumber.ContainerControl = this;
             // 
             // usrPhoneNumberBlock
             // 
@@ -94,7 +94,7 @@
             this.Size = new System.Drawing.Size(308, 39);
             this.tblPhoneNumber.ResumeLayout(false);
             this.tblPhoneNumber.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numberErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPhoneNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,7 +104,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tblPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
-        private System.Windows.Forms.ErrorProvider numberErrorProvider;
+        private System.Windows.Forms.ErrorProvider errPhoneNumber;
         private System.Windows.Forms.MaskedTextBox mskPhoneNumber;
     }
 }

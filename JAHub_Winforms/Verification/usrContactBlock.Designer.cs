@@ -34,15 +34,15 @@
             this.tblEmailSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.flwPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
             this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
             this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
             this.btnRemoveNumber = new System.Windows.Forms.Button();
-            this.contactBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flwPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
+            this.errContactBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.flwContactBlock.SuspendLayout();
             this.tblEmailSection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBlockErrorProvider)).BeginInit();
             this.flwPhoneNumbers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errContactBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // flwContactBlock
@@ -108,6 +108,16 @@
             this.txtEmail.TabIndex = 1;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
+            // flwPhoneNumbers
+            // 
+            this.flwPhoneNumbers.AutoSize = true;
+            this.flwPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
+            this.flwPhoneNumbers.Location = new System.Drawing.Point(3, 80);
+            this.flwPhoneNumbers.Name = "flwPhoneNumbers";
+            this.flwPhoneNumbers.Size = new System.Drawing.Size(394, 51);
+            this.flwPhoneNumbers.TabIndex = 5;
+            // 
             // usrPhoneNumberBlock1
             // 
             this.usrPhoneNumberBlock1.AutoSize = true;
@@ -145,20 +155,10 @@
             this.btnRemoveNumber.Visible = false;
             this.btnRemoveNumber.Click += new System.EventHandler(this.btnRemoveNumber_Click);
             // 
-            // contactBlockErrorProvider
+            // errContactBlock
             // 
-            this.contactBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.contactBlockErrorProvider.ContainerControl = this;
-            // 
-            // flwPhoneNumbers
-            // 
-            this.flwPhoneNumbers.AutoSize = true;
-            this.flwPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
-            this.flwPhoneNumbers.Location = new System.Drawing.Point(3, 80);
-            this.flwPhoneNumbers.Name = "flwPhoneNumbers";
-            this.flwPhoneNumbers.Size = new System.Drawing.Size(394, 51);
-            this.flwPhoneNumbers.TabIndex = 5;
+            this.errContactBlock.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errContactBlock.ContainerControl = this;
             // 
             // usrContactBlock
             // 
@@ -174,9 +174,9 @@
             this.flwContactBlock.PerformLayout();
             this.tblEmailSection.ResumeLayout(false);
             this.tblEmailSection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBlockErrorProvider)).EndInit();
             this.flwPhoneNumbers.ResumeLayout(false);
             this.flwPhoneNumbers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errContactBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnAddAnotherPhoneNumber;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.ErrorProvider contactBlockErrorProvider;
+        private System.Windows.Forms.ErrorProvider errContactBlock;
         private usrPhoneNumberBlock usrPhoneNumberBlock1;
         private System.Windows.Forms.Button btnRemoveNumber;
         private System.Windows.Forms.FlowLayoutPanel flwPhoneNumbers;

@@ -24,14 +24,14 @@ namespace JAHub_Winforms.Verification
         {
             if (cmbYear.SelectedIndex <= 0)
             {
-                dateBlockErrorProvider.SetIconAlignment(cmbYear, ErrorIconAlignment.MiddleRight);
-                dateBlockErrorProvider.SetError(cmbYear, "Field Cannot be Blank");
+                errDateBlock.SetIconAlignment(cmbYear, ErrorIconAlignment.MiddleRight);
+                errDateBlock.SetError(cmbYear, "Field Cannot be Blank");
 
                 isYearValid = false;
             }
             else
             {
-                dateBlockErrorProvider.SetError(cmbYear, String.Empty);
+                errDateBlock.SetError(cmbYear, String.Empty);
 
                 isYearValid = true;
             }
@@ -41,14 +41,14 @@ namespace JAHub_Winforms.Verification
         {
             if (cmbMonth.SelectedIndex < 0)
             {
-                dateBlockErrorProvider.SetIconAlignment(cmbMonth, ErrorIconAlignment.MiddleRight);
-                dateBlockErrorProvider.SetError(cmbMonth, "Field Cannot be Blank");
+                errDateBlock.SetIconAlignment(cmbMonth, ErrorIconAlignment.MiddleRight);
+                errDateBlock.SetError(cmbMonth, "Field Cannot be Blank");
 
                 isMonthValid = false;
             }
             else
             {
-                dateBlockErrorProvider.SetError(cmbMonth, String.Empty);
+                errDateBlock.SetError(cmbMonth, String.Empty);
 
                 isMonthValid = true;
             }
@@ -116,8 +116,8 @@ namespace JAHub_Winforms.Verification
 
                 cmbDay.EndUpdate();
 
-                dateBlockErrorProvider.SetIconAlignment(cmbDay, ErrorIconAlignment.MiddleRight);
-                dateBlockErrorProvider.SetError(cmbDay, "Ensure that you have chosen the correct date");
+                errDateBlock.SetIconAlignment(cmbDay, ErrorIconAlignment.MiddleRight);
+                errDateBlock.SetError(cmbDay, "Ensure that you have chosen the correct date");
 
                 isDayValid = false;                
             }
@@ -127,14 +127,14 @@ namespace JAHub_Winforms.Verification
         {
             if (cmbDay.SelectedIndex <= 0)
             {
-                dateBlockErrorProvider.SetIconAlignment(cmbDay, ErrorIconAlignment.MiddleRight);
-                dateBlockErrorProvider.SetError(cmbDay, "Field Cannot Be Blank");
+                errDateBlock.SetIconAlignment(cmbDay, ErrorIconAlignment.MiddleRight);
+                errDateBlock.SetError(cmbDay, "Field Cannot Be Blank");
 
                 isDayValid = false;
             }
             else
             {
-                dateBlockErrorProvider.SetError(cmbDay, String.Empty);
+                errDateBlock.SetError(cmbDay, String.Empty);
 
                 isDayValid = true;
             }
@@ -142,17 +142,17 @@ namespace JAHub_Winforms.Verification
 
         private void cmbDay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dateBlockErrorProvider.SetError(cmbDay, String.Empty);
+            errDateBlock.SetError(cmbDay, String.Empty);
         }
 
         private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dateBlockErrorProvider.SetError(cmbMonth, String.Empty);
+            errDateBlock.SetError(cmbMonth, String.Empty);
         }
 
         private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dateBlockErrorProvider.SetError(cmbYear, String.Empty);
+            errDateBlock.SetError(cmbYear, String.Empty);
         }
 
         public bool IsBlockValid()

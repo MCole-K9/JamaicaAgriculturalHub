@@ -26,14 +26,14 @@ namespace JAHub_Winforms.Verification
         {
             if (!mskTrn.MaskCompleted)
             {
-                trnBlockErrorProvider.SetIconAlignment(mskTrn, ErrorIconAlignment.MiddleRight);
-                trnBlockErrorProvider.SetError(mskTrn, "Please Enter a Valid TRN");
+                errTrnBlock.SetIconAlignment(mskTrn, ErrorIconAlignment.MiddleRight);
+                errTrnBlock.SetError(mskTrn, "Please Enter a Valid TRN");
 
             }
             else
             {
                 
-                trnBlockErrorProvider.SetError(mskTrn, "");
+                errTrnBlock.SetError(mskTrn, "");
             }
         }
     }

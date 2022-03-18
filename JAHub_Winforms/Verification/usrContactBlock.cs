@@ -32,18 +32,18 @@ namespace JAHub_Winforms.Verification
             {
                 if (txtEmail.Text.IndexOf(".", txtEmail.Text.IndexOf("@")) > txtEmail.Text.IndexOf("@"))
                 {
-                    contactBlockErrorProvider.SetError(txtEmail, "");
+                    errContactBlock.SetError(txtEmail, "");
                 }
             }
             else if(txtEmail.Text == "")
             {
-                contactBlockErrorProvider.SetError(txtEmail, "");
+                errContactBlock.SetError(txtEmail, "");
             }
             else
             {
                 
-                contactBlockErrorProvider.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
-                contactBlockErrorProvider.SetError(txtEmail, "Must be a valid email, e.g. someone@example.com");
+                errContactBlock.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
+                errContactBlock.SetError(txtEmail, "Must be a valid email, e.g. someone@example.com");
             }
         }
 

@@ -12,10 +12,7 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrProductsBlock : UserControl
     {
-        /* TO-DO
-         * [] write the validation for if a product gets added
-         * [] write the method to wrap entered values into some kind of collection
-         */
+        bool isProductValid;
         public usrProductsBlock()
         {
             InitializeComponent();
@@ -24,13 +21,27 @@ namespace JAHub_Winforms.Verification
         private void txtProduct_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(txtProduct.Text)){
-                productsBlockErrorProvider.SetIconAlignment(txtProduct, ErrorIconAlignment.MiddleRight);
-                productsBlockErrorProvider.SetError(txtProduct, "Field cannot be blank");
+                errProductsBlock.SetIconAlignment(txtProduct, ErrorIconAlignment.MiddleRight);
+                errProductsBlock.SetError(txtProduct, "Field cannot be blank");
+
+                isProductValid = false;
             }
             else
             {
-                productsBlockErrorProvider.SetError(txtProduct, "");
+                errProductsBlock.SetError(txtProduct, "");
+
+                isProductValid = true;
             }
+        }
+
+        public bool IsBlockValid()
+        {
+            if (isProductValid)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

@@ -37,9 +37,9 @@
             this.cmbDay = new System.Windows.Forms.ComboBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.cmbYear = new System.Windows.Forms.ComboBox();
-            this.dateBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errDateBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblDateOfBirth.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBlockErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errDateBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // tblDateOfBirth
@@ -327,10 +327,10 @@
             this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
             this.cmbYear.Validating += new System.ComponentModel.CancelEventHandler(this.cmbYear_Validating);
             // 
-            // dateBlockErrorProvider
+            // errDateBlock
             // 
-            this.dateBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.dateBlockErrorProvider.ContainerControl = this;
+            this.errDateBlock.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errDateBlock.ContainerControl = this;
             // 
             // usrDateOfBirthBlock
             // 
@@ -345,7 +345,7 @@
             this.Size = new System.Drawing.Size(301, 105);
             this.tblDateOfBirth.ResumeLayout(false);
             this.tblDateOfBirth.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBlockErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errDateBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,6 +361,6 @@
         private System.Windows.Forms.ComboBox cmbDay;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.ComboBox cmbYear;
-        private System.Windows.Forms.ErrorProvider dateBlockErrorProvider;
+        private System.Windows.Forms.ErrorProvider errDateBlock;
     }
 }

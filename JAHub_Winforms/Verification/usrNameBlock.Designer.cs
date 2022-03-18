@@ -37,9 +37,9 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
-            this.nameBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errNameBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblNameBlock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nameBlockErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errNameBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // tblNameBlock
@@ -142,10 +142,10 @@
             this.txtLastName.TabIndex = 3;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
-            // nameBlockErrorProvider
+            // errNameBlock
             // 
-            this.nameBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.nameBlockErrorProvider.ContainerControl = this;
+            this.errNameBlock.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errNameBlock.ContainerControl = this;
             // 
             // usrNameBlock
             // 
@@ -160,15 +160,9 @@
             this.Size = new System.Drawing.Size(244, 104);
             this.tblNameBlock.ResumeLayout(false);
             this.tblNameBlock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nameBlockErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errNameBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.SuspendLayout();
-            // 
-            // usrNameBlock
-            // 
-            this.Name = "usrNameBlock";
-            this.ResumeLayout(false);
 
         }
 
@@ -182,6 +176,6 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.ErrorProvider nameBlockErrorProvider;
+        private System.Windows.Forms.ErrorProvider errNameBlock;
     }
 }

@@ -23,14 +23,14 @@ namespace JAHub_Winforms.Verification
             // this doesn't validate properly for some reason, but i'm skipping it
             if (mskPhoneNumber.MaskFull)
             {
-                numberErrorProvider.SetError(mskPhoneNumber, "");
+                errPhoneNumber.SetError(mskPhoneNumber, "");
 
                 isPhoneNumberValid = true;
             }
             else
             {
-                numberErrorProvider.SetIconAlignment(mskPhoneNumber, ErrorIconAlignment.MiddleRight);
-                numberErrorProvider.SetError(mskPhoneNumber, "Please enter a valid number");
+                errPhoneNumber.SetIconAlignment(mskPhoneNumber, ErrorIconAlignment.MiddleRight);
+                errPhoneNumber.SetError(mskPhoneNumber, "Please enter a valid number");
 
                 isPhoneNumberValid = false;
             }
