@@ -28,14 +28,14 @@ namespace JAHub_Winforms.Verification
             if (String.IsNullOrEmpty(txtAddressTown.Text) && (!String.IsNullOrEmpty(txtAddressPostOffice.Text)
                 || !String.IsNullOrEmpty(txtAddressParish.Text)))
             {
-                addressBlockErrorProvider.SetIconAlignment(txtAddressTown, ErrorIconAlignment.MiddleRight);
-                addressBlockErrorProvider.SetError(txtAddressTown, "Field Cannot be Blank unless the entire address is blank");
+                errAddressBlock.SetIconAlignment(txtAddressTown, ErrorIconAlignment.MiddleRight);
+                errAddressBlock.SetError(txtAddressTown, "Field Cannot be Blank unless the entire address is blank");
 
                 isTownValid = false;
             }
             else
             {
-                addressBlockErrorProvider.SetError(txtAddressTown, "");
+                errAddressBlock.SetError(txtAddressTown, "");
 
                 isTownValid = true;
             }
@@ -46,14 +46,14 @@ namespace JAHub_Winforms.Verification
             if (String.IsNullOrEmpty(txtAddressPostOffice.Text) && (!String.IsNullOrEmpty(txtAddressTown.Text)
                 || !String.IsNullOrEmpty(txtAddressParish.Text)))
             {
-                addressBlockErrorProvider.SetIconAlignment(txtAddressPostOffice, ErrorIconAlignment.MiddleRight);
-                addressBlockErrorProvider.SetError(txtAddressPostOffice, "Field Cannot be Blank unless the entire address is blank");
+                errAddressBlock.SetIconAlignment(txtAddressPostOffice, ErrorIconAlignment.MiddleRight);
+                errAddressBlock.SetError(txtAddressPostOffice, "Field Cannot be Blank unless the entire address is blank");
 
                 isPoBoxValid = false;
             }
             else
             {
-                addressBlockErrorProvider.SetError(txtAddressTown, "");
+                errAddressBlock.SetError(txtAddressTown, "");
 
                 isPoBoxValid = true;
             }
@@ -64,14 +64,14 @@ namespace JAHub_Winforms.Verification
             if (String.IsNullOrEmpty(txtAddressParish.Text) && (!String.IsNullOrEmpty(txtAddressPostOffice.Text)
                 || !String.IsNullOrEmpty(txtAddressTown.Text)))
             {
-                addressBlockErrorProvider.SetIconAlignment(txtAddressParish, ErrorIconAlignment.MiddleRight);
-                addressBlockErrorProvider.SetError(txtAddressTown, "Field Cannot be Blank unless the entire address is blank");
+                errAddressBlock.SetIconAlignment(txtAddressParish, ErrorIconAlignment.MiddleRight);
+                errAddressBlock.SetError(txtAddressTown, "Field Cannot be Blank unless the entire address is blank");
 
                 isParishValid = false;
             }
             else
             {
-                addressBlockErrorProvider.SetError(txtAddressParish, "");
+                errAddressBlock.SetError(txtAddressParish, "");
 
                 isParishValid = true;
             }

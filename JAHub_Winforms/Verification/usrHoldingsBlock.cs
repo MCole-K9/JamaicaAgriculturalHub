@@ -24,16 +24,15 @@ namespace JAHub_Winforms.Verification
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
         {
-            flwHoldingBlock.Controls.Add(new usrProductsBlock());
-            flwHoldingBlock.Controls.SetChildIndex(flwHoldingBlock.Controls[flwHoldingBlock.Controls.Count - 1], 2);
+            flwProductsBlock.Controls.Add(new usrProductsBlock());
             btnRemoveLastProduct.Visible = true;
         }
 
         private void btnRemoveLastProduct_Click(object sender, EventArgs e)
         {
-            flwHoldingBlock.Controls.RemoveAt(2);
+            flwProductsBlock.Controls.RemoveAt(flwProductsBlock.Controls.Count-1);
             
-            if (flwHoldingBlock.Controls.Count <= 6)
+            if (flwProductsBlock.Controls.Count == 1)
             {
                 btnRemoveLastProduct.Hide();
             }

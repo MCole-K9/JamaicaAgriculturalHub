@@ -36,9 +36,9 @@
             this.txtAddressTown = new System.Windows.Forms.TextBox();
             this.txtAddressPostOffice = new System.Windows.Forms.TextBox();
             this.txtAddressParish = new System.Windows.Forms.TextBox();
-            this.addressBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errAddressBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblAddressBlock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBlockErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errAddressBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // tblAddressBlock
@@ -131,10 +131,10 @@
             this.txtAddressParish.TabIndex = 5;
             this.txtAddressParish.Validating += new System.ComponentModel.CancelEventHandler(this.txtAddressParish_Validating);
             // 
-            // addressBlockErrorProvider
+            // errAddressBlock
             // 
-            this.addressBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.addressBlockErrorProvider.ContainerControl = this;
+            this.errAddressBlock.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errAddressBlock.ContainerControl = this;
             // 
             // usrAddressBlock
             // 
@@ -148,7 +148,7 @@
             this.Size = new System.Drawing.Size(214, 120);
             this.tblAddressBlock.ResumeLayout(false);
             this.tblAddressBlock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBlockErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errAddressBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +163,6 @@
         private System.Windows.Forms.TextBox txtAddressTown;
         private System.Windows.Forms.TextBox txtAddressPostOffice;
         private System.Windows.Forms.TextBox txtAddressParish;
-        private System.Windows.Forms.ErrorProvider addressBlockErrorProvider;
+        private System.Windows.Forms.ErrorProvider errAddressBlock;
     }
 }
