@@ -13,6 +13,9 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrNameBlock : UserControl
     {
+        bool isFirstNameValid;
+        bool isMiddleNameValid;
+        bool isLastNameValid;
         public usrNameBlock()
         {
             InitializeComponent();
@@ -24,10 +27,14 @@ namespace JAHub_Winforms.Verification
             {
                 errNameBlock.SetIconAlignment(txtFirstName, ErrorIconAlignment.MiddleRight);
                 errNameBlock.SetError(txtFirstName, "Field Cannot be Blank");
+
+                isFirstNameValid = false;
             }
             else
             {
                 errNameBlock.SetError(txtFirstName, String.Empty);
+
+                isFirstNameValid = true;
             }
         }
 
@@ -37,10 +44,14 @@ namespace JAHub_Winforms.Verification
             {
                 errNameBlock.SetIconAlignment(txtMiddleName, ErrorIconAlignment.MiddleRight);
                 errNameBlock.SetError(txtMiddleName, "Field Cannot be Blank");
+
+                isMiddleNameValid = false;
             }
             else
             {
                 errNameBlock.SetError(txtMiddleName, String.Empty);
+
+                isMiddleNameValid = true;
             }
         }
 
@@ -50,20 +61,31 @@ namespace JAHub_Winforms.Verification
             {
                 errNameBlock.SetIconAlignment(txtLastName, ErrorIconAlignment.MiddleRight);
                 errNameBlock.SetError(txtLastName, "Field Cannot be Blank");
+
+                isLastNameValid = false;
             }
             else
             {
                 errNameBlock.SetError(txtLastName, String.Empty);
+
+                isLastNameValid = true;
             }
         }
 
-        
+        public bool IsBlockValid()
+        {
+            if (isFirstNameValid)
+            {
+                if (isMiddleNameValid)
+                {
+                    if (isLastNameValid)
+                    {
+                        return true;
+                    }
+                }
+            }
 
-        // TO DO
-        // ~[~] write method to bring focus to first control to have unfilled field~
-        // [ ] write method to collect everythign up into an object
-        // [x] resolve compiler error regarding control and Validation problems
-        // [x] write method to remove error provider when the field is filled
-        // [x] change error provider to the non-blinking kind
+            return false;
+        }
     }
 }

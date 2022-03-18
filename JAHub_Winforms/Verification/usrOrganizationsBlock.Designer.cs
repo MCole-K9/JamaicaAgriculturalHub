@@ -42,17 +42,20 @@
             // lblOrganizations
             // 
             this.lblOrganizations.AutoSize = true;
+            this.lblOrganizations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrganizations.Location = new System.Drawing.Point(3, 0);
             this.lblOrganizations.Name = "lblOrganizations";
-            this.lblOrganizations.Size = new System.Drawing.Size(89, 16);
+            this.lblOrganizations.Size = new System.Drawing.Size(133, 25);
             this.lblOrganizations.TabIndex = 0;
             this.lblOrganizations.Text = "Organizations";
             // 
             // btnAddAnotherOrganization
             // 
-            this.btnAddAnotherOrganization.Location = new System.Drawing.Point(3, 101);
+            this.btnAddAnotherOrganization.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddAnotherOrganization.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAnotherOrganization.Location = new System.Drawing.Point(125, 143);
             this.btnAddAnotherOrganization.Name = "btnAddAnotherOrganization";
-            this.btnAddAnotherOrganization.Size = new System.Drawing.Size(178, 23);
+            this.btnAddAnotherOrganization.Size = new System.Drawing.Size(256, 32);
             this.btnAddAnotherOrganization.TabIndex = 2;
             this.btnAddAnotherOrganization.Text = "Add Another Organization";
             this.btnAddAnotherOrganization.UseVisualStyleBackColor = true;
@@ -60,9 +63,10 @@
             // 
             // lblPleaseListOrganizations
             // 
-            this.lblPleaseListOrganizations.Location = new System.Drawing.Point(3, 16);
+            this.lblPleaseListOrganizations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPleaseListOrganizations.Location = new System.Drawing.Point(3, 25);
             this.lblPleaseListOrganizations.Name = "lblPleaseListOrganizations";
-            this.lblPleaseListOrganizations.Size = new System.Drawing.Size(500, 48);
+            this.lblPleaseListOrganizations.Size = new System.Drawing.Size(500, 76);
             this.lblPleaseListOrganizations.TabIndex = 1;
             this.lblPleaseListOrganizations.Text = "Please list any relevant Organizations or Commodity Boards you may be a part of, " +
     "(for example: The Coffee Growers Association). If you are not a part of any orga" +
@@ -70,24 +74,28 @@
             // 
             // txtOrganizationEntry
             // 
+            this.txtOrganizationEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrganizationEntry.Location = new System.Drawing.Point(3, 3);
             this.txtOrganizationEntry.Name = "txtOrganizationEntry";
-            this.txtOrganizationEntry.Size = new System.Drawing.Size(175, 22);
+            this.txtOrganizationEntry.Size = new System.Drawing.Size(175, 27);
             this.txtOrganizationEntry.TabIndex = 3;
             // 
             // flwOrganizationBlock
             // 
             this.flwOrganizationBlock.AutoSize = true;
             this.flwOrganizationBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwOrganizationBlock.BackColor = System.Drawing.Color.Transparent;
             this.flwOrganizationBlock.Controls.Add(this.lblOrganizations);
             this.flwOrganizationBlock.Controls.Add(this.lblPleaseListOrganizations);
             this.flwOrganizationBlock.Controls.Add(this.flwOrganizationsTextHolder);
             this.flwOrganizationBlock.Controls.Add(this.btnAddAnotherOrganization);
             this.flwOrganizationBlock.Controls.Add(this.btnRemoveOrganization);
             this.flwOrganizationBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwOrganizationBlock.Location = new System.Drawing.Point(3, 3);
+            this.flwOrganizationBlock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flwOrganizationBlock.Location = new System.Drawing.Point(0, 0);
+            this.flwOrganizationBlock.Margin = new System.Windows.Forms.Padding(0);
             this.flwOrganizationBlock.Name = "flwOrganizationBlock";
-            this.flwOrganizationBlock.Size = new System.Drawing.Size(506, 156);
+            this.flwOrganizationBlock.Size = new System.Drawing.Size(506, 216);
             this.flwOrganizationBlock.TabIndex = 1;
             // 
             // flwOrganizationsTextHolder
@@ -95,16 +103,18 @@
             this.flwOrganizationsTextHolder.AutoSize = true;
             this.flwOrganizationsTextHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwOrganizationsTextHolder.Controls.Add(this.txtOrganizationEntry);
-            this.flwOrganizationsTextHolder.Location = new System.Drawing.Point(3, 67);
+            this.flwOrganizationsTextHolder.Location = new System.Drawing.Point(3, 104);
             this.flwOrganizationsTextHolder.Name = "flwOrganizationsTextHolder";
-            this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(181, 28);
+            this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(181, 33);
             this.flwOrganizationsTextHolder.TabIndex = 0;
             // 
             // btnRemoveOrganization
             // 
-            this.btnRemoveOrganization.Location = new System.Drawing.Point(3, 130);
+            this.btnRemoveOrganization.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnRemoveOrganization.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveOrganization.Location = new System.Drawing.Point(125, 181);
             this.btnRemoveOrganization.Name = "btnRemoveOrganization";
-            this.btnRemoveOrganization.Size = new System.Drawing.Size(178, 23);
+            this.btnRemoveOrganization.Size = new System.Drawing.Size(256, 32);
             this.btnRemoveOrganization.TabIndex = 3;
             this.btnRemoveOrganization.Text = "Remove Last Organization";
             this.btnRemoveOrganization.UseVisualStyleBackColor = true;
@@ -117,9 +127,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flwOrganizationBlock);
             this.Name = "usrOrganizationsBlock";
-            this.Size = new System.Drawing.Size(512, 162);
+            this.Size = new System.Drawing.Size(506, 216);
             this.flwOrganizationBlock.ResumeLayout(false);
             this.flwOrganizationBlock.PerformLayout();
             this.flwOrganizationsTextHolder.ResumeLayout(false);

@@ -46,6 +46,7 @@
             // 
             this.tblNameBlock.AutoSize = true;
             this.tblNameBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblNameBlock.BackColor = System.Drawing.Color.Transparent;
             this.tblNameBlock.ColumnCount = 2;
             this.tblNameBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblNameBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -64,16 +65,18 @@
             this.tblNameBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblNameBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblNameBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblNameBlock.Size = new System.Drawing.Size(244, 104);
+            this.tblNameBlock.Size = new System.Drawing.Size(263, 124);
             this.tblNameBlock.TabIndex = 0;
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
+            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblFirstName.Location = new System.Drawing.Point(19, 26);
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(18, 31);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(72, 26);
+            this.lblFirstName.Size = new System.Drawing.Size(92, 31);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name";
             this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -81,12 +84,13 @@
             // lblNameSectionTitle
             // 
             this.lblNameSectionTitle.AutoSize = true;
+            this.lblNameSectionTitle.BackColor = System.Drawing.Color.Transparent;
             this.tblNameBlock.SetColumnSpan(this.lblNameSectionTitle, 2);
             this.lblNameSectionTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNameSectionTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblNameSectionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameSectionTitle.Location = new System.Drawing.Point(3, 0);
             this.lblNameSectionTitle.Name = "lblNameSectionTitle";
-            this.lblNameSectionTitle.Size = new System.Drawing.Size(238, 26);
+            this.lblNameSectionTitle.Size = new System.Drawing.Size(257, 31);
             this.lblNameSectionTitle.TabIndex = 0;
             this.lblNameSectionTitle.Text = "Name";
             this.lblNameSectionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,10 +98,12 @@
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
+            this.lblMiddleName.BackColor = System.Drawing.Color.Transparent;
             this.lblMiddleName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblMiddleName.Location = new System.Drawing.Point(3, 52);
+            this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiddleName.Location = new System.Drawing.Point(3, 62);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(88, 26);
+            this.lblMiddleName.Size = new System.Drawing.Size(107, 31);
             this.lblMiddleName.TabIndex = 1;
             this.lblMiddleName.Text = "Middle Name";
             this.lblMiddleName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,40 +111,45 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblLastName.Location = new System.Drawing.Point(19, 78);
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(19, 93);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(72, 26);
+            this.lblLastName.Size = new System.Drawing.Size(91, 31);
             this.lblLastName.TabIndex = 2;
             this.lblLastName.Text = "Last Name";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(97, 28);
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(116, 33);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFirstName.MaxLength = 200;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(125, 22);
+            this.txtFirstName.Size = new System.Drawing.Size(125, 27);
             this.txtFirstName.TabIndex = 3;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
             // txtMiddleName
             // 
-            this.txtMiddleName.Location = new System.Drawing.Point(97, 54);
+            this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.Location = new System.Drawing.Point(116, 64);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMiddleName.MaxLength = 200;
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(125, 22);
+            this.txtMiddleName.Size = new System.Drawing.Size(125, 27);
             this.txtMiddleName.TabIndex = 3;
             this.txtMiddleName.Validating += new System.ComponentModel.CancelEventHandler(this.txtMiddleName_Validating);
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(97, 80);
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(116, 95);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLastName.MaxLength = 200;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(125, 22);
+            this.txtLastName.Size = new System.Drawing.Size(125, 27);
             this.txtLastName.TabIndex = 3;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
@@ -153,11 +164,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblNameBlock);
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "usrNameBlock";
-            this.Size = new System.Drawing.Size(244, 104);
+            this.Size = new System.Drawing.Size(263, 124);
             this.tblNameBlock.ResumeLayout(false);
             this.tblNameBlock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errNameBlock)).EndInit();
