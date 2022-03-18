@@ -12,6 +12,10 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
+        bool isLandMeasurementValid;
+        List<bool> isProductListValid;
+        bool isWorkAddressValid;
+
         public usrHoldingsBlock()
         {
             InitializeComponent();
@@ -36,6 +40,16 @@ namespace JAHub_Winforms.Verification
             {
                 btnRemoveLastProduct.Hide();
             }
+        }
+
+        public bool IsBlockValid()
+        {
+            if (usrLandBlock1.IsBlockValid())
+            {
+                return true;
+            }
+            
+            return false;
         }
     }
 }
