@@ -14,7 +14,7 @@ namespace JAHub_Winforms.Verification
     /* TO-DO
      * [x] Put all phone numbers in their own block
      * [x] Rewrite add and remove buttons to put new phone blocks in the new container
-     * [] wrap method to wrap all of the information into an object
+     * [] expose values inside 
     */
     public partial class usrContactBlock : UserControl
     {

@@ -53,7 +53,7 @@ namespace JAHub_Winforms.Verification
                 isMonthValid = true;
             }
 
-            // method to see what month it is and change the number of days accordingly
+            // necessary to set the number of days in the month to change values in cmbDay
             int _daysPerMonth;
 
             switch (cmbMonth.SelectedIndex)

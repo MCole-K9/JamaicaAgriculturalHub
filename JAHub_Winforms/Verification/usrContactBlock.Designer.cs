@@ -49,6 +49,7 @@
             // 
             this.flwContactBlock.AutoSize = true;
             this.flwContactBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwContactBlock.BackColor = System.Drawing.Color.Transparent;
             this.flwContactBlock.Controls.Add(this.lblContantInformation);
             this.flwContactBlock.Controls.Add(this.tblEmailSection);
             this.flwContactBlock.Controls.Add(this.flwPhoneNumbers);
@@ -166,6 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flwContactBlock);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "usrContactBlock";

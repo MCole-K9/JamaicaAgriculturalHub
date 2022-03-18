@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace JAHub_Winforms.Verification
 {
     /* TO-DO
-     * [] write the validation for the trn
-     * []
+     * [x] write the validation for the trn
+     * [] write IsBlockValid() method for TRN Block
+     * [] expose value inside of mskTrn for submission
      */
 
     public partial class usrTrnBlock : UserControl
