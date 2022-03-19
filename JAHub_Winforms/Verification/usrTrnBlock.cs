@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace JAHub_Winforms.Verification
 {
     /* TO-DO
-     * [] write the validation for the trn
-     * []
+     * [x] write the validation for the trn
+     * [] write IsBlockValid() method for TRN Block
+     * [] expose value inside of mskTrn for submission
      */
 
     public partial class usrTrnBlock : UserControl
@@ -26,14 +27,14 @@ namespace JAHub_Winforms.Verification
         {
             if (!mskTrn.MaskCompleted)
             {
-                trnBlockErrorProvider.SetIconAlignment(mskTrn, ErrorIconAlignment.MiddleRight);
-                trnBlockErrorProvider.SetError(mskTrn, "Please Enter a Valid TRN");
+                errTrnBlock.SetIconAlignment(mskTrn, ErrorIconAlignment.MiddleRight);
+                errTrnBlock.SetError(mskTrn, "Please Enter a Valid TRN");
 
             }
             else
             {
                 
-                trnBlockErrorProvider.SetError(mskTrn, "");
+                errTrnBlock.SetError(mskTrn, "");
             }
         }
     }

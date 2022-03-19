@@ -32,9 +32,9 @@
             this.tblTrnBlock = new System.Windows.Forms.TableLayoutPanel();
             this.lblTrn = new System.Windows.Forms.Label();
             this.mskTrn = new System.Windows.Forms.MaskedTextBox();
-            this.trnBlockErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errTrnBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblTrnBlock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trnBlockErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTrnBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // tblTrnBlock
@@ -72,10 +72,10 @@
             this.mskTrn.TabIndex = 1;
             this.mskTrn.Validating += new System.ComponentModel.CancelEventHandler(this.mskTrn_Validating);
             // 
-            // trnBlockErrorProvider
+            // errTrnBlock
             // 
-            this.trnBlockErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.trnBlockErrorProvider.ContainerControl = this;
+            this.errTrnBlock.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errTrnBlock.ContainerControl = this;
             // 
             // usrTrnBlock
             // 
@@ -88,7 +88,7 @@
             this.Size = new System.Drawing.Size(210, 28);
             this.tblTrnBlock.ResumeLayout(false);
             this.tblTrnBlock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trnBlockErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTrnBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +99,6 @@
         private System.Windows.Forms.TableLayoutPanel tblTrnBlock;
         private System.Windows.Forms.Label lblTrn;
         private System.Windows.Forms.MaskedTextBox mskTrn;
-        private System.Windows.Forms.ErrorProvider trnBlockErrorProvider;
+        private System.Windows.Forms.ErrorProvider errTrnBlock;
     }
 }

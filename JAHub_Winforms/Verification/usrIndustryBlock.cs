@@ -12,6 +12,7 @@ namespace JAHub_Winforms.Verifcation
 {
     public partial class usrIndustryBlock : UserControl
     {
+        bool isChoiceSelected;
         public usrIndustryBlock()
         {
             InitializeComponent();
@@ -23,29 +24,43 @@ namespace JAHub_Winforms.Verifcation
         // B. at the end when the user tried to submit
         private void rdoIndustryYes_Validating(object sender, CancelEventArgs e)
         {
-            if (!rdoIndustryNo.Checked && !rdoIndustryYes.Checked)
-            {
-                errIndustryBlock.SetIconAlignment(lblHeavyMachinery, ErrorIconAlignment.MiddleRight);
-                errIndustryBlock.SetError(lblHeavyMachinery, "Please select 'Yes' or 'No'");
-            }
-            else
-            {
-                errIndustryBlock.SetError(lblHeavyMachinery, "");
-            }
+            validateRdoButtons();
         }
 
         // same thing for this function
         private void rdoIndustryNo_Validating(object sender, CancelEventArgs e)
         {
+            validateRdoButtons();
+        }
+
+        public void validateRdoButtons()
+        {
             if (!rdoIndustryNo.Checked && !rdoIndustryYes.Checked)
             {
                 errIndustryBlock.SetIconAlignment(lblHeavyMachinery, ErrorIconAlignment.MiddleRight);
                 errIndustryBlock.SetError(lblHeavyMachinery, "Please select 'Yes' or 'No'");
+
+                isChoiceSelected = false;
             }
             else
             {
                 errIndustryBlock.SetError(lblHeavyMachinery, "");
+
+                isChoiceSelected = true;
             }
+        }
+
+
+        public bool IsBlockValid()
+        {
+            if (isChoiceSelected)
+            {
+                return true;
+            }
+
+            validateRdoButtons();
+
+            return false;
         }
     }
 }

@@ -31,9 +31,9 @@
             this.flwRadaRegister = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRegisterWithRada = new System.Windows.Forms.Label();
             this.tblNewOrConnectOptions = new System.Windows.Forms.TableLayoutPanel();
-            this.btnNewRegistration = new System.Windows.Forms.Button();
             this.btnConnectExistingAccount = new System.Windows.Forms.Button();
             this.lblOr = new System.Windows.Forms.Label();
+            this.btnNewRegistration = new System.Windows.Forms.Button();
             this.flwFormEntryControls = new System.Windows.Forms.FlowLayoutPanel();
             this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
             this.usrDateOfBirthBlock1 = new JAHub_Winforms.Verification.usrDateOfBirthBlock();
@@ -41,6 +41,7 @@
             this.usrTrnBlock1 = new JAHub_Winforms.Verification.usrTrnBlock();
             this.usrUploadImageBlock1 = new JAHub_Winforms.Verification.usrUploadImageBlock();
             this.usrIndustryBlock1 = new JAHub_Winforms.Verifcation.usrIndustryBlock();
+            this.usrHoldingsBlock2 = new JAHub_Winforms.Verification.usrHoldingsBlock();
             this.usrOrganizationsBlock1 = new JAHub_Winforms.Verification.usrOrganizationsBlock();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.flwRadaRegister.SuspendLayout();
@@ -50,8 +51,11 @@
             // 
             // flwRadaRegister
             // 
+            this.flwRadaRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flwRadaRegister.AutoSize = true;
             this.flwRadaRegister.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwRadaRegister.BackColor = System.Drawing.Color.Transparent;
             this.flwRadaRegister.Controls.Add(this.lblRegisterWithRada);
             this.flwRadaRegister.Controls.Add(this.tblNewOrConnectOptions);
             this.flwRadaRegister.Controls.Add(this.flwFormEntryControls);
@@ -60,14 +64,16 @@
             this.flwRadaRegister.Location = new System.Drawing.Point(0, 0);
             this.flwRadaRegister.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaRegister.Name = "flwRadaRegister";
-            this.flwRadaRegister.Size = new System.Drawing.Size(524, 919);
+            this.flwRadaRegister.Size = new System.Drawing.Size(576, 1384);
             this.flwRadaRegister.TabIndex = 0;
+            this.flwRadaRegister.WrapContents = false;
             // 
             // lblRegisterWithRada
             // 
+            this.lblRegisterWithRada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRegisterWithRada.AutoSize = true;
             this.lblRegisterWithRada.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegisterWithRada.Location = new System.Drawing.Point(3, 0);
+            this.lblRegisterWithRada.Location = new System.Drawing.Point(88, 0);
             this.lblRegisterWithRada.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.lblRegisterWithRada.Name = "lblRegisterWithRada";
             this.lblRegisterWithRada.Size = new System.Drawing.Size(400, 46);
@@ -76,14 +82,15 @@
             // 
             // tblNewOrConnectOptions
             // 
+            this.tblNewOrConnectOptions.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tblNewOrConnectOptions.ColumnCount = 3;
             this.tblNewOrConnectOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblNewOrConnectOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblNewOrConnectOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tblNewOrConnectOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblNewOrConnectOptions.Controls.Add(this.btnConnectExistingAccount, 2, 0);
             this.tblNewOrConnectOptions.Controls.Add(this.lblOr, 1, 0);
             this.tblNewOrConnectOptions.Controls.Add(this.btnNewRegistration, 0, 0);
-            this.tblNewOrConnectOptions.Location = new System.Drawing.Point(3, 61);
+            this.tblNewOrConnectOptions.Location = new System.Drawing.Point(65, 61);
             this.tblNewOrConnectOptions.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.tblNewOrConnectOptions.Name = "tblNewOrConnectOptions";
             this.tblNewOrConnectOptions.RowCount = 1;
@@ -91,23 +98,11 @@
             this.tblNewOrConnectOptions.Size = new System.Drawing.Size(445, 75);
             this.tblNewOrConnectOptions.TabIndex = 0;
             // 
-            // btnNewRegistration
-            // 
-            this.btnNewRegistration.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnNewRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewRegistration.Location = new System.Drawing.Point(31, 11);
-            this.btnNewRegistration.Name = "btnNewRegistration";
-            this.btnNewRegistration.Size = new System.Drawing.Size(172, 52);
-            this.btnNewRegistration.TabIndex = 0;
-            this.btnNewRegistration.Text = "New Registration";
-            this.btnNewRegistration.UseVisualStyleBackColor = true;
-            this.btnNewRegistration.Click += new System.EventHandler(this.btnNewRegistration_Click);
-            // 
             // btnConnectExistingAccount
             // 
             this.btnConnectExistingAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnConnectExistingAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectExistingAccount.Location = new System.Drawing.Point(241, 11);
+            this.btnConnectExistingAccount.Location = new System.Drawing.Point(249, 11);
             this.btnConnectExistingAccount.Name = "btnConnectExistingAccount";
             this.btnConnectExistingAccount.Size = new System.Drawing.Size(180, 52);
             this.btnConnectExistingAccount.TabIndex = 1;
@@ -119,66 +114,83 @@
             // 
             this.lblOr.AutoSize = true;
             this.lblOr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOr.Location = new System.Drawing.Point(209, 0);
+            this.lblOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOr.Location = new System.Drawing.Point(201, 0);
             this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(26, 75);
+            this.lblOr.Size = new System.Drawing.Size(42, 75);
             this.lblOr.TabIndex = 2;
             this.lblOr.Text = "or";
             this.lblOr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnNewRegistration
+            // 
+            this.btnNewRegistration.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnNewRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewRegistration.Location = new System.Drawing.Point(23, 11);
+            this.btnNewRegistration.Name = "btnNewRegistration";
+            this.btnNewRegistration.Size = new System.Drawing.Size(172, 52);
+            this.btnNewRegistration.TabIndex = 0;
+            this.btnNewRegistration.Text = "New Registration";
+            this.btnNewRegistration.UseVisualStyleBackColor = true;
+            this.btnNewRegistration.Click += new System.EventHandler(this.btnNewRegistration_Click);
+            // 
             // flwFormEntryControls
             // 
             this.flwFormEntryControls.AutoSize = true;
+            this.flwFormEntryControls.BackColor = System.Drawing.Color.Transparent;
             this.flwFormEntryControls.Controls.Add(this.usrNameBlock1);
             this.flwFormEntryControls.Controls.Add(this.usrDateOfBirthBlock1);
             this.flwFormEntryControls.Controls.Add(this.usrContactBlock1);
             this.flwFormEntryControls.Controls.Add(this.usrTrnBlock1);
             this.flwFormEntryControls.Controls.Add(this.usrUploadImageBlock1);
             this.flwFormEntryControls.Controls.Add(this.usrIndustryBlock1);
+            this.flwFormEntryControls.Controls.Add(this.usrHoldingsBlock2);
             this.flwFormEntryControls.Controls.Add(this.usrOrganizationsBlock1);
             this.flwFormEntryControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwFormEntryControls.Location = new System.Drawing.Point(3, 151);
             this.flwFormEntryControls.Name = "flwFormEntryControls";
-            this.flwFormEntryControls.Size = new System.Drawing.Size(518, 719);
+            this.flwFormEntryControls.Size = new System.Drawing.Size(570, 1192);
             this.flwFormEntryControls.TabIndex = 2;
+            this.flwFormEntryControls.WrapContents = false;
             // 
             // usrNameBlock1
             // 
             this.usrNameBlock1.AutoSize = true;
             this.usrNameBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrNameBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrNameBlock1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.usrNameBlock1.Location = new System.Drawing.Point(3, 2);
             this.usrNameBlock1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usrNameBlock1.Name = "usrNameBlock1";
-            this.usrNameBlock1.Size = new System.Drawing.Size(244, 104);
+            this.usrNameBlock1.Size = new System.Drawing.Size(263, 124);
             this.usrNameBlock1.TabIndex = 0;
             // 
             // usrDateOfBirthBlock1
             // 
             this.usrDateOfBirthBlock1.AutoSize = true;
             this.usrDateOfBirthBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrDateOfBirthBlock1.Location = new System.Drawing.Point(0, 108);
+            this.usrDateOfBirthBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrDateOfBirthBlock1.Location = new System.Drawing.Point(0, 128);
             this.usrDateOfBirthBlock1.Margin = new System.Windows.Forms.Padding(0);
             this.usrDateOfBirthBlock1.Name = "usrDateOfBirthBlock1";
-            this.usrDateOfBirthBlock1.Size = new System.Drawing.Size(301, 93);
+            this.usrDateOfBirthBlock1.Size = new System.Drawing.Size(301, 105);
             this.usrDateOfBirthBlock1.TabIndex = 1;
             // 
             // usrContactBlock1
             // 
             this.usrContactBlock1.AutoSize = true;
             this.usrContactBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrContactBlock1.Location = new System.Drawing.Point(0, 201);
+            this.usrContactBlock1.Location = new System.Drawing.Point(0, 233);
             this.usrContactBlock1.Margin = new System.Windows.Forms.Padding(0);
             this.usrContactBlock1.Name = "usrContactBlock1";
-            this.usrContactBlock1.Size = new System.Drawing.Size(314, 123);
+            this.usrContactBlock1.Size = new System.Drawing.Size(400, 172);
             this.usrContactBlock1.TabIndex = 2;
             // 
             // usrTrnBlock1
             // 
             this.usrTrnBlock1.AutoSize = true;
             this.usrTrnBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrTrnBlock1.Location = new System.Drawing.Point(3, 327);
+            this.usrTrnBlock1.Location = new System.Drawing.Point(3, 408);
             this.usrTrnBlock1.Name = "usrTrnBlock1";
             this.usrTrnBlock1.Size = new System.Drawing.Size(210, 28);
             this.usrTrnBlock1.TabIndex = 3;
@@ -187,7 +199,7 @@
             // 
             this.usrUploadImageBlock1.AutoSize = true;
             this.usrUploadImageBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrUploadImageBlock1.Location = new System.Drawing.Point(3, 361);
+            this.usrUploadImageBlock1.Location = new System.Drawing.Point(3, 442);
             this.usrUploadImageBlock1.Name = "usrUploadImageBlock1";
             this.usrUploadImageBlock1.Size = new System.Drawing.Size(318, 112);
             this.usrUploadImageBlock1.TabIndex = 5;
@@ -196,25 +208,42 @@
             // 
             this.usrIndustryBlock1.AutoSize = true;
             this.usrIndustryBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrIndustryBlock1.Location = new System.Drawing.Point(3, 479);
+            this.usrIndustryBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrIndustryBlock1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrIndustryBlock1.Location = new System.Drawing.Point(4, 561);
+            this.usrIndustryBlock1.Margin = new System.Windows.Forms.Padding(4);
+            this.usrIndustryBlock1.MaximumSize = new System.Drawing.Size(562, 0);
             this.usrIndustryBlock1.Name = "usrIndustryBlock1";
-            this.usrIndustryBlock1.Size = new System.Drawing.Size(353, 98);
+            this.usrIndustryBlock1.Size = new System.Drawing.Size(562, 125);
             this.usrIndustryBlock1.TabIndex = 4;
+            // 
+            // usrHoldingsBlock2
+            // 
+            this.usrHoldingsBlock2.AutoSize = true;
+            this.usrHoldingsBlock2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrHoldingsBlock2.BackColor = System.Drawing.Color.Transparent;
+            this.usrHoldingsBlock2.Location = new System.Drawing.Point(3, 693);
+            this.usrHoldingsBlock2.Name = "usrHoldingsBlock2";
+            this.usrHoldingsBlock2.Size = new System.Drawing.Size(378, 312);
+            this.usrHoldingsBlock2.TabIndex = 7;
             // 
             // usrOrganizationsBlock1
             // 
             this.usrOrganizationsBlock1.AutoSize = true;
             this.usrOrganizationsBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrOrganizationsBlock1.Location = new System.Drawing.Point(3, 583);
+            this.usrOrganizationsBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrOrganizationsBlock1.Location = new System.Drawing.Point(3, 1011);
             this.usrOrganizationsBlock1.Name = "usrOrganizationsBlock1";
-            this.usrOrganizationsBlock1.Size = new System.Drawing.Size(512, 133);
+            this.usrOrganizationsBlock1.Size = new System.Drawing.Size(506, 178);
             this.usrOrganizationsBlock1.TabIndex = 6;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(3, 876);
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(251, 1349);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(74, 40);
+            this.btnSubmit.Size = new System.Drawing.Size(74, 32);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -225,7 +254,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(842, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(606, 450);
             this.Controls.Add(this.flwRadaRegister);
             this.Name = "FrmRadaRegister";
             this.Text = "Register With RADA";
@@ -257,5 +287,6 @@
         private Verification.usrUploadImageBlock usrUploadImageBlock1;
         private Verification.usrOrganizationsBlock usrOrganizationsBlock1;
         private System.Windows.Forms.Button btnSubmit;
+        private Verification.usrHoldingsBlock usrHoldingsBlock2;
     }
 }

@@ -12,13 +12,15 @@ using JAHubLib;
 namespace JAHub_Winforms.Verification
 {
     /* TO-DO
-     * [x] write email validation
-     * [x] write the code to add a phone number block on click
-     * [x] write a method to remove a phone number block when not necessary
-     * [] wrap method to wrap all of the information into an object
+     * [x] Put all phone numbers in their own block
+     * [x] Rewrite add and remove buttons to put new phone blocks in the new container
+     * [] expose values inside 
     */
     public partial class usrContactBlock : UserControl
     {
+        bool isEmailValid;
+        List<bool> isPhoneValid;
+
         public usrContactBlock()
         {
             InitializeComponent();
@@ -30,37 +32,47 @@ namespace JAHub_Winforms.Verification
             {
                 if (txtEmail.Text.IndexOf(".", txtEmail.Text.IndexOf("@")) > txtEmail.Text.IndexOf("@"))
                 {
-                    contactBlockErrorProvider.SetError(txtEmail, "");
+                    errContactBlock.SetError(txtEmail, "");
                 }
             }
             else if(txtEmail.Text == "")
             {
-                contactBlockErrorProvider.SetError(txtEmail, "");
+                errContactBlock.SetError(txtEmail, "");
             }
             else
             {
                 
-                contactBlockErrorProvider.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
-                contactBlockErrorProvider.SetError(txtEmail, "Must be a valid email, e.g. someone@example.com");
+                errContactBlock.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
+                errContactBlock.SetError(txtEmail, "Must be a valid email, e.g. someone@example.com");
             }
         }
 
         private void btnAddAnotherPhoneNumber_Click(object sender, EventArgs e)
         {
 
-            flwContactBlock.Controls.Add( new usrPhoneNumberBlock());
+            flwPhoneNumbers.Controls.Add( new usrPhoneNumberBlock());
             btnRemoveNumber.Visible = true;
-            flwContactBlock.Controls.SetChildIndex(flwContactBlock.Controls[flwContactBlock.Controls.Count-1], 3);
         }
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            flwContactBlock.Controls.RemoveAt(flwContactBlock.Controls.Count - 3);
+            flwPhoneNumbers.Controls.RemoveAt(flwContactBlock.Controls.Count - 1);
             
-            if(flwContactBlock.Controls.Count <= 5)
+            if(flwPhoneNumbers.Controls.Count == 1)
             {
                 btnRemoveNumber.Hide();
             }
+        }
+
+        public bool IsBlockValid()
+        {
+            if (isEmailValid)
+            {
+                
+                return true;
+            }
+
+            return false;
         }
     }
 }

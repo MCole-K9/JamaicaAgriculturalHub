@@ -63,7 +63,7 @@ namespace JAHubLib
         Bitmap ProfilePicture { get; set; }
         String TaxRegistrationNumber { get; set; }
 
-        int radaPhase;
+        int RadaPhase { get; set; }
 
 
         public FarmerRecord()
