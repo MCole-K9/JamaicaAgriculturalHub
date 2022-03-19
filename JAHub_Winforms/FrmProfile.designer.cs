@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelHomeContainer = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSecurity = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnMyAccount = new System.Windows.Forms.Button();
             this.btnProfileHome = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelHomeContainer = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,93 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(218, 548);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogout.Location = new System.Drawing.Point(0, 355);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(218, 39);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = " Logout";
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
+            // btnSecurity
+            // 
+            this.btnSecurity.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSecurity.FlatAppearance.BorderSize = 0;
+            this.btnSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecurity.ForeColor = System.Drawing.Color.White;
+            this.btnSecurity.Image = ((System.Drawing.Image)(resources.GetObject("btnSecurity.Image")));
+            this.btnSecurity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSecurity.Location = new System.Drawing.Point(0, 207);
+            this.btnSecurity.Name = "btnSecurity";
+            this.btnSecurity.Size = new System.Drawing.Size(218, 39);
+            this.btnSecurity.TabIndex = 4;
+            this.btnSecurity.Text = "  Security";
+            this.btnSecurity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSecurity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSecurity.UseVisualStyleBackColor = true;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 168);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(218, 39);
+            this.btnDashboard.TabIndex = 3;
+            this.btnDashboard.Text = "  Dashboard";
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
+            // 
+            // btnMyAccount
+            // 
+            this.btnMyAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMyAccount.FlatAppearance.BorderSize = 0;
+            this.btnMyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyAccount.ForeColor = System.Drawing.Color.White;
+            this.btnMyAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnMyAccount.Image")));
+            this.btnMyAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyAccount.Location = new System.Drawing.Point(0, 129);
+            this.btnMyAccount.Name = "btnMyAccount";
+            this.btnMyAccount.Size = new System.Drawing.Size(218, 39);
+            this.btnMyAccount.TabIndex = 2;
+            this.btnMyAccount.Text = "  My Account";
+            this.btnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMyAccount.UseVisualStyleBackColor = true;
+            this.btnMyAccount.Click += new System.EventHandler(this.btnMyAccount_Click);
+            // 
+            // btnProfileHome
+            // 
+            this.btnProfileHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProfileHome.FlatAppearance.BorderColor = System.Drawing.Color.Turquoise;
+            this.btnProfileHome.FlatAppearance.BorderSize = 0;
+            this.btnProfileHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfileHome.ForeColor = System.Drawing.Color.White;
+            this.btnProfileHome.Image = ((System.Drawing.Image)(resources.GetObject("btnProfileHome.Image")));
+            this.btnProfileHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfileHome.Location = new System.Drawing.Point(0, 90);
+            this.btnProfileHome.Name = "btnProfileHome";
+            this.btnProfileHome.Size = new System.Drawing.Size(218, 39);
+            this.btnProfileHome.TabIndex = 1;
+            this.btnProfileHome.Text = "  Home";
+            this.btnProfileHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfileHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProfileHome.UseVisualStyleBackColor = true;
+            this.btnProfileHome.Click += new System.EventHandler(this.btnProfileHome_Click);
             // 
             // panel1
             // 
@@ -93,6 +180,16 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Jamaica Agricultural Hub";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // button1
             // 
             this.button1.Enabled = false;
@@ -111,102 +208,6 @@
             this.panelHomeContainer.Name = "panelHomeContainer";
             this.panelHomeContainer.Size = new System.Drawing.Size(904, 533);
             this.panelHomeContainer.TabIndex = 1;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(0, 355);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(218, 39);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = " Logout";
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // btnSecurity
-            // 
-            this.btnSecurity.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSecurity.FlatAppearance.BorderSize = 0;
-            this.btnSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSecurity.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSecurity.Image = ((System.Drawing.Image)(resources.GetObject("btnSecurity.Image")));
-            this.btnSecurity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSecurity.Location = new System.Drawing.Point(0, 207);
-            this.btnSecurity.Name = "btnSecurity";
-            this.btnSecurity.Size = new System.Drawing.Size(218, 39);
-            this.btnSecurity.TabIndex = 4;
-            this.btnSecurity.Text = "  Security";
-            this.btnSecurity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSecurity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSecurity.UseVisualStyleBackColor = true;
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 168);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(218, 39);
-            this.btnDashboard.TabIndex = 3;
-            this.btnDashboard.Text = "  Dashboard";
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
-            // 
-            // btnMyAccount
-            // 
-            this.btnMyAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMyAccount.FlatAppearance.BorderSize = 0;
-            this.btnMyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyAccount.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMyAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnMyAccount.Image")));
-            this.btnMyAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAccount.Location = new System.Drawing.Point(0, 129);
-            this.btnMyAccount.Name = "btnMyAccount";
-            this.btnMyAccount.Size = new System.Drawing.Size(218, 39);
-            this.btnMyAccount.TabIndex = 2;
-            this.btnMyAccount.Text = "  My Account";
-            this.btnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyAccount.UseVisualStyleBackColor = true;
-            this.btnMyAccount.Click += new System.EventHandler(this.btnMyAccount_Click);
-            // 
-            // btnProfileHome
-            // 
-            this.btnProfileHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProfileHome.FlatAppearance.BorderSize = 0;
-            this.btnProfileHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfileHome.ForeColor = System.Drawing.Color.Transparent;
-            this.btnProfileHome.Image = ((System.Drawing.Image)(resources.GetObject("btnProfileHome.Image")));
-            this.btnProfileHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfileHome.Location = new System.Drawing.Point(0, 90);
-            this.btnProfileHome.Name = "btnProfileHome";
-            this.btnProfileHome.Size = new System.Drawing.Size(218, 39);
-            this.btnProfileHome.TabIndex = 1;
-            this.btnProfileHome.Text = "  Home";
-            this.btnProfileHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfileHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProfileHome.UseVisualStyleBackColor = true;
-            this.btnProfileHome.Click += new System.EventHandler(this.btnProfileHome_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // FrmProfile
             // 

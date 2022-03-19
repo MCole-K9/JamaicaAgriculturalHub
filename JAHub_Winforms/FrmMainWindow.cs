@@ -57,7 +57,11 @@ namespace JAHub_Winforms
                 frmProfile.MdiParent = this;
                 frmProfile.Show();
             }
-            
+            else
+            {
+                MessageBox.Show("An Instance is Already Running");
+            }
+
         }
     }
 }
