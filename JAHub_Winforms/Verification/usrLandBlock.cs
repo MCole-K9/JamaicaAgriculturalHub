@@ -13,6 +13,8 @@ namespace JAHub_Winforms.Verification
     public partial class usrLandBlock : UserControl
     {
         bool isLandBlockValid;
+
+        public decimal LandMeasurement => nudLandMeasurement.Value;
         public usrLandBlock()
         {
             InitializeComponent();
@@ -48,6 +50,18 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            if (!usrAddressBlock1.IsBlockValid())
+            {
+                usrAddressBlock1.SetControlFocus();
+            }
+            else if (!isLandBlockValid)
+            {
+                nudLandMeasurement.Focus();
+            }
         }
     }
 }
