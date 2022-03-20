@@ -13,6 +13,14 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrNameBlock : UserControl
     {
+        bool isFirstNameValid;
+        bool isMiddleNameValid;
+        bool isLastNameValid;
+
+        public String FirstName => txtFirstName.Text;
+        public String MiddleName => txtMiddleName.Text;
+        public String LastName => txtLastName.Text;
+
         public usrNameBlock()
         {
             InitializeComponent();
@@ -22,12 +30,16 @@ namespace JAHub_Winforms.Verification
         {
             if (txtFirstName.Text == "")
             {
-                nameBlockErrorProvider.SetIconAlignment(txtFirstName, ErrorIconAlignment.MiddleRight);
-                nameBlockErrorProvider.SetError(txtFirstName, "Field Cannot be Blank");
+                errNameBlock.SetIconAlignment(txtFirstName, ErrorIconAlignment.MiddleRight);
+                errNameBlock.SetError(txtFirstName, "Field Cannot be Blank");
+
+                isFirstNameValid = false;
             }
             else
             {
-                nameBlockErrorProvider.SetError(txtFirstName, String.Empty);
+                errNameBlock.SetError(txtFirstName, String.Empty);
+
+                isFirstNameValid = true;
             }
         }
 
@@ -35,12 +47,16 @@ namespace JAHub_Winforms.Verification
         {
             if (txtMiddleName.Text == "")
             {
-                nameBlockErrorProvider.SetIconAlignment(txtMiddleName, ErrorIconAlignment.MiddleRight);
-                nameBlockErrorProvider.SetError(txtMiddleName, "Field Cannot be Blank");
+                errNameBlock.SetIconAlignment(txtMiddleName, ErrorIconAlignment.MiddleRight);
+                errNameBlock.SetError(txtMiddleName, "Field Cannot be Blank");
+
+                isMiddleNameValid = false;
             }
             else
             {
-                nameBlockErrorProvider.SetError(txtMiddleName, String.Empty);
+                errNameBlock.SetError(txtMiddleName, String.Empty);
+
+                isMiddleNameValid = true;
             }
         }
 
@@ -48,22 +64,49 @@ namespace JAHub_Winforms.Verification
         {
             if (txtLastName.Text == "")
             {
-                nameBlockErrorProvider.SetIconAlignment(txtLastName, ErrorIconAlignment.MiddleRight);
-                nameBlockErrorProvider.SetError(txtLastName, "Field Cannot be Blank");
+                errNameBlock.SetIconAlignment(txtLastName, ErrorIconAlignment.MiddleRight);
+                errNameBlock.SetError(txtLastName, "Field Cannot be Blank");
+
+                isLastNameValid = false;
             }
             else
             {
-                nameBlockErrorProvider.SetError(txtLastName, String.Empty);
+                errNameBlock.SetError(txtLastName, String.Empty);
+
+                isLastNameValid = true;
             }
         }
 
-        
+        public bool IsBlockValid()
+        {
+            if (isFirstNameValid)
+            {
+                if (isMiddleNameValid)
+                {
+                    if (isLastNameValid)
+                    {
+                        return true;
+                    }
+                }
+            }
 
-        // TO DO
-        // ~[~] write method to bring focus to first control to have unfilled field~
-        // [ ] write method to collect everythign up into an object
-        // [x] resolve compiler error regarding control and Validation problems
-        // [x] write method to remove error provider when the field is filled
-        // [x] change error provider to the non-blinking kind
+            return false;
+        }
+
+        public void SetControlFocus()
+        {
+            if (!isFirstNameValid)
+            {
+                txtFirstName.Focus();
+            }
+            else if (!isMiddleNameValid)
+            {
+                txtMiddleName.Focus();
+            }
+            else if (!isLastNameValid)
+            {
+                txtLastName.Focus();
+            }
+        }
     }
 }

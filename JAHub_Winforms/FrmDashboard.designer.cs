@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelNumberofOrders = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTotalNumberofOrders = new System.Windows.Forms.Label();
             this.lblNumberofOrderslabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.lblTotalRevnuelabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblTotalProfits = new System.Windows.Forms.Label();
             this.lblTotalProfitslabel = new System.Windows.Forms.Label();
             this.chartGrossRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -55,15 +58,15 @@
             this.dgvProductsShort = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelNumberofOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBestSellers)).BeginInit();
             this.panel4.SuspendLayout();
@@ -71,9 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductsShort)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelNumberofOrders
@@ -86,6 +86,16 @@
             this.panelNumberofOrders.Name = "panelNumberofOrders";
             this.panelNumberofOrders.Size = new System.Drawing.Size(225, 53);
             this.panelNumberofOrders.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::JAHub_Winforms.Properties.Resources.order_delivery;
+            this.pictureBox2.Location = new System.Drawing.Point(9, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // lblTotalNumberofOrders
             // 
@@ -118,6 +128,16 @@
             this.panel2.Size = new System.Drawing.Size(337, 53);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::JAHub_Winforms.Properties.Resources.revenue;
+            this.pictureBox3.Location = new System.Drawing.Point(10, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
             // lblTotalRevenue
             // 
             this.lblTotalRevenue.AutoSize = true;
@@ -149,6 +169,16 @@
             this.panel3.Size = new System.Drawing.Size(302, 53);
             this.panel3.TabIndex = 2;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::JAHub_Winforms.Properties.Resources.profit;
+            this.pictureBox4.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
             // lblTotalProfits
             // 
             this.lblTotalProfits.AutoSize = true;
@@ -171,51 +201,51 @@
             // 
             // chartGrossRevenue
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartGrossRevenue.ChartAreas.Add(chartArea3);
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend3.Name = "Legend1";
-            this.chartGrossRevenue.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartGrossRevenue.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Name = "Legend1";
+            this.chartGrossRevenue.Legends.Add(legend1);
             this.chartGrossRevenue.Location = new System.Drawing.Point(346, 149);
             this.chartGrossRevenue.Name = "chartGrossRevenue";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartGrossRevenue.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartGrossRevenue.Series.Add(series1);
             this.chartGrossRevenue.Size = new System.Drawing.Size(664, 227);
             this.chartGrossRevenue.TabIndex = 3;
             this.chartGrossRevenue.Text = "chart1";
-            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.Name = "Title1";
-            title3.Text = "Gross Revenue";
-            this.chartGrossRevenue.Titles.Add(title3);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Gross Revenue";
+            this.chartGrossRevenue.Titles.Add(title1);
             // 
             // chartBestSellers
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartBestSellers.ChartAreas.Add(chartArea4);
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.Name = "Legend1";
-            this.chartBestSellers.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartBestSellers.ChartAreas.Add(chartArea2);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.chartBestSellers.Legends.Add(legend2);
             this.chartBestSellers.Location = new System.Drawing.Point(-8, 147);
             this.chartBestSellers.Name = "chartBestSellers";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            series4.IsValueShownAsLabel = true;
-            series4.LabelForeColor = System.Drawing.Color.White;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartBestSellers.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartBestSellers.Series.Add(series2);
             this.chartBestSellers.Size = new System.Drawing.Size(348, 437);
             this.chartBestSellers.TabIndex = 4;
             this.chartBestSellers.Text = "chart2";
-            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Title1";
-            title4.Text = "Best Sellers";
-            this.chartBestSellers.Titles.Add(title4);
+            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Best Sellers";
+            this.chartBestSellers.Titles.Add(title2);
             // 
             // panel4
             // 
@@ -293,16 +323,6 @@
             this.panel6.Size = new System.Drawing.Size(261, 64);
             this.panel6.TabIndex = 7;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Jamaica Agricultural Hub";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -312,6 +332,16 @@
             this.label4.Size = new System.Drawing.Size(171, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "All Local Products in One Place";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(77, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Jamaica Agricultural Hub";
             // 
             // pictureBox1
             // 
@@ -323,42 +353,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::JAHub_Winforms.Properties.Resources.profit;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::JAHub_Winforms.Properties.Resources.revenue;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::JAHub_Winforms.Properties.Resources.order_delivery;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1022, 596);
+            this.ClientSize = new System.Drawing.Size(1065, 612);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -372,10 +373,13 @@
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.panelNumberofOrders.ResumeLayout(false);
             this.panelNumberofOrders.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBestSellers)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -386,9 +390,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

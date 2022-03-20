@@ -12,7 +12,10 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrUploadImageBlock : UserControl
     {
+        
         Bitmap profilePicture;
+
+        public Bitmap ProfilePicture => profilePicture;
 
         public usrUploadImageBlock()
         {

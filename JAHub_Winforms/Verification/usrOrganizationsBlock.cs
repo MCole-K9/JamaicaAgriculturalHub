@@ -12,6 +12,9 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrOrganizationsBlock : UserControl
     {
+        List<String> _organizations = new List<string>();
+
+        public List<String> Organizations => _organizations;
         public usrOrganizationsBlock()
         {
             InitializeComponent();
@@ -25,16 +28,21 @@ namespace JAHub_Winforms.Verification
             // this creates a new textbox underneath the one that was there before
             flwOrganizationsTextHolder.Controls.Add(new TextBox());
             flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].Size = new System.Drawing.Size(175, 22);
+
+            Organizations.Add(flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].Text);
         }
 
         private void btnRemoveOrganization_Click(object sender, EventArgs e)
         {
             flwOrganizationsTextHolder.Controls.RemoveAt(flwOrganizationsTextHolder.Controls.Count - 1);
-                        
+            Organizations.RemoveAt(Organizations.Count - 1);
+
             if (flwOrganizationsTextHolder.Controls.Count == 1)
             {
                 btnRemoveOrganization.Hide();
             }
         }
+
+
     }
 }

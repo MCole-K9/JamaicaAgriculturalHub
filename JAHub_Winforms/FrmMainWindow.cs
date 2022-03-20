@@ -49,7 +49,7 @@ namespace JAHub_Winforms
             }
         }
 
-        private void userProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void userPortalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen("Profile")) 
             {
@@ -57,7 +57,11 @@ namespace JAHub_Winforms
                 frmProfile.MdiParent = this;
                 frmProfile.Show();
             }
-            
+            else
+            {
+                MessageBox.Show("An Instance is Already Running");
+            }
+
         }
     }
 }

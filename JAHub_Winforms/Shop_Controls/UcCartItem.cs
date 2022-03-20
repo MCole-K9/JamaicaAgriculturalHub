@@ -51,10 +51,6 @@ namespace JAHub_Winforms.Shop_Controls
 
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
@@ -65,9 +61,7 @@ namespace JAHub_Winforms.Shop_Controls
             {
                 qtyValue++;
                 txtQty.Text = qtyValue.ToString();
-                this._frmCart._frmShop.Cart[_product] = qtyValue;
-
-                this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
+ 
             }
             else
             {
@@ -82,13 +76,9 @@ namespace JAHub_Winforms.Shop_Controls
 
             if (inputIsInt && qtyValue > 0)
             {
-                qtyValue--;
-                txtQty.Text = qtyValue.ToString();
-                //Assigns Quantity
-                this._frmCart._frmShop.Cart[_product] = qtyValue;
-
-                this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
-
+               qtyValue--;
+               txtQty.Text = qtyValue.ToString();
+               
             }
             else
             {
@@ -101,7 +91,7 @@ namespace JAHub_Winforms.Shop_Controls
             
             this.Hide();
 
-            //To-Do: Remove Item From Cart List
+            //Remove Item From Cart Dictionary
             this._frmCart._frmShop.Cart.Remove(_product);
 
             this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
@@ -111,22 +101,24 @@ namespace JAHub_Winforms.Shop_Controls
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-            //int qtyValue;
-            //bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+            int qtyValue;
+            bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
 
-            //if (inputIsInt && qtyValue > 0)
-            //{
-            //    txtQty.Text = qtyValue.ToString();
-            //    //Assigns Quantity
-            //    this._frmCart._frmShop.Cart[_product] = qtyValue;
+            if (inputIsInt && qtyValue > 0)
+            {
+                txtQty.Text = qtyValue.ToString();
 
-            //    this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
+                //Assigns Quantity
+                this._frmCart._frmShop.Cart[_product] = qtyValue;
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Please Ensure that only a postitive number is inputed");
-            //}
+                this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
+               
+                txtQty.BackColor = Color.White;
+            }
+            else
+            {
+                txtQty.BackColor = Color.Red;
+            }
         }
     }
 }
