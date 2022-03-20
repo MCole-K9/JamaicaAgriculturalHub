@@ -140,6 +140,12 @@
     <Compile Include="FrmProfileHome.designer.cs">
       <DependentUpon>FrmProfileHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSecurity.Designer.cs">
+      <DependentUpon>FrmSecurity.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     <EmbeddedResource Include="FrmRadaRegister.resx">
       <DependentUpon>FrmRadaRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSecurity.resx">
+      <DependentUpon>FrmSecurity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +412,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\yam-g91011fb33_640.jpg" />
+    <None Include="Resources\security settings%28I%29.png" />
     <None Include="Resources\concept-of-user-profile.png" />
     <None Include="Resources\right-arrows %282%29.png" />
     <None Include="Resources\user %283%29 %281%29.png" />
