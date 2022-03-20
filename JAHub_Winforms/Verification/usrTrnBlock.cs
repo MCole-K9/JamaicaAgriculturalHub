@@ -33,9 +33,18 @@ namespace JAHub_Winforms.Verification
             }
             else
             {
-                
                 errTrnBlock.SetError(mskTrn, "");
             }
+        }
+
+        public bool IsBlockValid()
+        {
+            if (mskTrn.MaskCompleted)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
