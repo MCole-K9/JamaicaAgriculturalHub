@@ -21,6 +21,9 @@ namespace JAHub_Winforms.Verification
         bool isEmailValid;
         List<bool> isPhoneValid;
 
+        public String Email => txtEmail.Text;
+        public List<String> PhoneNumbers;
+
         public usrContactBlock()
         {
             InitializeComponent();
@@ -33,17 +36,23 @@ namespace JAHub_Winforms.Verification
                 if (txtEmail.Text.IndexOf(".", txtEmail.Text.IndexOf("@")) > txtEmail.Text.IndexOf("@"))
                 {
                     errContactBlock.SetError(txtEmail, "");
+
+                    isEmailValid = true;
                 }
             }
             else if(txtEmail.Text == "")
             {
                 errContactBlock.SetError(txtEmail, "");
+
+                isEmailValid = true;
             }
             else
             {
                 
                 errContactBlock.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
                 errContactBlock.SetError(txtEmail, "Must be a valid email, e.g. someone@example.com");
+
+                isEmailValid = false;
             }
         }
 
@@ -68,8 +77,17 @@ namespace JAHub_Winforms.Verification
         {
             if (isEmailValid)
             {
+                bool areAllNumbersValid = true;
                 
-                return true;
+                //foreach (){
+                    // this needs me to expose the phone numbers first, then do it
+                    
+                //}
+
+                if (areAllNumbersValid)
+                {
+                    return true;
+                }
             }
 
             return false;

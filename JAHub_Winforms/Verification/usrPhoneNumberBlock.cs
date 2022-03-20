@@ -13,6 +13,8 @@ namespace JAHub_Winforms.Verification
     public partial class usrPhoneNumberBlock : UserControl
     {
         bool isPhoneNumberValid;
+        public String PhoneNumber => mskPhoneNumber.Text;
+
         public usrPhoneNumberBlock()
         {
             InitializeComponent();
@@ -43,6 +45,11 @@ namespace JAHub_Winforms.Verification
                 return true;
             }
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            mskPhoneNumber.Focus();
         }
     }
 }

@@ -16,6 +16,10 @@ namespace JAHub_Winforms.Verification
         bool isPoBoxValid = false;
         bool isParishValid = false;
 
+        public String AddressTown => txtAddressTown.Text;
+        public String AddressPostOffice => txtAddressPostOffice.Text;
+        public String AddressParish => txtAddressParish.Text;
+
         public usrAddressBlock()
         {
             InitializeComponent();
@@ -93,5 +97,25 @@ namespace JAHub_Winforms.Verification
             return false;
             
         }
+
+        public void SetControlFocus()
+        {
+            // this *should* set the focus to the area with the error, if it works properly
+            // Bet good money it doesn't work though lol. can't check til Shemar fix fi him section
+            if (!isTownValid)
+            {
+                txtAddressTown.Focus();
+            }
+            else if (!isPoBoxValid)
+            {
+                txtAddressPostOffice.Focus();
+            }
+            else if (!isParishValid)
+            {
+                txtAddressParish.Focus();
+            }
+        }
     }
+
+    
 }
