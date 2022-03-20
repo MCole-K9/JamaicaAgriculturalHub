@@ -73,9 +73,9 @@
             this.lblNumberOfEmployees.Location = new System.Drawing.Point(4, 0);
             this.lblNumberOfEmployees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumberOfEmployees.Name = "lblNumberOfEmployees";
-            this.lblNumberOfEmployees.Size = new System.Drawing.Size(174, 20);
+            this.lblNumberOfEmployees.Size = new System.Drawing.Size(180, 20);
             this.lblNumberOfEmployees.TabIndex = 0;
-            this.lblNumberOfEmployees.Text = "Number of Employees";
+            this.lblNumberOfEmployees.Text = "Number of Employees*";
             // 
             // lblHeavyMachinery
             // 
@@ -88,7 +88,7 @@
             this.lblHeavyMachinery.Size = new System.Drawing.Size(554, 50);
             this.lblHeavyMachinery.TabIndex = 1;
             this.lblHeavyMachinery.Text = "Do you use heavy machinery such as tractors, processors, or other forms of powere" +
-    "d equipment?";
+    "d equipment?*\r\n";
             // 
             // rdoIndustryYes
             // 
@@ -99,10 +99,10 @@
             this.rdoIndustryYes.BackColor = System.Drawing.Color.Transparent;
             this.rdoIndustryYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoIndustryYes.Location = new System.Drawing.Point(4, 89);
-            this.rdoIndustryYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoIndustryYes.Margin = new System.Windows.Forms.Padding(4);
             this.rdoIndustryYes.Name = "rdoIndustryYes";
             this.rdoIndustryYes.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.rdoIndustryYes.Size = new System.Drawing.Size(174, 32);
+            this.rdoIndustryYes.Size = new System.Drawing.Size(180, 32);
             this.rdoIndustryYes.TabIndex = 2;
             this.rdoIndustryYes.TabStop = true;
             this.rdoIndustryYes.Text = "Yes";
@@ -117,10 +117,10 @@
             this.rdoIndustryNo.AutoSize = true;
             this.rdoIndustryNo.BackColor = System.Drawing.Color.Transparent;
             this.rdoIndustryNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoIndustryNo.Location = new System.Drawing.Point(186, 89);
-            this.rdoIndustryNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoIndustryNo.Location = new System.Drawing.Point(192, 89);
+            this.rdoIndustryNo.Margin = new System.Windows.Forms.Padding(4);
             this.rdoIndustryNo.Name = "rdoIndustryNo";
-            this.rdoIndustryNo.Size = new System.Drawing.Size(372, 32);
+            this.rdoIndustryNo.Size = new System.Drawing.Size(366, 32);
             this.rdoIndustryNo.TabIndex = 3;
             this.rdoIndustryNo.TabStop = true;
             this.rdoIndustryNo.Text = "No";
@@ -129,8 +129,8 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(186, 4);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Location = new System.Drawing.Point(192, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(118, 27);
             this.numericUpDown1.TabIndex = 4;
@@ -148,7 +148,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblIndustryBlock);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(562, 0);
             this.Name = "usrIndustryBlock";
             this.Size = new System.Drawing.Size(562, 125);

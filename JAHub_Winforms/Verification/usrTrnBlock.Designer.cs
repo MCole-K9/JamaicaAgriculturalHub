@@ -41,6 +41,7 @@
             // 
             this.tblTrnBlock.AutoSize = true;
             this.tblTrnBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tblTrnBlock.BackColor = System.Drawing.Color.Transparent;
             this.tblTrnBlock.ColumnCount = 2;
             this.tblTrnBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tblTrnBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -60,9 +61,9 @@
             this.lblTrn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrn.Location = new System.Drawing.Point(3, 0);
             this.lblTrn.Name = "lblTrn";
-            this.lblTrn.Size = new System.Drawing.Size(59, 20);
+            this.lblTrn.Size = new System.Drawing.Size(49, 20);
             this.lblTrn.TabIndex = 0;
-            this.lblTrn.Text = "TRN: *";
+            this.lblTrn.Text = "TRN*";
             // 
             // mskTrn
             // 
@@ -70,7 +71,7 @@
             this.mskTrn.Location = new System.Drawing.Point(75, 3);
             this.mskTrn.Mask = "___-___-___";
             this.mskTrn.Name = "mskTrn";
-            this.mskTrn.Size = new System.Drawing.Size(90, 27);
+            this.mskTrn.Size = new System.Drawing.Size(115, 27);
             this.mskTrn.TabIndex = 1;
             this.mskTrn.Validating += new System.ComponentModel.CancelEventHandler(this.mskTrn_Validating);
             // 
@@ -85,6 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblTrnBlock);
             this.Name = "usrTrnBlock";
             this.Size = new System.Drawing.Size(222, 33);

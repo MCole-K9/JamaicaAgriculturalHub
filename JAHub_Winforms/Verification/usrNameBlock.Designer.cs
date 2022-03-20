@@ -92,7 +92,7 @@
             this.lblNameSectionTitle.Name = "lblNameSectionTitle";
             this.lblNameSectionTitle.Size = new System.Drawing.Size(257, 31);
             this.lblNameSectionTitle.TabIndex = 0;
-            this.lblNameSectionTitle.Text = "Name";
+            this.lblNameSectionTitle.Text = "Name*";
             this.lblNameSectionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblMiddleName

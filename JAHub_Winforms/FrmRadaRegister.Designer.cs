@@ -44,6 +44,7 @@
             this.usrHoldingsBlock2 = new JAHub_Winforms.Verification.usrHoldingsBlock();
             this.usrOrganizationsBlock1 = new JAHub_Winforms.Verification.usrOrganizationsBlock();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.flwRadaRegister.SuspendLayout();
             this.tblNewOrConnectOptions.SuspendLayout();
             this.flwFormEntryControls.SuspendLayout();
@@ -58,13 +59,14 @@
             this.flwRadaRegister.BackColor = System.Drawing.Color.Transparent;
             this.flwRadaRegister.Controls.Add(this.lblRegisterWithRada);
             this.flwRadaRegister.Controls.Add(this.tblNewOrConnectOptions);
+            this.flwRadaRegister.Controls.Add(this.label1);
             this.flwRadaRegister.Controls.Add(this.flwFormEntryControls);
             this.flwRadaRegister.Controls.Add(this.btnSubmit);
             this.flwRadaRegister.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwRadaRegister.Location = new System.Drawing.Point(0, 0);
             this.flwRadaRegister.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaRegister.Name = "flwRadaRegister";
-            this.flwRadaRegister.Size = new System.Drawing.Size(576, 1384);
+            this.flwRadaRegister.Size = new System.Drawing.Size(576, 1414);
             this.flwRadaRegister.TabIndex = 0;
             this.flwRadaRegister.WrapContents = false;
             // 
@@ -147,7 +149,7 @@
             this.flwFormEntryControls.Controls.Add(this.usrHoldingsBlock2);
             this.flwFormEntryControls.Controls.Add(this.usrOrganizationsBlock1);
             this.flwFormEntryControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwFormEntryControls.Location = new System.Drawing.Point(3, 151);
+            this.flwFormEntryControls.Location = new System.Drawing.Point(3, 181);
             this.flwFormEntryControls.Name = "flwFormEntryControls";
             this.flwFormEntryControls.Size = new System.Drawing.Size(570, 1192);
             this.flwFormEntryControls.TabIndex = 2;
@@ -241,13 +243,24 @@
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(251, 1349);
+            this.btnSubmit.Location = new System.Drawing.Point(251, 1379);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(74, 32);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fields marked with \'*\' are mandatory";
             // 
             // FrmRadaRegister
             // 
@@ -288,5 +301,6 @@
         private Verification.usrOrganizationsBlock usrOrganizationsBlock1;
         private System.Windows.Forms.Button btnSubmit;
         private Verification.usrHoldingsBlock usrHoldingsBlock2;
+        private System.Windows.Forms.Label label1;
     }
 }
