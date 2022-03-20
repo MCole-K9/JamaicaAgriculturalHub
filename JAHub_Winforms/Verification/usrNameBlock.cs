@@ -16,6 +16,11 @@ namespace JAHub_Winforms.Verification
         bool isFirstNameValid;
         bool isMiddleNameValid;
         bool isLastNameValid;
+
+        public String FirstName => txtFirstName.Text;
+        public String MiddleName => txtMiddleName.Text;
+        public String LastName => txtLastName.Text;
+
         public usrNameBlock()
         {
             InitializeComponent();
@@ -86,6 +91,22 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            if (!isFirstNameValid)
+            {
+                txtFirstName.Focus();
+            }
+            else if (!isMiddleNameValid)
+            {
+                txtMiddleName.Focus();
+            }
+            else if (!isLastNameValid)
+            {
+                txtLastName.Focus();
+            }
         }
     }
 }

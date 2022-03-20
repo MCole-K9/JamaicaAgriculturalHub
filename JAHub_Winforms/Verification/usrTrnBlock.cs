@@ -18,6 +18,8 @@ namespace JAHub_Winforms.Verification
 
     public partial class usrTrnBlock : UserControl
     {
+        public String Trn => mskTrn.Text;
+
         public usrTrnBlock()
         {
             InitializeComponent();
@@ -45,6 +47,11 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            mskTrn.Focus();
         }
     }
 }
