@@ -92,7 +92,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(493, 186);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 131);
+            this.button2.Size = new System.Drawing.Size(157, 131);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;

@@ -36,8 +36,8 @@ namespace JAHub_Winforms
             CurrentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            panelMenu.Controls.Add(childForm);
-            panelMenu.Tag = childForm;
+            panelHomeContainer.Controls.Add(childForm);
+            panelHomeContainer.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
 
@@ -72,9 +72,10 @@ namespace JAHub_Winforms
 
             private void btnProfileHome_Click(object sender, EventArgs e)
         {
-                FrmProfileHome frmHome = new FrmProfileHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                this.panelHomeContainer.Controls.Add(frmHome);
-                frmHome.Show();
+            OpenChildForm( new FrmProfileHome());
+                //FrmProfileHome frmHome = new FrmProfileHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                //this.panelHomeContainer.Controls.Add(frmHome);
+                //frmHome.Show();
                 HighlightButtons(sender); //or pass the button name as a arg instead of sender
         }
 
@@ -87,18 +88,20 @@ namespace JAHub_Winforms
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.panelHomeContainer.Controls.Add(frmDashboard);
-            frmDashboard.Show();
+            OpenChildForm(new FrmDashboard());
+            //FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //this.panelHomeContainer.Controls.Add(frmDashboard);
+            //frmDashboard.Show();
             HighlightButtons(btnDashboard);
         }
 
         private void btnMyAccount_Click(object sender, EventArgs e)
         {
-            FrmAccount frmAccount = new FrmAccount() { Dock = DockStyle.Fill,TopLevel = false, TopMost = true};
-            this.panelHomeContainer.Controls.Add(frmAccount);
-            frmAccount.Show();
-            HighlightButtons(btnMyAccount);
+            OpenChildForm(new FrmAccount());
+            //FrmAccount frmAccount = new FrmAccount() { Dock = DockStyle.Fill,TopLevel = false, TopMost = true};
+            //this.panelHomeContainer.Controls.Add(frmAccount);
+            //frmAccount.Show();
+            //HighlightButtons(btnMyAccount);
         }
     }
 }
