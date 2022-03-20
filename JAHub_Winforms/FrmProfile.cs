@@ -13,13 +13,33 @@ namespace JAHub_Winforms
     public partial class FrmProfile : Form
     {
         private Button CurrentButton;
-        
+        private Form CurrentChildForm;
+
+
         public FrmProfile()
         {
             InitializeComponent();
+            CurrentChildForm = null;
             //highlight the Dashboard by deffualt
             HighlightButtons(btnDashboard);
 
+
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (CurrentChildForm != null)
+            {
+                //Opens Only one form
+                CurrentChildForm.Close();
+            }
+            CurrentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            panelMenu.Controls.Add(childForm);
+            panelMenu.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
 
         }
 
@@ -43,10 +63,10 @@ namespace JAHub_Winforms
 
         private void FrmProfile_Load(object sender, EventArgs e)
         {
-
-            FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.panelHomeContainer.Controls.Add(frmDashboard);
-            frmDashboard.Show();
+            OpenChildForm(new FrmDashboard());
+            //FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //this.panelHomeContainer.Controls.Add(frmDashboard);
+            //frmDashboard.Show();
 
         }
 
