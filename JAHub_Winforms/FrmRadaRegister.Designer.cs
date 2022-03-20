@@ -34,6 +34,7 @@
             this.btnConnectExistingAccount = new System.Windows.Forms.Button();
             this.lblOr = new System.Windows.Forms.Label();
             this.btnNewRegistration = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.flwFormEntryControls = new System.Windows.Forms.FlowLayoutPanel();
             this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
             this.usrDateOfBirthBlock1 = new JAHub_Winforms.Verification.usrDateOfBirthBlock();
@@ -44,7 +45,6 @@
             this.usrHoldingsBlock2 = new JAHub_Winforms.Verification.usrHoldingsBlock();
             this.usrOrganizationsBlock1 = new JAHub_Winforms.Verification.usrOrganizationsBlock();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.flwRadaRegister.SuspendLayout();
             this.tblNewOrConnectOptions.SuspendLayout();
             this.flwFormEntryControls.SuspendLayout();
@@ -52,8 +52,7 @@
             // 
             // flwRadaRegister
             // 
-            this.flwRadaRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flwRadaRegister.AutoScroll = true;
             this.flwRadaRegister.AutoSize = true;
             this.flwRadaRegister.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwRadaRegister.BackColor = System.Drawing.Color.Transparent;
@@ -62,11 +61,12 @@
             this.flwRadaRegister.Controls.Add(this.label1);
             this.flwRadaRegister.Controls.Add(this.flwFormEntryControls);
             this.flwRadaRegister.Controls.Add(this.btnSubmit);
+            this.flwRadaRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flwRadaRegister.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwRadaRegister.Location = new System.Drawing.Point(0, 0);
             this.flwRadaRegister.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaRegister.Name = "flwRadaRegister";
-            this.flwRadaRegister.Size = new System.Drawing.Size(576, 1414);
+            this.flwRadaRegister.Size = new System.Drawing.Size(606, 450);
             this.flwRadaRegister.TabIndex = 0;
             this.flwRadaRegister.WrapContents = false;
             // 
@@ -135,6 +135,17 @@
             this.btnNewRegistration.Text = "New Registration";
             this.btnNewRegistration.UseVisualStyleBackColor = true;
             this.btnNewRegistration.Click += new System.EventHandler(this.btnNewRegistration_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 22);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fields marked with \'*\' are mandatory";
             // 
             // flwFormEntryControls
             // 
@@ -251,22 +262,10 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 148);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 22);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Fields marked with \'*\' are mandatory";
-            // 
             // FrmRadaRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(606, 450);
             this.Controls.Add(this.flwRadaRegister);
