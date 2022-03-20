@@ -120,9 +120,6 @@
     <Compile Include="FrmProfileHome.designer.cs">
       <DependentUpon>FrmProfileHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSagicor.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmSecurity.cs">
       <SubType>Form</SubType>
     </Compile>
