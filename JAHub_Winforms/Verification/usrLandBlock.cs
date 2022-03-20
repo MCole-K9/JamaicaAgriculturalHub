@@ -14,7 +14,11 @@ namespace JAHub_Winforms.Verification
     {
         bool isLandBlockValid;
 
+        public String LandAddressTown => usrAddressBlock1.AddressTown;
+        public String LandAddresssPoBox => usrAddressBlock1.AddressPostOffice;
+        public String LandAddressParish => usrAddressBlock1.AddressParish;
         public decimal LandMeasurement => nudLandMeasurement.Value;
+
         public usrLandBlock()
         {
             InitializeComponent();

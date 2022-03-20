@@ -13,15 +13,17 @@ namespace JAHub_Winforms.Verification
     public partial class usrHoldingsBlock : UserControl
     {
         List<bool> isProductListValid;
+        List<String> _productsList = new List<String>();
+
+        public String LandAddressTown => usrLandBlock1.LandAddressTown;
+        public String LandAddressPoBox => usrLandBlock1.LandAddresssPoBox;
+        public String LandAddressParish => usrLandBlock1.LandAddressParish;
+        public decimal LandMeasuerement => usrLandBlock1.LandMeasurement;
+        public List<String> ProductList => _productsList;
 
         public usrHoldingsBlock()
         {
             InitializeComponent();
-        }
-
-        private void usrLandBlock1_Load(object sender, EventArgs e)
-        {
-            // i don't know why this is here, but i don't really care atm. check later
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
@@ -44,10 +46,38 @@ namespace JAHub_Winforms.Verification
         {
             if (usrLandBlock1.IsBlockValid())
             {
-                return true;
+                bool isListValid = true;
+
+                foreach(usrProductsBlock product in flwProductsBlock.Controls)
+                {
+                    if (product.IsBlockValid())
+                    {
+                        _productsList.Add(product.Product);
+                    }
+                    else
+                    {
+                        isListValid = false;
+                        break;
+                    }
+                }
+                
+                if (isListValid)
+                {
+                    return true;
+                }
+
             }
             
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            // The product blocks will have their own Setcontrol focus
+            // so how would i return focus to the relevant control?
+            // Possibly: Store an address of an object, "as" it as the kind of control, and 
+            // call its .SetControlFocus() method?
+
         }
     }
 }
