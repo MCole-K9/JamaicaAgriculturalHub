@@ -34,10 +34,10 @@
             this.lblHeavyMachinery = new System.Windows.Forms.Label();
             this.rdoIndustryYes = new System.Windows.Forms.RadioButton();
             this.rdoIndustryNo = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudNumberOfEmployees = new System.Windows.Forms.NumericUpDown();
             this.errIndustryBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblIndustryBlock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIndustryBlock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.tblIndustryBlock.Controls.Add(this.lblHeavyMachinery, 0, 1);
             this.tblIndustryBlock.Controls.Add(this.rdoIndustryYes, 0, 2);
             this.tblIndustryBlock.Controls.Add(this.rdoIndustryNo, 1, 2);
-            this.tblIndustryBlock.Controls.Add(this.numericUpDown1, 1, 0);
+            this.tblIndustryBlock.Controls.Add(this.nudNumberOfEmployees, 1, 0);
             this.tblIndustryBlock.Location = new System.Drawing.Point(0, 0);
             this.tblIndustryBlock.Margin = new System.Windows.Forms.Padding(0);
             this.tblIndustryBlock.MaximumSize = new System.Drawing.Size(562, 0);
@@ -127,13 +127,13 @@
             this.rdoIndustryNo.UseVisualStyleBackColor = false;
             this.rdoIndustryNo.Validating += new System.ComponentModel.CancelEventHandler(this.rdoIndustryNo_Validating);
             // 
-            // numericUpDown1
+            // nudNumberOfEmployees
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(192, 4);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(118, 27);
-            this.numericUpDown1.TabIndex = 4;
+            this.nudNumberOfEmployees.Location = new System.Drawing.Point(192, 4);
+            this.nudNumberOfEmployees.Margin = new System.Windows.Forms.Padding(4);
+            this.nudNumberOfEmployees.Name = "nudNumberOfEmployees";
+            this.nudNumberOfEmployees.Size = new System.Drawing.Size(118, 27);
+            this.nudNumberOfEmployees.TabIndex = 4;
             // 
             // errIndustryBlock
             // 
@@ -154,7 +154,7 @@
             this.Size = new System.Drawing.Size(562, 125);
             this.tblIndustryBlock.ResumeLayout(false);
             this.tblIndustryBlock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIndustryBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label lblHeavyMachinery;
         private System.Windows.Forms.RadioButton rdoIndustryYes;
         private System.Windows.Forms.RadioButton rdoIndustryNo;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudNumberOfEmployees;
         private System.Windows.Forms.ErrorProvider errIndustryBlock;
     }
 }
