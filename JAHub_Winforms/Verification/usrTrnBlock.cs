@@ -12,12 +12,14 @@ namespace JAHub_Winforms.Verification
 {
     /* TO-DO
      * [x] write the validation for the trn
-     * [] write IsBlockValid() method for TRN Block
+     * [x] write IsBlockValid() method for TRN Block
      * [] expose value inside of mskTrn for submission
      */
 
     public partial class usrTrnBlock : UserControl
     {
+        public String Trn => mskTrn.Text;
+
         public usrTrnBlock()
         {
             InitializeComponent();
@@ -33,9 +35,23 @@ namespace JAHub_Winforms.Verification
             }
             else
             {
-                
                 errTrnBlock.SetError(mskTrn, "");
             }
+        }
+
+        public bool IsBlockValid()
+        {
+            if (mskTrn.MaskCompleted)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void SetControlFocus()
+        {
+            mskTrn.Focus();
         }
     }
 }

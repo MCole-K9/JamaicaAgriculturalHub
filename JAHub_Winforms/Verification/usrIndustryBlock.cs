@@ -13,6 +13,11 @@ namespace JAHub_Winforms.Verifcation
     public partial class usrIndustryBlock : UserControl
     {
         bool isChoiceSelected;
+        bool _usesHeavyMachinery;
+
+        public bool UsesHeavyMachinery => _usesHeavyMachinery;
+        public decimal NumberOfEmployees => nudNumberOfEmployees.Value;
+
         public usrIndustryBlock()
         {
             InitializeComponent();
@@ -25,12 +30,14 @@ namespace JAHub_Winforms.Verifcation
         private void rdoIndustryYes_Validating(object sender, CancelEventArgs e)
         {
             validateRdoButtons();
+            _usesHeavyMachinery = true;
         }
 
         // same thing for this function
         private void rdoIndustryNo_Validating(object sender, CancelEventArgs e)
         {
             validateRdoButtons();
+            _usesHeavyMachinery = false;
         }
 
         public void validateRdoButtons()
@@ -41,6 +48,7 @@ namespace JAHub_Winforms.Verifcation
                 errIndustryBlock.SetError(lblHeavyMachinery, "Please select 'Yes' or 'No'");
 
                 isChoiceSelected = false;
+                
             }
             else
             {
@@ -61,6 +69,12 @@ namespace JAHub_Winforms.Verifcation
             validateRdoButtons();
 
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            // pretty sure that .Focus doesn't work for labels, need to check to be sure
+            lblHeavyMachinery.Focus();
         }
     }
 }

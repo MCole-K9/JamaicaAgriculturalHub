@@ -80,6 +80,7 @@
             // 
             this.usrProductsBlock1.AutoSize = true;
             this.usrProductsBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrProductsBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrProductsBlock1.Location = new System.Drawing.Point(3, 3);
             this.usrProductsBlock1.Name = "usrProductsBlock1";
             this.usrProductsBlock1.Size = new System.Drawing.Size(300, 33);
@@ -117,7 +118,6 @@
             this.usrLandBlock1.Name = "usrLandBlock1";
             this.usrLandBlock1.Size = new System.Drawing.Size(366, 192);
             this.usrLandBlock1.TabIndex = 4;
-            this.usrLandBlock1.Load += new System.EventHandler(this.usrLandBlock1_Load);
             // 
             // usrHoldingsBlock
             // 

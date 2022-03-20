@@ -72,6 +72,11 @@ namespace JAHubLib
             // from the properties
         }
 
+        public void WriteRecordToDatabase()
+        {
+            // this is here primarily as a placeholder
+        }
+
         
     }
 }

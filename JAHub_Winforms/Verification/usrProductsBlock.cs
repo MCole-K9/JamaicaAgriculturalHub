@@ -13,6 +13,9 @@ namespace JAHub_Winforms.Verification
     public partial class usrProductsBlock : UserControl
     {
         bool isProductValid;
+
+        public String Product => txtProduct.Text;
+
         public usrProductsBlock()
         {
             InitializeComponent();
@@ -42,6 +45,11 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            txtProduct.Focus();
         }
     }
 }

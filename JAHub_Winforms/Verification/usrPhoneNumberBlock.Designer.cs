@@ -64,7 +64,7 @@
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(144, 33);
             this.lblPhoneNumber.TabIndex = 0;
-            this.lblPhoneNumber.Text = "Phone Number";
+            this.lblPhoneNumber.Text = "Phone Number*";
             this.lblPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // mskPhoneNumber

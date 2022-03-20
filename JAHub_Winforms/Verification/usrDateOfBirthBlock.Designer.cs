@@ -79,7 +79,7 @@
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(292, 34);
             this.lblDateOfBirth.TabIndex = 0;
-            this.lblDateOfBirth.Text = "Date of Birth";
+            this.lblDateOfBirth.Text = "Date of Birth*";
             this.lblDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDay

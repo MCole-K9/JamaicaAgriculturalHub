@@ -15,6 +15,11 @@ namespace JAHub_Winforms.Verification
         bool isYearValid;
         bool isMonthValid;
         bool isDayValid;
+
+        public String Day => cmbDay.SelectedText;
+        public String Month => cmbMonth.SelectedText;
+        public String Year => cmbYear.SelectedText;
+
         public usrDateOfBirthBlock()
         {
             InitializeComponent();
@@ -169,6 +174,22 @@ namespace JAHub_Winforms.Verification
             }
             
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            if (!isDayValid)
+            {
+                cmbDay.Focus();
+            }
+            else if (!isMonthValid)
+            {
+                cmbMonth.Focus();
+            }
+            else if (!isYearValid)
+            {
+                cmbYear.Focus();
+            }
         }
     }
 }

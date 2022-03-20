@@ -34,10 +34,10 @@
             this.lblHeavyMachinery = new System.Windows.Forms.Label();
             this.rdoIndustryYes = new System.Windows.Forms.RadioButton();
             this.rdoIndustryNo = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudNumberOfEmployees = new System.Windows.Forms.NumericUpDown();
             this.errIndustryBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblIndustryBlock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIndustryBlock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.tblIndustryBlock.Controls.Add(this.lblHeavyMachinery, 0, 1);
             this.tblIndustryBlock.Controls.Add(this.rdoIndustryYes, 0, 2);
             this.tblIndustryBlock.Controls.Add(this.rdoIndustryNo, 1, 2);
-            this.tblIndustryBlock.Controls.Add(this.numericUpDown1, 1, 0);
+            this.tblIndustryBlock.Controls.Add(this.nudNumberOfEmployees, 1, 0);
             this.tblIndustryBlock.Location = new System.Drawing.Point(0, 0);
             this.tblIndustryBlock.Margin = new System.Windows.Forms.Padding(0);
             this.tblIndustryBlock.MaximumSize = new System.Drawing.Size(562, 0);
@@ -73,9 +73,9 @@
             this.lblNumberOfEmployees.Location = new System.Drawing.Point(4, 0);
             this.lblNumberOfEmployees.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumberOfEmployees.Name = "lblNumberOfEmployees";
-            this.lblNumberOfEmployees.Size = new System.Drawing.Size(174, 20);
+            this.lblNumberOfEmployees.Size = new System.Drawing.Size(180, 20);
             this.lblNumberOfEmployees.TabIndex = 0;
-            this.lblNumberOfEmployees.Text = "Number of Employees";
+            this.lblNumberOfEmployees.Text = "Number of Employees*";
             // 
             // lblHeavyMachinery
             // 
@@ -88,7 +88,7 @@
             this.lblHeavyMachinery.Size = new System.Drawing.Size(554, 50);
             this.lblHeavyMachinery.TabIndex = 1;
             this.lblHeavyMachinery.Text = "Do you use heavy machinery such as tractors, processors, or other forms of powere" +
-    "d equipment?";
+    "d equipment?*\r\n";
             // 
             // rdoIndustryYes
             // 
@@ -99,10 +99,10 @@
             this.rdoIndustryYes.BackColor = System.Drawing.Color.Transparent;
             this.rdoIndustryYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoIndustryYes.Location = new System.Drawing.Point(4, 89);
-            this.rdoIndustryYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoIndustryYes.Margin = new System.Windows.Forms.Padding(4);
             this.rdoIndustryYes.Name = "rdoIndustryYes";
             this.rdoIndustryYes.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.rdoIndustryYes.Size = new System.Drawing.Size(174, 32);
+            this.rdoIndustryYes.Size = new System.Drawing.Size(180, 32);
             this.rdoIndustryYes.TabIndex = 2;
             this.rdoIndustryYes.TabStop = true;
             this.rdoIndustryYes.Text = "Yes";
@@ -117,23 +117,23 @@
             this.rdoIndustryNo.AutoSize = true;
             this.rdoIndustryNo.BackColor = System.Drawing.Color.Transparent;
             this.rdoIndustryNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoIndustryNo.Location = new System.Drawing.Point(186, 89);
-            this.rdoIndustryNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoIndustryNo.Location = new System.Drawing.Point(192, 89);
+            this.rdoIndustryNo.Margin = new System.Windows.Forms.Padding(4);
             this.rdoIndustryNo.Name = "rdoIndustryNo";
-            this.rdoIndustryNo.Size = new System.Drawing.Size(372, 32);
+            this.rdoIndustryNo.Size = new System.Drawing.Size(366, 32);
             this.rdoIndustryNo.TabIndex = 3;
             this.rdoIndustryNo.TabStop = true;
             this.rdoIndustryNo.Text = "No";
             this.rdoIndustryNo.UseVisualStyleBackColor = false;
             this.rdoIndustryNo.Validating += new System.ComponentModel.CancelEventHandler(this.rdoIndustryNo_Validating);
             // 
-            // numericUpDown1
+            // nudNumberOfEmployees
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(186, 4);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(118, 27);
-            this.numericUpDown1.TabIndex = 4;
+            this.nudNumberOfEmployees.Location = new System.Drawing.Point(192, 4);
+            this.nudNumberOfEmployees.Margin = new System.Windows.Forms.Padding(4);
+            this.nudNumberOfEmployees.Name = "nudNumberOfEmployees";
+            this.nudNumberOfEmployees.Size = new System.Drawing.Size(118, 27);
+            this.nudNumberOfEmployees.TabIndex = 4;
             // 
             // errIndustryBlock
             // 
@@ -148,13 +148,13 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblIndustryBlock);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(562, 0);
             this.Name = "usrIndustryBlock";
             this.Size = new System.Drawing.Size(562, 125);
             this.tblIndustryBlock.ResumeLayout(false);
             this.tblIndustryBlock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIndustryBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label lblHeavyMachinery;
         private System.Windows.Forms.RadioButton rdoIndustryYes;
         private System.Windows.Forms.RadioButton rdoIndustryNo;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudNumberOfEmployees;
         private System.Windows.Forms.ErrorProvider errIndustryBlock;
     }
 }
