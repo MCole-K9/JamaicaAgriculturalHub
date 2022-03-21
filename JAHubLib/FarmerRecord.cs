@@ -60,10 +60,10 @@ namespace JAHubLib
         List<String> PhoneNumbers;
         float TotalHectares { get; set; }
         
-        Bitmap ProfilePicture { get; set; }
+        Bitmap IdPicture { get; set; }
         String TaxRegistrationNumber { get; set; }
 
-        int RadaPhase { get; set; }
+        int RadaRegistrationPhase { get; set; }
 
 
         public FarmerRecord()

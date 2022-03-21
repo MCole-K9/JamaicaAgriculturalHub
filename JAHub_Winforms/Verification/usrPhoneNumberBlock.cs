@@ -38,7 +38,7 @@ namespace JAHub_Winforms.Verification
             }
         }
 
-        public bool IsPhoneNumberValid()
+        public bool IsBlockValid()
         {
             if (isPhoneNumberValid)
             {
