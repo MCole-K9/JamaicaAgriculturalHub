@@ -14,6 +14,8 @@ namespace JAHub_Winforms
 {
     public partial class FrmRadaRegister : Form
     {
+        RadaRegistrationType applicationType = RadaRegistrationType.AwaitingVerification;
+
         public FrmRadaRegister()
         {
             InitializeComponent();
@@ -33,6 +35,9 @@ namespace JAHub_Winforms
                 flwFormEntryControls.Controls.Add(new usrHoldingsBlock());
                 flwFormEntryControls.Controls.Add(new usrProductsBlock());
                 flwFormEntryControls.Controls.Add(new usrOrganizationsBlock());
+
+                // Information will add to DB, but will not show until verification
+                applicationType = RadaRegistrationType.AwaitingVerification;
             }
         }
 
@@ -44,12 +49,17 @@ namespace JAHub_Winforms
                 flwFormEntryControls.Controls.Add(new usrNameBlock());
                 flwFormEntryControls.Controls.Add(new usrDateOfBirthBlock());
                 flwFormEntryControls.Controls.Add(new usrTrnBlock());
+
+                // User already has an application with RADA, but is not connected to system
+                applicationType = RadaRegistrationType.NotConnected;
             }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            FarmerRecord record = new FarmerRecord();
+            // First step: Check to see if all controls validate correctly
+            // But then, how do i know which controls to validate?
+            // depends on the lists
 
             // Broadly:
             // - Check to see if all controls validate correctly
