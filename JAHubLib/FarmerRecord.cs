@@ -64,7 +64,7 @@ namespace JAHubLib
         List<String> Products;
         List<String> Organizations;
         List<String> PhoneNumbers;
-        float TotalHectares { get; set; }
+        decimal TotalHectares { get; set; }
         
         Bitmap IdPicture { get; set; }
         String TaxRegistrationNumber { get; set; }

@@ -36,7 +36,7 @@ namespace JAHub_Winforms
                 flwFormEntryControls.Controls.Add(new usrProductsBlock());
                 flwFormEntryControls.Controls.Add(new usrOrganizationsBlock());
 
-                // Information will add to DB, but will not show until verification
+                // Information will add to DB, but will not show from user perspective until verification
                 applicationType = RadaRegistrationType.AwaitingVerification;
             }
         }
@@ -57,22 +57,43 @@ namespace JAHub_Winforms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // First step: Check to see if all controls validate correctly
-            // But then, how do i know which controls to validate?
-            // depends on the lists
+            FarmerRecord farmer = new FarmerRecord();
+            
+            if(applicationType == RadaRegistrationType.AwaitingVerification)
+            {
+                // basic structure is:
+                // if(blahBlah.IsBlockValid())
+                // {
+                //      farmerObject.PropertyName = relevantControl.PropertyName;
+                // }
+                // else 
+                // {
+                //      blahBlah.SetControlFocus()
+                //      put some messagebox that indicated where the fuckup is
+                //      return;
+                // }  
+                // 
+                // ...
+                //
+                // farmerRecord.WriteToDatabase();
+                // Messagebox "Application Complete! Blahblahblah"
+                // Return to either last opened form, or blank page
+            }
+            else if(applicationType == RadaRegistrationType.NotConnected)
+            {
+                //flwFormEntryControls.Controls[0].IsBlockValid();
+                // won't work because relevant control is not identified as the usercontrol it is
+                // with an IsBlockValid() method. need to find some workaround
 
-            // Broadly:
-            // - Check to see if all controls validate correctly
-            // Every block that can validate has its own "IsBlockValid()" method
-            // Run the blocks
-
-            // use properties to expose all of the relevant data to this form
-
-
-            //  - If there are *necessary* invalid controls, stop process, raise errors
-            // - Write object to database (consult "old and new registration" file)
-            // - Indicate process completion (probably via messagebox)
-            // - Take user back to wherever they came from (tbd)
+                // potentially, could use multiple using{} blocks
+                // using (var nameBlock = flwEntryBlock.Control[x] as usrNameBlock){
+                //      if (nameBlock.IsBlockValid())
+                //      {
+                //          ...
+                //      }
+                // }
+                //          
+            }
         }
     }
 }
