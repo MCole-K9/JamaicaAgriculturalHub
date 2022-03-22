@@ -60,6 +60,7 @@ namespace JAHub_Winforms
             FarmerRecord farmer = new FarmerRecord();
             String message;
             
+            // Submission format for people who don't have RADA accounts already
             if(applicationType == RadaRegistrationType.AwaitingVerification)
             {
                 using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
@@ -74,8 +75,9 @@ namespace JAHub_Winforms
                     {
                         nameBlock.SetControlFocus();
 
-                        message = "Errors found in Name section. Please fix them and resubmit your appliication";
-
+                        message = "Errors found in Name section. Please fix them and " +
+                            "resubmit your appliication";
+                        // raise the messagebox for the message
                         return;
                     }
                 }
@@ -91,15 +93,35 @@ namespace JAHub_Winforms
                     {
                         dateBlock.SetControlFocus();
 
-                        // messagebox here
+                        dateBlock.SetControlFocus();
+
+                        message = "Errors found in Date of Birth section. Please fix them and " +
+                            "resubmit your appliication";
+                        // raise the messagebox for the message
                         return;
                     }
 
                 }
 
-                // contact block
+                using (var contactBlock = flwFormEntryControls.Controls[2] as usrContactBlock)
+                {
+                    if (contactBlock.IsBlockValid())
+                    {
+                        farmer.BusinessEmail = contactBlock.Email;
+                        farmer.PhoneNumbers = contactBlock.PhoneNumbers;
+                    }
+                    else
+                    {
+                        contactBlock.SetControlFocus();
 
-                using (var trnBlock = flwFormEntryControls.Controls[2] as usrTrnBlock)
+                        message = "Errors found in Contact section. Please fix them and " +
+                            "resubmit your appliication";
+                        // raise the messagebox for the message
+                        return;
+                    }
+                }
+
+                using (var trnBlock = flwFormEntryControls.Controls[3] as usrTrnBlock)
                 {
                     if (trnBlock.IsBlockValid())
                     {
@@ -109,40 +131,74 @@ namespace JAHub_Winforms
                     {
                         trnBlock.SetControlFocus();
 
-                        // messagebox here
+                        message = "Errors found in Contact section. Please fix them and " +
+                            "resubmit your appliication";
+                        // raise the messagebox for the message
                         return;
                     }
                 }
 
-                using (var imageBlock = flwFormEntryControls.Controls[3] as usrUploadImageBlock)
+                using (var imageBlock = flwFormEntryControls.Controls[4] as usrUploadImageBlock)
                 {
-
+                    if (!(imageBlock.ProfilePicture == null))
+                    {
+                        farmer.IdPicture = imageBlock.ProfilePicture;
+                    }
                 }
 
-                 using (var holdingsBlock = flwFormEntryControls.Controls[4] as usrHoldingsBlock)
+                 using (var holdingsBlock = flwFormEntryControls.Controls[5] as usrHoldingsBlock)
                 {
+                    if (holdingsBlock.IsBlockValid())
+                    {
+                        farmer.Products = holdingsBlock.ProductList;
 
+                        if (!String.IsNullOrEmpty(holdingsBlock.LandAddressParish))
+                        {
+                            farmer.AddressTown = holdingsBlock.LandAddressTown;
+                            farmer.AddressPoBox = holdingsBlock.LandAddressPoBox;
+                            farmer.AddressParish = holdingsBlock.LandAddressPoBox;
+                        }
+
+                        farmer.TotalHectares = holdingsBlock.LandMeasurement;
+                    }
+                    else
+                    {
+                        holdingsBlock.SetControlFocus();
+
+                        message = "Errors found in Holdings section. Please fix them and " +
+                            "resubmit your appliication";
+                        // raise the messagebox for the message
+                        return;
+                    }
                 }
 
-                using (var industryBlock = flwFormEntryControls.Controls[5] as usrIndustryBlock)
+                using (var industryBlock = flwFormEntryControls.Controls[6] as usrIndustryBlock)
                 {
+                    if (industryBlock.IsBlockValid())
+                    {
 
+                    }
+                    else
+                    {
+                        industryBlock.SetControlFocus();
+                        
+                        message = "Errors found in Holdings section. Please fix them and " +
+                            "resubmit your appliication";
+                        // raise the messagebox for the message
+                        return;
+                    }
                 }
 
-                using (var organizationsBlock = flwFormEntryControls.Controls[6] as usrOrganizationsBlock)
+                using (var organizationsBlock = flwFormEntryControls.Controls[7] as usrOrganizationsBlock)
                 {
-
-                }
-
-                if (farmer.WriteRecordToDatabase())
-                {
-                    // remember to include return to last form;
-                }
-                else
-                {
-                    message = "Could not write to database";
+                    if (organizationsBlock.Organizations != null)
+                    {
+                        farmer.Organizations = organizationsBlock.Organizations;
+                    }
                 }
             }
+            
+            // Other submission format for People with already existing RADA Records
             else if(applicationType == RadaRegistrationType.NotConnected)
             {
                 farmer.RadaRegistrationPhase = applicationType;
@@ -196,16 +252,19 @@ namespace JAHub_Winforms
                         return;
                     }
                 }
+            }
 
-                if (farmer.WriteRecordToDatabase())
+            if (farmer.WriteRecordToDatabase())
                 {
                     // remember to include return to last form;
+                    // maybe write a message that says successfully applied/connected wtv for
+                    // "FirstName LastName"
+
                 }
                 else
                 {
-
+                    message = "Could not write to database";
                 }
-            }
         }
     }
 }

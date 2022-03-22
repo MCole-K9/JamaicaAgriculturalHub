@@ -64,7 +64,7 @@ namespace JAHubLib
         public List<String> Products { get; set; }
         public List<String> Organizations { get; set; }
         public List<String> PhoneNumbers { get; set; }
-        decimal TotalHectares { get; set; }
+        public decimal TotalHectares { get; set; }
         public Bitmap IdPicture { get; set; }
         public String TaxRegistrationNumber { get; set; }
 
