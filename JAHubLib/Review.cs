@@ -11,11 +11,11 @@ namespace JAHubLib
         private int id;
         private int rating;
         private string comment;
-        Customer customer;
+        public Customer customer;
 
         public int Id { get => id; set => id = value; }
         public int Rating { get => rating; set => rating = value; }
         public string Comment { get => comment; set => comment = value; }
-        internal Customer Customer { get => customer; set => customer = value; }
+        public Customer Customer { get => customer; set => customer = value; }
     }
 }
