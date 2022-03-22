@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JAHubLib
 {
-    internal class Customer : User
+    public class Customer : User
     {
 
     }
