@@ -7,11 +7,17 @@ using System.Drawing;
 
 namespace JAHubLib
 {
+    public enum RadaRegistrationType
+    {
+        NotRegistered = 0,
+        AwaitingVerification = 1,
+        NotConnected = 2,
+        FullyConnected = 3
+    }
+
     public class FarmerRecord
     {
-        // As yet unclear how the application will distinguish users from each other
-        // Probably will need another constructor that takes a session variable (probably the unique
-        // ID of the user, which may or may not be separate from the username, idk)
+        
         
         // only writing these for the marks lol, they're not necessary
         String addressTown;
@@ -58,12 +64,12 @@ namespace JAHubLib
         List<String> Products;
         List<String> Organizations;
         List<String> PhoneNumbers;
-        float TotalHectares { get; set; }
+        decimal TotalHectares { get; set; }
         
         Bitmap IdPicture { get; set; }
         String TaxRegistrationNumber { get; set; }
 
-        int RadaRegistrationPhase { get; set; }
+        RadaRegistrationType RadaRegistrationPhase { get; set; }
 
 
         public FarmerRecord()
