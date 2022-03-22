@@ -30,6 +30,7 @@ namespace JAHub_Winforms
             pcbImage.Image = Image.FromFile(_product.Image);
             lblProductName.Text = _product.Name;
             lblPrice.Text = $"${_product.Price} Per Lbs";
+            //lblFarmerName.Text = $"{_product.Farmer.Firstname} {_product.Farmer.Lastname}";
         }
 
         private void LoadReviews()
