@@ -32,7 +32,7 @@ namespace JAHub_Winforms
                 flwFormEntryControls.Controls.Add(new usrContactBlock());
                 flwFormEntryControls.Controls.Add(new usrTrnBlock());
                 flwFormEntryControls.Controls.Add(new usrUploadImageBlock());
-                flwFormEntryControls.Controls.Add(new usrHoldingsBlock());
+                flwFormEntryControls.Controls.Add(new usrIndustryBlock());
                 flwFormEntryControls.Controls.Add(new usrProductsBlock());
                 flwFormEntryControls.Controls.Add(new usrOrganizationsBlock());
 
@@ -58,26 +58,90 @@ namespace JAHub_Winforms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             FarmerRecord farmer = new FarmerRecord();
+            String message;
             
             if(applicationType == RadaRegistrationType.AwaitingVerification)
             {
-                // basic structure is:
-                // if(blahBlah.IsBlockValid())
-                // {
-                //      farmerObject.PropertyName = relevantControl.PropertyName;
-                // }
-                // else 
-                // {
-                //      blahBlah.SetControlFocus()
-                //      put some messagebox that indicated where the fuckup is
-                //      return;
-                // }  
-                // 
-                // ...
-                //
-                // farmerRecord.WriteToDatabase();
-                // Messagebox "Application Complete! Blahblahblah"
-                // Return to either last opened form, or blank page
+                using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
+                {
+                    if (nameBlock.IsBlockValid())
+                    {
+                        farmer.FirstName = nameBlock.FirstName;
+                        farmer.MiddleName = nameBlock.MiddleName;
+                        farmer.LastName = nameBlock.LastName;
+                    }
+                    else
+                    {
+                        nameBlock.SetControlFocus();
+
+                        message = "Errors found in Name section. Please fix them and resubmit your appliication";
+
+                        return;
+                    }
+                }
+
+                using (var dateBlock = flwFormEntryControls.Controls[1] as usrDateOfBirthBlock)
+                {
+                    if (dateBlock.IsBlockValid())
+                    {
+                        farmer.DateOfBirth = new DateTime(Int32.Parse(dateBlock.Year),
+                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day));
+                    }
+                    else
+                    {
+                        dateBlock.SetControlFocus();
+
+                        // messagebox here
+                        return;
+                    }
+
+                }
+
+                // contact block
+
+                using (var trnBlock = flwFormEntryControls.Controls[2] as usrTrnBlock)
+                {
+                    if (trnBlock.IsBlockValid())
+                    {
+                        farmer.TaxRegistrationNumber = trnBlock.Trn;
+                    }
+                    else
+                    {
+                        trnBlock.SetControlFocus();
+
+                        // messagebox here
+                        return;
+                    }
+                }
+
+                using (var imageBlock = flwFormEntryControls.Controls[3] as usrUploadImageBlock)
+                {
+
+                }
+
+                 using (var holdingsBlock = flwFormEntryControls.Controls[4] as usrHoldingsBlock)
+                {
+
+                }
+
+                using (var industryBlock = flwFormEntryControls.Controls[5] as usrIndustryBlock)
+                {
+
+                }
+
+                using (var organizationsBlock = flwFormEntryControls.Controls[6] as usrOrganizationsBlock)
+                {
+
+                }
+
+                if (farmer.WriteRecordToDatabase())
+                {
+                    // remember to include return to last form;
+                }
+                else
+                {
+                    message = "Could not write to database";
+                }
             }
             else if(applicationType == RadaRegistrationType.NotConnected)
             {
@@ -94,6 +158,7 @@ namespace JAHub_Winforms
                     else
                     {
                         nameBlock.SetControlFocus();
+
 
                         // use the messagebox for here
                         return;
@@ -132,7 +197,14 @@ namespace JAHub_Winforms
                     }
                 }
 
-                farmer.WriteRecordToDatabase();
+                if (farmer.WriteRecordToDatabase())
+                {
+                    // remember to include return to last form;
+                }
+                else
+                {
+
+                }
             }
         }
     }

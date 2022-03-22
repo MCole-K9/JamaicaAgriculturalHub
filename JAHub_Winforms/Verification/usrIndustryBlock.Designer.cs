@@ -1,4 +1,4 @@
-﻿namespace JAHub_Winforms.Verifcation
+﻿namespace JAHub_Winforms.Verification
 {
     partial class usrIndustryBlock
     {
@@ -92,8 +92,8 @@
             // 
             // rdoIndustryYes
             // 
-            this.rdoIndustryYes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.rdoIndustryYes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoIndustryYes.AutoSize = true;
             this.rdoIndustryYes.BackColor = System.Drawing.Color.Transparent;
@@ -111,8 +111,8 @@
             // 
             // rdoIndustryNo
             // 
-            this.rdoIndustryNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.rdoIndustryNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoIndustryNo.AutoSize = true;
             this.rdoIndustryNo.BackColor = System.Drawing.Color.Transparent;

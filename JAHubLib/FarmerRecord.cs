@@ -77,9 +77,13 @@ namespace JAHubLib
             // from the properties
         }
 
-        public void WriteRecordToDatabase()
+        public bool WriteRecordToDatabase()
         {
             // this is here primarily as a placeholder
+
+            // This should probably return a boolean in case it fucks up *somehow*
+
+            return true;
         }
 
         
