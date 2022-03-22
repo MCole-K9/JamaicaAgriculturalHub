@@ -412,6 +412,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\yam-g91011fb33_640.jpg" />
+    <None Include="Resources\yellow star.png" />
+    <None Include="Resources\white star.png" />
     <None Include="Resources\security settings%28I%29.png" />
     <None Include="Resources\concept-of-user-profile.png" />
     <None Include="Resources\right-arrows %282%29.png" />
