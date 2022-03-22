@@ -25,6 +25,6 @@ namespace JAHubLib
         public float Price { get => price; set => price = value; }
         
         public List<Review> Reviews { get => reviews; set => reviews = value; }
-        internal Farmer Farmer { get => farmer; set => farmer = value; }
+        public Farmer Farmer { get => farmer; set => farmer = value; }
     }
 }
