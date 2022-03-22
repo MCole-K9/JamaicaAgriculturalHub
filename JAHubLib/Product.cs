@@ -14,7 +14,8 @@ namespace JAHubLib
         private string category;
         private string image;
         private float price;
-        private List<Review> reviews;
+        private List<Review> reviews = new List<Review>();
+        private Farmer farmer;
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
@@ -24,5 +25,6 @@ namespace JAHubLib
         public float Price { get => price; set => price = value; }
         
         public List<Review> Reviews { get => reviews; set => reviews = value; }
+        internal Farmer Farmer { get => farmer; set => farmer = value; }
     }
 }
