@@ -24,7 +24,7 @@ namespace JAHubLib
         String addressPoBox;
         String addressParish;
 
-        String AddressTown { 
+        public String AddressTown { 
             get {
                 return addressTown;
             } 
@@ -32,7 +32,7 @@ namespace JAHubLib
                 addressTown = value;
             } 
         }
-        String AddressPoBox { 
+        public String AddressPoBox { 
             get { 
                 return addressPoBox;
             } 
@@ -40,7 +40,7 @@ namespace JAHubLib
                 addressPoBox = value;
             }
         }
-        String AddressParish {
+        public String AddressParish {
             get {
                 return addressParish;
             }
@@ -51,25 +51,24 @@ namespace JAHubLib
                 
         }
 
-        String FirstName { get; set; }
-        String LastName { get; set; }
-        String MiddleName { get; set; }
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
+        public String MiddleName { get; set; }
 
-        DateTime dateOfBirth;
+        public DateTime DateOfBirth { get; set; }
 
-        String BusinessEmail { get; set; }
-        Boolean UsesHeavyMachinery { get; set; }
-        int NumberOfEmployees { get; set; }
+        public String BusinessEmail { get; set; }
+        public Boolean UsesHeavyMachinery { get; set; }
+        public int NumberOfEmployees { get; set; }
 
-        List<String> Products;
-        List<String> Organizations;
-        List<String> PhoneNumbers;
+        public List<String> Products { get; set; }
+        public List<String> Organizations { get; set; }
+        public List<String> PhoneNumbers { get; set; }
         decimal TotalHectares { get; set; }
-        
-        Bitmap IdPicture { get; set; }
-        String TaxRegistrationNumber { get; set; }
+        public Bitmap IdPicture { get; set; }
+        public String TaxRegistrationNumber { get; set; }
 
-        RadaRegistrationType RadaRegistrationPhase { get; set; }
+        public RadaRegistrationType RadaRegistrationPhase { get; set; }
 
 
         public FarmerRecord()

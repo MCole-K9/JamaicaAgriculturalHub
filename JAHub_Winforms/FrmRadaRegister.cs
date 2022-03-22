@@ -81,18 +81,58 @@ namespace JAHub_Winforms
             }
             else if(applicationType == RadaRegistrationType.NotConnected)
             {
-                //flwFormEntryControls.Controls[0].IsBlockValid();
-                // won't work because relevant control is not identified as the usercontrol it is
-                // with an IsBlockValid() method. need to find some workaround
+                farmer.RadaRegistrationPhase = applicationType;
 
-                // potentially, could use multiple using{} blocks
-                // using (var nameBlock = flwEntryBlock.Control[x] as usrNameBlock){
-                //      if (nameBlock.IsBlockValid())
-                //      {
-                //          ...
-                //      }
-                // }
-                //          
+                using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
+                {
+                    if (nameBlock.IsBlockValid())
+                    {
+                        farmer.FirstName = nameBlock.FirstName;
+                        farmer.MiddleName = nameBlock.MiddleName;
+                        farmer.LastName = nameBlock.LastName;
+                    }
+                    else
+                    {
+                        nameBlock.SetControlFocus();
+
+                        // use the messagebox for here
+                        return;
+                    }
+                }
+
+                using (var dateBlock = flwFormEntryControls.Controls[1] as usrDateOfBirthBlock)
+                {
+                    if (dateBlock.IsBlockValid())
+                    {
+                        farmer.DateOfBirth = new DateTime(Int32.Parse(dateBlock.Year),
+                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day));
+                    }
+                    else
+                    {
+                        dateBlock.SetControlFocus();
+
+                        // messagebox here
+                        return;
+                    }
+
+                }
+                
+                using (var trnBlock = flwFormEntryControls.Controls[2] as usrTrnBlock)
+                {
+                    if (trnBlock.IsBlockValid())
+                    {
+                        farmer.TaxRegistrationNumber = trnBlock.Trn;
+                    }
+                    else
+                    {
+                        trnBlock.SetControlFocus();
+
+                        // messagebox here
+                        return;
+                    }
+                }
+
+                farmer.WriteRecordToDatabase();
             }
         }
     }
