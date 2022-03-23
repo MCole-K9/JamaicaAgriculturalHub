@@ -101,7 +101,14 @@ namespace JAHub_Winforms
             //FrmAccount frmAccount = new FrmAccount() { Dock = DockStyle.Fill,TopLevel = false, TopMost = true};
             //this.panelHomeContainer.Controls.Add(frmAccount);
             //frmAccount.Show();
-            //HighlightButtons(btnMyAccount);
+            HighlightButtons(btnMyAccount);
+        }
+
+        private void btnSecurity_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmSecurity());
+            HighlightButtons(btnSecurity);
+                
         }
     }
 }

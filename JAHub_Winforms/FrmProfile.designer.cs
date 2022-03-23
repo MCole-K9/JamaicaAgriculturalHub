@@ -58,7 +58,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(218, 548);
+            this.panelMenu.Size = new System.Drawing.Size(218, 600);
             this.panelMenu.TabIndex = 0;
             // 
             // btnLogout
@@ -92,6 +92,7 @@
             this.btnSecurity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSecurity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSecurity.UseVisualStyleBackColor = true;
+            this.btnSecurity.Click += new System.EventHandler(this.btnSecurity_Click);
             // 
             // btnDashboard
             // 
@@ -206,14 +207,14 @@
             // 
             this.panelHomeContainer.Location = new System.Drawing.Point(219, 3);
             this.panelHomeContainer.Name = "panelHomeContainer";
-            this.panelHomeContainer.Size = new System.Drawing.Size(904, 533);
+            this.panelHomeContainer.Size = new System.Drawing.Size(945, 585);
             this.panelHomeContainer.TabIndex = 1;
             // 
             // FrmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 548);
+            this.ClientSize = new System.Drawing.Size(1176, 600);
             this.Controls.Add(this.panelHomeContainer);
             this.Controls.Add(this.panelMenu);
             this.Name = "FrmProfile";
