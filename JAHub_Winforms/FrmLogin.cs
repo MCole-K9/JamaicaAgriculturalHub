@@ -36,19 +36,24 @@ namespace JAHub_Winforms
             
             // This is only necessary because i'm working with the assumption that the code
             // uses userID and not username. Probably will change
-            else if (Int32.TryParse(txtUserId.Text, out int id))
+            else if (Int32.TryParse(txtUserId.Text, out int id) == false)
             {
                 lblCredentialEntryError.Text = "Error: UserID must be a number";
                 lblCredentialEntryError.Show();
 
                 txtUserId.Clear();
             }
-            else
+            else if ((Int32.TryParse(txtUserId.Text, out int userID) == true) && String.IsNullOrEmpty(txtPassword.Text))
             {
                 PasswordResult result = Session.Login(Int32.Parse(txtUserId.Text), txtPassword.Text);
 
                 if (result == PasswordResult.Success)
                 {
+                    if (lblCredentialEntryError.Visible == true)
+                    {
+                        lblCredentialEntryError.Visible = false;
+                    }
+                    
                     // Session is now set to whatever role and ID the user has
                     // unfreeze all controls
                 }
@@ -73,7 +78,6 @@ namespace JAHub_Winforms
             
             /* This needs to:
              * - Lock all controls in parent *except this box* until user/pass is filled
-             * - take the entered credentials from a user
              * - if match:
              *  - unlock all controls
              *  - show controls according to user role

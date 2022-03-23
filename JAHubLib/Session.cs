@@ -35,7 +35,7 @@ namespace JAHubLib
         public static UserRole UserRole => _userRole;
         public static int UserId => _userId;
 
-        // unsure whether or not i want this to return a boolean or nothing yet
+
         public static PasswordResult Login(int userId, String password)
         {
             // this is roughly where the query will go
@@ -54,12 +54,10 @@ namespace JAHubLib
             {
                 return PasswordResult.CredentialsIncorrect;
             }
-
-            // Basically:
-            // - Take the username and password
-            // - Check them against the database
-            // - if successful, fill attributes for blahblah
-            // - if unsuccessful, return false (maybe return a value indicating success/failure type?)
+            else
+            {
+                return PasswordResult.NoMatchingCredentials;
+            }
 
             return PasswordResult.NoMatchingCredentials;
         }
