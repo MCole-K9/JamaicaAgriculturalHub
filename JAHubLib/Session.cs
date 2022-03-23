@@ -72,11 +72,15 @@ namespace JAHubLib
             return PasswordResult.NoMatchingCredentials;
         }
 
-        // writing this for later;
+        // will actually 
         public static void Logout()
         {
             _userRole = UserRole.NotLoggedIn;
             _userId = 0;
+
+            // close all forms
+            // freeze all controls (however that works)
+            // bring back up a Login screen
         }
     }
 }
