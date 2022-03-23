@@ -12,6 +12,7 @@ namespace JAHubLib
         Customer = 1,
         Farmer = 2,
         GrantOfficer = 3,
+        NotLoggedIn = 4,
     }
 
     public enum PasswordResult
@@ -38,7 +39,16 @@ namespace JAHubLib
 
         public static PasswordResult Login(int userId, String password)
         {
-            // this is roughly where the query will go
+            // this is roughly where the query will go, inside of a using(){} block probably
+
+            // should probably prevent the possibility of changing this during normal operation
+
+            // shelving this for now, but i'll deal with it tomorrow
+            //if (_userRole != UserRole.NotLoggedIn)
+            //{
+
+            //}
+
             
             if (userId == 1)
             {
@@ -60,6 +70,13 @@ namespace JAHubLib
             }
 
             return PasswordResult.NoMatchingCredentials;
+        }
+
+        // writing this for later;
+        public static void Logout()
+        {
+            _userRole = UserRole.NotLoggedIn;
+            _userId = 0;
         }
     }
 }
