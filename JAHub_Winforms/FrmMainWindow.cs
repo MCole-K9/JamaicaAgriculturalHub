@@ -15,6 +15,11 @@ namespace JAHub_Winforms
         public FrmMainWindow()
         {
             InitializeComponent();
+
+            FrmLogin login = new FrmLogin();
+            login.MdiParent = this;
+            login.Show();
+
         }
        
         private void shopToolStripMenuItem_Click(object sender, EventArgs e)

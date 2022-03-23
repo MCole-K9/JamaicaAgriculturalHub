@@ -77,7 +77,8 @@ namespace JAHub_Winforms
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
-                        // raise the messagebox for the message
+                        MessageBox.Show(message);
+
                         return;
                     }
                 }
@@ -93,11 +94,9 @@ namespace JAHub_Winforms
                     {
                         dateBlock.SetControlFocus();
 
-                        dateBlock.SetControlFocus();
-
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
-                        // raise the messagebox for the message
+                        MessageBox.Show(message);
                         return;
                     }
 
@@ -116,7 +115,7 @@ namespace JAHub_Winforms
 
                         message = "Errors found in Contact section. Please fix them and " +
                             "resubmit your appliication";
-                        // raise the messagebox for the message
+                        MessageBox.Show(message);
                         return;
                     }
                 }
@@ -133,7 +132,7 @@ namespace JAHub_Winforms
 
                         message = "Errors found in Contact section. Please fix them and " +
                             "resubmit your appliication";
-                        // raise the messagebox for the message
+                        MessageBox.Show(message);
                         return;
                     }
                 }
@@ -167,7 +166,7 @@ namespace JAHub_Winforms
 
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
-                        // raise the messagebox for the message
+                        MessageBox.Show(message);
                         return;
                     }
                 }
@@ -184,7 +183,7 @@ namespace JAHub_Winforms
                         
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
-                        // raise the messagebox for the message
+                        MessageBox.Show(message);
                         return;
                     }
                 }
@@ -215,8 +214,9 @@ namespace JAHub_Winforms
                     {
                         nameBlock.SetControlFocus();
 
-
-                        // use the messagebox for here
+                        message = "Errors found in Name section. Please fix them and " +
+                            "resubmit your appliication";
+                        MessageBox.Show(message);
                         return;
                     }
                 }
@@ -231,8 +231,10 @@ namespace JAHub_Winforms
                     else
                     {
                         dateBlock.SetControlFocus();
-
-                        // messagebox here
+                        
+                        message = "Errors found in Date of Birth section. Please fix them and " +
+                            "resubmit your appliication";
+                        MessageBox.Show(message);
                         return;
                     }
 
@@ -248,23 +250,40 @@ namespace JAHub_Winforms
                     {
                         trnBlock.SetControlFocus();
 
-                        // messagebox here
+                        message = "Errors found in TRN section. Please fix them and " +
+                            "resubmit your appliication";
+                        MessageBox.Show(message);
                         return;
                     }
                 }
             }
 
             if (farmer.WriteRecordToDatabase())
+            {
+                if (applicationType == RadaRegistrationType.AwaitingVerification)
                 {
-                    // remember to include return to last form;
-                    // maybe write a message that says successfully applied/connected wtv for
-                    // "FirstName LastName"
-
+                    message = "Successfully created record for " + farmer.FirstName +
+                        " " + farmer.LastName + "! \n Please wait to be verified.";
+                    MessageBox.Show(message);
                 }
                 else
                 {
-                    message = "Could not write to database";
+                    message = "Successfully entered request to connect account for " + farmer.FirstName +
+                        " " + farmer.LastName + "! \n Please wait to be connected.";
+                    MessageBox.Show(message);
                 }
+
+                // end the form and return to wherever you were before
+
+            }
+            else
+            {
+                message = "Could not write to database";
+                MessageBox.Show(message);
+
+                // end the form and return to wherever
+            }
+
         }
     }
 }
