@@ -128,6 +128,8 @@
             // 
             // pnlForm
             // 
+            this.pnlForm.AutoSize = true;
+            this.pnlForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlForm.Location = new System.Drawing.Point(141, 0);
             this.pnlForm.Name = "pnlForm";
@@ -138,6 +140,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 497);
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlNav);
@@ -146,6 +150,7 @@
             this.Load += new System.EventHandler(this.FrmShop_Load);
             this.pnlNav.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
