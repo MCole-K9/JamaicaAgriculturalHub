@@ -21,22 +21,22 @@ namespace JAHubLib
         Success = 2,
     }
 
-    public class Session
+    public static class Session
     {
         /* This should basically keep space for a method that checks the details
          * entered into the login, then if correct makes a readonly property of role and 
          * 
          */
 
-        UserRole _userRole;
-        int _userId;
+        static UserRole _userRole;
+        static int _userId;
 
         // It's never necessary to change these upon a successful login, the object manages this
-        public UserRole UserRole => _userRole;
-        public int UserId => _userId;
+        public static UserRole UserRole => _userRole;
+        public static int UserId => _userId;
 
         // unsure whether or not i want this to return a boolean or nothing yet
-        public PasswordResult Login(int userId, String password)
+        public static PasswordResult Login(int userId, String password)
         {
             // this is roughly where the query will go
             
