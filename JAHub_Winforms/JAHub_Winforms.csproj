@@ -56,6 +56,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAdminFormContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminFormContainer.Designer.cs">
+      <DependentUpon>FrmAdminFormContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRadaStatus.cs">
       <SubType>Form</SubType>
     </Compile>
