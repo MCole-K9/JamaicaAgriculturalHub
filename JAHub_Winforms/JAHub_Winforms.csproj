@@ -206,6 +206,18 @@
     <Compile Include="FrmUserGrantPage.Designer.cs">
       <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Moderation\usrInfractionAdder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionAdder.Designer.cs">
+      <DependentUpon>usrInfractionAdder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionEntry.Designer.cs">
+      <DependentUpon>usrInfractionEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -393,6 +405,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUserGrantPage.resx">
       <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moderation\usrInfractionAdder.resx">
+      <DependentUpon>usrInfractionAdder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moderation\usrInfractionEntry.resx">
+      <DependentUpon>usrInfractionEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
