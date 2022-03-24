@@ -32,11 +32,12 @@
             this.lblRadaStatus = new System.Windows.Forms.Label();
             this.lblStatusType = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblStatusExplanation = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblStatusExplanation = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblInformation = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -95,31 +96,17 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(413, 562);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(413, 459);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // lblStatusExplanation
-            // 
-            this.lblStatusExplanation.AutoSize = true;
-            this.lblStatusExplanation.Location = new System.Drawing.Point(3, 0);
-            this.lblStatusExplanation.Name = "lblStatusExplanation";
-            this.lblStatusExplanation.Size = new System.Drawing.Size(375, 20);
-            this.lblStatusExplanation.TabIndex = 1;
-            this.lblStatusExplanation.Text = "This text just explains what\'s actually the case rn";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 153);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(398, 225);
-            this.flowLayoutPanel2.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.lblStatusExplanation, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnEdit, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnEdit, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblInformation, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 47);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -128,14 +115,31 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(398, 100);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
+            // lblStatusExplanation
+            // 
+            this.lblStatusExplanation.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblStatusExplanation, 2);
+            this.lblStatusExplanation.Location = new System.Drawing.Point(3, 0);
+            this.lblStatusExplanation.Name = "lblStatusExplanation";
+            this.lblStatusExplanation.Size = new System.Drawing.Size(375, 20);
+            this.lblStatusExplanation.TabIndex = 1;
+            this.lblStatusExplanation.Text = "This text just explains what\'s actually the case rn";
+            // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(3, 53);
+            this.btnEdit.Location = new System.Drawing.Point(117, 53);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(102, 44);
+            this.btnEdit.Size = new System.Drawing.Size(102, 35);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 153);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(398, 225);
+            this.flowLayoutPanel2.TabIndex = 2;
             // 
             // button1
             // 
@@ -146,11 +150,22 @@
             this.button1.Text = "Click here to Register with RADA or connect a preexisting record";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lblInformation
+            // 
+            this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblInformation.AutoSize = true;
+            this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformation.Location = new System.Drawing.Point(3, 62);
+            this.lblInformation.Name = "lblInformation";
+            this.lblInformation.Size = new System.Drawing.Size(108, 25);
+            this.lblInformation.TabIndex = 3;
+            this.lblInformation.Text = "Information";
+            // 
             // FrmRadaStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 562);
+            this.ClientSize = new System.Drawing.Size(413, 459);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -178,5 +193,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblInformation;
     }
 }
