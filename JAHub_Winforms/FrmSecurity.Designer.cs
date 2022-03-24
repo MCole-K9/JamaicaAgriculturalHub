@@ -40,9 +40,9 @@
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.lblOldPasswordlabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblChangePasswordlabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblChangePasswordlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -55,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 78);
+            this.panel1.Size = new System.Drawing.Size(766, 78);
             this.panel1.TabIndex = 0;
             // 
             // lbkSecuritylabel
@@ -79,16 +79,16 @@
             this.panel2.Controls.Add(this.lblNewPasswordlabel);
             this.panel2.Controls.Add(this.txtOldPassword);
             this.panel2.Controls.Add(this.lblOldPasswordlabel);
-            this.panel2.Location = new System.Drawing.Point(108, 229);
+            this.panel2.Location = new System.Drawing.Point(111, 201);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 345);
+            this.panel2.Size = new System.Drawing.Size(521, 420);
             this.panel2.TabIndex = 1;
             // 
             // lblPasswordConditionlabel
             // 
             this.lblPasswordConditionlabel.AutoSize = true;
             this.lblPasswordConditionlabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordConditionlabel.Location = new System.Drawing.Point(32, 221);
+            this.lblPasswordConditionlabel.Location = new System.Drawing.Point(32, 262);
             this.lblPasswordConditionlabel.Name = "lblPasswordConditionlabel";
             this.lblPasswordConditionlabel.Size = new System.Drawing.Size(391, 34);
             this.lblPasswordConditionlabel.TabIndex = 7;
@@ -98,7 +98,7 @@
             // btnUpdatePassword
             // 
             this.btnUpdatePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePassword.Location = new System.Drawing.Point(186, 285);
+            this.btnUpdatePassword.Location = new System.Drawing.Point(186, 326);
             this.btnUpdatePassword.Name = "btnUpdatePassword";
             this.btnUpdatePassword.Size = new System.Drawing.Size(139, 25);
             this.btnUpdatePassword.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(33, 182);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(33, 201);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(359, 20);
             this.txtConfirmPassword.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             this.txtConfirmNewPassword.AutoSize = true;
             this.txtConfirmNewPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmNewPassword.Location = new System.Drawing.Point(25, 160);
+            this.txtConfirmNewPassword.Location = new System.Drawing.Point(25, 179);
             this.txtConfirmNewPassword.Name = "txtConfirmNewPassword";
             this.txtConfirmNewPassword.Size = new System.Drawing.Size(148, 17);
             this.txtConfirmNewPassword.TabIndex = 4;
@@ -124,7 +124,7 @@
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(34, 110);
+            this.txtNewPassword.Location = new System.Drawing.Point(34, 125);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(359, 20);
             this.txtNewPassword.TabIndex = 3;
@@ -133,7 +133,7 @@
             // 
             this.lblNewPasswordlabel.AutoSize = true;
             this.lblNewPasswordlabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewPasswordlabel.Location = new System.Drawing.Point(26, 88);
+            this.lblNewPasswordlabel.Location = new System.Drawing.Point(26, 103);
             this.lblNewPasswordlabel.Name = "lblNewPasswordlabel";
             this.lblNewPasswordlabel.Size = new System.Drawing.Size(94, 17);
             this.lblNewPasswordlabel.TabIndex = 2;
@@ -141,7 +141,7 @@
             // 
             // txtOldPassword
             // 
-            this.txtOldPassword.Location = new System.Drawing.Point(29, 40);
+            this.txtOldPassword.Location = new System.Drawing.Point(29, 51);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.Size = new System.Drawing.Size(359, 20);
             this.txtOldPassword.TabIndex = 1;
@@ -150,7 +150,7 @@
             // 
             this.lblOldPasswordlabel.AutoSize = true;
             this.lblOldPasswordlabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOldPasswordlabel.Location = new System.Drawing.Point(21, 18);
+            this.lblOldPasswordlabel.Location = new System.Drawing.Point(21, 29);
             this.lblOldPasswordlabel.Name = "lblOldPasswordlabel";
             this.lblOldPasswordlabel.Size = new System.Drawing.Size(89, 17);
             this.lblOldPasswordlabel.TabIndex = 0;
@@ -162,30 +162,10 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lblChangePasswordlabel);
-            this.panel3.Location = new System.Drawing.Point(108, 128);
+            this.panel3.Location = new System.Drawing.Point(73, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(526, 90);
+            this.panel3.Size = new System.Drawing.Size(593, 95);
             this.panel3.TabIndex = 2;
-            // 
-            // lblChangePasswordlabel
-            // 
-            this.lblChangePasswordlabel.AutoSize = true;
-            this.lblChangePasswordlabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChangePasswordlabel.Location = new System.Drawing.Point(13, 8);
-            this.lblChangePasswordlabel.Name = "lblChangePasswordlabel";
-            this.lblChangePasswordlabel.Size = new System.Drawing.Size(124, 17);
-            this.lblChangePasswordlabel.TabIndex = 0;
-            this.lblChangePasswordlabel.Text = " Change Password ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.security_settings_I_;
-            this.pictureBox1.Location = new System.Drawing.Point(400, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -199,17 +179,37 @@
             this.label1.Text = "You may configure and change the security settings for login \r\nin this section. U" +
     "se a strong, unique password to keep your JAH \r\naccount safe.";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.security_settings_I_;
+            this.pictureBox1.Location = new System.Drawing.Point(434, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblChangePasswordlabel
+            // 
+            this.lblChangePasswordlabel.AutoSize = true;
+            this.lblChangePasswordlabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePasswordlabel.Location = new System.Drawing.Point(13, 8);
+            this.lblChangePasswordlabel.Name = "lblChangePasswordlabel";
+            this.lblChangePasswordlabel.Size = new System.Drawing.Size(124, 17);
+            this.lblChangePasswordlabel.TabIndex = 0;
+            this.lblChangePasswordlabel.Text = " Change Password ";
+            // 
             // FrmSecurity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(800, 665);
+            this.ClientSize = new System.Drawing.Size(766, 633);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmSecurity";
-            this.Text = "FrmSecurity";
+            this.Text = "Security";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -12,13 +12,12 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
-        List<bool> isProductListValid;
         List<String> _productsList = new List<String>();
 
         public String LandAddressTown => usrLandBlock1.LandAddressTown;
         public String LandAddressPoBox => usrLandBlock1.LandAddresssPoBox;
         public String LandAddressParish => usrLandBlock1.LandAddressParish;
-        public decimal LandMeasuerement => usrLandBlock1.LandMeasurement;
+        public decimal LandMeasurement => usrLandBlock1.LandMeasurement;
         public List<String> ProductList => _productsList;
 
         public usrHoldingsBlock()
@@ -57,6 +56,7 @@ namespace JAHub_Winforms.Verification
                     else
                     {
                         isListValid = false;
+                        _productsList.Clear();
                         break;
                     }
                 }
@@ -73,11 +73,21 @@ namespace JAHub_Winforms.Verification
 
         public void SetControlFocus()
         {
-            // The product blocks will have their own Setcontrol focus
-            // so how would i return focus to the relevant control?
-            // Possibly: Store an address of an object, "as" it as the kind of control, and 
-            // call its .SetControlFocus() method?
-
+            if (!usrLandBlock1.IsBlockValid())
+            {
+                usrLandBlock1.SetControlFocus();
+            }
+            else
+            {
+                foreach(usrProductsBlock product in flwProductsBlock.Controls)
+                {
+                    if (!product.IsBlockValid())
+                    {
+                        product.SetControlFocus();
+                        break;
+                    }
+                }
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JAHubLib
 {
-    internal class Farmer : User
+    public class Farmer : User
     {
         public int TRN;
 

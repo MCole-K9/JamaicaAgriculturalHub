@@ -19,8 +19,9 @@ namespace JAHub_Winforms.Verification
     public partial class usrContactBlock : UserControl
     {
         bool isEmailValid;
-        List<bool> isPhoneValid;
+        List<string> _phoneNumbers = new List<string>();
 
+        // adding the first 
         public String Email => txtEmail.Text;
         public List<String> PhoneNumbers;
 
@@ -61,6 +62,9 @@ namespace JAHub_Winforms.Verification
 
             flwPhoneNumbers.Controls.Add( new usrPhoneNumberBlock());
             btnRemoveNumber.Visible = true;
+
+
+
         }
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
@@ -79,10 +83,20 @@ namespace JAHub_Winforms.Verification
             {
                 bool areAllNumbersValid = true;
                 
-                //foreach (){
-                    // this needs me to expose the phone numbers first, then do it
-                    
-                //}
+                foreach(usrPhoneNumberBlock phoneNumber in flwPhoneNumbers.Controls)
+                {
+                    if (phoneNumber.IsBlockValid())
+                    {
+                        _phoneNumbers.Add(phoneNumber.PhoneNumber);
+                    }
+                    else
+                    {
+                        areAllNumbersValid = false;
+                        _phoneNumbers.Clear();
+
+                        break;
+                    }
+                }
 
                 if (areAllNumbersValid)
                 {
@@ -91,6 +105,24 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
+        }
+
+        public void SetControlFocus()
+        {
+            if (!isEmailValid)
+            {
+                txtEmail.Focus();
+            }
+            else
+            {
+                foreach(usrPhoneNumberBlock phoneNumber in flwPhoneNumbers.Controls)
+                {
+                    if (!phoneNumber.IsBlockValid())
+                    {
+                        phoneNumber.SetControlFocus();
+                    }
+                }
+            }
         }
     }
 }

@@ -8,12 +8,12 @@ namespace JAHubLib
 {
     public class User
     {
-        protected string Firstname { set; get; }
-        protected string Lastname { set; get; }
-        protected string Username { set; get; }
-        protected string Password { set; get; }
-        protected string Email { set; get; } 
-        protected string UserID { set; get; }
+        public string Firstname { set; get; }
+        public string Lastname { set; get; }
+        public string Username { set; get; }
+        public string Password { set; get; }
+        public string Email { set; get; } 
+        public string UserID { set; get; }
 
         
         
