@@ -56,6 +56,36 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAdminCreateNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminCreateNewUser.Designer.cs">
+      <DependentUpon>FrmAdminCreateNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminEditUser.Designer.cs">
+      <DependentUpon>FrmAdminEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminSelectUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminSelectUser.Designer.cs">
+      <DependentUpon>FrmAdminSelectUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminContainer.Designer.cs">
+      <DependentUpon>FrmAdminContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminViewModeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminViewModeration.Designer.cs">
+      <DependentUpon>FrmAdminViewModeration.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRadaStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +206,18 @@
     <Compile Include="FrmUserGrantPage.Designer.cs">
       <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Moderation\usrInfractionAdder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionAdder.Designer.cs">
+      <DependentUpon>usrInfractionAdder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionEntry.Designer.cs">
+      <DependentUpon>usrInfractionEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -292,8 +334,14 @@
     <Compile Include="Verification\usrTrnBlock.Designer.cs">
       <DependentUpon>usrTrnBlock.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAdminSelectUser.resx">
+      <DependentUpon>FrmAdminSelectUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAccount.resx">
       <DependentUpon>FrmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminContainer.resx">
+      <DependentUpon>FrmAdminContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBlog.resx">
       <DependentUpon>FrmBlog.cs</DependentUpon>
@@ -357,6 +405,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUserGrantPage.resx">
       <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moderation\usrInfractionAdder.resx">
+      <DependentUpon>usrInfractionAdder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Moderation\usrInfractionEntry.resx">
+      <DependentUpon>usrInfractionEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
