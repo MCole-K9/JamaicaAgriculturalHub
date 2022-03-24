@@ -301,6 +301,9 @@
     <EmbeddedResource Include="FrmAccount.resx">
       <DependentUpon>FrmAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminFormContainer.resx">
+      <DependentUpon>FrmAdminFormContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBlog.resx">
       <DependentUpon>FrmBlog.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,8 +17,6 @@ namespace JAHubLib
 
     public class FarmerRecord
     {
-        
-        
         // only writing these for the marks lol, they're not necessary
         String addressTown;
         String addressPoBox;
@@ -75,6 +73,8 @@ namespace JAHubLib
         {
             // i don't think this needs anything, tbh. everything is accessible
             // from the properties
+            // what might be useful, however, is to create a parameterized constructor that
+            // takes an int userId
         }
 
         public bool WriteRecordToDatabase()
