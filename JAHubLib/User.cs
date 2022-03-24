@@ -15,32 +15,7 @@ namespace JAHubLib
         protected string Email { set; get; } 
         protected string UserID { set; get; }
 
-        protected User()
-        {
-            Firstname = "";
-            Lastname = "";
-            Username = "";
-            Password = "";
-            Email = "";
-            UserID = "";
-        }
-        protected User(string fn,string ln, string un,string em,string uid)
-        {
-            Firstname = fn;
-            Lastname = ln;
-            Username = un;
-            Email = em;
-            UserID = uid;
-        }
-        protected User(User user)
-        {
-            Firstname = user.Firstname;
-            Lastname = user.Lastname;
-            Username = user.Username;
-            Password = user.Password;
-            Email = user.Email;
-            UserID = user.UserID;
-        }
+        
         
     }
 }
