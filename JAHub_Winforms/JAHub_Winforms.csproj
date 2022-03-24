@@ -56,11 +56,35 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAdminCreateNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminCreateNewUser.Designer.cs">
+      <DependentUpon>FrmAdminCreateNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminEditUser.Designer.cs">
+      <DependentUpon>FrmAdminEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminSelectUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminSelectUser.Designer.cs">
+      <DependentUpon>FrmAdminSelectUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminFormContainer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAdminFormContainer.Designer.cs">
       <DependentUpon>FrmAdminFormContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminViewModeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminViewModeration.Designer.cs">
+      <DependentUpon>FrmAdminViewModeration.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRadaStatus.cs">
       <SubType>Form</SubType>
@@ -298,6 +322,9 @@
     <Compile Include="Verification\usrTrnBlock.Designer.cs">
       <DependentUpon>usrTrnBlock.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAdminSelectUser.resx">
+      <DependentUpon>FrmAdminSelectUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAccount.resx">
       <DependentUpon>FrmAccount.cs</DependentUpon>
     </EmbeddedResource>
