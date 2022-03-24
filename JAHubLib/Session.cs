@@ -59,21 +59,29 @@ namespace JAHubLib
                     
                     return PasswordResult.Success;
                 }
+
+                return PasswordResult.CredentialsIncorrect;
             }
-            else if (userId == 3)
+            else if (userId == 2)
             {
+                if (password == "test")
+                {
+                    _userId = 2;
+                    _userRole = UserRole.Farmer;
+
+                    return PasswordResult.Success;
+                }
+
                 return PasswordResult.CredentialsIncorrect;
             }
             else
             {
                 return PasswordResult.NoMatchingCredentials;
             }
-
-            return PasswordResult.NoMatchingCredentials;
         }
 
         // will actually 
-        public static void Logout()
+        public static void LogOut()
         {
             _userRole = UserRole.NotLoggedIn;
             _userId = 0;

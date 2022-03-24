@@ -31,12 +31,12 @@
             this.flpLogin = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLoginHeading = new System.Windows.Forms.Label();
             this.lblLoginInstruction = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtUserId = new System.Windows.Forms.TextBox();
             this.tblLoginCredentials = new System.Windows.Forms.TableLayoutPanel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserId = new System.Windows.Forms.TextBox();
             this.lblUserId = new System.Windows.Forms.Label();
             this.lblLoginPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblCredentialEntryError = new System.Windows.Forms.Label();
             this.flpLogin.SuspendLayout();
             this.tblLoginCredentials.SuspendLayout();
@@ -54,7 +54,7 @@
             this.flpLogin.Location = new System.Drawing.Point(0, 0);
             this.flpLogin.Margin = new System.Windows.Forms.Padding(0);
             this.flpLogin.Name = "flpLogin";
-            this.flpLogin.Size = new System.Drawing.Size(367, 338);
+            this.flpLogin.Size = new System.Drawing.Size(384, 384);
             this.flpLogin.TabIndex = 0;
             this.flpLogin.WrapContents = false;
             // 
@@ -63,7 +63,7 @@
             this.lblLoginHeading.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLoginHeading.AutoSize = true;
             this.lblLoginHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginHeading.Location = new System.Drawing.Point(80, 0);
+            this.lblLoginHeading.Location = new System.Drawing.Point(86, 0);
             this.lblLoginHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginHeading.Name = "lblLoginHeading";
             this.lblLoginHeading.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
@@ -75,34 +75,14 @@
             // 
             this.lblLoginInstruction.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLoginInstruction.AutoSize = true;
-            this.lblLoginInstruction.Location = new System.Drawing.Point(20, 53);
+            this.lblLoginInstruction.Location = new System.Drawing.Point(4, 53);
             this.lblLoginInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginInstruction.Name = "lblLoginInstruction";
             this.lblLoginInstruction.Padding = new System.Windows.Forms.Padding(4, 0, 4, 12);
-            this.lblLoginInstruction.Size = new System.Drawing.Size(327, 52);
+            this.lblLoginInstruction.Size = new System.Drawing.Size(372, 112);
             this.lblLoginInstruction.TabIndex = 1;
-            this.lblLoginInstruction.Text = "To continue, please log into your account using your User ID and password";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLogin.Location = new System.Drawing.Point(137, 187);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(94, 29);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtUserId
-            // 
-            this.txtUserId.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtUserId.Location = new System.Drawing.Point(110, 4);
-            this.txtUserId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(191, 27);
-            this.txtUserId.TabIndex = 4;
+            this.lblLoginInstruction.Text = "To continue, please log into your account using your User ID and password\r\n\r\n(jus" +
+    "t enter \'1\' for user ID and \"test\" for password)";
             // 
             // tblLoginCredentials
             // 
@@ -114,7 +94,7 @@
             this.tblLoginCredentials.Controls.Add(this.txtUserId, 1, 0);
             this.tblLoginCredentials.Controls.Add(this.lblUserId, 0, 0);
             this.tblLoginCredentials.Controls.Add(this.lblLoginPassword, 0, 1);
-            this.tblLoginCredentials.Location = new System.Drawing.Point(3, 108);
+            this.tblLoginCredentials.Location = new System.Drawing.Point(9, 168);
             this.tblLoginCredentials.Name = "tblLoginCredentials";
             this.tblLoginCredentials.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.tblLoginCredentials.RowCount = 2;
@@ -122,6 +102,25 @@
             this.tblLoginCredentials.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblLoginCredentials.Size = new System.Drawing.Size(362, 72);
             this.tblLoginCredentials.TabIndex = 6;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPassword.Location = new System.Drawing.Point(110, 40);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(191, 27);
+            this.txtPassword.TabIndex = 5;
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtUserId.Location = new System.Drawing.Point(110, 4);
+            this.txtUserId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(191, 27);
+            this.txtUserId.TabIndex = 4;
             // 
             // lblUserId
             // 
@@ -143,21 +142,23 @@
             this.lblLoginPassword.TabIndex = 7;
             this.lblLoginPassword.Text = "Password:";
             // 
-            // txtPassword
+            // btnLogin
             // 
-            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtPassword.Location = new System.Drawing.Point(110, 40);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(191, 27);
-            this.txtPassword.TabIndex = 5;
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLogin.Location = new System.Drawing.Point(143, 247);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(94, 29);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblCredentialEntryError
             // 
             this.lblCredentialEntryError.AutoSize = true;
             this.lblCredentialEntryError.ForeColor = System.Drawing.Color.Red;
-            this.lblCredentialEntryError.Location = new System.Drawing.Point(3, 220);
+            this.lblCredentialEntryError.Location = new System.Drawing.Point(3, 280);
             this.lblCredentialEntryError.Name = "lblCredentialEntryError";
             this.lblCredentialEntryError.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.lblCredentialEntryError.Size = new System.Drawing.Size(275, 20);
@@ -170,18 +171,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(366, 337);
+            this.ClientSize = new System.Drawing.Size(384, 384);
             this.Controls.Add(this.flpLogin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(384, 384);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(384, 384);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.flpLogin.ResumeLayout(false);
             this.flpLogin.PerformLayout();
             this.tblLoginCredentials.ResumeLayout(false);

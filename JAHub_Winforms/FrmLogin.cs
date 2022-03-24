@@ -13,15 +13,12 @@ namespace JAHub_Winforms
 {
     public partial class FrmLogin : Form
     {
+        FrmMainWindow parent;
+        
         public FrmLogin()
         {
             InitializeComponent();
             
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -32,6 +29,7 @@ namespace JAHub_Winforms
                     " " + " again.";
                 lblCredentialEntryError.Show();
 
+                return;
             }
             
             // This is only necessary because i'm working with the assumption that the code
@@ -43,17 +41,22 @@ namespace JAHub_Winforms
 
                 txtUserId.Clear();
             }
-            else if ((Int32.TryParse(txtUserId.Text, out int userID) == true) && String.IsNullOrEmpty(txtPassword.Text))
+            else if ((Int32.TryParse(txtUserId.Text, out int userID) == true) && (String.IsNullOrEmpty(txtPassword.Text) == false))
             {
-                PasswordResult result = Session.Login(Int32.Parse(txtUserId.Text), txtPassword.Text);
+                PasswordResult result = Session.Login(userID, txtPassword.Text);
 
                 if (result == PasswordResult.Success)
                 {
                     if (lblCredentialEntryError.Visible == true)
                     {
-                        lblCredentialEntryError.Visible = false;
+                        lblCredentialEntryError.Hide();
                     }
-                    
+
+                    parent = this.MdiParent as FrmMainWindow;
+                    parent.UnlockControls();
+
+                    this.Close();
+
                     // Session is now set to whatever role and ID the user has
                     // unfreeze all controls
                 }
@@ -74,7 +77,6 @@ namespace JAHub_Winforms
                     lblCredentialEntryError.Show();
                 }
             }
-            
             
             /* This needs to:
              * - Lock all controls in parent *except this box* until user/pass is filled
