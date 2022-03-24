@@ -35,6 +35,10 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblMyBlogs = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.lblSortBy = new System.Windows.Forms.Label();
+            this.btnSearchBar = new System.Windows.Forms.Button();
+            this.txtSearchBar = new System.Windows.Forms.TextBox();
+            this.comboSort = new System.Windows.Forms.ComboBox();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +136,7 @@
             // 
             this.lblMyBlogs.AutoSize = true;
             this.lblMyBlogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyBlogs.Location = new System.Drawing.Point(167, 9);
+            this.lblMyBlogs.Location = new System.Drawing.Point(167, 22);
             this.lblMyBlogs.Name = "lblMyBlogs";
             this.lblMyBlogs.Size = new System.Drawing.Size(155, 37);
             this.lblMyBlogs.TabIndex = 23;
@@ -140,16 +144,60 @@
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Location = new System.Drawing.Point(174, 123);
+            this.pnlContainer.Location = new System.Drawing.Point(174, 170);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(900, 400);
             this.pnlContainer.TabIndex = 24;
+            // 
+            // lblSortBy
+            // 
+            this.lblSortBy.AutoSize = true;
+            this.lblSortBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortBy.Location = new System.Drawing.Point(883, 124);
+            this.lblSortBy.Name = "lblSortBy";
+            this.lblSortBy.Size = new System.Drawing.Size(44, 15);
+            this.lblSortBy.TabIndex = 28;
+            this.lblSortBy.Text = "Sort by";
+            // 
+            // btnSearchBar
+            // 
+            this.btnSearchBar.Location = new System.Drawing.Point(341, 121);
+            this.btnSearchBar.Name = "btnSearchBar";
+            this.btnSearchBar.Size = new System.Drawing.Size(67, 23);
+            this.btnSearchBar.TabIndex = 27;
+            this.btnSearchBar.Text = "Search";
+            this.btnSearchBar.UseVisualStyleBackColor = true;
+            // 
+            // txtSearchBar
+            // 
+            this.txtSearchBar.Location = new System.Drawing.Point(174, 123);
+            this.txtSearchBar.Name = "txtSearchBar";
+            this.txtSearchBar.Size = new System.Drawing.Size(161, 20);
+            this.txtSearchBar.TabIndex = 26;
+            // 
+            // comboSort
+            // 
+            this.comboSort.FormattingEnabled = true;
+            this.comboSort.Items.AddRange(new object[] {
+            "Latest",
+            "Rating",
+            "Oldest",
+            "A-Z",
+            "Z-A"});
+            this.comboSort.Location = new System.Drawing.Point(933, 122);
+            this.comboSort.Name = "comboSort";
+            this.comboSort.Size = new System.Drawing.Size(121, 21);
+            this.comboSort.TabIndex = 25;
             // 
             // FrmUserBlogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 621);
+            this.Controls.Add(this.lblSortBy);
+            this.Controls.Add(this.btnSearchBar);
+            this.Controls.Add(this.txtSearchBar);
+            this.Controls.Add(this.comboSort);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblMyBlogs);
             this.Controls.Add(this.pnlNav);
@@ -170,5 +218,9 @@
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Label lblMyBlogs;
         private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.Label lblSortBy;
+        private System.Windows.Forms.Button btnSearchBar;
+        private System.Windows.Forms.TextBox txtSearchBar;
+        private System.Windows.Forms.ComboBox comboSort;
     }
 }
