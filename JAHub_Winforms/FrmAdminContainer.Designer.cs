@@ -1,6 +1,6 @@
 ﻿namespace JAHub_Winforms
 {
-    partial class FrmAdminFormContainer
+    partial class FrmAdminContainer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,62 +64,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 451);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(724, 451);
-            this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select User";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 187);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "View Moderation Log";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(191, 39);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Edit User Information";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(3, 269);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(191, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Create New User";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Current User: ";
             // 
             // tableLayoutPanel1
             // 
@@ -146,6 +90,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(156, 85);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Current User: ";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -162,9 +117,8 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(81, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "label3";
             // 
             // label4
             // 
@@ -181,9 +135,8 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(81, 45);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
             // 
             // label6
             // 
@@ -200,10 +153,36 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(81, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 20);
+            this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 7;
-            this.label7.Text = "label7";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 42);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Select User";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(3, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(191, 39);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Edit User Information";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 187);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(191, 34);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "View Moderation Log";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -214,15 +193,34 @@
             this.button6.Text = "Delete User Account";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // FrmAdminFormContainer
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 269);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(191, 42);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Create New User";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(200, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(724, 451);
+            this.panel1.TabIndex = 1;
+            // 
+            // FrmAdminContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "FrmAdminFormContainer";
+            this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminFormContainer_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

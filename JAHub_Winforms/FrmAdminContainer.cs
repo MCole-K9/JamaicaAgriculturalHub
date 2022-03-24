@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms
 {
-    public partial class FrmAdminFormContainer : Form
+    public partial class FrmAdminContainer : Form
     {
-        public FrmAdminFormContainer()
+        public FrmAdminContainer()
         {
             InitializeComponent();
         }

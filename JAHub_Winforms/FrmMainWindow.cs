@@ -70,7 +70,15 @@ namespace JAHub_Winforms
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // basically just use the IsFormOpen function to check before opening
+            if (!Utils.IsFormOpen("Admininstration")){
+                FrmAdminContainer frmAdmin = new FrmAdminContainer();
+                frmAdmin.MdiParent = this;
+                frmAdmin.Show();
+            }
+            else
+            {
+                MessageBox.Show("An Instance is Already Running");
+            }
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +88,7 @@ namespace JAHub_Winforms
 
         private void LogOut()
         {
-            menuStrip1.Enabled = false;
+            mnsMainForm.Enabled = false;
             
             if (this.MdiChildren != null)
             {
@@ -90,7 +98,7 @@ namespace JAHub_Winforms
                 }
             }
 
-            toolStripStatusLabel1.Text = "Not Logged In";
+            lblLoggedInAs.Text = "Not Logged In";
 
             Session.LogOut();
             CreateLoginForm();
@@ -105,8 +113,9 @@ namespace JAHub_Winforms
 
         public void UnlockControls()
         {
-            menuStrip1.Enabled = true;
-            toolStripStatusLabel1.Text = "Logged in as: " + Session.UserId;
+            mnsMainForm.Enabled = true;
+            lblLoggedInAs.Text = "Logged in as: " + Session.UserId;
+            lblLoggedInRole.Text = "Role: " + Session.UserRole;
         }
     }
 }
