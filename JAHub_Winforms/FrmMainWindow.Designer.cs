@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mnsMainForm = new System.Windows.Forms.MenuStrip();
             this.miHome = new System.Windows.Forms.ToolStripMenuItem();
             this.miShop = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,7 @@
             this.ssrMainForm = new System.Windows.Forms.StatusStrip();
             this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
+            this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
@@ -55,48 +57,48 @@
             this.miLogOut});
             this.mnsMainForm.Location = new System.Drawing.Point(0, 0);
             this.mnsMainForm.Name = "mnsMainForm";
-            this.mnsMainForm.Size = new System.Drawing.Size(1067, 30);
+            this.mnsMainForm.Size = new System.Drawing.Size(1067, 28);
             this.mnsMainForm.TabIndex = 1;
             this.mnsMainForm.Text = "menuStrip1";
             // 
             // miHome
             // 
             this.miHome.Name = "miHome";
-            this.miHome.Size = new System.Drawing.Size(64, 26);
+            this.miHome.Size = new System.Drawing.Size(64, 24);
             this.miHome.Text = "Home";
             // 
             // miShop
             // 
             this.miShop.Name = "miShop";
-            this.miShop.Size = new System.Drawing.Size(57, 26);
+            this.miShop.Size = new System.Drawing.Size(57, 24);
             this.miShop.Text = "Shop";
             this.miShop.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
             // 
             // miBlog
             // 
             this.miBlog.Name = "miBlog";
-            this.miBlog.Size = new System.Drawing.Size(54, 26);
+            this.miBlog.Size = new System.Drawing.Size(54, 24);
             this.miBlog.Text = "Blog";
             this.miBlog.Click += new System.EventHandler(this.blogToolStripMenuItem_Click);
             // 
             // miUserProfile
             // 
             this.miUserProfile.Name = "miUserProfile";
-            this.miUserProfile.Size = new System.Drawing.Size(94, 26);
+            this.miUserProfile.Size = new System.Drawing.Size(94, 24);
             this.miUserProfile.Text = "User Portal";
             this.miUserProfile.Click += new System.EventHandler(this.userPortalToolStripMenuItem_Click);
             // 
             // miAdmin
             // 
             this.miAdmin.Name = "miAdmin";
-            this.miAdmin.Size = new System.Drawing.Size(67, 26);
+            this.miAdmin.Size = new System.Drawing.Size(67, 24);
             this.miAdmin.Text = "Admin";
             this.miAdmin.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // miLogOut
             // 
             this.miLogOut.Name = "miLogOut";
-            this.miLogOut.Size = new System.Drawing.Size(70, 26);
+            this.miLogOut.Size = new System.Drawing.Size(70, 24);
             this.miLogOut.Text = "Logout";
             this.miLogOut.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -122,6 +124,11 @@
             // 
             this.lblLoggedInRole.Name = "lblLoggedInRole";
             this.lblLoggedInRole.Size = new System.Drawing.Size(0, 20);
+            // 
+            // icnJaHub
+            // 
+            this.icnJaHub.Text = "JAHub";
+            this.icnJaHub.Visible = true;
             // 
             // FrmMainWindow
             // 
@@ -156,6 +163,7 @@
         private System.Windows.Forms.StatusStrip ssrMainForm;
         private System.Windows.Forms.ToolStripStatusLabel lblLoggedInAs;
         private System.Windows.Forms.ToolStripStatusLabel lblLoggedInRole;
+        private System.Windows.Forms.NotifyIcon icnJaHub;
     }
 }
 
