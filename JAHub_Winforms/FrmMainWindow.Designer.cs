@@ -91,6 +91,7 @@
             // miAdmin
             // 
             this.miAdmin.Name = "miAdmin";
+            this.miAdmin.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.miAdmin.Size = new System.Drawing.Size(67, 24);
             this.miAdmin.Text = "Admin";
             this.miAdmin.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
