@@ -35,9 +35,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblStatusExplanation = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.lblInformation = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblInformation = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -134,6 +134,17 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
+            // lblInformation
+            // 
+            this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblInformation.AutoSize = true;
+            this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformation.Location = new System.Drawing.Point(3, 62);
+            this.lblInformation.Name = "lblInformation";
+            this.lblInformation.Size = new System.Drawing.Size(108, 25);
+            this.lblInformation.TabIndex = 3;
+            this.lblInformation.Text = "Information";
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 153);
@@ -150,17 +161,6 @@
             this.button1.Text = "Click here to Register with RADA or connect a preexisting record";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // lblInformation
-            // 
-            this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblInformation.AutoSize = true;
-            this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformation.Location = new System.Drawing.Point(3, 62);
-            this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(108, 25);
-            this.lblInformation.TabIndex = 3;
-            this.lblInformation.Text = "Information";
-            // 
             // FrmRadaStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -168,6 +168,7 @@
             this.ClientSize = new System.Drawing.Size(413, 459);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRadaStatus";
             this.Text = "Rada Status (This should not be visible!)";
