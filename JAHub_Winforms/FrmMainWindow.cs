@@ -70,14 +70,22 @@ namespace JAHub_Winforms
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Utils.IsFormOpen("Admininstration")){
+            bool isFormOpen = false;
+            
+            foreach(Form form in this.MdiChildren)
+            {
+                if (form is FrmAdminContainer)
+                {
+                    isFormOpen = true;
+                    form.BringToFront();
+                }
+            }
+            
+            if (!isFormOpen)
+            {
                 FrmAdminContainer frmAdmin = new FrmAdminContainer();
                 frmAdmin.MdiParent = this;
                 frmAdmin.Show();
-            }
-            else
-            {
-                MessageBox.Show("An Instance is Already Running");
             }
         }
 
@@ -122,6 +130,7 @@ namespace JAHub_Winforms
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
     }
 }
