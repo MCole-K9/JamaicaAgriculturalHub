@@ -99,6 +99,7 @@ namespace JAHub_Winforms
             }
 
             lblLoggedInAs.Text = "Not Logged In";
+            lblLoggedInRole.Text = "";
 
             Session.LogOut();
             CreateLoginForm();

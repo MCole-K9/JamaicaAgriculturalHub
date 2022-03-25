@@ -206,17 +206,17 @@
     <Compile Include="FrmUserGrantPage.Designer.cs">
       <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Moderation\usrInfractionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionItem.Designer.cs">
+      <DependentUpon>usrInfractionItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Moderation\usrInfractionAdder.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Moderation\usrInfractionAdder.Designer.cs">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Moderation\usrInfractionEntry.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Moderation\usrInfractionEntry.Designer.cs">
-      <DependentUpon>usrInfractionEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -334,6 +334,12 @@
     <Compile Include="Verification\usrTrnBlock.Designer.cs">
       <DependentUpon>usrTrnBlock.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmAdminCreateNewUser.resx">
+      <DependentUpon>FrmAdminCreateNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminEditUser.resx">
+      <DependentUpon>FrmAdminEditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminSelectUser.resx">
       <DependentUpon>FrmAdminSelectUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminContainer.resx">
       <DependentUpon>FrmAdminContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminViewModeration.resx">
+      <DependentUpon>FrmAdminViewModeration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBlog.resx">
       <DependentUpon>FrmBlog.cs</DependentUpon>
@@ -406,11 +415,11 @@
     <EmbeddedResource Include="FrmUserGrantPage.resx">
       <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Moderation\usrInfractionItem.resx">
+      <DependentUpon>usrInfractionItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Moderation\usrInfractionAdder.resx">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Moderation\usrInfractionEntry.resx">
-      <DependentUpon>usrInfractionEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

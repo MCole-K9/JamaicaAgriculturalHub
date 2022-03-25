@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms.Moderation
 {
-    public partial class usrInfractionEntry : UserControl
+    public partial class usrInfractionItem : UserControl
     {
-        public usrInfractionEntry()
+        public usrInfractionItem()
         {
             InitializeComponent();
-        }
-
-        private void usrInfractionEntry_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

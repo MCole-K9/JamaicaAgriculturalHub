@@ -42,7 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFormHolder = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -183,6 +183,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "View Moderation Log";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
             // 
@@ -202,21 +203,21 @@
             this.button5.Text = "Create New User";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pnlFormHolder
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(724, 451);
-            this.panel1.TabIndex = 1;
+            this.pnlFormHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFormHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlFormHolder.Location = new System.Drawing.Point(200, 0);
+            this.pnlFormHolder.Name = "pnlFormHolder";
+            this.pnlFormHolder.Size = new System.Drawing.Size(724, 451);
+            this.pnlFormHolder.TabIndex = 1;
             // 
             // FrmAdminContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 451);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlFormHolder);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
@@ -245,7 +246,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlFormHolder;
         private System.Windows.Forms.Button button6;
     }
 }

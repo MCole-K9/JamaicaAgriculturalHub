@@ -16,5 +16,10 @@ namespace JAHub_Winforms.Moderation
         {
             InitializeComponent();
         }
+
+        private void usrInfractionEntry_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
