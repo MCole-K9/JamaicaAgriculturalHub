@@ -118,5 +118,10 @@ namespace JAHub_Winforms
             lblLoggedInAs.Text = "Logged in as: " + Session.UserId;
             lblLoggedInRole.Text = "Role: " + Session.UserRole;
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

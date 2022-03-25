@@ -40,6 +40,7 @@
             this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,8 @@
             this.miBlog,
             this.miUserProfile,
             this.miAdmin,
-            this.miLogOut});
+            this.miLogOut,
+            this.exitToolStripMenuItem});
             this.mnsMainForm.Location = new System.Drawing.Point(0, 0);
             this.mnsMainForm.Name = "mnsMainForm";
             this.mnsMainForm.Size = new System.Drawing.Size(1067, 28);
@@ -131,6 +133,13 @@
             this.icnJaHub.Text = "JAHub";
             this.icnJaHub.Visible = true;
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // FrmMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,6 +174,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblLoggedInAs;
         private System.Windows.Forms.ToolStripStatusLabel lblLoggedInRole;
         private System.Windows.Forms.NotifyIcon icnJaHub;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
