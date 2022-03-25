@@ -12,14 +12,12 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
-        List<bool> isProductListValid;
         List<String> _productsList = new List<String>();
-
 
         public String LandAddressTown => usrLandBlock1.LandAddressTown;
         public String LandAddressPoBox => usrLandBlock1.LandAddresssPoBox;
         public String LandAddressParish => usrLandBlock1.LandAddressParish;
-        public decimal LandMeasuerement => usrLandBlock1.LandMeasurement;
+        public decimal LandMeasurement => usrLandBlock1.LandMeasurement;
         public List<String> ProductList => _productsList;
 
         public usrHoldingsBlock()

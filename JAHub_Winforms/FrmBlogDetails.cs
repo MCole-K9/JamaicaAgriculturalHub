@@ -23,7 +23,7 @@ namespace JAHub_Winforms
             displayedBlog = blog;
             InitializeComponent();
             lblTitle.Text = displayedBlog.Title;
-            lblAuthor.Text = displayedBlog.Author;
+            lblAuthor.Text = displayedBlog.GetAuthorName();
             lblPublishDate.Text = displayedBlog.PublishDateString;
             lblDescription.Text = displayedBlog.Description;
             rtbBlogBody.Text = displayedBlog.BlogBody;

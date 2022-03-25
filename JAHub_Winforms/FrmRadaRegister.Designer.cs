@@ -40,7 +40,7 @@
             this.usrContactBlock1 = new JAHub_Winforms.Verification.usrContactBlock();
             this.usrTrnBlock1 = new JAHub_Winforms.Verification.usrTrnBlock();
             this.usrUploadImageBlock1 = new JAHub_Winforms.Verification.usrUploadImageBlock();
-            this.usrIndustryBlock1 = new JAHub_Winforms.Verifcation.usrIndustryBlock();
+            this.usrIndustryBlock1 = new JAHub_Winforms.Verification.usrIndustryBlock();
             this.usrHoldingsBlock2 = new JAHub_Winforms.Verification.usrHoldingsBlock();
             this.usrOrganizationsBlock1 = new JAHub_Winforms.Verification.usrOrganizationsBlock();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -305,7 +305,7 @@
         private Verification.usrDateOfBirthBlock usrDateOfBirthBlock1;
         private Verification.usrContactBlock usrContactBlock1;
         private Verification.usrTrnBlock usrTrnBlock1;
-        private Verifcation.usrIndustryBlock usrIndustryBlock1;
+        private Verification.usrIndustryBlock usrIndustryBlock1;
         private Verification.usrUploadImageBlock usrUploadImageBlock1;
         private Verification.usrOrganizationsBlock usrOrganizationsBlock1;
         private System.Windows.Forms.Button btnSubmit;

@@ -28,66 +28,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.mnsMainForm = new System.Windows.Forms.MenuStrip();
+            this.miHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.miShop = new System.Windows.Forms.ToolStripMenuItem();
+            this.miBlog = new System.Windows.Forms.ToolStripMenuItem();
+            this.miUserProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            this.miLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ssrMainForm = new System.Windows.Forms.StatusStrip();
+            this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
+            this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
+            this.mnsMainForm.SuspendLayout();
+            this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnsMainForm
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.shopToolStripMenuItem,
-            this.blogToolStripMenuItem,
-            this.userProfileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnsMainForm.Enabled = false;
+            this.mnsMainForm.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnsMainForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miHome,
+            this.miShop,
+            this.miBlog,
+            this.miUserProfile,
+            this.miAdmin,
+            this.miLogOut,
+            this.exitToolStripMenuItem});
+            this.mnsMainForm.Location = new System.Drawing.Point(0, 0);
+            this.mnsMainForm.Name = "mnsMainForm";
+            this.mnsMainForm.Size = new System.Drawing.Size(1067, 28);
+            this.mnsMainForm.TabIndex = 1;
+            this.mnsMainForm.Text = "menuStrip1";
             // 
-            // homeToolStripMenuItem
+            // miHome
             // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
+            this.miHome.Name = "miHome";
+            this.miHome.Size = new System.Drawing.Size(64, 24);
+            this.miHome.Text = "Home";
             // 
-            // shopToolStripMenuItem
+            // miShop
             // 
-            this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
-            this.shopToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.shopToolStripMenuItem.Text = "Shop";
-            this.shopToolStripMenuItem.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
+            this.miShop.Name = "miShop";
+            this.miShop.Size = new System.Drawing.Size(57, 24);
+            this.miShop.Text = "Shop";
+            this.miShop.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
             // 
-            // blogToolStripMenuItem
+            // miBlog
             // 
-            this.blogToolStripMenuItem.Name = "blogToolStripMenuItem";
-            this.blogToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.blogToolStripMenuItem.Text = "Blog";
-            this.blogToolStripMenuItem.Click += new System.EventHandler(this.blogToolStripMenuItem_Click);
+            this.miBlog.Name = "miBlog";
+            this.miBlog.Size = new System.Drawing.Size(54, 24);
+            this.miBlog.Text = "Blog";
+            this.miBlog.Click += new System.EventHandler(this.blogToolStripMenuItem_Click);
             // 
-            // userProfileToolStripMenuItem
+            // miUserProfile
             // 
-            this.userProfileToolStripMenuItem.Name = "userProfileToolStripMenuItem";
-            this.userProfileToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.userProfileToolStripMenuItem.Text = "User Portal";
-            this.userProfileToolStripMenuItem.Click += new System.EventHandler(this.userPortalToolStripMenuItem_Click);
+            this.miUserProfile.Name = "miUserProfile";
+            this.miUserProfile.Size = new System.Drawing.Size(94, 24);
+            this.miUserProfile.Text = "User Portal";
+            this.miUserProfile.Click += new System.EventHandler(this.userPortalToolStripMenuItem_Click);
+            // 
+            // miAdmin
+            // 
+            this.miAdmin.Name = "miAdmin";
+            this.miAdmin.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
+            this.miAdmin.Size = new System.Drawing.Size(67, 24);
+            this.miAdmin.Text = "Admin";
+            this.miAdmin.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
+            // miLogOut
+            // 
+            this.miLogOut.Name = "miLogOut";
+            this.miLogOut.Size = new System.Drawing.Size(70, 24);
+            this.miLogOut.Text = "Logout";
+            this.miLogOut.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // ssrMainForm
+            // 
+            this.ssrMainForm.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ssrMainForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblLoggedInAs,
+            this.lblLoggedInRole});
+            this.ssrMainForm.Location = new System.Drawing.Point(0, 528);
+            this.ssrMainForm.Name = "ssrMainForm";
+            this.ssrMainForm.Size = new System.Drawing.Size(1067, 26);
+            this.ssrMainForm.TabIndex = 3;
+            this.ssrMainForm.Text = "statusStrip1";
+            // 
+            // lblLoggedInAs
+            // 
+            this.lblLoggedInAs.Name = "lblLoggedInAs";
+            this.lblLoggedInAs.Size = new System.Drawing.Size(105, 20);
+            this.lblLoggedInAs.Text = "Not Logged In";
+            // 
+            // lblLoggedInRole
+            // 
+            this.lblLoggedInRole.Name = "lblLoggedInRole";
+            this.lblLoggedInRole.Size = new System.Drawing.Size(0, 20);
+            // 
+            // icnJaHub
+            // 
+            this.icnJaHub.Text = "JAHub";
+            this.icnJaHub.Visible = true;
             // 
             // FrmMainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.ssrMainForm);
+            this.Controls.Add(this.mnsMainForm);
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.mnsMainForm;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMainWindow";
             this.Text = "Jamaica Agricultural Hub";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.SizeChanged += new System.EventHandler(this.FrmMainWindow_SizeChanged);
+            this.mnsMainForm.ResumeLayout(false);
+            this.mnsMainForm.PerformLayout();
+            this.ssrMainForm.ResumeLayout(false);
+            this.ssrMainForm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,11 +164,18 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blogToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userProfileToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mnsMainForm;
+        private System.Windows.Forms.ToolStripMenuItem miHome;
+        private System.Windows.Forms.ToolStripMenuItem miShop;
+        private System.Windows.Forms.ToolStripMenuItem miBlog;
+        private System.Windows.Forms.ToolStripMenuItem miUserProfile;
+        private System.Windows.Forms.ToolStripMenuItem miAdmin;
+        private System.Windows.Forms.ToolStripMenuItem miLogOut;
+        private System.Windows.Forms.StatusStrip ssrMainForm;
+        private System.Windows.Forms.ToolStripStatusLabel lblLoggedInAs;
+        private System.Windows.Forms.ToolStripStatusLabel lblLoggedInRole;
+        private System.Windows.Forms.NotifyIcon icnJaHub;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

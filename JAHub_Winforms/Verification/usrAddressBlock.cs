@@ -12,6 +12,8 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrAddressBlock : UserControl
     {
+        #region Variables and Properties
+
         bool isTownValid = false;
         bool isPoBoxValid = false;
         bool isParishValid = false;
@@ -19,6 +21,8 @@ namespace JAHub_Winforms.Verification
         public String AddressTown => txtAddressTown.Text;
         public String AddressPostOffice => txtAddressPostOffice.Text;
         public String AddressParish => txtAddressParish.Text;
+
+        #endregion
 
         public usrAddressBlock()
         {
@@ -95,13 +99,13 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
-            
+
         }
 
         public void SetControlFocus()
         {
             // this *should* set the focus to the area with the error, if it works properly
-            // Bet good money it doesn't work though lol. can't check til Shemar fix fi him section
+            // Bet good money it doesn't work though lol.
             if (!isTownValid)
             {
                 txtAddressTown.Focus();
@@ -115,7 +119,8 @@ namespace JAHub_Winforms.Verification
                 txtAddressParish.Focus();
             }
         }
-    }
+
+    }   
 
     
 }

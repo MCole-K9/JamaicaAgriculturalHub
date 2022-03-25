@@ -30,50 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfileHome));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtWelcomeBox = new System.Windows.Forms.TextBox();
-            this.txt = new System.Windows.Forms.TextBox();
             this.pictureBoxUserIcon = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.lblWelcomelabel = new System.Windows.Forms.Label();
+            this.lblWelcomeUser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtWelcomeBox);
-            this.panel1.Controls.Add(this.txt);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblWelcomeUser);
+            this.panel1.Controls.Add(this.lblWelcomelabel);
             this.panel1.Controls.Add(this.pictureBoxUserIcon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 145);
+            this.panel1.Size = new System.Drawing.Size(838, 145);
             this.panel1.TabIndex = 0;
-            // 
-            // txtWelcomeBox
-            // 
-            this.txtWelcomeBox.BackColor = System.Drawing.SystemColors.Control;
-            this.txtWelcomeBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWelcomeBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWelcomeBox.Location = new System.Drawing.Point(320, 91);
-            this.txtWelcomeBox.Name = "txtWelcomeBox";
-            this.txtWelcomeBox.Size = new System.Drawing.Size(173, 20);
-            this.txtWelcomeBox.TabIndex = 2;
-            this.txtWelcomeBox.Text = "Welcome, Farmer Brown";
-            // 
-            // txt
-            // 
-            this.txt.BackColor = System.Drawing.SystemColors.Control;
-            this.txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt.Location = new System.Drawing.Point(130, 113);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(595, 19);
-            this.txt.TabIndex = 1;
-            this.txt.Text = "To make JAH function better for you, manage your information, privacy, and securi" +
-    "ty settings.";
             // 
             // pictureBoxUserIcon
             // 
@@ -90,9 +69,9 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(493, 186);
+            this.button2.Location = new System.Drawing.Point(558, 186);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 131);
+            this.button2.Size = new System.Drawing.Size(214, 131);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -100,9 +79,9 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(57, 186);
+            this.button1.Location = new System.Drawing.Point(35, 186);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 131);
+            this.button1.Size = new System.Drawing.Size(389, 149);
             this.button1.TabIndex = 3;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -127,12 +106,49 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // lblWelcomelabel
+            // 
+            this.lblWelcomelabel.AutoSize = true;
+            this.lblWelcomelabel.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcomelabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomelabel.Location = new System.Drawing.Point(350, 87);
+            this.lblWelcomelabel.Name = "lblWelcomelabel";
+            this.lblWelcomelabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.lblWelcomelabel.Size = new System.Drawing.Size(64, 19);
+            this.lblWelcomelabel.TabIndex = 2;
+            this.lblWelcomelabel.Text = "Welcome,";
+            // 
+            // lblWelcomeUser
+            // 
+            this.lblWelcomeUser.AutoSize = true;
+            this.lblWelcomeUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcomeUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUser.Location = new System.Drawing.Point(411, 87);
+            this.lblWelcomeUser.Name = "lblWelcomeUser";
+            this.lblWelcomeUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.lblWelcomeUser.Size = new System.Drawing.Size(89, 19);
+            this.lblWelcomeUser.TabIndex = 2;
+            this.lblWelcomeUser.Text = "Farmer Brown";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(161, 107);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.label1.Size = new System.Drawing.Size(550, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "To make JAH function better for you, manage your information, privacy, and securi" +
+    "ty settings.";
+            // 
             // FrmProfileHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(764, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(855, 456);
             this.ControlBox = false;
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -153,11 +169,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxUserIcon;
-        private System.Windows.Forms.TextBox txtWelcomeBox;
-        private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcomeUser;
+        private System.Windows.Forms.Label lblWelcomelabel;
     }
 }

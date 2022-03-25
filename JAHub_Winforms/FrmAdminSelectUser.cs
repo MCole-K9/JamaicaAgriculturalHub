@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms
 {
-    public partial class FrmSecurity : Form
+    public partial class FrmAdminSelectUser : Form
     {
-        public FrmSecurity()
+        public FrmAdminSelectUser()
         {
             InitializeComponent();
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

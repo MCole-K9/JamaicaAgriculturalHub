@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms
 {
-    public partial class FrmSecurity : Form
+    public partial class FrmAdminViewModeration : Form
     {
-        public FrmSecurity()
+        public FrmAdminViewModeration()
         {
             InitializeComponent();
         }
-
-        
     }
 }

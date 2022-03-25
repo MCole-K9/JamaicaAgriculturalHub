@@ -28,15 +28,18 @@ namespace JAHub_Winforms
             //while (sqlData.Read())
             //{
             //    Blog blog = new Blog();
+            //    BlogRenderer renderer = new BlogRenderer();
 
             //    blog.Title = sqlData["Title"].ToString();
-            //    blog.Author = sqlData["Author"].ToString();
+            //    blog.Author.Firstname = sqlData["Author"].ToString();
+            //    blog.Author.Lastname = sqlData["Author"].ToString();
             //    blog.Description = sqlData["Description"].ToString();
             //    blog.BlogBody = sqlData["BlogBody"].ToString();
             //    blog.PublishDateString = sqlData["PublishDateString"].ToString();
             //    blog.Rating = Convert.ToInt16(sqlData["Rating"]);
-            //    blog.CreateBlogPost(pnlContainer);
-            //    blog.ViewBlog.Click += ViewBlog_Click;
+            //    renderer.SetBlogInstance(blog);
+            //    renderer.CreateBlogPost(pnlContainer);
+            //    renderer.ViewBlog.Click += ViewBlog_Click;
             //    void ViewBlog_Click(object sender, EventArgs e)
             //    {
             //        FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
@@ -45,7 +48,7 @@ namespace JAHub_Winforms
             //}
         }
 
-        
+
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen("FrmCreateBlog"))

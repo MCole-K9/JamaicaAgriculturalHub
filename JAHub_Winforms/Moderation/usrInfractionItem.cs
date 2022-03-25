@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JAHub_Winforms
+namespace JAHub_Winforms.Moderation
 {
-    public partial class FrmSecurity : Form
+    public partial class usrInfractionItem : UserControl
     {
-        public FrmSecurity()
+        public usrInfractionItem()
         {
             InitializeComponent();
         }
-
-        
     }
 }

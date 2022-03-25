@@ -14,8 +14,14 @@ namespace JAHub_Winforms
 {
     public partial class FrmCreateBlog : Form
     {
+        User user = new User();
         public FrmCreateBlog()
         {
+            InitializeComponent();
+        }
+        public FrmCreateBlog(User u)
+        {
+            user = u;
             InitializeComponent();
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
@@ -83,29 +89,31 @@ namespace JAHub_Winforms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            //Blog newBlog = new Blog();
-            //newBlog.Title = txtTitle.Text;
-            //newBlog.Description = rtbDescription.Text;
-            //newBlog.PublishDate = dtpPublishDate.Value;
-            //newBlog.BlogBody = rtbBody.Text;
-            //FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
-            //blogDetails.MdiParent = this.MdiParent;
-            //blogDetails.Show();
-            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
-            //connection.Open();
-            //SqlCommand cmd = new SqlCommand("INSERT INTO BlogDetailsTable VALUES ('" + newBlog.Title + "','" + newBlog.Author + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");");
+            Blog newBlog = new Blog();
+            newBlog.Author.Firstname = user.Firstname;
+            newBlog.Author.Lastname = user.Lastname;
+            newBlog.Title = txtTitle.Text;
+            newBlog.Description = rtbDescription.Text;
+            newBlog.PublishDateString = DateTime.Now.ToShortDateString();
+            newBlog.BlogBody = rtbBody.Text;
+            FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
+            blogDetails.MdiParent = this.MdiParent;
+            blogDetails.Show();
+            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("INSERT INTO BlogDetailsTable VALUES ('" + newBlog.Title + "','" + newBlog.GetAuthorName() + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");");
 
 
-            //cmd.Connection = connection;
-            //int i = cmd.ExecuteNonQuery();
-            //if (i != 0)
-            //{
-            //    MessageBox.Show("Saved To Database!");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Something Went Wrong");
-            //}
+            cmd.Connection = connection;
+            int i = cmd.ExecuteNonQuery();
+            if (i != 0)
+            {
+                MessageBox.Show("Saved To Database!");
+            }
+            else
+            {
+                MessageBox.Show("Something Went Wrong");
+            }
         }
     }
 }
