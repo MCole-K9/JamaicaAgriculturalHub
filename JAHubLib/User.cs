@@ -14,8 +14,6 @@ namespace JAHubLib
         public string Password { set; get; }
         public string Email { set; get; } 
         public string UserID { set; get; }
-
-        
-        
+        public UserRole UserRole { get; set; }                
     }
 }
