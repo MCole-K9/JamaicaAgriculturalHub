@@ -36,11 +36,11 @@
             this.miUserProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.miAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.miLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ssrMainForm = new System.Windows.Forms.StatusStrip();
             this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +105,13 @@
             this.miLogOut.Text = "Logout";
             this.miLogOut.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // ssrMainForm
             // 
             this.ssrMainForm.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -133,13 +140,6 @@
             this.icnJaHub.Text = "JAHub";
             this.icnJaHub.Visible = true;
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // FrmMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -152,6 +152,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMainWindow";
             this.Text = "Jamaica Agricultural Hub";
+            this.SizeChanged += new System.EventHandler(this.FrmMainWindow_SizeChanged);
             this.mnsMainForm.ResumeLayout(false);
             this.mnsMainForm.PerformLayout();
             this.ssrMainForm.ResumeLayout(false);

@@ -13,6 +13,12 @@ namespace JAHub_Winforms
 {
     public partial class FrmMainWindow : Form
     {
+        /* TO-DO
+         * - Write method that keeps forms centred
+         * - Write method form menustrip that when enabled makes it show menustrip items 
+         * according to user role
+         * 
+         */
         public FrmMainWindow()
         {
             InitializeComponent();
@@ -131,6 +137,18 @@ namespace JAHub_Winforms
         {
             this.Close();
             
+        }
+
+        private void FrmMainWindow_SizeChanged(object sender, EventArgs e)
+        {
+            foreach (Form form in MdiChildren)
+            {
+                if (form is FrmLogin)
+                {
+                    form.Left = (this.ClientRectangle.Width - form.Width) / 2;
+                    form.Top = (this.ClientRectangle.Height - form.Height) / 2 - 28;
+                }
+            }
         }
     }
 }
