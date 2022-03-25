@@ -21,7 +21,7 @@ namespace JAHub_Winforms.Verification
         public String AddressTown => txtAddressTown.Text;
         public String AddressPostOffice => txtAddressPostOffice.Text;
         public String AddressParish => txtAddressParish.Text;
-        
+
         #endregion
 
         public usrAddressBlock()
@@ -99,7 +99,7 @@ namespace JAHub_Winforms.Verification
             }
 
             return false;
-            
+
         }
 
         public void SetControlFocus()
@@ -120,22 +120,7 @@ namespace JAHub_Winforms.Verification
             }
         }
 
-        public void LockAllControls()
-        {
-            foreach(Control control in this.Controls)
-            {
-                control.Enabled = false;
-            }
-        }
-
-        public void UnlockAllControls()
-        {
-            foreach (Control control in this.Controls)
-            {
-                control.Enabled = true;
-            }
-        }
-    }
+    }   
 
     
 }
