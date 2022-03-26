@@ -11,6 +11,8 @@ namespace JAHubLib
         // Unsorted whether or not User should compose itself for specific roles, or if 
         // User will inherit. i suggest composition--Sheriff
         public string Firstname { set; get; }
+
+        public string MiddleName { set; get; }
         public string Lastname { set; get; }
         public string Username { set; get; }
         public string Password { set; get; }
