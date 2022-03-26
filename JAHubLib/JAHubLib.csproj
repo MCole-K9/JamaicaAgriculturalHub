@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Blog.cs" />
     <Compile Include="BlogRenderer.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Farmer.cs" />
