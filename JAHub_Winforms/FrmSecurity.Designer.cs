@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbkSecuritylabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPasswordConditionlabel = new System.Windows.Forms.Label();
             this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.txtConfirmNewPassword = new System.Windows.Forms.Label();
+            this.lblConfirmNewPasswordLabel = new System.Windows.Forms.Label();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.lblNewPasswordlabel = new System.Windows.Forms.Label();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
@@ -43,10 +44,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblChangePasswordlabel = new System.Windows.Forms.Label();
+            this.errorProviderOldPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNewPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOldPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNewPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,7 +81,7 @@
             this.panel2.Controls.Add(this.lblPasswordConditionlabel);
             this.panel2.Controls.Add(this.btnUpdatePassword);
             this.panel2.Controls.Add(this.txtConfirmPassword);
-            this.panel2.Controls.Add(this.txtConfirmNewPassword);
+            this.panel2.Controls.Add(this.lblConfirmNewPasswordLabel);
             this.panel2.Controls.Add(this.txtNewPassword);
             this.panel2.Controls.Add(this.lblNewPasswordlabel);
             this.panel2.Controls.Add(this.txtOldPassword);
@@ -104,6 +111,7 @@
             this.btnUpdatePassword.TabIndex = 6;
             this.btnUpdatePassword.Text = "&Update Password";
             this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
             // 
             // txtConfirmPassword
             // 
@@ -112,15 +120,15 @@
             this.txtConfirmPassword.Size = new System.Drawing.Size(359, 20);
             this.txtConfirmPassword.TabIndex = 5;
             // 
-            // txtConfirmNewPassword
+            // lblConfirmNewPasswordLabel
             // 
-            this.txtConfirmNewPassword.AutoSize = true;
-            this.txtConfirmNewPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmNewPassword.Location = new System.Drawing.Point(25, 179);
-            this.txtConfirmNewPassword.Name = "txtConfirmNewPassword";
-            this.txtConfirmNewPassword.Size = new System.Drawing.Size(148, 17);
-            this.txtConfirmNewPassword.TabIndex = 4;
-            this.txtConfirmNewPassword.Text = "Comfirm New Password";
+            this.lblConfirmNewPasswordLabel.AutoSize = true;
+            this.lblConfirmNewPasswordLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmNewPasswordLabel.Location = new System.Drawing.Point(25, 179);
+            this.lblConfirmNewPasswordLabel.Name = "lblConfirmNewPasswordLabel";
+            this.lblConfirmNewPasswordLabel.Size = new System.Drawing.Size(144, 17);
+            this.lblConfirmNewPasswordLabel.TabIndex = 4;
+            this.lblConfirmNewPasswordLabel.Text = "Confirm New Password";
             // 
             // txtNewPassword
             // 
@@ -199,6 +207,18 @@
             this.lblChangePasswordlabel.TabIndex = 0;
             this.lblChangePasswordlabel.Text = " Change Password ";
             // 
+            // errorProviderOldPassword
+            // 
+            this.errorProviderOldPassword.ContainerControl = this;
+            // 
+            // errorProviderNewPassword
+            // 
+            this.errorProviderNewPassword.ContainerControl = this;
+            // 
+            // errorProviderConfirmPassword
+            // 
+            this.errorProviderConfirmPassword.ContainerControl = this;
+            // 
             // FrmSecurity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +237,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOldPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNewPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderConfirmPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,7 +252,7 @@
         private System.Windows.Forms.Label lblPasswordConditionlabel;
         private System.Windows.Forms.Button btnUpdatePassword;
         private System.Windows.Forms.TextBox txtConfirmPassword;
-        private System.Windows.Forms.Label txtConfirmNewPassword;
+        private System.Windows.Forms.Label lblConfirmNewPasswordLabel;
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label lblNewPasswordlabel;
         private System.Windows.Forms.TextBox txtOldPassword;
@@ -238,5 +261,8 @@
         private System.Windows.Forms.Label lblChangePasswordlabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProviderOldPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderNewPassword;
+        private System.Windows.Forms.ErrorProvider errorProviderConfirmPassword;
     }
 }
