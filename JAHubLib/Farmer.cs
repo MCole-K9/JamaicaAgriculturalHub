@@ -64,7 +64,7 @@ namespace JAHubLib
         public RadaRegistrationType RadaRegistrationPhase { get; set; }
 
 
-        public FarmerRecord()
+        public Farmer()
         {
             // i don't think this needs anything, tbh. everything is accessible
             // from the properties
