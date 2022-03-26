@@ -205,6 +205,7 @@
             // 
             // panelHomeContainer
             // 
+            this.panelHomeContainer.BackColor = System.Drawing.Color.White;
             this.panelHomeContainer.Location = new System.Drawing.Point(219, 3);
             this.panelHomeContainer.Name = "panelHomeContainer";
             this.panelHomeContainer.Size = new System.Drawing.Size(945, 585);

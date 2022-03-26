@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfileHome));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblWelcomeUser = new System.Windows.Forms.Label();
+            this.lblWelcomelabel = new System.Windows.Forms.Label();
             this.pictureBoxUserIcon = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.lblWelcomelabel = new System.Windows.Forms.Label();
-            this.lblWelcomeUser = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserIcon)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(838, 145);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(161, 107);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.label1.Size = new System.Drawing.Size(550, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "To make JAH function better for you, manage your information, privacy, and securi" +
+    "ty settings.";
+            // 
+            // lblWelcomeUser
+            // 
+            this.lblWelcomeUser.AutoSize = true;
+            this.lblWelcomeUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcomeUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeUser.Location = new System.Drawing.Point(411, 87);
+            this.lblWelcomeUser.Name = "lblWelcomeUser";
+            this.lblWelcomeUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.lblWelcomeUser.Size = new System.Drawing.Size(89, 19);
+            this.lblWelcomeUser.TabIndex = 2;
+            this.lblWelcomeUser.Text = "Farmer Brown";
+            // 
+            // lblWelcomelabel
+            // 
+            this.lblWelcomelabel.AutoSize = true;
+            this.lblWelcomelabel.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcomelabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomelabel.Location = new System.Drawing.Point(350, 87);
+            this.lblWelcomelabel.Name = "lblWelcomelabel";
+            this.lblWelcomelabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.lblWelcomelabel.Size = new System.Drawing.Size(64, 19);
+            this.lblWelcomelabel.TabIndex = 2;
+            this.lblWelcomelabel.Text = "Welcome,";
             // 
             // pictureBoxUserIcon
             // 
@@ -71,7 +107,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(558, 186);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 131);
+            this.button2.Size = new System.Drawing.Size(180, 131);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -105,42 +141,6 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // lblWelcomelabel
-            // 
-            this.lblWelcomelabel.AutoSize = true;
-            this.lblWelcomelabel.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcomelabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomelabel.Location = new System.Drawing.Point(350, 87);
-            this.lblWelcomelabel.Name = "lblWelcomelabel";
-            this.lblWelcomelabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.lblWelcomelabel.Size = new System.Drawing.Size(64, 19);
-            this.lblWelcomelabel.TabIndex = 2;
-            this.lblWelcomelabel.Text = "Welcome,";
-            // 
-            // lblWelcomeUser
-            // 
-            this.lblWelcomeUser.AutoSize = true;
-            this.lblWelcomeUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcomeUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeUser.Location = new System.Drawing.Point(411, 87);
-            this.lblWelcomeUser.Name = "lblWelcomeUser";
-            this.lblWelcomeUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.lblWelcomeUser.Size = new System.Drawing.Size(89, 19);
-            this.lblWelcomeUser.TabIndex = 2;
-            this.lblWelcomeUser.Text = "Farmer Brown";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, 107);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.label1.Size = new System.Drawing.Size(550, 21);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "To make JAH function better for you, manage your information, privacy, and securi" +
-    "ty settings.";
             // 
             // FrmProfileHome
             // 
