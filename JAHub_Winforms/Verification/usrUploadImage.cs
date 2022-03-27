@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
@@ -20,6 +21,11 @@ namespace JAHub_Winforms.Verification
         public usrUploadImageBlock()
         {
             InitializeComponent();
+        }
+
+        public usrUploadImageBlock(Farmer farmer)
+        {
+            profilePicture = farmer.IdPicture;
         }
 
         private void button1_Click(object sender, EventArgs e)

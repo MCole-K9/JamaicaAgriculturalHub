@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
+        /* TO DO
+         * [] Pass the farmer object to the landblock
+         */
+
+        #region Variables and Properties
         List<String> _productsList = new List<String>();
 
         public String LandAddressTown => usrLandBlock1.LandAddressTown;
@@ -19,10 +25,18 @@ namespace JAHub_Winforms.Verification
         public String LandAddressParish => usrLandBlock1.LandAddressParish;
         public decimal LandMeasurement => usrLandBlock1.LandMeasurement;
         public List<String> ProductList => _productsList;
-
+        #endregion
         public usrHoldingsBlock()
         {
             InitializeComponent();
+        }
+
+        public usrHoldingsBlock(Farmer farmer)
+        {
+            InitializeComponent();
+            _productsList = farmer.ProductsTypicallyProduced;
+            // need to pass the farmer object to the sub-controls
+
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)

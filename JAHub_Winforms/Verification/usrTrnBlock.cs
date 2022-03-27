@@ -7,22 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
     /* TO-DO
      * [x] write the validation for the trn
      * [x] write IsBlockValid() method for TRN Block
-     * [] expose value inside of mskTrn for submission
+     * [x] expose value inside of mskTrn for submission
+     * [x] add the value of farmer.TRN to this
      */
 
     public partial class usrTrnBlock : UserControl
     {
-        public String Trn => mskTrn.Text;
+        public String TaxRegistrationNumber => mskTrn.Text;
 
         public usrTrnBlock()
         {
             InitializeComponent();
+        }
+
+        public usrTrnBlock(Farmer farmer)
+        {
+            InitializeComponent();
+            mskTrn.Text = farmer.TaxRegistrationNumber;
         }
 
         private void mskTrn_Validating(object sender, CancelEventArgs e)

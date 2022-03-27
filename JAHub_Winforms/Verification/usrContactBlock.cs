@@ -11,23 +11,33 @@ using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
-    /* TO-DO
-     * [x] Put all phone numbers in their own block
-     * [x] Rewrite add and remove buttons to put new phone blocks in the new container
-     * [] expose values inside 
-    */
     public partial class usrContactBlock : UserControl
     {
+        #region Variables and Properties
+
         bool isEmailValid;
         List<string> _phoneNumbers = new List<string>();
 
-        // adding the first 
+         
         public String Email => txtEmail.Text;
         public List<String> PhoneNumbers;
+
+        #endregion
+
+        /* TO DO
+         * - Pass the farmer object to the phone numbers
+         */
 
         public usrContactBlock()
         {
             InitializeComponent();
+        }
+
+        public usrContactBlock(Farmer farmer)
+        {
+            InitializeComponent();
+            txtEmail.Text = farmer.Email;
+            // need to initialize phone and pass farmer
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)

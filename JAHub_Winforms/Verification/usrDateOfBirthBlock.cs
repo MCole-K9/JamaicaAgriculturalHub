@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
     public partial class usrDateOfBirthBlock : UserControl
     {
+        /* TO DO
+         * - Solve the problem of matching SelectedIndex of cmbDay, etc. to 
+         * - datetime object inside of farmer
+         */
+
+        #region Variables and Properties
+
         bool isYearValid;
         bool isMonthValid;
         bool isDayValid;
@@ -20,9 +28,20 @@ namespace JAHub_Winforms.Verification
         public String Month => cmbMonth.SelectedText;
         public String Year => cmbYear.SelectedText;
 
+        #endregion
+
         public usrDateOfBirthBlock()
         {
             InitializeComponent();
+        }
+
+        public usrDateOfBirthBlock(Farmer farmer)
+        {
+            // need to figure out how to make this correspond to farmer
+            
+            cmbDay.SelectedText = "11";
+            cmbMonth.SelectedText = "February";
+            cmbYear.SelectedText = "1997";
         }
 
         private void cmbYear_Validating(object sender, CancelEventArgs e)

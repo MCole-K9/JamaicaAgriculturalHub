@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
@@ -27,6 +28,14 @@ namespace JAHub_Winforms.Verification
         public usrAddressBlock()
         {
             InitializeComponent();
+        }
+
+        public usrAddressBlock(Farmer farmer)
+        {
+            InitializeComponent();
+            txtAddressTown.Text = farmer.AddressTown;
+            txtAddressPostOffice.Text = farmer.AddressPoBox;
+            txtAddressParish.Text = farmer.AddressParish;
         }
 
         private void txtAddressTown_Validating(object sender, CancelEventArgs e)

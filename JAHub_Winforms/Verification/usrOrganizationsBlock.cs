@@ -7,9 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
+    /* TO DO
+     * [] refactor add and remove organizations buttons to account for passing farmer object?
+     * [] populate the organizations list with the farmer organizations values
+     */
+
     public partial class usrOrganizationsBlock : UserControl
     {
         List<String> _organizations = new List<string>();
@@ -19,6 +25,14 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
         }
+
+        public usrOrganizationsBlock(Farmer farmer)
+        {
+            InitializeComponent();
+            _organizations = farmer.Organizations;
+            // this should actually put this into the 
+        }
+
 
         // This will absolutely need to refactor when I account for the DB/ADO
         private void btnAddAnotherOrganization_Click(object sender, EventArgs e)

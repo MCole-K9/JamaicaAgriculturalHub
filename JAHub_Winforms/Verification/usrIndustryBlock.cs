@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
     public partial class usrIndustryBlock : UserControl
     {
+        /* TO DO
+         * 
+         */
+        
         bool isChoiceSelected;
         bool _usesHeavyMachinery;
 
@@ -21,6 +26,14 @@ namespace JAHub_Winforms.Verification
         public usrIndustryBlock()
         {
             InitializeComponent();
+        }
+
+        public usrIndustryBlock(Farmer farmer)
+        {
+            InitializeComponent();
+            nudNumberOfEmployees.Value = farmer.NumberOfEmployees;
+            _usesHeavyMachinery = farmer.UsesHeavyMachinery;
+
         }
 
         // in reality this is not the space where this event should go, but

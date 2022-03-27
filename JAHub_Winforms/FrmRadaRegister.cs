@@ -124,7 +124,7 @@ namespace JAHub_Winforms
                 {
                     if (trnBlock.IsBlockValid())
                     {
-                        farmer.TaxRegistrationNumber = trnBlock.Trn;
+                        farmer.TaxRegistrationNumber = trnBlock.TaxRegistrationNumber;
                     }
                     else
                     {
@@ -244,7 +244,7 @@ namespace JAHub_Winforms
                 {
                     if (trnBlock.IsBlockValid())
                     {
-                        farmer.TaxRegistrationNumber = trnBlock.Trn;
+                        farmer.TaxRegistrationNumber = trnBlock.TaxRegistrationNumber;
                     }
                     else
                     {
