@@ -57,7 +57,7 @@ namespace JAHub_Winforms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            FarmerRecord farmer = new FarmerRecord();
+            Farmer farmer = new Farmer();
             String message;
             
             // Submission format for people who don't have RADA accounts already
@@ -149,7 +149,7 @@ namespace JAHub_Winforms
                 {
                     if (holdingsBlock.IsBlockValid())
                     {
-                        farmer.Products = holdingsBlock.ProductList;
+                        farmer.ProductsTypicallyProduced = holdingsBlock.ProductList;
 
                         if (!String.IsNullOrEmpty(holdingsBlock.LandAddressParish))
                         {
@@ -258,8 +258,8 @@ namespace JAHub_Winforms
                 }
             }
 
-            if (farmer.WriteRecordToDatabase())
-            {
+            //if (farmer.WriteRecordToDatabase())
+            //{
                 if (applicationType == RadaRegistrationType.AwaitingVerification)
                 {
                     message = "Successfully created record for " + farmer.FirstName +
@@ -275,14 +275,14 @@ namespace JAHub_Winforms
 
                 // end the form and return to wherever you were before
 
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 message = "Could not write to database";
                 MessageBox.Show(message);
 
                 // end the form and return to wherever
-            }
+            //}
 
         }
     }

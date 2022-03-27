@@ -90,8 +90,8 @@ namespace JAHub_Winforms
         private void btnPost_Click(object sender, EventArgs e)
         {
             Blog newBlog = new Blog();
-            newBlog.Author.Firstname = user.Firstname;
-            newBlog.Author.Lastname = user.Lastname;
+            newBlog.Author.FirstName = user.FirstName;
+            newBlog.Author.LastName = user.LastName;
             newBlog.Title = txtTitle.Text;
             newBlog.Description = rtbDescription.Text;
             newBlog.PublishDateString = DateTime.Now.ToShortDateString();

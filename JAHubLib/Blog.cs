@@ -56,7 +56,7 @@ namespace JAHubLib
         
         public string GetAuthorName()
         {
-            return Author.Firstname + " " + Author.Lastname;
+            return Author.FirstName + " " + Author.LastName;
         }
         
 

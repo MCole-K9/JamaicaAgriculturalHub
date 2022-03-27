@@ -139,7 +139,7 @@ namespace JAHub_Winforms
                 {
                     Rating = rating,
                     Comment = txtComment.Text,
-                    Customer = new Customer { Firstname = "John", Lastname = "Doe"}
+                    Customer = new Customer { FirstName = "John", LastName = "Doe"}
                 });
 
                 LoadReviews();

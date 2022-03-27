@@ -25,7 +25,7 @@ namespace JAHub_Winforms.Shop_Controls
         }
         private void PopulateFields()
         {
-            lblCustomerName.Text = $"{_review.Customer.Firstname} {_review.Customer.Lastname}";
+            lblCustomerName.Text = $"{_review.Customer.FirstName} {_review.Customer.LastName}";
             lblComment.Text = _review.Comment;
             lblRating.Text = $"{_review.Rating} Stars";
         }

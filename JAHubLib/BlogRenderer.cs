@@ -64,7 +64,7 @@ namespace JAHubLib
             BlogTitle.Left = 10;
 
             //Author Label
-            BlogAuthor.Text = Blog.Author.Firstname + " " + Blog.Author.Lastname;
+            BlogAuthor.Text = Blog.Author.FirstName + " " + Blog.Author.LastName;
             BlogAuthor.Font = new Font("Calibri", 10, FontStyle.Italic);
             BlogAuthor.AutoSize = true;
             BlogAuthor.Top = 30;
