@@ -15,6 +15,7 @@ namespace JAHub_Winforms
         public FrmAdminEditUser()
         {
             InitializeComponent();
+            TopLevel = false;
         }
     }
 }
