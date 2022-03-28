@@ -40,8 +40,100 @@ namespace JAHub_Winforms
             {
                 fpnlReviews.Controls.Add(new Shop_Controls.UsrRating(review));
             }
+            CalculateReviews();
         }
+        public void RenderProgressBars(List<int> ratings)
+        {
+            fpnlProgress.Controls.Clear();
+            foreach (var rating in ratings)
+            {
+                ProgressBar progressBar = new ProgressBar();
+                progressBar.Value = rating;
+                fpnlProgress.Controls.Add(progressBar);
+            }
+            
+        }
+        public void CalculateReviews()
+        {
+            try
+            {
+                int totalReviews = _product.Reviews.Count;
 
+                //int ratingCount5 = 0;
+                //int ratingCount4 = 0;
+                //int ratingCount3 = 0;
+                //int ratingCount2 = 0;
+                //int ratingCount1 = 0;
+
+                List<Review> Rating5Reviews = _product.Reviews.Where(q => q.Rating == 5).ToList();
+                List<Review> Rating4Reviews = _product.Reviews.Where(q => q.Rating == 4).ToList();
+                List<Review> Rating3Reviews = _product.Reviews.Where(q => q.Rating == 3).ToList();
+                List<Review> Rating2Reviews = _product.Reviews.Where(q => q.Rating == 2).ToList();
+                List<Review> Rating1Reviews = _product.Reviews.Where(q => q.Rating == 1).ToList();
+
+
+                int ratingCount5 = Rating5Reviews.Count();
+                int ratingCount4 = Rating4Reviews.Count();
+                int ratingCount3 = Rating3Reviews.Count();
+                int ratingCount2 = Rating2Reviews.Count();
+                int ratingCount1 = Rating1Reviews.Count();
+
+                //foreach (var review in _product.Reviews)
+                //{
+                //    if (review.Rating == 5)
+                //    {
+                //        ratingCount5++;
+
+                //    }
+                //    else if (review.Rating == 4)
+                //    {
+                //        ratingCount4++;
+
+                //    }
+                //    else if (review.Rating == 3)
+                //    {
+                //        ratingCount3++;
+                //    }
+                //    else if (review.Rating == 2)
+                //    {
+                //        ratingCount2++;
+
+                //    }
+                //    else if (review.Rating == 1)
+                //    {
+                //        ratingCount1++;
+
+                //    }
+
+
+                //}
+
+
+                List<int> rating = new List<int> ();
+                int star5Percentage =  ratingCount5 / totalReviews* 100;
+                int star4Percentage = ratingCount4 / totalReviews * 100;
+                int star3Percentage = ratingCount3 / totalReviews * 100;
+                int star2Percentage = ratingCount2 / totalReviews * 100;
+                int star1Percentage = ratingCount1 / totalReviews * 100;
+
+                rating.Add(star5Percentage);
+                rating.Add(star4Percentage);
+                rating.Add(star3Percentage);
+                rating.Add(star2Percentage);
+                rating.Add(star1Percentage);
+    
+                RenderProgressBars(rating);
+                   
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Some error occured, contact the app owner " + ex.Message);
+            }
+
+
+
+        }
  
 
   
