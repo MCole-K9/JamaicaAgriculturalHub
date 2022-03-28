@@ -24,6 +24,8 @@ namespace JAHubLib
         {
             PublishDateString = DateTime.Now.ToString();
             Author = new User();
+            Author.FirstName = "Elliot";
+            Author.LastName = "Morrison";
             BlogBody = "Content";
             Title = "Title";
             Description = "Description";

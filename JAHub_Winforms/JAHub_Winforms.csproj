@@ -56,6 +56,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog_Controls\ucBlogPost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Blog_Controls\ucBlogPost.Designer.cs">
+      <DependentUpon>ucBlogPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminCreateNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     <Compile Include="Verification\usrTrnBlock.Designer.cs">
       <DependentUpon>usrTrnBlock.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Blog_Controls\ucBlogPost.resx">
+      <DependentUpon>ucBlogPost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminCreateNewUser.resx">
       <DependentUpon>FrmAdminCreateNewUser.cs</DependentUpon>
     </EmbeddedResource>

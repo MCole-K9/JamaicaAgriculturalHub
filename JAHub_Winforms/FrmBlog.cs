@@ -37,15 +37,8 @@ namespace JAHub_Winforms
             //    blog.BlogBody = sqlData["BlogBody"].ToString();
             //    blog.PublishDateString = sqlData["PublishDateString"].ToString();
             //    blog.Rating = Convert.ToInt16(sqlData["Rating"]);
-            //    renderer.SetBlogInstance(blog);
-            //    renderer.CreateBlogPost(pnlContainer);
-            //    renderer.ViewBlog.Click += ViewBlog_Click;
-            //    void ViewBlog_Click(object sender, EventArgs e)
-            //    {
-            //        FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
-            //        DisplayedBlog.Show();
-            //    }
-            //}
+            
+            
         }
 
 
@@ -110,6 +103,19 @@ namespace JAHub_Winforms
                     }
                 }
             }
+        }
+
+        private void btntest_Click(object sender, EventArgs e)
+        {
+            Blog testblog = new Blog();
+            Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(testblog);
+            pnlContainer.Controls.Add(ucBlogPost);
+            ucBlogPost.Dock = DockStyle.Top;
+        }
+
+        private void pnlContainer_ClientSizeChanged(object sender, EventArgs e)
+        {
+            pnlContainer.Padding = new Padding(0, 0, 0, 0);
         }
     }
 }
