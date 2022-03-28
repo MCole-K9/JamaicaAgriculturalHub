@@ -41,16 +41,6 @@ namespace JAHubLib
             Description = description;
             Author = author;
             Rating = rating;
-
-            //BlogPostContainer = new Panel();
-            //BlogPost = new Panel();
-            //ViewBlog = new Button();
-            //BlogTitle = new Label();
-            //BlogAuthor = new Label();
-            //BlogDescription = new Label();
-            //BlogRating = new Label();
-            //PublishDate = DateTime.Now;//simulated time object to be passed for each blog
-            //BlogDate = new Label();
         }
 
         
