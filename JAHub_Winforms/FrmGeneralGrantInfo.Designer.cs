@@ -31,7 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlContainer = new System.Windows.Forms.Panel();
+            this.btntest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,19 +69,32 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Available Grants";
             // 
-            // panel1
+            // pnlContainer
             // 
-            this.panel1.Location = new System.Drawing.Point(204, 114);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(560, 510);
-            this.panel1.TabIndex = 62;
+            this.pnlContainer.AutoScroll = true;
+            this.pnlContainer.Location = new System.Drawing.Point(204, 114);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(560, 510);
+            this.pnlContainer.TabIndex = 62;
+            this.pnlContainer.ClientSizeChanged += new System.EventHandler(this.pnlContainer_ClientSizeChanged);
+            // 
+            // btntest
+            // 
+            this.btntest.Location = new System.Drawing.Point(660, 48);
+            this.btntest.Name = "btntest";
+            this.btntest.Size = new System.Drawing.Size(75, 23);
+            this.btntest.TabIndex = 63;
+            this.btntest.Text = "test";
+            this.btntest.UseVisualStyleBackColor = true;
+            this.btntest.Click += new System.EventHandler(this.btntest_Click);
             // 
             // FrmGeneralGrantInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 668);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btntest);
+            this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.panel2);
@@ -96,6 +110,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.Button btntest;
     }
 }

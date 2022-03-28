@@ -13,13 +13,24 @@ namespace JAHub_Winforms.Grant_Controls
 {
     public partial class ucGrantDisplay : UserControl
     {
+        Grantinfo grantinfo = new Grantinfo();
         public ucGrantDisplay()
         {
             InitializeComponent();
         }
-        public ucGrantDisplay(Grantinfo grantinfo)
+        public ucGrantDisplay(Grantinfo g)
         {
+            this.grantinfo = g;
             InitializeComponent();
+            lblGrantAgency.Text = grantinfo.Title;
+            rtbGrantDescription.Text = grantinfo.GrantDescription;
+            //txtExpirationDate.Text = grantinfo.ExpiryDate;
+        }
+
+        private void btnViewGrant_Click(object sender, EventArgs e)
+        {
+            FrmGrantDetails frmGrantDetails = new FrmGrantDetails(grantinfo);
+            frmGrantDetails.Show();
         }
     }
 }
