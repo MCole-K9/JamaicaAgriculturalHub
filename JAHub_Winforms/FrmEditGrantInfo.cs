@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms
 {
-    public partial class FrmUserGrantPage : Form
+    public partial class FrmEditGrantInfo : Form
     {
-        public FrmUserGrantPage()
+        public FrmEditGrantInfo()
         {
             InitializeComponent();
         }

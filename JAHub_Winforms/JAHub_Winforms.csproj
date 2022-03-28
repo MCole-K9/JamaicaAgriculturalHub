@@ -200,17 +200,17 @@
     <Compile Include="FrmUserBlogs.Designer.cs">
       <DependentUpon>FrmUserBlogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUserGeneralInfo.cs">
+    <Compile Include="FrmEditGrantInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUserGeneralInfo.Designer.cs">
-      <DependentUpon>FrmUserGeneralInfo.cs</DependentUpon>
+    <Compile Include="FrmEditGrantInfo.Designer.cs">
+      <DependentUpon>FrmEditGrantInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUserGrantPage.cs">
+    <Compile Include="FrmCreateGrant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUserGrantPage.Designer.cs">
-      <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
+    <Compile Include="FrmCreateGrant.Designer.cs">
+      <DependentUpon>FrmCreateGrant.cs</DependentUpon>
     </Compile>
     <Compile Include="Moderation\usrInfractionItem.cs">
       <SubType>UserControl</SubType>
@@ -418,11 +418,11 @@
     <EmbeddedResource Include="FrmUserBlogs.resx">
       <DependentUpon>FrmUserBlogs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUserGeneralInfo.resx">
-      <DependentUpon>FrmUserGeneralInfo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEditGrantInfo.resx">
+      <DependentUpon>FrmEditGrantInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUserGrantPage.resx">
-      <DependentUpon>FrmUserGrantPage.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCreateGrant.resx">
+      <DependentUpon>FrmCreateGrant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Moderation\usrInfractionItem.resx">
       <DependentUpon>usrInfractionItem.cs</DependentUpon>
