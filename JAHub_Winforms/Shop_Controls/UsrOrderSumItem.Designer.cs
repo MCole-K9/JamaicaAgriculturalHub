@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.lblQty = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 85);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbImage.Location = new System.Drawing.Point(3, 15);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(114, 85);
+            this.pbImage.TabIndex = 0;
+            this.pbImage.TabStop = false;
             // 
-            // label1
+            // lblQty
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Qty:";
+            this.lblQty.AutoSize = true;
+            this.lblQty.Location = new System.Drawing.Point(123, 78);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(26, 13);
+            this.lblQty.TabIndex = 1;
+            this.lblQty.Text = "Qty:";
             // 
             // lblItemName
             // 
@@ -76,11 +76,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblItemName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblQty);
+            this.Controls.Add(this.pbImage);
             this.Name = "UsrOrderSumItem";
             this.Size = new System.Drawing.Size(308, 112);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.UsrOrderSumItem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,8 +89,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Label lblPrice;
     }
