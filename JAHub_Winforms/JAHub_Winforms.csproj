@@ -218,6 +218,12 @@
     <Compile Include="FrmCreateGrant.Designer.cs">
       <DependentUpon>FrmCreateGrant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grant_Controls\ucGrantDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grant_Controls\ucGrantDisplay.Designer.cs">
+      <DependentUpon>ucGrantDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Moderation\usrInfractionItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateGrant.resx">
       <DependentUpon>FrmCreateGrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grant_Controls\ucGrantDisplay.resx">
+      <DependentUpon>ucGrantDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Moderation\usrInfractionItem.resx">
       <DependentUpon>usrInfractionItem.cs</DependentUpon>
