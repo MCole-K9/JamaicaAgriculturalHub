@@ -82,7 +82,8 @@
             this.ClientSize = new System.Drawing.Size(489, 388);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminEditUser";
             this.Text = "FrmAdminEditUser";
             this.flowLayoutPanel1.ResumeLayout(false);
