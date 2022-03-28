@@ -37,11 +37,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnSelectUser = new System.Windows.Forms.Button();
+            this.btnEditUser = new System.Windows.Forms.Button();
+            this.btnViewModeration = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnCreateNewUser = new System.Windows.Forms.Button();
             this.pnlFormHolder = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,11 +51,11 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.btnSelectUser);
+            this.flowLayoutPanel1.Controls.Add(this.btnEditUser);
+            this.flowLayoutPanel1.Controls.Add(this.btnViewModeration);
+            this.flowLayoutPanel1.Controls.Add(this.btnDeleteUser);
+            this.flowLayoutPanel1.Controls.Add(this.btnCreateNewUser);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,53 +155,56 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 7;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // button1
+            // btnSelectUser
             // 
-            this.button1.Location = new System.Drawing.Point(3, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select User";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectUser.Location = new System.Drawing.Point(3, 94);
+            this.btnSelectUser.Name = "btnSelectUser";
+            this.btnSelectUser.Size = new System.Drawing.Size(191, 42);
+            this.btnSelectUser.TabIndex = 0;
+            this.btnSelectUser.Text = "Select User";
+            this.btnSelectUser.UseVisualStyleBackColor = true;
+            this.btnSelectUser.Click += new System.EventHandler(this.btnSelectUser_Click);
             // 
-            // button4
+            // btnEditUser
             // 
-            this.button4.Location = new System.Drawing.Point(3, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(191, 39);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Edit User Information";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEditUser.Location = new System.Drawing.Point(3, 142);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(191, 39);
+            this.btnEditUser.TabIndex = 3;
+            this.btnEditUser.Text = "Edit User Information";
+            this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
-            // button3
+            // btnViewModeration
             // 
-            this.button3.Location = new System.Drawing.Point(3, 187);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "View Moderation Log";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnViewModeration.Location = new System.Drawing.Point(3, 187);
+            this.btnViewModeration.Name = "btnViewModeration";
+            this.btnViewModeration.Size = new System.Drawing.Size(191, 34);
+            this.btnViewModeration.TabIndex = 2;
+            this.btnViewModeration.Text = "View Moderation Log";
+            this.btnViewModeration.UseVisualStyleBackColor = true;
+            this.btnViewModeration.Click += new System.EventHandler(this.btnViewModeration_Click);
             // 
-            // button6
+            // btnDeleteUser
             // 
-            this.button6.Location = new System.Drawing.Point(3, 227);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(191, 36);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Delete User Account";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Location = new System.Drawing.Point(3, 227);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(191, 36);
+            this.btnDeleteUser.TabIndex = 7;
+            this.btnDeleteUser.Text = "Delete User Account";
+            this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
-            // button5
+            // btnCreateNewUser
             // 
-            this.button5.Location = new System.Drawing.Point(3, 269);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(191, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Create New User";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCreateNewUser.Location = new System.Drawing.Point(3, 269);
+            this.btnCreateNewUser.Name = "btnCreateNewUser";
+            this.btnCreateNewUser.Size = new System.Drawing.Size(191, 42);
+            this.btnCreateNewUser.TabIndex = 4;
+            this.btnCreateNewUser.Text = "Create New User";
+            this.btnCreateNewUser.UseVisualStyleBackColor = true;
+            this.btnCreateNewUser.Click += new System.EventHandler(this.btnCreateNewUser_Click);
             // 
             // pnlFormHolder
             // 
@@ -211,6 +214,7 @@
             this.pnlFormHolder.Name = "pnlFormHolder";
             this.pnlFormHolder.Size = new System.Drawing.Size(724, 451);
             this.pnlFormHolder.TabIndex = 1;
+            this.pnlFormHolder.SizeChanged += new System.EventHandler(this.pnlFormHolder_SizeChanged);
             // 
             // FrmAdminContainer
             // 
@@ -222,7 +226,6 @@
             this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmAdminFormContainer_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -234,10 +237,10 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSelectUser;
+        private System.Windows.Forms.Button btnCreateNewUser;
+        private System.Windows.Forms.Button btnViewModeration;
+        private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -247,6 +250,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlFormHolder;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDeleteUser;
     }
 }
