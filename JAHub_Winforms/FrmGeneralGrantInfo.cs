@@ -65,7 +65,7 @@ namespace JAHub_Winforms
 
         private void pnlContainer_ClientSizeChanged(object sender, EventArgs e)
         {
-            this.Width += this.AutoScrollMargin.Width;
+            pnlContainer.Padding = new Padding(0, 0, 0, 0);
         }
     }
 }

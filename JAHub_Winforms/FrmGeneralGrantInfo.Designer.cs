@@ -56,8 +56,8 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(412, 43);
             this.richTextBox1.TabIndex = 42;
-            this.richTextBox1.Text = "Please Select Grant option to see available grants to see further information on " +
-    "grants";
+            this.richTextBox1.Text = "Please click \'View more\' on available grants to see further information on grants" +
+    "";
             // 
             // label1
             // 
@@ -74,7 +74,8 @@
             this.pnlContainer.AutoScroll = true;
             this.pnlContainer.Location = new System.Drawing.Point(204, 114);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(560, 510);
+            this.pnlContainer.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.pnlContainer.Size = new System.Drawing.Size(574, 510);
             this.pnlContainer.TabIndex = 62;
             this.pnlContainer.ClientSizeChanged += new System.EventHandler(this.pnlContainer_ClientSizeChanged);
             // 

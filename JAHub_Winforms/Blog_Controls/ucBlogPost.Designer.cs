@@ -43,7 +43,7 @@
             this.lblBlogTitle.AutoSize = true;
             this.lblBlogTitle.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lblBlogTitle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlogTitle.Location = new System.Drawing.Point(26, 18);
+            this.lblBlogTitle.Location = new System.Drawing.Point(13, 18);
             this.lblBlogTitle.Name = "lblBlogTitle";
             this.lblBlogTitle.Size = new System.Drawing.Size(50, 26);
             this.lblBlogTitle.TabIndex = 0;
@@ -54,7 +54,7 @@
             this.lblBlogAuthor.AutoSize = true;
             this.lblBlogAuthor.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lblBlogAuthor.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlogAuthor.Location = new System.Drawing.Point(28, 44);
+            this.lblBlogAuthor.Location = new System.Drawing.Point(15, 44);
             this.lblBlogAuthor.Name = "lblBlogAuthor";
             this.lblBlogAuthor.Size = new System.Drawing.Size(78, 15);
             this.lblBlogAuthor.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.lblDatePublished.AutoSize = true;
             this.lblDatePublished.BackColor = System.Drawing.Color.LightSeaGreen;
             this.lblDatePublished.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatePublished.Location = new System.Drawing.Point(28, 64);
+            this.lblDatePublished.Location = new System.Drawing.Point(15, 64);
             this.lblDatePublished.Name = "lblDatePublished";
             this.lblDatePublished.Size = new System.Drawing.Size(67, 13);
             this.lblDatePublished.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             this.lblBlogDescription.AutoSize = true;
             this.lblBlogDescription.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBlogDescription.Location = new System.Drawing.Point(25, 96);
+            this.lblBlogDescription.Location = new System.Drawing.Point(15, 96);
             this.lblBlogDescription.Name = "lblBlogDescription";
             this.lblBlogDescription.Size = new System.Drawing.Size(161, 14);
             this.lblBlogDescription.TabIndex = 5;
@@ -104,8 +104,11 @@
             // 
             this.pnlBlogContainer.BackColor = System.Drawing.Color.LightSeaGreen;
             this.pnlBlogContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBlogContainer.Controls.Add(this.lblDatePublished);
             this.pnlBlogContainer.Controls.Add(this.lblRatings);
+            this.pnlBlogContainer.Controls.Add(this.lblBlogAuthor);
             this.pnlBlogContainer.Controls.Add(this.btnViewBlog);
+            this.pnlBlogContainer.Controls.Add(this.lblBlogTitle);
             this.pnlBlogContainer.Controls.Add(this.lblBlogDescription);
             this.pnlBlogContainer.Location = new System.Drawing.Point(0, 0);
             this.pnlBlogContainer.Name = "pnlBlogContainer";
@@ -117,16 +120,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.lblDatePublished);
-            this.Controls.Add(this.lblBlogAuthor);
-            this.Controls.Add(this.lblBlogTitle);
             this.Controls.Add(this.pnlBlogContainer);
             this.Name = "ucBlogPost";
             this.Size = new System.Drawing.Size(880, 130);
             this.pnlBlogContainer.ResumeLayout(false);
             this.pnlBlogContainer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
