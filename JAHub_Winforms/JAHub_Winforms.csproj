@@ -194,6 +194,12 @@
     <Compile Include="FrmSecurity.Designer.cs">
       <DependentUpon>FrmSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShippingCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShippingCheckout.Designer.cs">
+      <DependentUpon>FrmShippingCheckout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSecurity.resx">
       <DependentUpon>FrmSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShippingCheckout.resx">
+      <DependentUpon>FrmShippingCheckout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
