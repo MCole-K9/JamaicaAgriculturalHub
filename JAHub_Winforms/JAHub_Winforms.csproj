@@ -86,6 +86,12 @@
     <Compile Include="FrmAdminViewModeration.Designer.cs">
       <DependentUpon>FrmAdminViewModeration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGrantDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGrantDetails.Designer.cs">
+      <DependentUpon>FrmGrantDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRadaStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneralGrantInfo.resx">
       <DependentUpon>FrmGeneralGrantInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGrantDetails.resx">
+      <DependentUpon>FrmGrantDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGrantOfficer.resx">
       <DependentUpon>FrmGrantOfficer.cs</DependentUpon>

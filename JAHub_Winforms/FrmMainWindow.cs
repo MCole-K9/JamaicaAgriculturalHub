@@ -150,5 +150,20 @@ namespace JAHub_Winforms
                 }
             }
         }
+
+        private void grantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen("FrmGeneralGrantInfo"))
+            {
+
+                FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+                frmGeneralGrantInfo.MdiParent = this;
+                frmGeneralGrantInfo.Show();
+            }
+            else
+            {
+                MessageBox.Show("An Instance is Already Running");
+            }
+        }
     }
 }
