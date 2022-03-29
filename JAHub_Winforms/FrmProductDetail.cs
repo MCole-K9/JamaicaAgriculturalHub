@@ -42,13 +42,13 @@ namespace JAHub_Winforms
             }
             CalculateReviews();
         }
-        public void RenderProgressBars(List<int> ratings)
+        public void RenderProgressBars(List<float> ratings)
         {
             fpnlProgress.Controls.Clear();
             foreach (var rating in ratings)
             {
                 ProgressBar progressBar = new ProgressBar();
-                progressBar.Value = rating;
+                progressBar.Value = (int)rating;
                 fpnlProgress.Controls.Add(progressBar);
             }
             
@@ -72,11 +72,11 @@ namespace JAHub_Winforms
                 List<Review> Rating1Reviews = _product.Reviews.Where(q => q.Rating == 1).ToList();
 
 
-                int ratingCount5 = Rating5Reviews.Count();
-                int ratingCount4 = Rating4Reviews.Count();
-                int ratingCount3 = Rating3Reviews.Count();
-                int ratingCount2 = Rating2Reviews.Count();
-                int ratingCount1 = Rating1Reviews.Count();
+                float ratingCount5 = Rating5Reviews.Count();
+                float ratingCount4 = Rating4Reviews.Count();
+                float ratingCount3 = Rating3Reviews.Count();
+                float ratingCount2 = Rating2Reviews.Count();
+                float ratingCount1 = Rating1Reviews.Count();
 
                 //foreach (var review in _product.Reviews)
                 //{
@@ -109,14 +109,14 @@ namespace JAHub_Winforms
                 //}
 
 
-                List<int> rating = new List<int> ();
-                int star5Percentage =  ratingCount5 / totalReviews* 100;
-                int star4Percentage = ratingCount4 / totalReviews * 100;
-                int star3Percentage = ratingCount3 / totalReviews * 100;
-                int star2Percentage = ratingCount2 / totalReviews * 100;
-                int star1Percentage = ratingCount1 / totalReviews * 100;
+                List<float> rating = new List<float> ();
+                float star5Percentage =  (ratingCount5 / totalReviews)* 100;
+                float star4Percentage = (ratingCount4 / totalReviews) * 100;
+                float star3Percentage = (ratingCount3 / totalReviews) * 100;
+                float star2Percentage = (ratingCount2 / totalReviews) * 100;
+                float star1Percentage = (ratingCount1 / totalReviews) * 100;
 
-                rating.Add(star5Percentage);
+                rating.Add(star5Percentage); 
                 rating.Add(star4Percentage);
                 rating.Add(star3Percentage);
                 rating.Add(star2Percentage);
