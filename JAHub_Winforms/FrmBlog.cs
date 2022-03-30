@@ -14,34 +14,36 @@ namespace JAHub_Winforms
 {
     public partial class FrmBlog : Form
     {
-        
-        
+
+
         public FrmBlog()
         {
             InitializeComponent();
 
-            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM BlogDetailsTable", connection);
-            //connection.Open();
-            //SqlDataReader sqlData = cmd.ExecuteReader();
+            SqlConnection connection = new SqlConnection("Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8");
 
-            //while (sqlData.Read())
-            //{
-            //    Blog blog = new Blog();
-            //    BlogRenderer renderer = new BlogRenderer();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
+            connection.Open();
+            SqlDataReader sqlData = cmd.ExecuteReader();
 
-            //    blog.Title = sqlData["Title"].ToString();
-            //    blog.Author.Firstname = sqlData["Author"].ToString();
-            //    blog.Author.Lastname = sqlData["Author"].ToString();
-            //    blog.Description = sqlData["Description"].ToString();
-            //    blog.BlogBody = sqlData["BlogBody"].ToString();
-            //    blog.PublishDateString = sqlData["PublishDateString"].ToString();
-            //    blog.Rating = Convert.ToInt16(sqlData["Rating"]);
-            
-            
+            while (sqlData.Read())
+            {
+                Blog blog = new Blog();
+
+
+                blog.Title = sqlData["Title"].ToString();
+                blog.Author.UserID = sqlData["Author"].ToString();
+                blog.Description = sqlData["Description"].ToString();
+                blog.BlogBody = sqlData["Body"].ToString();
+                blog.PublishDateString = sqlData["PublishedDate"].ToString();
+                blog.Rating = Convert.ToInt16(sqlData["Rating"]);
+                Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(blog);
+                pnlContainer.Controls.Add(ucBlogPost);
+                ucBlogPost.Dock = DockStyle.Top;
+
+            }
+
         }
-
-
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen("FrmCreateBlog"))

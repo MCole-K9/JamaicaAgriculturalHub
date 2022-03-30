@@ -26,7 +26,7 @@ namespace JAHub_Winforms.Blog_Controls
             lblBlogAuthor.Text = blog.GetAuthorName();
             lblDatePublished.Text = blog.PublishDateString;
             lblBlogDescription.Text = blog.Description;
-            lblRatings.Text = blog.Rating + " " + lblRatings.Text;
+            lblRatings.Text = blog.Rating.ToString();
         }
 
         private void btnViewBlog_Click(object sender, EventArgs e)

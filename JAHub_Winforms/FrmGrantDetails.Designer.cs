@@ -42,7 +42,7 @@
             // 
             // pbscanpicture
             // 
-            this.pbscanpicture.Location = new System.Drawing.Point(315, 368);
+            this.pbscanpicture.Location = new System.Drawing.Point(281, 364);
             this.pbscanpicture.Margin = new System.Windows.Forms.Padding(2);
             this.pbscanpicture.Name = "pbscanpicture";
             this.pbscanpicture.Size = new System.Drawing.Size(333, 203);
@@ -109,7 +109,7 @@
             // 
             this.lblgrantdescription.AutoSize = true;
             this.lblgrantdescription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgrantdescription.Location = new System.Drawing.Point(278, 136);
+            this.lblgrantdescription.Location = new System.Drawing.Point(303, 160);
             this.lblgrantdescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgrantdescription.Name = "lblgrantdescription";
             this.lblgrantdescription.Size = new System.Drawing.Size(125, 17);
