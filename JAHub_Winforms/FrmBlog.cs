@@ -30,7 +30,7 @@ namespace JAHub_Winforms
             {
                 Blog blog = new Blog();
 
-
+                blog.BlogID = (int)sqlData["ID"];
                 blog.Title = sqlData["Title"].ToString();
                 blog.Author.UserID = sqlData["Author"].ToString();
                 blog.Description = sqlData["Description"].ToString();

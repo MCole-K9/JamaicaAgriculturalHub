@@ -17,5 +17,9 @@ namespace JAHubLib
 
             return path;
         }
+        public static string getConnectionString()
+        {
+            return "Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8";
+        }
     }
 }

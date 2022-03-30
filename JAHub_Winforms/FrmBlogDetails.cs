@@ -81,7 +81,8 @@ namespace JAHub_Winforms
             displayedBlog.Rating++;
             SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
             connection.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "'");
+            SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "' AND ID = '" + displayedBlog.BlogID + "'");
+            
             cmd.Connection = connection;
             cmd.ExecuteNonQuery();
         }
@@ -93,7 +94,7 @@ namespace JAHub_Winforms
                 displayedBlog.Rating--;
                 SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE ID = '" + displayedBlog.Author.UserID + "'");
+                SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "' AND ID = '" + displayedBlog.BlogID + "'");
                 cmd.Connection = connection;
                 cmd.ExecuteNonQuery();
             }
