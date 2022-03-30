@@ -31,8 +31,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCreateUser = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblUserRole = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flwControlsHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSubmitRecord = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
@@ -48,7 +48,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(615, 381);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -71,10 +71,21 @@
             this.flowLayoutPanel2.Controls.Add(this.lblUserRole);
             this.flowLayoutPanel2.Controls.Add(this.comboBox1);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 33);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(260, 36);
             this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // lblUserRole
+            // 
+            this.lblUserRole.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblUserRole.AutoSize = true;
+            this.lblUserRole.Location = new System.Drawing.Point(4, 8);
+            this.lblUserRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(94, 20);
+            this.lblUserRole.TabIndex = 1;
+            this.lblUserRole.Text = "User Role: ";
             // 
             // comboBox1
             // 
@@ -87,21 +98,10 @@
             "Grant Agent",
             "Administrator"});
             this.comboBox1.Location = new System.Drawing.Point(106, 4);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 28);
             this.comboBox1.TabIndex = 0;
-            // 
-            // lblUserRole
-            // 
-            this.lblUserRole.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblUserRole.AutoSize = true;
-            this.lblUserRole.Location = new System.Drawing.Point(4, 8);
-            this.lblUserRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(94, 20);
-            this.lblUserRole.TabIndex = 1;
-            this.lblUserRole.Text = "User Role: ";
             // 
             // flwControlsHolder
             // 
@@ -129,7 +129,8 @@
             this.ClientSize = new System.Drawing.Size(615, 381);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminCreateNewUser";
             this.Text = "FrmAdminCreateNewUser";
             this.flowLayoutPanel1.ResumeLayout(false);

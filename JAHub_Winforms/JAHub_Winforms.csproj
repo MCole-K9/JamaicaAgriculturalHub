@@ -194,6 +194,12 @@
     <Compile Include="FrmSecurity.Designer.cs">
       <DependentUpon>FrmSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShippingCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShippingCheckout.Designer.cs">
+      <DependentUpon>FrmShippingCheckout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,12 @@
     </Compile>
     <Compile Include="FrmCreateGrant.Designer.cs">
       <DependentUpon>FrmCreateGrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grant_Controls\ucGrantDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grant_Controls\ucGrantDisplay.Designer.cs">
+      <DependentUpon>ucGrantDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="Moderation\usrInfractionItem.cs">
       <SubType>UserControl</SubType>
@@ -246,6 +258,12 @@
     </Compile>
     <Compile Include="Shop_Controls\UcProduct.Designer.cs">
       <DependentUpon>UcProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderSumItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderSumItem.Designer.cs">
+      <DependentUpon>UsrOrderSumItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrRating.cs">
       <SubType>UserControl</SubType>
@@ -421,6 +439,9 @@
     <EmbeddedResource Include="FrmSecurity.resx">
       <DependentUpon>FrmSecurity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmShippingCheckout.resx">
+      <DependentUpon>FrmShippingCheckout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCreateGrant.resx">
       <DependentUpon>FrmCreateGrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grant_Controls\ucGrantDisplay.resx">
+      <DependentUpon>ucGrantDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Moderation\usrInfractionItem.resx">
       <DependentUpon>usrInfractionItem.cs</DependentUpon>
@@ -449,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UcProduct.resx">
       <DependentUpon>UcProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop_Controls\UsrOrderSumItem.resx">
+      <DependentUpon>UsrOrderSumItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UsrRating.resx">
       <DependentUpon>UsrRating.cs</DependentUpon>

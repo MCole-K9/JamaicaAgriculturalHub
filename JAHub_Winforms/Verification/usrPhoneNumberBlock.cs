@@ -24,10 +24,10 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrPhoneNumberBlock(Farmer farmer)
+        public usrPhoneNumberBlock(string farmerPhoneNumber)
         {
             InitializeComponent();
-            // need this to populate the entire farmer's list of phone numbers
+            mskPhoneNumber.Text = farmerPhoneNumber;
         }
 
         private void mskPhoneNumber_Validating(object sender, CancelEventArgs e)

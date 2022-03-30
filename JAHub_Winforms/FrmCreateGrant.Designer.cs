@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnuploadfile, 0, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(470, 429);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -69,7 +69,7 @@
             // btnremovefile
             // 
             this.btnremovefile.Location = new System.Drawing.Point(184, 2);
-            this.btnremovefile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnremovefile.Margin = new System.Windows.Forms.Padding(2);
             this.btnremovefile.Name = "btnremovefile";
             this.btnremovefile.Size = new System.Drawing.Size(80, 41);
             this.btnremovefile.TabIndex = 2;
@@ -79,7 +79,7 @@
             // btndownload
             // 
             this.btndownload.Location = new System.Drawing.Point(93, 2);
-            this.btndownload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btndownload.Margin = new System.Windows.Forms.Padding(2);
             this.btndownload.Name = "btndownload";
             this.btndownload.Size = new System.Drawing.Size(86, 41);
             this.btndownload.TabIndex = 1;
@@ -89,7 +89,7 @@
             // btnuploadfile
             // 
             this.btnuploadfile.Location = new System.Drawing.Point(2, 2);
-            this.btnuploadfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnuploadfile.Margin = new System.Windows.Forms.Padding(2);
             this.btnuploadfile.Name = "btnuploadfile";
             this.btnuploadfile.Size = new System.Drawing.Size(86, 41);
             this.btnuploadfile.TabIndex = 0;
@@ -100,7 +100,7 @@
             // 
             this.pbcwj.Image = ((System.Drawing.Image)(resources.GetObject("pbcwj.Image")));
             this.pbcwj.Location = new System.Drawing.Point(213, 429);
-            this.pbcwj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbcwj.Margin = new System.Windows.Forms.Padding(2);
             this.pbcwj.Name = "pbcwj";
             this.pbcwj.Size = new System.Drawing.Size(236, 158);
             this.pbcwj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,7 +110,7 @@
             // rtbcwj
             // 
             this.rtbcwj.Location = new System.Drawing.Point(213, 175);
-            this.rtbcwj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbcwj.Margin = new System.Windows.Forms.Padding(2);
             this.rtbcwj.Name = "rtbcwj";
             this.rtbcwj.Size = new System.Drawing.Size(530, 148);
             this.rtbcwj.TabIndex = 9;
@@ -121,7 +121,7 @@
             this.pansidebarcwj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pansidebarcwj.Dock = System.Windows.Forms.DockStyle.Left;
             this.pansidebarcwj.Location = new System.Drawing.Point(0, 0);
-            this.pansidebarcwj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pansidebarcwj.Margin = new System.Windows.Forms.Padding(2);
             this.pansidebarcwj.Name = "pansidebarcwj";
             this.pansidebarcwj.Size = new System.Drawing.Size(143, 684);
             this.pansidebarcwj.TabIndex = 12;
@@ -202,9 +202,9 @@
             this.Controls.Add(this.pbcwj);
             this.Controls.Add(this.rtbcwj);
             this.Controls.Add(this.pansidebarcwj);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCreateGrant";
-            this.Text = "FrmUserGrantPage";
+            this.Text = "FrmCreateGrantPage";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbcwj)).EndInit();
             this.ResumeLayout(false);

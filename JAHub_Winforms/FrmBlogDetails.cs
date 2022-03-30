@@ -78,24 +78,25 @@ namespace JAHub_Winforms
 
         private void btnRatingUp_Click(object sender, EventArgs e)
         {
-            //displayedBlog.Rating++;
-            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
-            //connection.Open();
-            //SqlCommand cmd = new SqlCommand("UPDATE BlogDetailsTable SET Rating = " + displayedBlog.Rating + " WHERE Title = '" + displayedBlog.Title + "'");
-            //cmd.Connection = connection;
-            //cmd.ExecuteNonQuery();
+            displayedBlog.Rating++;
+            SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "' AND ID = '" + displayedBlog.BlogID + "'");
+            
+            cmd.Connection = connection;
+            cmd.ExecuteNonQuery();
         }
 
         private void btnRatingDown_Click(object sender, EventArgs e)
         {
             if (displayedBlog.Rating > 0)
             {
-                //displayedBlog.Rating--;
-                //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
-                //connection.Open();
-                //SqlCommand cmd = new SqlCommand("UPDATE BlogDetailsTable SET Rating = " + displayedBlog.Rating + " WHERE Title = '" + displayedBlog.Title + "'");
-                //cmd.Connection = connection;
-                //cmd.ExecuteNonQuery();
+                displayedBlog.Rating--;
+                SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "' AND ID = '" + displayedBlog.BlogID + "'");
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
             }
         }
     }

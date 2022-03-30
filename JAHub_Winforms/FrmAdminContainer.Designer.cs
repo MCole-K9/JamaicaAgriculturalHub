@@ -223,6 +223,7 @@
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.pnlFormHolder);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

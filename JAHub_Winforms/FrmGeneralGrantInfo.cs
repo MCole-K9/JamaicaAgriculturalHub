@@ -13,6 +13,7 @@ namespace JAHub_Winforms
 {
     public partial class FrmGeneralGrantInfo : Form
     {
+        
         public FrmGeneralGrantInfo()
         {
             InitializeComponent();
@@ -46,13 +47,26 @@ namespace JAHub_Winforms
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
+
+            //FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
+            //form1.Show();
+        }
+
+        private void btntest_Click(object sender, EventArgs e)
+        {
             Grantinfo grantinfo = new Grantinfo();
             grantinfo.ExpiryDate = "23/11/24";
             grantinfo.Title = "Scotia";
             grantinfo.GrantDescription = " At Scotia we Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+            Grant_Controls.ucGrantDisplay grantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
+            pnlContainer.Controls.Add(grantDisplay);
+            grantDisplay.Dock = DockStyle.Top;
+        }
 
-            FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-            form1.Show();
+        private void pnlContainer_ClientSizeChanged(object sender, EventArgs e)
+        {
+            pnlContainer.Padding = new Padding(0, 0, 0, 0);
         }
     }
 }

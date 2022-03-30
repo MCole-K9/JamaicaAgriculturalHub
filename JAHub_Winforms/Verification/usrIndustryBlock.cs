@@ -34,6 +34,8 @@ namespace JAHub_Winforms.Verification
             nudNumberOfEmployees.Value = farmer.NumberOfEmployees;
             _usesHeavyMachinery = farmer.UsesHeavyMachinery;
 
+            // write an if statement to choose one or the other rdo based on _usesheavymachinery
+
         }
 
         // in reality this is not the space where this event should go, but

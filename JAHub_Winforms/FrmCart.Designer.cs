@@ -59,6 +59,7 @@
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Proceed to Checkout";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // FrmCart
             // 
