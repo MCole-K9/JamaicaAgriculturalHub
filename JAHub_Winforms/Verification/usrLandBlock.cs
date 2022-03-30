@@ -18,11 +18,9 @@ namespace JAHub_Winforms.Verification
     public partial class usrLandBlock : UserControl
     {
         bool isLandBlockValid;
+        LandInformation land = new LandInformation();
 
-        public String LandAddressTown => usrAddressBlock1.AddressTown;
-        public String LandAddresssPoBox => usrAddressBlock1.AddressPostOffice;
-        public String LandAddressParish => usrAddressBlock1.AddressParish;
-        public decimal LandMeasurement => nudLandMeasurement.Value;
+        public LandInformation LandInformation => land;
 
         public usrLandBlock()
         {
@@ -66,6 +64,10 @@ namespace JAHub_Winforms.Verification
             {
                 if (isLandBlockValid)
                 {
+                    land.LandAddressTown = usrAddressBlock1.AddressTown;
+                    land.LandAddressPoBox = usrAddressBlock1.AddressPostOffice;
+                    land.LandAddressParish = usrAddressBlock1.AddressParish;
+
                     return true;
                 }
             }

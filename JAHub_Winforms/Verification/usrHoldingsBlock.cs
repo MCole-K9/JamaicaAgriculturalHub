@@ -19,11 +19,9 @@ namespace JAHub_Winforms.Verification
 
         #region Variables and Properties
         List<String> _productsList = new List<String>();
+        List<LandInformation> _landInformationList = new List<LandInformation>();
 
-        public String LandAddressTown => usrLandBlock1.LandAddressTown;
-        public String LandAddressPoBox => usrLandBlock1.LandAddresssPoBox;
-        public String LandAddressParish => usrLandBlock1.LandAddressParish;
-        public decimal LandMeasurement => usrLandBlock1.LandMeasurement;
+        public List<LandInformation> LandInformation => _landInformationList;
         public List<String> ProductList => _productsList;
         #endregion
         public usrHoldingsBlock()
@@ -79,6 +77,18 @@ namespace JAHub_Winforms.Verification
                         isListValid = false;
                         _productsList.Clear();
                         break;
+                    }
+                }
+
+                foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+                {
+                    if (land.IsBlockValid()){
+                        
+                    }
+                    else
+                    {
+                        isListValid=false;
+                        // clear whatever list of Landstuff here
                     }
                 }
                 
