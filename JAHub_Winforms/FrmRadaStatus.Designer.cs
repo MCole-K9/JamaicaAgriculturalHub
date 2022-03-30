@@ -31,15 +31,16 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblRadaStatus = new System.Windows.Forms.Label();
             this.lblStatusType = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flwRadaStatus = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblStatusExplanation = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblInformation = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flwInformationHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flwRadaStatus.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,21 +84,21 @@
             this.lblStatusType.Text = "Not Registered";
             this.lblStatusType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // flowLayoutPanel1
+            // flwRadaStatus
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(413, 459);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flwRadaStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwRadaStatus.Controls.Add(this.tableLayoutPanel1);
+            this.flwRadaStatus.Controls.Add(this.tableLayoutPanel2);
+            this.flwRadaStatus.Controls.Add(this.flwInformationHolder);
+            this.flwRadaStatus.Controls.Add(this.button1);
+            this.flwRadaStatus.Controls.Add(this.btnSubmit);
+            this.flwRadaStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flwRadaStatus.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flwRadaStatus.Location = new System.Drawing.Point(0, 0);
+            this.flwRadaStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.flwRadaStatus.Name = "flwRadaStatus";
+            this.flwRadaStatus.Size = new System.Drawing.Size(409, 516);
+            this.flwRadaStatus.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -133,6 +134,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblInformation
             // 
@@ -145,12 +147,12 @@
             this.lblInformation.TabIndex = 3;
             this.lblInformation.Text = "Information";
             // 
-            // flowLayoutPanel2
+            // flwInformationHolder
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 153);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(398, 225);
-            this.flowLayoutPanel2.TabIndex = 2;
+            this.flwInformationHolder.Location = new System.Drawing.Point(3, 153);
+            this.flwInformationHolder.Name = "flwInformationHolder";
+            this.flwInformationHolder.Size = new System.Drawing.Size(398, 225);
+            this.flwInformationHolder.TabIndex = 2;
             // 
             // button1
             // 
@@ -161,12 +163,23 @@
             this.button1.Text = "Click here to Register with RADA or connect a preexisting record";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(3, 457);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(111, 47);
+            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            // 
             // FrmRadaStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 459);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(409, 516);
+            this.Controls.Add(this.flwRadaStatus);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -175,11 +188,10 @@
             this.Load += new System.EventHandler(this.FrmRadaStatus_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flwRadaStatus.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,12 +200,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblRadaStatus;
         private System.Windows.Forms.Label lblStatusType;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flwRadaStatus;
         private System.Windows.Forms.Label lblStatusExplanation;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flwInformationHolder;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblInformation;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
