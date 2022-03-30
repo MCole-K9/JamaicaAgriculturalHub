@@ -15,6 +15,7 @@ namespace JAHub_Winforms
     public partial class FrmCreateBlog : Form
     {
         User user = new User();
+        
         public FrmCreateBlog()
         {
             InitializeComponent();
@@ -89,9 +90,10 @@ namespace JAHub_Winforms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
+
             Blog newBlog = new Blog();
-            newBlog.Author.FirstName = user.FirstName;
-            newBlog.Author.LastName = user.LastName;
+            user.UserID = "1";
+            newBlog.Author = user;
             newBlog.Title = txtTitle.Text;
             newBlog.Description = rtbDescription.Text;
             newBlog.PublishDateString = DateTime.Now.ToShortDateString();
@@ -99,9 +101,9 @@ namespace JAHub_Winforms
             FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
             blogDetails.MdiParent = this.MdiParent;
             blogDetails.Show();
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
+            SqlConnection connection = new SqlConnection("Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8");
             connection.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO BlogDetailsTable VALUES ('" + newBlog.Title + "','" + newBlog.GetAuthorName() + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");");
+            SqlCommand cmd = new SqlCommand("INSERT INTO Blog (Title, Author, Description, Body, PublishedDate, Rating) VALUES ('" + newBlog.Title + "','" + 3 + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");");
 
 
             cmd.Connection = connection;
