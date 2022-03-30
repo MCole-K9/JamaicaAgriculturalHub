@@ -19,37 +19,8 @@ namespace JAHubLib
     // things with that data written in place/in event handlers
     public class Farmer : User
     {
-        String addressTown;
-        String addressPoBox;
-        String addressParish;
 
-        public String AddressTown { 
-            get {
-                return addressTown;
-            } 
-            set {
-                addressTown = value;
-            } 
-        }
-        public String AddressPoBox { 
-            get { 
-                return addressPoBox;
-            } 
-            set {
-                addressPoBox = value;
-            }
-        }
-        public String AddressParish {
-            get {
-                return addressParish;
-            }
-            set
-            {
-                addressParish = value;
-            }
-                
-        }
-
+        public int FarmerID { get; set; }
         public DateTime DateOfBirth { get; set; }
         public String BusinessEmail { get; set; }
         public Boolean UsesHeavyMachinery { get; set; }
@@ -58,7 +29,6 @@ namespace JAHubLib
         public List<String> ProductsTypicallyProduced { get; set; }
         public List<String> Organizations { get; set; }
         public List<String> PhoneNumbers { get; set; }
-        public decimal TotalHectares { get; set; }
         public Bitmap IdPicture { get; set; }
         public String TaxRegistrationNumber { get; set; }
         public RadaRegistrationType RadaRegistrationPhase { get; set; }
@@ -68,6 +38,26 @@ namespace JAHubLib
         {
             // i don't think this needs anything, tbh. everything is accessible
             // from the properties
+        }
+
+
+        //M.C
+        // constructor to populate farmer with user data
+        public Farmer(User user)
+        {
+            this.UserID = user.UserID;
+            this.FirstName = user.FirstName;
+            this.LastName = user.LastName;
+            this.MiddleName = user.MiddleName;
+            this.Email = user.Email;
+            this.UserRole = user.UserRole;
+            PopulateFarmerObject();
+        }
+
+        //M.C.. Quires farmer table with user id to retrive the rest of the farmer data
+        private void PopulateFarmerObject()
+        {
+
         }
     }
 }
