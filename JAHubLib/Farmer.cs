@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Data.SqlTypes;
 
 namespace JAHubLib
 {
@@ -15,13 +16,20 @@ namespace JAHubLib
         FullyConnected = 3
     }
 
+    public struct LandInformation
+    {
+        public string LandAddressTown { get; set; }
+        public string LandAddressPoBox { get; set; }
+        public string LandAddressParish { get; set; }
+        public decimal LandMeasurement { get; set; }
+    }
+
     // per discussion: classes are primarily data-holders, with methods to do
     // things with that data written in place/in event handlers
     public class Farmer : User
     {
-
-        public int FarmerID { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public List<LandInformation> OwnedLand { get; set; }
+        public SqlDateTime DateOfBirth { get; set; }
         public String BusinessEmail { get; set; }
         public Boolean UsesHeavyMachinery { get; set; }
         public int NumberOfEmployees { get; set; }
