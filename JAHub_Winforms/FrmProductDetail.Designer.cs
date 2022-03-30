@@ -510,6 +510,7 @@
             // 
             // fpnlProgress
             // 
+            this.fpnlProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.fpnlProgress.Location = new System.Drawing.Point(71, 259);
             this.fpnlProgress.Name = "fpnlProgress";
             this.fpnlProgress.Size = new System.Drawing.Size(105, 232);

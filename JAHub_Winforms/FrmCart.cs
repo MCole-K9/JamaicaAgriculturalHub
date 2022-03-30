@@ -54,5 +54,10 @@ namespace JAHub_Winforms
             CaluculateSubtotal(_frmShop.Cart);
 
         }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            _frmShop.OpenChildForm(new FrmShippingCheckout(this));
+        }
     }
 }
