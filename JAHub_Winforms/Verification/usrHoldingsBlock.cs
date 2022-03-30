@@ -35,12 +35,15 @@ namespace JAHub_Winforms.Verification
         {
             InitializeFilledComponent(farmer);
             
-            foreach (String product in _productsList)
+            foreach (String product in farmer.ProductsTypicallyProduced)
             {
                 flwProductsBlock.Controls.Add(new usrProductsBlock(product));
             }
 
-            // once i change LandBlock accordingly, need to foreach this
+            foreach(LandInformation land in farmer.OwnedLand)
+            {
+                flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
+            }
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)

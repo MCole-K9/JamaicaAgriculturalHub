@@ -16,41 +16,19 @@ namespace JAHubLib
         FullyConnected = 3
     }
 
+    public struct LandInformation
+    {
+        public string LandAddressTown { get; set; }
+        public string LandAddressPoBox { get; set; }
+        public string LandAddressParish { get; set; }
+        public decimal LandMeasurement { get; set; }
+    }
+
     // per discussion: classes are primarily data-holders, with methods to do
     // things with that data written in place/in event handlers
     public class Farmer : User
     {
-        String addressTown;
-        String addressPoBox;
-        String addressParish;
-
-        public String AddressTown { 
-            get {
-                return addressTown;
-            } 
-            set {
-                addressTown = value;
-            } 
-        }
-        public String AddressPoBox { 
-            get { 
-                return addressPoBox;
-            } 
-            set {
-                addressPoBox = value;
-            }
-        }
-        public String AddressParish {
-            get {
-                return addressParish;
-            }
-            set
-            {
-                addressParish = value;
-            }
-                
-        }
-
+        public List<LandInformation> OwnedLand { get; set; }
         public SqlDateTime DateOfBirth { get; set; }
         public String BusinessEmail { get; set; }
         public Boolean UsesHeavyMachinery { get; set; }
@@ -59,7 +37,6 @@ namespace JAHubLib
         public List<String> ProductsTypicallyProduced { get; set; }
         public List<String> Organizations { get; set; }
         public List<String> PhoneNumbers { get; set; }
-        public decimal TotalHectares { get; set; }
         public Bitmap IdPicture { get; set; }
         public String TaxRegistrationNumber { get; set; }
         public RadaRegistrationType RadaRegistrationPhase { get; set; }
