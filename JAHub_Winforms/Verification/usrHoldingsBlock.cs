@@ -33,10 +33,14 @@ namespace JAHub_Winforms.Verification
 
         public usrHoldingsBlock(Farmer farmer)
         {
-            InitializeComponent();
-            _productsList = farmer.ProductsTypicallyProduced;
-            // need to pass the farmer object to the sub-controls
+            InitializeFilledComponent(farmer);
+            
+            foreach (String product in _productsList)
+            {
+                flwProductsBlock.Controls.Add(new usrProductsBlock(product));
+            }
 
+            // once i change LandBlock accordingly, need to foreach this
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
@@ -101,6 +105,21 @@ namespace JAHub_Winforms.Verification
                         break;
                     }
                 }
+            }
+        }
+
+        private void btnAddLandEntry_Click(object sender, EventArgs e)
+        {
+            flwLandBlockHolder.Controls.Add(new usrLandBlock());
+            btnRemoveLandEntry.Show();
+        }
+
+        private void btnRemoveLandEntry_Click(object sender, EventArgs e)
+        {
+            flwLandBlockHolder.Controls.RemoveAt(flwLandBlockHolder.Controls.Count - 1);
+
+            if (flwLandBlockHolder.Controls.Count > 1){
+                btnRemoveLandEntry.Hide();
             }
         }
     }
