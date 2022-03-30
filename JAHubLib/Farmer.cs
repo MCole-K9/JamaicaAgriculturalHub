@@ -28,6 +28,7 @@ namespace JAHubLib
     // things with that data written in place/in event handlers
     public class Farmer : User
     {
+        public int FarmerId { get; set; }
         public List<LandInformation> OwnedLand { get; set; }
         public SqlDateTime DateOfBirth { get; set; }
         public String BusinessEmail { get; set; }
