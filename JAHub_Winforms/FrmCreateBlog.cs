@@ -101,7 +101,7 @@ namespace JAHub_Winforms
             FrmBlogDetails blogDetails = new FrmBlogDetails(newBlog);
             blogDetails.MdiParent = this.MdiParent;
             blogDetails.Show();
-            SqlConnection connection = new SqlConnection("Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8");
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
             connection.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO Blog (Title, Author, Description, Body, PublishedDate, Rating) VALUES ('" + newBlog.Title + "','" + 3 + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");");
 
