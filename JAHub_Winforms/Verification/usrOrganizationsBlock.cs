@@ -28,9 +28,14 @@ namespace JAHub_Winforms.Verification
 
         public usrOrganizationsBlock(Farmer farmer)
         {
-            InitializeComponent();
-            _organizations = farmer.Organizations;
-            // this should actually put this into the 
+            InitializeFilledComponent();
+            
+            foreach (String organization in farmer.Organizations)
+            {
+                flwOrganizationsTextHolder.Controls.Add(new TextBox());
+                flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].
+                    Text = organization;
+            }
         }
 
 
