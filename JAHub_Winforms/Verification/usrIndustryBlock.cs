@@ -32,8 +32,14 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             nudNumberOfEmployees.Value = farmer.NumberOfEmployees;
-            _usesHeavyMachinery = farmer.UsesHeavyMachinery;
-
+            if (farmer.UsesHeavyMachinery == true)
+            {
+                rdoIndustryYes.Select();
+            }
+            else
+            {
+                rdoIndustryNo.Select();
+            }
         }
 
         // in reality this is not the space where this event should go, but

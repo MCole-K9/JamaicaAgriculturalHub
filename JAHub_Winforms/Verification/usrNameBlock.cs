@@ -26,12 +26,12 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrNameBlock(Farmer farmer)
+        public usrNameBlock(String firstName, String middleName, String lastName)
         {
             InitializeComponent();
-            txtFirstName.Text = farmer.FirstName;
-            txtMiddleName.Text = farmer.MiddleName;
-            txtLastName.Text = farmer.LastName;
+            txtFirstName.Text = firstName;
+            txtMiddleName.Text = middleName;
+            txtLastName.Text = lastName;
         }
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)

@@ -23,9 +23,9 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrUploadImageBlock(Farmer farmer)
+        public usrUploadImageBlock(Bitmap image)
         {
-            profilePicture = farmer.IdPicture;
+            profilePicture = image;
         }
 
         private void button1_Click(object sender, EventArgs e)

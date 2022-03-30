@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace JAHub_Winforms
 {
+    /* TO DO
+     * [] OnLoad change title of form to show user's name and ID
+     * 
+     */
+
     public partial class FrmAdminViewModeration : Form
     {
         public FrmAdminViewModeration()

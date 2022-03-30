@@ -35,9 +35,13 @@ namespace JAHub_Winforms.Verification
 
         public usrContactBlock(Farmer farmer)
         {
-            InitializeComponent();
+            InitializeFilledComponent(farmer);
             txtEmail.Text = farmer.Email;
-            // need to initialize phone and pass farmer
+
+            foreach (string phoneNumber in farmer.PhoneNumbers)
+            {
+                flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock(phoneNumber));
+            }
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)

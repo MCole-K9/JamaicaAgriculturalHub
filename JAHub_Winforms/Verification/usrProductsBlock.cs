@@ -25,10 +25,10 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrProductsBlock(Farmer farmer)
+        public usrProductsBlock(string farmerProduct)
         {
             InitializeComponent();
-            // actually populate the list of things
+            txtProduct.Text = farmerProduct;
         }
 
         private void txtProduct_Validating(object sender, CancelEventArgs e)

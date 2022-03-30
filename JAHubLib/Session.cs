@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace JAHubLib
 {
+    // Rewrite to fit with database
     public enum UserRole
     {
         Admin = 0,

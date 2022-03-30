@@ -30,12 +30,12 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrAddressBlock(Farmer farmer)
+        public usrAddressBlock(String town, String poBox, String parish)
         {
             InitializeComponent();
-            txtAddressTown.Text = farmer.AddressTown;
-            txtAddressPostOffice.Text = farmer.AddressPoBox;
-            txtAddressParish.Text = farmer.AddressParish;
+            txtAddressTown.Text = town;
+            txtAddressPostOffice.Text = poBox;
+            txtAddressParish.Text = parish;
         }
 
         private void txtAddressTown_Validating(object sender, CancelEventArgs e)
