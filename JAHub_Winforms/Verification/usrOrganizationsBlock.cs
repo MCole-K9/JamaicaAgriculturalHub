@@ -35,6 +35,8 @@ namespace JAHub_Winforms.Verification
                 flwOrganizationsTextHolder.Controls.Add(new TextBox());
                 flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].
                     Text = organization;
+                flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].
+                    Size = new System.Drawing.Size(175, 22);
             }
         }
 
