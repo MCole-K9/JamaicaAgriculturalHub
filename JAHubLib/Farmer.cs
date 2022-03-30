@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Data.SqlTypes;
 
 namespace JAHubLib
 {
@@ -50,7 +51,7 @@ namespace JAHubLib
                 
         }
 
-        public DateTime DateOfBirth { get; set; }
+        public SqlDateTime DateOfBirth { get; set; }
         public String BusinessEmail { get; set; }
         public Boolean UsesHeavyMachinery { get; set; }
         public int NumberOfEmployees { get; set; }
