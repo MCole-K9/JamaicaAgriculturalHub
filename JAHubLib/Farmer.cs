@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Data.SqlTypes;
+using System.Data.SqlClient;
 
 namespace JAHubLib
 {
@@ -66,7 +67,25 @@ namespace JAHubLib
         //M.C.. Quires farmer table with user id to retrive the rest of the farmer data
         private void PopulateFarmerObject()
         {
+            using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
 
+                string query = $"SELECT * FROM Farmer WHERE UserID = {this.UserID}";
+ 
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataReader sqlData =  cmd.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    this.FarmerId = (int)sqlData["ID"];
+                    this.BusinessEmail = sqlData["BusinessEmail"].ToString();
+                  
+                }
+                sqlData.Close();
+
+            }
         }
     }
 }
