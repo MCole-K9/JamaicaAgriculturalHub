@@ -12,8 +12,8 @@ using JAHubLib;
 namespace JAHub_Winforms.Verification
 {
     /* TO DO
-     * [] refactor add and remove organizations buttons to account for passing farmer object?
-     * [] populate the organizations list with the farmer organizations values
+     * [x] refactor add and remove organizations buttons to account for passing farmer object?
+     * [x] populate the organizations list with the farmer organizations values
      */
 
     public partial class usrOrganizationsBlock : UserControl
