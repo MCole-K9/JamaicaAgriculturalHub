@@ -32,7 +32,7 @@
             this.lblCreateUser = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblUserRole = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.flwControlsHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSubmitRecord = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
@@ -52,6 +52,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(615, 381);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // lblCreateUser
             // 
@@ -69,7 +70,7 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.Controls.Add(this.lblUserRole);
-            this.flowLayoutPanel2.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel2.Controls.Add(this.cmbUserRole);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 33);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -87,21 +88,22 @@
             this.lblUserRole.TabIndex = 1;
             this.lblUserRole.Text = "User Role: ";
             // 
-            // comboBox1
+            // cmbUserRole
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbUserRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUserRole.FormattingEnabled = true;
+            this.cmbUserRole.Items.AddRange(new object[] {
             "General User",
             "Farmer",
             "Customer",
             "Grant Agent",
             "Administrator"});
-            this.comboBox1.Location = new System.Drawing.Point(106, 4);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 28);
-            this.comboBox1.TabIndex = 0;
+            this.cmbUserRole.Location = new System.Drawing.Point(106, 4);
+            this.cmbUserRole.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbUserRole.Name = "cmbUserRole";
+            this.cmbUserRole.Size = new System.Drawing.Size(150, 28);
+            this.cmbUserRole.TabIndex = 0;
+            this.cmbUserRole.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // flwControlsHolder
             // 
@@ -133,6 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminCreateNewUser";
             this.Text = "FrmAdminCreateNewUser";
+            this.Load += new System.EventHandler(this.FrmAdminCreateNewUser_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -147,7 +150,7 @@
         private System.Windows.Forms.Label lblCreateUser;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label lblUserRole;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbUserRole;
         private System.Windows.Forms.FlowLayoutPanel flwControlsHolder;
         private System.Windows.Forms.Button btnSubmitRecord;
     }
