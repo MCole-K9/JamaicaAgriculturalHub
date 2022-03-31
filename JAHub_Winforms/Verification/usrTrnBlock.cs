@@ -27,10 +27,10 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrTrnBlock(Farmer farmer)
+        public usrTrnBlock(String trn)
         {
             InitializeComponent();
-            mskTrn.Text = farmer.TaxRegistrationNumber;
+            mskTrn.Text = trn;
         }
 
         private void mskTrn_Validating(object sender, CancelEventArgs e)

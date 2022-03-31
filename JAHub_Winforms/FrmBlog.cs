@@ -32,7 +32,7 @@ namespace JAHub_Winforms
 
                 blog.BlogID = (int)sqlData["ID"];
                 blog.Title = sqlData["Title"].ToString();
-                blog.Author.UserID = sqlData["Author"].ToString();
+                blog.Author.UserID = (int)sqlData["Author"];
                 blog.Description = sqlData["Description"].ToString();
                 blog.BlogBody = sqlData["Body"].ToString();
                 blog.PublishDateString = sqlData["PublishedDate"].ToString();

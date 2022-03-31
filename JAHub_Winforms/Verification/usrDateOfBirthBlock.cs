@@ -38,10 +38,11 @@ namespace JAHub_Winforms.Verification
         public usrDateOfBirthBlock(Farmer farmer)
         {
             // need to figure out how to make this correspond to farmer
-            
-            cmbDay.SelectedText = "11";
-            cmbMonth.SelectedText = "February";
-            cmbYear.SelectedText = "1997";
+            DateTime givenDate = farmer.DateOfBirth.Value;
+
+            cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
+            cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);
+            cmbYear.SelectedIndex = cmbYear.FindString("{0}", givenDate.Year);
         }
 
         private void cmbYear_Validating(object sender, CancelEventArgs e)
