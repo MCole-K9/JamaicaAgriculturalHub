@@ -32,7 +32,7 @@ namespace JAHub_Winforms
             // Creating a datacolumn for ID
             DataColumn idColumn = new DataColumn();
             idColumn.ColumnName = "Id";
-            idColumn.DataType = typeof(int);
+            idColumn.DataType = typeof(UserRole);
 
             // Creating the datacolumn for userRole
             DataColumn userRoleColumn = new DataColumn();
@@ -119,15 +119,11 @@ namespace JAHub_Winforms
 
         private void txtPasswordSecondEntry_Validating(object sender, CancelEventArgs e)
         {
-            // basically:
-            // - check to see if the user left the field blank
-            //  - if blank, tell them
-            // - if not blank, check to see if the values match. if they do cool (set isPasswordValid=true)
-            //  - if not, tell them as such
             if (txtPasswordFirstEntry.Text == "")
             {
                 errCreateNewUser.SetIconAlignment(txtPasswordFirstEntry, ErrorIconAlignment.MiddleRight);
                 errCreateNewUser.SetError(txtPasswordFirstEntry, "Password must be entered");
+                isPasswordValid = false;
 
                 return;
             }
@@ -135,19 +131,55 @@ namespace JAHub_Winforms
             {
                 errCreateNewUser.SetIconAlignment(txtPasswordSecondEntry, ErrorIconAlignment.MiddleRight);
                 errCreateNewUser.SetError(txtPasswordSecondEntry, "Passwords must match");
+                isPasswordValid = false;
             }
             else
             {
                 errCreateNewUser.SetError(txtPasswordSecondEntry, "");
+                isPasswordValid = true;
             }
         }
 
         private void btnSubmitRecord_Click(object sender, EventArgs e)
         {
-            // basically:
-            // - get validity of various controls
-            // - if all = valid, store the information in a user obj, then the user obj to write to db
-            // - if not valid, raise messagebox that says "Yo you fucked up g, fix this"
+            Boolean areEntriesValid = false;
+
+            if (usrNameBlock1.IsBlockValid())
+            {
+                if (isEmailValid)
+                {
+                    if (usrNameBlock1.IsBlockValid())
+                    {
+                        areEntriesValid = true;
+
+                        User newUser = new User();
+
+                        newUser.FirstName = usrNameBlock1.FirstName;
+                        newUser.LastName = usrNameBlock1.LastName;
+                        newUser.MiddleName = usrNameBlock1.MiddleName;
+
+                        newUser.Email = txtEmail.Text;
+                        newUser.Password = txtPasswordFirstEntry.Text;
+
+                        newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
+
+                        //newUser.WriteToDatabase();
+                    }
+                }
+            }
+
+            if (areEntriesValid == false)
+            {
+                MessageBox.Show("Cannot Create New User. One or More Errors Exist. Please fix them to" +
+                    " Continue");
+            }
+            else
+            {
+                MessageBox.Show("Successfully created new record!");
+                // close this form
+                // open FrmAdminSelectNewUser
+                
+            }
         }
     }
 }

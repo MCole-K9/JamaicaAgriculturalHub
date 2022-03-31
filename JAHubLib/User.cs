@@ -17,6 +17,16 @@ namespace JAHubLib
         public string Password { set; get; }
         public string Email { set; get; } 
         
-        public UserRole UserRole { get; set; }                
+        public UserRole UserRole { get; set; }
+        
+        public void WriteToDatabase()
+        {
+            
+            
+            // open connection
+            // create the command
+            // run the command
+            // close the connection
+        }
     }
 }
