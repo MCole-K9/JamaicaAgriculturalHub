@@ -14,37 +14,24 @@ namespace JAHub_Winforms
 {
     public partial class FrmUserBlogs : Form
     {
+        User user = new User();
         public FrmUserBlogs()
         {
            
             InitializeComponent();
-            //string Username = "Elliot Morrison";
-            //SqlConnection connection = new SqlConnection("Data Source=LAPTOP-DQRLF1VA;Initial Catalog=BlogDetailsDB;Integrated Security=True");
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM BlogDetailsTable WHERE Author = '" + Username + "'", connection);
-            //connection.Open();
-            //SqlDataReader sqlData = cmd.ExecuteReader();
-
-            //while (sqlData.Read())
-            //{
-            //    Blog blog = new Blog();
-            //    BlogRenderer renderer = new BlogRenderer();
-
-            //    blog.Title = sqlData["Title"].ToString();
-            //    blog.Author.Firstname = sqlData["Author"].ToString();
-            //    blog.Author.Lastname = sqlData["Author"].ToString();
-            //    blog.Description = sqlData["Description"].ToString();
-            //    blog.BlogBody = sqlData["BlogBody"].ToString();
-            //    blog.PublishDateString = sqlData["PublishDateString"].ToString();
-            //    blog.Rating = Convert.ToInt16(sqlData["Rating"]);
-            //    renderer.SetBlogInstance(blog);
-            //    renderer.CreateBlogPost(pnlContainer);
-            //    renderer.ViewBlog.Click += ViewBlog_Click;
-            //    void ViewBlog_Click(object sender, EventArgs e)
-            //    {
-            //        FrmBlogDetails DisplayedBlog = new FrmBlogDetails(blog);
-            //        DisplayedBlog.Show();
-            //    }
-            //}
+            
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            SqlCommand cmd = new SqlCommand($"SELECT * FROM Blog WHERE Author = {user.UserID};", connection);
+            connection.Open();
+            SqlDataReader sqlData = cmd.ExecuteReader();
+            //refercne user table from database
+            while (sqlData.Read())
+            {
+                Blog userBlog = new Blog();
+                
+                userBlog.Description = sqlData["Description"].ToString();
+                userBlog.Title = sqlData["Title"].ToString();
+            }
         }
 
 
