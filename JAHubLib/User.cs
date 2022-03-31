@@ -8,8 +8,6 @@ namespace JAHubLib
 {
     public class User
     {
-        // Unsorted whether or not User should compose itself for specific roles, or if 
-        // User will inherit. i suggest composition--Sheriff
 
         public int UserID { set; get; }
         public string FirstName { set; get; }

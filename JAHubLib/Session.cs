@@ -9,11 +9,11 @@ namespace JAHubLib
     // Rewrite to fit with database
     public enum UserRole
     {
-        Admin = 0,
-        Customer = 1,
-        Farmer = 2,
-        GrantOfficer = 3,
-        NotLoggedIn = 4,
+        Admin = 1,
+        Customer = 2,
+        Farmer = 3,
+        GrantOfficer = 4,
+        NotLoggedIn = 5,
     }
 
     public enum PasswordResult
