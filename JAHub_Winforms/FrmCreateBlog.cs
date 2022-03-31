@@ -92,7 +92,7 @@ namespace JAHub_Winforms
         {
 
             Blog newBlog = new Blog();
-            user.UserID = "1";
+            user.UserID = 1;
             newBlog.Author = user;
             newBlog.Title = txtTitle.Text;
             newBlog.Description = rtbDescription.Text;

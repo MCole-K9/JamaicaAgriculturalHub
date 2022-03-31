@@ -42,5 +42,10 @@ namespace JAHub_Winforms
              *     - make the boxes of Details visible, set to "Not edit"
              */
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // literally just unfreeze all of the controls in the list using a foreach
+        }
     }
 }

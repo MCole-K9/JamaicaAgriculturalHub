@@ -18,22 +18,25 @@ namespace JAHub_Winforms.Verification
     public partial class usrLandBlock : UserControl
     {
         bool isLandBlockValid;
+        LandInformation land = new LandInformation();
 
-        public String LandAddressTown => usrAddressBlock1.AddressTown;
-        public String LandAddresssPoBox => usrAddressBlock1.AddressPostOffice;
-        public String LandAddressParish => usrAddressBlock1.AddressParish;
-        public decimal LandMeasurement => nudLandMeasurement.Value;
+        public LandInformation LandInformation => land;
 
         public usrLandBlock()
         {
             InitializeComponent();
         }
 
-        public usrLandBlock(Farmer farmer)
+        public usrLandBlock(LandInformation landInformation)
         {
-            InitializeComponent();
-            nudLandMeasurement.Value = farmer.TotalHectares;
-            // need to initialize addressblock and pass farmer
+            InitializeFilledComponent();
+            nudLandMeasurement.Value = landInformation.LandMeasurement;
+            tblLandBlock.Controls.Add(new usrAddressBlock(landInformation.LandAddressTown,
+                landInformation.LandAddressPoBox, landInformation.LandAddressParish));
+            
+            var addressBlock = tblLandBlock.Controls[tblLandBlock.Controls.Count - 1];
+
+            tblLandBlock.SetCellPosition(addressBlock, new TableLayoutPanelCellPosition(1, 0));
         }
 
         private void nudLandMeasurement_Validating(object sender, CancelEventArgs e)
@@ -61,6 +64,10 @@ namespace JAHub_Winforms.Verification
             {
                 if (isLandBlockValid)
                 {
+                    land.LandAddressTown = usrAddressBlock1.AddressTown;
+                    land.LandAddressPoBox = usrAddressBlock1.AddressPostOffice;
+                    land.LandAddressParish = usrAddressBlock1.AddressParish;
+
                     return true;
                 }
             }

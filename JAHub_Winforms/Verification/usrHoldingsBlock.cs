@@ -19,11 +19,9 @@ namespace JAHub_Winforms.Verification
 
         #region Variables and Properties
         List<String> _productsList = new List<String>();
+        List<LandInformation> _landInformationList = new List<LandInformation>();
 
-        public String LandAddressTown => usrLandBlock1.LandAddressTown;
-        public String LandAddressPoBox => usrLandBlock1.LandAddresssPoBox;
-        public String LandAddressParish => usrLandBlock1.LandAddressParish;
-        public decimal LandMeasurement => usrLandBlock1.LandMeasurement;
+        public List<LandInformation> LandInformation => _landInformationList;
         public List<String> ProductList => _productsList;
         #endregion
         public usrHoldingsBlock()
@@ -33,10 +31,17 @@ namespace JAHub_Winforms.Verification
 
         public usrHoldingsBlock(Farmer farmer)
         {
-            InitializeComponent();
-            _productsList = farmer.ProductsTypicallyProduced;
-            // need to pass the farmer object to the sub-controls
+            InitializeFilledComponent(farmer);
+            
+            foreach (String product in farmer.ProductsTypicallyProduced)
+            {
+                flwProductsBlock.Controls.Add(new usrProductsBlock(product));
+            }
 
+            foreach(LandInformation land in farmer.OwnedLand)
+            {
+                flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
+            }
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
@@ -74,6 +79,18 @@ namespace JAHub_Winforms.Verification
                         break;
                     }
                 }
+
+                foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+                {
+                    if (land.IsBlockValid()){
+                        
+                    }
+                    else
+                    {
+                        isListValid=false;
+                        // clear whatever list of Landstuff here
+                    }
+                }
                 
                 if (isListValid)
                 {
@@ -101,6 +118,21 @@ namespace JAHub_Winforms.Verification
                         break;
                     }
                 }
+            }
+        }
+
+        private void btnAddLandEntry_Click(object sender, EventArgs e)
+        {
+            flwLandBlockHolder.Controls.Add(new usrLandBlock());
+            btnRemoveLandEntry.Show();
+        }
+
+        private void btnRemoveLandEntry_Click(object sender, EventArgs e)
+        {
+            flwLandBlockHolder.Controls.RemoveAt(flwLandBlockHolder.Controls.Count - 1);
+
+            if (flwLandBlockHolder.Controls.Count > 1){
+                btnRemoveLandEntry.Hide();
             }
         }
     }

@@ -151,14 +151,11 @@ namespace JAHub_Winforms
                     {
                         farmer.ProductsTypicallyProduced = holdingsBlock.ProductList;
 
-                        if (!String.IsNullOrEmpty(holdingsBlock.LandAddressParish))
+                        if ((holdingsBlock.LandInformation) != null)
                         {
-                            farmer.AddressTown = holdingsBlock.LandAddressTown;
-                            farmer.AddressPoBox = holdingsBlock.LandAddressPoBox;
-                            farmer.AddressParish = holdingsBlock.LandAddressPoBox;
+                            farmer.OwnedLand = holdingsBlock.LandInformation;
                         }
 
-                        farmer.TotalHectares = holdingsBlock.LandMeasurement;
                     }
                     else
                     {

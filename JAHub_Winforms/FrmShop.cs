@@ -25,7 +25,7 @@ namespace JAHub_Winforms
         }
 
         // Opens Form inside of Panel
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (CurrentChildForm != null)
             {
