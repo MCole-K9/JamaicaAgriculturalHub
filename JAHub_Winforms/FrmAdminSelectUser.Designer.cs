@@ -28,79 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GovernmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUserInformation = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnName = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GovernmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUserInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvUserInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userId,
-            this.username,
+            this.GovernmentName,
             this.userRole,
-            this.selectUser,
-            this.GovernmentName});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 51);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(679, 188);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // userId
-            // 
-            this.userId.HeaderText = "User ID";
-            this.userId.MinimumWidth = 6;
-            this.userId.Name = "userId";
-            this.userId.Width = 125;
-            // 
-            // username
-            // 
-            this.username.HeaderText = "username";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            this.username.Width = 125;
-            // 
-            // userRole
-            // 
-            this.userRole.HeaderText = "Role";
-            this.userRole.MinimumWidth = 6;
-            this.userRole.Name = "userRole";
-            this.userRole.Width = 125;
-            // 
-            // selectUser
-            // 
-            this.selectUser.HeaderText = "Select User";
-            this.selectUser.MinimumWidth = 6;
-            this.selectUser.Name = "selectUser";
-            this.selectUser.Width = 125;
-            // 
-            // GovernmentName
-            // 
-            this.GovernmentName.HeaderText = "Name";
-            this.GovernmentName.MinimumWidth = 6;
-            this.GovernmentName.Name = "GovernmentName";
-            this.GovernmentName.Width = 125;
+            this.selectUser});
+            this.dgvUserInformation.Location = new System.Drawing.Point(4, 51);
+            this.dgvUserInformation.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvUserInformation.Name = "dgvUserInformation";
+            this.dgvUserInformation.RowHeadersWidth = 51;
+            this.dgvUserInformation.RowTemplate.Height = 24;
+            this.dgvUserInformation.Size = new System.Drawing.Size(552, 188);
+            this.dgvUserInformation.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView1);
+            this.flowLayoutPanel1.Controls.Add(this.dgvUserInformation);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -143,6 +106,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 27);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnName
             // 
@@ -153,6 +117,34 @@
             this.btnName.TabIndex = 2;
             this.btnName.Text = "Clear Search";
             this.btnName.UseVisualStyleBackColor = true;
+            // 
+            // userId
+            // 
+            this.userId.HeaderText = "User ID";
+            this.userId.MinimumWidth = 6;
+            this.userId.Name = "userId";
+            this.userId.Width = 125;
+            // 
+            // GovernmentName
+            // 
+            this.GovernmentName.HeaderText = "Name";
+            this.GovernmentName.MinimumWidth = 6;
+            this.GovernmentName.Name = "GovernmentName";
+            this.GovernmentName.Width = 125;
+            // 
+            // userRole
+            // 
+            this.userRole.HeaderText = "Role";
+            this.userRole.MinimumWidth = 6;
+            this.userRole.Name = "userRole";
+            this.userRole.Width = 125;
+            // 
+            // selectUser
+            // 
+            this.selectUser.HeaderText = "Select User";
+            this.selectUser.MinimumWidth = 6;
+            this.selectUser.Name = "selectUser";
+            this.selectUser.Width = 125;
             // 
             // FrmAdminSelectUser
             // 
@@ -166,7 +158,7 @@
             this.Name = "FrmAdminSelectUser";
             this.Text = "Select User (This should not be visible!)";
             this.Load += new System.EventHandler(this.FrmAdminSelectUser_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -176,16 +168,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUserInformation;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn userId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GovernmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn userRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn selectUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GovernmentName;
     }
 }
