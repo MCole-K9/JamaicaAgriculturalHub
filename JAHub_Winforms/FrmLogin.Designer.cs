@@ -33,8 +33,8 @@
             this.lblLoginInstruction = new System.Windows.Forms.Label();
             this.tblLoginCredentials = new System.Windows.Forms.TableLayoutPanel();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserId = new System.Windows.Forms.TextBox();
-            this.lblUserId = new System.Windows.Forms.Label();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
+            this.lblEmailAddress = new System.Windows.Forms.Label();
             this.lblLoginPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblCredentialEntryError = new System.Windows.Forms.Label();
@@ -91,8 +91,8 @@
             this.tblLoginCredentials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblLoginCredentials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblLoginCredentials.Controls.Add(this.txtPassword, 1, 1);
-            this.tblLoginCredentials.Controls.Add(this.txtUserId, 1, 0);
-            this.tblLoginCredentials.Controls.Add(this.lblUserId, 0, 0);
+            this.tblLoginCredentials.Controls.Add(this.txtEmailAddress, 1, 0);
+            this.tblLoginCredentials.Controls.Add(this.lblEmailAddress, 0, 0);
             this.tblLoginCredentials.Controls.Add(this.lblLoginPassword, 0, 1);
             this.tblLoginCredentials.Location = new System.Drawing.Point(9, 168);
             this.tblLoginCredentials.Name = "tblLoginCredentials";
@@ -113,24 +113,24 @@
             this.txtPassword.Size = new System.Drawing.Size(191, 27);
             this.txtPassword.TabIndex = 5;
             // 
-            // txtUserId
+            // txtEmailAddress
             // 
-            this.txtUserId.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtUserId.Location = new System.Drawing.Point(110, 4);
-            this.txtUserId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(191, 27);
-            this.txtUserId.TabIndex = 4;
+            this.txtEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtEmailAddress.Location = new System.Drawing.Point(110, 4);
+            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(191, 27);
+            this.txtEmailAddress.TabIndex = 4;
             // 
-            // lblUserId
+            // lblEmailAddress
             // 
-            this.lblUserId.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(31, 7);
-            this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(72, 20);
-            this.lblUserId.TabIndex = 6;
-            this.lblUserId.Text = "User ID:";
+            this.lblEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblEmailAddress.AutoSize = true;
+            this.lblEmailAddress.Location = new System.Drawing.Point(47, 7);
+            this.lblEmailAddress.Name = "lblEmailAddress";
+            this.lblEmailAddress.Size = new System.Drawing.Size(56, 20);
+            this.lblEmailAddress.TabIndex = 6;
+            this.lblEmailAddress.Text = "Email:";
             // 
             // lblLoginPassword
             // 
@@ -196,8 +196,8 @@
         private System.Windows.Forms.Label lblLoginHeading;
         private System.Windows.Forms.Label lblLoginInstruction;
         private System.Windows.Forms.TableLayoutPanel tblLoginCredentials;
-        private System.Windows.Forms.TextBox txtUserId;
-        private System.Windows.Forms.Label lblUserId;
+        private System.Windows.Forms.TextBox txtEmailAddress;
+        private System.Windows.Forms.Label lblEmailAddress;
         private System.Windows.Forms.Label lblLoginPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtPassword;
