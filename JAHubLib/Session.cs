@@ -26,15 +26,11 @@ namespace JAHubLib
 
     public static class Session
     {
-        /* This should basically keep space for a method that checks the details
-         * entered into the login, then if correct makes a readonly property of role and 
-         * 
-         */
-
         static UserRole _userRole = UserRole.NotLoggedIn;
         static int _userId;
 
-        // It's never necessary to change these upon a successful login, the object manages this
+        // K.S.: may want to add {FirstName} {LastName} here to make that always accessible, not sure
+        // yet
         public static UserRole UserRole => _userRole;
         public static int UserId => _userId;
 
