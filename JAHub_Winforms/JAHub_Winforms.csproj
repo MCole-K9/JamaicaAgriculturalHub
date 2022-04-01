@@ -98,6 +98,12 @@
     <Compile Include="FrmGrantDetails.Designer.cs">
       <DependentUpon>FrmGrantDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPayment.Designer.cs">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRadaStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainWindow.resx">
       <DependentUpon>FrmMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPayment.resx">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProductDetail.resx">
       <DependentUpon>FrmProductDetail.cs</DependentUpon>
