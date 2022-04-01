@@ -13,7 +13,7 @@ namespace JAHub_Winforms
 {
     public partial class FrmShippingCheckout : Form
     {
-        private FrmCart _frmCart;
+        public FrmCart _frmCart;
         public FrmShippingCheckout()
         {
             InitializeComponent();
@@ -38,6 +38,11 @@ namespace JAHub_Winforms
         private void FrmShippingCheckout_Load(object sender, EventArgs e)
         {
             LoadOrderSummery();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            _frmCart._frmShop.OpenChildForm(new FrmPayment(this));
         }
     }
 }
