@@ -26,25 +26,26 @@ namespace JAHub_Winforms
         {
             dgvUserInformation.Columns.Clear();
             dgvUserInformation.Rows.Clear();
+            dgvUserInformation.AutoGenerateColumns = false;
             
             allUsersSelection = new DataTable();
 
-            DataColumn idColumn = new DataColumn();
-            idColumn.ColumnName = "ID";
+            DataColumn idDataColumn = new DataColumn();
+            idDataColumn.ColumnName = "ID";
 
-            DataColumn nameColumn = new DataColumn();
-            nameColumn.ColumnName = "Name";
+            DataColumn nameDataColumn = new DataColumn();
+            nameDataColumn.ColumnName = "Name";
 
-            DataColumn roleColumn = new DataColumn();
-            roleColumn.ColumnName = "User Role";
+            DataColumn roleDataColumn = new DataColumn();
+            roleDataColumn.ColumnName = "User Role";
 
-            DataColumn selectColumn = new DataColumn();
-            selectColumn.ColumnName = "Select User";
+            DataColumn selectDataColumn = new DataColumn();
+            selectDataColumn.ColumnName = "Select User";
 
-            allUsersSelection.Columns.Add(idColumn);
-            allUsersSelection.Columns.Add(nameColumn);
-            allUsersSelection.Columns.Add(roleColumn);
-            allUsersSelection.Columns.Add(selectColumn);
+            allUsersSelection.Columns.Add(idDataColumn);
+            allUsersSelection.Columns.Add(nameDataColumn);
+            allUsersSelection.Columns.Add(roleDataColumn);
+            allUsersSelection.Columns.Add(selectDataColumn);
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -60,15 +61,48 @@ namespace JAHub_Winforms
                 while (reader.Read())
                 {
                     allUsersSelection.Rows.Add((int)reader["ID"], reader["FirstName"].ToString() + " " +
-                        reader["LastName"].ToString(), (UserRole)reader["UserRole"], new Button());
-
-                    // Where do i add the thing for the button?
+                        reader["LastName"].ToString(), (UserRole)reader["UserRole"], (int)reader["ID"]);
                 }
 
                 connection.Close();
             }
             
+            // Assigning the data source here
             dgvUserInformation.DataSource = allUsersSelection;
+
+            // This creates the column for the "Select User" buttons
+            DataGridViewButtonColumn selectUserButtonColumn= new DataGridViewButtonColumn();
+            selectUserButtonColumn.Text = "Select User";
+            selectUserButtonColumn.UseColumnTextForButtonValue = true;
+            selectUserButtonColumn.DataPropertyName = "ID";
+
+            // This creates the column for the "ID" Section
+            DataGridViewColumn idViewColumn = new DataGridViewColumn();
+            idViewColumn.DefaultCellStyle = new DataGridViewCellStyle();
+            idViewColumn.CellTemplate = new DataGridViewTextBoxCell();
+            idViewColumn.Name = "ID";
+            idViewColumn.DataPropertyName = "ID";
+
+            // This creates the column for the "Name" Section
+            DataGridViewColumn nameViewColumn = new DataGridViewColumn();
+            nameViewColumn.DefaultCellStyle = new DataGridViewCellStyle();
+            nameViewColumn.CellTemplate = new DataGridViewTextBoxCell();
+            nameViewColumn.Name = "Name";
+            nameViewColumn.DataPropertyName = "Name";
+
+            // This creates the column for the "User Role" Section
+            DataGridViewColumn userRoleViewColumn = new DataGridViewColumn();
+            userRoleViewColumn.DefaultCellStyle = new DataGridViewCellStyle();
+            userRoleViewColumn.CellTemplate = new DataGridViewTextBoxCell();
+            userRoleViewColumn.Name = "User Role";
+            userRoleViewColumn.DataPropertyName = "User Role";
+
+
+            // This adds all of the columns to the DGV
+            dgvUserInformation.Columns.Add(idViewColumn);
+            dgvUserInformation.Columns.Add(nameViewColumn);
+            dgvUserInformation.Columns.Add(userRoleViewColumn);
+            dgvUserInformation.Columns.Add(selectUserButtonColumn);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
