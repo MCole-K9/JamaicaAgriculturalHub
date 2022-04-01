@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
     public partial class FrmAdminSelectUser : Form
     {
+        DataTable allUsersSelection;
+
         public FrmAdminSelectUser()
         {
             InitializeComponent();
@@ -20,14 +24,51 @@ namespace JAHub_Winforms
 
         private void FrmAdminSelectUser_Load(object sender, EventArgs e)
         {
-            // what do you rename a datagrid's value as?
-            // anyway, clear it on start
+            dgvUserInformation.Columns.Clear();
+            dgvUserInformation.Rows.Clear();
+            
+            allUsersSelection = new DataTable();
 
-            // run the query to get user information (which is: ID, First+LastName, Role, Button-to-Select)
-            // create the relevant columns (including the button)
-            // create the datatable to hold this information
-            // create the query for relevant user information (which is?)
-            // run the SetCurrentUser method of FrmAdminContainer with the selected userId
+            DataColumn idColumn = new DataColumn();
+            idColumn.ColumnName = "ID";
+
+            DataColumn nameColumn = new DataColumn();
+            nameColumn.ColumnName = "Name";
+
+            DataColumn roleColumn = new DataColumn();
+            roleColumn.ColumnName = "User Role";
+
+            DataColumn selectColumn = new DataColumn();
+            selectColumn.ColumnName = "Select User";
+
+            allUsersSelection.Columns.Add(idColumn);
+            allUsersSelection.Columns.Add(nameColumn);
+            allUsersSelection.Columns.Add(roleColumn);
+            allUsersSelection.Columns.Add(selectColumn);
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                String command = "SELECT ID, FirstName, LastName, UserRole" +
+                    " FROM [User]";
+
+                SqlCommand listUsersCommand = new SqlCommand(command, connection);
+
+                SqlDataReader reader = listUsersCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    allUsersSelection.Rows.Add((int)reader["ID"], reader["FirstName"].ToString() + " " +
+                        reader["LastName"].ToString(), (UserRole)reader["UserRole"], new Button());
+
+                    // Where do i add the thing for the button?
+                }
+
+                connection.Close();
+            }
+            
+            dgvUserInformation.DataSource = allUsersSelection;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
