@@ -26,14 +26,62 @@ namespace JAHubLib
             {
                 connection.Open();
 
-                // Apparently this might require understanding what a sqlParameter is
-
-                String command = $"INSERT INTO User (FirstName, MiddleName, LastName, " +
+                // To avoid the SqlException, put User into square brackets, like [User]
+                String command = "INSERT INTO [User] (FirstName, MiddleName, LastName, " +
                     "EmailAddress, Password, UserRole) " +
-                    $"VALUES ('{FirstName}', '{MiddleName}'" +
-                    $", '{LastName}', '{Email}', '{Password}', {(int)UserRole})";
+                    "VALUES (@firstName, @middleName" +
+                    ", @lastName, @email, @password, @userRole)";
 
                 SqlCommand writeToDb = new SqlCommand(command, connection);
+                // The SqlParameters probably aren't necessary, i thought they would fix the problem
+
+                // First Name
+                SqlParameter firstName = new SqlParameter();
+                firstName.ParameterName = "firstName";
+                firstName.SqlDbType = System.Data.SqlDbType.VarChar;
+                firstName.Direction = System.Data.ParameterDirection.Input;
+                firstName.Value = this.FirstName;
+                writeToDb.Parameters.Add(firstName);
+
+                // Middle Name
+                SqlParameter middleName = new SqlParameter();
+                middleName.ParameterName = "middleName";
+                middleName.SqlDbType = System.Data.SqlDbType.VarChar;
+                middleName.Direction = System.Data.ParameterDirection.Input;
+                middleName.Value = this.MiddleName;
+                writeToDb.Parameters.Add(middleName);
+
+                // Last Name
+                SqlParameter lastName = new SqlParameter();
+                lastName.ParameterName = "lastName";
+                lastName.SqlDbType = System.Data.SqlDbType.VarChar;
+                lastName.Direction = System.Data.ParameterDirection.Input;
+                lastName.Value = this.LastName;
+                writeToDb.Parameters.Add(lastName);
+
+                // Email Address
+                SqlParameter email = new SqlParameter();
+                email.ParameterName = "email";
+                email.SqlDbType = System.Data.SqlDbType.VarChar;
+                email.Direction = System.Data.ParameterDirection.Input;
+                email.Value = this.Email;
+                writeToDb.Parameters.Add(email);
+
+                // Password
+                SqlParameter password = new SqlParameter();
+                password.ParameterName = "password";
+                password.SqlDbType = System.Data.SqlDbType.VarChar;
+                password.Direction = System.Data.ParameterDirection.Input;
+                password.Value = this.Password;
+                writeToDb.Parameters.Add(password);
+
+                // User Role
+                SqlParameter userRole = new SqlParameter();
+                userRole.ParameterName = "userRole";
+                userRole.SqlDbType = System.Data.SqlDbType.Int;
+                userRole.Direction = System.Data.ParameterDirection.Input;
+                userRole.Value = (int)this.UserRole;
+                writeToDb.Parameters.Add(userRole);
 
                 writeToDb.ExecuteNonQuery();
 
