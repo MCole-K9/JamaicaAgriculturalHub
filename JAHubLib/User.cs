@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace JAHubLib
 {
@@ -21,12 +22,23 @@ namespace JAHubLib
         
         public void WriteToDatabase()
         {
-            
-            
-            // open connection
-            // create the command
-            // run the command
-            // close the connection
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                // Apparently this might require understanding what a sqlParameter is
+
+                String command = $"INSERT INTO User (FirstName, MiddleName, LastName, " +
+                    "EmailAddress, Password, UserRole) " +
+                    $"VALUES ('{FirstName}', '{MiddleName}'" +
+                    $", '{LastName}', '{Email}', '{Password}', {(int)UserRole})";
+
+                SqlCommand writeToDb = new SqlCommand(command, connection);
+
+                writeToDb.ExecuteNonQuery();
+
+                connection.Close();
+            }
         }
     }
 }

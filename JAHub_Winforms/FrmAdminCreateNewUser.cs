@@ -163,7 +163,7 @@ namespace JAHub_Winforms
 
                         newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
 
-                        //newUser.WriteToDatabase();
+                        newUser.WriteToDatabase();
                     }
                 }
             }
