@@ -18,9 +18,16 @@ namespace JAHub_Winforms
             TopLevel = false;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FrmAdminSelectUser_Load(object sender, EventArgs e)
         {
+            // what do you rename a datagrid's value as?
+            // anyway, clear it on start
 
+            // run the query to get user information (which is?)
+            // create the relevant columns (including the button)
+            // create the datatable to hold this information
+            // create the query for relevant user information (which is?)
+            // run the SetCurrentUser method of FrmAdminContainer with the selected userId
         }
     }
 }

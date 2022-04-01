@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnName = new System.Windows.Forms.Button();
             this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GovernmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnName = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -60,7 +60,41 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(679, 188);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // userId
+            // 
+            this.userId.HeaderText = "User ID";
+            this.userId.MinimumWidth = 6;
+            this.userId.Name = "userId";
+            this.userId.Width = 125;
+            // 
+            // username
+            // 
+            this.username.HeaderText = "username";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            this.username.Width = 125;
+            // 
+            // userRole
+            // 
+            this.userRole.HeaderText = "Role";
+            this.userRole.MinimumWidth = 6;
+            this.userRole.Name = "userRole";
+            this.userRole.Width = 125;
+            // 
+            // selectUser
+            // 
+            this.selectUser.HeaderText = "Select User";
+            this.selectUser.MinimumWidth = 6;
+            this.selectUser.Name = "selectUser";
+            this.selectUser.Width = 125;
+            // 
+            // GovernmentName
+            // 
+            this.GovernmentName.HeaderText = "Name";
+            this.GovernmentName.MinimumWidth = 6;
+            this.GovernmentName.Name = "GovernmentName";
+            this.GovernmentName.Width = 125;
             // 
             // flowLayoutPanel1
             // 
@@ -120,41 +154,6 @@
             this.btnName.Text = "Clear Search";
             this.btnName.UseVisualStyleBackColor = true;
             // 
-            // userId
-            // 
-            this.userId.HeaderText = "User ID";
-            this.userId.MinimumWidth = 6;
-            this.userId.Name = "userId";
-            this.userId.Width = 125;
-            // 
-            // username
-            // 
-            this.username.HeaderText = "username";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            this.username.Width = 125;
-            // 
-            // userRole
-            // 
-            this.userRole.HeaderText = "Role";
-            this.userRole.MinimumWidth = 6;
-            this.userRole.Name = "userRole";
-            this.userRole.Width = 125;
-            // 
-            // selectUser
-            // 
-            this.selectUser.HeaderText = "Select User";
-            this.selectUser.MinimumWidth = 6;
-            this.selectUser.Name = "selectUser";
-            this.selectUser.Width = 125;
-            // 
-            // GovernmentName
-            // 
-            this.GovernmentName.HeaderText = "Name";
-            this.GovernmentName.MinimumWidth = 6;
-            this.GovernmentName.Name = "GovernmentName";
-            this.GovernmentName.Width = 125;
-            // 
             // FrmAdminSelectUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -166,6 +165,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminSelectUser";
             this.Text = "Select User (This should not be visible!)";
+            this.Load += new System.EventHandler(this.FrmAdminSelectUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

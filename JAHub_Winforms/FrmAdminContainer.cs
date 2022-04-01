@@ -117,5 +117,14 @@ namespace JAHub_Winforms
             btnViewModeration.Show();
             btnEditUser.Show();
         }
+
+        private void SetCurrentUser(int userId)
+        {
+            // this should basically query the db and create a new user
+            // while also populating the table to the side
+            // while also showing the other user options
+
+            ShowUserOptions();
+        }
     }
 }
