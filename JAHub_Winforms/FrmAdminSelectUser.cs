@@ -103,6 +103,12 @@ namespace JAHub_Winforms
             dgvUserInformation.Columns.Add(nameViewColumn);
             dgvUserInformation.Columns.Add(userRoleViewColumn);
             dgvUserInformation.Columns.Add(selectUserButtonColumn);
+
+            // how do i add an event to the column i need to?
+            // how do i add the method of this class' parent when it doesn't know ahead of time what its
+            // parent will be?
+
+            // try using "CellMouseClick" event for datagridview
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
