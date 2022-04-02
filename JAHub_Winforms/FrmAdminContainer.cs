@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -57,7 +58,8 @@ namespace JAHub_Winforms
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
             String message = "Are you sure you want to delete the account of" + 
-                _user.FirstName + _user.LastName;
+                lblNameValue.Text + " (ID: " + _userId.ToString() + ", Role: " +
+                lblRoleValue.Text + ")";
             const String caption = "Delete Account";
             
             var result = MessageBox.Show(message, caption,
@@ -66,8 +68,18 @@ namespace JAHub_Winforms
 
             if (result == DialogResult.Yes)
             {
-                // query to delete the corresponding record
-                // return the user to Select User
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    String command = $"DELETE FROM [User] WHERE ID={_userId};";
+
+                    SqlCommand deleteRecord = new SqlCommand(command, connection);
+
+                    deleteRecord.ExecuteNonQuery();
+
+                    connection.Close();
+                }
                 
                 HideUserOptions();
 
@@ -124,6 +136,7 @@ namespace JAHub_Winforms
 
         public void SetCurrentUser(int userId, String userName, String userRole)
         {
+            this._userId = userId;
             lblUserIdValue.Text = userId.ToString();
             lblNameValue.Text = userName;
             lblRoleValue.Text = userRole;
