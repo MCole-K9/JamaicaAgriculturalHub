@@ -84,15 +84,18 @@
             this.txtSearchBar.Name = "txtSearchBar";
             this.txtSearchBar.Size = new System.Drawing.Size(161, 20);
             this.txtSearchBar.TabIndex = 16;
+            this.txtSearchBar.Enter += new System.EventHandler(this.txtSearchBar_Enter);
             // 
             // btnSearchBar
             // 
+            this.btnSearchBar.Enabled = false;
             this.btnSearchBar.Location = new System.Drawing.Point(343, 143);
             this.btnSearchBar.Name = "btnSearchBar";
             this.btnSearchBar.Size = new System.Drawing.Size(67, 23);
             this.btnSearchBar.TabIndex = 17;
             this.btnSearchBar.Text = "Search";
             this.btnSearchBar.UseVisualStyleBackColor = true;
+            this.btnSearchBar.Click += new System.EventHandler(this.btnSearchBar_Click);
             // 
             // lblSortBy
             // 

@@ -42,6 +42,7 @@ namespace JAHub_Winforms
                 ucBlogPost.Dock = DockStyle.Top;
 
             }
+            connection.Close();
 
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
@@ -119,5 +120,42 @@ namespace JAHub_Winforms
         {
             pnlContainer.Padding = new Padding(0, 0, 0, 0);
         }
+
+        private void btnSearchBar_Click(object sender, EventArgs e)
+        {
+            while(pnlContainer.Controls.Count > 0)
+            {
+                pnlContainer.Controls.RemoveAt(0);
+            }
+            if (txtSearchBar.Text != "")
+            {
+                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+                connection.Open();
+                SqlCommand SearchCmd = new SqlCommand($"SELECT * FROM [Blog] WHERE Title LIKE '%{txtSearchBar.Text}%'", connection);
+                SqlDataReader reader = SearchCmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Blog blog = new Blog();
+
+                    blog.BlogID = (int)reader["ID"];
+                    blog.Title = reader["Title"].ToString();
+                    blog.Author.UserID = (int)reader["Author"];
+                    blog.Description = reader["Description"].ToString();
+                    blog.BlogBody = reader["Body"].ToString();
+                    blog.PublishDateString = reader["PublishedDate"].ToString();
+                    blog.Rating = Convert.ToInt16(reader["Rating"]);
+                    Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(blog);
+                    pnlContainer.Controls.Add(ucBlogPost);
+                    ucBlogPost.Dock = DockStyle.Top;
+                }
+                connection.Close();
+            }
+        }
+
+        private void txtSearchBar_Enter(object sender, EventArgs e)
+        {
+            btnSearchBar.Enabled = true;
+        }
+
     }
 }
