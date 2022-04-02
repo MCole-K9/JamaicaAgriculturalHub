@@ -174,6 +174,7 @@
             this.btnEditUser.TabIndex = 3;
             this.btnEditUser.Text = "Edit User Information";
             this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Visible = false;
             this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnViewModeration
@@ -184,6 +185,7 @@
             this.btnViewModeration.TabIndex = 2;
             this.btnViewModeration.Text = "View Moderation Log";
             this.btnViewModeration.UseVisualStyleBackColor = true;
+            this.btnViewModeration.Visible = false;
             this.btnViewModeration.Click += new System.EventHandler(this.btnViewModeration_Click);
             // 
             // btnDeleteUser
@@ -194,6 +196,7 @@
             this.btnDeleteUser.TabIndex = 7;
             this.btnDeleteUser.Text = "Delete User Account";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Visible = false;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // btnCreateNewUser
@@ -223,7 +226,7 @@
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.pnlFormHolder);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

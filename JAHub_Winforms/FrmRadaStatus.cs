@@ -45,7 +45,17 @@ namespace JAHub_Winforms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            // literally just unfreeze all of the controls in the list using a foreach
+            foreach (Control control in flwInformationHolder.Controls)
+            {
+                control.Enabled = true;
+            }
+        }
+
+        private void btnRegisterWithRada_Click(object sender, EventArgs e)
+        {
+            // this needs to
+            // close this form and the form above it
+            // open the Register With Rada form (this uses Super?)
         }
     }
 }

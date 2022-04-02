@@ -22,25 +22,15 @@ namespace JAHub_Winforms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(txtUserId.Text) && String.IsNullOrEmpty(txtPassword.Text))
+            if(String.IsNullOrEmpty(txtEmailAddress.Text) || String.IsNullOrEmpty(txtPassword.Text))
             {
-                lblCredentialEntryError.Text = "Please enter both the UserId and Password and try" +
+                lblCredentialEntryError.Text = "Please enter both the Email Address and Password and try" +
                     " " + " again.";
                 lblCredentialEntryError.Show();
             }
-            
-            // This is only necessary because i'm working with the assumption that the code
-            // uses userID and not username. Probably will change
-            else if (Int32.TryParse(txtUserId.Text, out int id) == false)
+            else if (!String.IsNullOrEmpty(txtEmailAddress.Text) && !String.IsNullOrEmpty(txtPassword.Text))
             {
-                lblCredentialEntryError.Text = "Error: UserID must be a number";
-                lblCredentialEntryError.Show();
-
-                txtUserId.Clear();
-            }
-            else if ((Int32.TryParse(txtUserId.Text, out int userID) == true) && (String.IsNullOrEmpty(txtPassword.Text) == false))
-            {
-                PasswordResult result = Session.Login(userID, txtPassword.Text);
+                PasswordResult result = Session.Login(txtEmailAddress.Text, txtPassword.Text);
 
                 if (result == PasswordResult.Success)
                 {
@@ -56,7 +46,7 @@ namespace JAHub_Winforms
                 }
                 else if (result == PasswordResult.CredentialsIncorrect)
                 {
-                    lblCredentialEntryError.Text = "UserID or Password is incorrect, please check your" +
+                    lblCredentialEntryError.Text = "Email Address or Password is incorrect, please check your" +
                         " " + "credentials and try again";
 
                     txtPassword.Clear();
@@ -64,7 +54,7 @@ namespace JAHub_Winforms
                 }
                 else if (result == PasswordResult.NoMatchingCredentials)
                 {
-                    lblCredentialEntryError.Text = "UserID not found, please check your credentials" +
+                    lblCredentialEntryError.Text = "Email Address not found, please check your credentials" +
                         " " + "or register for an account";
 
                     txtPassword.Clear();

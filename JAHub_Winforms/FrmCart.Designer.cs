@@ -50,6 +50,7 @@
             this.lblSubTotal.Size = new System.Drawing.Size(193, 20);
             this.lblSubTotal.TabIndex = 1;
             this.lblSubTotal.Text = "Subtotal (Items: 1): $0000";
+            this.lblSubTotal.Visible = false;
             // 
             // btnCheckOut
             // 
@@ -59,6 +60,7 @@
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Proceed to Checkout";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Visible = false;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // FrmCart

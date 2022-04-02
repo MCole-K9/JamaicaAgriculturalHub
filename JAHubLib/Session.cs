@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace JAHubLib
 {
     // Rewrite to fit with database
     public enum UserRole
     {
-        Admin = 0,
-        Customer = 1,
-        Farmer = 2,
-        GrantOfficer = 3,
-        NotLoggedIn = 4,
+        Admin = 1,
+        Customer = 2,
+        Farmer = 3,
+        GrantOfficer = 4,
+        NotLoggedIn = 5,
     }
 
     public enum PasswordResult
@@ -25,71 +26,73 @@ namespace JAHubLib
 
     public static class Session
     {
-        /* This should basically keep space for a method that checks the details
-         * entered into the login, then if correct makes a readonly property of role and 
-         * 
-         */
-
-        static UserRole _userRole;
+        static UserRole _userRole = UserRole.NotLoggedIn;
         static int _userId;
 
-        // It's never necessary to change these upon a successful login, the object manages this
+        // K.S.: may want to add {FirstName} {LastName} here to make that always accessible, not sure
+        // yet
         public static UserRole UserRole => _userRole;
         public static int UserId => _userId;
 
 
-        public static PasswordResult Login(int userId, String password)
+        public static PasswordResult Login(String email, String password)
         {
-            // this is roughly where the query will go, inside of a using(){} block probably
-
-            // should probably prevent the possibility of changing this during normal operation
-
-            // shelving this for now, but i'll deal with it tomorrow
-            //if (_userRole != UserRole.NotLoggedIn)
-            //{
-
-            //}
-
             
-            if (userId == 1)
-            {
-                if (password == "test")
-                {
-                    _userId = 1;
-                    _userRole = UserRole.Admin;
-                    
-                    return PasswordResult.Success;
-                }
-
-                return PasswordResult.CredentialsIncorrect;
-            }
-            else if (userId == 2)
-            {
-                if (password == "test")
-                {
-                    _userId = 2;
-                    _userRole = UserRole.Farmer;
-
-                    return PasswordResult.Success;
-                }
-
-                return PasswordResult.CredentialsIncorrect;
-            }
-            else
+            // K.S.: This is just to make sure that you can't access login twice without first loggin out
+            // but it shouldn't really matter
+            if (_userRole != UserRole.NotLoggedIn)
             {
                 return PasswordResult.NoMatchingCredentials;
             }
-        }
+            
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
 
-        // will actually 
+                string command = "SELECT ID, EmailAddress, Password, UserRole FROM [User] WHERE " +
+                    $"EmailAddress = '{email}'";
+
+                SqlCommand checkCredentials = new SqlCommand(command, connection);
+
+                SqlDataReader reader = checkCredentials.ExecuteReader();
+
+                PasswordResult result = new PasswordResult();
+
+                if (reader.Read())
+                {
+                    if(reader["EmailAddress"].ToString() == email)
+                    {
+                        if(reader["Password"].ToString() == password)
+                        {
+                            result = PasswordResult.Success;
+
+                            _userId = (int)reader["ID"];
+                            _userRole = (UserRole)reader["UserRole"];
+                        }
+                        else
+                        {
+                            result = PasswordResult.CredentialsIncorrect;
+                        }
+                    }
+                    else
+                    {
+                        result = PasswordResult.NoMatchingCredentials;
+                    }
+                }
+                else
+                {
+                    result = PasswordResult.NoMatchingCredentials;
+                }
+
+                connection.Close();
+
+                return result;
+            }
+        }
         public static void LogOut()
         {
             _userRole = UserRole.NotLoggedIn;
             _userId = 0;
-
-            // close all forms
-            // freeze all controls (however that works)
-            // bring back up a Login screen
         }
     }
 }

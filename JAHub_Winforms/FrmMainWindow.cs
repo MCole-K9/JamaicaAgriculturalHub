@@ -95,6 +95,7 @@ namespace JAHub_Winforms
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            mnsMainForm.Hide();
             LogOut();
         }
 
@@ -129,6 +130,57 @@ namespace JAHub_Winforms
             mnsMainForm.Enabled = true;
             lblLoggedInAs.Text = "Logged in as: " + Session.UserId;
             lblLoggedInRole.Text = "Role: " + Session.UserRole;
+
+            if (Session.UserRole == UserRole.Admin)
+            {
+                // Admins see: Pretty much everything (will revise)
+                miAdmin.Visible = true;
+                miBlog.Visible = true;
+                miHome.Visible = true;
+                miShop.Visible = true;
+                miUserProfile.Visible = true;
+                grantsToolStripMenuItem.Visible = true;
+                
+                mnsMainForm.Show();
+            }
+            else if (Session.UserRole == UserRole.Customer)
+            {
+                // Customers see: Home, Shop, User Profile
+                miAdmin.Visible = false;
+                miBlog.Visible = false;
+                miHome.Visible = true;
+                miShop.Visible = true;
+                miUserProfile.Visible = true;
+                grantsToolStripMenuItem.Visible = false;
+
+                mnsMainForm.Show();
+            }
+            else if(Session.UserRole == UserRole.Farmer)
+            {
+                // Farmers see: Blog, Home, Shop, User Profile, Grants
+                miAdmin.Visible = false;
+                miBlog.Visible = true;
+                miHome.Visible = true;
+                miShop.Visible = true;
+                miUserProfile.Visible = true;
+                grantsToolStripMenuItem.Visible = true;
+
+                mnsMainForm.Show();
+            }
+            else if (Session.UserRole == UserRole.GrantOfficer)
+            {
+                // Grant Officers see: Grants, Home
+
+                miAdmin.Visible = false;
+                miBlog.Visible = false;
+                miHome.Visible= true;
+                miShop.Visible = false;
+                miUserProfile.Visible = false;
+                grantsToolStripMenuItem.Visible = true;
+
+                mnsMainForm.Show();
+            }
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,6 +214,12 @@ namespace JAHub_Winforms
             {
                 MessageBox.Show("An Instance is Already Running");
             }
+        }
+
+        private void FrmMainWindow_Load(object sender, EventArgs e)
+        {
+            // Hiding the Menustrip on load, not especially necessary tbh
+            mnsMainForm.Hide();
         }
     }
 }

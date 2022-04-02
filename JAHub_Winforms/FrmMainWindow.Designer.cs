@@ -33,6 +33,7 @@
             this.miHome = new System.Windows.Forms.ToolStripMenuItem();
             this.miShop = new System.Windows.Forms.ToolStripMenuItem();
             this.miBlog = new System.Windows.Forms.ToolStripMenuItem();
+            this.grantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miUserProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.miAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.miLogOut = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,6 @@
             this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
-            this.grantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
@@ -61,35 +61,42 @@
             this.exitToolStripMenuItem});
             this.mnsMainForm.Location = new System.Drawing.Point(0, 0);
             this.mnsMainForm.Name = "mnsMainForm";
-            this.mnsMainForm.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mnsMainForm.Size = new System.Drawing.Size(800, 24);
+            this.mnsMainForm.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mnsMainForm.Size = new System.Drawing.Size(1067, 28);
             this.mnsMainForm.TabIndex = 1;
             this.mnsMainForm.Text = "menuStrip1";
             // 
             // miHome
             // 
             this.miHome.Name = "miHome";
-            this.miHome.Size = new System.Drawing.Size(52, 20);
+            this.miHome.Size = new System.Drawing.Size(64, 24);
             this.miHome.Text = "Home";
             // 
             // miShop
             // 
             this.miShop.Name = "miShop";
-            this.miShop.Size = new System.Drawing.Size(46, 20);
+            this.miShop.Size = new System.Drawing.Size(57, 24);
             this.miShop.Text = "Shop";
             this.miShop.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
             // 
             // miBlog
             // 
             this.miBlog.Name = "miBlog";
-            this.miBlog.Size = new System.Drawing.Size(43, 20);
+            this.miBlog.Size = new System.Drawing.Size(54, 24);
             this.miBlog.Text = "Blog";
             this.miBlog.Click += new System.EventHandler(this.blogToolStripMenuItem_Click);
+            // 
+            // grantsToolStripMenuItem
+            // 
+            this.grantsToolStripMenuItem.Name = "grantsToolStripMenuItem";
+            this.grantsToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.grantsToolStripMenuItem.Text = "Grants";
+            this.grantsToolStripMenuItem.Click += new System.EventHandler(this.grantsToolStripMenuItem_Click);
             // 
             // miUserProfile
             // 
             this.miUserProfile.Name = "miUserProfile";
-            this.miUserProfile.Size = new System.Drawing.Size(76, 20);
+            this.miUserProfile.Size = new System.Drawing.Size(94, 24);
             this.miUserProfile.Text = "User Portal";
             this.miUserProfile.Click += new System.EventHandler(this.userPortalToolStripMenuItem_Click);
             // 
@@ -97,21 +104,21 @@
             // 
             this.miAdmin.Name = "miAdmin";
             this.miAdmin.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
-            this.miAdmin.Size = new System.Drawing.Size(55, 20);
+            this.miAdmin.Size = new System.Drawing.Size(67, 24);
             this.miAdmin.Text = "Admin";
             this.miAdmin.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // miLogOut
             // 
             this.miLogOut.Name = "miLogOut";
-            this.miLogOut.Size = new System.Drawing.Size(57, 20);
+            this.miLogOut.Size = new System.Drawing.Size(70, 24);
             this.miLogOut.Text = "Logout";
             this.miLogOut.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -121,47 +128,42 @@
             this.ssrMainForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblLoggedInAs,
             this.lblLoggedInRole});
-            this.ssrMainForm.Location = new System.Drawing.Point(0, 428);
+            this.ssrMainForm.Location = new System.Drawing.Point(0, 528);
             this.ssrMainForm.Name = "ssrMainForm";
-            this.ssrMainForm.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.ssrMainForm.Size = new System.Drawing.Size(800, 22);
+            this.ssrMainForm.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.ssrMainForm.Size = new System.Drawing.Size(1067, 26);
             this.ssrMainForm.TabIndex = 3;
             this.ssrMainForm.Text = "statusStrip1";
             // 
             // lblLoggedInAs
             // 
             this.lblLoggedInAs.Name = "lblLoggedInAs";
-            this.lblLoggedInAs.Size = new System.Drawing.Size(83, 17);
+            this.lblLoggedInAs.Size = new System.Drawing.Size(105, 20);
             this.lblLoggedInAs.Text = "Not Logged In";
             // 
             // lblLoggedInRole
             // 
             this.lblLoggedInRole.Name = "lblLoggedInRole";
-            this.lblLoggedInRole.Size = new System.Drawing.Size(0, 17);
+            this.lblLoggedInRole.Size = new System.Drawing.Size(0, 20);
             // 
             // icnJaHub
             // 
             this.icnJaHub.Text = "JAHub";
             this.icnJaHub.Visible = true;
             // 
-            // grantsToolStripMenuItem
-            // 
-            this.grantsToolStripMenuItem.Name = "grantsToolStripMenuItem";
-            this.grantsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.grantsToolStripMenuItem.Text = "Grants";
-            this.grantsToolStripMenuItem.Click += new System.EventHandler(this.grantsToolStripMenuItem_Click);
-            // 
             // FrmMainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ssrMainForm);
             this.Controls.Add(this.mnsMainForm);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsMainForm;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMainWindow";
             this.Text = "Jamaica Agricultural Hub";
+            this.Load += new System.EventHandler(this.FrmMainWindow_Load);
             this.SizeChanged += new System.EventHandler(this.FrmMainWindow_SizeChanged);
             this.mnsMainForm.ResumeLayout(false);
             this.mnsMainForm.PerformLayout();
