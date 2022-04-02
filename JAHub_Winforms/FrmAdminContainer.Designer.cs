@@ -30,13 +30,13 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblCurrentUser = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
+            this.lblUserIdValue = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblNameValue = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblRoleValue = new System.Windows.Forms.Label();
             this.btnSelectUser = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnViewModeration = new System.Windows.Forms.Button();
@@ -72,13 +72,13 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblCurrentUser, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblUserId, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblUserIdValue, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblNameValue, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblRole, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblRoleValue, 1, 3);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -90,71 +90,74 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(156, 85);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // label1
+            // lblCurrentUser
             // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Current User: ";
+            this.lblCurrentUser.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lblCurrentUser, 2);
+            this.lblCurrentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentUser.Location = new System.Drawing.Point(3, 0);
+            this.lblCurrentUser.Name = "lblCurrentUser";
+            this.lblCurrentUser.Size = new System.Drawing.Size(134, 25);
+            this.lblCurrentUser.TabIndex = 5;
+            this.lblCurrentUser.Text = "Current User: ";
             // 
-            // label2
+            // lblUserId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "User ID:";
+            this.lblUserId.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserId.Location = new System.Drawing.Point(3, 25);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(72, 20);
+            this.lblUserId.TabIndex = 6;
+            this.lblUserId.Text = "User ID:";
             // 
-            // label3
+            // lblUserIdValue
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 20);
-            this.label3.TabIndex = 7;
+            this.lblUserIdValue.AutoSize = true;
+            this.lblUserIdValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserIdValue.Location = new System.Drawing.Point(81, 25);
+            this.lblUserIdValue.Name = "lblUserIdValue";
+            this.lblUserIdValue.Size = new System.Drawing.Size(0, 20);
+            this.lblUserIdValue.TabIndex = 7;
             // 
-            // label4
+            // lblName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Name: ";
+            this.lblName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(17, 45);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(58, 20);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Name:";
             // 
-            // label5
+            // lblNameValue
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(81, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 20);
-            this.label5.TabIndex = 9;
+            this.lblNameValue.AutoSize = true;
+            this.lblNameValue.Location = new System.Drawing.Point(81, 45);
+            this.lblNameValue.Name = "lblNameValue";
+            this.lblNameValue.Size = new System.Drawing.Size(0, 20);
+            this.lblNameValue.TabIndex = 9;
             // 
-            // label6
+            // lblRole
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Role:";
+            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Location = new System.Drawing.Point(27, 65);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(48, 20);
+            this.lblRole.TabIndex = 10;
+            this.lblRole.Text = "Role:";
             // 
-            // label7
+            // lblRoleValue
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(81, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 20);
-            this.label7.TabIndex = 7;
+            this.lblRoleValue.AutoSize = true;
+            this.lblRoleValue.Location = new System.Drawing.Point(81, 65);
+            this.lblRoleValue.Name = "lblRoleValue";
+            this.lblRoleValue.Size = new System.Drawing.Size(0, 20);
+            this.lblRoleValue.TabIndex = 7;
             // 
             // btnSelectUser
             // 
@@ -246,13 +249,13 @@
         private System.Windows.Forms.Button btnViewModeration;
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCurrentUser;
+        private System.Windows.Forms.Label lblUserId;
+        private System.Windows.Forms.Label lblUserIdValue;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblNameValue;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.Label lblRoleValue;
         private System.Windows.Forms.Panel pnlFormHolder;
         private System.Windows.Forms.Button btnDeleteUser;
     }

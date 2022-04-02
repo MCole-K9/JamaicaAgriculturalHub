@@ -14,7 +14,6 @@ namespace JAHubLib
         public string FirstName { set; get; }
         public string MiddleName { set; get; }
         public string LastName { set; get; }
-        public string Username { set; get; }
         public string Password { set; get; }
         public string Email { set; get; } 
         
@@ -86,6 +85,29 @@ namespace JAHubLib
                 writeToDb.ExecuteNonQuery();
 
                 connection.Close();
+            }
+        }
+
+        public void ReadFromDatabase(int userId)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                String command = $"SELECT * FROM [USER] WHERE ID={userId}";
+
+                SqlCommand getRecord = new SqlCommand(command, connection);
+
+                SqlDataReader reader = getRecord.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    UserID = userId;
+                    FirstName = reader["FirstName"].ToString();
+                    MiddleName = reader["MiddleName"].ToString();
+                    LastName = reader["LastName"].ToString();
+                    Email = reader["EmailAddress"].ToString();
+                    Password = reader["Password"].ToString();
+                    UserRole = (UserRole)reader["UserRole"];
+                }
             }
         }
     }

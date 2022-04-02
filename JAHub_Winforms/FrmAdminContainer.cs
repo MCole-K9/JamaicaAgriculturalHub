@@ -27,7 +27,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminSelectUser());
+            pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
             pnlFormHolder.Controls[0].Show();
         }
 
@@ -75,7 +75,7 @@ namespace JAHub_Winforms
                     pnlFormHolder.Controls.Clear();
                 }
 
-                pnlFormHolder.Controls.Add(new FrmAdminSelectUser());
+                pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
                 pnlFormHolder.Controls[0].Show();
 
                 // empty the Current User table
@@ -116,6 +116,18 @@ namespace JAHub_Winforms
             btnDeleteUser.Show();
             btnViewModeration.Show();
             btnEditUser.Show();
+        }
+
+        public void SetCurrentUser(int userId, String userName, String userRole)
+        {
+            lblUserIdValue.Text = userId.ToString();
+            lblNameValue.Text = userName;
+            lblRoleValue.Text = userRole;
+            
+            // idr really think this is necessary, yet
+            _user = new User();
+
+            ShowUserOptions();
         }
     }
 }
