@@ -40,6 +40,8 @@ namespace JAHub_Winforms
             // This will primarily set up the db schema and populate it
 
             // These are all for dtbCurrentInfractions
+            dtbCurrentInfractions = new DataTable();
+
             DataColumn dclInfractionId = new DataColumn();
             dclInfractionId.ColumnName = "ID";
             dclInfractionId.DataType = typeof(int);
@@ -65,7 +67,7 @@ namespace JAHub_Winforms
             {
                 connection.Open();
 
-                String command = "SELECT (TimeStamp, Admin, Reason) FROM [Infraction]";
+                String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction]";
 
                 SqlCommand infractionsQuery = new SqlCommand (command, connection);
 
@@ -73,7 +75,7 @@ namespace JAHub_Winforms
 
                 while (reader.Read())
                 {
-                    dtbCurrentInfractions.Rows.Add(reader["TimeStamp"].ToString(), reader["Admin"].ToString(),
+                    dtbCurrentInfractions.Rows.Add(reader["ID"], reader["TimeStamp"].ToString(), reader["Admin"].ToString(),
                         reader["Reason"].ToString());
                 }
 
@@ -93,8 +95,12 @@ namespace JAHub_Winforms
 
         private void btnAddInfraction_Click(object sender, EventArgs e)
         {
-            // create a new add infractions object
-            // send it the flowlayoutpanel, the dtbAddedInfractions, and 
+            if (flwInfractionsHolder.Controls.Contains(lblNoInfractions))
+            {
+                flwInfractionsHolder.Controls.Remove(lblNoInfractions);
+            }
+
+            flwInfractionsHolder.Controls.Add(new usrInfractionAdder(dtbAddedInfractions, _userId, Session.UserId));
         }
     }
 }

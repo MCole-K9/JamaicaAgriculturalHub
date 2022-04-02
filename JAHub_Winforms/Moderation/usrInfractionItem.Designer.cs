@@ -42,7 +42,7 @@
             this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
             this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
             this.tblInfractionAdder.Controls.Add(this.lblTimeStamp, 0, 0);
             this.tblInfractionAdder.Controls.Add(this.lblInfractionReason, 1, 0);
             this.tblInfractionAdder.Controls.Add(this.btnRemoveInfraction, 3, 0);
@@ -87,6 +87,7 @@
             this.btnRemoveInfraction.TabIndex = 2;
             this.btnRemoveInfraction.Text = "X";
             this.btnRemoveInfraction.UseVisualStyleBackColor = true;
+            this.btnRemoveInfraction.Click += new System.EventHandler(this.btnRemoveInfraction_Click);
             // 
             // lblAddedById
             // 

@@ -94,7 +94,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "usrInfractionAdder";
             this.Size = new System.Drawing.Size(609, 38);
-            this.Load += new System.EventHandler(this.usrInfractionEntry_Load);
+            this.Load += new System.EventHandler(this.usrInfractionAdder_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

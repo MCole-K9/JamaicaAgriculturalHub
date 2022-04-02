@@ -21,24 +21,21 @@ namespace JAHub_Winforms.Moderation
         {
             InitializeComponent();
 
-            // This should get a reference to the control it sits within and the datatable it corresponds to
-            // 
+            this.userId = userId;
+            this.adminId = adminId;
+            this.addedInfractions = addedInfractions;
         }
 
-        private void usrInfractionEntry_Load(object sender, EventArgs e)
+        private void usrInfractionAdder_Load(object sender, EventArgs e)
         {
             SqlDateTime currentTime = new SqlDateTime(DateTime.Now);
             lblTimeStamp.Text = currentTime.ToString();
-            
-            // This needs to generate the SqlDatetime of now, then represent that information as a
-            // string and set the value of the XXXX shit to that
-
-            // 
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // This should add the 
+            // This should add the the generated infraction information to dtbAddedInfractions
+            // it should also remove this control and create a new usrInfractionItem
         }
     }
 }

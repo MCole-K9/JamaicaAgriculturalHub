@@ -27,11 +27,16 @@ namespace JAHub_Winforms.Moderation
             lblAddedById.Text = $"Added by ID: {row[2].ToString()}";
             lblInfractionReason.Text = $"Reason: {row[3].ToString()}";
             
-            // This should get a reference to the controls it sits within and the datatable that it
-            // corresponds to (and the delete record one, too), so that it can:
             // A. Put the relevant information on a Remove List when it gets deleted
             // B. Tell the Control that owns it to remove it
             // C. Close itself.
+        }
+
+        private void btnRemoveInfraction_Click(object sender, EventArgs e)
+        {
+            // Add the record Id to dtbRemovedInfractions;
+            // Does this even need a full datatable?
+            // I'm going to pretend it does
         }
     }
 }
