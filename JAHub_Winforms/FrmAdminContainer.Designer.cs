@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flwOptionsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCurrentUser = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
@@ -43,27 +43,27 @@
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnCreateNewUser = new System.Windows.Forms.Button();
             this.pnlFormHolder = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flwOptionsContainer.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flwOptionsContainer
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.btnSelectUser);
-            this.flowLayoutPanel1.Controls.Add(this.btnEditUser);
-            this.flowLayoutPanel1.Controls.Add(this.btnViewModeration);
-            this.flowLayoutPanel1.Controls.Add(this.btnDeleteUser);
-            this.flowLayoutPanel1.Controls.Add(this.btnCreateNewUser);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 451);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flwOptionsContainer.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.flwOptionsContainer.Controls.Add(this.tableLayoutPanel1);
+            this.flwOptionsContainer.Controls.Add(this.btnSelectUser);
+            this.flwOptionsContainer.Controls.Add(this.btnEditUser);
+            this.flwOptionsContainer.Controls.Add(this.btnViewModeration);
+            this.flwOptionsContainer.Controls.Add(this.btnDeleteUser);
+            this.flwOptionsContainer.Controls.Add(this.btnCreateNewUser);
+            this.flwOptionsContainer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flwOptionsContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flwOptionsContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flwOptionsContainer.Location = new System.Drawing.Point(0, 0);
+            this.flwOptionsContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.flwOptionsContainer.Name = "flwOptionsContainer";
+            this.flwOptionsContainer.Size = new System.Drawing.Size(200, 451);
+            this.flwOptionsContainer.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -228,13 +228,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.pnlFormHolder);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flwOptionsContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.flwOptionsContainer.ResumeLayout(false);
+            this.flwOptionsContainer.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -243,7 +243,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flwOptionsContainer;
         private System.Windows.Forms.Button btnSelectUser;
         private System.Windows.Forms.Button btnCreateNewUser;
         private System.Windows.Forms.Button btnViewModeration;

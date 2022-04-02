@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using JAHub_Winforms.Verification;
 
 namespace JAHub_Winforms
 {
@@ -21,6 +22,15 @@ namespace JAHub_Winforms
 
             _user = new User();
             _user.ReadFromDatabase(userId);
+
+            // I want to show the middle initial, but it's not important rn
+            lblEditUser.Text = $"Edit User: {_user.FirstName} {_user.LastName}" +
+                $" (ID: {_user.UserID}; Role: {_user.UserRole})";
+
+            flwControlsHolder.Controls.Add(new usrNameBlock(_user.FirstName, _user.MiddleName, 
+                _user.LastName));
+            flwControlsHolder.Controls.SetChildIndex(
+                flwControlsHolder.Controls[flwControlsHolder.Controls.Count - 1], 0);
         }
 
         private void btnUpdateRecord_Click(object sender, EventArgs e)
