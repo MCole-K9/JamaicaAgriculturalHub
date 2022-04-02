@@ -50,8 +50,35 @@ namespace JAHub_Winforms
         private void FrmCart_Load(object sender, EventArgs e)
         {
             LoadCart(_frmShop.Cart);
-
             CaluculateSubtotal(_frmShop.Cart);
+
+            if (!(fpnlCart.Controls.Count > 0)){
+                
+                Label noItemsText = new Label();
+                noItemsText.Size = new Size(250, 80);
+
+                noItemsText.Text = $"No Items are in you cart\n\nAdd Items From the Product Page";
+
+                Font noItemsTextFont = new Font("Microsoft Sans Serif", 12);
+                noItemsText.Font = noItemsTextFont;
+
+                fpnlCart.Controls.Add(noItemsText);
+
+                
+
+            }
+            else
+            {
+                lblSubTotal.Visible = true;
+                btnCheckOut.Visible = true;
+            }
+         
+            
+                
+
+            
+            
+            
 
         }
 
