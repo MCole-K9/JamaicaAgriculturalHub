@@ -27,10 +27,16 @@ namespace JAHub_Winforms
             lblEditUser.Text = $"Edit User: {_user.FirstName} {_user.LastName}" +
                 $" (ID: {_user.UserID}; Role: {_user.UserRole})";
 
+            // This adds and moves-to-front the usrNameBlock
             flwControlsHolder.Controls.Add(new usrNameBlock(_user.FirstName, _user.MiddleName, 
                 _user.LastName));
             flwControlsHolder.Controls.SetChildIndex(
                 flwControlsHolder.Controls[flwControlsHolder.Controls.Count - 1], 0);
+
+            txtEmail.Text = _user.Email;
+
+            // need to add a bit here that give the user the same kind of combobox as in create user
+            // should this also allow changing passwords?
         }
 
         private void btnUpdateRecord_Click(object sender, EventArgs e)

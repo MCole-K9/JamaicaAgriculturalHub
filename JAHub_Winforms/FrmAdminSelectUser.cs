@@ -139,5 +139,12 @@ namespace JAHub_Winforms
                     dgvUserInformation[2, e.RowIndex].Value.ToString());
             }
         }
+
+        private void btnClearSearchTerm_Click(object sender, EventArgs e)
+        {
+            // All this does is clear the search term, the TextChanged event in txtSearchBox should
+            // do the rest
+            txtSearchBox.Text = "";
+        }
     }
 }

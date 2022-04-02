@@ -51,7 +51,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminViewModeration(_userId));
+            pnlFormHolder.Controls.Add(new FrmAdminViewModeration(_userId, lblNameValue.Text, lblRoleValue.Text));
             pnlFormHolder.Controls[0].Show();
         }
 

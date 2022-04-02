@@ -37,7 +37,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
-            this.btnName = new System.Windows.Forms.Button();
+            this.btnClearSearchTerm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -109,7 +109,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.Controls.Add(this.lblSearch, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtSearchBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnName, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnClearSearchTerm, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -139,15 +139,16 @@
             this.txtSearchBox.TabIndex = 1;
             this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
-            // btnName
+            // btnClearSearchTerm
             // 
-            this.btnName.Location = new System.Drawing.Point(428, 4);
-            this.btnName.Margin = new System.Windows.Forms.Padding(4);
-            this.btnName.Name = "btnName";
-            this.btnName.Size = new System.Drawing.Size(124, 32);
-            this.btnName.TabIndex = 2;
-            this.btnName.Text = "Clear Search";
-            this.btnName.UseVisualStyleBackColor = true;
+            this.btnClearSearchTerm.Location = new System.Drawing.Point(428, 4);
+            this.btnClearSearchTerm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClearSearchTerm.Name = "btnClearSearchTerm";
+            this.btnClearSearchTerm.Size = new System.Drawing.Size(124, 32);
+            this.btnClearSearchTerm.TabIndex = 2;
+            this.btnClearSearchTerm.Text = "Clear Search";
+            this.btnClearSearchTerm.UseVisualStyleBackColor = true;
+            this.btnClearSearchTerm.Click += new System.EventHandler(this.btnClearSearchTerm_Click);
             // 
             // FrmAdminSelectUser
             // 
@@ -176,7 +177,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
-        private System.Windows.Forms.Button btnName;
+        private System.Windows.Forms.Button btnClearSearchTerm;
         private System.Windows.Forms.DataGridViewTextBoxColumn userId;
         private System.Windows.Forms.DataGridViewTextBoxColumn GovernmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn userRole;
