@@ -17,10 +17,18 @@ namespace JAHub_Winforms
 
     public partial class FrmAdminViewModeration : Form
     {
-        public FrmAdminViewModeration()
+        int _userId;
+
+        public FrmAdminViewModeration(int userId)
         {
             InitializeComponent();
             TopLevel = false;
+            _userId = userId;
+        }
+
+        private void FrmAdminViewModeration_Load(object sender, EventArgs e)
+        {
+            // set the label to the user's name and id
         }
     }
 }

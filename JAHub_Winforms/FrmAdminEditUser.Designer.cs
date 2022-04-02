@@ -31,7 +31,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblEditUser = new System.Windows.Forms.Label();
             this.flwControlsHolder = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblUpdateRecord = new System.Windows.Forms.Button();
+            this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.lblEditUser);
             this.flowLayoutPanel1.Controls.Add(this.flwControlsHolder);
-            this.flowLayoutPanel1.Controls.Add(this.lblUpdateRecord);
+            this.flowLayoutPanel1.Controls.Add(this.btnUpdateRecord);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -66,14 +66,15 @@
             this.flwControlsHolder.Size = new System.Drawing.Size(427, 199);
             this.flwControlsHolder.TabIndex = 2;
             // 
-            // lblUpdateRecord
+            // btnUpdateRecord
             // 
-            this.lblUpdateRecord.Location = new System.Drawing.Point(3, 237);
-            this.lblUpdateRecord.Name = "lblUpdateRecord";
-            this.lblUpdateRecord.Size = new System.Drawing.Size(129, 59);
-            this.lblUpdateRecord.TabIndex = 3;
-            this.lblUpdateRecord.Text = "Update";
-            this.lblUpdateRecord.UseVisualStyleBackColor = true;
+            this.btnUpdateRecord.Location = new System.Drawing.Point(3, 237);
+            this.btnUpdateRecord.Name = "btnUpdateRecord";
+            this.btnUpdateRecord.Size = new System.Drawing.Size(129, 32);
+            this.btnUpdateRecord.TabIndex = 3;
+            this.btnUpdateRecord.Text = "Update";
+            this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            this.btnUpdateRecord.Click += new System.EventHandler(this.btnUpdateRecord_Click);
             // 
             // FrmAdminEditUser
             // 
@@ -97,6 +98,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lblEditUser;
         private System.Windows.Forms.FlowLayoutPanel flwControlsHolder;
-        private System.Windows.Forms.Button lblUpdateRecord;
+        private System.Windows.Forms.Button btnUpdateRecord;
     }
 }

@@ -30,11 +30,11 @@
         {
             this.flwAdminViewModeration = new System.Windows.Forms.FlowLayoutPanel();
             this.flwTitleBlock = new System.Windows.Forms.FlowLayoutPanel();
-            this.flwInfractionsHolder = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddInfraction = new System.Windows.Forms.Button();
             this.lblViewInfractions = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.flwInfractionsHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNoInfractions = new System.Windows.Forms.Label();
+            this.btnAddInfraction = new System.Windows.Forms.Button();
             this.flwAdminViewModeration.SuspendLayout();
             this.flwTitleBlock.SuspendLayout();
             this.flwInfractionsHolder.SuspendLayout();
@@ -61,32 +61,10 @@
             this.flwTitleBlock.Controls.Add(this.lblViewInfractions);
             this.flwTitleBlock.Controls.Add(this.lblUserName);
             this.flwTitleBlock.Location = new System.Drawing.Point(4, 4);
-            this.flwTitleBlock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flwTitleBlock.Margin = new System.Windows.Forms.Padding(4);
             this.flwTitleBlock.Name = "flwTitleBlock";
             this.flwTitleBlock.Size = new System.Drawing.Size(372, 29);
             this.flwTitleBlock.TabIndex = 0;
-            // 
-            // flwInfractionsHolder
-            // 
-            this.flwInfractionsHolder.AutoSize = true;
-            this.flwInfractionsHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwInfractionsHolder.Controls.Add(this.lblNoInfractions);
-            this.flwInfractionsHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwInfractionsHolder.Location = new System.Drawing.Point(4, 41);
-            this.flwInfractionsHolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.flwInfractionsHolder.Name = "flwInfractionsHolder";
-            this.flwInfractionsHolder.Size = new System.Drawing.Size(189, 20);
-            this.flwInfractionsHolder.TabIndex = 1;
-            // 
-            // btnAddInfraction
-            // 
-            this.btnAddInfraction.Location = new System.Drawing.Point(4, 69);
-            this.btnAddInfraction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAddInfraction.Name = "btnAddInfraction";
-            this.btnAddInfraction.Size = new System.Drawing.Size(170, 29);
-            this.btnAddInfraction.TabIndex = 2;
-            this.btnAddInfraction.Text = "Add Infraction";
-            this.btnAddInfraction.UseVisualStyleBackColor = true;
             // 
             // lblViewInfractions
             // 
@@ -110,6 +88,18 @@
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "[User]";
             // 
+            // flwInfractionsHolder
+            // 
+            this.flwInfractionsHolder.AutoSize = true;
+            this.flwInfractionsHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwInfractionsHolder.Controls.Add(this.lblNoInfractions);
+            this.flwInfractionsHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flwInfractionsHolder.Location = new System.Drawing.Point(4, 41);
+            this.flwInfractionsHolder.Margin = new System.Windows.Forms.Padding(4);
+            this.flwInfractionsHolder.Name = "flwInfractionsHolder";
+            this.flwInfractionsHolder.Size = new System.Drawing.Size(189, 20);
+            this.flwInfractionsHolder.TabIndex = 1;
+            // 
             // lblNoInfractions
             // 
             this.lblNoInfractions.AutoSize = true;
@@ -120,6 +110,16 @@
             this.lblNoInfractions.TabIndex = 0;
             this.lblNoInfractions.Text = "User has no infractions";
             // 
+            // btnAddInfraction
+            // 
+            this.btnAddInfraction.Location = new System.Drawing.Point(4, 69);
+            this.btnAddInfraction.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddInfraction.Name = "btnAddInfraction";
+            this.btnAddInfraction.Size = new System.Drawing.Size(170, 29);
+            this.btnAddInfraction.TabIndex = 2;
+            this.btnAddInfraction.Text = "Add Infraction";
+            this.btnAddInfraction.UseVisualStyleBackColor = true;
+            // 
             // FrmAdminViewModeration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -128,9 +128,10 @@
             this.Controls.Add(this.flwAdminViewModeration);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminViewModeration";
             this.Text = "FrmAdminViewModeration";
+            this.Load += new System.EventHandler(this.FrmAdminViewModeration_Load);
             this.flwAdminViewModeration.ResumeLayout(false);
             this.flwAdminViewModeration.PerformLayout();
             this.flwTitleBlock.ResumeLayout(false);

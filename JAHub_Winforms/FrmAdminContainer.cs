@@ -14,6 +14,7 @@ namespace JAHub_Winforms
     public partial class FrmAdminContainer : Form
     {
         User _user;
+        int _userId;
         public FrmAdminContainer()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminEditUser());
+            pnlFormHolder.Controls.Add(new FrmAdminEditUser(_userId));
             pnlFormHolder.Controls[0].Show();
         }
 
@@ -49,7 +50,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminViewModeration());
+            pnlFormHolder.Controls.Add(new FrmAdminViewModeration(_userId));
             pnlFormHolder.Controls[0].Show();
         }
 
@@ -78,7 +79,10 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
                 pnlFormHolder.Controls[0].Show();
 
-                // empty the Current User table
+                // these just empty the "Current User" section
+                lblUserIdValue.Text = "";
+                lblNameValue.Text = "";
+                lblRoleValue.Text = "";
             }
         }
 
@@ -123,9 +127,6 @@ namespace JAHub_Winforms
             lblUserIdValue.Text = userId.ToString();
             lblNameValue.Text = userName;
             lblRoleValue.Text = userRole;
-            
-            // idr really think this is necessary, yet
-            _user = new User();
 
             ShowUserOptions();
         }
