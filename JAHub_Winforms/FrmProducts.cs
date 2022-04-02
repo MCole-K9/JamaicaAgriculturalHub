@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -26,18 +27,23 @@ namespace JAHub_Winforms
             _frmShop = frmShop;
         }
         // Create Instances of product using the data that comes from Product Class
-        public void LoadProducts(int num, List<Product> products = null)
+        public void LoadProducts(List<Product> products = null)
         {
             
-            Product product = new Product
+            //Product product = new Product
+            //{
+            //    Id = num,
+            //    Name = "Yam",
+            //    Price = 100,
+            //    Image = Utilities.GetFilePath() + @"\Images\yam-g91011fb33_640.jpg",
+            //};
+
+            foreach(var product in products)
             {
-                Id = num,
-                Name = "Yam",
-                Price = 100,
-                Image = Utilities.GetFilePath() + @"\Images\yam-g91011fb33_640.jpg",
-            };
-            Shop_Controls.UcProduct ucProduct = new Shop_Controls.UcProduct(product, this);
-            fpnlProducts.Controls.Add(ucProduct);
+                Shop_Controls.UcProduct ucProduct = new Shop_Controls.UcProduct(product, this);
+                fpnlProducts.Controls.Add(ucProduct);
+            }
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -47,11 +53,38 @@ namespace JAHub_Winforms
 
         private void FrmProducts_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i < 6; i++)
+
+            List<Product> products = new List<Product>();
+
+            using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
-                LoadProducts(i);
+                connection.Open();
+
+                string query = "Select * from Product";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    while (sqlData.Read())
+                    {
+                        Product product = new Product();
+
+                        product.Id = (int)sqlData["ID"];
+                        product.Name = sqlData["Name"].ToString();
+                        product.Stock = (int)sqlData["Stock"];
+                        product.Price = float.Parse(sqlData["Price"].ToString());
+                        product.Image = sqlData["Image"].ToString();
+
+                        products.Add(product);
+                        
+                    }
+                }
+                LoadProducts(products);
+
             }
             
+
         }
     }
 }
