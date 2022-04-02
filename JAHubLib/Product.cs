@@ -14,6 +14,7 @@ namespace JAHubLib
         private string category;
         private string image;
         private float price;
+        private int stock;
         private List<Review> reviews = new List<Review>();
         private Farmer farmer;
 
@@ -26,5 +27,15 @@ namespace JAHubLib
         
         public List<Review> Reviews { get => reviews; set => reviews = value; }
         public Farmer Farmer { get => farmer; set => farmer = value; }
+        public int Stock { get => stock; set => stock = value; }
+
+        public  string GetUploadedImagePath()
+        {
+            string filename = $"product-{DateTime.Now.Ticks}.jpg";
+
+            return Utilities.CopyImage(Image, filename); 
+        }
+
     }
 }
+
