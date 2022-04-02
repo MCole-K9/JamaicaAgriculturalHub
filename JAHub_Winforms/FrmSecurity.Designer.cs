@@ -41,12 +41,13 @@
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.lblOldPasswordlabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPasswordTiplabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblChangePasswordlabel = new System.Windows.Forms.Label();
             this.errorProviderOldPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderNewPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblPasswordChanged = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,6 +79,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblPasswordChanged);
             this.panel2.Controls.Add(this.lblPasswordConditionlabel);
             this.panel2.Controls.Add(this.btnUpdatePassword);
             this.panel2.Controls.Add(this.txtConfirmPassword);
@@ -167,7 +169,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblPasswordTiplabel);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lblChangePasswordlabel);
             this.panel3.Location = new System.Drawing.Point(73, 100);
@@ -175,16 +177,16 @@
             this.panel3.Size = new System.Drawing.Size(593, 95);
             this.panel3.TabIndex = 2;
             // 
-            // label1
+            // lblPasswordTiplabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(384, 51);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "You may configure and change the security settings for login \r\nin this section. U" +
+            this.lblPasswordTiplabel.AutoSize = true;
+            this.lblPasswordTiplabel.BackColor = System.Drawing.Color.Transparent;
+            this.lblPasswordTiplabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordTiplabel.Location = new System.Drawing.Point(18, 27);
+            this.lblPasswordTiplabel.Name = "lblPasswordTiplabel";
+            this.lblPasswordTiplabel.Size = new System.Drawing.Size(384, 51);
+            this.lblPasswordTiplabel.TabIndex = 2;
+            this.lblPasswordTiplabel.Text = "You may configure and change the security settings for login \r\nin this section. U" +
     "se a strong, unique password to keep your JAH \r\naccount safe.";
             // 
             // pictureBox1
@@ -218,6 +220,15 @@
             // errorProviderConfirmPassword
             // 
             this.errorProviderConfirmPassword.ContainerControl = this;
+            // 
+            // lblPasswordChanged
+            // 
+            this.lblPasswordChanged.AutoSize = true;
+            this.lblPasswordChanged.Location = new System.Drawing.Point(180, 383);
+            this.lblPasswordChanged.Name = "lblPasswordChanged";
+            this.lblPasswordChanged.Size = new System.Drawing.Size(35, 13);
+            this.lblPasswordChanged.TabIndex = 8;
+            this.lblPasswordChanged.Text = "label1";
             // 
             // FrmSecurity
             // 
@@ -260,9 +271,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblChangePasswordlabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPasswordTiplabel;
         private System.Windows.Forms.ErrorProvider errorProviderOldPassword;
         private System.Windows.Forms.ErrorProvider errorProviderNewPassword;
         private System.Windows.Forms.ErrorProvider errorProviderConfirmPassword;
+        private System.Windows.Forms.Label lblPasswordChanged;
     }
 }
