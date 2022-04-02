@@ -77,7 +77,15 @@ namespace JAHub_Winforms
         {
             if (rdbPaypal.Checked)
             {
-                MessageBox.Show("Click Place Order and We'll  send you on to PayPal so that you can complete your purchase. After the transaction has gone through, the order will be placed. Thank you for Shopping");
+                Label paypalMessageLabel = new Label();
+
+                paypalMessageLabel.Text = "Click Place Order and We'll send you on to-\nPayPal so that you can complete your purchase.\nAfter the transaction has gone through,\nthe order will be placed.\nThank you for Shopping";
+                paypalMessageLabel.Location = new Point(15, 161);
+                paypalMessageLabel.Size = new Size(320, 120);
+                Font paypalMessageFont = new Font("Microsoft Sans Serif", 10);
+                paypalMessageLabel.Font = paypalMessageFont;
+                this.Controls.Add(paypalMessageLabel);
+               // MessageBox.Show("Click Place Order and We'll  send you on to PayPal so that you can complete your purchase. After the transaction has gone through, the order will be placed. Thank you for Shopping");
             }
             
         }
