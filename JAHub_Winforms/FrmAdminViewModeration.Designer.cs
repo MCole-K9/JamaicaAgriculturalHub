@@ -119,6 +119,7 @@
             this.btnAddInfraction.TabIndex = 2;
             this.btnAddInfraction.Text = "Add Infraction";
             this.btnAddInfraction.UseVisualStyleBackColor = true;
+            this.btnAddInfraction.Click += new System.EventHandler(this.btnAddInfraction_Click);
             // 
             // FrmAdminViewModeration
             // 

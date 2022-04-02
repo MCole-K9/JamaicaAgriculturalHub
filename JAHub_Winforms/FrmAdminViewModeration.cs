@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using JAHubLib;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using JAHub_Winforms.Moderation;
 
 namespace JAHub_Winforms
 {
@@ -39,6 +40,10 @@ namespace JAHub_Winforms
             // This will primarily set up the db schema and populate it
 
             // These are all for dtbCurrentInfractions
+            DataColumn dclInfractionId = new DataColumn();
+            dclInfractionId.ColumnName = "ID";
+            dclInfractionId.DataType = typeof(int);
+
             DataColumn dclTimeStamp = new DataColumn();
             dclTimeStamp.ColumnName = "TimeStamp";
             dclTimeStamp.DataType = typeof(SqlDateTime);
@@ -51,12 +56,45 @@ namespace JAHub_Winforms
             dclReason.ColumnName = "Reason/Nature of Infraction";
             dclReason.DataType = typeof(String);
 
+            dtbCurrentInfractions.Columns.Add(dclInfractionId);
             dtbCurrentInfractions.Columns.Add(dclTimeStamp);
             dtbCurrentInfractions.Columns.Add(dclAdmin);
             dtbCurrentInfractions.Columns.Add(dclReason);
 
-            // run the query through the connection to populate the table
-            // run the foreach loop to add each infraction
+            using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                String command = "SELECT (TimeStamp, Admin, Reason) FROM [Infraction]";
+
+                SqlCommand infractionsQuery = new SqlCommand (command, connection);
+
+                SqlDataReader reader = infractionsQuery.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    dtbCurrentInfractions.Rows.Add(reader["TimeStamp"].ToString(), reader["Admin"].ToString(),
+                        reader["Reason"].ToString());
+                }
+
+                connection.Close();
+            }
+            if (dtbCurrentInfractions.Rows.Count > 0)
+            {
+               // This just gets rid of the placeholder text that says "user has no infractions"
+               flwInfractionsHolder.Controls.RemoveAt(Controls.Count - 1);
+            }
+
+            foreach (DataRow row in dtbCurrentInfractions.Rows)
+            {
+                flwInfractionsHolder.Controls.Add(new usrInfractionItem(row, flwInfractionsHolder, dtbRemovedInfractions));
+            }
+        }
+
+        private void btnAddInfraction_Click(object sender, EventArgs e)
+        {
+            // create a new add infractions object
+            // send it the flowlayoutpanel, the dtbAddedInfractions, and 
         }
     }
 }
