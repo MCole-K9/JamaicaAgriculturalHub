@@ -21,5 +21,31 @@ namespace JAHubLib
         {
             return "Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8";
         }
+
+        public static string CopyImage(string source, string fileName)
+        {
+            fileName = Path.GetFileName(fileName);
+            string destination = Path.Combine($"{GetFilePath()}\\Images", fileName);
+
+            if (File.Exists(destination))
+            {
+                FileReplace(source, destination);
+            }
+            else
+            {
+                File.Copy(source, destination);
+            }
+            
+
+
+            return destination;
+        }
+        public static void FileReplace(string source, string destination)
+        {
+            if (File.Exists(destination + ".bak")) File.Delete(destination + ".bak");
+            File.Copy(destination, destination + ".bak");
+            File.Delete(destination);
+            File.Copy(source, destination);
+        }
     }
 }
