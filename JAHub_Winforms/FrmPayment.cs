@@ -93,5 +93,67 @@ namespace JAHub_Winforms
                 pnlCardMethod.Visible = false;
             }
         }
+
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+            int paymentCardNumber;
+            int.TryParse(txtCardNumber.Text, out paymentCardNumber);
+
+            int cvv;
+            int.TryParse(txtCVV.Text, out cvv);
+
+            if (rdCreditDebitCard.Checked)
+            {
+                if (txtCardNumber.Text == "" || paymentCardNumber == 0)
+                {
+                    MessageBox.Show("Please Enter an Appropriate Card Number");
+                    txtCardNumber.Focus();
+
+                }else if(txtExpirationDate.Text == "")
+                {
+                    MessageBox.Show("Please Enter Expiration Date");
+                    txtExpirationDate.Focus();
+
+                }else if(txtCVV.Text == "" || cvv == 0)
+                {
+                    MessageBox.Show("Please Enter an Appropirate");
+                    txtCVV.Focus();
+
+                }else if(txtCardHolderName.Text == "")
+                {
+                    MessageBox.Show("Please Enter the Card Holder Name");
+                    txtCardHolderName.Focus();
+                }
+
+            }else if(!chkBillingIsShipping.Checked)
+            {
+                if(txtFirstName.Text == "")
+                {
+                    MessageBox.Show("Please Enter First Name");
+                    txtFirstName.Focus();
+
+                }else if(txtLastName.Text == "")
+                {
+                    MessageBox.Show("Please Enter Last Name");
+                    txtLastName.Focus();
+
+                }else if(txtStreetAddress.Text == "")
+                {
+                    MessageBox.Show("Please Enter Street Address");
+                    txtStreetAddress.Focus();
+
+                }else if (txtCity.Text == "")
+                {
+                    MessageBox.Show("Please Enter City");
+                    txtCity.Focus();
+
+                }else if(txtParish.Text == "")
+                {
+                    MessageBox.Show("Please Enter Parish");
+                    txtParish.Focus();
+                }
+            }
+           
+        }
     }
 }

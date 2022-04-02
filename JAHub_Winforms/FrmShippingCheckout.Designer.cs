@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtLastName);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtFullName);
+            this.panel1.Controls.Add(this.txtFirstName);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtEmailAddress);
             this.panel1.Controls.Add(this.label1);
@@ -131,12 +131,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Last Name";
             // 
-            // txtFullName
+            // txtFirstName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(7, 108);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(300, 20);
-            this.txtFullName.TabIndex = 1;
+            this.txtFirstName.Location = new System.Drawing.Point(7, 108);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(300, 20);
+            this.txtFirstName.TabIndex = 1;
             // 
             // label2
             // 
@@ -207,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(826, 450);
+            this.ClientSize = new System.Drawing.Size(843, 450);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblOrderSummery);
             this.Controls.Add(this.lblShippingDetails);
@@ -229,7 +229,7 @@
         private System.Windows.Forms.FlowLayoutPanel fpnlOrderSummery;
         private System.Windows.Forms.Label lblShippingDetails;
         private System.Windows.Forms.Label lblOrderSummery;
-        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmailAddress;
         private System.Windows.Forms.Label label1;

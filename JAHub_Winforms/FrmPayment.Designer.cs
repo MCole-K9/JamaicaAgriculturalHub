@@ -32,11 +32,16 @@
             this.fpnlOrderSummery = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.gbPaymentMethods = new System.Windows.Forms.GroupBox();
-            this.rdCreditDebitCard = new System.Windows.Forms.RadioButton();
             this.rdbPaypal = new System.Windows.Forms.RadioButton();
+            this.rdCreditDebitCard = new System.Windows.Forms.RadioButton();
             this.lblCartSubtotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlShippingAddress = new System.Windows.Forms.Panel();
+            this.lblParish = new System.Windows.Forms.Label();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.lblStreetAddress = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.chkBillingIsShipping = new System.Windows.Forms.CheckBox();
             this.pnlBillingAddress = new System.Windows.Forms.Panel();
             this.txtParish = new System.Windows.Forms.TextBox();
@@ -47,23 +52,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCardMethod = new System.Windows.Forms.Panel();
-            this.lblCardNumber = new System.Windows.Forms.Label();
-            this.txtCardNumber = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtCVV = new System.Windows.Forms.TextBox();
             this.txtExpirationDate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCVV = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtCardHolderName = new System.Windows.Forms.TextBox();
+            this.txtCardNumber = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblCardNumber = new System.Windows.Forms.Label();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblStreetAddress = new System.Windows.Forms.Label();
-            this.lblTown = new System.Windows.Forms.Label();
-            this.lblParish = new System.Windows.Forms.Label();
             this.gbPaymentMethods.SuspendLayout();
             this.pnlShippingAddress.SuspendLayout();
             this.pnlBillingAddress.SuspendLayout();
@@ -109,6 +109,18 @@
             this.gbPaymentMethods.TabIndex = 5;
             this.gbPaymentMethods.TabStop = false;
             // 
+            // rdbPaypal
+            // 
+            this.rdbPaypal.AutoSize = true;
+            this.rdbPaypal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPaypal.Location = new System.Drawing.Point(7, 55);
+            this.rdbPaypal.Name = "rdbPaypal";
+            this.rdbPaypal.Size = new System.Drawing.Size(69, 21);
+            this.rdbPaypal.TabIndex = 0;
+            this.rdbPaypal.Text = "Paypal";
+            this.rdbPaypal.UseVisualStyleBackColor = true;
+            this.rdbPaypal.CheckedChanged += new System.EventHandler(this.rdbPaypal_CheckedChanged);
+            // 
             // rdCreditDebitCard
             // 
             this.rdCreditDebitCard.AutoSize = true;
@@ -122,18 +134,6 @@
             this.rdCreditDebitCard.Text = "Credit/Debit Card";
             this.rdCreditDebitCard.UseVisualStyleBackColor = true;
             this.rdCreditDebitCard.CheckedChanged += new System.EventHandler(this.rdCreditDebitCard_CheckedChanged);
-            // 
-            // rdbPaypal
-            // 
-            this.rdbPaypal.AutoSize = true;
-            this.rdbPaypal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPaypal.Location = new System.Drawing.Point(7, 55);
-            this.rdbPaypal.Name = "rdbPaypal";
-            this.rdbPaypal.Size = new System.Drawing.Size(69, 21);
-            this.rdbPaypal.TabIndex = 0;
-            this.rdbPaypal.Text = "Paypal";
-            this.rdbPaypal.UseVisualStyleBackColor = true;
-            this.rdbPaypal.CheckedChanged += new System.EventHandler(this.rdbPaypal_CheckedChanged);
             // 
             // lblCartSubtotal
             // 
@@ -168,13 +168,58 @@
             this.pnlShippingAddress.Size = new System.Drawing.Size(298, 263);
             this.pnlShippingAddress.TabIndex = 6;
             // 
+            // lblParish
+            // 
+            this.lblParish.AutoSize = true;
+            this.lblParish.Location = new System.Drawing.Point(15, 155);
+            this.lblParish.Name = "lblParish";
+            this.lblParish.Size = new System.Drawing.Size(36, 13);
+            this.lblParish.TabIndex = 0;
+            this.lblParish.Text = "Parish";
+            // 
+            // lblTown
+            // 
+            this.lblTown.AutoSize = true;
+            this.lblTown.Location = new System.Drawing.Point(15, 119);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(34, 13);
+            this.lblTown.TabIndex = 0;
+            this.lblTown.Text = "Town";
+            // 
+            // lblStreetAddress
+            // 
+            this.lblStreetAddress.AutoSize = true;
+            this.lblStreetAddress.Location = new System.Drawing.Point(15, 84);
+            this.lblStreetAddress.Name = "lblStreetAddress";
+            this.lblStreetAddress.Size = new System.Drawing.Size(82, 13);
+            this.lblStreetAddress.TabIndex = 0;
+            this.lblStreetAddress.Text = "Street Adddress";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(15, 53);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(15, 25);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name";
+            // 
             // chkBillingIsShipping
             // 
             this.chkBillingIsShipping.AutoSize = true;
             this.chkBillingIsShipping.Checked = true;
             this.chkBillingIsShipping.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBillingIsShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBillingIsShipping.Location = new System.Drawing.Point(15, 390);
+            this.chkBillingIsShipping.Location = new System.Drawing.Point(15, 362);
             this.chkBillingIsShipping.Name = "chkBillingIsShipping";
             this.chkBillingIsShipping.Size = new System.Drawing.Size(330, 21);
             this.chkBillingIsShipping.TabIndex = 7;
@@ -192,9 +237,9 @@
             this.pnlBillingAddress.Controls.Add(this.label4);
             this.pnlBillingAddress.Controls.Add(this.txtLastName);
             this.pnlBillingAddress.Controls.Add(this.label3);
-            this.pnlBillingAddress.Controls.Add(this.txtFullName);
+            this.pnlBillingAddress.Controls.Add(this.txtFirstName);
             this.pnlBillingAddress.Controls.Add(this.label7);
-            this.pnlBillingAddress.Location = new System.Drawing.Point(15, 429);
+            this.pnlBillingAddress.Location = new System.Drawing.Point(15, 398);
             this.pnlBillingAddress.Name = "pnlBillingAddress";
             this.pnlBillingAddress.Size = new System.Drawing.Size(332, 325);
             this.pnlBillingAddress.TabIndex = 8;
@@ -264,12 +309,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Last Name";
             // 
-            // txtFullName
+            // txtFirstName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(7, 35);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(300, 20);
-            this.txtFullName.TabIndex = 1;
+            this.txtFirstName.Location = new System.Drawing.Point(7, 35);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(300, 20);
+            this.txtFirstName.TabIndex = 1;
             // 
             // label7
             // 
@@ -295,30 +340,12 @@
             this.pnlCardMethod.Size = new System.Drawing.Size(332, 177);
             this.pnlCardMethod.TabIndex = 8;
             // 
-            // lblCardNumber
+            // txtCVV
             // 
-            this.lblCardNumber.AutoSize = true;
-            this.lblCardNumber.Location = new System.Drawing.Point(5, 11);
-            this.lblCardNumber.Name = "lblCardNumber";
-            this.lblCardNumber.Size = new System.Drawing.Size(113, 13);
-            this.lblCardNumber.TabIndex = 0;
-            this.lblCardNumber.Text = "Payment Card Number";
-            // 
-            // txtCardNumber
-            // 
-            this.txtCardNumber.Location = new System.Drawing.Point(8, 36);
-            this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(263, 20);
-            this.txtCardNumber.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 65);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Expiration Date (MM/YY)";
+            this.txtCVV.Location = new System.Drawing.Point(149, 90);
+            this.txtCVV.Name = "txtCVV";
+            this.txtCVV.Size = new System.Drawing.Size(110, 20);
+            this.txtCVV.TabIndex = 1;
             // 
             // txtExpirationDate
             // 
@@ -336,12 +363,28 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "CVV";
             // 
-            // txtCVV
+            // label8
             // 
-            this.txtCVV.Location = new System.Drawing.Point(149, 90);
-            this.txtCVV.Name = "txtCVV";
-            this.txtCVV.Size = new System.Drawing.Size(110, 20);
-            this.txtCVV.TabIndex = 1;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Expiration Date (MM/YY)";
+            // 
+            // txtCardHolderName
+            // 
+            this.txtCardHolderName.Location = new System.Drawing.Point(8, 147);
+            this.txtCardHolderName.Name = "txtCardHolderName";
+            this.txtCardHolderName.Size = new System.Drawing.Size(263, 20);
+            this.txtCardHolderName.TabIndex = 1;
+            // 
+            // txtCardNumber
+            // 
+            this.txtCardNumber.Location = new System.Drawing.Point(8, 36);
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Size = new System.Drawing.Size(263, 20);
+            this.txtCardNumber.TabIndex = 1;
             // 
             // label10
             // 
@@ -352,12 +395,14 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Card Holder Name";
             // 
-            // txtCardHolderName
+            // lblCardNumber
             // 
-            this.txtCardHolderName.Location = new System.Drawing.Point(8, 147);
-            this.txtCardHolderName.Name = "txtCardHolderName";
-            this.txtCardHolderName.Size = new System.Drawing.Size(263, 20);
-            this.txtCardHolderName.TabIndex = 1;
+            this.lblCardNumber.AutoSize = true;
+            this.lblCardNumber.Location = new System.Drawing.Point(5, 11);
+            this.lblCardNumber.Name = "lblCardNumber";
+            this.lblCardNumber.Size = new System.Drawing.Size(113, 13);
+            this.lblCardNumber.TabIndex = 0;
+            this.lblCardNumber.Text = "Payment Card Number";
             // 
             // btnPlaceOrder
             // 
@@ -367,51 +412,7 @@
             this.btnPlaceOrder.TabIndex = 9;
             this.btnPlaceOrder.Text = "Place Order";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(15, 25);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Name";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(15, 53);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblStreetAddress
-            // 
-            this.lblStreetAddress.AutoSize = true;
-            this.lblStreetAddress.Location = new System.Drawing.Point(15, 84);
-            this.lblStreetAddress.Name = "lblStreetAddress";
-            this.lblStreetAddress.Size = new System.Drawing.Size(82, 13);
-            this.lblStreetAddress.TabIndex = 0;
-            this.lblStreetAddress.Text = "Street Adddress";
-            // 
-            // lblTown
-            // 
-            this.lblTown.AutoSize = true;
-            this.lblTown.Location = new System.Drawing.Point(15, 119);
-            this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(34, 13);
-            this.lblTown.TabIndex = 0;
-            this.lblTown.Text = "Town";
-            // 
-            // lblParish
-            // 
-            this.lblParish.AutoSize = true;
-            this.lblParish.Location = new System.Drawing.Point(15, 155);
-            this.lblParish.Name = "lblParish";
-            this.lblParish.Size = new System.Drawing.Size(36, 13);
-            this.lblParish.TabIndex = 0;
-            this.lblParish.Text = "Parish";
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
             // FrmPayment
             // 
@@ -467,7 +468,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlCardMethod;
         private System.Windows.Forms.TextBox txtCVV;

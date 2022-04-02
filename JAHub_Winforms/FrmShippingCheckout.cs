@@ -42,7 +42,45 @@ namespace JAHub_Winforms
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            _frmCart._frmShop.OpenChildForm(new FrmPayment(this));
+            if(txtEmailAddress.Text == "")
+            {
+                MessageBox.Show("Please Enter Email Address");
+                txtEmailAddress.Focus();
+            }
+            else if (txtFirstName.Text == "")
+            {
+                MessageBox.Show("Please Enter First Name");
+                txtFirstName.Focus();
+
+            }
+            else if (txtLastName.Text == "")
+            {
+                MessageBox.Show("Please Enter Last Name");
+                txtLastName.Focus();
+
+            }
+            else if (txtStreetAddress.Text == "")
+            {
+                MessageBox.Show("Please Enter Street Address");
+                txtStreetAddress.Focus();
+
+            }
+            else if (txtCity.Text == "")
+            {
+                MessageBox.Show("Please Enter City");
+                txtCity.Focus();
+
+            }
+            else if (txtParish.Text == "")
+            {
+                MessageBox.Show("Please Enter Parish");
+                txtParish.Focus();
+            }
+            else
+            {
+                _frmCart._frmShop.OpenChildForm(new FrmPayment(this));
+            }
+            
         }
     }
 }
