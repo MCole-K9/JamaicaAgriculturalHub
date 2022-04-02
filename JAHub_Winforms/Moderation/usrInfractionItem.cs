@@ -15,6 +15,12 @@ namespace JAHub_Winforms.Moderation
         public usrInfractionItem()
         {
             InitializeComponent();
+
+            // This should get a reference to the controls it sits within and the datatable that it
+            // corresponds to (and the delete record one, too), so that it can:
+            // A. Put the relevant information on a Remove List when it gets deleted
+            // B. Tell the Control that owns it to remove it
+            // C. Close itself.
         }
     }
 }

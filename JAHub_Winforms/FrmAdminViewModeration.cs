@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace JAHub_Winforms
 {
-    /* TO DO
-     * [x] OnLoad change title of form to show user's name and ID
-     * 
-     */
-
     public partial class FrmAdminViewModeration : Form
     {
+        DataTable dtbCurrentInfractions;
+        DataTable dtbAddedInfractions;
+        DataTable dtbRemovedInfractions;
+
         int _userId;
         String _name;
         String _role;
@@ -31,16 +32,31 @@ namespace JAHub_Winforms
             _role = userRole;
 
             lblUserName.Text = $"{_name} (ID: {_userId}; Role: {_role})";
-
-            // need this to pull a list of infractions
-            // which means the infraction list needs to exist
-            // which means db work
-            //
         }
 
         private void FrmAdminViewModeration_Load(object sender, EventArgs e)
         {
-            // set the label to the user's name and id
+            // This will primarily set up the db schema and populate it
+
+            // These are all for dtbCurrentInfractions
+            DataColumn dclTimeStamp = new DataColumn();
+            dclTimeStamp.ColumnName = "TimeStamp";
+            dclTimeStamp.DataType = typeof(SqlDateTime);
+
+            DataColumn dclAdmin = new DataColumn();
+            dclAdmin.ColumnName = "Administered By";
+            dclAdmin.DataType = typeof(String);
+
+            DataColumn dclReason = new DataColumn();
+            dclReason.ColumnName = "Reason/Nature of Infraction";
+            dclReason.DataType = typeof(String);
+
+            dtbCurrentInfractions.Columns.Add(dclTimeStamp);
+            dtbCurrentInfractions.Columns.Add(dclAdmin);
+            dtbCurrentInfractions.Columns.Add(dclReason);
+
+            // run the query through the connection to populate the table
+            // run the foreach loop to add each infraction
         }
     }
 }

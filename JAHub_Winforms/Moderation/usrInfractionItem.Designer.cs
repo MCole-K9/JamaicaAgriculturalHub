@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblInfractionAdder = new System.Windows.Forms.TableLayoutPanel();
             this.lblTimeStamp = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.lblInfractionReason = new System.Windows.Forms.Label();
+            this.btnRemoveInfraction = new System.Windows.Forms.Button();
+            this.lblAddedById = new System.Windows.Forms.Label();
+            this.tblInfractionAdder.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tblInfractionAdder
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.lblTimeStamp, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(542, 38);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tblInfractionAdder.ColumnCount = 4;
+            this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
+            this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tblInfractionAdder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblInfractionAdder.Controls.Add(this.lblTimeStamp, 0, 0);
+            this.tblInfractionAdder.Controls.Add(this.lblInfractionReason, 1, 0);
+            this.tblInfractionAdder.Controls.Add(this.btnRemoveInfraction, 3, 0);
+            this.tblInfractionAdder.Controls.Add(this.lblAddedById, 2, 0);
+            this.tblInfractionAdder.Location = new System.Drawing.Point(0, 0);
+            this.tblInfractionAdder.Margin = new System.Windows.Forms.Padding(0);
+            this.tblInfractionAdder.Name = "tblInfractionAdder";
+            this.tblInfractionAdder.RowCount = 1;
+            this.tblInfractionAdder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblInfractionAdder.Size = new System.Drawing.Size(809, 38);
+            this.tblInfractionAdder.TabIndex = 1;
             // 
             // lblTimeStamp
             // 
@@ -63,50 +66,61 @@
             this.lblTimeStamp.TabIndex = 0;
             this.lblTimeStamp.Text = "XXXX-XX-XX";
             // 
-            // label2
+            // lblInfractionReason
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Text Reason for whatever";
+            this.lblInfractionReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblInfractionReason.AutoSize = true;
+            this.lblInfractionReason.Location = new System.Drawing.Point(121, 9);
+            this.lblInfractionReason.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInfractionReason.Name = "lblInfractionReason";
+            this.lblInfractionReason.Size = new System.Drawing.Size(200, 20);
+            this.lblInfractionReason.TabIndex = 1;
+            this.lblInfractionReason.Text = "Text Reason for whatever";
             // 
-            // button1
+            // btnRemoveInfraction
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.Location = new System.Drawing.Point(505, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRemoveInfraction.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnRemoveInfraction.Location = new System.Drawing.Point(605, 4);
+            this.btnRemoveInfraction.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveInfraction.Name = "btnRemoveInfraction";
+            this.btnRemoveInfraction.Size = new System.Drawing.Size(33, 29);
+            this.btnRemoveInfraction.TabIndex = 2;
+            this.btnRemoveInfraction.Text = "X";
+            this.btnRemoveInfraction.UseVisualStyleBackColor = true;
             // 
-            // usrInfractionAdder
+            // lblAddedById
+            // 
+            this.lblAddedById.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAddedById.AutoSize = true;
+            this.lblAddedById.Location = new System.Drawing.Point(504, 9);
+            this.lblAddedById.Name = "lblAddedById";
+            this.lblAddedById.Size = new System.Drawing.Size(53, 20);
+            this.lblAddedById.TabIndex = 3;
+            this.lblAddedById.Text = "label1";
+            // 
+            // usrInfractionItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tblInfractionAdder);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "usrInfractionAdder";
-            this.Size = new System.Drawing.Size(542, 38);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.Name = "usrInfractionItem";
+            this.Size = new System.Drawing.Size(809, 38);
+            this.tblInfractionAdder.ResumeLayout(false);
+            this.tblInfractionAdder.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblInfractionAdder;
         private System.Windows.Forms.Label lblTimeStamp;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblInfractionReason;
+        private System.Windows.Forms.Button btnRemoveInfraction;
+        private System.Windows.Forms.Label lblAddedById;
     }
 }
