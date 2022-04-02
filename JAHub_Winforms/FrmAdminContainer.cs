@@ -27,7 +27,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminSelectUser());
+            pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
             pnlFormHolder.Controls[0].Show();
         }
 
@@ -75,7 +75,7 @@ namespace JAHub_Winforms
                     pnlFormHolder.Controls.Clear();
                 }
 
-                pnlFormHolder.Controls.Add(new FrmAdminSelectUser());
+                pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
                 pnlFormHolder.Controls[0].Show();
 
                 // empty the Current User table
@@ -118,11 +118,14 @@ namespace JAHub_Winforms
             btnEditUser.Show();
         }
 
-        private void SetCurrentUser(int userId)
+        public void SetCurrentUser(int userId, String userName, String userRole)
         {
-            // this should basically query the db and create a new user
-            // while also populating the table to the side
-            // while also showing the other user options
+            lblUserIdValue.Text = userId.ToString();
+            lblNameValue.Text = userName;
+            lblRoleValue.Text = userRole;
+            
+            // idr really think this is necessary, yet
+            _user = new User();
 
             ShowUserOptions();
         }

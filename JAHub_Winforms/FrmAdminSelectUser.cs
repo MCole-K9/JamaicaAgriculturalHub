@@ -14,12 +14,14 @@ namespace JAHub_Winforms
 {
     public partial class FrmAdminSelectUser : Form
     {
+        FrmAdminContainer _parent;
         DataTable allUsersSelection;
 
-        public FrmAdminSelectUser()
+        public FrmAdminSelectUser(FrmAdminContainer parent)
         {
             InitializeComponent();
             TopLevel = false;
+            _parent = parent;
         }
 
         private void FrmAdminSelectUser_Load(object sender, EventArgs e)
@@ -103,18 +105,35 @@ namespace JAHub_Winforms
             dgvUserInformation.Columns.Add(nameViewColumn);
             dgvUserInformation.Columns.Add(userRoleViewColumn);
             dgvUserInformation.Columns.Add(selectUserButtonColumn);
-
-            // how do i add an event to the column i need to?
-            // how do i add the method of this class' parent when it doesn't know ahead of time what its
-            // parent will be?
-
-            // try using "CellMouseClick" event for datagridview
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
-            // This is roughly where the filtering will happen
-            // but how do i actually filter anything lol
+            if (txtSearchBox.Text == "")
+            {
+                // set the rowfilter to nothing
+            }
+            else
+            {
+                // 
+            }
+        }
+
+        private void dgvUserInformation_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // this just stops the user from being able to break the program by clicking the empty line at the bottom
+            if (dgvUserInformation[e.ColumnIndex, e.RowIndex].Value.ToString() == "")
+            {
+                return;
+            }
+            // All the buttons are in column 3, so
+            if (e.ColumnIndex == 3)
+            {
+                // This sends the userId, Name, and Role of the user
+                _parent.SetCurrentUser(Int32.Parse(dgvUserInformation[0, e.RowIndex].Value.ToString()), 
+                    dgvUserInformation[1, e.RowIndex].Value.ToString(), 
+                    dgvUserInformation[2, e.RowIndex].Value.ToString());
+            }
         }
     }
 }
