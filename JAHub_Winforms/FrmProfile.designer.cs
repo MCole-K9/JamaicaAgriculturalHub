@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelHomeContainer = new System.Windows.Forms.Panel();
+            this.btnManageProducts = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,6 +50,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panelMenu.Controls.Add(this.btnManageProducts);
             this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnSecurity);
             this.panelMenu.Controls.Add(this.btnDashboard);
@@ -211,10 +213,30 @@
             this.panelHomeContainer.Size = new System.Drawing.Size(945, 585);
             this.panelHomeContainer.TabIndex = 1;
             // 
+            // btnManageProducts
+            // 
+            this.btnManageProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageProducts.FlatAppearance.BorderSize = 0;
+            this.btnManageProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageProducts.ForeColor = System.Drawing.Color.White;
+            this.btnManageProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnManageProducts.Image")));
+            this.btnManageProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageProducts.Location = new System.Drawing.Point(0, 246);
+            this.btnManageProducts.Name = "btnManageProducts";
+            this.btnManageProducts.Size = new System.Drawing.Size(218, 39);
+            this.btnManageProducts.TabIndex = 6;
+            this.btnManageProducts.Text = "Manage Products";
+            this.btnManageProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManageProducts.UseVisualStyleBackColor = true;
+            this.btnManageProducts.Click += new System.EventHandler(this.btnManageProducts_Click);
+            // 
             // FrmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1176, 600);
             this.Controls.Add(this.panelHomeContainer);
             this.Controls.Add(this.panelMenu);
@@ -243,6 +265,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnManageProducts;
     }
 }
 
