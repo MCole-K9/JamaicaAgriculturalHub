@@ -111,11 +111,15 @@ namespace JAHub_Winforms
         {
             if (txtSearchBox.Text == "")
             {
-                // set the rowfilter to nothing
+                // DGV doesn't contain a RowFilter property, datatable doesn't either
+                // so i need some way of doing that that doesn't probably result in 
+                // rewriting a bunch of code
+
+                // This would just reset the filtering
             }
             else
             {
-                // 
+                // Here is where the filtering would actually happen
             }
         }
 
