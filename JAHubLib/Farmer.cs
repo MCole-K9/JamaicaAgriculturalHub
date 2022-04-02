@@ -87,5 +87,21 @@ namespace JAHubLib
 
             }
         }
+
+        public int AddProduct(Product product)
+        {
+            using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"INSERT INTO [Product] (Name, Stock, Price, Image, Farmer)" +
+                    $"Values ( '{product.Name}', {product.Stock}, {product.Price}, '{product.GetUploadedImagePath()}', {1})";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                int i = cmd.ExecuteNonQuery();
+
+                return i;
+            }
+        }
     }
 }
