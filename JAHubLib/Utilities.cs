@@ -100,5 +100,9 @@ namespace JAHubLib
             
             
         }
+        public static string getCreateBlogSqlString(Blog newBlog)
+        {
+            return "INSERT INTO Blog (Title, Author, Description, Body, PublishedDate, Rating) VALUES ('" + newBlog.Title + "','" + 3 + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");";
+        }
     }
 }
