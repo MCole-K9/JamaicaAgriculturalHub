@@ -14,12 +14,14 @@ namespace JAHub_Winforms.Blog_Controls
     public partial class ucBlogPost : UserControl
     {
         Blog blog = new Blog();
+        User user = new User();
         public ucBlogPost()
         {
             InitializeComponent();
         }
-        public ucBlogPost(Blog b)
+        public ucBlogPost(Blog b,User u)
         {
+            user = u;
             blog = b;
             InitializeComponent();
             lblBlogTitle.Text = blog.Title;
@@ -31,7 +33,7 @@ namespace JAHub_Winforms.Blog_Controls
 
         private void btnViewBlog_Click(object sender, EventArgs e)
         {
-            FrmBlogDetails blogDetails = new FrmBlogDetails(blog);
+            FrmBlogDetails blogDetails = new FrmBlogDetails(blog,user);
             blogDetails.Show();
 
         }
