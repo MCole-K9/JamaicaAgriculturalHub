@@ -14,12 +14,27 @@ namespace JAHub_Winforms
     public partial class FrmAddEditProduct : Form
     {
         private Product product;
+        bool inEditMode;
         public FrmAddEditProduct()
         {
             InitializeComponent();
-            product = new Product();
+            this.product = new Product();
+            inEditMode = false;
         }
-
+        public FrmAddEditProduct(Product product)
+        {
+            InitializeComponent();
+            this.product = product;
+            inEditMode = true;
+        }
+        private void PopulateFields()
+        {
+            pbImage.ImageLocation = product.Image;
+            txtProductName.Text = product.Name;
+            txtPrice.Text = product.Price.ToString();
+            txtStock.Text = product.Stock.ToString();
+            
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -29,13 +44,9 @@ namespace JAHub_Winforms
         {
             if(ofdProductImage.ShowDialog() == DialogResult.OK)
             {
-                //MessageBox.Show(ofdProductImage.FileName);
                 pbImage.ImageLocation = ofdProductImage.FileName;
 
-
                 product.Image = ofdProductImage.FileName;
-              
-
                  
             }
         }
@@ -55,10 +66,33 @@ namespace JAHub_Winforms
             product.Price = price;
             product.Stock = stock;
 
-            if(farmer.AddProduct(product) > 0)
+
+            if (inEditMode)
             {
-                MessageBox.Show("Item Added");
+                if (farmer.UpdateProduct(product) > 0)
+                {
+                    MessageBox.Show("Item Successfulyy Succesfully");
+                }
             }
+            else
+            {
+                if (farmer.AddProduct(product) > 0)
+                {
+                    MessageBox.Show("Item Added Succesfully");
+                }
+            }
+
+            
+        }
+
+        private void FrmAddEditProduct_Load(object sender, EventArgs e)
+        {
+            lblAddUpdate.Text = inEditMode ? "Update Product" : "Add Product";
+            btnAddChangeImage.Text = inEditMode ? "Change Image" : "Add Image";
+
+            if (inEditMode)
+                PopulateFields();
+            
         }
     }
 }
