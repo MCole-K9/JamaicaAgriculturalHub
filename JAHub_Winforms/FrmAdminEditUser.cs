@@ -45,5 +45,20 @@ namespace JAHub_Winforms
             // if good, run an update record function in User
             // if not good, tell them to their face
         }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            // regular drill, you know the deal
+        }
+
+        private void txtPasswordFirstEntry_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void txtPasswordSecondEntry_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

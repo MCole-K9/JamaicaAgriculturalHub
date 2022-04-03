@@ -117,6 +117,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(161, 27);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // tblPasswordEntry
             // 
@@ -142,6 +143,7 @@
             this.txtPasswordSecondEntry.PasswordChar = '*';
             this.txtPasswordSecondEntry.Size = new System.Drawing.Size(161, 27);
             this.txtPasswordSecondEntry.TabIndex = 4;
+            this.txtPasswordSecondEntry.Validating += new System.ComponentModel.CancelEventHandler(this.txtPasswordSecondEntry_Validating);
             // 
             // lblPassword
             // 
@@ -170,6 +172,7 @@
             this.txtPasswordFirstEntry.PasswordChar = '*';
             this.txtPasswordFirstEntry.Size = new System.Drawing.Size(161, 27);
             this.txtPasswordFirstEntry.TabIndex = 3;
+            this.txtPasswordFirstEntry.Validating += new System.ComponentModel.CancelEventHandler(this.txtPasswordFirstEntry_Validating);
             // 
             // btnUpdateRecord
             // 
