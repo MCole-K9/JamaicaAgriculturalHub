@@ -63,6 +63,12 @@
     <Compile Include="Blog_Controls\ucBlogPost.Designer.cs">
       <DependentUpon>ucBlogPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddEditProduct.Designer.cs">
+      <DependentUpon>FrmAddEditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminCreateNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="FrmGrantDetails.Designer.cs">
       <DependentUpon>FrmGrantDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageProducts.Designer.cs">
+      <DependentUpon>FrmManageProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPayment.cs">
       <SubType>Form</SubType>
@@ -278,6 +290,12 @@
     <Compile Include="Shop_Controls\UcProduct.Designer.cs">
       <DependentUpon>UcProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shop_Controls\UsrFarmerProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrFarmerProduct.Designer.cs">
+      <DependentUpon>UsrFarmerProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shop_Controls\UsrOrderSumItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -386,6 +404,9 @@
     <EmbeddedResource Include="Blog_Controls\ucBlogPost.resx">
       <DependentUpon>ucBlogPost.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddEditProduct.resx">
+      <DependentUpon>FrmAddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminCreateNewUser.resx">
       <DependentUpon>FrmAdminCreateNewUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainWindow.resx">
       <DependentUpon>FrmMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageProducts.resx">
+      <DependentUpon>FrmManageProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPayment.resx">
       <DependentUpon>FrmPayment.cs</DependentUpon>
@@ -501,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UcProduct.resx">
       <DependentUpon>UcProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop_Controls\UsrFarmerProduct.resx">
+      <DependentUpon>UsrFarmerProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UsrOrderSumItem.resx">
       <DependentUpon>UsrOrderSumItem.cs</DependentUpon>

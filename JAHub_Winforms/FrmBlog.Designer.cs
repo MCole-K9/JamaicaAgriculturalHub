@@ -39,7 +39,6 @@
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.btntest = new System.Windows.Forms.Button();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,14 +68,15 @@
             this.comboSort.FormattingEnabled = true;
             this.comboSort.Items.AddRange(new object[] {
             "Latest",
-            "Rating",
             "Oldest",
+            "Rating",
             "A-Z",
             "Z-A"});
             this.comboSort.Location = new System.Drawing.Point(935, 144);
             this.comboSort.Name = "comboSort";
             this.comboSort.Size = new System.Drawing.Size(121, 21);
             this.comboSort.TabIndex = 15;
+            this.comboSort.SelectionChangeCommitted += new System.EventHandler(this.comboSort_SelectionChangeCommitted);
             // 
             // txtSearchBar
             // 
@@ -84,15 +84,18 @@
             this.txtSearchBar.Name = "txtSearchBar";
             this.txtSearchBar.Size = new System.Drawing.Size(161, 20);
             this.txtSearchBar.TabIndex = 16;
+            this.txtSearchBar.Enter += new System.EventHandler(this.txtSearchBar_Enter);
             // 
             // btnSearchBar
             // 
+            this.btnSearchBar.Enabled = false;
             this.btnSearchBar.Location = new System.Drawing.Point(343, 143);
             this.btnSearchBar.Name = "btnSearchBar";
             this.btnSearchBar.Size = new System.Drawing.Size(67, 23);
             this.btnSearchBar.TabIndex = 17;
             this.btnSearchBar.Text = "Search";
             this.btnSearchBar.UseVisualStyleBackColor = true;
+            this.btnSearchBar.Click += new System.EventHandler(this.btnSearchBar_Click);
             // 
             // lblSortBy
             // 
@@ -194,22 +197,11 @@
             this.pnlLogo.Size = new System.Drawing.Size(141, 123);
             this.pnlLogo.TabIndex = 0;
             // 
-            // btntest
-            // 
-            this.btntest.Location = new System.Drawing.Point(520, 87);
-            this.btntest.Name = "btntest";
-            this.btntest.Size = new System.Drawing.Size(150, 23);
-            this.btntest.TabIndex = 21;
-            this.btntest.Text = "test";
-            this.btntest.UseVisualStyleBackColor = true;
-            this.btntest.Click += new System.EventHandler(this.btntest_Click);
-            // 
             // FrmBlog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 653);
-            this.Controls.Add(this.btntest);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.lblSortBy);
             this.Controls.Add(this.btnSearchBar);
@@ -237,7 +229,6 @@
         private FontAwesome.Sharp.IconButton btnCreateBlog;
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;
-        private System.Windows.Forms.Button btntest;
     }
 }
 

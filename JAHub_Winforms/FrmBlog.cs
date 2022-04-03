@@ -14,34 +14,30 @@ namespace JAHub_Winforms
 {
     public partial class FrmBlog : Form
     {
-
-
+        User user = new User();
         public FrmBlog()
         {
             InitializeComponent();
-
-            SqlConnection connection = new SqlConnection("Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8");
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
             connection.Open();
             SqlDataReader sqlData = cmd.ExecuteReader();
+            Utils.DisplayBlogsFromDatabase(user, sqlData, pnlContainer);
+            connection.Close();
+        }
+        public FrmBlog(User u)
+        {
+            user = u;
+            InitializeComponent();
 
-            while (sqlData.Read())
-            {
-                Blog blog = new Blog();
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
 
-                blog.BlogID = (int)sqlData["ID"];
-                blog.Title = sqlData["Title"].ToString();
-                blog.Author.UserID = (int)sqlData["Author"];
-                blog.Description = sqlData["Description"].ToString();
-                blog.BlogBody = sqlData["Body"].ToString();
-                blog.PublishDateString = sqlData["PublishedDate"].ToString();
-                blog.Rating = Convert.ToInt16(sqlData["Rating"]);
-                Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(blog);
-                pnlContainer.Controls.Add(ucBlogPost);
-                ucBlogPost.Dock = DockStyle.Top;
-
-            }
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
+            connection.Open();
+            SqlDataReader sqlData = cmd.ExecuteReader();
+            Utils.DisplayBlogsFromDatabase(user, sqlData, pnlContainer);
+            connection.Close();
 
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
@@ -107,17 +103,52 @@ namespace JAHub_Winforms
             }
         }
 
-        private void btntest_Click(object sender, EventArgs e)
-        {
-            Blog testblog = new Blog();
-            Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(testblog);
-            pnlContainer.Controls.Add(ucBlogPost);
-            ucBlogPost.Dock = DockStyle.Top;
-        }
-
         private void pnlContainer_ClientSizeChanged(object sender, EventArgs e)
         {
             pnlContainer.Padding = new Padding(0, 0, 0, 0);
+        }
+
+        private void btnSearchBar_Click(object sender, EventArgs e)
+        {
+            Utils.ClearPanel(pnlContainer);
+            if (txtSearchBar.Text != "")
+            {
+                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+                connection.Open();
+                SqlCommand SearchCmd = new SqlCommand($"SELECT * FROM [Blog] WHERE Title LIKE '%{txtSearchBar.Text}%'", connection);
+                SqlDataReader reader = SearchCmd.ExecuteReader();
+                Utils.DisplayBlogsFromDatabase(user,reader, pnlContainer);
+                connection.Close();
+            }
+        }
+
+        private void txtSearchBar_Enter(object sender, EventArgs e)
+        {
+            btnSearchBar.Enabled = true;
+        }
+
+        private void comboSort_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Utils.ClearPanel(pnlContainer);
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand SortCmd = new SqlCommand();
+            SortCmd.Connection = connection;
+            if (comboSort.SelectedItem.ToString() == "A-Z")
+            {
+                SortCmd.CommandText = "EXEC SortBlogsAscending";
+            }
+            else if (comboSort.SelectedItem.ToString() == "Z-A")
+            {
+                SortCmd.CommandText = "EXEC SortBlogsDescending";
+            }
+            else if (comboSort.SelectedItem.ToString() == "Rating")
+            {
+                SortCmd.CommandText = "EXEC SortBlogsRating";
+            }
+            SqlDataReader reader = SortCmd.ExecuteReader();
+            Utils.DisplayBlogsFromDatabase(user, reader, pnlContainer);
+            connection.Close();
         }
     }
 }

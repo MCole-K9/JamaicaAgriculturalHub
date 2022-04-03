@@ -14,7 +14,6 @@ namespace JAHubLib
         public string FirstName { set; get; }
         public string MiddleName { set; get; }
         public string LastName { set; get; }
-        public string Username { set; get; }
         public string Password { set; get; }
         public string Email { set; get; } 
         
@@ -87,6 +86,54 @@ namespace JAHubLib
 
                 writeToDb.ExecuteNonQuery();
 
+                connection.Close();
+            }
+        }
+
+        public void ReadFromDatabase(int userId)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+                
+                String command = $"SELECT * FROM [USER] WHERE ID={userId}";
+
+                SqlCommand getRecord = new SqlCommand(command, connection);
+
+                SqlDataReader reader = getRecord.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    UserID = userId;
+                    FirstName = reader["FirstName"].ToString();
+                    MiddleName = reader["MiddleName"].ToString();
+                    LastName = reader["LastName"].ToString();
+                    Email = reader["EmailAddress"].ToString();
+                    Password = reader["Password"].ToString();
+                    UserRole = (UserRole)reader["UserRole"];
+                }
+
+                connection.Close();
+            }
+        }
+        public void CreateBlogPost(Blog newBlog,string title,string desc, string body)
+        {
+            newBlog.Author.UserID = this.UserID;
+            newBlog.Title = title;
+            newBlog.Description = desc;
+            newBlog.PublishDateString = DateTime.Now.ToShortDateString();
+            newBlog.BlogBody = body;
+            newBlog.Rating = 0;
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(Utilities.getCreateBlogSqlString(newBlog),connection);
+            int i = cmd.ExecuteNonQuery();
+            if (i == 0)
+            {
+                throw new Exception("DATABASE_ERROR_NO_ROWS_AFFECTED");
+            }
+            else
+            {
                 connection.Close();
             }
         }

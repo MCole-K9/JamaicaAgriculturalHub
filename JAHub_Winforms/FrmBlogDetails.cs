@@ -14,12 +14,14 @@ namespace JAHub_Winforms
     public partial class FrmBlogDetails : Form
     {
         Blog displayedBlog = new Blog();
+        User user = new User();
         public FrmBlogDetails()
         {
             InitializeComponent();
         }
-        public FrmBlogDetails(Blog blog)
+        public FrmBlogDetails(Blog blog, User u)
         {
+            user = u;
             displayedBlog = blog;
             InitializeComponent();
             lblTitle.Text = displayedBlog.Title;
@@ -81,9 +83,7 @@ namespace JAHub_Winforms
             displayedBlog.Rating++;
             SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
             connection.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "' AND ID = '" + displayedBlog.BlogID + "'");
-            
-            cmd.Connection = connection;
+            SqlCommand cmd = new SqlCommand($"UPDATE Blog SET Rating = {displayedBlog.Rating} WHERE ID = {displayedBlog.BlogID}",connection);
             cmd.ExecuteNonQuery();
         }
 
@@ -92,10 +92,9 @@ namespace JAHub_Winforms
             if (displayedBlog.Rating > 0)
             {
                 displayedBlog.Rating--;
-                SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
+                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Blog SET Rating = " + displayedBlog.Rating + " WHERE Author = '" + 3 + "' AND ID = '" + displayedBlog.BlogID + "'");
-                cmd.Connection = connection;
+                SqlCommand cmd = new SqlCommand($"UPDATE Blog SET Rating = {displayedBlog.Rating} WHERE ID = {displayedBlog.BlogID}", connection);
                 cmd.ExecuteNonQuery();
             }
         }

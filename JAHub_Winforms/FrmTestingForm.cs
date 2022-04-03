@@ -28,5 +28,10 @@ namespace JAHub_Winforms
             lblBusinessEmail.Text = farmer.BusinessEmail;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Utilities.DeleteImages();
+        }
     }
 }

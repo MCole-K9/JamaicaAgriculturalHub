@@ -26,7 +26,7 @@ namespace JAHub_Winforms
 
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (CurrentChildForm != null)
             {
@@ -109,6 +109,11 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmSecurity());
             HighlightButtons(btnSecurity);
                 
+        }
+
+        private void btnManageProducts_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmManageProducts(this));
         }
     }
 }
