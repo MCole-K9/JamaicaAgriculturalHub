@@ -22,21 +22,40 @@ namespace JAHub_Winforms.Moderation
 
             this.recordId = (int)row[0];
             this.controlParent = controlParent;
+            this.removedInfractions = removedInfractions;
 
             lblTimeStamp.Text = row[1].ToString();
             lblAddedById.Text = $"Added by ID: {row[2].ToString()}";
             lblInfractionReason.Text = $"Reason: {row[3].ToString()}";
-            
-            // A. Put the relevant information on a Remove List when it gets deleted
-            // B. Tell the Control that owns it to remove it
-            // C. Close itself.
+        }
+        
+        // This constructor is for what usrInfractionAdder should make after the admin submits
+        public usrInfractionItem(FlowLayoutPanel controlParent)
+        {
+            InitializeComponent();
+
+            this.controlParent = controlParent;
         }
 
         private void btnRemoveInfraction_Click(object sender, EventArgs e)
         {
-            // Add the record Id to dtbRemovedInfractions;
-            // Does this even need a full datatable?
-            // I'm going to pretend it does
+            // All this does is add the recordId of the entry, which it got from dtbCurrentInfractions
+            if(recordId != 0)
+            {
+                // because usrInfractionAdder can create new usrInfractionEntry objects,
+                // this is necessary to guard against an error. it won't bother to add
+                // this to the removedInfractions list if recrodId=0
+                removedInfractions.Rows.Add(this.recordId);
+                controlParent.Controls.Remove(this);
+            }
+            else
+            {
+                // remove the corresponding record from the addedInfractions list
+                // this requires getting a reference to that list
+                // also requires comparing something in common between list items and this
+                // i suggest timestamps
+            }
+
         }
     }
 }

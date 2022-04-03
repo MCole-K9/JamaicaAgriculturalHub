@@ -16,14 +16,16 @@ namespace JAHub_Winforms.Moderation
         DataTable addedInfractions;
         int userId;
         int adminId;
+        FlowLayoutPanel controlParent;
 
-        public usrInfractionAdder(DataTable addedInfractions, int userId, int adminId)
+        public usrInfractionAdder(DataTable addedInfractions, int userId, int adminId, FlowLayoutPanel controlParent)
         {
             InitializeComponent();
 
             this.userId = userId;
             this.adminId = adminId;
             this.addedInfractions = addedInfractions;
+            this.controlParent = controlParent;
         }
 
         private void usrInfractionAdder_Load(object sender, EventArgs e)
@@ -36,6 +38,10 @@ namespace JAHub_Winforms.Moderation
         {
             // This should add the the generated infraction information to dtbAddedInfractions
             // it should also remove this control and create a new usrInfractionItem
+            addedInfractions.Rows.Add(lblTimeStamp.Text, userId, adminId, txtInfractionReason.Text);
+
+            controlParent.Controls.Add(new usrInfractionItem(controlParent));
+            controlParent.Controls.Remove(this);
         }
     }
 }

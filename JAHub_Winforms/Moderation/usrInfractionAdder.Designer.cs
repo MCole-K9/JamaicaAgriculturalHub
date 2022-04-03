@@ -79,6 +79,7 @@
             // 
             this.txtInfractionReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtInfractionReason.Location = new System.Drawing.Point(120, 5);
+            this.txtInfractionReason.MaxLength = 120;
             this.txtInfractionReason.Name = "txtInfractionReason";
             this.txtInfractionReason.Size = new System.Drawing.Size(378, 27);
             this.txtInfractionReason.TabIndex = 3;

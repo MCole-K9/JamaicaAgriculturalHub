@@ -132,6 +132,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminViewModeration";
             this.Text = "FrmAdminViewModeration";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAdminViewModeration_FormClosing);
             this.Load += new System.EventHandler(this.FrmAdminViewModeration_Load);
             this.flwAdminViewModeration.ResumeLayout(false);
             this.flwAdminViewModeration.PerformLayout();

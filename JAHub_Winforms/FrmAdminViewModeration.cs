@@ -39,6 +39,41 @@ namespace JAHub_Winforms
         {
             // This will primarily set up the db schema and populate it
 
+            // These are all for dtbAddedInfractions
+            dtbAddedInfractions = new DataTable();
+
+            DataColumn dclAddedInfractionTime = new DataColumn();
+            dclAddedInfractionTime.ColumnName = "TimeStamp";
+            dclAddedInfractionTime.DataType = typeof(SqlDateTime);
+
+            DataColumn dclAddedInfractionUser = new DataColumn();
+            dclAddedInfractionUser.ColumnName = "User";
+            dclAddedInfractionUser.DataType = typeof(int);
+
+            DataColumn dclAddedInfractionAdmin = new DataColumn();
+            dclAddedInfractionAdmin.ColumnName = "Admin";
+            dclAddedInfractionAdmin.DataType = typeof(int);
+
+            DataColumn dclAddedInfractionReason = new DataColumn();
+            dclAddedInfractionReason.ColumnName = "Reason";
+            dclAddedInfractionReason.DataType = typeof(String);
+            dclAddedInfractionReason.MaxLength = 120;
+
+            dtbAddedInfractions.Columns.Add(dclAddedInfractionTime);
+            dtbAddedInfractions.Columns.Add(dclAddedInfractionUser);
+            dtbAddedInfractions.Columns.Add(dclAddedInfractionAdmin);
+            dtbAddedInfractions.Columns.Add(dclAddedInfractionReason);
+
+
+            // This is just for dtbRemovedInfraction
+            dtbRemovedInfractions = new DataTable();
+
+            DataColumn dclRemovedInfractionId = new DataColumn();
+            dclRemovedInfractionId.ColumnName = "ID";
+            dclRemovedInfractionId.DataType = typeof(int);
+
+            dtbRemovedInfractions.Columns.Add(dclRemovedInfractionId);
+                       
             // These are all for dtbCurrentInfractions
             dtbCurrentInfractions = new DataTable();
 
@@ -100,7 +135,13 @@ namespace JAHub_Winforms
                 flwInfractionsHolder.Controls.Remove(lblNoInfractions);
             }
 
-            flwInfractionsHolder.Controls.Add(new usrInfractionAdder(dtbAddedInfractions, _userId, Session.UserId));
+            flwInfractionsHolder.Controls.Add(new usrInfractionAdder(dtbAddedInfractions, _userId, Session.UserId, flwInfractionsHolder));
+        }
+
+        private void FrmAdminViewModeration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // basically, write the dtbAdded to the database
+            // also write the dtbRemoved to the database
         }
     }
 }
