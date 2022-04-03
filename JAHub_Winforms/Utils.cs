@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -16,6 +18,32 @@ namespace JAHub_Winforms
             bool isOpen = OpenForms.Any(q => q.Text == frmTxtProp);
             return isOpen;
             
+        }
+        public static void ClearPanel(Panel pnl)
+        {
+            while (pnl.Controls.Count > 0)
+            {
+                pnl.Controls.RemoveAt(0);
+            }
+        }
+        public static void DisplayBlogsFromDatabase(User user, SqlDataReader sqlData, Panel pnlContainer)
+        {
+            while (sqlData.Read())
+            {
+                Blog blog = new Blog();
+
+                blog.BlogID = (int)sqlData["ID"];
+                blog.Title = sqlData["Title"].ToString();
+                blog.Author.UserID = (int)sqlData["Author"];
+                blog.Description = sqlData["Description"].ToString();
+                blog.BlogBody = sqlData["Body"].ToString();
+                blog.PublishDateString = sqlData["PublishedDate"].ToString();
+                blog.Rating = Convert.ToInt16(sqlData["Rating"]);
+                Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(blog,user);
+                pnlContainer.Controls.Add(ucBlogPost);
+                ucBlogPost.Dock = DockStyle.Top;
+
+            }
         }
     }
 }

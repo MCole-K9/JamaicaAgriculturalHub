@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace JAHubLib
 {
@@ -46,6 +47,10 @@ namespace JAHubLib
             File.Copy(destination, destination + ".bak");
             File.Delete(destination);
             File.Copy(source, destination);
+        }
+        public static string getCreateBlogSqlString(Blog newBlog)
+        {
+            return "INSERT INTO Blog (Title, Author, Description, Body, PublishedDate, Rating) VALUES ('" + newBlog.Title + "','" + 3 + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");";
         }
     }
 }
