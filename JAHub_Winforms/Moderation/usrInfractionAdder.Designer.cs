@@ -73,16 +73,18 @@
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtInfractionReason
             // 
             this.txtInfractionReason.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtInfractionReason.Location = new System.Drawing.Point(120, 5);
+            this.txtInfractionReason.MaxLength = 120;
             this.txtInfractionReason.Name = "txtInfractionReason";
             this.txtInfractionReason.Size = new System.Drawing.Size(378, 27);
             this.txtInfractionReason.TabIndex = 3;
             // 
-            // usrInfractionEntry
+            // usrInfractionAdder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,10 +92,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "usrInfractionEntry";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "usrInfractionAdder";
             this.Size = new System.Drawing.Size(609, 38);
-            this.Load += new System.EventHandler(this.usrInfractionEntry_Load);
+            this.Load += new System.EventHandler(this.usrInfractionAdder_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

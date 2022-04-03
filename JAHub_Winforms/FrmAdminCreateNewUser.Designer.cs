@@ -132,6 +132,7 @@
             this.flwControlsHolder.Name = "flwControlsHolder";
             this.flwControlsHolder.Size = new System.Drawing.Size(0, 0);
             this.flwControlsHolder.TabIndex = 2;
+            this.flwControlsHolder.WrapContents = false;
             // 
             // flwUserCreationFields
             // 
@@ -269,6 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(607, 498);
             this.Controls.Add(this.flwAdminCreateNewUser);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,6 +278,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminCreateNewUser";
             this.Text = "FrmAdminCreateNewUser";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminCreateNewUser_Load);
             this.flwAdminCreateNewUser.ResumeLayout(false);
             this.flwAdminCreateNewUser.PerformLayout();
