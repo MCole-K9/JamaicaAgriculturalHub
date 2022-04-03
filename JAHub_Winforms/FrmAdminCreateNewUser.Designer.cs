@@ -132,6 +132,7 @@
             this.flwControlsHolder.Name = "flwControlsHolder";
             this.flwControlsHolder.Size = new System.Drawing.Size(0, 0);
             this.flwControlsHolder.TabIndex = 2;
+            this.flwControlsHolder.WrapContents = false;
             // 
             // flwUserCreationFields
             // 
@@ -277,6 +278,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminCreateNewUser";
             this.Text = "FrmAdminCreateNewUser";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminCreateNewUser_Load);
             this.flwAdminCreateNewUser.ResumeLayout(false);
             this.flwAdminCreateNewUser.PerformLayout();

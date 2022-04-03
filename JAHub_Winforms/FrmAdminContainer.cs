@@ -29,6 +29,7 @@ namespace JAHub_Winforms
                 Form form = (Form)pnlFormHolder.Controls[0];
 
                 form.Close();
+                pnlFormHolder.Controls.Clear();
             }
 
             pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
@@ -42,6 +43,7 @@ namespace JAHub_Winforms
                 Form form = (Form)pnlFormHolder.Controls[0];
 
                 form.Close();
+                pnlFormHolder.Controls.Clear();
             }
 
             pnlFormHolder.Controls.Add(new FrmAdminEditUser(_userId));
@@ -55,6 +57,7 @@ namespace JAHub_Winforms
                 Form form = (Form)pnlFormHolder.Controls[0];
 
                 form.Close();
+                pnlFormHolder.Controls.Clear();
             }
 
             pnlFormHolder.Controls.Add(new FrmAdminViewModeration(_userId, lblNameValue.Text, lblRoleValue.Text));
@@ -91,6 +94,9 @@ namespace JAHub_Winforms
 
                 if (pnlFormHolder.Controls.Count > 0)
                 {
+                    Form form = (Form)pnlFormHolder.Controls[0];
+
+                    form.Close();
                     pnlFormHolder.Controls.Clear();
                 }
 
@@ -108,6 +114,10 @@ namespace JAHub_Winforms
         {
             if (pnlFormHolder.Controls.Count > 0)
             {
+                Form form = (Form)pnlFormHolder.Controls[0];
+
+                form.Close();
+
                 pnlFormHolder.Controls.Clear();
             }
 

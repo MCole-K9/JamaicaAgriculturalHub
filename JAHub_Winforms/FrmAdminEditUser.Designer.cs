@@ -32,7 +32,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblEditUser = new System.Windows.Forms.Label();
             this.flwControlsHolder = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.tblEmailEntry = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmailEntry = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -41,6 +40,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblRetypePassword = new System.Windows.Forms.Label();
             this.txtPasswordFirstEntry = new System.Windows.Forms.TextBox();
+            this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.errEditUser = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.flwControlsHolder.SuspendLayout();
@@ -79,20 +79,12 @@
             this.flwControlsHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwControlsHolder.Controls.Add(this.tblEmailEntry);
             this.flwControlsHolder.Controls.Add(this.tblPasswordEntry);
+            this.flwControlsHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwControlsHolder.Location = new System.Drawing.Point(3, 32);
             this.flwControlsHolder.Name = "flwControlsHolder";
             this.flwControlsHolder.Size = new System.Drawing.Size(369, 134);
             this.flwControlsHolder.TabIndex = 2;
-            // 
-            // btnUpdateRecord
-            // 
-            this.btnUpdateRecord.Location = new System.Drawing.Point(3, 172);
-            this.btnUpdateRecord.Name = "btnUpdateRecord";
-            this.btnUpdateRecord.Size = new System.Drawing.Size(129, 32);
-            this.btnUpdateRecord.TabIndex = 3;
-            this.btnUpdateRecord.Text = "Update";
-            this.btnUpdateRecord.UseVisualStyleBackColor = true;
-            this.btnUpdateRecord.Click += new System.EventHandler(this.btnUpdateRecord_Click);
+            this.flwControlsHolder.WrapContents = false;
             // 
             // tblEmailEntry
             // 
@@ -179,6 +171,16 @@
             this.txtPasswordFirstEntry.Size = new System.Drawing.Size(161, 27);
             this.txtPasswordFirstEntry.TabIndex = 3;
             // 
+            // btnUpdateRecord
+            // 
+            this.btnUpdateRecord.Location = new System.Drawing.Point(3, 172);
+            this.btnUpdateRecord.Name = "btnUpdateRecord";
+            this.btnUpdateRecord.Size = new System.Drawing.Size(129, 32);
+            this.btnUpdateRecord.TabIndex = 3;
+            this.btnUpdateRecord.Text = "Update";
+            this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            this.btnUpdateRecord.Click += new System.EventHandler(this.btnUpdateRecord_Click);
+            // 
             // errEditUser
             // 
             this.errEditUser.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -196,6 +198,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminEditUser";
             this.Text = "FrmAdminEditUser";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flwControlsHolder.ResumeLayout(false);

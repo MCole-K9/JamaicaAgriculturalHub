@@ -161,6 +161,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminSelectUser";
             this.Text = "Select User (This should not be visible!)";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminSelectUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
