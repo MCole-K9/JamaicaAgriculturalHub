@@ -219,6 +219,12 @@
     <Compile Include="FrmTestingForm.Designer.cs">
       <DependentUpon>FrmTestingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateName.Designer.cs">
+      <DependentUpon>FrmUpdateName.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUserBlogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -463,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTestingForm.resx">
       <DependentUpon>FrmTestingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateName.resx">
+      <DependentUpon>FrmUpdateName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUserBlogs.resx">
       <DependentUpon>FrmUserBlogs.cs</DependentUpon>
