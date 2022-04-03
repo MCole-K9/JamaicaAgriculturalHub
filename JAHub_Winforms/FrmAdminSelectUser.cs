@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
 using System.Data.SqlClient;
+using System.Runtime;
 
 namespace JAHub_Winforms
 {
@@ -71,9 +72,10 @@ namespace JAHub_Winforms
             
             // Assigning the data source here
             dgvUserInformation.DataSource = allUsersSelection;
+            dgvUserInformation.AllowUserToAddRows = false;
 
             // This creates the column for the "Select User" buttons
-            DataGridViewButtonColumn selectUserButtonColumn= new DataGridViewButtonColumn();
+            DataGridViewButtonColumn selectUserButtonColumn = new DataGridViewButtonColumn();
             selectUserButtonColumn.Text = "Select User";
             selectUserButtonColumn.UseColumnTextForButtonValue = true;
             selectUserButtonColumn.DataPropertyName = "ID";
@@ -111,15 +113,27 @@ namespace JAHub_Winforms
         {
             if (txtSearchBox.Text == "")
             {
-                // DGV doesn't contain a RowFilter property, datatable doesn't either
-                // so i need some way of doing that that doesn't probably result in 
-                // rewriting a bunch of code
-
-                // This would just reset the filtering
+                foreach(DataGridViewRow row in dgvUserInformation.Rows)
+                {
+                    row.Visible = true;
+                }
             }
             else
             {
-                // Here is where the filtering would actually happen
+                foreach(DataGridViewRow row in dgvUserInformation.Rows)
+                {
+                    dgvUserInformation.CurrentCell = null;
+                    String value = row.Cells[1].Value.ToString();
+
+                    if (value.Contains(txtSearchBox.Text))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
             }
         }
 
