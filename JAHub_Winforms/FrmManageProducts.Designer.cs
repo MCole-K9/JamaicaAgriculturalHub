@@ -71,6 +71,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmManageProducts";
             this.Text = "FrmManageProducts";
+            this.Load += new System.EventHandler(this.FrmManageProducts_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
