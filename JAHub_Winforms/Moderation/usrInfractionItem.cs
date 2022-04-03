@@ -30,11 +30,15 @@ namespace JAHub_Winforms.Moderation
         }
         
         // This constructor is for what usrInfractionAdder should make after the admin submits
-        public usrInfractionItem(FlowLayoutPanel controlParent)
+        public usrInfractionItem(FlowLayoutPanel controlParent, DataRow infractionRecord)
         {
             InitializeComponent();
 
             this.controlParent = controlParent;
+
+            lblTimeStamp.Text = infractionRecord[0].ToString();
+            lblAddedById.Text = $"Added by ID: {infractionRecord[2]}";
+            lblInfractionReason.Text = $"Reason: {infractionRecord[3]}";
         }
 
         private void btnRemoveInfraction_Click(object sender, EventArgs e)

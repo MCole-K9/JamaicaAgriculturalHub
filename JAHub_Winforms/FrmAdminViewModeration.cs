@@ -102,7 +102,7 @@ namespace JAHub_Winforms
             {
                 connection.Open();
 
-                String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction]";
+                String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction];";
 
                 SqlCommand infractionsQuery = new SqlCommand (command, connection);
 
@@ -110,7 +110,7 @@ namespace JAHub_Winforms
 
                 while (reader.Read())
                 {
-                    dtbCurrentInfractions.Rows.Add(reader["ID"], reader["TimeStamp"].ToString(), reader["Admin"].ToString(),
+                    dtbCurrentInfractions.Rows.Add(reader["ID"], reader["TimeStamp"], reader["Admin"].ToString(),
                         reader["Reason"].ToString());
                 }
 
@@ -118,14 +118,16 @@ namespace JAHub_Winforms
             }
             if (dtbCurrentInfractions.Rows.Count > 0)
             {
-               // This just gets rid of the placeholder text that says "user has no infractions"
-               flwInfractionsHolder.Controls.RemoveAt(Controls.Count - 1);
+                // This just gets rid of the placeholder text that says "user has no infractions"
+                flwInfractionsHolder.Controls.RemoveAt(Controls.Count - 1);
+                
+                foreach (DataRow row in dtbCurrentInfractions.Rows)
+                {
+                    flwInfractionsHolder.Controls.Add(new usrInfractionItem(row, flwInfractionsHolder, dtbRemovedInfractions));
+                }
             }
 
-            foreach (DataRow row in dtbCurrentInfractions.Rows)
-            {
-                flwInfractionsHolder.Controls.Add(new usrInfractionItem(row, flwInfractionsHolder, dtbRemovedInfractions));
-            }
+            
         }
 
         private void btnAddInfraction_Click(object sender, EventArgs e)
@@ -141,15 +143,64 @@ namespace JAHub_Winforms
         private void FrmAdminViewModeration_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Writing the new entries to the Database
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            if (dtbAddedInfractions.Rows.Count > 0)
             {
-                // i don't know what the command would be if you need to add multiple connections
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+                    String command = "INSERT INTO Infraction (TimeStamp, Infraction.[User], Infraction.[Admin], Reason) VALUES ";
+
+                    foreach (DataRow row in dtbAddedInfractions.Rows)
+                    {
+                        command += $"('{row[0]}', {row[1]}, {row[2]}, '{row[3]}')";
+
+                        if(dtbAddedInfractions.Rows.IndexOf(row) == dtbAddedInfractions.Rows.Count - 1)
+                        {
+                            command += ";";
+                        }
+                        else
+                        {
+                            command += ", ";
+                        }
+                    }
+
+                    SqlCommand addNewInfractions = new SqlCommand(command, connection);
+
+                    addNewInfractions.ExecuteNonQuery();
+
+                    connection.Close();
+                }
             }
 
             // Removing the old entries from the database
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            if(dtbRemovedInfractions.Rows.Count > 0)
             {
-                // i don't know what the command would be if you need to add multiple connections
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    String command = "DELETE FROM Infraction WHERE ID in (";
+
+                    foreach(DataRow row in dtbRemovedInfractions.Rows)
+                    {
+                        command += $"{row[0]}";
+
+                        if(dtbRemovedInfractions.Rows.IndexOf(row) == dtbRemovedInfractions.Rows.Count - 1)
+                        {
+                            command += ");";
+                        }
+                        else
+                        {
+                            command += ",";
+                        }
+                    }
+
+                    SqlCommand removeDeletedInfractions = new SqlCommand (command, connection);
+
+                    removeDeletedInfractions.ExecuteNonQuery();
+
+                    connection.Close();
+                }
             }
         }
     }

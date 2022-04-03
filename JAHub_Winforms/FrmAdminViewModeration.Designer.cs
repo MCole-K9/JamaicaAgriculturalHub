@@ -42,6 +42,7 @@
             // 
             // flwAdminViewModeration
             // 
+            this.flwAdminViewModeration.AutoSize = true;
             this.flwAdminViewModeration.BackColor = System.Drawing.Color.White;
             this.flwAdminViewModeration.Controls.Add(this.flwTitleBlock);
             this.flwAdminViewModeration.Controls.Add(this.flwInfractionsHolder);
@@ -125,6 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(822, 453);
             this.Controls.Add(this.flwAdminViewModeration);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,6 +143,7 @@
             this.flwInfractionsHolder.ResumeLayout(false);
             this.flwInfractionsHolder.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

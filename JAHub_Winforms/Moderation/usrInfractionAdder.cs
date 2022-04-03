@@ -14,6 +14,7 @@ namespace JAHub_Winforms.Moderation
     public partial class usrInfractionAdder : UserControl
     {
         DataTable addedInfractions;
+        SqlDateTime currentTime;
         int userId;
         int adminId;
         FlowLayoutPanel controlParent;
@@ -30,7 +31,7 @@ namespace JAHub_Winforms.Moderation
 
         private void usrInfractionAdder_Load(object sender, EventArgs e)
         {
-            SqlDateTime currentTime = new SqlDateTime(DateTime.Now);
+            currentTime = new SqlDateTime(DateTime.Now);
             lblTimeStamp.Text = currentTime.ToString();
         }
 
@@ -38,9 +39,9 @@ namespace JAHub_Winforms.Moderation
         {
             // This should add the the generated infraction information to dtbAddedInfractions
             // it should also remove this control and create a new usrInfractionItem
-            addedInfractions.Rows.Add(lblTimeStamp.Text, userId, adminId, txtInfractionReason.Text);
+            addedInfractions.Rows.Add(currentTime, userId, adminId, txtInfractionReason.Text);
 
-            controlParent.Controls.Add(new usrInfractionItem(controlParent));
+            controlParent.Controls.Add(new usrInfractionItem(controlParent, addedInfractions.Rows[addedInfractions.Rows.Count - 1]));
             controlParent.Controls.Remove(this);
         }
     }
