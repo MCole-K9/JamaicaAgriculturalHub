@@ -133,7 +133,7 @@ namespace JAHub_Winforms
                 errCreateNewUser.SetError(txtPasswordSecondEntry, "Passwords must match");
                 isPasswordValid = false;
             }
-            else
+            else if (txtPasswordSecondEntry.Text == txtPasswordFirstEntry.Text)
             {
                 errCreateNewUser.SetError(txtPasswordSecondEntry, "");
                 isPasswordValid = true;
@@ -150,20 +150,23 @@ namespace JAHub_Winforms
                 {
                     if (usrNameBlock1.IsBlockValid())
                     {
-                        areEntriesValid = true;
+                        if (isPasswordValid)
+                        {
+                            areEntriesValid = true;
 
-                        User newUser = new User();
+                            User newUser = new User();
 
-                        newUser.FirstName = usrNameBlock1.FirstName;
-                        newUser.LastName = usrNameBlock1.LastName;
-                        newUser.MiddleName = usrNameBlock1.MiddleName;
+                            newUser.FirstName = usrNameBlock1.FirstName;
+                            newUser.LastName = usrNameBlock1.LastName;
+                            newUser.MiddleName = usrNameBlock1.MiddleName;
 
-                        newUser.Email = txtEmail.Text;
-                        newUser.Password = txtPasswordFirstEntry.Text;
+                            newUser.Email = txtEmail.Text;
+                            newUser.Password = txtPasswordFirstEntry.Text;
 
-                        newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
+                            newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
 
-                        newUser.WriteToDatabase();
+                            newUser.WriteToDatabase();
+                        }
                     }
                 }
             }
