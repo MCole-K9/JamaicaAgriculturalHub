@@ -140,8 +140,17 @@ namespace JAHub_Winforms
 
         private void FrmAdminViewModeration_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // basically, write the dtbAdded to the database
-            // also write the dtbRemoved to the database
+            // Writing the new entries to the Database
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                // i don't know what the command would be if you need to add multiple connections
+            }
+
+            // Removing the old entries from the database
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                // i don't know what the command would be if you need to add multiple connections
+            }
         }
     }
 }
