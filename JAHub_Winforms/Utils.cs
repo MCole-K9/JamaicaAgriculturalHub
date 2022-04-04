@@ -26,7 +26,7 @@ namespace JAHub_Winforms
                 pnl.Controls.RemoveAt(0);
             }
         }
-        public static void DisplayBlogsFromDatabase(User user, SqlDataReader sqlData, Panel pnlContainer)
+        public static void DisplayBlogsFromDatabase(SqlDataReader sqlData, Panel pnlContainer)
         {
             while (sqlData.Read())
             {
@@ -34,12 +34,12 @@ namespace JAHub_Winforms
 
                 blog.BlogID = (int)sqlData["ID"];
                 blog.Title = sqlData["Title"].ToString();
-                blog.Author.UserID = (int)sqlData["Author"];
+                blog.AuthorID = (int)sqlData["Author"];
                 blog.Description = sqlData["Description"].ToString();
                 blog.BlogBody = sqlData["Body"].ToString();
                 blog.PublishDateString = sqlData["PublishedDate"].ToString();
                 blog.Rating = Convert.ToInt16(sqlData["Rating"]);
-                Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(blog,user);
+                Blog_Controls.ucBlogPost ucBlogPost = new Blog_Controls.ucBlogPost(blog);
                 pnlContainer.Controls.Add(ucBlogPost);
                 ucBlogPost.Dock = DockStyle.Top;
 
