@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnManageProducts = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSecurity = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelHomeContainer = new System.Windows.Forms.Panel();
-            this.btnManageProducts = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,6 +62,24 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(218, 600);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnManageProducts
+            // 
+            this.btnManageProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageProducts.FlatAppearance.BorderSize = 0;
+            this.btnManageProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageProducts.ForeColor = System.Drawing.Color.White;
+            this.btnManageProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnManageProducts.Image")));
+            this.btnManageProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageProducts.Location = new System.Drawing.Point(0, 246);
+            this.btnManageProducts.Name = "btnManageProducts";
+            this.btnManageProducts.Size = new System.Drawing.Size(218, 39);
+            this.btnManageProducts.TabIndex = 6;
+            this.btnManageProducts.Text = "Manage Products";
+            this.btnManageProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManageProducts.UseVisualStyleBackColor = true;
+            this.btnManageProducts.Click += new System.EventHandler(this.btnManageProducts_Click);
             // 
             // btnLogout
             // 
@@ -207,29 +225,13 @@
             // 
             // panelHomeContainer
             // 
+            this.panelHomeContainer.AutoSize = true;
+            this.panelHomeContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelHomeContainer.BackColor = System.Drawing.Color.White;
             this.panelHomeContainer.Location = new System.Drawing.Point(219, 3);
             this.panelHomeContainer.Name = "panelHomeContainer";
-            this.panelHomeContainer.Size = new System.Drawing.Size(945, 585);
+            this.panelHomeContainer.Size = new System.Drawing.Size(0, 0);
             this.panelHomeContainer.TabIndex = 1;
-            // 
-            // btnManageProducts
-            // 
-            this.btnManageProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManageProducts.FlatAppearance.BorderSize = 0;
-            this.btnManageProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageProducts.ForeColor = System.Drawing.Color.White;
-            this.btnManageProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnManageProducts.Image")));
-            this.btnManageProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageProducts.Location = new System.Drawing.Point(0, 246);
-            this.btnManageProducts.Name = "btnManageProducts";
-            this.btnManageProducts.Size = new System.Drawing.Size(218, 39);
-            this.btnManageProducts.TabIndex = 6;
-            this.btnManageProducts.Text = "Manage Products";
-            this.btnManageProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnManageProducts.UseVisualStyleBackColor = true;
-            this.btnManageProducts.Click += new System.EventHandler(this.btnManageProducts_Click);
             // 
             // FrmProfile
             // 
@@ -248,6 +250,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

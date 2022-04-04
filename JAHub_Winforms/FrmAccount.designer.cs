@@ -209,6 +209,7 @@
             this.btnUpdateName.Text = "NAME              ";
             this.btnUpdateName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateName.UseVisualStyleBackColor = false;
+            this.btnUpdateName.Click += new System.EventHandler(this.btnUpdateName_Click);
             // 
             // btnUpdateProfilepicture
             // 

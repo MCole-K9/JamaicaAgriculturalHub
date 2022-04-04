@@ -31,6 +31,8 @@ namespace JAHub_Winforms
                 errorProviderOldPassword.SetError(txtOldPassword, "Please enter current password.");
                 check = true;
             }
+            //else if(txtOldPassword.Text !=)
+            //{ }
             else
                 errorProviderOldPassword.SetError(txtOldPassword, "");
                 return check;
@@ -85,27 +87,38 @@ namespace JAHub_Winforms
 
         private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
-            CheckOldPassword();
-
-            //String mainconn = ConfigurationManager.ConnectionStrings["jamaicaagriculturalhub"].ConnectionString;
-            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-            String sqlquery = "UPDATE [dbo].[User] SET Password = '" + txtConfirmPassword.Text + "' where ID = '" + Session.UserId + "'";
-
-            connection.Open();
-            SqlCommand sqlcmd = new SqlCommand(sqlquery, connection);
-            SqlDataAdapter sda = new SqlDataAdapter(sqlcmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            sqlcmd.ExecuteNonQuery();
-            MessageBox.Show("Your password as changed successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            connection.Close();
-
-
-            ValidatingOldPassword();
-                ValidatingNewPassword();
-                ValidatingConfirmPassword();
-           
+            if (txtOldPassword.Text == "")
+            {
+                ValidatingOldPassword();
+                //CheckOldPassword();
             }
+            else if (txtNewPassword.Text == "")
+            {
+                ValidatingNewPassword();
+            }
+            else if (txtConfirmPassword.Text == "")
+            {
+                ValidatingConfirmPassword();
+            }
+            else
+            {
+                //CheckOldPassword();
+
+                //String mainconn = ConfigurationManager.ConnectionStrings["jamaicaagriculturalhub"].ConnectionString;
+                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+                String sqlquery = "UPDATE [dbo].[User] SET Password = '" + txtConfirmPassword.Text + "' where ID = '" + Session.UserId + "'";
+
+                connection.Open();
+                SqlCommand sqlcmd = new SqlCommand(sqlquery, connection);
+                SqlDataAdapter sda = new SqlDataAdapter(sqlcmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                sqlcmd.ExecuteNonQuery();
+                MessageBox.Show("Your password as changed successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connection.Close();
+            }
+
+           }
 
 
 
