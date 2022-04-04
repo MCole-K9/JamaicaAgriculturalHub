@@ -46,8 +46,7 @@ namespace JAHubLib
 
         public Farmer()
         {
-            // i don't think this needs anything, tbh. everything is accessible
-            // from the properties
+            
         }
 
 
@@ -61,17 +60,17 @@ namespace JAHubLib
             this.MiddleName = user.MiddleName;
             this.Email = user.Email;
             this.UserRole = user.UserRole;
-            PopulateFarmerObject();
+            FetchFarmerData();
         }
 
         //M.C.. Quires farmer table with user id to retrive the rest of the farmer data
-        private void PopulateFarmerObject()
+        public void FetchFarmerData()
         {
             using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
 
-                string query = $"SELECT * FROM Farmer WHERE UserID = {this.UserID}";
+                string query = $"SELECT * FROM Farmer WHERE UserID = {Session.UserId}";
  
                 SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -90,18 +89,58 @@ namespace JAHubLib
 
         public int AddProduct(Product product)
         {
-            using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            FetchFarmerData();
+            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetFilePathLength()+8);
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
 
                 string query = $"INSERT INTO [Product] (Name, Stock, Price, Image, Farmer)" +
-                    $"Values ( '{product.Name}', {product.Stock}, {product.Price}, '{product.GetUploadedImagePath()}', {1})";
+                    $"Values ( '{product.Name}', {product.Stock}, {product.Price}, '{productImageName}', {this.FarmerId})";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
                 int i = cmd.ExecuteNonQuery();
 
                 return i;
             }
+           
+        }
+
+        public int UpdateProduct(Product product)
+        {
+            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetFilePathLength() + 8);
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"Update [Product]" +
+                    $" Set  Name = '{product.Name}', Stock = {product.Stock} , Price = {product.Price}, Image = '{productImageName}'" +
+                    $" Where ID = {product.Id}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                int i = cmd.ExecuteNonQuery();
+
+                return i;
+            }
+        }
+
+        public int DeleteProduct(Product product)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"Delete FROM [Product]" +
+                    $" Where ID = {product.Id}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                int i = cmd.ExecuteNonQuery();
+
+                return i;
+            }
+
         }
     }
 }

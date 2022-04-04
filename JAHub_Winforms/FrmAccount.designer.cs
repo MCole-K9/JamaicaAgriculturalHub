@@ -73,7 +73,7 @@
             this.panelAccountHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAccountHeader.Location = new System.Drawing.Point(0, 0);
             this.panelAccountHeader.Name = "panelAccountHeader";
-            this.panelAccountHeader.Size = new System.Drawing.Size(783, 98);
+            this.panelAccountHeader.Size = new System.Drawing.Size(953, 98);
             this.panelAccountHeader.TabIndex = 0;
             // 
             // lblInfoAboutYouLabel
@@ -116,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(144, 268);
             this.label1.Name = "label1";
@@ -127,7 +127,7 @@
             // lblDiaplayGender
             // 
             this.lblDiaplayGender.AutoSize = true;
-            this.lblDiaplayGender.BackColor = System.Drawing.Color.White;
+            this.lblDiaplayGender.BackColor = System.Drawing.Color.Transparent;
             this.lblDiaplayGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaplayGender.Location = new System.Drawing.Point(137, 345);
             this.lblDiaplayGender.Name = "lblDiaplayGender";
@@ -174,7 +174,7 @@
             // lblDisplaysUserName
             // 
             this.lblDisplaysUserName.AutoSize = true;
-            this.lblDisplaysUserName.BackColor = System.Drawing.Color.White;
+            this.lblDisplaysUserName.BackColor = System.Drawing.Color.Transparent;
             this.lblDisplaysUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplaysUserName.Location = new System.Drawing.Point(146, 187);
             this.lblDisplaysUserName.Name = "lblDisplaysUserName";
@@ -253,7 +253,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 108);
+            this.panel1.Size = new System.Drawing.Size(953, 108);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -400,7 +400,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.ClientSize = new System.Drawing.Size(970, 749);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelParentContainer);

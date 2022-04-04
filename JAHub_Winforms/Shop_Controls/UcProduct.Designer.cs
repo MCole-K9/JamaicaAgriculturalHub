@@ -43,17 +43,20 @@
             this.pcbImage.Margin = new System.Windows.Forms.Padding(4);
             this.pcbImage.Name = "pcbImage";
             this.pcbImage.Size = new System.Drawing.Size(210, 160);
+            this.pcbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbImage.TabIndex = 0;
             this.pcbImage.TabStop = false;
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
+            this.lblItemName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName.Location = new System.Drawing.Point(59, 174);
+            this.lblItemName.Location = new System.Drawing.Point(0, 160);
             this.lblItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(87, 20);
+            this.lblItemName.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblItemName.Size = new System.Drawing.Size(87, 30);
             this.lblItemName.TabIndex = 1;
             this.lblItemName.Text = "Item Name";
             // 
@@ -82,11 +85,13 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
+            this.lblPrice.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(49, 209);
+            this.lblPrice.Location = new System.Drawing.Point(0, 190);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(112, 20);
+            this.lblPrice.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblPrice.Size = new System.Drawing.Size(112, 30);
             this.lblPrice.TabIndex = 1;
             this.lblPrice.Text = "$0000 Per Lbs";
             // 
@@ -94,6 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.Controls.Add(this.btnAddToCart);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.lblPrice);

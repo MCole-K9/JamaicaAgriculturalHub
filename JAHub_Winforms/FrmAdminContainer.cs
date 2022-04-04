@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
     public partial class FrmAdminContainer : Form
     {
         User _user;
+        int _userId;
         public FrmAdminContainer()
         {
             InitializeComponent();
@@ -24,6 +26,9 @@ namespace JAHub_Winforms
         {
             if (pnlFormHolder.Controls.Count > 0)
             {
+                Form form = (Form)pnlFormHolder.Controls[0];
+
+                form.Close();
                 pnlFormHolder.Controls.Clear();
             }
 
@@ -35,10 +40,13 @@ namespace JAHub_Winforms
         {
             if (pnlFormHolder.Controls.Count > 0)
             {
+                Form form = (Form)pnlFormHolder.Controls[0];
+
+                form.Close();
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminEditUser());
+            pnlFormHolder.Controls.Add(new FrmAdminEditUser(_userId));
             pnlFormHolder.Controls[0].Show();
         }
 
@@ -46,17 +54,21 @@ namespace JAHub_Winforms
         {
             if (pnlFormHolder.Controls.Count > 0)
             {
+                Form form = (Form)pnlFormHolder.Controls[0];
+
+                form.Close();
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminViewModeration());
+            pnlFormHolder.Controls.Add(new FrmAdminViewModeration(_userId, lblNameValue.Text, lblRoleValue.Text));
             pnlFormHolder.Controls[0].Show();
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
             String message = "Are you sure you want to delete the account of" + 
-                _user.FirstName + _user.LastName;
+                lblNameValue.Text + " (ID: " + _userId.ToString() + ", Role: " +
+                lblRoleValue.Text + ")";
             const String caption = "Delete Account";
             
             var result = MessageBox.Show(message, caption,
@@ -65,20 +77,36 @@ namespace JAHub_Winforms
 
             if (result == DialogResult.Yes)
             {
-                // query to delete the corresponding record
-                // return the user to Select User
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    String command = $"DELETE FROM [User] WHERE ID={_userId};";
+
+                    SqlCommand deleteRecord = new SqlCommand(command, connection);
+
+                    deleteRecord.ExecuteNonQuery();
+
+                    connection.Close();
+                }
                 
                 HideUserOptions();
 
                 if (pnlFormHolder.Controls.Count > 0)
                 {
+                    Form form = (Form)pnlFormHolder.Controls[0];
+
+                    form.Close();
                     pnlFormHolder.Controls.Clear();
                 }
 
                 pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
                 pnlFormHolder.Controls[0].Show();
 
-                // empty the Current User table
+                // these just empty the "Current User" section
+                lblUserIdValue.Text = "";
+                lblNameValue.Text = "";
+                lblRoleValue.Text = "";
             }
         }
 
@@ -86,6 +114,10 @@ namespace JAHub_Winforms
         {
             if (pnlFormHolder.Controls.Count > 0)
             {
+                Form form = (Form)pnlFormHolder.Controls[0];
+
+                form.Close();
+
                 pnlFormHolder.Controls.Clear();
             }
 
@@ -120,12 +152,10 @@ namespace JAHub_Winforms
 
         public void SetCurrentUser(int userId, String userName, String userRole)
         {
+            this._userId = userId;
             lblUserIdValue.Text = userId.ToString();
             lblNameValue.Text = userName;
             lblRoleValue.Text = userRole;
-            
-            // idr really think this is necessary, yet
-            _user = new User();
 
             ShowUserOptions();
         }

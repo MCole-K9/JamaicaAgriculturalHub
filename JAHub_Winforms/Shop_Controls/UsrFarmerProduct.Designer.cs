@@ -39,12 +39,13 @@
             // btnDelete
             // 
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Location = new System.Drawing.Point(136, 247);
+            this.btnDelete.Location = new System.Drawing.Point(128, 247);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 35);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -55,26 +56,31 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
+            this.lblPrice.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(70, 208);
+            this.lblPrice.Location = new System.Drawing.Point(0, 195);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(112, 20);
+            this.lblPrice.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblPrice.Size = new System.Drawing.Size(112, 30);
             this.lblPrice.TabIndex = 4;
             this.lblPrice.Text = "$0000 Per Lbs";
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
+            this.lblItemName.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName.Location = new System.Drawing.Point(80, 173);
+            this.lblItemName.Location = new System.Drawing.Point(0, 160);
             this.lblItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(87, 20);
+            this.lblItemName.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.lblItemName.Size = new System.Drawing.Size(87, 35);
             this.lblItemName.TabIndex = 5;
             this.lblItemName.Text = "Item Name";
             // 
@@ -84,7 +90,7 @@
             this.pcbImage.Location = new System.Drawing.Point(0, 0);
             this.pcbImage.Margin = new System.Windows.Forms.Padding(4);
             this.pcbImage.Name = "pcbImage";
-            this.pcbImage.Size = new System.Drawing.Size(251, 160);
+            this.pcbImage.Size = new System.Drawing.Size(242, 160);
             this.pcbImage.TabIndex = 3;
             this.pcbImage.TabStop = false;
             // 
@@ -98,7 +104,8 @@
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.pcbImage);
             this.Name = "UsrFarmerProduct";
-            this.Size = new System.Drawing.Size(251, 316);
+            this.Size = new System.Drawing.Size(242, 305);
+            this.Load += new System.EventHandler(this.UsrFarmerProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
