@@ -41,5 +41,19 @@ namespace JAHub_Winforms.Shop_Controls
         {
             _frmManageProducts._frmProfile.OpenChildForm(new FrmAddEditProduct(_product));
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are You Sure You Want To Delete This Item", "Confirmation",  MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Farmer farmer = new Farmer();
+
+                if (farmer.DeleteProduct(_product) > 0)
+                {
+                    MessageBox.Show("Item Sucessfully Deleted");
+                }
+            }
+            
+        }
     }
 }

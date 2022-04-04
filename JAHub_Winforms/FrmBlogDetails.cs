@@ -14,18 +14,24 @@ namespace JAHub_Winforms
     public partial class FrmBlogDetails : Form
     {
         Blog displayedBlog = new Blog();
-        User user = new User();
+
         public FrmBlogDetails()
         {
             InitializeComponent();
         }
-        public FrmBlogDetails(Blog blog, User u)
+        public FrmBlogDetails(Blog blog)
         {
-            user = u;
             displayedBlog = blog;
             InitializeComponent();
             lblTitle.Text = displayedBlog.Title;
-            lblAuthor.Text = displayedBlog.GetAuthorName();
+            try
+            {
+                lblAuthor.Text = displayedBlog.GetAuthorName(blog.AuthorID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             lblPublishDate.Text = displayedBlog.PublishDateString;
             lblDescription.Text = displayedBlog.Description;
             rtbBlogBody.Text = displayedBlog.BlogBody;
@@ -97,6 +103,29 @@ namespace JAHub_Winforms
                 SqlCommand cmd = new SqlCommand($"UPDATE Blog SET Rating = {displayedBlog.Rating} WHERE ID = {displayedBlog.BlogID}", connection);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void FrmBlogDetails_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //if (Utils.IsFormOpen("FrmBlog"))
+            //{
+            //    foreach (var form in this.MdiParent.MdiChildren)
+            //    {
+            //        if (form.Text == "FrmBlog")
+            //        {
+            //            form.Close();
+            //        }
+            //    }
+            //    FrmBlog frmBlog = new FrmBlog();
+            //    frmBlog.MdiParent = this.MdiParent;
+            //    frmBlog.Show();
+            //}
+            //else
+            //{
+            //    FrmBlog frmBlog = new FrmBlog();
+            //    frmBlog.MdiParent = this.MdiParent;
+            //    frmBlog.Show();
+            //}
         }
     }
 

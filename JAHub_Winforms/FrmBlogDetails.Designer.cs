@@ -249,6 +249,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmBlogDetails";
             this.Text = "FrmBlogDetails";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBlogDetails_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlNav.ResumeLayout(false);

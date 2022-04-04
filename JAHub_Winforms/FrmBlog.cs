@@ -14,32 +14,17 @@ namespace JAHub_Winforms
 {
     public partial class FrmBlog : Form
     {
-        User user = new User();
         public FrmBlog()
         {
             InitializeComponent();
             SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-
             SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
             connection.Open();
             SqlDataReader sqlData = cmd.ExecuteReader();
-            Utils.DisplayBlogsFromDatabase(user, sqlData, pnlContainer);
+            Utils.DisplayBlogsFromDatabase(sqlData, pnlContainer);
             connection.Close();
         }
-        public FrmBlog(User u)
-        {
-            user = u;
-            InitializeComponent();
 
-            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
-            connection.Open();
-            SqlDataReader sqlData = cmd.ExecuteReader();
-            Utils.DisplayBlogsFromDatabase(user, sqlData, pnlContainer);
-            connection.Close();
-
-        }
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen("FrmCreateBlog"))
@@ -115,9 +100,16 @@ namespace JAHub_Winforms
             {
                 SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
                 connection.Open();
-                SqlCommand SearchCmd = new SqlCommand($"SELECT * FROM [Blog] WHERE Title LIKE '%{txtSearchBar.Text}%'", connection);
+                SqlCommand SearchCmd = new SqlCommand($"SELECT * FROM [Blog] WHERE Title LIKE '%{txtSearchBar.Text}%'", connection);;
                 SqlDataReader reader = SearchCmd.ExecuteReader();
-                Utils.DisplayBlogsFromDatabase(user,reader, pnlContainer);
+                if (reader.HasRows)
+                {
+                    Utils.DisplayBlogsFromDatabase(reader, pnlContainer);
+                }
+                else
+                {
+                    MessageBox.Show("No Results Found");
+                }
                 connection.Close();
             }
         }
@@ -146,8 +138,16 @@ namespace JAHub_Winforms
             {
                 SortCmd.CommandText = "EXEC SortBlogsRating";
             }
+            else if (comboSort.SelectedItem.ToString() == "Latest")
+            {
+                SortCmd.CommandText = "EXEC SortBlogsNewest";
+            }
+            else if (comboSort.SelectedItem.ToString() == "Oldest")
+            {
+                SortCmd.CommandText = "EXEC SortBlogsOldest";
+            }
             SqlDataReader reader = SortCmd.ExecuteReader();
-            Utils.DisplayBlogsFromDatabase(user, reader, pnlContainer);
+            Utils.DisplayBlogsFromDatabase(reader, pnlContainer);
             connection.Close();
         }
     }

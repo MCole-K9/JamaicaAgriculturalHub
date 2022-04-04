@@ -19,21 +19,27 @@ namespace JAHub_Winforms.Blog_Controls
         {
             InitializeComponent();
         }
-        public ucBlogPost(Blog b,User u)
+        public ucBlogPost(Blog b)
         {
-            user = u;
             blog = b;
             InitializeComponent();
             lblBlogTitle.Text = blog.Title;
-            lblBlogAuthor.Text = blog.GetAuthorName();
-            lblDatePublished.Text = blog.PublishDateString;
+            try
+            {
+                lblBlogAuthor.Text += " " + blog.GetAuthorName(blog.AuthorID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            lblDatePublished.Text += " " + blog.PublishDateString;
             lblBlogDescription.Text = blog.Description;
             lblRatings.Text = blog.Rating.ToString();
         }
 
         private void btnViewBlog_Click(object sender, EventArgs e)
         {
-            FrmBlogDetails blogDetails = new FrmBlogDetails(blog,user);
+            FrmBlogDetails blogDetails = new FrmBlogDetails(blog);
             blogDetails.Show();
 
         }

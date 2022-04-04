@@ -71,7 +71,8 @@ namespace JAHub_Winforms
             {
                 if (farmer.UpdateProduct(product) > 0)
                 {
-                    MessageBox.Show("Item Successfulyy Succesfully");
+                    MessageBox.Show("Item Updated Succesfully");
+                   
                 }
             }
             else
