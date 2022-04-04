@@ -60,43 +60,54 @@ namespace JAHubLib
         //Deletes Files(Images) that are not in the database
         public static void DeleteImages()
         {
-            string[] Directoryimages = Directory.GetFiles($"{GetFilePath()}/Images");
-            List<String> DBimages = new List<String>();
-
-            using (SqlConnection connection = new SqlConnection(getConnectionString()))
+            try
             {
-                connection.Open();
+                string[] Directoryimages = Directory.GetFiles($"{GetFilePath()}/Images");
+                List<String> DBimages = new List<String>();
 
-                string query = "Select (Image) FROM Product";
-
-                SqlCommand cmd = new SqlCommand(query, connection);
-
-                SqlDataReader sqlDataReader = cmd.ExecuteReader();
-
-                while (sqlDataReader.Read())
+                using (SqlConnection connection = new SqlConnection(getConnectionString()))
                 {
-                    DBimages.Add($"{GetFilePath()}/Images\\{sqlDataReader["Image"].ToString()}");
-                }
-            }
+                    connection.Open();
 
-            for (int i = 0; i < Directoryimages.Length; i++)
-            {
-                bool isInDB = false;
+                    string query = "Select (Image) FROM Product";
 
-                foreach (var item in DBimages)
-                {
-                    if(Directoryimages[i] == item)
+                    SqlCommand cmd = new SqlCommand(query, connection);
+
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+
+                    while (sqlDataReader.Read())
                     {
-                        isInDB = true;
+                        DBimages.Add($"{GetFilePath()}/Images\\{sqlDataReader["Image"].ToString()}");
                     }
                 }
 
-                if (!isInDB)
+                for (int i = 0; i < Directoryimages.Length; i++)
                 {
-                    File.Delete(Directoryimages[i]);
-                }
+                    bool isInDB = false;
 
+                    foreach (var item in DBimages)
+                    {
+                        if (Directoryimages[i] == item)
+                        {
+                            isInDB = true;
+                        }
+                    }
+
+                    if (!isInDB)
+                    {
+                        System.GC.Collect();
+                        System.GC.WaitForPendingFinalizers();
+                        File.Delete(Directoryimages[i]);
+                    }
+
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
             
             
         }
