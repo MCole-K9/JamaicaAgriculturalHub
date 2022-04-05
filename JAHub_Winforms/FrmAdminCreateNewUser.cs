@@ -163,7 +163,7 @@ namespace JAHub_Winforms
                             newUser.LastName = usrNameBlock1.LastName;
                             newUser.MiddleName = usrNameBlock1.MiddleName;
 
-                            newUser.Email = txtEmail.Text;
+                            newUser.Email = txtEmail.Text.ToLower();
                             newUser.Password = txtPasswordFirstEntry.Text;
 
                             newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;

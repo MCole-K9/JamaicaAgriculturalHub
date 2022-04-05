@@ -64,7 +64,7 @@ namespace JAHub_Winforms
                             _user.LastName = nameBlock.LastName;
                             _user.MiddleName = nameBlock.MiddleName;
 
-                            _user.Email = txtEmail.Text;
+                            _user.Email = txtEmail.Text.ToLower();
                             _user.Password = txtPasswordFirstEntry.Text;
 
                             _user.UpdateUserRecord();
