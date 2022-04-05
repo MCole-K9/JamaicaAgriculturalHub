@@ -137,22 +137,6 @@ namespace JAHubLib
         }
 
 
-        public void UpdateUserRecord()
-        {
-            using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-                String command = $"UPDATE [User] SET FirstName = '{this.FirstName}', MiddleName = '{this.MiddleName}' ," +
-                    $"LastName = '{this.LastName}', EmailAddress = '{this.Email}', Password = '{this.Password}' WHERE " +
-                    $"ID = {this.UserID};";
-
-                SqlCommand updateRecord = new SqlCommand(command,connection);
-
-                updateRecord.ExecuteNonQuery();
-
-                connection.Close();
-            }
-        }
+        
     }
 }
