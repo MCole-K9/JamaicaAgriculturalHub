@@ -408,6 +408,7 @@
             this.Controls.Add(this.panelAccountHeader);
             this.Name = "FrmAccount";
             this.Text = "Account";
+            this.Load += new System.EventHandler(this.FrmAccount_Load);
             this.panelAccountHeader.ResumeLayout(false);
             this.panelAccountHeader.PerformLayout();
             this.panelParentContainer.ResumeLayout(false);

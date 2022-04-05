@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -19,7 +21,19 @@ namespace JAHub_Winforms
             
         }
 
-        
+        private void FrmAccount_Load(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("select FirstName+ ' ' +LastName as FullName from [dbo].[User] where ID = " + Session.UserId ,connection);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                lblDisplaysUserName.Text = sdr.GetValue(0).ToString();
+                //txtUpdateLastName.Text = sdr.GetValue(2).ToString();
+            }
+            connection.Close();
+        }
 
         private void btnUpdateName_Click(object sender, EventArgs e)
         {
@@ -28,5 +42,7 @@ namespace JAHub_Winforms
             frmUpdateName.MdiParent = this.MdiParent;
             frmUpdateName.Show();
         }
+
+       
     }
 }
