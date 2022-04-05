@@ -67,6 +67,7 @@ namespace JAHub_Winforms
                         product.Stock = (int)sqlData["Stock"];
                         product.Price = float.Parse(sqlData["Price"].ToString());
                         product.Image = $"{Utilities.GetFilePath()}/Images/{sqlData["Image"].ToString()}";
+                        product.Farmer = new Farmer((int)sqlData["Farmer"]);
 
                         products.Add(product);
                         

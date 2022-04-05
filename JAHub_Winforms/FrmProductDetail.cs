@@ -30,7 +30,7 @@ namespace JAHub_Winforms
             pcbImage.Image = Image.FromFile(_product.Image);
             lblProductName.Text = _product.Name;
             lblPrice.Text = $"${_product.Price} Per Lbs";
-            //lblFarmerName.Text = $"{_product.Farmer.Firstname} {_product.Farmer.Lastname}";
+            lblFarmerName.Text = $"{_product.Farmer.FirstName} {_product.Farmer.LastName}";
         }
 
         private void LoadReviews()
@@ -59,12 +59,6 @@ namespace JAHub_Winforms
             {
                 int totalReviews = _product.Reviews.Count;
 
-                //int ratingCount5 = 0;
-                //int ratingCount4 = 0;
-                //int ratingCount3 = 0;
-                //int ratingCount2 = 0;
-                //int ratingCount1 = 0;
-
                 List<Review> Rating5Reviews = _product.Reviews.Where(q => q.Rating == 5).ToList();
                 List<Review> Rating4Reviews = _product.Reviews.Where(q => q.Rating == 4).ToList();
                 List<Review> Rating3Reviews = _product.Reviews.Where(q => q.Rating == 3).ToList();
@@ -77,36 +71,6 @@ namespace JAHub_Winforms
                 float ratingCount3 = Rating3Reviews.Count();
                 float ratingCount2 = Rating2Reviews.Count();
                 float ratingCount1 = Rating1Reviews.Count();
-
-                //foreach (var review in _product.Reviews)
-                //{
-                //    if (review.Rating == 5)
-                //    {
-                //        ratingCount5++;
-
-                //    }
-                //    else if (review.Rating == 4)
-                //    {
-                //        ratingCount4++;
-
-                //    }
-                //    else if (review.Rating == 3)
-                //    {
-                //        ratingCount3++;
-                //    }
-                //    else if (review.Rating == 2)
-                //    {
-                //        ratingCount2++;
-
-                //    }
-                //    else if (review.Rating == 1)
-                //    {
-                //        ratingCount1++;
-
-                //    }
-
-
-                //}
 
 
                 List<float> rating = new List<float> ();
@@ -139,7 +103,18 @@ namespace JAHub_Winforms
   
         private void FrmProductDetail_Load(object sender, EventArgs e)
         {
-            PopulateFields();
+            try
+            {
+                PopulateFields();
+                _product.FetchReviews();
+                LoadReviews();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"{ex.GetType().ToString()}" + ex.Message);
+            }
+            
         }
 
        
@@ -227,14 +202,27 @@ namespace JAHub_Winforms
             }
             else
             {
-                _product.Reviews.Add(new Review
+                Customer customer = new Customer(true);
+
+                Review review = new Review 
                 {
                     Rating = rating,
                     Comment = txtComment.Text,
-                    Customer = new Customer { FirstName = "John", LastName = "Doe"}
-                });
+                    ProductID = _product.Id,
+                    
+                };
+                
 
-                LoadReviews();
+                if(customer.AddReview(review) > 0)
+                {
+                    MessageBox.Show("Review Has Been Made");
+
+                    _product.FetchReviews();
+                    LoadReviews();
+                }
+
+                
+
             }
         }
     }
