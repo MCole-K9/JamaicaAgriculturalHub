@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbkSecuritylabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCheckOldPassword = new System.Windows.Forms.Label();
             this.lblPasswordConditionlabel = new System.Windows.Forms.Label();
             this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.errorProviderOldPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderNewPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderConfirmPassword = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblPasswordChanged = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -79,7 +79,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lblPasswordChanged);
+            this.panel2.Controls.Add(this.lblCheckOldPassword);
             this.panel2.Controls.Add(this.lblPasswordConditionlabel);
             this.panel2.Controls.Add(this.btnUpdatePassword);
             this.panel2.Controls.Add(this.txtConfirmPassword);
@@ -92,6 +92,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(521, 420);
             this.panel2.TabIndex = 1;
+            // 
+            // lblCheckOldPassword
+            // 
+            this.lblCheckOldPassword.AutoSize = true;
+            this.lblCheckOldPassword.Location = new System.Drawing.Point(431, 56);
+            this.lblCheckOldPassword.Name = "lblCheckOldPassword";
+            this.lblCheckOldPassword.Size = new System.Drawing.Size(35, 13);
+            this.lblCheckOldPassword.TabIndex = 8;
+            this.lblCheckOldPassword.Text = "label1";
             // 
             // lblPasswordConditionlabel
             // 
@@ -221,15 +230,6 @@
             // 
             this.errorProviderConfirmPassword.ContainerControl = this;
             // 
-            // lblPasswordChanged
-            // 
-            this.lblPasswordChanged.AutoSize = true;
-            this.lblPasswordChanged.Location = new System.Drawing.Point(180, 383);
-            this.lblPasswordChanged.Name = "lblPasswordChanged";
-            this.lblPasswordChanged.Size = new System.Drawing.Size(35, 13);
-            this.lblPasswordChanged.TabIndex = 8;
-            this.lblPasswordChanged.Text = "label1";
-            // 
             // FrmSecurity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +275,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderOldPassword;
         private System.Windows.Forms.ErrorProvider errorProviderNewPassword;
         private System.Windows.Forms.ErrorProvider errorProviderConfirmPassword;
-        private System.Windows.Forms.Label lblPasswordChanged;
+        private System.Windows.Forms.Label lblCheckOldPassword;
     }
 }

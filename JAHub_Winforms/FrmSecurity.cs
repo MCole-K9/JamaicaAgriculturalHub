@@ -25,17 +25,34 @@ namespace JAHub_Winforms
         { 
             bool  check = false;
 
-            if(txtOldPassword.Text == "")
+            if (txtOldPassword.Text == "")
             {
                 txtOldPassword.Focus();
                 errorProviderOldPassword.SetError(txtOldPassword, "Please enter current password.");
-                check = true;
             }
-            //else if(txtOldPassword.Text !=)
-            //{ }
             else
-                errorProviderOldPassword.SetError(txtOldPassword, "");
-                return check;
+            {
+                //errorProviderOldPassword.SetError(txtOldPassword, "");
+                errorProviderOldPassword.Clear();
+                //uary database get password from database "select from user where session,id......."
+                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+                String Sqlquery = "select * from [dbo].[User] where ID = " + Session.UserId + " and Password = '" + txtOldPassword.Text + "'";
+                //read on suldatareader...... check if whats in the text box is same as in the database if ture return t else return false
+                SqlDataAdapter sda = new SqlDataAdapter(Sqlquery, connection);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                { }
+                else
+                {
+                    errorProviderOldPassword.SetError(txtOldPassword, "Password not Matched.");
+                    txtOldPassword.Focus();
+                }
+
+                    //errorProviderOldPassword.Clear();
+
+            }
+            return check;
         }
 
         private bool ValidatingNewPassword()
@@ -46,10 +63,10 @@ namespace JAHub_Winforms
             {
                 txtNewPassword.Focus();
                 errorProviderNewPassword.SetError(txtNewPassword, "Please enter a new password.");
-                check = true;
+                
             }
             else
-                errorProviderNewPassword.SetError(txtNewPassword, "");
+                errorProviderNewPassword.Clear();
             return check;
         }
 
@@ -61,50 +78,10 @@ namespace JAHub_Winforms
             {
                 txtConfirmPassword.Focus();
                 errorProviderConfirmPassword.SetError(txtConfirmPassword, "Please re-enter new password.");
-                check = true;
+                
             }
-            else
-                errorProviderConfirmPassword.SetError(txtConfirmPassword, "");
-            return check;
-        }
-
-        private void CheckOldPassword()
-        {
-            
-                //String mainconn = ConfigurationManager.ConnectionStrings["jamaicaagriculturalhub"].ConnectionString;
-                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-                String Sqlquery = "select * from [dbo].[User] where ID = " + Session.UserId + " and Password = '" + txtOldPassword.Text + "'";
-                connection.Open();
-                SqlCommand sqlcmd = new SqlCommand(Sqlquery, connection);
-                SqlDataAdapter sda = new SqlDataAdapter(sqlcmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                sqlcmd.ExecuteNonQuery();
-                //SqlDataReader sqlData = sqlcmd.ExecuteReader();
-                connection.Close();  
-            
-        }
-
-        private void btnUpdatePassword_Click(object sender, EventArgs e)
-        {
-            if (txtOldPassword.Text == "")
+            else if (txtNewPassword.Text == txtConfirmPassword.Text)
             {
-                ValidatingOldPassword();
-                //CheckOldPassword();
-            }
-            else if (txtNewPassword.Text == "")
-            {
-                ValidatingNewPassword();
-            }
-            else if (txtConfirmPassword.Text == "")
-            {
-                ValidatingConfirmPassword();
-            }
-            else
-            {
-                //CheckOldPassword();
-
-                //String mainconn = ConfigurationManager.ConnectionStrings["jamaicaagriculturalhub"].ConnectionString;
                 SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
                 String sqlquery = "UPDATE [dbo].[User] SET Password = '" + txtConfirmPassword.Text + "' where ID = '" + Session.UserId + "'";
 
@@ -117,10 +94,34 @@ namespace JAHub_Winforms
                 MessageBox.Show("Your password as changed successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connection.Close();
             }
+            else if(txtNewPassword.Text != txtConfirmPassword.Text)
+            {
+                errorProviderConfirmPassword.SetError(txtConfirmPassword, "Conform password doesn't match New password");
+                txtConfirmPassword.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                errorProviderConfirmPassword.Clear();
+                txtConfirmPassword.ForeColor = System.Drawing.Color.Black;
 
-           }
+            }
+                
+            return check;
+        }
 
 
+        private void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            
+            ValidatingOldPassword();
+           
+            ValidatingNewPassword();
+
+            ValidatingConfirmPassword();   
 
         }
+
+
+
+     }
 }
