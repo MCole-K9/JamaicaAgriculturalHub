@@ -28,11 +28,14 @@ namespace JAHubLib
     {
         static UserRole _userRole = UserRole.NotLoggedIn;
         static int _userId;
+        static String _name;
 
         // K.S.: may want to add {FirstName} {LastName} here to make that always accessible, not sure
         // yet
         public static UserRole UserRole => _userRole;
         public static int UserId => _userId;
+
+        public static String Name => _name;
 
 
         public static PasswordResult Login(String email, String password)
@@ -49,7 +52,7 @@ namespace JAHubLib
             {
                 connection.Open();
 
-                string command = "SELECT ID, EmailAddress, Password, UserRole FROM [User] WHERE " +
+                string command = "SELECT ID, EmailAddress, FirstName, LastName, Password, UserRole FROM [User] WHERE " +
                     $"EmailAddress = '{email}'";
 
                 SqlCommand checkCredentials = new SqlCommand(command, connection);
@@ -68,6 +71,7 @@ namespace JAHubLib
 
                             _userId = (int)reader["ID"];
                             _userRole = (UserRole)reader["UserRole"];
+                            _name = (string)reader["FirstName"] + " " + (string)reader["LastName"];
                         }
                         else
                         {

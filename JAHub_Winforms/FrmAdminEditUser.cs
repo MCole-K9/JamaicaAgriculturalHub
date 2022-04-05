@@ -15,6 +15,9 @@ namespace JAHub_Winforms
     public partial class FrmAdminEditUser : Form
     {
         User _user;
+        bool isPasswordValid = true;
+        bool isEmailValid = true;
+        usrNameBlock nameBlock;
         public FrmAdminEditUser(int userId)
         {
             InitializeComponent();
@@ -27,23 +30,141 @@ namespace JAHub_Winforms
             lblEditUser.Text = $"Edit User: {_user.FirstName} {_user.LastName}" +
                 $" (ID: {_user.UserID}; Role: {_user.UserRole})";
 
-            // This adds and moves-to-front the usrNameBlock
+            // This adds and moves-to-top the usrNameBlock
             flwControlsHolder.Controls.Add(new usrNameBlock(_user.FirstName, _user.MiddleName, 
                 _user.LastName));
             flwControlsHolder.Controls.SetChildIndex(
                 flwControlsHolder.Controls[flwControlsHolder.Controls.Count - 1], 0);
 
+            nameBlock = flwControlsHolder.Controls[0] as usrNameBlock;
+
             txtEmail.Text = _user.Email;
 
-            // need to add a bit here that give the user the same kind of combobox as in create user
-            // should this also allow changing passwords?
+            txtPasswordFirstEntry.Text = _user.Password;
+            txtPasswordSecondEntry.Text = _user.Password;
         }
 
         private void btnUpdateRecord_Click(object sender, EventArgs e)
         {
-            // run validations for the relevant controls
-            // if good, run an update record function in User
-            // if not good, tell them to their face
+            nameBlock.Validate();
+
+            Boolean areEntriesValid = false;
+
+            if (nameBlock.IsBlockValid())
+            {
+                if (isEmailValid)
+                {
+                    if (nameBlock.IsBlockValid())
+                    {
+                        if (isPasswordValid)
+                        {
+                            areEntriesValid = true;
+
+                            _user.FirstName = nameBlock.FirstName;
+                            _user.LastName = nameBlock.LastName;
+                            _user.MiddleName = nameBlock.MiddleName;
+
+                            _user.Email = txtEmail.Text.ToLower();
+                            _user.Password = txtPasswordFirstEntry.Text;
+
+                            _user.UpdateUserRecord();
+                        }
+                    }
+                }
+            }
+
+            if (areEntriesValid == false)
+            {
+                MessageBox.Show("Cannot Edit User Record. One or More Errors Exist. Please fix them to" +
+                    " Continue");
+            }
+            else
+            {
+                MessageBox.Show("Successfully modified record!");
+                // close this form
+                // open FrmAdminSelectNewUser
+
+            }
+        }
+
+        private void txtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtEmail.Text.IndexOf("@") > -1)
+            {
+                if (txtEmail.Text.IndexOf(".", txtEmail.Text.IndexOf("@")) > txtEmail.Text.IndexOf("@"))
+                {
+                    errEditUser.SetError(txtEmail, "");
+
+                    isEmailValid = true;
+                }
+            }
+            else if (txtEmail.Text == "")
+            {
+                errEditUser.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
+                errEditUser.SetError(txtEmail, "Field Cannot be Blank");
+
+                isEmailValid = false;
+            }
+            else
+            {
+
+                errEditUser.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
+                errEditUser.SetError(txtEmail, "Must be a valid email, e.g. someone@example.com");
+
+                isEmailValid = false;
+            }
+        }
+
+        private void txtPasswordFirstEntry_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtPasswordFirstEntry.Text == "")
+            {
+                errEditUser.SetIconAlignment(txtPasswordFirstEntry, ErrorIconAlignment.MiddleRight);
+                errEditUser.SetError(txtPasswordFirstEntry, "Password must be entered");
+
+                return;
+            }
+            else
+            {
+                errEditUser.SetError(txtPasswordFirstEntry, "");
+            }
+        }
+
+        private void txtPasswordSecondEntry_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtPasswordFirstEntry.Text == "")
+            {
+                errEditUser.SetIconAlignment(txtPasswordFirstEntry, ErrorIconAlignment.MiddleRight);
+                errEditUser.SetError(txtPasswordFirstEntry, "Password must be entered");
+                isPasswordValid = false;
+
+                return;
+            }
+            else if (txtPasswordSecondEntry.Text != txtPasswordFirstEntry.Text)
+            {
+                errEditUser.SetIconAlignment(txtPasswordSecondEntry, ErrorIconAlignment.MiddleRight);
+                errEditUser.SetError(txtPasswordSecondEntry, "Passwords must match");
+                isPasswordValid = false;
+            }
+            else if (txtPasswordSecondEntry.Text == txtPasswordFirstEntry.Text)
+            {
+                errEditUser.SetError(txtPasswordSecondEntry, "");
+                isPasswordValid = true;
+            }
+        }
+
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowPassword.Checked)
+            {
+                txtPasswordFirstEntry.PasswordChar = '\0';
+                txtPasswordSecondEntry.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPasswordFirstEntry.PasswordChar = '*';
+                txtPasswordSecondEntry.PasswordChar = '*';
+            }
         }
     }
 }
