@@ -169,6 +169,57 @@ namespace JAHub_Winforms
                             newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
 
                             newUser.WriteToDatabase();
+
+                            // 2 parts. This part gets the ID of the user using the email as a candidate key
+                            // (Otherwise incapable of knowing the ID)
+                            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                            {
+                                connection.Open();
+
+                                String command = $"SELECT ID FROM [User] WHERE EmailAddress = '{newUser.Email}'";
+
+                                SqlCommand getId = new SqlCommand(command, connection);
+
+                                SqlDataReader reader = getId.ExecuteReader();
+
+                                while (reader.Read())
+                                {
+                                    newUser.UserID = (int)reader["ID"];
+                                }
+
+                                connection.Close();
+                            }
+
+                            // Second part: compare UserRole to determine where to write to db
+                            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                            {
+                                connection.Open();
+
+                                String command;
+
+                                switch ((UserRole)cmbUserRole.SelectedValue)
+                                {
+                                    case UserRole.Customer:
+                                        command = $"INSERT INTO Customer (UserID) VALUES ({newUser.UserID})";
+                                        break;
+                                    case UserRole.Farmer:
+                                        command = $"INSERT INTO Farmer (UserID) VALUES ({newUser.UserID})";
+                                        break;
+                                    case UserRole.GrantOfficer:
+                                        command = $"INSERT INTO GrantOfficer (UserID) VALUES ({newUser.UserID})";
+                                        break;
+                                    default:
+                                        command = "";
+                                        break;
+                                }
+
+
+                                SqlCommand populateTable = new SqlCommand(command, connection);
+
+                                populateTable.ExecuteNonQuery();
+
+                                connection.Close();
+                            }
                         }
                     }
                 }
