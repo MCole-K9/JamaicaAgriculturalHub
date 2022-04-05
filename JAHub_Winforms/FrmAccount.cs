@@ -12,11 +12,21 @@ namespace JAHub_Winforms
 {
     public partial class FrmAccount : Form
     {
+       
         public FrmAccount()
         {
             InitializeComponent();
+            
         }
 
         
+
+        private void btnUpdateName_Click(object sender, EventArgs e)
+        {
+
+            FrmUpdateName frmUpdateName = new FrmUpdateName();
+            frmUpdateName.MdiParent = this.MdiParent;
+            frmUpdateName.Show();
+        }
     }
 }

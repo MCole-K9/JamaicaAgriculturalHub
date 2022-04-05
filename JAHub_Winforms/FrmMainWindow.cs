@@ -221,5 +221,20 @@ namespace JAHub_Winforms
             // Hiding the Menustrip on load, not especially necessary tbh
             mnsMainForm.Hide();
         }
+
+
+        private void FrmMainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Utilities.DeleteImages();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"{ex.GetType().ToString()} Message: {ex.Message}");
+            }
+            
+        }
     }
 }

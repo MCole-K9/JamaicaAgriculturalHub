@@ -17,10 +17,12 @@ namespace JAHubLib
         public string Password { set; get; }
         public string Email { set; get; } 
         
+        
         public UserRole UserRole { get; set; }
         
         public void WriteToDatabase()
         {
+            
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
@@ -114,29 +116,6 @@ namespace JAHubLib
                 connection.Close();
             }
         }
-        public void CreateBlogPost(Blog newBlog,string title,string desc, string body)
-        {
-            newBlog.Author.UserID = this.UserID;
-            newBlog.Title = title;
-            newBlog.Description = desc;
-            newBlog.PublishDateString = DateTime.Now.ToShortDateString();
-            newBlog.BlogBody = body;
-            newBlog.Rating = 0;
-            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-            connection.Open();
-            SqlCommand cmd = new SqlCommand(Utilities.getCreateBlogSqlString(newBlog),connection);
-            int i = cmd.ExecuteNonQuery();
-            if (i == 0)
-            {
-                throw new Exception("DATABASE_ERROR_NO_ROWS_AFFECTED");
-            }
-            else
-            {
-                connection.Close();
-            }
-        }
-
-
         
     }
 }
