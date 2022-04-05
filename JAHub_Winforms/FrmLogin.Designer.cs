@@ -79,10 +79,9 @@
             this.lblLoginInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginInstruction.Name = "lblLoginInstruction";
             this.lblLoginInstruction.Padding = new System.Windows.Forms.Padding(4, 0, 4, 12);
-            this.lblLoginInstruction.Size = new System.Drawing.Size(372, 112);
+            this.lblLoginInstruction.Size = new System.Drawing.Size(372, 52);
             this.lblLoginInstruction.TabIndex = 1;
-            this.lblLoginInstruction.Text = "To continue, please log into your account using your User ID and password\r\n\r\n(jus" +
-    "t enter \'1\' for user ID and \"test\" for password)";
+            this.lblLoginInstruction.Text = "To continue, please log into your account using your User ID and password";
             // 
             // tblLoginCredentials
             // 
@@ -94,7 +93,7 @@
             this.tblLoginCredentials.Controls.Add(this.txtEmailAddress, 1, 0);
             this.tblLoginCredentials.Controls.Add(this.lblEmailAddress, 0, 0);
             this.tblLoginCredentials.Controls.Add(this.lblLoginPassword, 0, 1);
-            this.tblLoginCredentials.Location = new System.Drawing.Point(9, 168);
+            this.tblLoginCredentials.Location = new System.Drawing.Point(9, 108);
             this.tblLoginCredentials.Name = "tblLoginCredentials";
             this.tblLoginCredentials.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.tblLoginCredentials.RowCount = 2;
@@ -145,7 +144,7 @@
             // btnLogin
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLogin.Location = new System.Drawing.Point(143, 247);
+            this.btnLogin.Location = new System.Drawing.Point(143, 187);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 29);
@@ -158,7 +157,7 @@
             // 
             this.lblCredentialEntryError.AutoSize = true;
             this.lblCredentialEntryError.ForeColor = System.Drawing.Color.Red;
-            this.lblCredentialEntryError.Location = new System.Drawing.Point(3, 280);
+            this.lblCredentialEntryError.Location = new System.Drawing.Point(3, 220);
             this.lblCredentialEntryError.Name = "lblCredentialEntryError";
             this.lblCredentialEntryError.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.lblCredentialEntryError.Size = new System.Drawing.Size(275, 20);
