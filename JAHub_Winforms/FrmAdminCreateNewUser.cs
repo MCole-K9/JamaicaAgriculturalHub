@@ -17,11 +17,14 @@ namespace JAHub_Winforms
     {
         bool isEmailValid;
         bool isPasswordValid;
+        FrmAdminContainer frmAdmin;
 
-        public FrmAdminCreateNewUser()
+        public FrmAdminCreateNewUser(FrmAdminContainer admin)
         {
             InitializeComponent();
             TopLevel = false;
+
+            frmAdmin = admin;
         }
 
         private void FrmAdminCreateNewUser_Load(object sender, EventArgs e)
@@ -179,9 +182,6 @@ namespace JAHub_Winforms
             else
             {
                 MessageBox.Show("Successfully created new record!");
-                // close this form
-                // open FrmAdminSelectNewUser
-                
             }
         }
     }

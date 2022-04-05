@@ -121,7 +121,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminCreateNewUser());
+            pnlFormHolder.Controls.Add(new FrmAdminCreateNewUser(this));
             pnlFormHolder.Controls[0].Show();
         }
 
