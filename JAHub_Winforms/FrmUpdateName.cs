@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Configuration;
+using System.Data.SqlClient;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
@@ -23,16 +26,26 @@ namespace JAHub_Winforms
 
         private void FrmUpdateName_Load(object sender, EventArgs e)
         {
-
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("select FirstName, MiddleName, LastName from  [dbo].[User] where ID = " + Session.UserId ,connection);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                txtUpdateFirstName.Text = sdr.GetValue(0).ToString();
+                txtUpdateLastName.Text = sdr.GetValue(2).ToString();   
+            }
+            connection.Close();
         }
 
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            //FrmUpdateName frmUpdateName = new FrmUpdateName();
-            //frmUpdateName.();
             this.Close();
-
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void txtUpdateFirstName_Click(object sender, EventArgs e)
