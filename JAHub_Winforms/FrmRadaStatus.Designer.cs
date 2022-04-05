@@ -134,6 +134,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblInformation
@@ -146,6 +147,7 @@
             this.lblInformation.Size = new System.Drawing.Size(108, 25);
             this.lblInformation.TabIndex = 3;
             this.lblInformation.Text = "Information";
+            this.lblInformation.Visible = false;
             // 
             // flwInformationHolder
             // 
@@ -153,6 +155,7 @@
             this.flwInformationHolder.Name = "flwInformationHolder";
             this.flwInformationHolder.Size = new System.Drawing.Size(398, 225);
             this.flwInformationHolder.TabIndex = 2;
+            this.flwInformationHolder.Visible = false;
             // 
             // btnRegisterWithRada
             // 
@@ -162,6 +165,7 @@
             this.btnRegisterWithRada.TabIndex = 4;
             this.btnRegisterWithRada.Text = "Click here to Register with RADA or connect a preexisting record";
             this.btnRegisterWithRada.UseVisualStyleBackColor = true;
+            this.btnRegisterWithRada.Visible = false;
             this.btnRegisterWithRada.Click += new System.EventHandler(this.btnRegisterWithRada_Click);
             // 
             // btnSubmit
@@ -172,6 +176,7 @@
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Visible = false;
             // 
             // FrmRadaStatus
             // 
