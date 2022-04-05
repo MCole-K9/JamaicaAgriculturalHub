@@ -115,5 +115,21 @@ namespace JAHubLib
         {
             return "INSERT INTO Blog (Title, Author, Description, Body, PublishedDate, Rating) VALUES ('" + newBlog.Title + "','" + newBlog.AuthorID + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");";
         }
+
+        //M.C..Trying to kill repitition
+        public static int executeInputQuery(string query)
+        {
+            using(SqlConnection conn = new SqlConnection(getConnectionString()))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                int i = cmd.ExecuteNonQuery();
+
+                return i;
+
+            }
+
+       
+        }
     }
 }
