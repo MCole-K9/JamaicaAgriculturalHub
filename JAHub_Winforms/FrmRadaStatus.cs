@@ -81,18 +81,26 @@ namespace JAHub_Winforms
                     lblInformation.Visible = true;
                     btnEdit.Visible = true;
 
-                    // generate the box of details necessary, then populate the flwwhateveritname with them
+                    flwInformationHolder.Visible = true;
+
+                    // generate all of the controls and then write the values insidd of them
+                    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                    {
+                        connection.Open();
+
+
+
+
+                        connection.Close();
+                    }
                     break;
                 default:
-                    // just tell the user they're not connected, i guess
+                    lblStatusType.Text = "Not Registered";
+                    lblStatusExplanation.Text = "You are not currently registered with RADA. Click the button below to apply.";
+
+                    btnRegisterWithRada.Visible = true;
                     break;
             }
-
-
-            /* This needs to:
-             * - run a query to see if farmer record exists
-             * - if the record exists, check for rada status
-             */
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
