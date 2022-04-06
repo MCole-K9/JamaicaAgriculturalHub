@@ -18,8 +18,10 @@ namespace JAHubLib
             this.CustomerID = customerID;
             FetchCustomerData();
         }
-        public Customer(bool userIsLoggedIn)
+        public Customer(bool userIsLoggedIn = true)
         {
+            this.isLoggedIn = userIsLoggedIn;
+
             if (!IsCustomer())
             {
                 CreateCustomer();
@@ -31,7 +33,7 @@ namespace JAHubLib
                 FetchCustomerData();
             }
 
-            this.isLoggedIn = userIsLoggedIn;
+            
         }
        
         public int AddReview(Review review)
