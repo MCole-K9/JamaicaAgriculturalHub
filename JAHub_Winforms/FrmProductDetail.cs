@@ -49,7 +49,9 @@ namespace JAHub_Winforms
             {
                 ProgressBar progressBar = new ProgressBar();
                 progressBar.Value = (int)rating;
+                progressBar.Margin = new Padding(0, 0, 0, 20);
                 fpnlProgress.Controls.Add(progressBar);
+
             }
             
         }
@@ -219,11 +221,19 @@ namespace JAHub_Winforms
 
                     _product.FetchReviews();
                     LoadReviews();
+
+                    btnClearRating.PerformClick();
+                    txtComment.Clear();
                 }
 
                 
 
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

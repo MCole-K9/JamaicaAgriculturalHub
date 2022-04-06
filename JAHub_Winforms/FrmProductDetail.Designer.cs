@@ -260,7 +260,7 @@
             this.panel4.Controls.Add(this.txtComment);
             this.panel4.Controls.Add(this.lblRating);
             this.panel4.Controls.Add(this.lblComment);
-            this.panel4.Location = new System.Drawing.Point(525, 259);
+            this.panel4.Location = new System.Drawing.Point(525, 268);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(363, 233);
             this.panel4.TabIndex = 2;
@@ -370,7 +370,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(522, 239);
+            this.label1.Location = new System.Drawing.Point(522, 247);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 3;
@@ -380,7 +380,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 239);
+            this.label2.Location = new System.Drawing.Point(13, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 3;
@@ -398,7 +398,7 @@
             // 
             this.fpnlReviews.AutoScroll = true;
             this.fpnlReviews.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.fpnlReviews.Location = new System.Drawing.Point(182, 259);
+            this.fpnlReviews.Location = new System.Drawing.Point(182, 268);
             this.fpnlReviews.Name = "fpnlReviews";
             this.fpnlReviews.Size = new System.Drawing.Size(337, 215);
             this.fpnlReviews.TabIndex = 4;
@@ -412,6 +412,7 @@
             this.label3.Size = new System.Drawing.Size(18, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "5";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox1
             // 
@@ -427,7 +428,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::JAHub_Winforms.Properties.Resources.yellow_star;
-            this.pictureBox2.Location = new System.Drawing.Point(36, 294);
+            this.pictureBox2.Location = new System.Drawing.Point(36, 302);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -439,7 +440,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 302);
+            this.label4.Location = new System.Drawing.Point(12, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 20);
             this.label4.TabIndex = 3;
@@ -448,7 +449,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::JAHub_Winforms.Properties.Resources.yellow_star;
-            this.pictureBox3.Location = new System.Drawing.Point(36, 328);
+            this.pictureBox3.Location = new System.Drawing.Point(36, 345);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -460,7 +461,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 336);
+            this.label5.Location = new System.Drawing.Point(12, 354);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 20);
             this.label5.TabIndex = 3;
@@ -469,7 +470,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::JAHub_Winforms.Properties.Resources.yellow_star;
-            this.pictureBox4.Location = new System.Drawing.Point(36, 371);
+            this.pictureBox4.Location = new System.Drawing.Point(36, 388);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(29, 29);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -481,7 +482,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 379);
+            this.label6.Location = new System.Drawing.Point(12, 397);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 20);
             this.label6.TabIndex = 3;
@@ -490,7 +491,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::JAHub_Winforms.Properties.Resources.yellow_star;
-            this.pictureBox5.Location = new System.Drawing.Point(36, 417);
+            this.pictureBox5.Location = new System.Drawing.Point(36, 435);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(29, 29);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -502,7 +503,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 425);
+            this.label7.Location = new System.Drawing.Point(12, 444);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(18, 20);
             this.label7.TabIndex = 3;
@@ -511,9 +512,9 @@
             // fpnlProgress
             // 
             this.fpnlProgress.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.fpnlProgress.Location = new System.Drawing.Point(71, 259);
+            this.fpnlProgress.Location = new System.Drawing.Point(71, 267);
             this.fpnlProgress.Name = "fpnlProgress";
-            this.fpnlProgress.Size = new System.Drawing.Size(105, 232);
+            this.fpnlProgress.Size = new System.Drawing.Size(105, 216);
             this.fpnlProgress.TabIndex = 5;
             // 
             // FrmProductDetail
