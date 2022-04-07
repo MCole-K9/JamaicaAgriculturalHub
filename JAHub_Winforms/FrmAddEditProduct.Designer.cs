@@ -63,6 +63,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(688, 394);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnSave
             // 
@@ -81,6 +82,7 @@
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(303, 21);
             this.cboCategory.TabIndex = 4;
+            this.cboCategory.Text = "Select Category";
             // 
             // txtStock
             // 
@@ -162,6 +164,7 @@
             // 
             // pbImage
             // 
+            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbImage.Location = new System.Drawing.Point(23, 20);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(237, 189);

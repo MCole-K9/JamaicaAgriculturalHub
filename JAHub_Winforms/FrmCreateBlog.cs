@@ -14,15 +14,9 @@ namespace JAHub_Winforms
 {
     public partial class FrmCreateBlog : Form
     {
-        User user = new User();
         
         public FrmCreateBlog()
         {
-            InitializeComponent();
-        }
-        public FrmCreateBlog(User u)
-        {
-            user = u;
             InitializeComponent();
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
@@ -91,7 +85,30 @@ namespace JAHub_Winforms
         private void btnPost_Click(object sender, EventArgs e)
         {
             Blog newBlog = new Blog();
-            user.CreateBlogPost(newBlog, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
+            try
+            {
+                newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
+                MessageBox.Show("Blog Post Created!");
+                if (Utils.IsFormOpen("FrmBlog"))
+                {
+                    foreach (var form in this.MdiParent.MdiChildren)
+                    {
+                        if (form.Text == "FrmBlog")
+                        {
+                            form.Close();
+                        }
+                    }
+                    FrmBlog frmBlog = new FrmBlog();
+                    frmBlog.MdiParent = this.MdiParent;
+                    frmBlog.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

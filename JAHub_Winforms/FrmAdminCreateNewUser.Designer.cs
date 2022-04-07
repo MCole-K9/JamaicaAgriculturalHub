@@ -160,7 +160,7 @@
             this.tblEmailEntry.RowCount = 1;
             this.tblEmailEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblEmailEntry.Size = new System.Drawing.Size(363, 48);
-            this.tblEmailEntry.TabIndex = 6;
+            this.tblEmailEntry.TabIndex = 2;
             // 
             // lblEmailEntry
             // 
@@ -178,7 +178,7 @@
             this.txtEmail.Location = new System.Drawing.Point(163, 10);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(161, 27);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 2;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // tblPasswordEntry
@@ -241,7 +241,7 @@
             this.btnSubmitRecord.Location = new System.Drawing.Point(3, 346);
             this.btnSubmitRecord.Name = "btnSubmitRecord";
             this.btnSubmitRecord.Size = new System.Drawing.Size(199, 39);
-            this.btnSubmitRecord.TabIndex = 3;
+            this.btnSubmitRecord.TabIndex = 5;
             this.btnSubmitRecord.Text = "Create New Account";
             this.btnSubmitRecord.UseVisualStyleBackColor = true;
             this.btnSubmitRecord.Click += new System.EventHandler(this.btnSubmitRecord_Click);
@@ -262,7 +262,7 @@
             this.usrNameBlock1.Name = "usrNameBlock1";
             this.usrNameBlock1.Padding = new System.Windows.Forms.Padding(48, 0, 0, 0);
             this.usrNameBlock1.Size = new System.Drawing.Size(363, 124);
-            this.usrNameBlock1.TabIndex = 0;
+            this.usrNameBlock1.TabIndex = 1;
             // 
             // FrmAdminCreateNewUser
             // 

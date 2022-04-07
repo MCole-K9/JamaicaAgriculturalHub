@@ -42,6 +42,7 @@
             this.txtPasswordFirstEntry = new System.Windows.Forms.TextBox();
             this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.errEditUser = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkShowPassword = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flwControlsHolder.SuspendLayout();
             this.tblEmailEntry.SuspendLayout();
@@ -78,11 +79,12 @@
             this.flwControlsHolder.AutoSize = true;
             this.flwControlsHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwControlsHolder.Controls.Add(this.tblEmailEntry);
+            this.flwControlsHolder.Controls.Add(this.chkShowPassword);
             this.flwControlsHolder.Controls.Add(this.tblPasswordEntry);
             this.flwControlsHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwControlsHolder.Location = new System.Drawing.Point(3, 32);
             this.flwControlsHolder.Name = "flwControlsHolder";
-            this.flwControlsHolder.Size = new System.Drawing.Size(369, 134);
+            this.flwControlsHolder.Size = new System.Drawing.Size(369, 164);
             this.flwControlsHolder.TabIndex = 2;
             this.flwControlsHolder.WrapContents = false;
             // 
@@ -117,6 +119,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(161, 27);
             this.txtEmail.TabIndex = 1;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // tblPasswordEntry
             // 
@@ -127,7 +130,7 @@
             this.tblPasswordEntry.Controls.Add(this.lblPassword, 0, 0);
             this.tblPasswordEntry.Controls.Add(this.lblRetypePassword, 0, 1);
             this.tblPasswordEntry.Controls.Add(this.txtPasswordFirstEntry, 1, 0);
-            this.tblPasswordEntry.Location = new System.Drawing.Point(3, 57);
+            this.tblPasswordEntry.Location = new System.Drawing.Point(3, 87);
             this.tblPasswordEntry.Name = "tblPasswordEntry";
             this.tblPasswordEntry.RowCount = 2;
             this.tblPasswordEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -142,6 +145,7 @@
             this.txtPasswordSecondEntry.PasswordChar = '*';
             this.txtPasswordSecondEntry.Size = new System.Drawing.Size(161, 27);
             this.txtPasswordSecondEntry.TabIndex = 4;
+            this.txtPasswordSecondEntry.Validating += new System.ComponentModel.CancelEventHandler(this.txtPasswordSecondEntry_Validating);
             // 
             // lblPassword
             // 
@@ -170,10 +174,11 @@
             this.txtPasswordFirstEntry.PasswordChar = '*';
             this.txtPasswordFirstEntry.Size = new System.Drawing.Size(161, 27);
             this.txtPasswordFirstEntry.TabIndex = 3;
+            this.txtPasswordFirstEntry.Validating += new System.ComponentModel.CancelEventHandler(this.txtPasswordFirstEntry_Validating);
             // 
             // btnUpdateRecord
             // 
-            this.btnUpdateRecord.Location = new System.Drawing.Point(3, 172);
+            this.btnUpdateRecord.Location = new System.Drawing.Point(3, 202);
             this.btnUpdateRecord.Name = "btnUpdateRecord";
             this.btnUpdateRecord.Size = new System.Drawing.Size(129, 32);
             this.btnUpdateRecord.TabIndex = 3;
@@ -185,6 +190,18 @@
             // 
             this.errEditUser.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errEditUser.ContainerControl = this;
+            // 
+            // chkShowPassword
+            // 
+            this.chkShowPassword.AutoSize = true;
+            this.chkShowPassword.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkShowPassword.Location = new System.Drawing.Point(3, 57);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Size = new System.Drawing.Size(161, 24);
+            this.chkShowPassword.TabIndex = 1;
+            this.chkShowPassword.Text = "Show Password: ";
+            this.chkShowPassword.UseVisualStyleBackColor = true;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // FrmAdminEditUser
             // 
@@ -202,6 +219,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flwControlsHolder.ResumeLayout(false);
+            this.flwControlsHolder.PerformLayout();
             this.tblEmailEntry.ResumeLayout(false);
             this.tblEmailEntry.PerformLayout();
             this.tblPasswordEntry.ResumeLayout(false);
@@ -226,5 +244,6 @@
         private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.TextBox txtPasswordFirstEntry;
         private System.Windows.Forms.ErrorProvider errEditUser;
+        private System.Windows.Forms.CheckBox chkShowPassword;
     }
 }

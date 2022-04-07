@@ -41,35 +41,52 @@ namespace JAHub_Winforms
 
         private void FrmManageProducts_Load(object sender, EventArgs e)
         {
-            List<Product> products = new List<Product>();
-
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            try
             {
-                connection.Open();
+                List<Product> products = new List<Product>();
 
-                string query = $"Select * from Product Where Farmer = {1}";
-
-                SqlCommand cmd = new SqlCommand(query, connection);
-
-                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
                 {
-                    while (sqlData.Read())
+                    connection.Open();
+
+                    Farmer farmer = new Farmer();
+                    farmer.FetchFarmerData();
+
+                    string query = $"Select * from Product Where Farmer = {farmer.FarmerId}";
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+
+                    using (SqlDataReader sqlData = cmd.ExecuteReader())
                     {
-                        Product product = new Product();
+                        while (sqlData.Read())
+                        {
+                            Product product = new Product();
 
-                        product.Id = (int)sqlData["ID"];
-                        product.Name = sqlData["Name"].ToString();
-                        product.Stock = (int)sqlData["Stock"];
-                        product.Price = float.Parse(sqlData["Price"].ToString());
-                        product.Image = $"{Utilities.GetFilePath()}/Images/{sqlData["Image"].ToString()}";
+                            product.Id = (int)sqlData["ID"];
+                            product.Name = sqlData["Name"].ToString();
+                            product.Stock = (int)sqlData["Stock"];
+                            product.Price = float.Parse(sqlData["Price"].ToString());
+                            product.Image = $"{Utilities.GetFilePath()}/Images/{sqlData["Image"].ToString()}";
 
-                        products.Add(product);
+                            products.Add(product);
 
+                        }
                     }
-                }
-                LoadProducts(products);
+                    LoadProducts(products);
 
+                }
             }
+            catch (SqlException ex)
+            {
+
+                MessageBox.Show($"Error Occured: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }

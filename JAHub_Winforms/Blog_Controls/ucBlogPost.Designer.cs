@@ -47,9 +47,9 @@
             this.lblBlogTitle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlogTitle.Location = new System.Drawing.Point(13, 9);
             this.lblBlogTitle.Name = "lblBlogTitle";
-            this.lblBlogTitle.Size = new System.Drawing.Size(50, 26);
+            this.lblBlogTitle.Size = new System.Drawing.Size(56, 26);
             this.lblBlogTitle.TabIndex = 0;
-            this.lblBlogTitle.Text = "Title";
+            this.lblBlogTitle.Text = "Title:";
             // 
             // lblBlogAuthor
             // 
@@ -58,9 +58,9 @@
             this.lblBlogAuthor.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBlogAuthor.Location = new System.Drawing.Point(15, 35);
             this.lblBlogAuthor.Name = "lblBlogAuthor";
-            this.lblBlogAuthor.Size = new System.Drawing.Size(78, 15);
+            this.lblBlogAuthor.Size = new System.Drawing.Size(23, 15);
             this.lblBlogAuthor.TabIndex = 1;
-            this.lblBlogAuthor.Text = "Author Name";
+            this.lblBlogAuthor.Text = "By:";
             // 
             // lblDatePublished
             // 
@@ -69,9 +69,9 @@
             this.lblDatePublished.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatePublished.Location = new System.Drawing.Point(15, 50);
             this.lblDatePublished.Name = "lblDatePublished";
-            this.lblDatePublished.Size = new System.Drawing.Size(67, 13);
+            this.lblDatePublished.Size = new System.Drawing.Size(55, 13);
             this.lblDatePublished.TabIndex = 2;
-            this.lblDatePublished.Text = "MM/DD/YYYY";
+            this.lblDatePublished.Text = "Published:";
             // 
             // btnViewBlog
             // 

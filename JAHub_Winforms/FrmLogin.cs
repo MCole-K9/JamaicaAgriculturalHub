@@ -30,7 +30,7 @@ namespace JAHub_Winforms
             }
             else if (!String.IsNullOrEmpty(txtEmailAddress.Text) && !String.IsNullOrEmpty(txtPassword.Text))
             {
-                PasswordResult result = Session.Login(txtEmailAddress.Text, txtPassword.Text);
+                PasswordResult result = Session.Login(txtEmailAddress.Text.ToLower(), txtPassword.Text);
 
                 if (result == PasswordResult.Success)
                 {

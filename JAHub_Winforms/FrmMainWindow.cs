@@ -14,8 +14,8 @@ namespace JAHub_Winforms
     public partial class FrmMainWindow : Form
     {
         /* TO-DO
-         * [] Make MainWindow restrict available buttons, depending on the kind of user
-         * [] Make Status Strip change to reflect userId and userRole properly ("Looged in as:")
+         * [x] Make MainWindow restrict available buttons, depending on the kind of user
+         * [x] Make Status Strip change to reflect userId and userRole properly ("Looged in as:")
          */
         public FrmMainWindow()
         {
@@ -128,7 +128,7 @@ namespace JAHub_Winforms
         public void UnlockControls()
         {
             mnsMainForm.Enabled = true;
-            lblLoggedInAs.Text = "Logged in as: " + Session.UserId;
+            lblLoggedInAs.Text = "Logged in as: " + Session.Name + "( ID: " + Session.UserId + ")";
             lblLoggedInRole.Text = "Role: " + Session.UserRole;
 
             if (Session.UserRole == UserRole.Admin)
@@ -220,6 +220,21 @@ namespace JAHub_Winforms
         {
             // Hiding the Menustrip on load, not especially necessary tbh
             mnsMainForm.Hide();
+        }
+
+
+        private void FrmMainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Utilities.DeleteImages();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"{ex.GetType().ToString()} Message: {ex.Message}");
+            }
+            
         }
     }
 }
