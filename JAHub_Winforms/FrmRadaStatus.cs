@@ -88,7 +88,12 @@ namespace JAHub_Winforms
                     {
                         connection.Open();
 
-
+                        /* so overall i need to pull:
+                         * 
+                         */
+                        
+                        // basically need to use farmerId as the primary key to read a record into memory
+                        // then create the corresponding user controls
 
 
                         connection.Close();
