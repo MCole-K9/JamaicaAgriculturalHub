@@ -21,27 +21,35 @@ namespace JAHub_Winforms
 
         public FrmGrantDetails(Grantinfo grantinfo)
         {
+           
             InitializeComponent();
-            txtexpirydate.Text = grantinfo.ExpiryDate;
-            txttitle.Text = grantinfo.Title;
+            txtexpirydate.Text = grantinfo.ExpiryDate.ToString();
+            lbltitle.Text = grantinfo.Title;
             rtbgrantdescription.Text = grantinfo.GrantDescription;
+            rtbRequirement.Text = grantinfo.Requirement;    
+
 
         }
 
 
 
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            Grantinfo grantinfo = new Grantinfo();
 
 
-            grantinfo.ExpiryDate = txtexpirydate.Text;
-            grantinfo.Title = txttitle.Text;
-            grantinfo.GrantDescription = rtbgrantdescription.Text;
+
+           Grantinfo grantinfo = new Grantinfo();
+            
+
+           /* //grantinfo.ExpiryDate =;
+            grantinfo.Title = lbltitle.Text;
+            grantinfo.GrantDescription = rtbgrantdescription.Text;*/
 
 
             FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-            form1.MdiParent = this.MdiParent;
+           // form1.MdiParent = this.MdiParent;
             // form1.Show(); 
 
 
@@ -53,7 +61,7 @@ namespace JAHub_Winforms
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                pbscanpicture.ImageLocation = ofd.FileName;
+                rtbRequirement.ImageLocation = ofd.FileName;
 
                 //Form2 form2 = new Form2();
                 //form2.Show();

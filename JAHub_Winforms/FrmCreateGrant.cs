@@ -7,14 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
     public partial class FrmCreateGrant : Form
     {
+        Grantinfo grantinfo;
         public FrmCreateGrant()
         {
             InitializeComponent();
+
         }
+
+        private void btnCreateGrant_Click(object sender, EventArgs e)
+        {
+            Grantinfo grantinfo = new Grantinfo();
+            grantinfo.GrantDescription= rtbdescription.Text ;
+            grantinfo.Requirement= rtbrequirement.Text ;
+            grantinfo.ExpiryDate = dtpExpirydate.Value ;
+         //   grantinfo.FileName = pbfile.
+
+            GrantOfficer grantOfficer = new GrantOfficer();
+            grantOfficer.CreateGrant(grantinfo);
+
+
+
+
+        }
+
+
+       
+
+
+
     }
 }
