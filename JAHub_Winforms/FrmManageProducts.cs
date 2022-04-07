@@ -49,7 +49,7 @@ namespace JAHub_Winforms
                 {
                     connection.Open();
 
-                    Farmer farmer = new Farmer();
+                    Farmer farmer = new Farmer(true);
                     farmer.FetchFarmerData();
 
                     string query = $"Select * from Product Where Farmer = {farmer.FarmerId}";
