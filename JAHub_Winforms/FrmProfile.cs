@@ -116,10 +116,11 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmManageProducts(this));
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void btnGrant_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmCreateGrant());
-            HighlightButtons(btnCreateGrant);
+            HighlightButtons(btnGrant);
         }
     }
 }
