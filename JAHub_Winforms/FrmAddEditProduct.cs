@@ -111,9 +111,18 @@ namespace JAHub_Winforms
                 cboCategory.DataSource = categoryDS.Tables["Category"];
 
                 cboCategory.DisplayMember = "CategoryName";
-                cboCategory.ValueMember = "ID" ;
+                cboCategory.ValueMember = "ID";
+
+
+                //cboCategory.Items.Insert(0, "Select Category");
             }
-            
+            //Category ctg = new Category();
+
+            //cboCategory.DataBindings.Clear();
+            //cboCategory.DataSource = ctg.GetCategoryList();
+            //cboCategory.DisplayMember = "CategoryName";
+            //cboCategory.ValueMember = "ID" ;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
