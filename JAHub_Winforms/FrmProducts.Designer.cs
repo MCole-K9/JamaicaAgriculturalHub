@@ -30,7 +30,7 @@
         {
             this.lblCategory = new System.Windows.Forms.Label();
             this.fpnlProducts = new System.Windows.Forms.FlowLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
@@ -53,13 +53,14 @@
             this.fpnlProducts.Size = new System.Drawing.Size(717, 390);
             this.fpnlProducts.TabIndex = 1;
             // 
-            // comboBox1
+            // cboCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(208, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(78, 28);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(208, 21);
+            this.cboCategory.TabIndex = 2;
+            this.cboCategory.SelectionChangeCommitted += new System.EventHandler(this.cboCategory_SelectionChangeCommitted);
             // 
             // txtSearch
             // 
@@ -91,7 +92,7 @@
             this.ClientSize = new System.Drawing.Size(717, 450);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.fpnlProducts);
             this.Controls.Add(this.lblCategory);
             this.Name = "FrmProducts";
@@ -106,7 +107,7 @@
 
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.FlowLayoutPanel fpnlProducts;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconButton btnSearch;
     }
