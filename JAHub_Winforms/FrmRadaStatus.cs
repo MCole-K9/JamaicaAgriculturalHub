@@ -36,14 +36,14 @@ namespace JAHub_Winforms
 
                 while (reader.Read())
                 {
-                    if (reader["RadaRegistrationStatus"] == null)
+                    if (DBNull.Value.Equals(reader["RadaRegistrationStatus"]))
                     {
                         farmerRegistrationPhase = RadaRegistrationType.NotRegistered;
                     }
                     else
                     {
                         farmerId = (int)reader["ID"];
-                        farmerRegistrationPhase = (RadaRegistrationType)reader["RadaRegistrationStatus"];
+                        farmerRegistrationPhase = (RadaRegistrationType)Int32.Parse(reader["RadaRegistrationStatus"].ToString());
                     }
                 }
 

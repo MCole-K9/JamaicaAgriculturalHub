@@ -86,6 +86,7 @@
             // 
             // flwRadaStatus
             // 
+            this.flwRadaStatus.AutoSize = true;
             this.flwRadaStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwRadaStatus.Controls.Add(this.tableLayoutPanel1);
             this.flwRadaStatus.Controls.Add(this.tableLayoutPanel2);
@@ -97,11 +98,14 @@
             this.flwRadaStatus.Location = new System.Drawing.Point(0, 0);
             this.flwRadaStatus.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaStatus.Name = "flwRadaStatus";
-            this.flwRadaStatus.Size = new System.Drawing.Size(409, 516);
+            this.flwRadaStatus.Size = new System.Drawing.Size(409, 285);
             this.flwRadaStatus.TabIndex = 1;
+            this.flwRadaStatus.WrapContents = false;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -111,9 +115,9 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 47);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(398, 100);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(381, 58);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // lblStatusExplanation
@@ -128,9 +132,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(117, 53);
+            this.btnEdit.Location = new System.Drawing.Point(117, 23);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(102, 35);
+            this.btnEdit.Size = new System.Drawing.Size(102, 32);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -142,7 +146,7 @@
             this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblInformation.AutoSize = true;
             this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformation.Location = new System.Drawing.Point(3, 62);
+            this.lblInformation.Location = new System.Drawing.Point(3, 26);
             this.lblInformation.Name = "lblInformation";
             this.lblInformation.Size = new System.Drawing.Size(108, 25);
             this.lblInformation.TabIndex = 3;
@@ -151,17 +155,18 @@
             // 
             // flwInformationHolder
             // 
-            this.flwInformationHolder.Location = new System.Drawing.Point(3, 153);
+            this.flwInformationHolder.AutoSize = true;
+            this.flwInformationHolder.Location = new System.Drawing.Point(3, 111);
             this.flwInformationHolder.Name = "flwInformationHolder";
-            this.flwInformationHolder.Size = new System.Drawing.Size(398, 225);
+            this.flwInformationHolder.Size = new System.Drawing.Size(0, 0);
             this.flwInformationHolder.TabIndex = 2;
             this.flwInformationHolder.Visible = false;
             // 
             // btnRegisterWithRada
             // 
-            this.btnRegisterWithRada.Location = new System.Drawing.Point(3, 384);
+            this.btnRegisterWithRada.Location = new System.Drawing.Point(3, 117);
             this.btnRegisterWithRada.Name = "btnRegisterWithRada";
-            this.btnRegisterWithRada.Size = new System.Drawing.Size(378, 67);
+            this.btnRegisterWithRada.Size = new System.Drawing.Size(378, 50);
             this.btnRegisterWithRada.TabIndex = 4;
             this.btnRegisterWithRada.Text = "Click here to Register with RADA or connect a preexisting record";
             this.btnRegisterWithRada.UseVisualStyleBackColor = true;
@@ -170,9 +175,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(3, 457);
+            this.btnSubmit.Location = new System.Drawing.Point(3, 173);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(111, 47);
+            this.btnSubmit.Size = new System.Drawing.Size(111, 32);
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -184,7 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(409, 516);
+            this.ClientSize = new System.Drawing.Size(409, 285);
             this.Controls.Add(this.flwRadaStatus);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -195,9 +200,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flwRadaStatus.ResumeLayout(false);
+            this.flwRadaStatus.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

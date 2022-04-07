@@ -49,6 +49,7 @@
             this.tblNewOrConnectOptions.SuspendLayout();
             this.flwFormEntryControls.SuspendLayout();
             this.SuspendLayout();
+            this.TopLevel = false;
             // 
             // flwRadaRegister
             // 
