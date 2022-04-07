@@ -8,7 +8,7 @@ using JAHubLib;
 
 namespace JAHubLib
 {
-    public  class GrantOfficer : User
+    public class GrantOfficer : User
     {
         string AgencyName { get; set; }
         int GrantOfficerId { get; set; }
@@ -19,7 +19,7 @@ namespace JAHubLib
             //  grantinfo.ID = ;
             string query = $"INSERT INTO [Grant] ( Description,Requirement,Deadline,Application,GrantOfficer)" +
                     $"Values ( '{grantinfo.GrantDescription}', {grantinfo.Requirement}, {grantinfo.ExpiryDate}, '',{GrantOfficerId})";
-           
+
 
             SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
             connection.Open();
@@ -27,8 +27,8 @@ namespace JAHubLib
             int i = cmd.ExecuteNonQuery();
 
             return i;
-          
-    }
+
+        }
     }
 
 
