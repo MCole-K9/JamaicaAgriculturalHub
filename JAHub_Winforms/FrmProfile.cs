@@ -15,6 +15,9 @@ namespace JAHub_Winforms
     {
         private Button CurrentButton;
         private Form CurrentChildForm;
+        
+        // K.S.: Necessary to make opening FrmRadaRegister feasible without weird timing and garbage collection issues
+        private RadaRegistrationType usertype;
 
 
         public FrmProfile()
@@ -133,4 +136,6 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmRadaStatus(this));
         }
     }
+
+    
 }

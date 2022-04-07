@@ -20,6 +20,7 @@ namespace JAHub_Winforms
         public FrmRadaStatus(FrmProfile formContainer)
         {
             InitializeComponent();
+            this._formContainer = formContainer;
         }
 
         private void FrmRadaStatus_Load(object sender, EventArgs e)

@@ -14,12 +14,14 @@ namespace JAHub_Winforms
 {
     public partial class FrmRadaRegister : Form
     {
+        FrmProfile _profile;
         RadaRegistrationType _registrationPhase= RadaRegistrationType.AwaitingVerification;
 
         public FrmRadaRegister(FrmProfile profile, RadaRegistrationType registrationPhase)
         {
             InitializeComponent();
             this._registrationPhase = registrationPhase;
+            this._profile = profile;
         }
 
         private void btnNewRegistration_Click(object sender, EventArgs e)
