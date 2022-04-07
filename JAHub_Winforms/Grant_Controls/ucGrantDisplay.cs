@@ -32,5 +32,7 @@ namespace JAHub_Winforms.Grant_Controls
             FrmGrantDetails frmGrantDetails = new FrmGrantDetails(grantinfo);
             frmGrantDetails.Show();
         }
+
+       
     }
 }
