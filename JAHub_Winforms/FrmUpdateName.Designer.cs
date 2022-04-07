@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdateName));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblJAHAccontlabel1 = new System.Windows.Forms.Label();
@@ -45,9 +47,13 @@
             this.btnFName = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.errorProviderFirstName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLastName = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLastName)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -142,6 +148,7 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -223,6 +230,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "UPDATE NAME";
             // 
+            // errorProviderFirstName
+            // 
+            this.errorProviderFirstName.ContainerControl = this;
+            this.errorProviderFirstName.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderFirstName.Icon")));
+            // 
+            // errorProviderLastName
+            // 
+            this.errorProviderLastName.ContainerControl = this;
+            this.errorProviderLastName.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLastName.Icon")));
+            // 
             // FrmUpdateName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLastName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +287,7 @@
         private System.Windows.Forms.Label lblfamelabel;
         private System.Windows.Forms.Button btnFName;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ErrorProvider errorProviderFirstName;
+        private System.Windows.Forms.ErrorProvider errorProviderLastName;
     }
 }

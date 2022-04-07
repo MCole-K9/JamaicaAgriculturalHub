@@ -60,6 +60,39 @@ namespace JAHub_Winforms
             btnLName.FlatAppearance.BorderColor = Color.Blue;   
         }
 
-        
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(txtUpdateFirstName.Text == "")
+            {
+                //errorProviderFirstName.SetIconAlignment(txtUpdateFirstName, ErrorIconAlignment.MiddleRight);
+               errorProviderFirstName.SetError(txtUpdateFirstName, "Please enter Name to be updated.");
+            }
+            else if(txtUpdateLastName.Text == "")
+            {
+                //errorProviderFirstName.SetIconAlignment(txtUpdateFirstName, ErrorIconAlignment.MiddleRight);
+                errorProviderLastName.SetError(txtUpdateLastName, "Please enter Name to be updated.");
+                
+            }
+            else
+            {
+                errorProviderFirstName.Clear();
+                errorProviderLastName.Clear();
+
+                SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+                String sqlquery = "UPDATE [dbo].[User] SET FirstName = '" + txtUpdateFirstName.Text +"', LastName = '" + txtUpdateLastName.Text + "' WHERE ID = "+ Session.UserId;
+
+                connection.Open();
+                SqlCommand sqlcmd = new SqlCommand(sqlquery, connection);
+                SqlDataAdapter sda = new SqlDataAdapter(sqlcmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                sqlcmd.ExecuteNonQuery();
+                MessageBox.Show("Your Name was changed successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                connection.Close();
+                this.Close();
+
+
+            }
+        }
     }
 }
