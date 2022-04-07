@@ -16,7 +16,7 @@ namespace JAHub_Winforms
     {
         RadaRegistrationType _registrationPhase= RadaRegistrationType.AwaitingVerification;
 
-        public FrmRadaRegister(RadaRegistrationType registrationPhase)
+        public FrmRadaRegister(FrmProfile profile, RadaRegistrationType registrationPhase)
         {
             InitializeComponent();
             this._registrationPhase = registrationPhase;

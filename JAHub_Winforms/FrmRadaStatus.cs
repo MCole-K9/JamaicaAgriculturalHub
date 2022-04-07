@@ -16,7 +16,8 @@ namespace JAHub_Winforms
     {
         int farmerId;
         RadaRegistrationType farmerRegistrationPhase;
-        public FrmRadaStatus()
+        FrmProfile _formContainer;
+        public FrmRadaStatus(FrmProfile formContainer)
         {
             InitializeComponent();
         }
@@ -118,9 +119,10 @@ namespace JAHub_Winforms
 
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
         {
-            // this needs to
-            // close this form and the form above it
-            // open the Register With Rada form (this uses Super?)
+            // Current problem: OpenChildForm is going to close this form before i can pass the reference to 
+            // FrmProfile, which causes the value for _formContainer to be null
+            
+            _formContainer.OpenChildForm(new FrmRadaRegister(_formContainer, farmerRegistrationPhase));
         }
     }
 }
