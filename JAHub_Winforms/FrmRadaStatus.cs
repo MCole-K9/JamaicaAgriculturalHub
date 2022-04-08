@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
 using System.Data.SqlClient;
+using JAHub_Winforms.Verification;
 
 namespace JAHub_Winforms
 {
@@ -85,21 +86,9 @@ namespace JAHub_Winforms
 
                     flwInformationHolder.Visible = true;
 
-                    // generate all of the controls and then write the values insidd of them
-                    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-                    {
-                        connection.Open();
-
-                        /* so overall i need to pull:
-                         * 
-                         */
-                        
-                        // basically need to use farmerId as the primary key to read a record into memory
-                        // then create the corresponding user controls
-
-
-                        connection.Close();
-                    }
+                    // Moved this to a method because i think it makes the code easier to read
+                    PullUserRecords();
+                    
                     break;
                 default:
                     lblStatusType.Text = "Not Registered";
@@ -112,18 +101,42 @@ namespace JAHub_Winforms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            foreach (Control control in flwInformationHolder.Controls)
-            {
-                control.Enabled = true;
-            }
+            flwInformationHolder.Enabled = true;
         }
 
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
         {
-            // Current problem: OpenChildForm is going to close this form before i can pass the reference to 
-            // FrmProfile, which causes the value for _formContainer to be null
-            
             _formContainer.OpenChildForm(new FrmRadaRegister(_formContainer, farmerRegistrationPhase));
+        }
+
+        public void PullUserRecords()
+        {
+            Farmer farmer = new Farmer();
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+
+                // basically need to use farmerId as the primary key to read a record into memory
+                // then create the corresponding user controls
+
+
+                connection.Close();
+
+
+                // need to fill these with their constructed values when i run the queries
+                flwInformationHolder.Controls.Add(new usrNameBlock());
+                flwInformationHolder.Controls.Add(new usrDateOfBirthBlock());
+                flwInformationHolder.Controls.Add(new usrContactBlock());
+                flwInformationHolder.Controls.Add(new usrTrnBlock());
+                flwInformationHolder.Controls.Add(new usrUploadImageBlock());
+                flwInformationHolder.Controls.Add(new usrIndustryBlock());
+                flwInformationHolder.Controls.Add(new usrHoldingsBlock());
+                flwInformationHolder.Controls.Add(new usrOrganizationsBlock());
+
+                flwInformationHolder.Enabled = false;
+            }
         }
     }
 }
