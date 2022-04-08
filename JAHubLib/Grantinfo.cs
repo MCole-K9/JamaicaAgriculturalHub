@@ -7,7 +7,7 @@ using JAHubLib;
 
 namespace JAHubLib
 {
-    public class Grantinfo 
+    public class Grantinfo : User
     {
 
         private string grantDescription;
@@ -55,7 +55,7 @@ namespace JAHubLib
         }
 
 
-
+        
 
 
 

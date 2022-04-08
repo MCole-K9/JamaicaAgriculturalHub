@@ -16,5 +16,10 @@ namespace JAHub_Winforms
         {
             InitializeComponent();
         }
+
+        private void FrmEditGrantInfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
