@@ -52,6 +52,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panelMenu.Controls.Add(this.btnRadaStatus);
             this.panelMenu.Controls.Add(this.btnGrant);
             this.panelMenu.Controls.Add(this.btnManageProducts);
             this.panelMenu.Controls.Add(this.btnLogout);
@@ -326,6 +327,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnManageProducts;
         private System.Windows.Forms.Button btnGrant;
+        private System.Windows.Forms.Button btnRadaStatus;
     }
 }
 
