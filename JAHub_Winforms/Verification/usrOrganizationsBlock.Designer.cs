@@ -103,6 +103,7 @@
             this.flwOrganizationsTextHolder.AutoSize = true;
             this.flwOrganizationsTextHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwOrganizationsTextHolder.Controls.Add(this.txtOrganizationEntry);
+            this.flwOrganizationsTextHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwOrganizationsTextHolder.Location = new System.Drawing.Point(3, 104);
             this.flwOrganizationsTextHolder.Name = "flwOrganizationsTextHolder";
             this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(181, 33);

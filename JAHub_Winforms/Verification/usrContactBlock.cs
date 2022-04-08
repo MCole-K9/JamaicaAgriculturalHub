@@ -83,7 +83,7 @@ namespace JAHub_Winforms.Verification
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            flwPhoneNumbers.Controls.RemoveAt(flwContactBlock.Controls.Count - 1);
+            flwPhoneNumbers.Controls.RemoveAt(flwPhoneNumbers.Controls.Count - 1);
             
             if(flwPhoneNumbers.Controls.Count == 1)
             {

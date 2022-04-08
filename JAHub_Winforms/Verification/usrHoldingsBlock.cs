@@ -131,7 +131,7 @@ namespace JAHub_Winforms.Verification
         {
             flwLandBlockHolder.Controls.RemoveAt(flwLandBlockHolder.Controls.Count - 1);
 
-            if (flwLandBlockHolder.Controls.Count > 1){
+            if (flwLandBlockHolder.Controls.Count == 1){
                 btnRemoveLandEntry.Hide();
             }
         }
