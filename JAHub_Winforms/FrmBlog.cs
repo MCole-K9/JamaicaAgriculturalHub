@@ -21,6 +21,7 @@ namespace JAHub_Winforms
             SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
             connection.Open();
             SqlDataReader sqlData = cmd.ExecuteReader();
+            // TODO: this is to be done
             Utils.DisplayBlogsFromDatabase(sqlData, pnlContainer);
             connection.Close();
         }

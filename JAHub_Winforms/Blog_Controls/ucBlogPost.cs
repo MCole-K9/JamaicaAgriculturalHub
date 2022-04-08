@@ -13,8 +13,7 @@ namespace JAHub_Winforms.Blog_Controls
 {
     public partial class ucBlogPost : UserControl
     {
-        Blog blog = new Blog();
-        User user = new User();
+        public Blog blog = new Blog();
         public ucBlogPost()
         {
             InitializeComponent();
@@ -36,12 +35,16 @@ namespace JAHub_Winforms.Blog_Controls
             lblBlogDescription.Text = blog.Description;
             lblRatings.Text = blog.Rating.ToString();
         }
+        public void UpdateRating(int rating)
+        {
+            lblRatings.Text = rating.ToString();
+        }
 
         private void btnViewBlog_Click(object sender, EventArgs e)
         {
             FrmBlogDetails blogDetails = new FrmBlogDetails(blog);
+            //blogDetails.MdiParent = this.FindForm().MdiParent;
             blogDetails.Show();
-
         }
     }
 }
