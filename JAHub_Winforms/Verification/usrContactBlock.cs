@@ -74,11 +74,8 @@ namespace JAHub_Winforms.Verification
         private void btnAddAnotherPhoneNumber_Click(object sender, EventArgs e)
         {
 
-            flwPhoneNumbers.Controls.Add( new usrPhoneNumberBlock());
-            btnRemoveNumber.Visible = true;
-
-
-
+            flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock());
+            btnRemoveNumber.Show();
         }
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)

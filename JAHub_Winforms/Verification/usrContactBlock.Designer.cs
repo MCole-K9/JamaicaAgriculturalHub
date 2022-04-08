@@ -37,10 +37,10 @@ namespace JAHub_Winforms.Verification
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.flwPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
+            this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
             this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
             this.btnRemoveNumber = new System.Windows.Forms.Button();
             this.errContactBlock = new System.Windows.Forms.ErrorProvider(this.components);
-            this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
             this.flwContactBlock.SuspendLayout();
             this.tblEmailSection.SuspendLayout();
             this.flwPhoneNumbers.SuspendLayout();
@@ -113,6 +113,7 @@ namespace JAHub_Winforms.Verification
             // 
             // flwPhoneNumbers
             // 
+            this.flwPhoneNumbers.AutoSize = true;
             this.flwPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
             this.flwPhoneNumbers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -120,6 +121,18 @@ namespace JAHub_Winforms.Verification
             this.flwPhoneNumbers.Name = "flwPhoneNumbers";
             this.flwPhoneNumbers.Size = new System.Drawing.Size(394, 51);
             this.flwPhoneNumbers.TabIndex = 5;
+            // 
+            // usrPhoneNumberBlock1
+            // 
+            this.usrPhoneNumberBlock1.AutoSize = true;
+            this.usrPhoneNumberBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrPhoneNumberBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrPhoneNumberBlock1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrPhoneNumberBlock1.Location = new System.Drawing.Point(4, 4);
+            this.usrPhoneNumberBlock1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usrPhoneNumberBlock1.Name = "usrPhoneNumberBlock1";
+            this.usrPhoneNumberBlock1.Size = new System.Drawing.Size(386, 43);
+            this.usrPhoneNumberBlock1.TabIndex = 3;
             // 
             // btnAddAnotherPhoneNumber
             // 
@@ -150,18 +163,6 @@ namespace JAHub_Winforms.Verification
             // 
             this.errContactBlock.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errContactBlock.ContainerControl = this;
-            // 
-            // usrPhoneNumberBlock1
-            // 
-            this.usrPhoneNumberBlock1.AutoSize = true;
-            this.usrPhoneNumberBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrPhoneNumberBlock1.BackColor = System.Drawing.Color.Transparent;
-            this.usrPhoneNumberBlock1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usrPhoneNumberBlock1.Location = new System.Drawing.Point(4, 4);
-            this.usrPhoneNumberBlock1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.usrPhoneNumberBlock1.Name = "usrPhoneNumberBlock1";
-            this.usrPhoneNumberBlock1.Size = new System.Drawing.Size(386, 43);
-            this.usrPhoneNumberBlock1.TabIndex = 3;
             // 
             // usrContactBlock
             // 
