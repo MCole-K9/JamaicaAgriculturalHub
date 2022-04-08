@@ -60,62 +60,61 @@ namespace JAHub_Winforms.Verification
 
         public bool IsBlockValid()
         {
-            // This needs to be rewriten in consideration of multiple land blocks, now
-            if (usrLandBlock1.IsBlockValid())
+            bool isListValid = true;
+
+            foreach(usrProductsBlock product in flwProductsBlock.Controls)
             {
-                bool isListValid = true;
-
-                foreach(usrProductsBlock product in flwProductsBlock.Controls)
+                if (product.IsBlockValid())
                 {
-                    if (product.IsBlockValid())
-                    {
-                        _productsList.Add(product.Product);
-                    }
-                    else
-                    {
-                        isListValid = false;
-                        _productsList.Clear();
-                        break;
-                    }
+                    _productsList.Add(product.Product);
                 }
-
-                foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+                else
                 {
-                    if (land.IsBlockValid()){
-                        
-                    }
-                    else
-                    {
-                        isListValid=false;
-                        // clear whatever list of Landstuff here
-                    }
+                    isListValid = false;
+                    _productsList.Clear();
+                    break;
                 }
-                
-                if (isListValid)
-                {
-                    return true;
-                }
-
             }
-            
-            return false;
+
+            foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+            {
+                if (land.IsBlockValid()){
+                    _landInformationList.Add(land.LandInformation);
+                }
+                else
+                {
+                    isListValid=false;
+                    _landInformationList.Clear();
+                }
+            }
+                
+            if (isListValid)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void SetControlFocus()
         {
-            if (!usrLandBlock1.IsBlockValid())
+            foreach(usrLandBlock land in flwLandBlockHolder.Controls)
             {
-                usrLandBlock1.SetControlFocus();
-            }
-            else
-            {
-                foreach(usrProductsBlock product in flwProductsBlock.Controls)
+                if (!land.IsBlockValid())
                 {
-                    if (!product.IsBlockValid())
-                    {
-                        product.SetControlFocus();
-                        break;
-                    }
+                    land.SetControlFocus();
+                    return;
+                }
+            }
+
+            foreach (usrProductsBlock product in flwProductsBlock.Controls)
+            {
+                if (!product.IsBlockValid())
+                {
+                    product.SetControlFocus();
+                    return;
                 }
             }
         }
