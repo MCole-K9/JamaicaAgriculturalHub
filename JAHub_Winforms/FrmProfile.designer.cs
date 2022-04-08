@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnGrant = new System.Windows.Forms.Button();
             this.btnManageProducts = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSecurity = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panelMenu.Controls.Add(this.btnRadaStatus);
+            this.panelMenu.Controls.Add(this.btnGrant);
             this.panelMenu.Controls.Add(this.btnManageProducts);
             this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnSecurity);
@@ -61,10 +62,29 @@
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(291, 738);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnGrant
+            // 
+            this.btnGrant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGrant.FlatAppearance.BorderSize = 0;
+            this.btnGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrant.ForeColor = System.Drawing.Color.White;
+            this.btnGrant.Image = ((System.Drawing.Image)(resources.GetObject("btnGrant.Image")));
+            this.btnGrant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrant.Location = new System.Drawing.Point(0, 351);
+            this.btnGrant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGrant.Name = "btnGrant";
+            this.btnGrant.Size = new System.Drawing.Size(291, 48);
+            this.btnGrant.TabIndex = 7;
+            this.btnGrant.Text = "Grant";
+            this.btnGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGrant.UseVisualStyleBackColor = true;
+            this.btnGrant.Click += new System.EventHandler(this.btnGrant_Click);
             // 
             // btnManageProducts
             // 
@@ -75,7 +95,7 @@
             this.btnManageProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnManageProducts.Image")));
             this.btnManageProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageProducts.Location = new System.Drawing.Point(0, 303);
-            this.btnManageProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageProducts.Name = "btnManageProducts";
             this.btnManageProducts.Size = new System.Drawing.Size(291, 48);
             this.btnManageProducts.TabIndex = 6;
@@ -93,7 +113,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.Location = new System.Drawing.Point(0, 437);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(291, 48);
             this.btnLogout.TabIndex = 5;
@@ -110,7 +130,7 @@
             this.btnSecurity.Image = ((System.Drawing.Image)(resources.GetObject("btnSecurity.Image")));
             this.btnSecurity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSecurity.Location = new System.Drawing.Point(0, 255);
-            this.btnSecurity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSecurity.Margin = new System.Windows.Forms.Padding(4);
             this.btnSecurity.Name = "btnSecurity";
             this.btnSecurity.Size = new System.Drawing.Size(291, 48);
             this.btnSecurity.TabIndex = 4;
@@ -129,7 +149,7 @@
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(0, 207);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(291, 48);
             this.btnDashboard.TabIndex = 3;
@@ -148,7 +168,7 @@
             this.btnMyAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnMyAccount.Image")));
             this.btnMyAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyAccount.Location = new System.Drawing.Point(0, 159);
-            this.btnMyAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMyAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnMyAccount.Name = "btnMyAccount";
             this.btnMyAccount.Size = new System.Drawing.Size(291, 48);
             this.btnMyAccount.TabIndex = 2;
@@ -168,7 +188,7 @@
             this.btnProfileHome.Image = ((System.Drawing.Image)(resources.GetObject("btnProfileHome.Image")));
             this.btnProfileHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProfileHome.Location = new System.Drawing.Point(0, 111);
-            this.btnProfileHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProfileHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfileHome.Name = "btnProfileHome";
             this.btnProfileHome.Size = new System.Drawing.Size(291, 48);
             this.btnProfileHome.TabIndex = 1;
@@ -186,7 +206,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(291, 111);
             this.panel1.TabIndex = 0;
@@ -217,7 +237,7 @@
             // 
             this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
             this.pictureBox1.Location = new System.Drawing.Point(4, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(68, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,7 +251,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(293, 111);
             this.button1.TabIndex = 0;
@@ -243,7 +263,7 @@
             this.panelHomeContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelHomeContainer.BackColor = System.Drawing.Color.White;
             this.panelHomeContainer.Location = new System.Drawing.Point(292, 4);
-            this.panelHomeContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHomeContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelHomeContainer.Name = "panelHomeContainer";
             this.panelHomeContainer.Size = new System.Drawing.Size(0, 0);
             this.panelHomeContainer.TabIndex = 1;
@@ -277,7 +297,7 @@
             this.ClientSize = new System.Drawing.Size(1568, 738);
             this.Controls.Add(this.panelHomeContainer);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProfile";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.FrmProfile_Load);
@@ -305,7 +325,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnManageProducts;
-        private System.Windows.Forms.Button btnRadaStatus;
+        private System.Windows.Forms.Button btnGrant;
     }
 }
 

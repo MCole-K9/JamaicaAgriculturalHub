@@ -131,9 +131,11 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmManageProducts(this));
         }
 
-        private void btnRadaStatus_Click(object sender, EventArgs e)
+
+        private void btnGrant_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmRadaStatus(this));
+            OpenChildForm(new FrmCreateGrant());
+            HighlightButtons(btnGrant);
         }
     }
 

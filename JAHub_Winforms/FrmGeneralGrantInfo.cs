@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -17,56 +18,52 @@ namespace JAHub_Winforms
         public FrmGeneralGrantInfo()
         {
             InitializeComponent();
-        }
-        
 
-        private void lbllinkclickhere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Grantinfo grantinfo = new Grantinfo();
 
-            grantinfo.ExpiryDate = "23/12/20";
-            grantinfo.Title = "Sagicor";
-            grantinfo.GrantDescription = " At Sagicor we Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-
-            FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-            // form1.MdiParent = this.MdiParent;
-            form1.Show();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+      /*  private void btntest_Click(object sender, EventArgs e)
+        {       
+         
+           
+          
+        }*/
+
+       /* private void btnCreateBlog_Click(object sender, EventArgs e)
         {
-            Grantinfo grantinfo = new Grantinfo();
-            grantinfo.ExpiryDate = "23/02/22";
-            grantinfo.Title = "RADA";
-            grantinfo.GrantDescription = " At RADA we Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+          /*  FrmCreateGrant frmCreateGrant= new FrmCreateGrant();
+            frmCreateGrant.Show();    
+        } */
 
-
-            FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-            form1.Show();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void FrmGeneralGrantInfo_Load(object sender, EventArgs e)
         {
-            
+            using (SqlConnection conn = new SqlConnection(Utilities.getConnectionString()))
+            {
+                conn.Open();
+                string query = "Select * from [Grant]";
+                SqlCommand cmd = new SqlCommand(query, conn);
 
-            //FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-            //form1.Show();
-        }
+                using (SqlDataReader sqlRead = cmd.ExecuteReader())
+                {
+                    while (sqlRead.Read())
+                    {
+                        Grantinfo grantinfo = new Grantinfo();
+                        grantinfo.ID = (int)sqlRead["ID"];
+                        grantinfo.GrantDescription = sqlRead["Description"].ToString();
+                        grantinfo.Requirement = sqlRead["Requirements"].ToString();
+                        grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
+                        grantinfo.ApplicationId = sqlRead["Application_Form"].ToString();
+                        grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
+                        grantinfo.Title = sqlRead["Title"].ToString();
 
-        private void btntest_Click(object sender, EventArgs e)
-        {
-            Grantinfo grantinfo = new Grantinfo();
-            grantinfo.ExpiryDate = "23/11/24";
-            grantinfo.Title = "Scotia";
-            grantinfo.GrantDescription = " At Scotia we Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-            Grant_Controls.ucGrantDisplay grantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
-            pnlContainer.Controls.Add(grantDisplay);
-            grantDisplay.Dock = DockStyle.Top;
-        }
 
-        private void pnlContainer_ClientSizeChanged(object sender, EventArgs e)
-        {
-            pnlContainer.Padding = new Padding(0, 0, 0, 0);
+                        Grant_Controls.ucGrantDisplay ucGrantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
+                        pnlContainer.Controls.Add(ucGrantDisplay);
+                        ucGrantDisplay.Dock = DockStyle.Top;
+
+                    }
+                }
+            }
         }
     }
 }

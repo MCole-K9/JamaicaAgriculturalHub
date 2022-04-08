@@ -43,34 +43,40 @@ namespace JAHubLib
         public String TaxRegistrationNumber { get; set; }
         public RadaRegistrationType RadaRegistrationPhase { get; set; }
 
+        private bool isLoggedin;
 
         public Farmer()
         {
             
         }
 
+        public Farmer(bool FarmerIsLoggedIn)
+        {
+            this.isLoggedin = true;
+            FetchFarmerData();
+
+        }
 
         //M.C
         // constructor to populate farmer with user data
-        public Farmer(User user)
+        public Farmer(int farmerID)
         {
-            this.UserID = user.UserID;
-            this.FirstName = user.FirstName;
-            this.LastName = user.LastName;
-            this.MiddleName = user.MiddleName;
-            this.Email = user.Email;
-            this.UserRole = user.UserRole;
+
+            this.FarmerId = farmerID;
+            isLoggedin = false;
             FetchFarmerData();
+            
+
         }
 
-        //M.C.. Quires farmer table with user id to retrive the rest of the farmer data
+        //M.C.. Quires farmer table with user id to retrivethe farmer data
         public void FetchFarmerData()
         {
             using(SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
 
-                string query = $"SELECT * FROM Farmer WHERE UserID = {Session.UserId}";
+                string query = isLoggedin? $"SELECT * FROM Farmer WHERE UserID = {Session.UserId}" : $"SELECT * FROM Farmer WHERE ID = {this.FarmerId}";
  
                 SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -78,12 +84,21 @@ namespace JAHubLib
 
                 while (sqlData.Read())
                 {
+                    this.UserID = (int)sqlData["UserID"];
                     this.FarmerId = (int)sqlData["ID"];
                     this.BusinessEmail = sqlData["BusinessEmail"].ToString();
                   
                 }
                 sqlData.Close();
 
+            }
+            if (isLoggedin)
+            {
+                ReadFromDatabase(Session.UserId);
+            }
+            else
+            {
+                ReadFromDatabase(this.UserID);
             }
         }
 
@@ -96,8 +111,8 @@ namespace JAHubLib
             {
                 connection.Open();
 
-                string query = $"INSERT INTO [Product] (Name, Stock, Price, Image, Farmer)" +
-                    $"Values ( '{product.Name}', {product.Stock}, {product.Price}, '{productImageName}', {this.FarmerId})";
+                string query = $"INSERT INTO [Product] (Name, Stock, Price, Image, Category,  Farmer)" +
+                    $"Values ( '{product.Name}', {product.Stock}, {product.Price}, '{productImageName}',{product.Category} , {this.FarmerId})";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
                 int i = cmd.ExecuteNonQuery();
@@ -116,7 +131,7 @@ namespace JAHubLib
                 connection.Open();
 
                 string query = $"Update [Product]" +
-                    $" Set  Name = '{product.Name}', Stock = {product.Stock} , Price = {product.Price}, Image = '{productImageName}'" +
+                    $" Set  Name = '{product.Name}', Stock = {product.Stock} , Price = {product.Price}, Category = {product.Category}, Image = '{productImageName}'" +
                     $" Where ID = {product.Id}";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
