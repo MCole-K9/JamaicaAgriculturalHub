@@ -13,10 +13,6 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
-        /* TO DO
-         * [] Pass the farmer object to the landblock
-         */
-
         #region Variables and Properties
         List<String> _productsList = new List<String>();
         List<LandInformation> _landInformationList = new List<LandInformation>();
@@ -42,6 +38,8 @@ namespace JAHub_Winforms.Verification
             {
                 flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
             }
+
+            // the products and Landblocks will return valid on their own
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
@@ -62,6 +60,7 @@ namespace JAHub_Winforms.Verification
 
         public bool IsBlockValid()
         {
+            // This needs to be rewriten in consideration of multiple land blocks, now
             if (usrLandBlock1.IsBlockValid())
             {
                 bool isListValid = true;

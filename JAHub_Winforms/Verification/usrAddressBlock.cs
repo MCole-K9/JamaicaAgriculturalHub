@@ -36,6 +36,12 @@ namespace JAHub_Winforms.Verification
             txtAddressTown.Text = town;
             txtAddressPostOffice.Text = poBox;
             txtAddressParish.Text = parish;
+
+            // This is necessary to prevent an oversight that affects submission if you use a parameterised
+            // construction
+            isParishValid = true;
+            isPoBoxValid = true;
+            isTownValid = true;
         }
 
         private void txtAddressTown_Validating(object sender, CancelEventArgs e)

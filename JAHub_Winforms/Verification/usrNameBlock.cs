@@ -32,6 +32,10 @@ namespace JAHub_Winforms.Verification
             txtFirstName.Text = firstName;
             txtMiddleName.Text = middleName;
             txtLastName.Text = lastName;
+
+            isFirstNameValid = true;
+            isMiddleNameValid = true;
+            isLastNameValid = true;
         }
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
