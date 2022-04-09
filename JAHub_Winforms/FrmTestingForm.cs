@@ -21,12 +21,7 @@ namespace JAHub_Winforms
 
         private void FrmTestingForm_Load(object sender, EventArgs e)
         {
-            User user = new User { UserID = 4};
-            Farmer farmer = new Farmer(user);
-
-            lblFarmerID.Text = farmer.FarmerId.ToString();
-            lblBusinessEmail.Text = farmer.BusinessEmail;
-
+          
         }
 
         private void button1_Click(object sender, EventArgs e)

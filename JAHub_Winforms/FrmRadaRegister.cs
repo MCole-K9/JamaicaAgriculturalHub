@@ -14,11 +14,14 @@ namespace JAHub_Winforms
 {
     public partial class FrmRadaRegister : Form
     {
-        RadaRegistrationType applicationType = RadaRegistrationType.AwaitingVerification;
+        FrmProfile _profile;
+        RadaRegistrationType _registrationPhase= RadaRegistrationType.AwaitingVerification;
 
-        public FrmRadaRegister()
+        public FrmRadaRegister(FrmProfile profile, RadaRegistrationType registrationPhase)
         {
             InitializeComponent();
+            this._registrationPhase = registrationPhase;
+            this._profile = profile;
         }
 
         private void btnNewRegistration_Click(object sender, EventArgs e)
@@ -37,7 +40,7 @@ namespace JAHub_Winforms
                 flwFormEntryControls.Controls.Add(new usrOrganizationsBlock());
 
                 // Information will add to DB, but will not show from user perspective until verification
-                applicationType = RadaRegistrationType.AwaitingVerification;
+                _registrationPhase = RadaRegistrationType.AwaitingVerification;
             }
         }
 
@@ -51,7 +54,7 @@ namespace JAHub_Winforms
                 flwFormEntryControls.Controls.Add(new usrTrnBlock());
 
                 // User already has an application with RADA, but is not connected to system
-                applicationType = RadaRegistrationType.NotConnected;
+                _registrationPhase = RadaRegistrationType.NotConnected;
             }
         }
 
@@ -61,7 +64,7 @@ namespace JAHub_Winforms
             String message;
             
             // Submission format for people who don't have RADA accounts already
-            if(applicationType == RadaRegistrationType.AwaitingVerification)
+            if(_registrationPhase == RadaRegistrationType.AwaitingVerification)
             {
                 using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
                 {
@@ -195,9 +198,9 @@ namespace JAHub_Winforms
             }
             
             // Other submission format for People with already existing RADA Records
-            else if(applicationType == RadaRegistrationType.NotConnected)
+            else if(_registrationPhase == RadaRegistrationType.NotConnected)
             {
-                farmer.RadaRegistrationPhase = applicationType;
+                farmer.RadaRegistrationPhase = _registrationPhase;
 
                 using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
                 {
@@ -257,7 +260,7 @@ namespace JAHub_Winforms
 
             //if (farmer.WriteRecordToDatabase())
             //{
-                if (applicationType == RadaRegistrationType.AwaitingVerification)
+                if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
                 {
                     message = "Successfully created record for " + farmer.FirstName +
                         " " + farmer.LastName + "! \n Please wait to be verified.";
@@ -280,6 +283,11 @@ namespace JAHub_Winforms
 
                 // end the form and return to wherever
             //}
+
+        }
+
+        private void FrmRadaRegister_Load(object sender, EventArgs e)
+        {
 
         }
     }

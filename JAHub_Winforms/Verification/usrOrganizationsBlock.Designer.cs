@@ -53,7 +53,7 @@
             // 
             this.btnAddAnotherOrganization.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddAnotherOrganization.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnotherOrganization.Location = new System.Drawing.Point(125, 143);
+            this.btnAddAnotherOrganization.Location = new System.Drawing.Point(125, 137);
             this.btnAddAnotherOrganization.Name = "btnAddAnotherOrganization";
             this.btnAddAnotherOrganization.Size = new System.Drawing.Size(256, 32);
             this.btnAddAnotherOrganization.TabIndex = 2;
@@ -75,9 +75,10 @@
             // txtOrganizationEntry
             // 
             this.txtOrganizationEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganizationEntry.Location = new System.Drawing.Point(3, 3);
+            this.txtOrganizationEntry.Location = new System.Drawing.Point(0, 0);
+            this.txtOrganizationEntry.Margin = new System.Windows.Forms.Padding(0);
             this.txtOrganizationEntry.Name = "txtOrganizationEntry";
-            this.txtOrganizationEntry.Size = new System.Drawing.Size(175, 27);
+            this.txtOrganizationEntry.Size = new System.Drawing.Size(200, 27);
             this.txtOrganizationEntry.TabIndex = 3;
             // 
             // flwOrganizationBlock
@@ -95,7 +96,7 @@
             this.flwOrganizationBlock.Location = new System.Drawing.Point(0, 0);
             this.flwOrganizationBlock.Margin = new System.Windows.Forms.Padding(0);
             this.flwOrganizationBlock.Name = "flwOrganizationBlock";
-            this.flwOrganizationBlock.Size = new System.Drawing.Size(506, 216);
+            this.flwOrganizationBlock.Size = new System.Drawing.Size(506, 210);
             this.flwOrganizationBlock.TabIndex = 1;
             // 
             // flwOrganizationsTextHolder
@@ -103,16 +104,17 @@
             this.flwOrganizationsTextHolder.AutoSize = true;
             this.flwOrganizationsTextHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwOrganizationsTextHolder.Controls.Add(this.txtOrganizationEntry);
+            this.flwOrganizationsTextHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwOrganizationsTextHolder.Location = new System.Drawing.Point(3, 104);
             this.flwOrganizationsTextHolder.Name = "flwOrganizationsTextHolder";
-            this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(181, 33);
+            this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(200, 27);
             this.flwOrganizationsTextHolder.TabIndex = 0;
             // 
             // btnRemoveOrganization
             // 
             this.btnRemoveOrganization.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRemoveOrganization.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveOrganization.Location = new System.Drawing.Point(125, 181);
+            this.btnRemoveOrganization.Location = new System.Drawing.Point(125, 175);
             this.btnRemoveOrganization.Name = "btnRemoveOrganization";
             this.btnRemoveOrganization.Size = new System.Drawing.Size(256, 32);
             this.btnRemoveOrganization.TabIndex = 3;
@@ -130,7 +132,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flwOrganizationBlock);
             this.Name = "usrOrganizationsBlock";
-            this.Size = new System.Drawing.Size(506, 216);
+            this.Size = new System.Drawing.Size(506, 210);
             this.flwOrganizationBlock.ResumeLayout(false);
             this.flwOrganizationBlock.PerformLayout();
             this.flwOrganizationsTextHolder.ResumeLayout(false);

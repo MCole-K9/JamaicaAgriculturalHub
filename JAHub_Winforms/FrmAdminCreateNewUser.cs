@@ -17,11 +17,14 @@ namespace JAHub_Winforms
     {
         bool isEmailValid;
         bool isPasswordValid;
+        FrmAdminContainer frmAdmin;
 
-        public FrmAdminCreateNewUser()
+        public FrmAdminCreateNewUser(FrmAdminContainer admin)
         {
             InitializeComponent();
             TopLevel = false;
+
+            frmAdmin = admin;
         }
 
         private void FrmAdminCreateNewUser_Load(object sender, EventArgs e)
@@ -133,7 +136,7 @@ namespace JAHub_Winforms
                 errCreateNewUser.SetError(txtPasswordSecondEntry, "Passwords must match");
                 isPasswordValid = false;
             }
-            else
+            else if (txtPasswordSecondEntry.Text == txtPasswordFirstEntry.Text)
             {
                 errCreateNewUser.SetError(txtPasswordSecondEntry, "");
                 isPasswordValid = true;
@@ -150,20 +153,74 @@ namespace JAHub_Winforms
                 {
                     if (usrNameBlock1.IsBlockValid())
                     {
-                        areEntriesValid = true;
+                        if (isPasswordValid)
+                        {
+                            areEntriesValid = true;
 
-                        User newUser = new User();
+                            User newUser = new User();
 
-                        newUser.FirstName = usrNameBlock1.FirstName;
-                        newUser.LastName = usrNameBlock1.LastName;
-                        newUser.MiddleName = usrNameBlock1.MiddleName;
+                            newUser.FirstName = usrNameBlock1.FirstName;
+                            newUser.LastName = usrNameBlock1.LastName;
+                            newUser.MiddleName = usrNameBlock1.MiddleName;
 
-                        newUser.Email = txtEmail.Text;
-                        newUser.Password = txtPasswordFirstEntry.Text;
+                            newUser.Email = txtEmail.Text.ToLower();
+                            newUser.Password = txtPasswordFirstEntry.Text;
 
-                        newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
+                            newUser.UserRole = (UserRole)cmbUserRole.SelectedValue;
 
-                        newUser.WriteToDatabase();
+                            newUser.WriteToDatabase();
+
+                            // 2 parts. This part gets the ID of the user using the email as a candidate key
+                            // (Otherwise incapable of knowing the ID)
+                            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                            {
+                                connection.Open();
+
+                                String command = $"SELECT ID FROM [User] WHERE EmailAddress = '{newUser.Email}'";
+
+                                SqlCommand getId = new SqlCommand(command, connection);
+
+                                SqlDataReader reader = getId.ExecuteReader();
+
+                                while (reader.Read())
+                                {
+                                    newUser.UserID = (int)reader["ID"];
+                                }
+
+                                connection.Close();
+                            }
+
+                            // Second part: compare UserRole to determine where to write to db
+                            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                            {
+                                connection.Open();
+
+                                String command;
+
+                                switch ((UserRole)cmbUserRole.SelectedValue)
+                                {
+                                    case UserRole.Customer:
+                                        command = $"INSERT INTO Customer (UserID) VALUES ({newUser.UserID})";
+                                        break;
+                                    case UserRole.Farmer:
+                                        command = $"INSERT INTO Farmer (UserID) VALUES ({newUser.UserID})";
+                                        break;
+                                    case UserRole.GrantOfficer:
+                                        command = $"INSERT INTO GrantOfficer (UserID) VALUES ({newUser.UserID})";
+                                        break;
+                                    default:
+                                        command = "";
+                                        break;
+                                }
+
+
+                                SqlCommand populateTable = new SqlCommand(command, connection);
+
+                                populateTable.ExecuteNonQuery();
+
+                                connection.Close();
+                            }
+                        }
                     }
                 }
             }
@@ -176,9 +233,6 @@ namespace JAHub_Winforms
             else
             {
                 MessageBox.Show("Successfully created new record!");
-                // close this form
-                // open FrmAdminSelectNewUser
-                
             }
         }
     }

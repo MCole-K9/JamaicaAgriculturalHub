@@ -12,7 +12,7 @@ using JAHubLib;
 namespace JAHub_Winforms.Verification
 {
     /* TO DO
-     * [] actually populate the list of phone numbers using the farmer object
+     * [x] actually populate the list of phone numbers using the farmer object
      */
     public partial class usrPhoneNumberBlock : UserControl
     {
@@ -28,6 +28,8 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             mskPhoneNumber.Text = PhoneNumber;
+
+            isPhoneNumberValid = true;
         }
 
         private void mskPhoneNumber_Validating(object sender, CancelEventArgs e)

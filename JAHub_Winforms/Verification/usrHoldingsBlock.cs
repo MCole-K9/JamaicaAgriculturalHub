@@ -13,10 +13,6 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrHoldingsBlock : UserControl
     {
-        /* TO DO
-         * [] Pass the farmer object to the landblock
-         */
-
         #region Variables and Properties
         List<String> _productsList = new List<String>();
         List<LandInformation> _landInformationList = new List<LandInformation>();
@@ -42,6 +38,8 @@ namespace JAHub_Winforms.Verification
             {
                 flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
             }
+
+            // the products and Landblocks will return valid on their own
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
@@ -62,61 +60,61 @@ namespace JAHub_Winforms.Verification
 
         public bool IsBlockValid()
         {
-            if (usrLandBlock1.IsBlockValid())
+            bool isListValid = true;
+
+            foreach(usrProductsBlock product in flwProductsBlock.Controls)
             {
-                bool isListValid = true;
-
-                foreach(usrProductsBlock product in flwProductsBlock.Controls)
+                if (product.IsBlockValid())
                 {
-                    if (product.IsBlockValid())
-                    {
-                        _productsList.Add(product.Product);
-                    }
-                    else
-                    {
-                        isListValid = false;
-                        _productsList.Clear();
-                        break;
-                    }
+                    _productsList.Add(product.Product);
                 }
-
-                foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+                else
                 {
-                    if (land.IsBlockValid()){
-                        
-                    }
-                    else
-                    {
-                        isListValid=false;
-                        // clear whatever list of Landstuff here
-                    }
+                    isListValid = false;
+                    _productsList.Clear();
+                    break;
                 }
-                
-                if (isListValid)
-                {
-                    return true;
-                }
-
             }
-            
-            return false;
+
+            foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+            {
+                if (land.IsBlockValid()){
+                    _landInformationList.Add(land.LandInformation);
+                }
+                else
+                {
+                    isListValid=false;
+                    _landInformationList.Clear();
+                }
+            }
+                
+            if (isListValid)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void SetControlFocus()
         {
-            if (!usrLandBlock1.IsBlockValid())
+            foreach(usrLandBlock land in flwLandBlockHolder.Controls)
             {
-                usrLandBlock1.SetControlFocus();
-            }
-            else
-            {
-                foreach(usrProductsBlock product in flwProductsBlock.Controls)
+                if (!land.IsBlockValid())
                 {
-                    if (!product.IsBlockValid())
-                    {
-                        product.SetControlFocus();
-                        break;
-                    }
+                    land.SetControlFocus();
+                    return;
+                }
+            }
+
+            foreach (usrProductsBlock product in flwProductsBlock.Controls)
+            {
+                if (!product.IsBlockValid())
+                {
+                    product.SetControlFocus();
+                    return;
                 }
             }
         }
@@ -131,7 +129,7 @@ namespace JAHub_Winforms.Verification
         {
             flwLandBlockHolder.Controls.RemoveAt(flwLandBlockHolder.Controls.Count - 1);
 
-            if (flwLandBlockHolder.Controls.Count > 1){
+            if (flwLandBlockHolder.Controls.Count == 1){
                 btnRemoveLandEntry.Hide();
             }
         }

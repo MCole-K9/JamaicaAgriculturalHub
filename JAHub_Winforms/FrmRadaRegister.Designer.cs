@@ -31,8 +31,9 @@
             this.flwRadaRegister = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRegisterWithRada = new System.Windows.Forms.Label();
             this.tblNewOrConnectOptions = new System.Windows.Forms.TableLayoutPanel();
-            this.btnConnectExistingAccount = new System.Windows.Forms.Button();
             this.lblOr = new System.Windows.Forms.Label();
+            this.btnNewRegistration = new System.Windows.Forms.Button();
+            this.btnConnectExistingAccount = new System.Windows.Forms.Button();
             this.lblMandatoryFields = new System.Windows.Forms.Label();
             this.flwFormEntryControls = new System.Windows.Forms.FlowLayoutPanel();
             this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
@@ -44,7 +45,6 @@
             this.usrHoldingsBlock2 = new JAHub_Winforms.Verification.usrHoldingsBlock();
             this.usrOrganizationsBlock1 = new JAHub_Winforms.Verification.usrOrganizationsBlock();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnNewRegistration = new System.Windows.Forms.Button();
             this.flwRadaRegister.SuspendLayout();
             this.tblNewOrConnectOptions.SuspendLayout();
             this.flwFormEntryControls.SuspendLayout();
@@ -100,19 +100,6 @@
             this.tblNewOrConnectOptions.Size = new System.Drawing.Size(593, 58);
             this.tblNewOrConnectOptions.TabIndex = 0;
             // 
-            // btnConnectExistingAccount
-            // 
-            this.btnConnectExistingAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnConnectExistingAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectExistingAccount.Location = new System.Drawing.Point(322, 4);
-            this.btnConnectExistingAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnConnectExistingAccount.Name = "btnConnectExistingAccount";
-            this.btnConnectExistingAccount.Size = new System.Drawing.Size(172, 52);
-            this.btnConnectExistingAccount.TabIndex = 1;
-            this.btnConnectExistingAccount.Text = "Connect Existing Account";
-            this.btnConnectExistingAccount.UseVisualStyleBackColor = true;
-            this.btnConnectExistingAccount.Click += new System.EventHandler(this.btnConnectExistingAccount_Click);
-            // 
             // lblOr
             // 
             this.lblOr.AutoSize = true;
@@ -125,6 +112,31 @@
             this.lblOr.TabIndex = 2;
             this.lblOr.Text = "or";
             this.lblOr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnNewRegistration
+            // 
+            this.btnNewRegistration.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnNewRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewRegistration.Location = new System.Drawing.Point(100, 4);
+            this.btnNewRegistration.Name = "btnNewRegistration";
+            this.btnNewRegistration.Size = new System.Drawing.Size(172, 52);
+            this.btnNewRegistration.TabIndex = 3;
+            this.btnNewRegistration.Text = "New Registration";
+            this.btnNewRegistration.UseVisualStyleBackColor = true;
+            this.btnNewRegistration.Click += new System.EventHandler(this.btnNewRegistration_Click);
+            // 
+            // btnConnectExistingAccount
+            // 
+            this.btnConnectExistingAccount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnConnectExistingAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnectExistingAccount.Location = new System.Drawing.Point(322, 4);
+            this.btnConnectExistingAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConnectExistingAccount.Name = "btnConnectExistingAccount";
+            this.btnConnectExistingAccount.Size = new System.Drawing.Size(172, 52);
+            this.btnConnectExistingAccount.TabIndex = 1;
+            this.btnConnectExistingAccount.Text = "Connect Existing Account";
+            this.btnConnectExistingAccount.UseVisualStyleBackColor = true;
+            this.btnConnectExistingAccount.Click += new System.EventHandler(this.btnConnectExistingAccount_Click);
             // 
             // lblMandatoryFields
             // 
@@ -151,9 +163,9 @@
             this.flwFormEntryControls.Controls.Add(this.usrOrganizationsBlock1);
             this.flwFormEntryControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwFormEntryControls.Location = new System.Drawing.Point(4, 174);
-            this.flwFormEntryControls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flwFormEntryControls.Margin = new System.Windows.Forms.Padding(4);
             this.flwFormEntryControls.Name = "flwFormEntryControls";
-            this.flwFormEntryControls.Size = new System.Drawing.Size(572, 1205);
+            this.flwFormEntryControls.Size = new System.Drawing.Size(572, 1249);
             this.flwFormEntryControls.TabIndex = 2;
             this.flwFormEntryControls.WrapContents = false;
             // 
@@ -197,7 +209,7 @@
             this.usrTrnBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usrTrnBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrTrnBlock1.Location = new System.Drawing.Point(4, 409);
-            this.usrTrnBlock1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usrTrnBlock1.Margin = new System.Windows.Forms.Padding(4);
             this.usrTrnBlock1.Name = "usrTrnBlock1";
             this.usrTrnBlock1.Size = new System.Drawing.Size(222, 33);
             this.usrTrnBlock1.TabIndex = 3;
@@ -208,7 +220,7 @@
             this.usrUploadImageBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usrUploadImageBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrUploadImageBlock1.Location = new System.Drawing.Point(4, 450);
-            this.usrUploadImageBlock1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usrUploadImageBlock1.Margin = new System.Windows.Forms.Padding(4);
             this.usrUploadImageBlock1.Name = "usrUploadImageBlock1";
             this.usrUploadImageBlock1.Size = new System.Drawing.Size(337, 112);
             this.usrUploadImageBlock1.TabIndex = 5;
@@ -220,7 +232,7 @@
             this.usrIndustryBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrIndustryBlock1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrIndustryBlock1.Location = new System.Drawing.Point(5, 571);
-            this.usrIndustryBlock1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.usrIndustryBlock1.Margin = new System.Windows.Forms.Padding(5);
             this.usrIndustryBlock1.MaximumSize = new System.Drawing.Size(749, 0);
             this.usrIndustryBlock1.Name = "usrIndustryBlock1";
             this.usrIndustryBlock1.Size = new System.Drawing.Size(562, 125);
@@ -233,7 +245,7 @@
             this.usrHoldingsBlock2.BackColor = System.Drawing.Color.Transparent;
             this.usrHoldingsBlock2.Location = new System.Drawing.Point(3, 704);
             this.usrHoldingsBlock2.Name = "usrHoldingsBlock2";
-            this.usrHoldingsBlock2.Size = new System.Drawing.Size(378, 312);
+            this.usrHoldingsBlock2.Size = new System.Drawing.Size(384, 356);
             this.usrHoldingsBlock2.TabIndex = 6;
             // 
             // usrOrganizationsBlock1
@@ -241,8 +253,8 @@
             this.usrOrganizationsBlock1.AutoSize = true;
             this.usrOrganizationsBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usrOrganizationsBlock1.BackColor = System.Drawing.Color.Transparent;
-            this.usrOrganizationsBlock1.Location = new System.Drawing.Point(4, 1023);
-            this.usrOrganizationsBlock1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usrOrganizationsBlock1.Location = new System.Drawing.Point(4, 1067);
+            this.usrOrganizationsBlock1.Margin = new System.Windows.Forms.Padding(4);
             this.usrOrganizationsBlock1.Name = "usrOrganizationsBlock1";
             this.usrOrganizationsBlock1.Size = new System.Drawing.Size(506, 178);
             this.usrOrganizationsBlock1.TabIndex = 6;
@@ -251,25 +263,14 @@
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(251, 1387);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Location = new System.Drawing.Point(251, 1431);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 49);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // btnNewRegistration
-            // 
-            this.btnNewRegistration.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnNewRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewRegistration.Location = new System.Drawing.Point(100, 4);
-            this.btnNewRegistration.Name = "btnNewRegistration";
-            this.btnNewRegistration.Size = new System.Drawing.Size(172, 52);
-            this.btnNewRegistration.TabIndex = 3;
-            this.btnNewRegistration.Text = "New Registration";
-            this.btnNewRegistration.UseVisualStyleBackColor = true;
             // 
             // FrmRadaRegister
             // 
@@ -282,6 +283,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRadaRegister";
             this.Text = "Register With RADA";
+            this.Load += new System.EventHandler(this.FrmRadaRegister_Load);
             this.flwRadaRegister.ResumeLayout(false);
             this.flwRadaRegister.PerformLayout();
             this.tblNewOrConnectOptions.ResumeLayout(false);

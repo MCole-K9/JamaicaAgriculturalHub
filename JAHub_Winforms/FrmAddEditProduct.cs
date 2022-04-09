@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using JAHubLib;
 
 namespace JAHub_Winforms
@@ -65,14 +66,15 @@ namespace JAHub_Winforms
             product.Name = productName;
             product.Price = price;
             product.Stock = stock;
-
+            product.Category = (int)cboCategory.SelectedValue;
+            MessageBox.Show($"{ product.Category}");
 
             if (inEditMode)
             {
                 if (farmer.UpdateProduct(product) > 0)
                 {
                     MessageBox.Show("Item Updated Succesfully");
-                   
+
                 }
             }
             else
@@ -83,7 +85,7 @@ namespace JAHub_Winforms
                 }
             }
 
-            
+
         }
 
         private void FrmAddEditProduct_Load(object sender, EventArgs e)
@@ -93,7 +95,39 @@ namespace JAHub_Winforms
 
             if (inEditMode)
                 PopulateFields();
-            
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = "Select * From Category";
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
+                DataSet categoryDS = new DataSet();
+
+                sqlDataAdapter.Fill(categoryDS, "Category");
+
+
+                cboCategory.DataSource = categoryDS.Tables["Category"];
+
+                cboCategory.DisplayMember = "CategoryName";
+                cboCategory.ValueMember = "ID";
+
+
+                //cboCategory.Items.Insert(0, "Select Category");
+            }
+            //Category ctg = new Category();
+
+            //cboCategory.DataBindings.Clear();
+            //cboCategory.DataSource = ctg.GetCategoryList();
+            //cboCategory.DisplayMember = "CategoryName";
+            //cboCategory.ValueMember = "ID" ;
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
