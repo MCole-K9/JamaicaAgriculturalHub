@@ -144,6 +144,7 @@
             // 
             // pnlContainer
             // 
+            this.pnlContainer.AutoScroll = true;
             this.pnlContainer.Location = new System.Drawing.Point(174, 170);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(900, 400);
@@ -167,6 +168,7 @@
             this.btnSearchBar.TabIndex = 27;
             this.btnSearchBar.Text = "Search";
             this.btnSearchBar.UseVisualStyleBackColor = true;
+            this.btnSearchBar.Click += new System.EventHandler(this.btnSearchBar_Click);
             // 
             // txtSearchBar
             // 
@@ -188,6 +190,7 @@
             this.comboSort.Name = "comboSort";
             this.comboSort.Size = new System.Drawing.Size(121, 21);
             this.comboSort.TabIndex = 25;
+            this.comboSort.SelectionChangeCommitted += new System.EventHandler(this.comboSort_SelectionChangeCommitted);
             // 
             // FrmUserBlogs
             // 

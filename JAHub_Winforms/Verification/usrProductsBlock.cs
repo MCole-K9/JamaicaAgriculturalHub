@@ -12,7 +12,7 @@ using JAHubLib;
 namespace JAHub_Winforms.Verification
 {
     /* TO DO
-     * [] actually populate a list of Products
+     * [x] actually populate a list of Products
      */
     public partial class usrProductsBlock : UserControl
     {
@@ -29,6 +29,8 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             txtProduct.Text = farmerProduct;
+
+            isProductValid = true;
         }
 
         private void txtProduct_Validating(object sender, CancelEventArgs e)

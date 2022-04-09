@@ -34,9 +34,12 @@ namespace JAHub_Winforms.Verification
             {
                 ofd.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
 
-                profilePicture = new Bitmap(ofd.FileName);
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    profilePicture = new Bitmap(ofd.FileName);
 
-                picProfileImage.Image = profilePicture;
+                    picProfileImage.Image = profilePicture;
+                }
             }
         }
     }

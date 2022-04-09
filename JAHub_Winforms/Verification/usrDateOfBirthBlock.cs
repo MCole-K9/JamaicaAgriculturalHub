@@ -13,10 +13,6 @@ namespace JAHub_Winforms.Verification
 {
     public partial class usrDateOfBirthBlock : UserControl
     {
-        /* TO DO
-         * - Solve the problem of matching SelectedIndex of cmbDay, etc. to 
-         * - datetime object inside of farmer
-         */
 
         #region Variables and Properties
 
@@ -43,6 +39,10 @@ namespace JAHub_Winforms.Verification
             cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
             cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);
             cmbYear.SelectedIndex = cmbYear.FindString("{0}", givenDate.Year);
+
+            isDayValid = true;
+            isMonthValid = true;
+            isYearValid = true;
         }
 
         private void cmbYear_Validating(object sender, CancelEventArgs e)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
@@ -14,6 +15,9 @@ namespace JAHub_Winforms
     {
         private Button CurrentButton;
         private Form CurrentChildForm;
+        
+        // K.S.: Necessary to make opening FrmRadaRegister feasible without weird timing and garbage collection issues
+        private RadaRegistrationType usertype;
 
 
         public FrmProfile()
@@ -51,7 +55,7 @@ namespace JAHub_Winforms
             btn.ForeColor = Color.White;
 
             // Reset button to deffualt state
-            if(CurrentButton != null && CurrentButton != btn)
+            if (CurrentButton != null && CurrentButton != btn)
             {
                 CurrentButton.BackColor = Color.LightSeaGreen;
                 CurrentButton.ForeColor = Color.White;
@@ -67,6 +71,17 @@ namespace JAHub_Winforms
             //FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             //this.panelHomeContainer.Controls.Add(frmDashboard);
             //frmDashboard.Show();
+
+            // (K.S.) Assumption: Only customers (who wish to register as farmers) and farmers should be able to see 
+            // btnRadaStatus (and its associated forms)
+            if (Session.UserRole == UserRole.Customer || Session.UserRole == UserRole.Farmer)
+            {
+                btnRadaStatus.Visible = true;
+            }
+            else
+            {
+                btnRadaStatus.Visible = false;
+            }
 
         }
 
@@ -122,5 +137,12 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmCreateGrant());
             HighlightButtons(btnGrant);
         }
+
+        private void btnRadaStatus_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmRadaStatus(this));
+        }
     }
+
+    
 }

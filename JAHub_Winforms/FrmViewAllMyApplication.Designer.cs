@@ -1,6 +1,6 @@
 ﻿namespace JAHub_Winforms
 {
-    partial class FrmGeneralGrantInfo
+    partial class FrmViewAllMyApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -28,88 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.btntest = new System.Windows.Forms.Button();
-            this.pnlNav = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnMyBlogs = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
+            this.lblAgency = new System.Windows.Forms.Label();
+            this.btntest = new System.Windows.Forms.Button();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.Navy;
-            this.richTextBox1.Location = new System.Drawing.Point(269, 59);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(549, 53);
-            this.richTextBox1.TabIndex = 42;
-            this.richTextBox1.Text = "Please click \'View more\' on available grants to see further information on grants" +
-    "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(264, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 31);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "Available Grants";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pnlContainer
             // 
             this.pnlContainer.AutoScroll = true;
             this.pnlContainer.AutoSize = true;
-            this.pnlContainer.Location = new System.Drawing.Point(272, 140);
+            this.pnlContainer.Location = new System.Drawing.Point(295, 140);
             this.pnlContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
             this.pnlContainer.Size = new System.Drawing.Size(765, 628);
-            this.pnlContainer.TabIndex = 62;
-            // 
-            // btntest
-            // 
-            this.btntest.Location = new System.Drawing.Point(937, 32);
-            this.btntest.Margin = new System.Windows.Forms.Padding(4);
-            this.btntest.Name = "btntest";
-            this.btntest.Size = new System.Drawing.Size(100, 28);
-            this.btntest.TabIndex = 0;
-            this.btntest.Text = "View";
-            // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlNav.Controls.Add(this.btnMyBlogs);
-            this.pnlNav.Controls.Add(this.btnCreateBlog);
-            this.pnlNav.Controls.Add(this.btnBlogs);
-            this.pnlNav.Controls.Add(this.pnlLogo);
-            this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlNav.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(188, 822);
-            this.pnlNav.TabIndex = 63;
-            this.pnlNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNav_Paint);
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(188, 151);
-            this.pnlLogo.TabIndex = 0;
-            this.pnlLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogo_Paint);
+            this.pnlContainer.TabIndex = 66;
             // 
             // btnMyBlogs
             // 
@@ -133,7 +72,6 @@
             this.btnMyBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMyBlogs.UseVisualStyleBackColor = false;
-            this.btnMyBlogs.Click += new System.EventHandler(this.btnMyBlogs_Click);
             // 
             // btnCreateBlog
             // 
@@ -157,7 +95,29 @@
             this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateBlog.UseVisualStyleBackColor = false;
-            this.btnCreateBlog.Click += new System.EventHandler(this.btnCreateBlog_Click);
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(188, 151);
+            this.pnlLogo.TabIndex = 0;
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlNav.Controls.Add(this.btnMyBlogs);
+            this.pnlNav.Controls.Add(this.btnCreateBlog);
+            this.pnlNav.Controls.Add(this.btnBlogs);
+            this.pnlNav.Controls.Add(this.pnlLogo);
+            this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlNav.Location = new System.Drawing.Point(0, 0);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(188, 822);
+            this.pnlNav.TabIndex = 67;
             // 
             // btnBlogs
             // 
@@ -181,22 +141,39 @@
             this.btnBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBlogs.UseVisualStyleBackColor = false;
-            this.btnBlogs.Click += new System.EventHandler(this.btnBlogs_Click);
             // 
-            // FrmGeneralGrantInfo
+            // lblAgency
+            // 
+            this.lblAgency.AutoSize = true;
+            this.lblAgency.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgency.Location = new System.Drawing.Point(287, 26);
+            this.lblAgency.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgency.Name = "lblAgency";
+            this.lblAgency.Size = new System.Drawing.Size(189, 31);
+            this.lblAgency.TabIndex = 65;
+            this.lblAgency.Text = "All My Grants";
+            // 
+            // btntest
+            // 
+            this.btntest.Location = new System.Drawing.Point(960, 32);
+            this.btntest.Margin = new System.Windows.Forms.Padding(4);
+            this.btntest.Name = "btntest";
+            this.btntest.Size = new System.Drawing.Size(100, 28);
+            this.btntest.TabIndex = 64;
+            this.btntest.Text = "View";
+            // 
+            // FrmViewAllMyApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 822);
-            this.Controls.Add(this.pnlNav);
-            this.Controls.Add(this.btntest);
             this.Controls.Add(this.pnlContainer);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmGeneralGrantInfo";
-            this.Text = "FrmGeneralGrantInfo";
-            this.Load += new System.EventHandler(this.FrmGeneralGrantInfo_Load);
+            this.Controls.Add(this.pnlNav);
+            this.Controls.Add(this.lblAgency);
+            this.Controls.Add(this.btntest);
+            this.Name = "FrmViewAllMyApplication";
+            this.Text = "FrmViewAllMyApplication";
+            this.Load += new System.EventHandler(this.FrmViewAllMyApplication_Load);
             this.pnlNav.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -204,14 +181,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.Button btntest;
-        private System.Windows.Forms.Panel pnlNav;
         private FontAwesome.Sharp.IconButton btnMyBlogs;
         private FontAwesome.Sharp.IconButton btnCreateBlog;
-        private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;
+        private System.Windows.Forms.Panel pnlNav;
+        private FontAwesome.Sharp.IconButton btnBlogs;
+        private System.Windows.Forms.Label lblAgency;
+        private System.Windows.Forms.Button btntest;
     }
 }

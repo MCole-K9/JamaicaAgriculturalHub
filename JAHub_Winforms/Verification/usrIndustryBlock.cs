@@ -40,6 +40,8 @@ namespace JAHub_Winforms.Verification
             {
                 rdoIndustryNo.Select();
             }
+
+            isChoiceSelected = true;
         }
 
         // in reality this is not the space where this event should go, but

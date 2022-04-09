@@ -24,10 +24,6 @@ namespace JAHub_Winforms.Verification
 
         #endregion
 
-        /* TO DO
-         * - Pass the farmer object to the phone numbers
-         */
-
         public usrContactBlock()
         {
             InitializeComponent();
@@ -42,6 +38,10 @@ namespace JAHub_Winforms.Verification
             {
                 flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock(phoneNumber));
             }
+
+            // Makes it possible to submit the details without having to click on the form
+            isEmailValid = true;
+            // the phone number are all valid when parameterized constructed
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
@@ -74,16 +74,13 @@ namespace JAHub_Winforms.Verification
         private void btnAddAnotherPhoneNumber_Click(object sender, EventArgs e)
         {
 
-            flwPhoneNumbers.Controls.Add( new usrPhoneNumberBlock());
-            btnRemoveNumber.Visible = true;
-
-
-
+            flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock());
+            btnRemoveNumber.Show();
         }
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            flwPhoneNumbers.Controls.RemoveAt(flwContactBlock.Controls.Count - 1);
+            flwPhoneNumbers.Controls.RemoveAt(flwPhoneNumbers.Controls.Count - 1);
             
             if(flwPhoneNumbers.Controls.Count == 1)
             {

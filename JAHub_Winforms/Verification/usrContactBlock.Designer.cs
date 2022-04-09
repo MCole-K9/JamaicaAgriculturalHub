@@ -116,6 +116,7 @@ namespace JAHub_Winforms.Verification
             this.flwPhoneNumbers.AutoSize = true;
             this.flwPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
+            this.flwPhoneNumbers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwPhoneNumbers.Location = new System.Drawing.Point(3, 80);
             this.flwPhoneNumbers.Name = "flwPhoneNumbers";
             this.flwPhoneNumbers.Size = new System.Drawing.Size(394, 51);
