@@ -25,8 +25,6 @@ namespace JAHubLib
         public decimal LandMeasurement { get; set; }
     }
 
-    // per discussion: classes are primarily data-holders, with methods to do
-    // things with that data written in place/in event handlers
     public class Farmer : User
     {
         public int FarmerId { get; set; }
@@ -164,11 +162,40 @@ namespace JAHubLib
 
             if (this.RadaRegistrationPhase == RadaRegistrationType.AwaitingVerification)
             {
-                // more complex write. requires: 
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    // write all of the queries here
+
+                    connection.Close();
+                }
+
+                return true;
             }
             else if (this.RadaRegistrationPhase == RadaRegistrationType.NotConnected)
             {
-                // this is the simpler write, only requires: 
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    // First, change the name
+                    String command = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
+                        $"MiddleName = '{this.MiddleName}', LastName = '{this.LastName}' WHERE ID = {Session.UserId}, ";
+
+                    SqlCommand addInformation = new SqlCommand(command, connection);
+
+                    addInformation.ExecuteNonQuery();
+
+                    // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
+                    addInformation.CommandText = $"UPDATE Farmer SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = {this.DateOfBirth}" +
+                        $", RadaRegistrationPhase = {this.RadaRegistrationPhase}";
+                    addInformation.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+
+                return true;
             }
 
             return false;
