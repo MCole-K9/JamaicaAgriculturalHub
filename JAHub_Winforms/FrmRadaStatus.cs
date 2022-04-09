@@ -88,6 +88,7 @@ namespace JAHub_Winforms
 
                     Farmer farmer = new Farmer();
 
+
                     // need a method that grabs all of the farmer information using userId
 
                     // Generating all of the controls using values from Farmer

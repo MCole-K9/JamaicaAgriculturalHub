@@ -58,6 +58,7 @@ namespace JAHub_Winforms
             if (flwFormEntryControls.Controls.Count > 3)
             {
                 flwFormEntryControls.Controls.Clear();
+
                 flwFormEntryControls.Controls.Add(new usrNameBlock());
                 flwFormEntryControls.Controls.Add(new usrDateOfBirthBlock());
                 flwFormEntryControls.Controls.Add(new usrTrnBlock());
@@ -252,7 +253,6 @@ namespace JAHub_Winforms
                         MessageBox.Show(message);
                         return;
                     }
-
                 }
                 
                 using (var trnBlock = flwFormEntryControls.Controls[2] as usrTrnBlock)

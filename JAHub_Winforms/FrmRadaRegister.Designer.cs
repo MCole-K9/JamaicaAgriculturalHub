@@ -278,11 +278,12 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 878);
+            this.ClientSize = new System.Drawing.Size(624, 975);
             this.Controls.Add(this.flwRadaRegister);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRadaRegister";
             this.Text = "Register With RADA";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRadaRegister_Load);
             this.flwRadaRegister.ResumeLayout(false);
             this.flwRadaRegister.PerformLayout();

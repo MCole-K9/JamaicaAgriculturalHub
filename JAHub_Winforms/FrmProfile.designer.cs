@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnRadaStatus = new System.Windows.Forms.Button();
             this.btnGrant = new System.Windows.Forms.Button();
             this.btnManageProducts = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelHomeContainer = new System.Windows.Forms.Panel();
-            this.btnRadaStatus = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +67,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(291, 738);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnRadaStatus
+            // 
+            this.btnRadaStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRadaStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRadaStatus.FlatAppearance.BorderSize = 0;
+            this.btnRadaStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRadaStatus.ForeColor = System.Drawing.Color.White;
+            this.btnRadaStatus.Image = global::JAHub_Winforms.Properties.Resources.user_0_;
+            this.btnRadaStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRadaStatus.Location = new System.Drawing.Point(0, 399);
+            this.btnRadaStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRadaStatus.Name = "btnRadaStatus";
+            this.btnRadaStatus.Size = new System.Drawing.Size(291, 48);
+            this.btnRadaStatus.TabIndex = 7;
+            this.btnRadaStatus.Text = "Rada Status";
+            this.btnRadaStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRadaStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRadaStatus.UseVisualStyleBackColor = true;
+            this.btnRadaStatus.Click += new System.EventHandler(this.btnRadaStatus_Click);
             // 
             // btnGrant
             // 
@@ -260,34 +280,16 @@
             // 
             // panelHomeContainer
             // 
+            this.panelHomeContainer.AutoScroll = true;
             this.panelHomeContainer.AutoSize = true;
             this.panelHomeContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelHomeContainer.BackColor = System.Drawing.Color.White;
-            this.panelHomeContainer.Location = new System.Drawing.Point(292, 4);
+            this.panelHomeContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHomeContainer.Location = new System.Drawing.Point(291, 0);
             this.panelHomeContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelHomeContainer.Name = "panelHomeContainer";
-            this.panelHomeContainer.Size = new System.Drawing.Size(0, 0);
+            this.panelHomeContainer.Size = new System.Drawing.Size(1277, 738);
             this.panelHomeContainer.TabIndex = 1;
-            // 
-            // btnRadaStatus
-            // 
-            this.btnRadaStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRadaStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRadaStatus.FlatAppearance.BorderSize = 0;
-            this.btnRadaStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRadaStatus.ForeColor = System.Drawing.Color.White;
-            this.btnRadaStatus.Image = global::JAHub_Winforms.Properties.Resources.user_0_;
-            this.btnRadaStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRadaStatus.Location = new System.Drawing.Point(0, 351);
-            this.btnRadaStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRadaStatus.Name = "btnRadaStatus";
-            this.btnRadaStatus.Size = new System.Drawing.Size(291, 48);
-            this.btnRadaStatus.TabIndex = 7;
-            this.btnRadaStatus.Text = "Rada Status";
-            this.btnRadaStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRadaStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRadaStatus.UseVisualStyleBackColor = true;
-            this.btnRadaStatus.Click += new System.EventHandler(this.btnRadaStatus_Click);
             // 
             // FrmProfile
             // 
