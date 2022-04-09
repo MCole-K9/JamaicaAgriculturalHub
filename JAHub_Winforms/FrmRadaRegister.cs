@@ -16,10 +16,10 @@ namespace JAHub_Winforms
     public partial class FrmRadaRegister : Form
     {
         /* TO DO:
-         * [] Double check the submission function
+         * [x] Double check the submission function
          * [x] pass values into Farmer object
          * [x] activate a "write farmer to record" form
-         * [] Check to see if the user is a customer, anf if all works, make them 
+         * [x] Check to see if the user is a customer, anf if all works, make them 
          * 
          */
 
@@ -273,15 +273,22 @@ namespace JAHub_Winforms
                 }
             }
 
+            // Users can register, and upon registration, will change userRole to farmer
             if(Session.UserRole == UserRole.Customer)
             {
                 using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
                 {
                     connection.Open();
 
+                    // First: Change the UserRole in the User Table
                     String command = $"UPDATE [User] SET UserRole = 3 WHERE ID = {Session.UserId}";
 
                     SqlCommand changeCustomerToFarmer = new SqlCommand(command, connection);
+
+                    changeCustomerToFarmer.ExecuteNonQuery();
+
+                    // Then: Create a new record for the Farmer-to-be using their UserID
+                    changeCustomerToFarmer.CommandText = $"INSERT INTO [Farmer] (UserId) VALUES ({Session.UserId})";
 
                     changeCustomerToFarmer.ExecuteNonQuery();
 
