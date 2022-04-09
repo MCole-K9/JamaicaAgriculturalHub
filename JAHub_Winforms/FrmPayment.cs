@@ -14,14 +14,17 @@ namespace JAHub_Winforms
     public partial class FrmPayment : Form
     {
         private FrmShippingCheckout _shippingCheckout;
+        private string paymentType;
+        private Order newOrder;
         public FrmPayment()
         {
             InitializeComponent();
         }
-        public FrmPayment( FrmShippingCheckout frmShippingCheckout)
+        public FrmPayment( FrmShippingCheckout frmShippingCheckout, Order order)
         {
             InitializeComponent();
             _shippingCheckout = frmShippingCheckout;
+            this.newOrder = order;
 
         }
         public void CaluculateSubtotal(Dictionary<Product, int> cart)
@@ -66,6 +69,10 @@ namespace JAHub_Winforms
         {
             LoadOrderSummery();
             CaluculateSubtotal(_shippingCheckout._frmCart._frmShop.Cart);
+
+            lblStreetAddress.Text = newOrder.ShipStreetAddress;
+            lblTown.Text = newOrder.ShipCity;
+            lblParish.Text = newOrder.ShipParish;
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -85,7 +92,8 @@ namespace JAHub_Winforms
                 Font paypalMessageFont = new Font("Microsoft Sans Serif", 10);
                 paypalMessageLabel.Font = paypalMessageFont;
                 this.Controls.Add(paypalMessageLabel);
-               // MessageBox.Show("Click Place Order and We'll  send you on to PayPal so that you can complete your purchase. After the transaction has gone through, the order will be placed. Thank you for Shopping");
+
+                paymentType = "Paypal";
             }
             
         }
@@ -110,6 +118,8 @@ namespace JAHub_Winforms
             int cvv;
             int.TryParse(txtCVV.Text, out cvv);
 
+            
+
             if (rdCreditDebitCard.Checked)
             {
                 if (txtCardNumber.Text == "" || paymentCardNumber == 0)
@@ -132,8 +142,14 @@ namespace JAHub_Winforms
                     MessageBox.Show("Please Enter the Card Holder Name");
                     txtCardHolderName.Focus();
                 }
+                else
+                {
+                    paymentType = "Credit/Debit Card ***123}"; //$"Credit/Debit Card ***{txtCardNumber.Text.Substring(11, 4)}";
+                }
+                
 
-            }else if(!chkBillingIsShipping.Checked)
+            }
+            else if(!chkBillingIsShipping.Checked)
             {
                 if(txtFirstName.Text == "")
                 {
@@ -160,8 +176,43 @@ namespace JAHub_Winforms
                     MessageBox.Show("Please Enter Parish");
                     txtParish.Focus();
                 }
+                else
+                {
+                    newOrder.PaymentDetails.BillingStreetAddress = txtStreetAddress.Text;
+                    newOrder.PaymentDetails.BillingCity = txtCity.Text;
+                    newOrder.PaymentDetails.BIllingParish = txtParish.Text;
+                }
             }
-           
+            else
+            {
+
+                newOrder.PaymentDetails.PaymentType = this.paymentType;
+
+                if (chkBillingIsShipping.Checked)
+                {
+                    newOrder.PaymentDetails.BillingStreetAddress = newOrder.ShipStreetAddress;
+                    newOrder.PaymentDetails.BillingCity = newOrder.ShipCity;
+                    newOrder.PaymentDetails.BIllingParish = newOrder.ShipParish;
+                }
+
+                Customer customer = new Customer(true);
+
+                if (customer.MakeOrder(newOrder) > 0)
+                {
+                    newOrder.FetchLastOrderData(customer.CustomerID);
+
+                    if (newOrder.WriteOrderItems(_shippingCheckout._frmCart._frmShop.Cart) > 0)
+                    {
+                        MessageBox.Show("Order Was Successful");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Order Items Error");
+                    }
+                }
+            }
+
+            
         }
     }
 }
