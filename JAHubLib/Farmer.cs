@@ -256,7 +256,33 @@ namespace JAHubLib
                     }
 
                     // activating all of the queries in a list
-                                        
+                    SqlCommand writeToDatabase = new SqlCommand();
+                    writeToDatabase.Connection = connection;
+
+                    writeToDatabase.CommandText = farmerUpdateUser;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    writeToDatabase.CommandText = farmerUpdateFarmer;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    writeToDatabase.CommandText = farmerSelectFarmer;
+                    SqlDataReader reader = writeToDatabase.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        FarmerId = (int)reader["FarmerID"];
+                    }
+
+                    writeToDatabase.CommandText = farmerInsertTypicalProduct;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    writeToDatabase.CommandText = farmerInsertLandInformation;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    writeToDatabase.CommandText = farmerInsertOrganization;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    writeToDatabase.CommandText = farmerInsertPhoneNumber;
+                    writeToDatabase.ExecuteNonQuery();
                     
                     connection.Close();
                 }
