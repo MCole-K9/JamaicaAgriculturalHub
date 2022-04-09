@@ -29,12 +29,12 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrContactBlock(Farmer farmer)
+        public usrContactBlock(String email, List<String>phoneNumbers)
         {
-            InitializeFilledComponent(farmer);
-            txtEmail.Text = farmer.Email;
+            InitializeFilledComponent();
+            txtEmail.Text = email;
 
-            foreach (string phoneNumber in farmer.PhoneNumbers)
+            foreach (string phoneNumber in phoneNumbers)
             {
                 flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock(phoneNumber));
             }

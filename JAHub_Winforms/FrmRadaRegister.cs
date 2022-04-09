@@ -9,13 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHub_Winforms.Verification;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
     public partial class FrmRadaRegister : Form
     {
+        /* TO DO:
+         * [] Double check the submission function
+         * [x] pass values into Farmer object
+         * [x] activate a "write farmer to record" form
+         * [] Check to see if the user is a customer, anf if all works, make them 
+         * 
+         */
+
         FrmProfile _profile;
-        RadaRegistrationType _registrationPhase= RadaRegistrationType.AwaitingVerification;
+        RadaRegistrationType _registrationPhase = RadaRegistrationType.AwaitingVerification;
 
         public FrmRadaRegister(FrmProfile profile, RadaRegistrationType registrationPhase)
         {
@@ -62,9 +71,14 @@ namespace JAHub_Winforms
         {
             Farmer farmer = new Farmer();
             String message;
-            
+
+            farmer.RadaRegistrationPhase = _registrationPhase;
+
+            // note: this method doesn't need a sentinel value, because in the event of an error of some kind, 
+            // the method returns early
+
             // Submission format for people who don't have RADA accounts already
-            if(_registrationPhase == RadaRegistrationType.AwaitingVerification)
+            if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
             {
                 using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
                 {
@@ -140,6 +154,7 @@ namespace JAHub_Winforms
                     }
                 }
 
+                // I'm ignoring this until i have time to fix wtvs
                 using (var imageBlock = flwFormEntryControls.Controls[4] as usrUploadImageBlock)
                 {
                     if (!(imageBlock.ProfilePicture == null))
@@ -258,8 +273,24 @@ namespace JAHub_Winforms
                 }
             }
 
-            //if (farmer.WriteRecordToDatabase())
-            //{
+            if(Session.UserRole == UserRole.Customer)
+            {
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    String command = $"UPDATE [User] SET UserRole = 3 WHERE ID = {Session.UserId}";
+
+                    SqlCommand changeCustomerToFarmer = new SqlCommand(command, connection);
+
+                    changeCustomerToFarmer.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+            }
+
+            if (farmer.WriteRecordToDatabase())
+            {
                 if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
                 {
                     message = "Successfully created record for " + farmer.FirstName +
@@ -272,18 +303,10 @@ namespace JAHub_Winforms
                         " " + farmer.LastName + "! \n Please wait to be connected.";
                     MessageBox.Show(message);
                 }
-
-                // end the form and return to wherever you were before
-
-            //}
-            //else
-            //{
-                message = "Could not write to database";
-                MessageBox.Show(message);
-
-                // end the form and return to wherever
-            //}
-
+            }
+            
+            
+            _profile.OpenChildForm(new FrmDashboard());
         }
 
         private void FrmRadaRegister_Load(object sender, EventArgs e)

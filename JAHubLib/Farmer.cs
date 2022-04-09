@@ -157,5 +157,21 @@ namespace JAHubLib
             }
 
         }
+
+        public bool WriteRecordToDatabase()
+        {
+            // This depends on the radaregistrationphase
+
+            if (this.RadaRegistrationPhase == RadaRegistrationType.AwaitingVerification)
+            {
+                // more complex write. requires: 
+            }
+            else if (this.RadaRegistrationPhase == RadaRegistrationType.NotConnected)
+            {
+                // this is the simpler write, only requires: 
+            }
+
+            return false;
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlTypes;
 
 namespace JAHub_Winforms.Verification
 {
@@ -31,10 +32,10 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrDateOfBirthBlock(Farmer farmer)
+        public usrDateOfBirthBlock(SqlDateTime date)
         {
             // need to figure out how to make this correspond to farmer
-            DateTime givenDate = farmer.DateOfBirth.Value;
+            DateTime givenDate = date.Value;
 
             cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
             cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);

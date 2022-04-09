@@ -86,9 +86,22 @@ namespace JAHub_Winforms
 
                     flwInformationHolder.Visible = true;
 
-                    // Moved this to a method because i think it makes the code easier to read
-                    PullUserRecords();
-                    
+                    Farmer farmer = new Farmer();
+
+                    // need a method that grabs all of the farmer information using userId
+
+                    // Generating all of the controls using values from Farmer
+                    flwInformationHolder.Controls.Add(new usrNameBlock(farmer.FirstName, farmer.MiddleName, farmer.LastName));
+                    flwInformationHolder.Controls.Add(new usrDateOfBirthBlock(farmer.DateOfBirth));
+                    flwInformationHolder.Controls.Add(new usrContactBlock(farmer.BusinessEmail, farmer.PhoneNumbers));
+                    flwInformationHolder.Controls.Add(new usrTrnBlock(farmer.TaxRegistrationNumber));
+                    //flwInformationHolder.Controls.Add(new usrUploadImageBlock());
+                    flwInformationHolder.Controls.Add(new usrIndustryBlock(farmer));
+                    flwInformationHolder.Controls.Add(new usrHoldingsBlock(farmer));
+                    flwInformationHolder.Controls.Add(new usrOrganizationsBlock(farmer.Organizations));
+
+                    flwInformationHolder.Enabled = false;
+
                     break;
                 default:
                     lblStatusType.Text = "Not Registered";
@@ -107,36 +120,6 @@ namespace JAHub_Winforms
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
         {
             _formContainer.OpenChildForm(new FrmRadaRegister(_formContainer, farmerRegistrationPhase));
-        }
-
-        public void PullUserRecords()
-        {
-            Farmer farmer = new Farmer();
-
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-
-                // basically need to use farmerId as the primary key to read a record into memory
-                // then create the corresponding user controls
-
-
-                connection.Close();
-
-
-                // need to fill these with their constructed values when i run the queries
-                flwInformationHolder.Controls.Add(new usrNameBlock());
-                flwInformationHolder.Controls.Add(new usrDateOfBirthBlock());
-                flwInformationHolder.Controls.Add(new usrContactBlock());
-                flwInformationHolder.Controls.Add(new usrTrnBlock());
-                flwInformationHolder.Controls.Add(new usrUploadImageBlock());
-                flwInformationHolder.Controls.Add(new usrIndustryBlock());
-                flwInformationHolder.Controls.Add(new usrHoldingsBlock());
-                flwInformationHolder.Controls.Add(new usrOrganizationsBlock());
-
-                flwInformationHolder.Enabled = false;
-            }
         }
     }
 }
