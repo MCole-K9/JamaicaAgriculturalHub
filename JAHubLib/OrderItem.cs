@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace JAHubLib
 {
-    internal class OrderItem
+    public class OrderItem
     {
-        public int OrderItemId { get; set; }
+        public int OrderItemID { get; set; }
+        public Product OrderProduct { get; set; }
+        public int Quantity { get; set; }
+
        
     }
 }

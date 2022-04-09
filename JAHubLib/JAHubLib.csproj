@@ -48,6 +48,7 @@
     <Compile Include="Grantinfo.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
+    <Compile Include="Payment.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Farmer.cs" />

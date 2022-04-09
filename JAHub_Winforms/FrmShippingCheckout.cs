@@ -78,7 +78,12 @@ namespace JAHub_Winforms
             }
             else
             {
-                _frmCart._frmShop.OpenChildForm(new FrmPayment(this));
+                Order newOrder = new Order();
+                newOrder.ShipStreetAddress = txtStreetAddress.Text;
+                newOrder.ShipCity = txtCity.Text;
+                newOrder.ShipParish = txtParish.Text;
+
+                _frmCart._frmShop.OpenChildForm(new FrmPayment(this, newOrder));
             }
             
         }

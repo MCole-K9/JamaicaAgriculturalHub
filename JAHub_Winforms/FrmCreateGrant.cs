@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
@@ -26,6 +27,7 @@ namespace JAHub_Winforms
             grantinfo.GrantDescription= rtbdescription.Text ;
             grantinfo.Requirement= rtbrequirement.Text ;
             grantinfo.ExpiryDate = dtpExpirydate.Value ;
+            
          //   grantinfo.FileName = pbfile.
 
             GrantOfficer grantOfficer = new GrantOfficer();
@@ -37,9 +39,14 @@ namespace JAHub_Winforms
         }
 
 
+     
        
 
 
 
-    }
-}
+
+
+
+
+            }
+        }

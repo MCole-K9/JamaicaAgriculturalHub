@@ -65,5 +65,35 @@ namespace JAHub_Winforms
                 }
             }
         }
+
+        private void btnBlogs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCreateBlog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMyBlogs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

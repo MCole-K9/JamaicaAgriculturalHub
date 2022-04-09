@@ -110,6 +110,39 @@ namespace JAHubLib
             }
         }
 
+        public int MakeOrder(Order order)
+        {
+            if (isLoggedIn)
+            {
+                int j = Utilities.executeInputQuery($"INSERT INTO Payment (PaymentType, PaymentDate, BillingStreetAddress, BilingCity, BillingParish ) " +
+                    $"VALUES ('{order.PaymentDetails.PaymentType}', GETDATE(), '{order.PaymentDetails.BillingStreetAddress}', '{order.PaymentDetails.BillingCity}', '{order.PaymentDetails.BIllingParish}')");
+
+                if (j < 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    order.PaymentDetails.FetchPaymentID();
+
+                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails) " +
+                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID})");
+
+
+                    return i;
+                }
+                    
+
+                 
+            }
+            else
+            {
+                return -1;
+            }
+            
+
+        }
+
 
     }
 }
