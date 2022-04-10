@@ -69,7 +69,7 @@
             // 
             this.mskTrn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskTrn.Location = new System.Drawing.Point(75, 3);
-            this.mskTrn.Mask = "___-___-___";
+            this.mskTrn.Mask = "000-000-000";
             this.mskTrn.Name = "mskTrn";
             this.mskTrn.Size = new System.Drawing.Size(115, 27);
             this.mskTrn.TabIndex = 1;
