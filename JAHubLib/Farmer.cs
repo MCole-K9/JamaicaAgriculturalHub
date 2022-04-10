@@ -175,10 +175,10 @@ namespace JAHubLib
                         $"WHERE ID = {Session.UserId};";
 
                     // Then, update the farmer record with the new information
-                    String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = {this.Email}, " +
-                        $"NumberOfEmployees = {this.NumberOfEmployees}, UsesHeavyMachinery = {this.UsesHeavyMachinery}" +
+                    String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = '{this.BusinessEmail}', " +
+                        $"NumberOfEmployees = {this.NumberOfEmployees}, UsesHeavyMachinery = {Convert.ToInt32(this.UsesHeavyMachinery)}, " +
                         $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {(int)this.RadaRegistrationPhase}" +
-                        $"WHERE UserID = {Session.UserId};";
+                        $" WHERE UserID = {Session.UserId};";
 
                     // Necessary because every other table will need FarmerID
                     String farmerSelectFarmer = $"SELECT FarmerID FROM [Farmer] " +
@@ -205,7 +205,7 @@ namespace JAHubLib
 
                     // Inserts all the associated land values under this.OwnedLand
                     String farmerInsertLandInformation = $"INSERT INTO [Farmer_land]" +
-                        $" (LandMeasurement, Town, PoBox, Parish, OwnerID) VALUES";
+                        $" (LandMeasurement, Town, PoBox, Parish, OwnerID) VALUES ";
                     foreach(LandInformation land in this.OwnedLand)
                     {
                         farmerInsertLandInformation += $"({land.LandMeasurement}, '{land.LandAddressTown}', " +
@@ -223,7 +223,7 @@ namespace JAHubLib
 
                     // Inserts all of the associated Organizations in this.Organizations
                     String farmerInsertOrganization = $"INSERT INTO [Farmer_Organization]" +
-                        $" (FarmerID, Organization) VALUES";
+                        $" (FarmerID, Organization) VALUES ";
                     foreach(String organization in Organizations)
                     {
                         farmerInsertOrganization += $"()";
@@ -240,7 +240,7 @@ namespace JAHubLib
 
                     // Inserts all of the associated phone numbers under this.PhoneNumbers
                     String farmerInsertPhoneNumber = $"INSERT INTO [Farmer_PhoneNumber]" +
-                        $" (FarmerID, PhoneNumber) VALUES";
+                        $" (FarmerID, PhoneNumber) VALUES ";
                     foreach(String phoneNumber in PhoneNumbers)
                     {
                         farmerInsertPhoneNumber += $"({this.FarmerId}, '{phoneNumber}')";

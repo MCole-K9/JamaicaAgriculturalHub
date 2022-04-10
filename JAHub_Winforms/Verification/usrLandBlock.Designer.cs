@@ -103,6 +103,7 @@
             this.nudLandMeasurement.Name = "nudLandMeasurement";
             this.nudLandMeasurement.Size = new System.Drawing.Size(120, 27);
             this.nudLandMeasurement.TabIndex = 4;
+            this.nudLandMeasurement.ValueChanged += new System.EventHandler(this.nudLandMeasurement_ValueChanged);
             this.nudLandMeasurement.Validating += new System.ComponentModel.CancelEventHandler(this.nudLandMeasurement_Validating);
             // 
             // errLandBlock

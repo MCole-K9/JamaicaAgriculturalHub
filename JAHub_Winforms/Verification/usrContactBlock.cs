@@ -20,7 +20,7 @@ namespace JAHub_Winforms.Verification
 
          
         public String Email => txtEmail.Text;
-        public List<String> PhoneNumbers;
+        public List<String> PhoneNumbers => _phoneNumbers;
 
         #endregion
 
