@@ -120,9 +120,6 @@ namespace JAHub_Winforms
 
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
         {
-            // This fails at runtime because apparently it's a cast from super-type to sub-type, which
-            // c# doesn't allow because it causes fuckshit. This pretty much means that .Parent is not that 
-            // useful, if at all. Solution may be to make profile pass the Main window as an parameter
             FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
 
             mdi.GenerateRadaForm(_formContainer, farmerRegistrationPhase);

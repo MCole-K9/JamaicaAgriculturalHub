@@ -85,7 +85,7 @@ namespace JAHub_Winforms.Verification
             }
             else if (!isLandBlockValid)
             {
-                nudLandMeasurement.Focus();
+                nudLandMeasurement.Select();
             }
         }
     }

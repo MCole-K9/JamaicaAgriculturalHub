@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHub_Winforms.Verification;
 using JAHubLib;
+using System.Data.SqlTypes;
 using System.Data.SqlClient;
 
 namespace JAHub_Winforms
@@ -26,6 +27,15 @@ namespace JAHub_Winforms
         FrmProfile _profile;
         RadaRegistrationType _registrationPhase = RadaRegistrationType.AwaitingVerification;
 
+        usrNameBlock nameBlock;
+        usrDateOfBirthBlock dateBlock;
+        usrContactBlock contactBlock;
+        usrTrnBlock trnBlock;
+        usrUploadImageBlock imageBlock;
+        usrIndustryBlock industryBlock;
+        usrHoldingsBlock holdingsBlock;
+        usrOrganizationsBlock organizationsBlock;
+
         public FrmRadaRegister(FrmProfile profile, RadaRegistrationType registrationPhase)
         {
             InitializeComponent();
@@ -39,14 +49,30 @@ namespace JAHub_Winforms
             {
                 flwFormEntryControls.Controls.Clear();
 
-                flwFormEntryControls.Controls.Add(new usrNameBlock());
-                flwFormEntryControls.Controls.Add(new usrDateOfBirthBlock());
-                flwFormEntryControls.Controls.Add(new usrContactBlock());
-                flwFormEntryControls.Controls.Add(new usrTrnBlock());
-                flwFormEntryControls.Controls.Add(new usrUploadImageBlock());
-                flwFormEntryControls.Controls.Add(new usrIndustryBlock());
-                flwFormEntryControls.Controls.Add(new usrProductsBlock());
-                flwFormEntryControls.Controls.Add(new usrOrganizationsBlock());
+
+                nameBlock = new usrNameBlock();
+                flwFormEntryControls.Controls.Add(nameBlock);
+
+                dateBlock = new usrDateOfBirthBlock();
+                flwFormEntryControls.Controls.Add(dateBlock);
+
+                contactBlock = new usrContactBlock();
+                flwFormEntryControls.Controls.Add(contactBlock);
+
+                trnBlock = new usrTrnBlock();
+                flwFormEntryControls.Controls.Add(trnBlock);
+
+                imageBlock = new usrUploadImageBlock();
+                flwFormEntryControls.Controls.Add(imageBlock);
+
+                industryBlock = new usrIndustryBlock();
+                flwFormEntryControls.Controls.Add(industryBlock);
+                
+                holdingsBlock = new usrHoldingsBlock();
+                flwFormEntryControls.Controls.Add(holdingsBlock);
+
+                organizationsBlock = new usrOrganizationsBlock();
+                flwFormEntryControls.Controls.Add(organizationsBlock);
 
                 // Information will add to DB, but will not show from user perspective until verification
                 _registrationPhase = RadaRegistrationType.AwaitingVerification;
@@ -55,13 +81,26 @@ namespace JAHub_Winforms
 
         private void btnConnectExistingAccount_Click(object sender, EventArgs e)
         {
+            // Basically: Clear controls, and then create the list of sections necessary to connect an account
+            
             if (flwFormEntryControls.Controls.Count > 3)
             {
                 flwFormEntryControls.Controls.Clear();
 
-                flwFormEntryControls.Controls.Add(new usrNameBlock());
-                flwFormEntryControls.Controls.Add(new usrDateOfBirthBlock());
-                flwFormEntryControls.Controls.Add(new usrTrnBlock());
+                nameBlock = new usrNameBlock();
+                flwFormEntryControls.Controls.Add(nameBlock);
+
+                dateBlock = new usrDateOfBirthBlock();
+                flwFormEntryControls.Controls.Add(dateBlock);
+
+                contactBlock = null;
+
+                trnBlock = new usrTrnBlock();
+                flwFormEntryControls.Controls.Add(trnBlock);
+
+                industryBlock = null;
+                holdingsBlock = null;
+                organizationsBlock = null;
 
                 // User already has an application with RADA, but is not connected to system
                 _registrationPhase = RadaRegistrationType.NotConnected;
@@ -81,7 +120,10 @@ namespace JAHub_Winforms
             // Submission format for people who don't have RADA accounts already
             if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
             {
-                using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
+                // all of the using() statements are leftovers from a method that didn't seem to work, i'll remove 
+                // them later, definitely do not care enough to rn
+                
+                using (nameBlock)
                 {
                     if (nameBlock.IsBlockValid())
                     {
@@ -101,7 +143,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                using (var dateBlock = flwFormEntryControls.Controls[1] as usrDateOfBirthBlock)
+                using (dateBlock)
                 {
                     if (dateBlock.IsBlockValid())
                     {
@@ -120,7 +162,7 @@ namespace JAHub_Winforms
 
                 }
 
-                using (var contactBlock = flwFormEntryControls.Controls[2] as usrContactBlock)
+                using (contactBlock)
                 {
                     if (contactBlock.IsBlockValid())
                     {
@@ -138,7 +180,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                using (var trnBlock = flwFormEntryControls.Controls[3] as usrTrnBlock)
+                using (trnBlock)
                 {
                     if (trnBlock.IsBlockValid())
                     {
@@ -156,7 +198,7 @@ namespace JAHub_Winforms
                 }
 
                 // I'm ignoring this until i have time to fix wtvs
-                using (var imageBlock = flwFormEntryControls.Controls[4] as usrUploadImageBlock)
+                using (imageBlock)
                 {
                     if (!(imageBlock.ProfilePicture == null))
                     {
@@ -164,7 +206,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                 using (var holdingsBlock = flwFormEntryControls.Controls[5] as usrHoldingsBlock)
+                 using (holdingsBlock)
                 {
                     if (holdingsBlock.IsBlockValid())
                     {
@@ -187,7 +229,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                using (var industryBlock = flwFormEntryControls.Controls[6] as usrIndustryBlock)
+                using (industryBlock)
                 {
                     if (industryBlock.IsBlockValid())
                     {
@@ -204,7 +246,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                using (var organizationsBlock = flwFormEntryControls.Controls[7] as usrOrganizationsBlock)
+                using (organizationsBlock)
                 {
                     if (organizationsBlock.Organizations != null)
                     {
@@ -218,7 +260,7 @@ namespace JAHub_Winforms
             {
                 farmer.RadaRegistrationPhase = _registrationPhase;
 
-                using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
+                using (nameBlock)
                 {
                     if (nameBlock.IsBlockValid())
                     {
@@ -237,12 +279,12 @@ namespace JAHub_Winforms
                     }
                 }
 
-                using (var dateBlock = flwFormEntryControls.Controls[1] as usrDateOfBirthBlock)
+                using (dateBlock)
                 {
                     if (dateBlock.IsBlockValid())
                     {
-                        farmer.DateOfBirth = new DateTime(Int32.Parse(dateBlock.Year),
-                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day));
+                        farmer.DateOfBirth = new SqlDateTime( new DateTime(Int32.Parse(dateBlock.Year),
+                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day)));
                     }
                     else
                     {
@@ -255,7 +297,7 @@ namespace JAHub_Winforms
                     }
                 }
                 
-                using (var trnBlock = flwFormEntryControls.Controls[2] as usrTrnBlock)
+                using (trnBlock)
                 {
                     if (trnBlock.IsBlockValid())
                     {
@@ -318,6 +360,12 @@ namespace JAHub_Winforms
 
         private void FrmRadaRegister_Load(object sender, EventArgs e)
         {
+            
+            flwFormEntryControls.Controls.Clear();
+
+            nameBlock = new usrNameBlock();
+            flwFormEntryControls.Controls.Add(nameBlock);
+
 
         }
     }

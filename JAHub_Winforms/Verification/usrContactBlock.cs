@@ -122,7 +122,7 @@ namespace JAHub_Winforms.Verification
         {
             if (!isEmailValid)
             {
-                txtEmail.Focus();
+                txtEmail.Select();
             }
             else
             {

@@ -36,7 +36,6 @@
             this.btnConnectExistingAccount = new System.Windows.Forms.Button();
             this.lblMandatoryFields = new System.Windows.Forms.Label();
             this.flwFormEntryControls = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
             this.usrDateOfBirthBlock1 = new JAHub_Winforms.Verification.usrDateOfBirthBlock();
             this.usrContactBlock1 = new JAHub_Winforms.Verification.usrContactBlock();
@@ -45,6 +44,7 @@
             this.usrIndustryBlock1 = new JAHub_Winforms.Verification.usrIndustryBlock();
             this.usrHoldingsBlock2 = new JAHub_Winforms.Verification.usrHoldingsBlock();
             this.usrOrganizationsBlock1 = new JAHub_Winforms.Verification.usrOrganizationsBlock();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.flwRadaRegister.SuspendLayout();
             this.tblNewOrConnectOptions.SuspendLayout();
             this.flwFormEntryControls.SuspendLayout();
@@ -167,19 +167,6 @@
             this.flwFormEntryControls.TabIndex = 2;
             this.flwFormEntryControls.WrapContents = false;
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(251, 1425);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(99, 49);
-            this.btnSubmit.TabIndex = 1;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
             // usrNameBlock1
             // 
             this.usrNameBlock1.AutoSize = true;
@@ -270,6 +257,19 @@
             this.usrOrganizationsBlock1.Size = new System.Drawing.Size(506, 172);
             this.usrOrganizationsBlock1.TabIndex = 6;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(251, 1425);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(99, 49);
+            this.btnSubmit.TabIndex = 1;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // FrmRadaRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,7 +278,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 975);
+            this.ClientSize = new System.Drawing.Size(624, 753);
             this.Controls.Add(this.flwRadaRegister);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRadaRegister";

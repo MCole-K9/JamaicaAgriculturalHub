@@ -201,15 +201,15 @@ namespace JAHub_Winforms.Verification
         {
             if (!isDayValid)
             {
-                cmbDay.Focus();
+                cmbDay.Select();
             }
             else if (!isMonthValid)
             {
-                cmbMonth.Focus();
+                cmbMonth.Select();
             }
             else if (!isYearValid)
             {
-                cmbYear.Focus();
+                cmbYear.Select();
             }
         }
     }

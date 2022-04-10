@@ -13,10 +13,6 @@ namespace JAHub_Winforms
 {
     public partial class FrmMainWindow : Form
     {
-        /* TO-DO
-         * [x] Make MainWindow restrict available buttons, depending on the kind of user
-         * [x] Make Status Strip change to reflect userId and userRole properly ("Looged in as:")
-         */
         public FrmMainWindow()
         {
             InitializeComponent();
