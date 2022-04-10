@@ -108,7 +108,7 @@ namespace JAHub_Winforms.Verification
             // necessary to set the number of days in the month to change values in cmbDay
             int _daysPerMonth;
 
-            switch (cmbMonth.SelectedIndex)
+            switch (cmbMonth.SelectedValue)
             {
                 case 0:
                     _daysPerMonth = 31;

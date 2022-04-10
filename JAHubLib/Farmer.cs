@@ -177,7 +177,7 @@ namespace JAHubLib
                     // Then, update the farmer record with the new information
                     String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = {this.Email}, " +
                         $"NumberOfEmployees = {this.NumberOfEmployees}, UsesHeavyMachinery = {this.UsesHeavyMachinery}" +
-                        $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = {this.DateOfBirth}, RadaRegistrationStatus = {this.RadaRegistrationPhase}" +
+                        $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {this.RadaRegistrationPhase}" +
                         $"WHERE UserID = {Session.UserId};";
 
                     // Necessary because every other table will need FarmerID
@@ -305,7 +305,7 @@ namespace JAHubLib
                     addInformation.ExecuteNonQuery();
 
                     // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
-                    addInformation.CommandText = $"UPDATE [Farmer] SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = {this.DateOfBirth}" +
+                    addInformation.CommandText = $"UPDATE [Farmer] SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = '{this.DateOfBirth}'" +
                         $", RadaRegistrationPhase = {this.RadaRegistrationPhase}" +
                         $"WHERE UserID = {Session.UserId};";
                     addInformation.ExecuteNonQuery();

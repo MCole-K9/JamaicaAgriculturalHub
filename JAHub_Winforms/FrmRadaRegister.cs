@@ -114,6 +114,8 @@ namespace JAHub_Winforms
 
             farmer.RadaRegistrationPhase = _registrationPhase;
 
+            bool isBlockOkay = true;
+
             // note: this method doesn't need a sentinel value, because in the event of an error of some kind, 
             // the method returns early
 
@@ -123,7 +125,7 @@ namespace JAHub_Winforms
                 // all of the using() statements are leftovers from a method that didn't seem to work, i'll remove 
                 // them later, definitely do not care enough to rn
                 
-                using (nameBlock)
+                if (isBlockOkay)
                 {
                     if (nameBlock.IsBlockValid())
                     {
@@ -133,36 +135,35 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(nameBlock);
+                        //ScrollControlIntoView(nameBlock);
                         //nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-
+                        isBlockOkay = false;
                     }
                 }
-
-                using (dateBlock)
+                
+                if (isBlockOkay)
                 {
                     if (dateBlock.IsBlockValid())
                     {
-                        farmer.DateOfBirth = new SqlDateTime( new DateTime(dateBlock.Year, dateBlock.Month, dateBlock.Day));
+                        farmer.DateOfBirth = new SqlDateTime(new DateTime(dateBlock.Year, dateBlock.Month, dateBlock.Day));
                     }
                     else
                     {
-                        ScrollControlIntoView(dateBlock);
+                        //ScrollControlIntoView(dateBlock);
                         //dateBlock.SetControlFocus();
 
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
-
                 }
 
-                using (contactBlock)
+                if (isBlockOkay)
                 {
                     if (contactBlock.IsBlockValid())
                     {
@@ -171,7 +172,7 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(contactBlock);
+                        //ScrollControlIntoView(contactBlock);
                         //contactBlock.SetControlFocus();
 
                         message = "Errors found in Contact section. Please fix them and " +
@@ -180,27 +181,26 @@ namespace JAHub_Winforms
                         return;
                     }
                 }
+                
 
-                using (trnBlock)
+                if (trnBlock.IsBlockValid())
                 {
-                    if (trnBlock.IsBlockValid())
-                    {
-                        farmer.TaxRegistrationNumber = trnBlock.TaxRegistrationNumber;
-                    }
-                    else
-                    {
-                        ScrollControlIntoView(trnBlock);
-                        //trnBlock.SetControlFocus();
+                    farmer.TaxRegistrationNumber = trnBlock.TaxRegistrationNumber;
+                }
+                else
+                {
+                    //ScrollControlIntoView(trnBlock);
+                    //trnBlock.SetControlFocus();
 
-                        message = "Errors found in Contact section. Please fix them and " +
-                            "resubmit your appliication";
-                        MessageBox.Show(message);
-                        return;
-                    }
+                    message = "Errors found in Contact section. Please fix them and " +
+                        "resubmit your appliication";
+                    MessageBox.Show(message);
+                    return;
                 }
 
+
                 // I'm ignoring this until i have time to fix wtvs
-                using (imageBlock)
+                if(isBlockOkay)
                 {
                     if (!(imageBlock.ProfilePicture == null))
                     {
@@ -208,7 +208,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                 using (holdingsBlock)
+                if (isBlockOkay)
                 {
                     if (holdingsBlock.IsBlockValid())
                     {
@@ -222,17 +222,17 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(holdingsBlock);
+                        //ScrollControlIntoView(holdingsBlock);
                         //holdingsBlock.SetControlFocus();
 
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
 
-                using (industryBlock)
+                if (isBlockOkay)
                 {
                     if (industryBlock.IsBlockValid())
                     {
@@ -240,17 +240,17 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(industryBlock);
+                        //ScrollControlIntoView(industryBlock);
                         //industryBlock.SetControlFocus();
                         
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
 
-                using (organizationsBlock)
+                if(isBlockOkay)
                 {
                     if (organizationsBlock.Organizations != null)
                     {
@@ -264,7 +264,7 @@ namespace JAHub_Winforms
             {
                 farmer.RadaRegistrationPhase = _registrationPhase;
 
-                using (nameBlock)
+                if (isBlockOkay)
                 {
                     if (nameBlock.IsBlockValid())
                     {
@@ -274,17 +274,17 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(nameBlock);
+                        //ScrollControlIntoView(nameBlock);
                         //nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
 
-                using (dateBlock)
+                if (isBlockOkay)
                 {
                     if (dateBlock.IsBlockValid())
                     {
@@ -292,17 +292,17 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(dateBlock);
+                        //ScrollControlIntoView(dateBlock);
                         //dateBlock.SetControlFocus();
                         
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
                 
-                using (trnBlock)
+                if (isBlockOkay)
                 {
                     if (trnBlock.IsBlockValid())
                     {
@@ -310,58 +310,68 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        ScrollControlIntoView(trnBlock);
+                        //ScrollControlIntoView(trnBlock);
                         //trnBlock.SetControlFocus();
 
                         message = "Errors found in TRN section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
             }
 
-            // Users can register, and upon registration, will change userRole to farmer
-            if(Session.UserRole == UserRole.Customer)
+            if (isBlockOkay)
             {
-                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                // This changes a customer into a farmer, in case the customer wants to register
+                if (Session.UserRole == UserRole.Customer)
                 {
-                    connection.Open();
+                    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                    {
+                        connection.Open();
 
-                    // First: Change the UserRole in the User Table
-                    String command = $"UPDATE [User] SET UserRole = 3 WHERE ID = {Session.UserId}";
+                        // First: Change the UserRole in the User Table
+                        String command = $"UPDATE [User] SET UserRole = 3 WHERE ID = {Session.UserId}";
 
-                    SqlCommand changeCustomerToFarmer = new SqlCommand(command, connection);
+                        SqlCommand changeCustomerToFarmer = new SqlCommand(command, connection);
 
-                    changeCustomerToFarmer.ExecuteNonQuery();
+                        changeCustomerToFarmer.ExecuteNonQuery();
 
-                    // Then: Create a new record for the Farmer-to-be using their UserID
-                    changeCustomerToFarmer.CommandText = $"INSERT INTO [Farmer] (UserId) VALUES ({Session.UserId})";
+                        // Then: Create a new record for the Farmer-to-be using their UserID
+                        changeCustomerToFarmer.CommandText = $"INSERT INTO [Farmer] (UserId) VALUES ({Session.UserId})";
 
-                    changeCustomerToFarmer.ExecuteNonQuery();
+                        changeCustomerToFarmer.ExecuteNonQuery();
 
-                    connection.Close();
+                        connection.Close();
+                    }
                 }
-            }
 
-            if (farmer.WriteRecordToDatabase())
-            {
-                if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
+                if (farmer.WriteRecordToDatabase())
                 {
-                    message = "Successfully created record for " + farmer.FirstName +
-                        " " + farmer.LastName + "! \n Please wait to be verified.";
-                    MessageBox.Show(message);
+                    if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
+                    {
+                        message = "Successfully created record for " + farmer.FirstName +
+                            " " + farmer.LastName + "! \n Please wait to be verified.";
+                        MessageBox.Show(message);
+                    }
+                    else
+                    {
+                        message = "Successfully entered request to connect account for " + farmer.FirstName +
+                            " " + farmer.LastName + "! \n Please wait to be connected.";
+                        MessageBox.Show(message);
+                    }
                 }
                 else
                 {
-                    message = "Successfully entered request to connect account for " + farmer.FirstName +
-                        " " + farmer.LastName + "! \n Please wait to be connected.";
-                    MessageBox.Show(message);
+                    // tell them there was an error
                 }
+
+                _profile.OpenChildForm(new FrmDashboard());
             }
-            
-            
-            _profile.OpenChildForm(new FrmDashboard());
+            else
+            {
+                // tell them this won't work
+            }
         }
 
         private void FrmRadaRegister_Load(object sender, EventArgs e)
