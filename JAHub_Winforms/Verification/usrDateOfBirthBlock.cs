@@ -12,6 +12,22 @@ using System.Data.SqlTypes;
 
 namespace JAHub_Winforms.Verification
 {
+    enum Month
+    {
+        January = 1,
+        February = 2,
+        March = 3,
+        April = 4,
+        May = 5,
+        June = 6,
+        July = 7,
+        August = 8,
+        September = 9,
+        October = 10,
+        November = 11,
+        December = 12
+    }
+
     public partial class usrDateOfBirthBlock : UserControl
     {
 
@@ -21,15 +37,23 @@ namespace JAHub_Winforms.Verification
         bool isMonthValid;
         bool isDayValid;
 
-        public String Day => cmbDay.SelectedText;
-        public String Month => cmbMonth.SelectedText;
-        public String Year => cmbYear.SelectedText;
+        int year;
+        int month;
+        int day;
+
+        public int Day => day;
+        public int Month => month;
+        public int Year => year;
 
         #endregion
 
         public usrDateOfBirthBlock()
         {
             InitializeComponent();
+
+            cmbMonth.DataSource = Enum.GetValues(typeof(Month));
+
+            cmbMonth.DisplayMember = cmbMonth.DataSource.ToString();
         }
 
         public usrDateOfBirthBlock(SqlDateTime date)
@@ -60,6 +84,7 @@ namespace JAHub_Winforms.Verification
                 errDateBlock.SetError(cmbYear, String.Empty);
 
                 isYearValid = true;
+                year = Int32.Parse(cmbYear.SelectedItem.ToString());
             }
         }
 
@@ -77,6 +102,7 @@ namespace JAHub_Winforms.Verification
                 errDateBlock.SetError(cmbMonth, String.Empty);
 
                 isMonthValid = true;
+                month = (int)cmbMonth.SelectedValue;
             }
 
             // necessary to set the number of days in the month to change values in cmbDay
@@ -163,6 +189,7 @@ namespace JAHub_Winforms.Verification
                 errDateBlock.SetError(cmbDay, String.Empty);
 
                 isDayValid = true;
+                day = Int32.Parse(cmbDay.SelectedItem.ToString());
             }
         }
 

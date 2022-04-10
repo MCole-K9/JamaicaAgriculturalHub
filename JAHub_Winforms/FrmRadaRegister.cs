@@ -133,13 +133,13 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        nameBlock.SetControlFocus();
+                        ScrollControlIntoView(nameBlock);
+                        //nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
 
-                        return;
                     }
                 }
 
@@ -147,12 +147,12 @@ namespace JAHub_Winforms
                 {
                     if (dateBlock.IsBlockValid())
                     {
-                        farmer.DateOfBirth = new DateTime(Int32.Parse(dateBlock.Year),
-                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day));
+                        farmer.DateOfBirth = new SqlDateTime( new DateTime(dateBlock.Year, dateBlock.Month, dateBlock.Day));
                     }
                     else
                     {
-                        dateBlock.SetControlFocus();
+                        ScrollControlIntoView(dateBlock);
+                        //dateBlock.SetControlFocus();
 
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
@@ -171,7 +171,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        contactBlock.SetControlFocus();
+                        ScrollControlIntoView(contactBlock);
+                        //contactBlock.SetControlFocus();
 
                         message = "Errors found in Contact section. Please fix them and " +
                             "resubmit your appliication";
@@ -188,7 +189,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        trnBlock.SetControlFocus();
+                        ScrollControlIntoView(trnBlock);
+                        //trnBlock.SetControlFocus();
 
                         message = "Errors found in Contact section. Please fix them and " +
                             "resubmit your appliication";
@@ -220,7 +222,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        holdingsBlock.SetControlFocus();
+                        ScrollControlIntoView(holdingsBlock);
+                        //holdingsBlock.SetControlFocus();
 
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
@@ -237,7 +240,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        industryBlock.SetControlFocus();
+                        ScrollControlIntoView(industryBlock);
+                        //industryBlock.SetControlFocus();
                         
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
@@ -270,7 +274,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        nameBlock.SetControlFocus();
+                        ScrollControlIntoView(nameBlock);
+                        //nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
@@ -283,12 +288,12 @@ namespace JAHub_Winforms
                 {
                     if (dateBlock.IsBlockValid())
                     {
-                        farmer.DateOfBirth = new SqlDateTime( new DateTime(Int32.Parse(dateBlock.Year),
-                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day)));
+                        farmer.DateOfBirth = new SqlDateTime(new DateTime(dateBlock.Year, dateBlock.Month, dateBlock.Day));
                     }
                     else
                     {
-                        dateBlock.SetControlFocus();
+                        ScrollControlIntoView(dateBlock);
+                        //dateBlock.SetControlFocus();
                         
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
@@ -305,7 +310,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        trnBlock.SetControlFocus();
+                        ScrollControlIntoView(trnBlock);
+                        //trnBlock.SetControlFocus();
 
                         message = "Errors found in TRN section. Please fix them and " +
                             "resubmit your appliication";
@@ -365,6 +371,30 @@ namespace JAHub_Winforms
 
             nameBlock = new usrNameBlock();
             flwFormEntryControls.Controls.Add(nameBlock);
+
+            dateBlock = new usrDateOfBirthBlock();
+            flwFormEntryControls.Controls.Add(dateBlock);
+
+            contactBlock = new usrContactBlock();
+            flwFormEntryControls.Controls.Add(contactBlock);
+
+            trnBlock = new usrTrnBlock();
+            flwFormEntryControls.Controls.Add(trnBlock);
+
+            imageBlock = new usrUploadImageBlock();
+            flwFormEntryControls.Controls.Add(imageBlock);
+
+            industryBlock = new usrIndustryBlock();
+            flwFormEntryControls.Controls.Add(industryBlock);
+
+            holdingsBlock = new usrHoldingsBlock();
+            flwFormEntryControls.Controls.Add(holdingsBlock);
+
+            organizationsBlock = new usrOrganizationsBlock();
+            flwFormEntryControls.Controls.Add(organizationsBlock);
+
+            // Information will add to DB, but will not show from user perspective until verification
+            _registrationPhase = RadaRegistrationType.AwaitingVerification;
 
 
         }
