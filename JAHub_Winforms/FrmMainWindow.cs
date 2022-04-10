@@ -236,5 +236,12 @@ namespace JAHub_Winforms
             }
             
         }
+
+        public void GenerateRadaForm (FrmProfile _formContainer, RadaRegistrationType farmerRegistrationPhase)
+        {
+            FrmRadaRegister rada = new FrmRadaRegister(_formContainer, farmerRegistrationPhase);
+            rada.MdiParent = this;
+            rada.Show();
+        }
     }
 }
