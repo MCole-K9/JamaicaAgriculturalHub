@@ -177,7 +177,7 @@ namespace JAHubLib
                     // Then, update the farmer record with the new information
                     String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = {this.Email}, " +
                         $"NumberOfEmployees = {this.NumberOfEmployees}, UsesHeavyMachinery = {this.UsesHeavyMachinery}" +
-                        $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {this.RadaRegistrationPhase}" +
+                        $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {(int)this.RadaRegistrationPhase}" +
                         $"WHERE UserID = {Session.UserId};";
 
                     // Necessary because every other table will need FarmerID
@@ -295,18 +295,25 @@ namespace JAHubLib
                 {
                     connection.Open();
 
-                    // First, change the name
-                    String command = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
+                // First, change the name
+                    String farmerUpdateUser = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
                         $"MiddleName = '{this.MiddleName}', LastName = '{this.LastName}' " +
                         $"WHERE ID = {Session.UserId};";
 
-                    SqlCommand addInformation = new SqlCommand(command, connection);
+                    SqlCommand addInformation = new SqlCommand(farmerUpdateUser, connection);
 
                     addInformation.ExecuteNonQuery();
 
-                    // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
+                // This creates a new farmer record using the UserID from User
+                    String farmerInsertFarmer = $"INSERT INTO [Farmer] (UserID) VALUES ({Session.UserId});";
+
+                    addInformation.CommandText = farmerInsertFarmer;
+                    addInformation.ExecuteNonQuery();
+
+
+                // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
                     addInformation.CommandText = $"UPDATE [Farmer] SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = '{this.DateOfBirth}'" +
-                        $", RadaRegistrationPhase = {this.RadaRegistrationPhase}" +
+                        $", RadaRegistrationStatus = {(int) this.RadaRegistrationPhase} " +
                         $"WHERE UserID = {Session.UserId};";
                     addInformation.ExecuteNonQuery();
 
