@@ -11,17 +11,17 @@ namespace JAHubLib
     public static class Utilities
     {
         //Returns file path from base-directory up to Project Namespace
-        public  static string GetFilePath()
+        public  static string GetDesktopFilePath()
         {
             String path = Directory.GetCurrentDirectory();
-            path = path.Substring(0, path.Length - 10);
+            path = path.Substring(0, path.Length - 25);
 
             return path;
         }
-        public static int GetFilePathLength()
+        public static int GetDesktopFilePathLength()
         {
             String path = Directory.GetCurrentDirectory();
-            path = path.Substring(0, path.Length - 10);
+            path = path.Substring(0, path.Length - 25);
 
             return path.Length;
         }
@@ -34,7 +34,7 @@ namespace JAHubLib
         public static string CopyImage(string source, string fileName)
         {
             fileName = Path.GetFileName(fileName);
-            string destination = Path.Combine($"{GetFilePath()}\\Images", fileName);
+            string destination = Path.Combine($"{GetDesktopFilePath()}\\Images", fileName);
 
             if (File.Exists(destination))
             {
@@ -62,7 +62,7 @@ namespace JAHubLib
         {
             try
             {
-                string[] Directoryimages = Directory.GetFiles($"{GetFilePath()}/Images");
+                string[] Directoryimages = Directory.GetFiles($"{GetDesktopFilePath()}/Images");
                 List<String> DBimages = new List<String>();
 
                 using (SqlConnection connection = new SqlConnection(getConnectionString()))
@@ -77,7 +77,7 @@ namespace JAHubLib
 
                     while (sqlDataReader.Read())
                     {
-                        DBimages.Add($"{GetFilePath()}/Images\\{sqlDataReader["Image"].ToString()}");
+                        DBimages.Add($"{GetDesktopFilePath()}/Images\\{sqlDataReader["Image"].ToString()}");
                     }
                 }
 
