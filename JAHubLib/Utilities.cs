@@ -117,6 +117,7 @@ namespace JAHubLib
         }
 
         //M.C..Trying to kill repitition
+        //E.M.. Repition pronounced dead
         public static int executeInputQuery(string query)
         {
             using(SqlConnection conn = new SqlConnection(getConnectionString()))
@@ -128,8 +129,6 @@ namespace JAHubLib
                 return i;
 
             }
-
-       
         }
     }
 }
