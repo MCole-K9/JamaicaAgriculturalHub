@@ -105,7 +105,7 @@ namespace JAHubLib
         public int AddProduct(Product product)
         {
             FetchFarmerData();
-            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetFilePathLength()+8);
+            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetDesktopFilePathLength()+8);
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -124,7 +124,7 @@ namespace JAHubLib
 
         public int UpdateProduct(Product product)
         {
-            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetFilePathLength() + 8);
+            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetDesktopFilePathLength() + 8);
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
