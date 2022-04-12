@@ -165,8 +165,6 @@ namespace JAHubLib
 
         }
 
-        // May want to explicitly pass userId if this is intended for any kind of wide reusability, which is simple
-        // enough ig
         public bool WriteRecordToDatabase(int farmerUserId)
         {
             // This depends on the radaregistrationphase

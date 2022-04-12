@@ -373,6 +373,7 @@ namespace JAHub_Winforms
                 }
 
                 _profile.OpenChildForm(new FrmDashboard());
+                this.Close();
             }
             else
             {
