@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace JAHubLib
 {
@@ -156,7 +157,9 @@ namespace JAHubLib
 
         }
 
-        public bool WriteRecordToDatabase()
+        // May want to explicitly pass userId if this is intended for any kind of wide reusability, which is simple
+        // enough ig
+        public bool WriteRecordToDatabase(int farmerUserId)
         {
             // This depends on the radaregistrationphase
 
@@ -185,7 +188,7 @@ namespace JAHubLib
                     String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = '{this.BusinessEmail}', " +
                         $"NumberOfEmployees = {this.NumberOfEmployees}, UsesHeavyMachinery = {Convert.ToInt32(this.UsesHeavyMachinery)}, " +
                         $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {(int)this.RadaRegistrationPhase}" +
-                        $" WHERE UserID = {Session.UserId};";
+                        $" WHERE UserID = {farmerUserId};";
 
                     writeToDatabase.CommandText = farmerUpdateFarmer;
                     writeToDatabase.ExecuteNonQuery();
@@ -305,23 +308,23 @@ namespace JAHubLib
                 // First, change the name
                     String farmerUpdateUser = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
                         $"MiddleName = '{this.MiddleName}', LastName = '{this.LastName}' " +
-                        $"WHERE ID = {Session.UserId};";
+                        $"WHERE ID = {farmerUserId};";
 
                     SqlCommand addInformation = new SqlCommand(farmerUpdateUser, connection);
 
                     addInformation.ExecuteNonQuery();
 
                 // This creates a new farmer record using the UserID from User
-                    String farmerInsertFarmer = $"INSERT INTO [Farmer] (UserID) VALUES ({Session.UserId});";
+                    //String farmerInsertFarmer = $"INSERT INTO [Farmer] (UserID) VALUES ({Session.UserId});";
 
-                    addInformation.CommandText = farmerInsertFarmer;
-                    addInformation.ExecuteNonQuery();
+                    //addInformation.CommandText = farmerInsertFarmer;
+                    //addInformation.ExecuteNonQuery();
 
 
                 // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
                     addInformation.CommandText = $"UPDATE [Farmer] SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = '{this.DateOfBirth}'" +
                         $", RadaRegistrationStatus = {(int) this.RadaRegistrationPhase} " +
-                        $"WHERE UserID = {Session.UserId};";
+                        $"WHERE UserID = {farmerUserId};";
                     addInformation.ExecuteNonQuery();
 
                     connection.Close();
@@ -331,6 +334,110 @@ namespace JAHubLib
             }
 
             return false;
+        }
+
+        public void GetFullRecordFromDatabase(int farmerUserId)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                SqlCommand pullRecord = new SqlCommand();
+                pullRecord.Connection = connection;
+
+                SqlDataReader reader;
+
+            // Gathering: FirstName, MiddleName, LastName from User
+                String farmerSelectUser = $"SELECT FirstName, MiddleName, LastName FROM [User] WHERE UserID = {farmerUserId};";
+                pullRecord.CommandText = farmerSelectUser;
+
+                reader = pullRecord.ExecuteReader();
+                if (reader.Read())
+                {
+                    this.FirstName = (String)reader["FirstName"];
+                    this.MiddleName = (String)reader["MiddleName"];
+                    this.LastName = (String)reader["LastName"];
+                }
+
+                reader.Close();
+
+            // Gathering: Everything from farmer except RadaRegistrationStatus and UserID from Farmer
+                String farmerSelectFarmer = $"SELECT * FROM [Farmer] WHERE UserID = {farmerUserId};";
+                pullRecord.CommandText = farmerSelectFarmer;
+
+                reader = pullRecord.ExecuteReader();
+                if (reader.Read())
+                {
+                    this.FarmerId = (int)reader["ID"];
+                    this.BusinessEmail = (String)reader["BusinessEmail"];
+                    // leaving space for IdPicture, which should have a corresponding filepath like IdPicturePath
+                    // IdPicture in DB is a string field
+                    this.NumberOfEmployees = (int)reader["NumberOfEmployees"];
+                    this.UsesHeavyMachinery = (bool)reader["UsesHeavyMachinery"];
+                    this.TaxRegistrationNumber = (String)reader["TRN"];
+                    this.DateOfBirth = (SqlDateTime)reader["DateOfBirth"];
+
+                }
+                reader.Close();
+
+            // Gathering: 
+                String farmerSelectTypicalProduct = $"SELECT * FROM [Farmer_ProducedProduct] WHERE FarmerID = {FarmerId};";
+                pullRecord.CommandText = farmerSelectTypicalProduct;
+
+                reader = pullRecord.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                reader.Close();
+
+            // Gathering: 
+                String farmerSelectLand = $"SELECT * FROM [Farmer_Land] WHERE FarmerID = {FarmerId};";
+                pullRecord.CommandText = farmerSelectLand;
+
+                reader = pullRecord.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                reader.Close();
+
+            // Gathering: 
+                String farmerSelectPhoneNumber = $"SELECT * FROM [Farmer_PhoneNumber] WHERE FarmerID = {FarmerId};";
+                pullRecord.CommandText = farmerSelectPhoneNumber;
+
+                reader = pullRecord.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                reader.Close();
+
+            // Gathering: 
+                String farmerSelectOrganization = $"SELECT * FROM [Farmer_Organization] WHERE FarmerID = {FarmerId};";
+                pullRecord.CommandText = farmerSelectOrganization;
+
+                reader = pullRecord.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                reader.Close();
+
+                connection.Close();
+            }
+        }
+
+        public void UpdateFarmerDatabase(int farmerUserId, DataColumn dclUpdate, DataColumn dclAdd, DataColumn dclRemove)
+        {
+            // I'm not sure if this is worth the time to write, tbh
+            // DELETE statements may cause issues if more than one person tries to act on them, but this
+            // isn't project-relevant
+            
+            /* Requires:
+             * Knowledge of which parts of the farmer record have their own tables
+             * Information in farmer record to write over
+             */
         }
     }
 }
