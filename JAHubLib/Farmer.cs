@@ -181,7 +181,7 @@ namespace JAHubLib
                         $" WHERE UserID = {Session.UserId};";
 
                     // Necessary because every other table will need FarmerID
-                    String farmerSelectFarmer = $"SELECT FarmerID FROM [Farmer] " +
+                    String farmerSelectFarmer = $"SELECT ID FROM [Farmer] " +
                         $"WHERE UserID = {Session.UserId};";
 
                     // Inserts all the products listed under ProductsTypicallyProduced
@@ -226,7 +226,7 @@ namespace JAHubLib
                         $" (FarmerID, Organization) VALUES ";
                     foreach(String organization in Organizations)
                     {
-                        farmerInsertOrganization += $"()";
+                        farmerInsertOrganization += $"({this.FarmerId}, '{organization})'";
 
                         if (Organizations.IndexOf(organization) == Organizations.Count - 1)
                         {
@@ -267,10 +267,13 @@ namespace JAHubLib
 
                     writeToDatabase.CommandText = farmerSelectFarmer;
                     SqlDataReader reader = writeToDatabase.ExecuteReader();
+                    
                     while (reader.Read())
                     {
-                        FarmerId = (int)reader["FarmerID"];
+                        FarmerId = (int)reader["ID"];
                     }
+
+                    reader.Close();
 
                     writeToDatabase.CommandText = farmerInsertTypicalProduct;
                     writeToDatabase.ExecuteNonQuery();
