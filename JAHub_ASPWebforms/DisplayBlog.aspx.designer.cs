@@ -11,43 +11,52 @@ namespace JAHub_ASPWebforms
 {
 
 
-    public partial class WebFrmBlog
+    public partial class DisplayBlog
     {
 
         /// <summary>
-        /// Panel2 control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.Label lblTitle;
 
         /// <summary>
-        /// lblSearch control.
+        /// lblAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSearch;
+        protected global::System.Web.UI.WebControls.Label lblAuthor;
 
         /// <summary>
-        /// txtSearch control.
+        /// lblPublishDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearch;
+        protected global::System.Web.UI.WebControls.Label lblPublishDate;
 
         /// <summary>
-        /// pnlBlogContainer control.
+        /// lblDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlBlogContainer;
+        protected global::System.Web.UI.WebControls.Label lblDescription;
+
+        /// <summary>
+        /// lblBlogBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBlogBody;
     }
 }

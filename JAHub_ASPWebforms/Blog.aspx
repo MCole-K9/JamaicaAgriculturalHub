@@ -7,8 +7,8 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">AgriBlogs</a></li>
-      <li><a href="#">Create</a></li>
-      <li><a href="#">My Blogs</a></li>
+      <li><a href="CreateBlog">Create</a></li>
+      <li><a href="MyBlogs">My Blogs</a></li>
     </ul>
   </div>
 </nav>
@@ -20,12 +20,8 @@
         <asp:Panel ID="Panel2" runat="server" Width="1440px">
             <asp:Label ID="lblSearch" runat="server" Text="Search"></asp:Label>
             <asp:TextBox ID="txtSearch" runat="server" Height="15px" Width="147px"></asp:TextBox>
-            <asp:DropDownList ID="cboSort" runat="server">
-                <asp:ListItem>Rating</asp:ListItem>
-                <asp:ListItem>Latest</asp:ListItem>
-            </asp:DropDownList>
         </asp:Panel>
-        <asp:Panel ID="pnlBlogContainer" runat="server" Height="600px" BorderStyle="Solid" CssClass="pnlBlogContainer">
+        <asp:Panel ID="pnlBlogContainer" runat="server" Height="600px" BorderStyle="Groove" CssClass="pnlBlogContainer">
         </asp:Panel>
     </div>
   </div>
