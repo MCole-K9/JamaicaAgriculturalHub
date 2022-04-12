@@ -13,31 +13,20 @@ namespace JAHub_ASPWebforms
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            SqlConnection conn = new SqlConnection(Utilities.getConnectionString());
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("Select * FROM [Blog]", conn);
-            SqlDataReader sqlData = cmd.ExecuteReader();
             int IDinc = 0;
-            while (sqlData.Read())
+            List<Blog> blogs = new List<Blog>();
+            blogs = Util.DisplayBlogsToWeb();
+            foreach(Blog blog in blogs)
             {
                 IDinc++;
-                Blog blog = new Blog();
-
-                blog.BlogID = (int)sqlData["ID"];
-                blog.Title = sqlData["Title"].ToString();
-                blog.AuthorID = (int)sqlData["Author"];
-                blog.Description = sqlData["Description"].ToString();
-                blog.BlogBody = sqlData["Body"].ToString();
-                blog.PublishDateString = sqlData["PublishedDate"].ToString();
-                blog.Rating = Convert.ToInt16(sqlData["Rating"]);
                 ucWebBlog ucWeb = (ucWebBlog)Page.LoadControl("~/ucWebBlog.ascx");
                 ucWeb.GetBlog(blog);
                 ucWeb.ID = "BlogControl" + IDinc.ToString();
                 pnlBlogContainer.Controls.Add(ucWeb);
-
             }
-            conn.Close();
-		}
+           
+        }
+
 		
     }
 }

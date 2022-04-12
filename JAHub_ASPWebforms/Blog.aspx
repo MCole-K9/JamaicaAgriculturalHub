@@ -21,7 +21,7 @@
             <asp:Label ID="lblSearch" runat="server" Text="Search"></asp:Label>
             <asp:TextBox ID="txtSearch" runat="server" Height="15px" Width="147px"></asp:TextBox>
         </asp:Panel>
-        <asp:Panel ID="pnlBlogContainer" runat="server" Height="600px" BorderStyle="Groove" CssClass="pnlBlogContainer">
+        <asp:Panel ID="pnlBlogContainer" runat="server" Height="570px" BorderStyle="Groove" CssClass="pnlBlogContainer">
         </asp:Panel>
     </div>
   </div>
