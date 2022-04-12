@@ -169,10 +169,17 @@ namespace JAHubLib
                 {
                     connection.Open();
 
+                    // activating all of the queries in a list
+                    SqlCommand writeToDatabase = new SqlCommand();
+                    writeToDatabase.Connection = connection;
+
                     // First, change the Name (Mostly as a formality)
                     String farmerUpdateUser = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
                         $"MiddleName = '{this.MiddleName}', LastName = '{this.LastName}'" +
                         $"WHERE ID = {Session.UserId};";
+
+                    writeToDatabase.CommandText = farmerUpdateUser;
+                    writeToDatabase.ExecuteNonQuery();
 
                     // Then, update the farmer record with the new information
                     String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = '{this.BusinessEmail}', " +
@@ -180,9 +187,22 @@ namespace JAHubLib
                         $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {(int)this.RadaRegistrationPhase}" +
                         $" WHERE UserID = {Session.UserId};";
 
+                    writeToDatabase.CommandText = farmerUpdateFarmer;
+                    writeToDatabase.ExecuteNonQuery();
+
                     // Necessary because every other table will need FarmerID
                     String farmerSelectFarmer = $"SELECT ID FROM [Farmer] " +
                         $"WHERE UserID = {Session.UserId};";
+
+                    writeToDatabase.CommandText = farmerSelectFarmer;
+                    SqlDataReader reader = writeToDatabase.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        FarmerId = (int)reader["ID"];
+                    }
+
+                    reader.Close();
 
                     // Inserts all the products listed under ProductsTypicallyProduced
                     String farmerInsertTypicalProduct = $"INSERT INTO [Farmer_ProducedProduct] " +
@@ -203,6 +223,9 @@ namespace JAHubLib
                         }
                     }
 
+                    writeToDatabase.CommandText = farmerInsertTypicalProduct;
+                    writeToDatabase.ExecuteNonQuery();
+
                     // Inserts all the associated land values under this.OwnedLand
                     String farmerInsertLandInformation = $"INSERT INTO [Farmer_land]" +
                         $" (LandMeasurement, Town, PoBox, Parish, OwnerID) VALUES ";
@@ -221,6 +244,9 @@ namespace JAHubLib
                         }
                     }
 
+                    writeToDatabase.CommandText = farmerInsertLandInformation;
+                    writeToDatabase.ExecuteNonQuery();
+
                     // Inserts all of the associated Organizations in this.Organizations
                     String farmerInsertOrganization = $"INSERT INTO [Farmer_Organization]" +
                         $" (FarmerID, Organization) VALUES ";
@@ -238,12 +264,19 @@ namespace JAHubLib
                         }
                     }
 
+                    if (this.Organizations.Count != 0)
+                    {
+                        writeToDatabase.CommandText = farmerInsertOrganization;
+                        writeToDatabase.ExecuteNonQuery();
+                    }
+                    
+
                     // Inserts all of the associated phone numbers under this.PhoneNumbers
                     String farmerInsertPhoneNumber = $"INSERT INTO [Farmer_PhoneNumber]" +
                         $" (FarmerID, PhoneNumber) VALUES ";
                     foreach(String phoneNumber in PhoneNumbers)
                     {
-                        farmerInsertPhoneNumber += $"({this.FarmerId}, '{phoneNumber}')";
+                        farmerInsertPhoneNumber += $"({this.FarmerId}, '{Int64.Parse(phoneNumber)}')";
 
                         if(PhoneNumbers.IndexOf(phoneNumber) == PhoneNumbers.Count - 1)
                         {
@@ -254,39 +287,10 @@ namespace JAHubLib
                             farmerInsertPhoneNumber += ", ";
                         }
                     }
-
-                    // activating all of the queries in a list
-                    SqlCommand writeToDatabase = new SqlCommand();
-                    writeToDatabase.Connection = connection;
-
-                    writeToDatabase.CommandText = farmerUpdateUser;
-                    writeToDatabase.ExecuteNonQuery();
-
-                    writeToDatabase.CommandText = farmerUpdateFarmer;
-                    writeToDatabase.ExecuteNonQuery();
-
-                    writeToDatabase.CommandText = farmerSelectFarmer;
-                    SqlDataReader reader = writeToDatabase.ExecuteReader();
                     
-                    while (reader.Read())
-                    {
-                        FarmerId = (int)reader["ID"];
-                    }
-
-                    reader.Close();
-
-                    writeToDatabase.CommandText = farmerInsertTypicalProduct;
-                    writeToDatabase.ExecuteNonQuery();
-
-                    writeToDatabase.CommandText = farmerInsertLandInformation;
-                    writeToDatabase.ExecuteNonQuery();
-
-                    writeToDatabase.CommandText = farmerInsertOrganization;
-                    writeToDatabase.ExecuteNonQuery();
-
                     writeToDatabase.CommandText = farmerInsertPhoneNumber;
                     writeToDatabase.ExecuteNonQuery();
-                    
+
                     connection.Close();
                 }
 

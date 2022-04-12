@@ -234,6 +234,14 @@ namespace JAHub_Winforms
 
                 if (isBlockOkay)
                 {
+                    if (organizationsBlock.Organizations != null)
+                    {
+                        farmer.Organizations = organizationsBlock.Organizations;
+                    }
+                }
+
+                if (isBlockOkay)
+                {
                     if (industryBlock.IsBlockValid())
                     {
 
@@ -249,14 +257,12 @@ namespace JAHub_Winforms
                         isBlockOkay = false;
                     }
                 }
-
-                if(isBlockOkay)
+                else
                 {
-                    if (organizationsBlock.Organizations != null)
-                    {
-                        farmer.Organizations = organizationsBlock.Organizations;
-                    }
+                    farmer = null;
                 }
+
+                
             }
             
             // Other submission format for People with already existing RADA Records
