@@ -191,7 +191,7 @@ namespace JAHub_Winforms.Verification
 
         // This does the same thing as InitializeComponent, but allows the 
         // Controls to be prefilled with data
-        private void InitializeFilledComponent(Farmer farmer)
+        private void InitializeFilledComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.flwContactBlock = new System.Windows.Forms.FlowLayoutPanel();
@@ -271,8 +271,7 @@ namespace JAHub_Winforms.Verification
             this.txtEmail.MaxLength = 65;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(159, 27);
-            this.txtEmail.TabIndex = 1;
-            this.txtEmail.Text = farmer.Email;
+            this.txtEmail.TabIndex = 1;;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // flwPhoneNumbers

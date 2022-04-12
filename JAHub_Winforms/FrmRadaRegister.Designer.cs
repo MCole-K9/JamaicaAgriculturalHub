@@ -52,7 +52,6 @@
             // 
             // flwRadaRegister
             // 
-            this.flwRadaRegister.AutoScroll = true;
             this.flwRadaRegister.AutoSize = true;
             this.flwRadaRegister.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwRadaRegister.BackColor = System.Drawing.Color.Transparent;
@@ -61,12 +60,11 @@
             this.flwRadaRegister.Controls.Add(this.lblMandatoryFields);
             this.flwRadaRegister.Controls.Add(this.flwFormEntryControls);
             this.flwRadaRegister.Controls.Add(this.btnSubmit);
-            this.flwRadaRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flwRadaRegister.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwRadaRegister.Location = new System.Drawing.Point(0, 0);
             this.flwRadaRegister.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaRegister.Name = "flwRadaRegister";
-            this.flwRadaRegister.Size = new System.Drawing.Size(624, 554);
+            this.flwRadaRegister.Size = new System.Drawing.Size(601, 1478);
             this.flwRadaRegister.TabIndex = 0;
             this.flwRadaRegister.WrapContents = false;
             // 
@@ -165,7 +163,7 @@
             this.flwFormEntryControls.Location = new System.Drawing.Point(4, 174);
             this.flwFormEntryControls.Margin = new System.Windows.Forms.Padding(4);
             this.flwFormEntryControls.Name = "flwFormEntryControls";
-            this.flwFormEntryControls.Size = new System.Drawing.Size(572, 1249);
+            this.flwFormEntryControls.Size = new System.Drawing.Size(572, 1243);
             this.flwFormEntryControls.TabIndex = 2;
             this.flwFormEntryControls.WrapContents = false;
             // 
@@ -256,14 +254,14 @@
             this.usrOrganizationsBlock1.Location = new System.Drawing.Point(4, 1067);
             this.usrOrganizationsBlock1.Margin = new System.Windows.Forms.Padding(4);
             this.usrOrganizationsBlock1.Name = "usrOrganizationsBlock1";
-            this.usrOrganizationsBlock1.Size = new System.Drawing.Size(506, 178);
+            this.usrOrganizationsBlock1.Size = new System.Drawing.Size(506, 172);
             this.usrOrganizationsBlock1.TabIndex = 6;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(251, 1431);
+            this.btnSubmit.Location = new System.Drawing.Point(251, 1425);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 49);
@@ -277,12 +275,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 554);
+            this.ClientSize = new System.Drawing.Size(624, 753);
             this.Controls.Add(this.flwRadaRegister);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRadaRegister";
             this.Text = "Register With RADA";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRadaRegister_Load);
             this.flwRadaRegister.ResumeLayout(false);
             this.flwRadaRegister.PerformLayout();

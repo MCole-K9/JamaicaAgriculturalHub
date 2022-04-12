@@ -25,8 +25,6 @@ namespace JAHubLib
         public decimal LandMeasurement { get; set; }
     }
 
-    // per discussion: classes are primarily data-holders, with methods to do
-    // things with that data written in place/in event handlers
     public class Farmer : User
     {
         public int FarmerId { get; set; }
@@ -156,6 +154,183 @@ namespace JAHubLib
                 return i;
             }
 
+        }
+
+        public bool WriteRecordToDatabase()
+        {
+            // This depends on the radaregistrationphase
+
+            // K.S.: Note: this doesn't write the filepath of the IdPicture, because i'm purposefully going to scrap
+            // it if time starts to runs out. it's not a MS item and if it is, it's only my problem
+
+            if (this.RadaRegistrationPhase == RadaRegistrationType.AwaitingVerification)
+            {
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    // activating all of the queries in a list
+                    SqlCommand writeToDatabase = new SqlCommand();
+                    writeToDatabase.Connection = connection;
+
+                    // First, change the Name (Mostly as a formality)
+                    String farmerUpdateUser = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
+                        $"MiddleName = '{this.MiddleName}', LastName = '{this.LastName}'" +
+                        $"WHERE ID = {Session.UserId};";
+
+                    writeToDatabase.CommandText = farmerUpdateUser;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    // Then, update the farmer record with the new information
+                    String farmerUpdateFarmer = $"UPDATE [Farmer] SET BusinessEmail = '{this.BusinessEmail}', " +
+                        $"NumberOfEmployees = {this.NumberOfEmployees}, UsesHeavyMachinery = {Convert.ToInt32(this.UsesHeavyMachinery)}, " +
+                        $"TRN = {this.TaxRegistrationNumber}, DateOfBirth = '{this.DateOfBirth}', RadaRegistrationStatus = {(int)this.RadaRegistrationPhase}" +
+                        $" WHERE UserID = {Session.UserId};";
+
+                    writeToDatabase.CommandText = farmerUpdateFarmer;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    // Necessary because every other table will need FarmerID
+                    String farmerSelectFarmer = $"SELECT ID FROM [Farmer] " +
+                        $"WHERE UserID = {Session.UserId};";
+
+                    writeToDatabase.CommandText = farmerSelectFarmer;
+                    SqlDataReader reader = writeToDatabase.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        FarmerId = (int)reader["ID"];
+                    }
+
+                    reader.Close();
+
+                    // Inserts all the products listed under ProductsTypicallyProduced
+                    String farmerInsertTypicalProduct = $"INSERT INTO [Farmer_ProducedProduct] " +
+                        " (FarmerID, ProductName) VALUES ";
+                    foreach(String product in ProductsTypicallyProduced)
+                    {
+                        farmerInsertTypicalProduct += $"({this.FarmerId}, '{product}')";
+
+                        // This checks to see if the product in the list is the last, and if so appends a semicolon,
+                        // else a comma
+                        if (ProductsTypicallyProduced.IndexOf(product) == ProductsTypicallyProduced.Count - 1)
+                        {
+                            farmerInsertTypicalProduct += ";";
+                        }
+                        else
+                        {
+                            farmerInsertTypicalProduct += ", ";
+                        }
+                    }
+
+                    writeToDatabase.CommandText = farmerInsertTypicalProduct;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    // Inserts all the associated land values under this.OwnedLand
+                    String farmerInsertLandInformation = $"INSERT INTO [Farmer_land]" +
+                        $" (LandMeasurement, Town, PoBox, Parish, OwnerID) VALUES ";
+                    foreach(LandInformation land in this.OwnedLand)
+                    {
+                        farmerInsertLandInformation += $"({land.LandMeasurement}, '{land.LandAddressTown}', " +
+                            $"'{land.LandAddressPoBox}', '{land.LandAddressParish}', {this.FarmerId})";
+
+                        if (OwnedLand.IndexOf(land) == OwnedLand.Count - 1)
+                        {
+                            farmerInsertLandInformation += ";";
+                        }
+                        else
+                        {
+                            farmerInsertLandInformation += ", ";
+                        }
+                    }
+
+                    writeToDatabase.CommandText = farmerInsertLandInformation;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    // Inserts all of the associated Organizations in this.Organizations
+                    String farmerInsertOrganization = $"INSERT INTO [Farmer_Organization]" +
+                        $" (FarmerID, Organization) VALUES ";
+                    foreach(String organization in Organizations)
+                    {
+                        farmerInsertOrganization += $"({this.FarmerId}, '{organization})'";
+
+                        if (Organizations.IndexOf(organization) == Organizations.Count - 1)
+                        {
+                            farmerInsertOrganization += ";";
+                        }
+                        else
+                        {
+                            farmerInsertOrganization += ", ";
+                        }
+                    }
+
+                    if (this.Organizations.Count != 0)
+                    {
+                        writeToDatabase.CommandText = farmerInsertOrganization;
+                        writeToDatabase.ExecuteNonQuery();
+                    }
+                    
+
+                    // Inserts all of the associated phone numbers under this.PhoneNumbers
+                    String farmerInsertPhoneNumber = $"INSERT INTO [Farmer_PhoneNumber]" +
+                        $" (FarmerID, PhoneNumber) VALUES ";
+                    foreach(String phoneNumber in PhoneNumbers)
+                    {
+                        farmerInsertPhoneNumber += $"({this.FarmerId}, '{Int64.Parse(phoneNumber)}')";
+
+                        if(PhoneNumbers.IndexOf(phoneNumber) == PhoneNumbers.Count - 1)
+                        {
+                            farmerInsertPhoneNumber += ";";
+                        }
+                        else
+                        {
+                            farmerInsertPhoneNumber += ", ";
+                        }
+                    }
+                    
+                    writeToDatabase.CommandText = farmerInsertPhoneNumber;
+                    writeToDatabase.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+
+                return true;
+            }
+            else if (this.RadaRegistrationPhase == RadaRegistrationType.NotConnected)
+            {
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                // First, change the name
+                    String farmerUpdateUser = $"UPDATE [User] SET FirstName = '{this.FirstName}'," +
+                        $"MiddleName = '{this.MiddleName}', LastName = '{this.LastName}' " +
+                        $"WHERE ID = {Session.UserId};";
+
+                    SqlCommand addInformation = new SqlCommand(farmerUpdateUser, connection);
+
+                    addInformation.ExecuteNonQuery();
+
+                // This creates a new farmer record using the UserID from User
+                    String farmerInsertFarmer = $"INSERT INTO [Farmer] (UserID) VALUES ({Session.UserId});";
+
+                    addInformation.CommandText = farmerInsertFarmer;
+                    addInformation.ExecuteNonQuery();
+
+
+                // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
+                    addInformation.CommandText = $"UPDATE [Farmer] SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = '{this.DateOfBirth}'" +
+                        $", RadaRegistrationStatus = {(int) this.RadaRegistrationPhase} " +
+                        $"WHERE UserID = {Session.UserId};";
+                    addInformation.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

@@ -11,12 +11,14 @@ namespace JAHub_ASPWebforms
 {
     public partial class ucWebBlog : System.Web.UI.UserControl
     {
+        Blog b = new Blog();
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
         public void GetBlog(Blog blog)
         {
+            b = blog;
             this.lblTitle.Text = blog.Title;
             this.lblAuthor.Text = blog.GetAuthorName(blog.AuthorID);
             this.lblDescription.Text = blog.Description;
@@ -25,7 +27,8 @@ namespace JAHub_ASPWebforms
 
         protected void btnView_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("uhhh");
+            Session["BlogData"] = b;
+            Response.Redirect("~/DisplayBlog.aspx");
         }
     }
 }
