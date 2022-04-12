@@ -186,6 +186,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -366,6 +367,13 @@
     </Compile>
     <Compile Include="Shop.aspx.designer.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrProduct.ascx.cs">
+      <DependentUpon>UsrProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrProduct.ascx.designer.cs">
+      <DependentUpon>UsrProduct.ascx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
