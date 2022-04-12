@@ -104,6 +104,8 @@ namespace JAHub_Winforms
 
                 adapter.Fill(categoryDS, "Category");
 
+                
+
 
                 cboCategory.DataSource = categoryDS.Tables["Category"];
 
@@ -111,15 +113,10 @@ namespace JAHub_Winforms
                 cboCategory.DisplayMember = "CategoryName";
                 cboCategory.ValueMember = "ID";
 
-                //cboCategory.Items.Insert(0, "All");
+                cboCategory.SelectedIndex = -1;
+                cboCategory.Text = "Select an Item";
 
             }
-            //Category ctg = new Category();
-
-            //cboCategory.DataBindings.Clear();
-            //cboCategory.DataSource = ctg.GetCategoryList();
-            //cboCategory.DisplayMember = "CategoryName";
-            //cboCategory.ValueMember = "ID";
 
             LoadProducts(products);
 
@@ -136,7 +133,7 @@ namespace JAHub_Winforms
 
                 List<Product> categoryFilteredProducts = new List<Product>();
 
-                categoryFilteredProducts = products.Where(q => q.Category == selectedValue).ToList(); ;
+                categoryFilteredProducts = products.Where(q => q.Category == selectedValue).ToList();
 
                 LoadProducts(categoryFilteredProducts);
             }

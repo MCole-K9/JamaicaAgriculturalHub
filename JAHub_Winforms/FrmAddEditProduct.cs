@@ -113,15 +113,9 @@ namespace JAHub_Winforms
                 cboCategory.DisplayMember = "CategoryName";
                 cboCategory.ValueMember = "ID";
 
-
-                //cboCategory.Items.Insert(0, "Select Category");
+                cboCategory.SelectedIndex = -1;
+                cboCategory.Text = "Select an Item";
             }
-            //Category ctg = new Category();
-
-            //cboCategory.DataBindings.Clear();
-            //cboCategory.DataSource = ctg.GetCategoryList();
-            //cboCategory.DisplayMember = "CategoryName";
-            //cboCategory.ValueMember = "ID" ;
 
         }
 
