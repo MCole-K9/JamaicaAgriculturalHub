@@ -24,6 +24,14 @@ namespace JAHubLib
         public string LandAddressPoBox { get; set; }
         public string LandAddressParish { get; set; }
         public decimal LandMeasurement { get; set; }
+
+        public LandInformation(String town, String poBox, String parish, decimal measurement)
+        {
+            LandAddressTown = town;
+            LandAddressPoBox = poBox;
+            LandMeasurement = measurement;
+            LandAddressParish = parish;
+        }
     }
 
     public class Farmer : User
@@ -315,11 +323,11 @@ namespace JAHubLib
                     addInformation.ExecuteNonQuery();
 
                 // This creates a new farmer record using the UserID from User
-                    //String farmerInsertFarmer = $"INSERT INTO [Farmer] (UserID) VALUES ({Session.UserId});";
-
-                    //addInformation.CommandText = farmerInsertFarmer;
-                    //addInformation.ExecuteNonQuery();
-
+                // This isn't necessary, because FrmRadaRegister (or FrmRadaStatus, idr which) handles this for you
+                    /* String farmerInsertFarmer = $"INSERT INTO [Farmer] (UserID) VALUES ({Session.UserId});";
+                     * addInformation.CommandText = farmerInsertFarmer;
+                     * addInformation.ExecuteNonQuery();
+                     */
 
                 // Next, add the TRN, DateOfBirth, and RadaRegistrationPhase
                     addInformation.CommandText = $"UPDATE [Farmer] SET TRN = {this.TaxRegistrationNumber}, DateOFBirth = '{this.DateOfBirth}'" +
@@ -380,14 +388,14 @@ namespace JAHubLib
                 }
                 reader.Close();
 
-            // Gathering: 
-                String farmerSelectTypicalProduct = $"SELECT * FROM [Farmer_ProducedProduct] WHERE FarmerID = {FarmerId};";
+            // Gathering: ProductName from Farmer_ProducedProduct
+                String farmerSelectTypicalProduct = $"SELECT ProductName FROM [Farmer_ProducedProduct] WHERE FarmerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectTypicalProduct;
 
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
-
+                    ProductsTypicallyProduced.Add((String)reader["ProductName"]);
                 }
                 reader.Close();
 
@@ -398,29 +406,30 @@ namespace JAHubLib
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
-
+                    OwnedLand.Add(new LandInformation((String)reader["Town"], (String)reader["PoBox"],
+                        (String)reader["Parish"], (decimal)reader["LandMeasurement"]));
                 }
                 reader.Close();
 
-            // Gathering: 
-                String farmerSelectPhoneNumber = $"SELECT * FROM [Farmer_PhoneNumber] WHERE FarmerID = {FarmerId};";
+            // Gathering: PhoneNumber from Farmer_PhoneNumber
+                String farmerSelectPhoneNumber = $"SELECT PhoneNumber FROM [Farmer_PhoneNumber] WHERE FarmerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectPhoneNumber;
 
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
-
+                    PhoneNumbers.Add((String)reader["PhoneNumber"]);
                 }
                 reader.Close();
 
-            // Gathering: 
-                String farmerSelectOrganization = $"SELECT * FROM [Farmer_Organization] WHERE FarmerID = {FarmerId};";
+            // Gathering: Organization from Farmer_Organization
+                String farmerSelectOrganization = $"SELECT Organization FROM [Farmer_Organization] WHERE FarmerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectOrganization;
 
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
-
+                    Organizations.Add((String)reader["Organization"]);
                 }
                 reader.Close();
 
@@ -435,8 +444,11 @@ namespace JAHubLib
             // isn't project-relevant
             
             /* Requires:
-             * Knowledge of which parts of the farmer record have their own tables
-             * Information in farmer record to write over
+             * - Knowledge of which parts of the farmer record have their own tables
+             *      (ProducedProduct, PhoneNumber, Organization, Land)
+             * - an add, remove, and modify table/column for each table
+             *      - what information?
+             * - may require creating an object to contain all of the columns/tables as one very large parameter holder
              */
         }
     }
