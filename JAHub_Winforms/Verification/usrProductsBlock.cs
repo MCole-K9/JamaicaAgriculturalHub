@@ -61,7 +61,7 @@ namespace JAHub_Winforms.Verification
 
         public void SetControlFocus()
         {
-            txtProduct.Focus();
+            txtProduct.Select();
         }
     }
 }

@@ -26,11 +26,11 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrOrganizationsBlock(Farmer farmer)
+        public usrOrganizationsBlock(List<string> organizations)
         {
             InitializeFilledComponent();
             
-            foreach (String organization in farmer.Organizations)
+            foreach (String organization in organizations)
             {
                 flwOrganizationsTextHolder.Controls.Add(new TextBox());
                 flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].

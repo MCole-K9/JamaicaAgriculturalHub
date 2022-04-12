@@ -59,7 +59,7 @@ namespace JAHub_Winforms.Verification
 
         public void SetControlFocus()
         {
-            mskTrn.Focus();
+            mskTrn.Select();
         }
     }
 }

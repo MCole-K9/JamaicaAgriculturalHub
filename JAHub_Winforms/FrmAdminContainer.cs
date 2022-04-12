@@ -81,7 +81,7 @@ namespace JAHub_Winforms
                 {
                     connection.Open();
 
-                    String command = $"DELETE FROM [User] WHERE ID={_userId};";
+                    String command = $"DELETE FROM [User] WHERE ID = {_userId};";
 
                     SqlCommand deleteRecord = new SqlCommand(command, connection);
 
