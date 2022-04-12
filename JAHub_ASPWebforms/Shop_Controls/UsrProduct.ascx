@@ -10,7 +10,7 @@
             <h4 id="ProductPrice" runat="server">Product Price</h4>
 
             <div style="display: flex; justify-content:space-between; margin: 20px 0 0 0;">
-                <button id="btnView" style="margin: auto 10px auto auto">View</button>
+                <button id="btnView" style="margin: auto 10px auto auto" runat="server">View</button>
                 <button id="btnAddToCart" runat="server">Add to Cart</button>
             </div>
         </div>
