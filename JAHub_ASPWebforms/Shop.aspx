@@ -2,11 +2,12 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+  
 
-    <asp:Panel ID="pnlProducts" runat="server">
+    <div class="row" style="margin: 100px 0;"> 
+        <asp:Panel ID="pnlProducts" runat="server">
+        
 
-
-    </asp:Panel>
-    
-
+        </asp:Panel>
+    </div>
 </asp:Content>
