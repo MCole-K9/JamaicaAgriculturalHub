@@ -13,10 +13,6 @@ namespace JAHub_Winforms
 {
     public partial class FrmMainWindow : Form
     {
-        /* TO-DO
-         * [x] Make MainWindow restrict available buttons, depending on the kind of user
-         * [x] Make Status Strip change to reflect userId and userRole properly ("Looged in as:")
-         */
         public FrmMainWindow()
         {
             InitializeComponent();
@@ -235,6 +231,13 @@ namespace JAHub_Winforms
                 MessageBox.Show($"{ex.GetType().ToString()} Message: {ex.Message}");
             }
             
+        }
+
+        public void GenerateRadaForm (FrmProfile _formContainer, RadaRegistrationType farmerRegistrationPhase)
+        {
+            FrmRadaRegister rada = new FrmRadaRegister(_formContainer, farmerRegistrationPhase);
+            rada.MdiParent = this;
+            rada.Show();
         }
     }
 }

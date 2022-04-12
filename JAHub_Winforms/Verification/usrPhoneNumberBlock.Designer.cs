@@ -69,12 +69,14 @@
             // 
             // mskPhoneNumber
             // 
+            this.mskPhoneNumber.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskPhoneNumber.Location = new System.Drawing.Point(153, 3);
             this.mskPhoneNumber.Mask = "1(999) 000-0000";
             this.mskPhoneNumber.Name = "mskPhoneNumber";
             this.mskPhoneNumber.Size = new System.Drawing.Size(125, 27);
             this.mskPhoneNumber.TabIndex = 1;
+            this.mskPhoneNumber.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskPhoneNumber.Validating += new System.ComponentModel.CancelEventHandler(this.mskPhoneNumber_Validating);
             // 
             // errPhoneNumber
