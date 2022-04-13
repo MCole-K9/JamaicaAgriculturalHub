@@ -16,16 +16,17 @@ namespace JAHub_ASPWebforms
             {
                 Blog blog = (Blog)Session["BlogData"];
                 this.Title = blog.Title;
-                lblTitle.Text = blog.Title;
-                lblAuthor.Text += blog.GetAuthorName(blog.AuthorID);
-                lblPublishDate.Text += blog.PublishDateString;
-                lblDescription.Text += blog.Description;
-                lblBlogBody.Text = blog.BlogBody;
-            }catch(NullReferenceException nex)
-            {
-                lblTitle.Text = nex.Message;
+                lblTitle.InnerHtml = blog.Title;
+                lblAuthor.InnerHtml += blog.GetAuthorName(blog.AuthorID);
+                lblPublishDate.InnerHtml += blog.PublishDateString;
+                lblDescription.InnerHtml += blog.Description;
+                lblBlogBody.InnerHtml = blog.BlogBody;
             }
-            
+            catch (NullReferenceException nex)
+            {
+                lblTitle.InnerHtml = nex.Message;
+            }
+
         }
     }
 }

@@ -13,7 +13,18 @@
  <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-8 text-left"> 
-        <asp:Label ID="lblTitle" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Title"></asp:Label>
+          <div class="jumbotron">
+            <h1 runat="server" id="lblTitle">Blog Title</h1>
+              <h4 runat="server" id="lblAuthor">Author:</h4>
+              <h4 runat="server" id="lblPublishDate">Date Published:</h4>
+              <h4 runat="server" id="lblDescription">Description:</h4>
+          </div>
+        <div class="col-sm-8">
+            <blockquote>
+                <p runat="server" id="lblBlogBody">Some text in the body of the blog</p>
+         </blockquote>
+        </div>
+        <%--<asp:Label ID="lblTitle" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Title"></asp:Label>
         <br />
         <asp:Label ID="lblAuthor" runat="server" Text="Written by:" Font-Bold="True" Font-Italic="True"></asp:Label>
         <br />
@@ -22,13 +33,24 @@
         <asp:Label ID="lblDescription" runat="server" Text="Description:" Font-Bold="True" Font-Italic="True"></asp:Label>
         <br />
         <br />
-        <asp:Label ID="lblBlogBody" runat="server" Text="Body of the blog"></asp:Label>
+        <asp:Label ID="lblBlogBody" runat="server" Text="Body of the blog"></asp:Label>--%>
         </div>
       </div>
      </div>
     <style>
+        form{
+            height:100%;
+        }
         .col-sm-8{
             width:100%;
+            height:fit-content
         }
+         .row .content {
+        height: 900px;
+    }
+         .jumbotron{
+             background-color:lightseagreen;
+             color: white;
+         }
     </style>
 </asp:Content>

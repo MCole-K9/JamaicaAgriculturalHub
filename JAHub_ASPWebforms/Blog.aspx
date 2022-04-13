@@ -15,29 +15,42 @@
     <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-8 text-left"> 
-      <h1 id="h1AgriBlog">Agricultural Blogs</h1>
+      <h1 id="h1AgriBlog" runat="server">Agricultural Blogs</h1>
       <p class="AgriBlogDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
+        <div class="SortSearchWrap">
+            <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" id="txtSearch" runat="server"/>
                     <div class="input-group-btn">
-                      <button class="btn btn-primary btnSearch" type="submit">
-                        <span class="glyphicon glyphicon-search"></span>
-                      </button>
+                      <asp:button runat="server" class="btn btn-primary btnSearch" type="submit" ID="btnSearch" OnClick="btnSearch_Click" Text="Search">
+                      </asp:button>
                     </div>
                   </div>
 
-            <div class="dropdown cboSort">
+            <div class="input-group cboSort" style="width:fit-content">
+                <asp:button runat="server" class="btn btn-primary btnSort" type="submit" ID="btnSortby" OnClick="btnSortby_Click" Text="Sort by:"></asp:button>
+              <select runat="server" class="form-control" id="selSort" style="width:150px;">
+                 <option value="" disabled selected>Select an option</option>
+                <option>Oldest</option>
+                <option>Rating</option>
+                <option>A-Z</option>
+                <option>Z-A</option>
+              </select>
+            </div>
+        </div>
+                  
+
+           <%-- <div class="dropdown cboSort">
               <button class="btn btn-primary dropdown-toggle btnSort" type="button" data-toggle="dropdown">Sort Blogs
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a>Oldest</a></li>
+                <li runat="server" id="opOldest" onclick="clicktest"><a>Oldest</a></li>
                  <li><a>Newest</a></li>
                 <li><a>Rating</a></li>
                 <li><a>A-Z</a></li>
                 <li><a>Z-A</a></li>
               </ul>
-            </div>
+            </div>--%>
+        
         <div style="height:600px; margin-bottom: 50px;">
              <asp:Panel ID="pnlBlogContainer" runat="server" Height="100%" BorderStyle="Groove" CssClass="pnlBlogContainer">
         </asp:Panel>
@@ -48,6 +61,11 @@
 </div>
         </div>
     <style>
+        .SortSearchWrap{
+            display: inline-flex;
+            justify-content: space-between;
+            width:100%;
+        }
         form{
             height:100%;
         }
@@ -60,8 +78,8 @@
     overflow-y: scroll;
      
 }
-        .row .content {
-        height: 1000px;
+        .content {
+        height: 850px;
         margin:0;
         display : flex;
         justify-content: center;
@@ -70,17 +88,20 @@
             width:100%;
         }
         .cboSort{
-            margin-left: calc(100% - 102px);
+            
+            display: inline-flex;
+            justify-content:space-between;
         }
         .btnSort{
-            width: fit-content;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
-        .btnSearch{
+        .btnSearch ,.btnSort{
             width: fit-content;
         }
         .input-group{
             width: 300px;
-            float:left;
+            /*float:left;*/
         }
     </style>
 </asp:Content>

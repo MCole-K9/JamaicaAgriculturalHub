@@ -60,7 +60,7 @@
      
 }
         .row .content {
-        height: 1000px;
+        height: 850px;
         margin:0;
         display : flex;
         justify-content: center;
@@ -81,5 +81,9 @@
             width: 300px;
             float:left;
         }
+        .well{
+        background-color: #f5f5f5;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.4);
+    }
     </style>
     </asp:Content>

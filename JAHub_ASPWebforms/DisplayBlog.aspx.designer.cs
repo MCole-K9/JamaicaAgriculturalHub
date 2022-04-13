@@ -21,7 +21,7 @@ namespace JAHub_ASPWebforms
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTitle;
 
         /// <summary>
         /// lblAuthor control.
@@ -30,7 +30,7 @@ namespace JAHub_ASPWebforms
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAuthor;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAuthor;
 
         /// <summary>
         /// lblPublishDate control.
@@ -39,7 +39,7 @@ namespace JAHub_ASPWebforms
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPublishDate;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPublishDate;
 
         /// <summary>
         /// lblDescription control.
@@ -48,7 +48,7 @@ namespace JAHub_ASPWebforms
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDescription;
 
         /// <summary>
         /// lblBlogBody control.
@@ -57,6 +57,6 @@ namespace JAHub_ASPWebforms
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBlogBody;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblBlogBody;
     }
 }

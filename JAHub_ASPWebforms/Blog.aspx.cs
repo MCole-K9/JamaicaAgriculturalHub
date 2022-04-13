@@ -27,6 +27,58 @@ namespace JAHub_ASPWebforms
            
         }
 
-		
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Value != "")
+            {
+                pnlBlogContainer.Controls.Clear();
+                int IDinc = 0;
+                List<Blog> blogs = new List<Blog>();
+                blogs = Util.DisplayBlogsToWeb($"SELECT * FROM [Blog] WHERE Title LIKE '%{txtSearch.Value}%'");
+                foreach (Blog blog in blogs)
+                {
+                    IDinc++;
+                    ucWebBlog ucWeb = (ucWebBlog)Page.LoadControl("~/ucWebBlog.ascx");
+                    ucWeb.GetBlog(blog);
+                    ucWeb.ID = "BlogControl" + IDinc.ToString();
+                    pnlBlogContainer.Controls.Add(ucWeb);
+                }
+            }
+        }
+
+        protected void btnSortby_Click(object sender, EventArgs e)
+        {
+            if(selSort.Value != "")
+            {
+                pnlBlogContainer.Controls.Clear();
+                int IDinc = 0;
+                List<Blog> blogs = new List<Blog>();
+                switch (selSort.Value)
+                {
+                    case "A-Z":
+                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsAscending");
+                        break;
+                    case "Z-A":
+                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsDescending");
+                        break;
+                    case "Rating":
+                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsRating");
+                        break;
+                    case "Oldest":
+                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsNewest");
+                        break;
+                }
+                foreach (Blog blog in blogs)
+                {
+                    IDinc++;
+                    ucWebBlog ucWeb = (ucWebBlog)Page.LoadControl("~/ucWebBlog.ascx");
+                    ucWeb.GetBlog(blog);
+                    ucWeb.ID = "BlogControl" + IDinc.ToString();
+                    pnlBlogContainer.Controls.Add(ucWeb);
+                }
+            }
+            else { return; }
+            
+        }
     }
 }
