@@ -19,10 +19,10 @@ namespace JAHub_ASPWebforms
         public void GetBlog(Blog blog)
         {
             b = blog;
-            this.lblTitle.Text = blog.Title;
-            this.lblAuthor.Text = blog.GetAuthorName(blog.AuthorID);
-            this.lblDescription.Text = blog.Description;
-            this.lblDatePublished.Text = blog.PublishDateString;
+            this.lblTitle.InnerHtml += blog.Title;
+            this.lblAuthor.InnerHtml += blog.GetAuthorName(blog.AuthorID);
+            this.lblDescription.InnerHtml += blog.Description;
+            this.lblPublishedDate.InnerHtml += blog.PublishDateString;
         }
 
         protected void btnView_Click(object sender, EventArgs e)
