@@ -352,7 +352,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                if (farmer.WriteRecordToDatabase())
+                if (farmer.WriteRecordToDatabase(Session.UserId))
                 {
                     if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
                     {
@@ -373,6 +373,7 @@ namespace JAHub_Winforms
                 }
 
                 _profile.OpenChildForm(new FrmDashboard());
+                this.Close();
             }
             else
             {

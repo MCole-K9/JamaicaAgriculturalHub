@@ -140,6 +140,7 @@
             this.nudLandMeasurement = new System.Windows.Forms.NumericUpDown();
             this.errLandBlock = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblLandBlock.SuspendLayout();
+            this.usrAddressBlock1 = new usrAddressBlock();
             ((System.ComponentModel.ISupportInitialize)(this.nudLandMeasurement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errLandBlock)).BeginInit();
             this.SuspendLayout();
@@ -154,7 +155,7 @@
             this.tblLandBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblLandBlock.Controls.Add(this.lblAddress, 0, 0);
             this.tblLandBlock.Controls.Add(this.lblLandMeasurement, 0, 1);
-            this.tblLandBlock.Controls.Add(this.usrAddressBlock1, 1, 0);
+            
             this.tblLandBlock.Controls.Add(this.nudLandMeasurement, 1, 1);
             this.tblLandBlock.Location = new System.Drawing.Point(3, 3);
             this.tblLandBlock.Name = "tblLandBlock";

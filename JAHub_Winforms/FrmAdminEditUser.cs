@@ -15,13 +15,15 @@ namespace JAHub_Winforms
     public partial class FrmAdminEditUser : Form
     {
         User _user;
+        FrmAdminContainer _frmAdmin;
         bool isPasswordValid = true;
         bool isEmailValid = true;
         usrNameBlock nameBlock;
-        public FrmAdminEditUser(int userId)
+        public FrmAdminEditUser(int userId, FrmAdminContainer admin)
         {
             InitializeComponent();
             TopLevel = false;
+            _frmAdmin = admin;
 
             _user = new User();
             _user.ReadFromDatabase(userId);
@@ -81,8 +83,7 @@ namespace JAHub_Winforms
             else
             {
                 MessageBox.Show("Successfully modified record!");
-                // close this form
-                // open FrmAdminSelectNewUser
+                _frmAdmin.OpenSelectCurrentUser();
 
             }
         }

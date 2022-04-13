@@ -58,12 +58,14 @@ namespace JAHub_Winforms.Verification
 
         public usrDateOfBirthBlock(SqlDateTime date)
         {
+            InitializeComponent();
+
             // need to figure out how to make this correspond to farmer
             DateTime givenDate = date.Value;
 
             cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
             cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);
-            cmbYear.SelectedIndex = cmbYear.FindString("{0}", givenDate.Year);
+            cmbYear.SelectedIndex = cmbYear.FindString((givenDate.Year).ToString());
 
             isDayValid = true;
             isMonthValid = true;
