@@ -19,12 +19,12 @@ namespace JAHub_ASPWebforms
         {
             return "Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8";
         }
-        public static List<Blog> DisplayBlogsToWeb()
+        public static List<Blog> DisplayBlogsToWeb(String Query)
         {
             List<Blog> BlogLists = new List<Blog>();
             SqlConnection conn = new SqlConnection(Util.getConnectionString());
             conn.Open();
-            SqlCommand cmd = new SqlCommand("EXEC SortBlogsOldest", conn);
+            SqlCommand cmd = new SqlCommand(Query, conn);
             SqlDataReader sqlData = cmd.ExecuteReader();
             
             while (sqlData.Read())

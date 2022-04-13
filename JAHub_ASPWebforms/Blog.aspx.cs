@@ -15,7 +15,7 @@ namespace JAHub_ASPWebforms
 		{
             int IDinc = 0;
             List<Blog> blogs = new List<Blog>();
-            blogs = Util.DisplayBlogsToWeb();
+            blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsOldest");
             foreach(Blog blog in blogs)
             {
                 IDinc++;
