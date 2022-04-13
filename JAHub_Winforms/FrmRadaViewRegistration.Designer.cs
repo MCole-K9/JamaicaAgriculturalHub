@@ -37,12 +37,11 @@
             this.flwRadaViewRegistration.AutoSize = true;
             this.flwRadaViewRegistration.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flwRadaViewRegistration.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flwRadaViewRegistration.Enabled = false;
             this.flwRadaViewRegistration.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwRadaViewRegistration.Location = new System.Drawing.Point(0, 0);
             this.flwRadaViewRegistration.Margin = new System.Windows.Forms.Padding(0);
             this.flwRadaViewRegistration.Name = "flwRadaViewRegistration";
-            this.flwRadaViewRegistration.Size = new System.Drawing.Size(630, 450);
+            this.flwRadaViewRegistration.Size = new System.Drawing.Size(630, 753);
             this.flwRadaViewRegistration.TabIndex = 0;
             this.flwRadaViewRegistration.WrapContents = false;
             // 
@@ -50,13 +49,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(630, 450);
+            this.ClientSize = new System.Drawing.Size(630, 753);
             this.Controls.Add(this.flwRadaViewRegistration);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FrmRadaViewRegistration";
-            this.Text = "FrmRadaViewRegistration";
+            this.Text = "Registration Information";
             this.Load += new System.EventHandler(this.FrmRadaViewRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

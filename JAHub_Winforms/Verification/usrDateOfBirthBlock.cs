@@ -65,7 +65,7 @@ namespace JAHub_Winforms.Verification
 
             cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
             cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);
-            cmbYear.SelectedIndex = cmbYear.FindString(Int32.Parse(givenDate.Year));
+            cmbYear.SelectedIndex = cmbYear.FindString((givenDate.Year).ToString());
 
             isDayValid = true;
             isMonthValid = true;

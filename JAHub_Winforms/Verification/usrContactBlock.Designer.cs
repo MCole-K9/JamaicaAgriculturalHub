@@ -200,7 +200,6 @@ namespace JAHub_Winforms.Verification
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.flwPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
-            this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
             this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
             this.btnRemoveNumber = new System.Windows.Forms.Button();
             this.errContactBlock = new System.Windows.Forms.ErrorProvider(this.components);

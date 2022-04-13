@@ -84,10 +84,7 @@ namespace JAHub_Winforms
                     lblInformation.Visible = true;
                     btnEdit.Visible = true;
 
-                    // This opens a form that holds all of the information that they registered with.
-
-                    FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
-                    mdi.ShowRadaDetails();
+                    
 
 
                     break;
@@ -102,7 +99,10 @@ namespace JAHub_Winforms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
+            // This opens a form that holds all of the information that they registered with.
+
+            FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
+            mdi.ShowRadaDetails();
         }
 
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
