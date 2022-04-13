@@ -12,13 +12,20 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Blog blog = (Blog)Session["BlogData"];
-            this.Title = blog.Title;
-            lblTitle.Text = blog.Title;
-            lblAuthor.Text += blog.GetAuthorName(blog.AuthorID);
-            lblPublishDate.Text += blog.PublishDateString;
-            lblDescription.Text += blog.Description;
-            lblBlogBody.Text = blog.BlogBody;
+            try
+            {
+                Blog blog = (Blog)Session["BlogData"];
+                this.Title = blog.Title;
+                lblTitle.Text = blog.Title;
+                lblAuthor.Text += blog.GetAuthorName(blog.AuthorID);
+                lblPublishDate.Text += blog.PublishDateString;
+                lblDescription.Text += blog.Description;
+                lblBlogBody.Text = blog.BlogBody;
+            }catch(NullReferenceException nex)
+            {
+                lblTitle.Text = nex.Message;
+            }
+            
         }
     }
 }
