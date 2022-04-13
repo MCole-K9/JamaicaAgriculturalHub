@@ -11,23 +11,26 @@ namespace JAHub_ASPWebforms.Shop_Controls
     public partial class UsrProduct : System.Web.UI.UserControl
     {
         private Product product;
-        private int ImageIDSequence;
+        private int IDSequence;
         public void SetProduct(Product product)
         {
             this.product = product;
         }
         public void SetImageIDSequence(int ID)
         {
-            this.ImageIDSequence = ID;
+            this.IDSequence = ID;
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ProductImage.ID += ID;
+            ProductImage.ID += IDSequence;
+            ProductName.ID += IDSequence;
+            ProductPrice.ID += IDSequence;
 
-            ProductImage.ImageUrl =$"~/{product.Image}";
+            ProductImage.Src =$"~/{product.Image}";
+
             
-    
-
+            ProductName.InnerText = product.Name;
+            ProductPrice.InnerText = $"${product.Price} Per Lbs";
             
         }
     }
