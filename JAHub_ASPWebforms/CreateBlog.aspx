@@ -34,6 +34,9 @@
               
         </div>
         <style>
+            .container{
+                padding: 0;
+            }
             input[type="text"]{
                 max-width: 100%;
             }

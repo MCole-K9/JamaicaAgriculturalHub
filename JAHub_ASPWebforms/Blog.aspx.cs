@@ -62,7 +62,7 @@ namespace JAHub_ASPWebforms
                         blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsDescending");
                         break;
                     case "Rating":
-                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsRating");
+                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsRatingWeb");
                         break;
                     case "Oldest":
                         blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsNewest");
@@ -77,8 +77,6 @@ namespace JAHub_ASPWebforms
                     pnlBlogContainer.Controls.Add(ucWeb);
                 }
             }
-            else { return; }
-            
         }
     }
 }

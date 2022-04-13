@@ -18,7 +18,8 @@ namespace JAHub_ASPWebforms
         protected void btnPost_Click(object sender, EventArgs e)
         {
             Blog blog = new Blog();
-            blog.CreateBlogPost(3, txtTitle.Value, txtDescription.Value, txtBlogBody.Value);
+            string ParsedBlody = txtBlogBody.Value.Replace("'","''");
+            blog.CreateBlogPost(3, txtTitle.Value, txtDescription.Value, ParsedBlody);
             
         }
     }

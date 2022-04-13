@@ -10,34 +10,25 @@
     </ul>
   </div>
 </nav>
- <div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-8 text-left"> 
-          <div class="jumbotron">
+    <div>
+        <div class="container">
+         <div class="jumbotron">
             <h1 runat="server" id="lblTitle">Blog Title</h1>
               <h4 runat="server" id="lblAuthor">Author:</h4>
               <h4 runat="server" id="lblPublishDate">Date Published:</h4>
               <h4 runat="server" id="lblDescription">Description:</h4>
           </div>
+            </div>
         <div class="col-sm-8">
             <blockquote>
                 <p runat="server" id="lblBlogBody">Some text in the body of the blog</p>
          </blockquote>
         </div>
-        <%--<asp:Label ID="lblTitle" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Title"></asp:Label>
-        <br />
-        <asp:Label ID="lblAuthor" runat="server" Text="Written by:" Font-Bold="True" Font-Italic="True"></asp:Label>
-        <br />
-        <asp:Label ID="lblPublishDate" runat="server" Text="Published:" Font-Bold="True" Font-Italic="True"></asp:Label>
-        <br />
-        <asp:Label ID="lblDescription" runat="server" Text="Description:" Font-Bold="True" Font-Italic="True"></asp:Label>
-        <br />
-        <br />
-        <asp:Label ID="lblBlogBody" runat="server" Text="Body of the blog"></asp:Label>--%>
-        </div>
-      </div>
-     </div>
+    </div>
     <style>
+        .container{
+            padding: 0;
+        }
         form{
             height:100%;
         }
