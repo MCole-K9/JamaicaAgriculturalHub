@@ -87,8 +87,7 @@ namespace JAHub_Winforms
                     // This opens a form that holds all of the information that they registered with.
 
                     FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
-
-                    // Need to rewrite Main to have a "GenerateRadaFilledInStuff" method or whatever
+                    mdi.ShowRadaDetails();
 
 
                     break;
@@ -112,11 +111,6 @@ namespace JAHub_Winforms
 
             mdi.GenerateRadaForm(_formContainer, farmerRegistrationPhase);
             _formContainer.OpenChildForm(new FrmDashboard());
-        }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -354,7 +354,7 @@ namespace JAHubLib
                 SqlDataReader reader;
 
             // Gathering: FirstName, MiddleName, LastName from User
-                String farmerSelectUser = $"SELECT FirstName, MiddleName, LastName FROM [User] WHERE UserID = {farmerUserId};";
+                String farmerSelectUser = $"SELECT FirstName, MiddleName, LastName FROM [User] WHERE ID = {farmerUserId};";
                 pullRecord.CommandText = farmerSelectUser;
 
                 reader = pullRecord.ExecuteReader();
@@ -378,10 +378,10 @@ namespace JAHubLib
                     this.BusinessEmail = (String)reader["BusinessEmail"];
                     // leaving space for IdPicture, which should have a corresponding filepath like IdPicturePath
                     // IdPicture in DB is a string field
-                    this.NumberOfEmployees = (int)reader["NumberOfEmployees"];
+                    this.NumberOfEmployees = (byte)reader["NumberOfEmployees"];
                     this.UsesHeavyMachinery = (bool)reader["UsesHeavyMachinery"];
-                    this.TaxRegistrationNumber = (String)reader["TRN"];
-                    this.DateOfBirth = (SqlDateTime)reader["DateOfBirth"];
+                    this.TaxRegistrationNumber = ((int)reader["TRN"]).ToString();
+                    this.DateOfBirth = SqlDateTime.Parse((reader["DateOfBirth"]).ToString());
 
                 }
                 reader.Close();
@@ -389,23 +389,27 @@ namespace JAHubLib
             // Gathering: ProductName from Farmer_ProducedProduct
                 String farmerSelectTypicalProduct = $"SELECT ProductName FROM [Farmer_ProducedProduct] WHERE FarmerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectTypicalProduct;
+                
+                this.ProductsTypicallyProduced = new List<string>();
 
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
-                    ProductsTypicallyProduced.Add((String)reader["ProductName"]);
+                    this.ProductsTypicallyProduced.Add(reader["ProductName"].ToString());
                 }
                 reader.Close();
 
             // Gathering: 
-                String farmerSelectLand = $"SELECT * FROM [Farmer_Land] WHERE FarmerID = {FarmerId};";
+                String farmerSelectLand = $"SELECT * FROM [Farmer_Land] WHERE OwnerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectLand;
+
+                this.OwnedLand = new List<LandInformation>();
 
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
                     OwnedLand.Add(new LandInformation((String)reader["Town"], (String)reader["PoBox"],
-                        (String)reader["Parish"], (decimal)reader["LandMeasurement"]));
+                        (String)reader["Parish"], Decimal.Parse(reader["LandMeasurement"].ToString())));
                 }
                 reader.Close();
 
@@ -413,16 +417,20 @@ namespace JAHubLib
                 String farmerSelectPhoneNumber = $"SELECT PhoneNumber FROM [Farmer_PhoneNumber] WHERE FarmerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectPhoneNumber;
 
+                this.PhoneNumbers = new List<String>();
+
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
                 {
-                    PhoneNumbers.Add((String)reader["PhoneNumber"]);
+                    PhoneNumbers.Add(reader["PhoneNumber"].ToString());
                 }
                 reader.Close();
 
             // Gathering: Organization from Farmer_Organization
                 String farmerSelectOrganization = $"SELECT Organization FROM [Farmer_Organization] WHERE FarmerID = {FarmerId};";
                 pullRecord.CommandText = farmerSelectOrganization;
+
+                this.Organizations = new List<string>();
 
                 reader = pullRecord.ExecuteReader();
                 while (reader.Read())
