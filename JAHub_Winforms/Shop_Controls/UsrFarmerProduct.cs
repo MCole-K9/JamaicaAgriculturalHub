@@ -29,7 +29,7 @@ namespace JAHub_Winforms.Shop_Controls
         {
             lblItemName.Text = _product.Name;
             lblPrice.Text = $"${_product.Price} Per Lbs";
-            pcbImage.Image = Image.FromFile(_product.Image);
+            pcbImage.ImageLocation = _product.Image;
         }
 
         private void UsrFarmerProduct_Load(object sender, EventArgs e)

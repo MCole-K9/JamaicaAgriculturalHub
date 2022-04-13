@@ -33,7 +33,7 @@ namespace JAHub_Winforms.Shop_Controls
         {
             lblItemName.Text = product.Name;
             lblPrice.Text = $"${product.Price} Per Lbs";
-            pcbImage.Image = Image.FromFile(product.Image);
+            pcbImage.ImageLocation = product.Image;
         }
 
         private void UcProduct_Load(object sender, EventArgs e)

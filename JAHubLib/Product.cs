@@ -32,9 +32,11 @@ namespace JAHubLib
 
         public  string GetUploadedImagePath()
         {
-            string filename = $"product-{DateTime.Now.Ticks}.jpg";
+            //string filename = $"product-{DateTime.Now.Ticks}.jpg";
 
-            return Utilities.CopyImage(Image, filename); 
+            //return Utilities.CopyImage(Image, filename); 
+
+            return this.Image;
         }
 
         public void FetchReviews()

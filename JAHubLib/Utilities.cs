@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
 using System.Data.SqlClient;
 
 namespace JAHubLib
@@ -129,6 +130,21 @@ namespace JAHubLib
                 return i;
 
             }
+        }
+
+        public static void FTPFileUpload(string filePath, string fileName)
+        {
+
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://vtdics.com/"+fileName);
+            request.Credentials = new NetworkCredential("jahub@vtdics.com", ")HE6eJ*,;47q");
+            request.Method = WebRequestMethods.Ftp.UploadFile;
+
+            using (Stream fileStream = File.OpenRead(filePath))
+            using (Stream ftpStream = request.GetRequestStream())
+            {
+                fileStream.CopyTo(ftpStream);
+            }
+
         }
     }
 }

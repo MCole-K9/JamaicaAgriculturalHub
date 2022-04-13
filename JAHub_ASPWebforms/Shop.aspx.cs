@@ -34,7 +34,7 @@ namespace JAHub_ASPWebforms
                         product.Name = sqlData["Name"].ToString();
                         product.Stock = (int)sqlData["Stock"];
                         product.Price = float.Parse(sqlData["Price"].ToString());
-                        product.Image = $@"Images\{sqlData["Image"].ToString()}";
+                        product.Image = $"http://vtdics.com/ead22/" + sqlData["Image"].ToString();
                         product.Farmer = new Farmer((int)sqlData["Farmer"]);
                         product.Category = (int)sqlData["Category"];
                         products.Add(product);

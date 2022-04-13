@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace JAHubLib
 {
@@ -103,7 +104,8 @@ namespace JAHubLib
         public int AddProduct(Product product)
         {
             FetchFarmerData();
-            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetDesktopFilePathLength()+8);
+            string productImageName = Path.GetFileName(product.GetUploadedImagePath());
+            
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -115,6 +117,8 @@ namespace JAHubLib
                 SqlCommand cmd = new SqlCommand(query, connection);
                 int i = cmd.ExecuteNonQuery();
 
+                Utilities.FTPFileUpload(product.GetUploadedImagePath(), productImageName);
+
                 return i;
             }
            
@@ -122,7 +126,8 @@ namespace JAHubLib
 
         public int UpdateProduct(Product product)
         {
-            string productImageName = product.GetUploadedImagePath().Remove(0, Utilities.GetDesktopFilePathLength() + 8);
+            string productImageName = Path.GetFileName(product.GetUploadedImagePath());
+            
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -134,6 +139,8 @@ namespace JAHubLib
 
                 SqlCommand cmd = new SqlCommand(query, connection);
                 int i = cmd.ExecuteNonQuery();
+
+                Utilities.FTPFileUpload(product.GetUploadedImagePath(), productImageName);
 
                 return i;
             }
