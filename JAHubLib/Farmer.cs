@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using System.IO;
+using System.Data;
 
 namespace JAHubLib
 {
