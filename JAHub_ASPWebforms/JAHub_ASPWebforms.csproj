@@ -189,6 +189,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="MyBlogs.aspx" />
+    <Content Include="Resources\cart-arrow-down-solid.svg" />
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="ucWebBlog.ascx" />
