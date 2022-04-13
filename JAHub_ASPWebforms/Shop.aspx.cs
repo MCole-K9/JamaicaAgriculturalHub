@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using JAHubLib;
+using System.Data;
 
 namespace JAHub_ASPWebforms
 {
@@ -40,7 +41,26 @@ namespace JAHub_ASPWebforms
                         products.Add(product);
 
                     }
+                   
                 }
+                query = "Select * From Category";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataSet categoryDS = new DataSet();
+
+                adapter.Fill(categoryDS, "Category");
+
+
+
+
+                CategoryDropDown.DataSource = categoryDS.Tables["Category"];
+
+
+                CategoryDropDown.DataTextField = "CategoryName";
+                CategoryDropDown.DataValueField = "ID";
+
+                CategoryDropDown.SelectedIndex = -1;
+                CategoryDropDown.Text = "Select an Item";
             }
 
             LoadProducts(products);
