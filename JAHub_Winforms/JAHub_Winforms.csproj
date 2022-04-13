@@ -207,6 +207,12 @@
     <Compile Include="FrmProfileHome.designer.cs">
       <DependentUpon>FrmProfileHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRadaViewRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRadaViewRegistration.Designer.cs">
+      <DependentUpon>FrmRadaViewRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSecurity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRadaStatus.resx">
       <DependentUpon>FrmRadaStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRadaViewRegistration.resx">
+      <DependentUpon>FrmRadaViewRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSecurity.resx">
       <DependentUpon>FrmSecurity.cs</DependentUpon>
