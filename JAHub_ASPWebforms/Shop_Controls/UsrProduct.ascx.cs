@@ -33,5 +33,11 @@ namespace JAHub_ASPWebforms.Shop_Controls
             ProductPrice.InnerText = $"${product.Price} Per Lbs";
             
         }
+
+        protected void btnViewProduct_Click(object sender, EventArgs e)
+        {
+            Session["ProductDetail"] = this.product;
+            Response.Redirect("~/ProductDetail.aspx");
+        }
     }
 }
