@@ -239,5 +239,12 @@ namespace JAHub_Winforms
             rada.MdiParent = this;
             rada.Show();
         }
+
+        public void ShowRadaDetails()
+        {
+            FrmRadaViewRegistration rada = new FrmRadaViewRegistration(Session.UserId);
+            rada.MdiParent = this;
+            rada.Show();
+        }
     }
 }

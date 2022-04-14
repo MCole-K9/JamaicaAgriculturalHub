@@ -32,7 +32,7 @@ namespace JAHub_Winforms.Verification
 
         public usrAddressBlock(String town, String poBox, String parish)
         {
-            InitializeComponent();
+            InitializeFilledComponent();
             txtAddressTown.Text = town;
             txtAddressPostOffice.Text = poBox;
             txtAddressParish.Text = parish;

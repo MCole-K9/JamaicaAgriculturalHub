@@ -23,6 +23,7 @@ namespace JAHub_ASPWebforms
             this.lblAuthor.InnerHtml += blog.GetAuthorName(blog.AuthorID);
             this.lblDescription.InnerHtml += blog.Description;
             this.lblPublishedDate.InnerHtml += blog.PublishDateString;
+            this.lblRating.InnerHtml = blog.Rating.ToString();
         }
 
         protected void btnView_Click(object sender, EventArgs e)

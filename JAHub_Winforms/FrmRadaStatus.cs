@@ -84,24 +84,8 @@ namespace JAHub_Winforms
                     lblInformation.Visible = true;
                     btnEdit.Visible = true;
 
-                    flwInformationHolder.Visible = true;
+                    
 
-                    Farmer farmer = new Farmer();
-
-
-                    // need a method that grabs all of the farmer information using userId
-
-                    // Generating all of the controls using values from Farmer
-                    flwInformationHolder.Controls.Add(new usrNameBlock(farmer.FirstName, farmer.MiddleName, farmer.LastName));
-                    flwInformationHolder.Controls.Add(new usrDateOfBirthBlock(farmer.DateOfBirth));
-                    flwInformationHolder.Controls.Add(new usrContactBlock(farmer.BusinessEmail, farmer.PhoneNumbers));
-                    flwInformationHolder.Controls.Add(new usrTrnBlock(farmer.TaxRegistrationNumber));
-                    //flwInformationHolder.Controls.Add(new usrUploadImageBlock());
-                    flwInformationHolder.Controls.Add(new usrIndustryBlock(farmer));
-                    flwInformationHolder.Controls.Add(new usrHoldingsBlock(farmer));
-                    flwInformationHolder.Controls.Add(new usrOrganizationsBlock(farmer.Organizations));
-
-                    flwInformationHolder.Enabled = false;
 
                     break;
                 default:
@@ -115,7 +99,10 @@ namespace JAHub_Winforms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            flwInformationHolder.Enabled = true;
+            // This opens a form that holds all of the information that they registered with.
+
+            FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
+            mdi.ShowRadaDetails();
         }
 
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
@@ -124,11 +111,6 @@ namespace JAHub_Winforms
 
             mdi.GenerateRadaForm(_formContainer, farmerRegistrationPhase);
             _formContainer.OpenChildForm(new FrmDashboard());
-        }
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
