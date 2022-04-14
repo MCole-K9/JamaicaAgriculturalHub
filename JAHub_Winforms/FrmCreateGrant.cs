@@ -36,8 +36,8 @@ namespace JAHub_Winforms
             grantinfo.GrantDescription = rtbdescription.Text;
             grantinfo.Requirement = rtbrequirement.Text;
             grantinfo.ExpiryDate = dtpExpirydate.Value;
-            // grantinfo.GrantOfficerId = ;
-            grantinfo.GrantOfficerId =;
+            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId) ;
+          
 
            
            

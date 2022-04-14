@@ -36,7 +36,7 @@ namespace JAHubLib
             {
                 connection.Open();
 
-                string query = isLoggedin ? $"SELECT * FROM [User] WHERE UserID = {Session.UserId}" : $"SELECT * FROM User WHERE ID = {this.GrantOfficerId}";
+                string query = isLoggedin ? $"SELECT * FROM [User] WHERE ID = {Session.UserId}" : $"SELECT * FROM User WHERE ID = {this.GrantOfficerId}";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -44,7 +44,7 @@ namespace JAHubLib
 
                 while (sqlData.Read())
                 {
-                    this.GrantOfficerId = (int)sqlData["UserID"];
+                    this.GrantOfficerId = (int)sqlData["ID"];
 
 
                 }
@@ -69,14 +69,14 @@ namespace JAHubLib
              }
 
 
-        public void FetchGrantofficerID()
+         public static int FetchGrantOfficerID(int userid)
         {
-            bool isLoggedin = true;
+            int grantOId = 0;
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
 
-                string query = isLoggedin ? $"SELECT * FROM [User] WHERE UserID = {Session.UserId}" : $"SELECT * FROM [User] WHERE ID = {this.UserID}";
+                string query =  $"SELECT ID FROM [GrantOfficer] WHERE UserID = {userid}" ;
 
                 SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -84,14 +84,14 @@ namespace JAHubLib
 
                 while (sqlData.Read())
                 {
-                    this.GrantOfficerId = (int)sqlData["UserID"];
+                    grantOId= (int)sqlData["ID"];
 
 
                 }
                 sqlData.Close();
+
             }
-
-
+            return grantOId;
         }
     }
 }
