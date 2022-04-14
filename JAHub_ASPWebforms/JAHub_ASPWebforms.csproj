@@ -189,6 +189,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include="MyBlogs.aspx" />
+    <Content Include="ProductDetail.aspx" />
     <Content Include="Resources\cart-arrow-down-solid.svg" />
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
@@ -386,6 +387,13 @@
     </Compile>
     <Compile Include="MyBlogs.aspx.designer.cs">
       <DependentUpon>MyBlogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shop.aspx.cs">
