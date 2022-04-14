@@ -95,7 +95,7 @@ namespace JAHub_Winforms.Verification
         public void SetControlFocus()
         {
             // pretty sure that .Focus doesn't work for labels, need to check to be sure
-            lblHeavyMachinery.Focus();
+            lblHeavyMachinery.Select();
         }
     }
 }

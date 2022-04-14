@@ -24,16 +24,7 @@ namespace JAHub_Winforms
 
         private void btnSelectUser_Click(object sender, EventArgs e)
         {
-            if (pnlFormHolder.Controls.Count > 0)
-            {
-                Form form = (Form)pnlFormHolder.Controls[0];
-
-                form.Close();
-                pnlFormHolder.Controls.Clear();
-            }
-
-            pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
-            pnlFormHolder.Controls[0].Show();
+            OpenSelectCurrentUser();
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)
@@ -46,7 +37,7 @@ namespace JAHub_Winforms
                 pnlFormHolder.Controls.Clear();
             }
 
-            pnlFormHolder.Controls.Add(new FrmAdminEditUser(_userId));
+            pnlFormHolder.Controls.Add(new FrmAdminEditUser(_userId, this));
             pnlFormHolder.Controls[0].Show();
         }
 
@@ -81,7 +72,7 @@ namespace JAHub_Winforms
                 {
                     connection.Open();
 
-                    String command = $"DELETE FROM [User] WHERE ID={_userId};";
+                    String command = $"DELETE FROM [User] WHERE ID = {_userId};";
 
                     SqlCommand deleteRecord = new SqlCommand(command, connection);
 
@@ -158,6 +149,20 @@ namespace JAHub_Winforms
             lblRoleValue.Text = userRole;
 
             ShowUserOptions();
+        }
+
+        public void OpenSelectCurrentUser()
+        {
+            if (pnlFormHolder.Controls.Count > 0)
+            {
+                Form form = (Form)pnlFormHolder.Controls[0];
+
+                form.Close();
+                pnlFormHolder.Controls.Clear();
+            }
+
+            pnlFormHolder.Controls.Add(new FrmAdminSelectUser(this));
+            pnlFormHolder.Controls[0].Show();
         }
     }
 }

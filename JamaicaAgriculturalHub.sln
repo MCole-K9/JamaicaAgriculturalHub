@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAHub_Winforms", "JAHub_Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAHubLib", "JAHubLib\JAHubLib.csproj", "{E6EBD710-ADD0-4617-B005-8A7067FC1883}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAHub_ASPWebforms", "JAHub_ASPWebforms\JAHub_ASPWebforms.csproj", "{F34D974B-61A3-46F5-9F39-FFF04BB1DACC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6EBD710-ADD0-4617-B005-8A7067FC1883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34D974B-61A3-46F5-9F39-FFF04BB1DACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34D974B-61A3-46F5-9F39-FFF04BB1DACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34D974B-61A3-46F5-9F39-FFF04BB1DACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34D974B-61A3-46F5-9F39-FFF04BB1DACC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

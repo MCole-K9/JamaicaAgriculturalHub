@@ -27,7 +27,7 @@ namespace JAHub_Winforms
         }
         private void PopulateFields()
         {
-            pcbImage.Image = Image.FromFile(_product.Image);
+            pcbImage.ImageLocation = _product.Image;
             lblProductName.Text = _product.Name;
             lblPrice.Text = $"${_product.Price} Per Lbs";
             lblFarmerName.Text = $"{_product.Farmer.FirstName} {_product.Farmer.LastName}";

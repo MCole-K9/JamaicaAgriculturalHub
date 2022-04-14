@@ -56,6 +56,7 @@ namespace JAHub_Winforms.Verification
             {
                 errLandBlock.SetError(nudLandMeasurement, "");
 
+
                 isLandBlockValid = true;
             }
         }
@@ -69,6 +70,8 @@ namespace JAHub_Winforms.Verification
                     land.LandAddressTown = usrAddressBlock1.AddressTown;
                     land.LandAddressPoBox = usrAddressBlock1.AddressPostOffice;
                     land.LandAddressParish = usrAddressBlock1.AddressParish;
+
+                    land.LandMeasurement = nudLandMeasurement.Value;
 
                     return true;
                 }
@@ -85,7 +88,27 @@ namespace JAHub_Winforms.Verification
             }
             else if (!isLandBlockValid)
             {
-                nudLandMeasurement.Focus();
+                nudLandMeasurement.Select();
+            }
+        }
+
+        private void nudLandMeasurement_ValueChanged(object sender, EventArgs e)
+        {
+            // I would probably prefer to use "TextChanged" or some other event like that, but
+            // this will work for the time being
+            if (nudLandMeasurement.Value <= 0)
+            {
+                errLandBlock.SetIconAlignment(nudLandMeasurement, ErrorIconAlignment.MiddleRight);
+                errLandBlock.SetError(nudLandMeasurement, "Value must be greater than 0");
+
+                isLandBlockValid = false;
+            }
+            else
+            {
+                errLandBlock.SetError(nudLandMeasurement, "");
+
+
+                isLandBlockValid = true;
             }
         }
     }

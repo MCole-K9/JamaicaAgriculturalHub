@@ -54,7 +54,7 @@ namespace JAHub_Winforms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Farmer farmer = new Farmer();
+            Farmer farmer = new Farmer(true);
 
             string productName = txtProductName.Text;
             float price;
@@ -63,27 +63,56 @@ namespace JAHub_Winforms
             float.TryParse(txtPrice.Text, out price);
             int.TryParse(txtStock.Text, out stock);
 
-            product.Name = productName;
-            product.Price = price;
-            product.Stock = stock;
-            product.Category = (int)cboCategory.SelectedValue;
-            MessageBox.Show($"{ product.Category}");
-
-            if (inEditMode)
+            if(txtProductName.Text == "")
             {
-                if (farmer.UpdateProduct(product) > 0)
-                {
-                    MessageBox.Show("Item Updated Succesfully");
+                MessageBox.Show("Enter Product Name");
+                txtProductName.Focus();
 
-                }
+            }else if (txtPrice.Text == "" || price == 0)
+            {
+                MessageBox.Show("Enter a Value / an Appropriate Value in Price");
+                txtPrice.Focus();
+
+            }else if(txtStock.Text == "" || stock == 0)
+            {
+                MessageBox.Show("Enter a Value / an Appropriate Value in Stock");
+                txtStock.Focus();
+
+            }else if(cboCategory.SelectedValue == null)
+            {
+                MessageBox.Show("Select Category");
+                cboCategory.Focus();
+
+            }else if(product.Image == "")
+            {
+                MessageBox.Show(" Ensure to Select An Image");
+                pbImage.Focus();
             }
             else
             {
-                if (farmer.AddProduct(product) > 0)
+                product.Name = productName;
+                product.Price = price;
+                product.Stock = stock;
+                product.Category = (int)cboCategory.SelectedValue;
+
+
+                if (inEditMode)
                 {
-                    MessageBox.Show("Item Added Succesfully");
+                    if (farmer.UpdateProduct(product) > 0)
+                    {
+                        MessageBox.Show("Item Updated Succesfully");
+
+                    }
+                }
+                else
+                {
+                    if (farmer.AddProduct(product) > 0)
+                    {
+                        MessageBox.Show("Item Added Succesfully");
+                    }
                 }
             }
+           
 
 
         }
@@ -113,15 +142,9 @@ namespace JAHub_Winforms
                 cboCategory.DisplayMember = "CategoryName";
                 cboCategory.ValueMember = "ID";
 
-
-                //cboCategory.Items.Insert(0, "Select Category");
+                cboCategory.SelectedIndex = -1;
+                cboCategory.Text = "Select an Item";
             }
-            //Category ctg = new Category();
-
-            //cboCategory.DataBindings.Clear();
-            //cboCategory.DataSource = ctg.GetCategoryList();
-            //cboCategory.DisplayMember = "CategoryName";
-            //cboCategory.ValueMember = "ID" ;
 
         }
 

@@ -233,6 +233,7 @@ namespace JAHub_Winforms
             else
             {
                 MessageBox.Show("Successfully created new record!");
+                frmAdmin.OpenSelectCurrentUser();
             }
         }
     }
