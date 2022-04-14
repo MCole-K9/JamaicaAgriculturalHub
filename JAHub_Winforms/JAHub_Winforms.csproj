@@ -225,6 +225,12 @@
     <Compile Include="FrmShop.Designer.cs">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSignup.Designer.cs">
+      <DependentUpon>FrmSignup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTestingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSignup.resx">
+      <DependentUpon>FrmSignup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTestingForm.resx">
       <DependentUpon>FrmTestingForm.cs</DependentUpon>
