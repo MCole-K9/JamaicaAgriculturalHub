@@ -41,7 +41,7 @@
             this.rtbrequirement = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
-    //        this.SuspendLayout();
+            this.SuspendLayout();
             // 
             // btnuploadfile
             // 
@@ -154,7 +154,7 @@
             // 
             // FrmCreateGrant
             // 
-           this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 1055);
             this.Controls.Add(this.label3);
@@ -170,10 +170,10 @@
             this.Controls.Add(this.pansidebarcwj);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmCreateGrant";
-          //  this.Text = "FrmCreateGrantPage";
+            this.Load += new System.EventHandler(this.FrmCreateGrant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).EndInit();
-          this.ResumeLayout(false);
-          this.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

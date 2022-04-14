@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlContainer = new System.Windows.Forms.Panel();
+            this.pnlContainerAdminViewGrants = new System.Windows.Forms.Panel();
             this.btnMyBlogs = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
             this.lblAgency = new System.Windows.Forms.Label();
-            this.btntest = new System.Windows.Forms.Button();
+            this.btnViewAllMyGrants = new System.Windows.Forms.Button();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlContainer
+            // pnlContainerAdminViewGrants
             // 
-            this.pnlContainer.AutoScroll = true;
-            this.pnlContainer.AutoSize = true;
-            this.pnlContainer.Location = new System.Drawing.Point(295, 140);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
-            this.pnlContainer.Size = new System.Drawing.Size(765, 628);
-            this.pnlContainer.TabIndex = 66;
+            this.pnlContainerAdminViewGrants.AutoScroll = true;
+            this.pnlContainerAdminViewGrants.AutoSize = true;
+            this.pnlContainerAdminViewGrants.Location = new System.Drawing.Point(295, 140);
+            this.pnlContainerAdminViewGrants.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlContainerAdminViewGrants.Name = "pnlContainerAdminViewGrants";
+            this.pnlContainerAdminViewGrants.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
+            this.pnlContainerAdminViewGrants.Size = new System.Drawing.Size(765, 628);
+            this.pnlContainerAdminViewGrants.TabIndex = 66;
             // 
             // btnMyBlogs
             // 
@@ -153,27 +153,27 @@
             this.lblAgency.TabIndex = 65;
             this.lblAgency.Text = "All My Grants";
             // 
-            // btntest
+            // btnViewAllMyGrants
             // 
-            this.btntest.Location = new System.Drawing.Point(960, 32);
-            this.btntest.Margin = new System.Windows.Forms.Padding(4);
-            this.btntest.Name = "btntest";
-            this.btntest.Size = new System.Drawing.Size(100, 28);
-            this.btntest.TabIndex = 64;
-            this.btntest.Text = "View";
+            this.btnViewAllMyGrants.Location = new System.Drawing.Point(960, 32);
+            this.btnViewAllMyGrants.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewAllMyGrants.Name = "btnViewAllMyGrants";
+            this.btnViewAllMyGrants.Size = new System.Drawing.Size(100, 28);
+            this.btnViewAllMyGrants.TabIndex = 64;
+            this.btnViewAllMyGrants.Text = "View";
+            this.btnViewAllMyGrants.Click += new System.EventHandler(this.btnViewAllMyGrants_Click);
             // 
             // FrmViewAllMyApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 822);
-            this.Controls.Add(this.pnlContainer);
+            this.Controls.Add(this.pnlContainerAdminViewGrants);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.lblAgency);
-            this.Controls.Add(this.btntest);
+            this.Controls.Add(this.btnViewAllMyGrants);
             this.Name = "FrmViewAllMyApplication";
             this.Text = "FrmViewAllMyApplication";
-            this.Load += new System.EventHandler(this.FrmViewAllMyApplication_Load);
             this.pnlNav.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,13 +182,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.Panel pnlContainerAdminViewGrants;
         private FontAwesome.Sharp.IconButton btnMyBlogs;
         private FontAwesome.Sharp.IconButton btnCreateBlog;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Panel pnlNav;
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Label lblAgency;
-        private System.Windows.Forms.Button btntest;
+        private System.Windows.Forms.Button btnViewAllMyGrants;
     }
 }

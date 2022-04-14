@@ -43,6 +43,7 @@ namespace JAHubLib
                 firstName.Direction = System.Data.ParameterDirection.Input;
                 firstName.Value = this.FirstName;
                 writeToDb.Parameters.Add(firstName);
+               
 
                 // Middle Name
                 SqlParameter middleName = new SqlParameter();
@@ -134,5 +135,6 @@ namespace JAHubLib
                 connection.Close();
             }
         }
+
     }
 }

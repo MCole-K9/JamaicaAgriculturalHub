@@ -21,32 +21,40 @@ namespace JAHub_Winforms
 
         }
 
+
+       
         private void btnCreateGrant_Click(object sender, EventArgs e)
         {
-            Grantinfo grantinfo = new Grantinfo();
-            grantinfo.GrantDescription= rtbdescription.Text ;
-            grantinfo.Requirement= rtbrequirement.Text ;
-            grantinfo.ExpiryDate = dtpExpirydate.Value ;
+
             
-         //   grantinfo.FileName = pbfile.
+         
 
+
+            
             GrantOfficer grantOfficer = new GrantOfficer();
-            grantOfficer.CreateGrant(grantinfo);
+            Grantinfo grantinfo = new Grantinfo();
+            grantinfo.GrantDescription = rtbdescription.Text;
+            grantinfo.Requirement = rtbrequirement.Text;
+            grantinfo.ExpiryDate = dtpExpirydate.Value;
+            // grantinfo.GrantOfficerId = ;
+            grantinfo.GrantOfficerId =;
 
-
+           
+           
+           grantOfficer.CreateGrant(grantinfo);
 
 
         }
 
-
-     
        
 
 
 
 
-
-
-
-            }
+        private void FrmCreateGrant_Load(object sender, EventArgs e)
+        {
+          /* Grantinfo grantinfo = new Grantinfo() ;  
+             CreateGrant(grantinfo);*/
+        }
+    }
         }

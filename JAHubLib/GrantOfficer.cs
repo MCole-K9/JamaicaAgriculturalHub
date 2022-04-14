@@ -8,28 +8,90 @@ using JAHubLib;
 
 namespace JAHubLib
 {
+
     public class GrantOfficer : User
     {
-        string AgencyName { get; set; }
-        int GrantOfficerId { get; set; }
 
-        public int CreateGrant(Grantinfo grantinfo)
+        private string agencyName;
+        private int grantofficerId;
+       public string AgencyName
         {
+            get { return agencyName; }  
+            set { agencyName = value; } 
+        }
+        public int GrantOfficerId
+        {
+            get { return grantofficerId; }  
+            set { grantofficerId = value; } 
+        }
+       
 
-            //  grantinfo.ID = ;
-            string query = $"INSERT INTO [Grant] ( Description,Requirement,Deadline,Application,GrantOfficer)" +
-                    $"Values ( '{grantinfo.GrantDescription}', {grantinfo.Requirement}, {grantinfo.ExpiryDate}, '',{GrantOfficerId})";
+       
 
 
-            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-            connection.Open();
-            SqlCommand cmd = new SqlCommand(query, connection);
-            int i = cmd.ExecuteNonQuery();
+        public bool isLoggedin = true;
+        public void FetchGrantOfficerID()
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
 
-            return i;
+                string query = isLoggedin ? $"SELECT * FROM [User] WHERE UserID = {Session.UserId}" : $"SELECT * FROM User WHERE ID = {this.GrantOfficerId}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataReader sqlData = cmd.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    this.GrantOfficerId = (int)sqlData["UserID"];
+
+
+                }
+                sqlData.Close();
+
+            }
+
+        }
+
+            public int CreateGrant(Grantinfo grantinfo)
+             {
+                
+                string query = $"INSERT INTO [Grant] ( Description,Requirements,Deadline,GrantOfficer)" +
+                        $"Values ( '{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
+
+                Utilities.executeInputQuery(query);
+
+
+
+                return 1;
+
+             }
+
+
+        public void FetchGrantofficerID()
+        {
+            bool isLoggedin = true;
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = isLoggedin ? $"SELECT * FROM [User] WHERE UserID = {Session.UserId}" : $"SELECT * FROM [User] WHERE ID = {this.UserID}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataReader sqlData = cmd.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    this.GrantOfficerId = (int)sqlData["UserID"];
+
+
+                }
+                sqlData.Close();
+            }
+
 
         }
     }
-
-
 }

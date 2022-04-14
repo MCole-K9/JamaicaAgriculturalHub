@@ -30,6 +30,7 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblReqquirement = new System.Windows.Forms.Label();
             this.lbltitle = new System.Windows.Forms.Label();
             this.rtbRequirement = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.lblgrantdescription = new System.Windows.Forms.Label();
             this.lblexpirtydate = new System.Windows.Forms.Label();
             this.rtbgrantdescription = new System.Windows.Forms.TextBox();
-            this.lblReqquirement = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rtbRequirement)).BeginInit();
             this.SuspendLayout();
@@ -69,14 +69,23 @@
             this.panel1.Size = new System.Drawing.Size(791, 733);
             this.panel1.TabIndex = 31;
             // 
+            // lblReqquirement
+            // 
+            this.lblReqquirement.AutoSize = true;
+            this.lblReqquirement.Location = new System.Drawing.Point(78, 349);
+            this.lblReqquirement.Name = "lblReqquirement";
+            this.lblReqquirement.Size = new System.Drawing.Size(76, 16);
+            this.lblReqquirement.TabIndex = 44;
+            this.lblReqquirement.Text = "Requiremts";
+            // 
             // lbltitle
             // 
             this.lbltitle.AutoSize = true;
             this.lbltitle.Location = new System.Drawing.Point(302, 24);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(44, 16);
+            this.lbltitle.Size = new System.Drawing.Size(33, 16);
             this.lbltitle.TabIndex = 43;
-            this.lbltitle.Text = "label1";
+            this.lbltitle.Text = "Title";
             // 
             // rtbRequirement
             // 
@@ -152,15 +161,6 @@
             this.rtbgrantdescription.ReadOnly = true;
             this.rtbgrantdescription.Size = new System.Drawing.Size(580, 197);
             this.rtbgrantdescription.TabIndex = 36;
-            // 
-            // lblReqquirement
-            // 
-            this.lblReqquirement.AutoSize = true;
-            this.lblReqquirement.Location = new System.Drawing.Point(78, 349);
-            this.lblReqquirement.Name = "lblReqquirement";
-            this.lblReqquirement.Size = new System.Drawing.Size(76, 16);
-            this.lblReqquirement.TabIndex = 44;
-            this.lblReqquirement.Text = "Requiremts";
             // 
             // FrmGrantDetails
             // 

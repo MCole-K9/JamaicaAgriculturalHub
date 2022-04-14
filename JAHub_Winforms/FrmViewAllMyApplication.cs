@@ -19,26 +19,28 @@ namespace JAHub_Winforms
             InitializeComponent();
         }
 
-        private bool isLoggedin;
-        Grantinfo grantinfo = new Grantinfo();
-        private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
-        {
+        private bool isLoggedin = true;
+        
+       
 
-            // public void FetchFarmerData()
-            //{
+        private void btnViewAllMyGrants_Click(object sender, EventArgs e)
+        {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
+                Grantinfo grantinfo = new Grantinfo();
+                grantinfo.ViewAllMyGrants();
                 connection.Open();
 
-                string query = isLoggedin ? $"SELECT * FROM Farmer WHERE UserID = {Session.UserId}" : $"SELECT * FROM Farmer WHERE ID = {grantinfo.ID}";
+                string query =  $"SELECT * FROM Farmer WHERE ID = {grantinfo.ID}";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
+           
 
                 SqlDataReader sqlData = cmd.ExecuteReader();
 
                 while (sqlData.Read())
                 {
-                    Grantinfo grantinfo = new Grantinfo();
+                    
                     grantinfo.ID = (int)sqlData["ID"];
                     grantinfo.GrantDescription = sqlData["Description"].ToString();
                     grantinfo.Requirement = sqlData["Requirements"].ToString();
@@ -47,15 +49,16 @@ namespace JAHub_Winforms
                     grantinfo.GrantOfficerId = (int)sqlData["GrantOfficer"];
                     grantinfo.Title = sqlData["Title"].ToString();
 
-
                     Grant_Controls.ucGrantDisplay ucGrantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
-                    pnlContainer.Controls.Add(ucGrantDisplay);
+                    pnlContainerAdminViewGrants.Controls.Add(ucGrantDisplay);
                     ucGrantDisplay.Dock = DockStyle.Top;
+
 
 
                 }
                 sqlData.Close();
             }
         }
-        } 
+        
+        }
     }

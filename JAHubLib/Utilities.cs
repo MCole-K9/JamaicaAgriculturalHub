@@ -123,6 +123,7 @@ namespace JAHubLib
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
+                
                 int i = cmd.ExecuteNonQuery();
 
                 return i;
