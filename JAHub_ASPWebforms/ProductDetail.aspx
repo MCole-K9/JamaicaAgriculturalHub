@@ -71,8 +71,7 @@
                     <div class="tab-content">
                         <div id="reviews" class="tab-pane fade in active">
                             <h4>No Reviews Yet</h4>
-                            <p>Be the First To Review</p>
-                            
+                            <p>Be the First To Review</p>    
                         </div>
                         <div id="add-review" class="tab-pane fade" >
                             <h4>Over All Rating</h4>
@@ -84,7 +83,7 @@
 
                             <div class="form-group">
                                 <label for="comment">Comment:</label>
-                                <textarea class="form-control" rows="8" id="comment"></textarea>
+                                <textarea  runat="server" class="form-control" rows="8" id="comment"></textarea>
                             </div>
                             <div style="display: flex; justify-content: end">
                                 <asp:Button CssClass="btn btn-primary text-center" ID="btnReviewSubmit" runat="server" Text="Submit" Width="70px" />
