@@ -55,15 +55,17 @@ namespace JAHub_ASPWebforms
 
                 CategoryDropDown.DataSource = categoryDS.Tables["Category"];
 
-
+                CategoryDropDown.DataBind();
                 CategoryDropDown.DataTextField = "CategoryName";
                 CategoryDropDown.DataValueField = "ID";
 
-                CategoryDropDown.SelectedIndex = -1;
-                CategoryDropDown.Text = "Select an Item";
+                CategoryDropDown.DataBind();
+                CategoryDropDown.Items.Insert(0, new ListItem("Filter by Category", "NA"));
+                
             }
 
             LoadProducts(products);
+            
         }
         public void LoadProducts(List<Product> products)
         {
