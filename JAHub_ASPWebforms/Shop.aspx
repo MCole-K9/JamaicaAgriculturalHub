@@ -15,12 +15,15 @@
         <div class="container-fluid" style="display: flex; width: 100%; margin: 20px 0 0 0">
             <div style="flex-grow: 1;">
                 <asp:DropDownList CssClass="category-dropdown" ID="CategoryDropDown" runat="server" Height="32px"></asp:DropDownList>
-
             </div>
             <div style="display: flex; justify-content: space-evenly">
-                <div style="margin: 0 70px 0  0">
-                    <h4>Cart<img style="" class="img-responsive img-rounded" src="Resources/cart-arrow-down-solid.svg"/></h4>
-                </div>
+
+                <a href="#">
+                    <div style="margin: 0 70px 0  0; display: flex; align-items: center">
+                        <img style="max-height: 33px; margin-right: 5px;" class="img-responsive img-rounded" src="Resources/cart-arrow-down-solid.svg" />
+                        <h4 style="position: relative;" id="Cart" runat="server">$0.0</h4>
+                    </div>
+                </a>
                 <div>
                     <div class="input-group">
                         <input runat="server" type="text" class="form-control" placeholder="Item Search" aria-describedby="item Search">
