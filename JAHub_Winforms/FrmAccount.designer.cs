@@ -32,38 +32,35 @@
             this.panelAccountHeader = new System.Windows.Forms.Panel();
             this.lblInfoAboutYouLabel = new System.Windows.Forms.Label();
             this.lblYourAccountLabel = new System.Windows.Forms.Label();
-            this.panelParentContainer = new System.Windows.Forms.Panel();
+            this.panelBasicInfo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDiaplayGender = new System.Windows.Forms.Label();
             this.btnUpdateGender = new System.Windows.Forms.Button();
             this.btnUpdateBirthday = new System.Windows.Forms.Button();
             this.lblDisplaysUserName = new System.Windows.Forms.Label();
-            this.pictureBoxAddProfilePicture = new System.Windows.Forms.PictureBox();
             this.btnUpdateName = new System.Windows.Forms.Button();
-            this.btnUpdateProfilepicture = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelBasicInfoTitle = new System.Windows.Forms.Panel();
             this.lblBasicInfolabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelContactInfo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDisplayemail = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelContactInfoTitle = new System.Windows.Forms.Panel();
             this.lblContactInformationLabel = new System.Windows.Forms.Label();
             this.panelAccountHeader.SuspendLayout();
-            this.panelParentContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddProfilePicture)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelBasicInfo.SuspendLayout();
+            this.panelBasicInfoTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelContactInfo.SuspendLayout();
+            this.panelContactInfoTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAccountHeader
@@ -73,7 +70,7 @@
             this.panelAccountHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAccountHeader.Location = new System.Drawing.Point(0, 0);
             this.panelAccountHeader.Name = "panelAccountHeader";
-            this.panelAccountHeader.Size = new System.Drawing.Size(953, 98);
+            this.panelAccountHeader.Size = new System.Drawing.Size(889, 98);
             this.panelAccountHeader.TabIndex = 0;
             // 
             // lblInfoAboutYouLabel
@@ -96,29 +93,27 @@
             this.lblYourAccountLabel.TabIndex = 0;
             this.lblYourAccountLabel.Text = "Your Account\r\n";
             // 
-            // panelParentContainer
+            // panelBasicInfo
             // 
-            this.panelParentContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelParentContainer.Controls.Add(this.label1);
-            this.panelParentContainer.Controls.Add(this.lblDiaplayGender);
-            this.panelParentContainer.Controls.Add(this.btnUpdateGender);
-            this.panelParentContainer.Controls.Add(this.btnUpdateBirthday);
-            this.panelParentContainer.Controls.Add(this.lblDisplaysUserName);
-            this.panelParentContainer.Controls.Add(this.pictureBoxAddProfilePicture);
-            this.panelParentContainer.Controls.Add(this.btnUpdateName);
-            this.panelParentContainer.Controls.Add(this.btnUpdateProfilepicture);
-            this.panelParentContainer.Controls.Add(this.panel2);
-            this.panelParentContainer.Location = new System.Drawing.Point(17, 220);
-            this.panelParentContainer.Name = "panelParentContainer";
-            this.panelParentContainer.Size = new System.Drawing.Size(664, 435);
-            this.panelParentContainer.TabIndex = 1;
+            this.panelBasicInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBasicInfo.Controls.Add(this.label1);
+            this.panelBasicInfo.Controls.Add(this.lblDiaplayGender);
+            this.panelBasicInfo.Controls.Add(this.btnUpdateGender);
+            this.panelBasicInfo.Controls.Add(this.btnUpdateBirthday);
+            this.panelBasicInfo.Controls.Add(this.lblDisplaysUserName);
+            this.panelBasicInfo.Controls.Add(this.btnUpdateName);
+            this.panelBasicInfo.Controls.Add(this.panelBasicInfoTitle);
+            this.panelBasicInfo.Location = new System.Drawing.Point(17, 220);
+            this.panelBasicInfo.Name = "panelBasicInfo";
+            this.panelBasicInfo.Size = new System.Drawing.Size(664, 313);
+            this.panelBasicInfo.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(144, 268);
+            this.label1.Location = new System.Drawing.Point(138, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 27;
@@ -129,7 +124,7 @@
             this.lblDiaplayGender.AutoSize = true;
             this.lblDiaplayGender.BackColor = System.Drawing.Color.Transparent;
             this.lblDiaplayGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaplayGender.Location = new System.Drawing.Point(137, 345);
+            this.lblDiaplayGender.Location = new System.Drawing.Point(126, 253);
             this.lblDiaplayGender.Name = "lblDiaplayGender";
             this.lblDiaplayGender.Size = new System.Drawing.Size(110, 17);
             this.lblDiaplayGender.TabIndex = 26;
@@ -145,9 +140,9 @@
             this.btnUpdateGender.ForeColor = System.Drawing.Color.DimGray;
             this.btnUpdateGender.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
             this.btnUpdateGender.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateGender.Location = new System.Drawing.Point(0, 314);
+            this.btnUpdateGender.Location = new System.Drawing.Point(0, 228);
             this.btnUpdateGender.Name = "btnUpdateGender";
-            this.btnUpdateGender.Size = new System.Drawing.Size(662, 80);
+            this.btnUpdateGender.Size = new System.Drawing.Size(662, 66);
             this.btnUpdateGender.TabIndex = 23;
             this.btnUpdateGender.Text = "GENDER";
             this.btnUpdateGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +158,7 @@
             this.btnUpdateBirthday.ForeColor = System.Drawing.Color.DimGray;
             this.btnUpdateBirthday.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
             this.btnUpdateBirthday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateBirthday.Location = new System.Drawing.Point(0, 234);
+            this.btnUpdateBirthday.Location = new System.Drawing.Point(0, 148);
             this.btnUpdateBirthday.Name = "btnUpdateBirthday";
             this.btnUpdateBirthday.Size = new System.Drawing.Size(662, 80);
             this.btnUpdateBirthday.TabIndex = 22;
@@ -176,21 +171,11 @@
             this.lblDisplaysUserName.AutoSize = true;
             this.lblDisplaysUserName.BackColor = System.Drawing.Color.Transparent;
             this.lblDisplaysUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplaysUserName.Location = new System.Drawing.Point(146, 187);
+            this.lblDisplaysUserName.Location = new System.Drawing.Point(137, 106);
             this.lblDisplaysUserName.Name = "lblDisplaysUserName";
             this.lblDisplaysUserName.Size = new System.Drawing.Size(89, 17);
             this.lblDisplaysUserName.TabIndex = 20;
             this.lblDisplaysUserName.Text = "Farmer Brown";
-            // 
-            // pictureBoxAddProfilePicture
-            // 
-            this.pictureBoxAddProfilePicture.Image = global::JAHub_Winforms.Properties.Resources.user__3___1_;
-            this.pictureBoxAddProfilePicture.Location = new System.Drawing.Point(571, 100);
-            this.pictureBoxAddProfilePicture.Name = "pictureBoxAddProfilePicture";
-            this.pictureBoxAddProfilePicture.Size = new System.Drawing.Size(49, 48);
-            this.pictureBoxAddProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxAddProfilePicture.TabIndex = 19;
-            this.pictureBoxAddProfilePicture.TabStop = false;
             // 
             // btnUpdateName
             // 
@@ -202,7 +187,7 @@
             this.btnUpdateName.ForeColor = System.Drawing.Color.DimGray;
             this.btnUpdateName.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
             this.btnUpdateName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateName.Location = new System.Drawing.Point(0, 154);
+            this.btnUpdateName.Location = new System.Drawing.Point(0, 68);
             this.btnUpdateName.Name = "btnUpdateName";
             this.btnUpdateName.Size = new System.Drawing.Size(662, 80);
             this.btnUpdateName.TabIndex = 18;
@@ -211,36 +196,20 @@
             this.btnUpdateName.UseVisualStyleBackColor = false;
             this.btnUpdateName.Click += new System.EventHandler(this.btnUpdateName_Click);
             // 
-            // btnUpdateProfilepicture
+            // panelBasicInfoTitle
             // 
-            this.btnUpdateProfilepicture.BackColor = System.Drawing.Color.White;
-            this.btnUpdateProfilepicture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateProfilepicture.FlatAppearance.BorderSize = 0;
-            this.btnUpdateProfilepicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateProfilepicture.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateProfilepicture.ForeColor = System.Drawing.Color.DimGray;
-            this.btnUpdateProfilepicture.Location = new System.Drawing.Point(0, 74);
-            this.btnUpdateProfilepicture.Name = "btnUpdateProfilepicture";
-            this.btnUpdateProfilepicture.Size = new System.Drawing.Size(662, 80);
-            this.btnUpdateProfilepicture.TabIndex = 17;
-            this.btnUpdateProfilepicture.Text = "PHOTO                       Personalize your account by uploading a photo.";
-            this.btnUpdateProfilepicture.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateProfilepicture.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblBasicInfolabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(662, 74);
-            this.panel2.TabIndex = 0;
+            this.panelBasicInfoTitle.Controls.Add(this.lblBasicInfolabel);
+            this.panelBasicInfoTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBasicInfoTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelBasicInfoTitle.Name = "panelBasicInfoTitle";
+            this.panelBasicInfoTitle.Size = new System.Drawing.Size(662, 68);
+            this.panelBasicInfoTitle.TabIndex = 0;
             // 
             // lblBasicInfolabel
             // 
             this.lblBasicInfolabel.AutoSize = true;
             this.lblBasicInfolabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicInfolabel.Location = new System.Drawing.Point(12, 8);
+            this.lblBasicInfolabel.Location = new System.Drawing.Point(13, 13);
             this.lblBasicInfolabel.Name = "lblBasicInfolabel";
             this.lblBasicInfolabel.Size = new System.Drawing.Size(68, 17);
             this.lblBasicInfolabel.TabIndex = 0;
@@ -254,7 +223,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(953, 108);
+            this.panel1.Size = new System.Drawing.Size(889, 108);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -287,20 +256,20 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Your Account Profile Info";
             // 
-            // panel3
+            // panelContactInfo
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(27, 696);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(653, 239);
-            this.panel3.TabIndex = 3;
+            this.panelContactInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContactInfo.Controls.Add(this.label7);
+            this.panelContactInfo.Controls.Add(this.label6);
+            this.panelContactInfo.Controls.Add(this.button2);
+            this.panelContactInfo.Controls.Add(this.lblDisplayemail);
+            this.panelContactInfo.Controls.Add(this.label3);
+            this.panelContactInfo.Controls.Add(this.button1);
+            this.panelContactInfo.Controls.Add(this.panelContactInfoTitle);
+            this.panelContactInfo.Location = new System.Drawing.Point(33, 577);
+            this.panelContactInfo.Name = "panelContactInfo";
+            this.panelContactInfo.Size = new System.Drawing.Size(653, 227);
+            this.panelContactInfo.TabIndex = 3;
             // 
             // label7
             // 
@@ -339,15 +308,15 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lblDisplayemail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 17);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "farmerbrown123@gmail.com";
+            this.lblDisplayemail.AutoSize = true;
+            this.lblDisplayemail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayemail.Location = new System.Drawing.Point(49, 86);
+            this.lblDisplayemail.Name = "lblDisplayemail";
+            this.lblDisplayemail.Size = new System.Drawing.Size(177, 17);
+            this.lblDisplayemail.TabIndex = 25;
+            this.lblDisplayemail.Text = "farmerbrown123@gmail.com";
             // 
             // label3
             // 
@@ -376,14 +345,14 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // panel4
+            // panelContactInfoTitle
             // 
-            this.panel4.Controls.Add(this.lblContactInformationLabel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(651, 53);
-            this.panel4.TabIndex = 0;
+            this.panelContactInfoTitle.Controls.Add(this.lblContactInformationLabel);
+            this.panelContactInfoTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelContactInfoTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelContactInfoTitle.Name = "panelContactInfoTitle";
+            this.panelContactInfoTitle.Size = new System.Drawing.Size(651, 53);
+            this.panelContactInfoTitle.TabIndex = 0;
             // 
             // lblContactInformationLabel
             // 
@@ -401,28 +370,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(970, 749);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(906, 753);
+            this.Controls.Add(this.panelContactInfo);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelParentContainer);
+            this.Controls.Add(this.panelBasicInfo);
             this.Controls.Add(this.panelAccountHeader);
             this.Name = "FrmAccount";
             this.Text = "Account";
             this.Load += new System.EventHandler(this.FrmAccount_Load);
             this.panelAccountHeader.ResumeLayout(false);
             this.panelAccountHeader.PerformLayout();
-            this.panelParentContainer.ResumeLayout(false);
-            this.panelParentContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddProfilePicture)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelBasicInfo.ResumeLayout(false);
+            this.panelBasicInfo.PerformLayout();
+            this.panelBasicInfoTitle.ResumeLayout(false);
+            this.panelBasicInfoTitle.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panelContactInfo.ResumeLayout(false);
+            this.panelContactInfo.PerformLayout();
+            this.panelContactInfoTitle.ResumeLayout(false);
+            this.panelContactInfoTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -431,10 +399,8 @@
 
         private System.Windows.Forms.Panel panelAccountHeader;
         private System.Windows.Forms.Label lblYourAccountLabel;
-        private System.Windows.Forms.Panel panelParentContainer;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnUpdateProfilepicture;
-        private System.Windows.Forms.PictureBox pictureBoxAddProfilePicture;
+        private System.Windows.Forms.Panel panelBasicInfo;
+        private System.Windows.Forms.Panel panelBasicInfoTitle;
         private System.Windows.Forms.Button btnUpdateName;
         private System.Windows.Forms.Label lblDisplaysUserName;
         private System.Windows.Forms.Button btnUpdateGender;
@@ -447,12 +413,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelContactInfo;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelContactInfoTitle;
         private System.Windows.Forms.Label lblContactInformationLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDisplayemail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
