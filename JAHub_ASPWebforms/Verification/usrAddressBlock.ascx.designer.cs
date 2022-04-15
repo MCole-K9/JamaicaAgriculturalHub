@@ -11,88 +11,88 @@ namespace JAHub_ASPWebforms.Verification
 {
 
 
-    public partial class usrNameBlock
+    public partial class usrAddressBlock
     {
 
         /// <summary>
-        /// lblFirstName control.
+        /// lblAddressTown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFirstName;
+        protected global::System.Web.UI.WebControls.Label lblAddressTown;
 
         /// <summary>
-        /// txtFirstName control.
+        /// txtAddressTown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::System.Web.UI.WebControls.TextBox txtAddressTown;
 
         /// <summary>
-        /// reqFirstName control.
+        /// cusAddressTown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFirstName;
+        protected global::System.Web.UI.WebControls.CustomValidator cusAddressTown;
 
         /// <summary>
-        /// lblMiddleName control.
+        /// lblAddressPostOffice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMiddleName;
+        protected global::System.Web.UI.WebControls.Label lblAddressPostOffice;
 
         /// <summary>
-        /// txtMiddleName control.
+        /// txtAddressPostOffice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMiddleName;
+        protected global::System.Web.UI.WebControls.TextBox txtAddressPostOffice;
 
         /// <summary>
-        /// reqMiddleName control.
+        /// cusAddressPostOffice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqMiddleName;
+        protected global::System.Web.UI.WebControls.CustomValidator cusAddressPostOffice;
 
         /// <summary>
-        /// lblLastName control.
+        /// lblAddressParish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLastName;
+        protected global::System.Web.UI.WebControls.Label lblAddressParish;
 
         /// <summary>
-        /// txtLastName control.
+        /// txtAddressParish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        protected global::System.Web.UI.WebControls.TextBox txtAddressParish;
 
         /// <summary>
-        /// reqLastName control.
+        /// cusAddressParish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqLastName;
+        protected global::System.Web.UI.WebControls.CustomValidator cusAddressParish;
     }
 }

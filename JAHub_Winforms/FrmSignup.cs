@@ -230,7 +230,7 @@ namespace JAHub_Winforms
                     cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text.Trim());
                     cmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text.Trim());
                     cmd.Parameters.AddWithValue("@LastName", txtLastName.Text.Trim());
-                    //cmd.Parameters.AddWithValue("@Gender", Gender);
+                    cmd.Parameters.AddWithValue("@Gender", Gender);
                     cmd.Parameters.AddWithValue("@EmailAddress", txtEmail.Text.Trim());
                     cmd.Parameters.AddWithValue("@Password", txtConfirmPassword.Text.Trim());
                     cmd.Parameters.AddWithValue("@UserRole", 2);
