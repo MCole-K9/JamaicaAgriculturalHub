@@ -33,6 +33,24 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cart;
 
         /// <summary>
+        /// txtSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
+
+        /// <summary>
+        /// btnProductSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnProductSearch;
+
+        /// <summary>
         /// pnlProducts control.
         /// </summary>
         /// <remarks>
