@@ -14,7 +14,7 @@
     
         <div class="container-fluid" style="display: flex; width: 100%; margin: 20px 0 0 0">
             <div style="flex-grow: 1;">
-                <asp:DropDownList CssClass="category-dropdown" ID="CategoryDropDown" runat="server" Height="32px"></asp:DropDownList>
+                <asp:DropDownList CssClass="category-dropdown" AutoPostBack="true" ID="CategoryDropDown" runat="server" Height="32px" OnSelectedIndexChanged="CategoryDropDown_SelectedIndexChanged"></asp:DropDownList>
             </div>
             <div style="display: flex; justify-content: space-evenly">
 
@@ -26,12 +26,9 @@
                 </a>
                 <div>
                     <div class="input-group">
-                        <input runat="server" type="text" class="form-control" placeholder="Item Search" aria-describedby="item Search">
-                        <%--<span  id="btnProductSearch" role="button" runat="server" class="input-group-addon">
-                   <asp:Button ID="Button1" runat="server" Text="Button" Visible="False" />
-               </span>--%>
+                        <input id="txtSearch" runat="server" type="text" class="form-control" placeholder="Item Search" aria-describedby="item Search">
                         <div class="input-group-btn">
-                            <button class="btn btn-primary btnSearch" type="submit">
+                            <button id="btnProductSearch" runat="server" onserverclick="btnProductSearch_ServerClick" class="btn btn-primary btnSearch" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </div>
