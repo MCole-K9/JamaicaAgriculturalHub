@@ -43,24 +43,28 @@ namespace JAHub_ASPWebforms
                     }
 
                 }
-                query = "Select * From Category";
+                if (!IsPostBack){
 
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                DataSet categoryDS = new DataSet();
+                    query = "Select * From Category";
 
-                adapter.Fill(categoryDS, "Category");
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataSet categoryDS = new DataSet();
+
+                    adapter.Fill(categoryDS, "Category");
 
 
 
 
-                CategoryDropDown.DataSource = categoryDS.Tables["Category"];
+                    CategoryDropDown.DataSource = categoryDS.Tables["Category"];
 
-                CategoryDropDown.DataBind();
-                CategoryDropDown.DataTextField = "CategoryName";
-                CategoryDropDown.DataValueField = "ID";
+                    CategoryDropDown.DataBind();
+                    CategoryDropDown.DataTextField = "CategoryName";
+                    CategoryDropDown.DataValueField = "ID";
 
-                CategoryDropDown.DataBind();
-                CategoryDropDown.Items.Insert(0, new ListItem("Filter by Category", "NA"));
+                    CategoryDropDown.DataBind();
+                    CategoryDropDown.Items.Insert(0, new ListItem("Filter by Category", "NA"));
+                }
+                
 
             }
 
