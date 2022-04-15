@@ -226,6 +226,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Shop.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="Verification\usrAddressBlock.ascx" />
     <Content Include="Verification\usrNameBlock.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -433,6 +434,13 @@
       <DependentUpon>ucWebBlog.ascx</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
+    <Compile Include="Verification\usrAddressBlock.ascx.cs">
+      <DependentUpon>usrAddressBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrAddressBlock.ascx.designer.cs">
+      <DependentUpon>usrAddressBlock.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Verification\usrNameBlock.ascx.cs">
       <DependentUpon>usrNameBlock.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
