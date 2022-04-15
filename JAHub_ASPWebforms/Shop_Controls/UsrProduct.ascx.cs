@@ -25,6 +25,7 @@ namespace JAHub_ASPWebforms.Shop_Controls
             ProductImage.ID += IDSequence;
             ProductName.ID += IDSequence;
             ProductPrice.ID += IDSequence;
+            btnViewProduct.ID += IDSequence;
 
             ProductImage.Src =$"~/{product.Image}";
 
@@ -34,7 +35,7 @@ namespace JAHub_ASPWebforms.Shop_Controls
             
         }
 
-        protected void btnViewProduct_Click(object sender, EventArgs e)
+        protected void btnViewProduct_ServerClick(object sender, EventArgs e)
         {
             Session["ProductDetail"] = this.product;
             Response.Redirect("~/ProductDetail.aspx");
