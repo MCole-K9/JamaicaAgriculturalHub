@@ -109,15 +109,15 @@ namespace JAHub_Winforms.Verification
         {
             if (!isFirstNameValid)
             {
-                txtFirstName.Focus();
+                txtFirstName.Select();
             }
             else if (!isMiddleNameValid)
             {
-                txtMiddleName.Focus();
+                txtMiddleName.Select();
             }
             else if (!isLastNameValid)
             {
-                txtLastName.Focus();
+                txtLastName.Select();
             }
         }
     }

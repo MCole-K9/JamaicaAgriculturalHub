@@ -8,9 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Data.SqlTypes;
 
 namespace JAHub_Winforms.Verification
 {
+    enum Month
+    {
+        January = 1,
+        February = 2,
+        March = 3,
+        April = 4,
+        May = 5,
+        June = 6,
+        July = 7,
+        August = 8,
+        September = 9,
+        October = 10,
+        November = 11,
+        December = 12
+    }
+
     public partial class usrDateOfBirthBlock : UserControl
     {
 
@@ -20,25 +37,35 @@ namespace JAHub_Winforms.Verification
         bool isMonthValid;
         bool isDayValid;
 
-        public String Day => cmbDay.SelectedText;
-        public String Month => cmbMonth.SelectedText;
-        public String Year => cmbYear.SelectedText;
+        int year;
+        int month;
+        int day;
+
+        public int Day => day;
+        public int Month => month;
+        public int Year => year;
 
         #endregion
 
         public usrDateOfBirthBlock()
         {
             InitializeComponent();
+
+            cmbMonth.DataSource = Enum.GetValues(typeof(Month));
+
+            cmbMonth.DisplayMember = cmbMonth.DataSource.ToString();
         }
 
-        public usrDateOfBirthBlock(Farmer farmer)
+        public usrDateOfBirthBlock(SqlDateTime date)
         {
+            InitializeComponent();
+
             // need to figure out how to make this correspond to farmer
-            DateTime givenDate = farmer.DateOfBirth.Value;
+            DateTime givenDate = date.Value;
 
             cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
             cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);
-            cmbYear.SelectedIndex = cmbYear.FindString("{0}", givenDate.Year);
+            cmbYear.SelectedIndex = cmbYear.FindString((givenDate.Year).ToString());
 
             isDayValid = true;
             isMonthValid = true;
@@ -59,6 +86,7 @@ namespace JAHub_Winforms.Verification
                 errDateBlock.SetError(cmbYear, String.Empty);
 
                 isYearValid = true;
+                year = Int32.Parse(cmbYear.SelectedItem.ToString());
             }
         }
 
@@ -76,12 +104,13 @@ namespace JAHub_Winforms.Verification
                 errDateBlock.SetError(cmbMonth, String.Empty);
 
                 isMonthValid = true;
+                month = (int)cmbMonth.SelectedValue;
             }
 
             // necessary to set the number of days in the month to change values in cmbDay
             int _daysPerMonth;
 
-            switch (cmbMonth.SelectedIndex)
+            switch (cmbMonth.SelectedValue)
             {
                 case 0:
                     _daysPerMonth = 31;
@@ -162,6 +191,7 @@ namespace JAHub_Winforms.Verification
                 errDateBlock.SetError(cmbDay, String.Empty);
 
                 isDayValid = true;
+                day = Int32.Parse(cmbDay.SelectedItem.ToString());
             }
         }
 
@@ -200,15 +230,15 @@ namespace JAHub_Winforms.Verification
         {
             if (!isDayValid)
             {
-                cmbDay.Focus();
+                cmbDay.Select();
             }
             else if (!isMonthValid)
             {
-                cmbMonth.Focus();
+                cmbMonth.Select();
             }
             else if (!isYearValid)
             {
-                cmbYear.Focus();
+                cmbYear.Select();
             }
         }
     }

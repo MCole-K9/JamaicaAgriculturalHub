@@ -67,5 +67,15 @@ namespace JAHub_Winforms
              * 
              */
         }
+
+        private void lblSignUp_Click(object sender, EventArgs e)
+        {
+            FrmSignup signup = new FrmSignup();
+            signup.MdiParent = this.MdiParent;
+            signup.Show();
+            this.Close();
+        }
+
+        
     }
 }

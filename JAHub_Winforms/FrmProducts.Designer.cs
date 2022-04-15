@@ -60,6 +60,7 @@
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(208, 21);
             this.cboCategory.TabIndex = 2;
+            this.cboCategory.Text = "All";
             this.cboCategory.SelectionChangeCommitted += new System.EventHandler(this.cboCategory_SelectionChangeCommitted);
             // 
             // txtSearch

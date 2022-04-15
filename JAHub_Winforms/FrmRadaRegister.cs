@@ -9,13 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHub_Winforms.Verification;
 using JAHubLib;
+using System.Data.SqlTypes;
+using System.Data.SqlClient;
 
 namespace JAHub_Winforms
 {
     public partial class FrmRadaRegister : Form
     {
+        /* TO DO:
+         * [x] Double check the submission function
+         * [x] pass values into Farmer object
+         * [x] activate a "write farmer to record" form
+         * [x] Check to see if the user is a customer, anf if all works, make them 
+         * 
+         */
+
         FrmProfile _profile;
-        RadaRegistrationType _registrationPhase= RadaRegistrationType.AwaitingVerification;
+        RadaRegistrationType _registrationPhase = RadaRegistrationType.AwaitingVerification;
+
+        usrNameBlock nameBlock;
+        usrDateOfBirthBlock dateBlock;
+        usrContactBlock contactBlock;
+        usrTrnBlock trnBlock;
+        usrUploadImageBlock imageBlock;
+        usrIndustryBlock industryBlock;
+        usrHoldingsBlock holdingsBlock;
+        usrOrganizationsBlock organizationsBlock;
 
         public FrmRadaRegister(FrmProfile profile, RadaRegistrationType registrationPhase)
         {
@@ -30,14 +49,30 @@ namespace JAHub_Winforms
             {
                 flwFormEntryControls.Controls.Clear();
 
-                flwFormEntryControls.Controls.Add(new usrNameBlock());
-                flwFormEntryControls.Controls.Add(new usrDateOfBirthBlock());
-                flwFormEntryControls.Controls.Add(new usrContactBlock());
-                flwFormEntryControls.Controls.Add(new usrTrnBlock());
-                flwFormEntryControls.Controls.Add(new usrUploadImageBlock());
-                flwFormEntryControls.Controls.Add(new usrIndustryBlock());
-                flwFormEntryControls.Controls.Add(new usrProductsBlock());
-                flwFormEntryControls.Controls.Add(new usrOrganizationsBlock());
+
+                nameBlock = new usrNameBlock();
+                flwFormEntryControls.Controls.Add(nameBlock);
+
+                dateBlock = new usrDateOfBirthBlock();
+                flwFormEntryControls.Controls.Add(dateBlock);
+
+                contactBlock = new usrContactBlock();
+                flwFormEntryControls.Controls.Add(contactBlock);
+
+                trnBlock = new usrTrnBlock();
+                flwFormEntryControls.Controls.Add(trnBlock);
+
+                imageBlock = new usrUploadImageBlock();
+                flwFormEntryControls.Controls.Add(imageBlock);
+
+                industryBlock = new usrIndustryBlock();
+                flwFormEntryControls.Controls.Add(industryBlock);
+                
+                holdingsBlock = new usrHoldingsBlock();
+                flwFormEntryControls.Controls.Add(holdingsBlock);
+
+                organizationsBlock = new usrOrganizationsBlock();
+                flwFormEntryControls.Controls.Add(organizationsBlock);
 
                 // Information will add to DB, but will not show from user perspective until verification
                 _registrationPhase = RadaRegistrationType.AwaitingVerification;
@@ -46,12 +81,26 @@ namespace JAHub_Winforms
 
         private void btnConnectExistingAccount_Click(object sender, EventArgs e)
         {
+            // Basically: Clear controls, and then create the list of sections necessary to connect an account
+            
             if (flwFormEntryControls.Controls.Count > 3)
             {
                 flwFormEntryControls.Controls.Clear();
-                flwFormEntryControls.Controls.Add(new usrNameBlock());
-                flwFormEntryControls.Controls.Add(new usrDateOfBirthBlock());
-                flwFormEntryControls.Controls.Add(new usrTrnBlock());
+
+                nameBlock = new usrNameBlock();
+                flwFormEntryControls.Controls.Add(nameBlock);
+
+                dateBlock = new usrDateOfBirthBlock();
+                flwFormEntryControls.Controls.Add(dateBlock);
+
+                contactBlock = null;
+
+                trnBlock = new usrTrnBlock();
+                flwFormEntryControls.Controls.Add(trnBlock);
+
+                industryBlock = null;
+                holdingsBlock = null;
+                organizationsBlock = null;
 
                 // User already has an application with RADA, but is not connected to system
                 _registrationPhase = RadaRegistrationType.NotConnected;
@@ -62,11 +111,21 @@ namespace JAHub_Winforms
         {
             Farmer farmer = new Farmer();
             String message;
-            
+
+            farmer.RadaRegistrationPhase = _registrationPhase;
+
+            bool isBlockOkay = true;
+
+            // note: this method doesn't need a sentinel value, because in the event of an error of some kind, 
+            // the method returns early
+
             // Submission format for people who don't have RADA accounts already
-            if(_registrationPhase == RadaRegistrationType.AwaitingVerification)
+            if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
             {
-                using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
+                // all of the using() statements are leftovers from a method that didn't seem to work, i'll remove 
+                // them later, definitely do not care enough to rn
+                
+                if (isBlockOkay)
                 {
                     if (nameBlock.IsBlockValid())
                     {
@@ -76,36 +135,35 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        nameBlock.SetControlFocus();
+                        //ScrollControlIntoView(nameBlock);
+                        //nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-
-                        return;
+                        isBlockOkay = false;
                     }
                 }
-
-                using (var dateBlock = flwFormEntryControls.Controls[1] as usrDateOfBirthBlock)
+                
+                if (isBlockOkay)
                 {
                     if (dateBlock.IsBlockValid())
                     {
-                        farmer.DateOfBirth = new DateTime(Int32.Parse(dateBlock.Year),
-                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day));
+                        farmer.DateOfBirth = new SqlDateTime(new DateTime(dateBlock.Year, dateBlock.Month, dateBlock.Day));
                     }
                     else
                     {
-                        dateBlock.SetControlFocus();
+                        //ScrollControlIntoView(dateBlock);
+                        //dateBlock.SetControlFocus();
 
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
-
                 }
 
-                using (var contactBlock = flwFormEntryControls.Controls[2] as usrContactBlock)
+                if (isBlockOkay)
                 {
                     if (contactBlock.IsBlockValid())
                     {
@@ -114,7 +172,8 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        contactBlock.SetControlFocus();
+                        //ScrollControlIntoView(contactBlock);
+                        //contactBlock.SetControlFocus();
 
                         message = "Errors found in Contact section. Please fix them and " +
                             "resubmit your appliication";
@@ -122,25 +181,26 @@ namespace JAHub_Winforms
                         return;
                     }
                 }
+                
 
-                using (var trnBlock = flwFormEntryControls.Controls[3] as usrTrnBlock)
+                if (trnBlock.IsBlockValid())
                 {
-                    if (trnBlock.IsBlockValid())
-                    {
-                        farmer.TaxRegistrationNumber = trnBlock.TaxRegistrationNumber;
-                    }
-                    else
-                    {
-                        trnBlock.SetControlFocus();
+                    farmer.TaxRegistrationNumber = trnBlock.TaxRegistrationNumber;
+                }
+                else
+                {
+                    //ScrollControlIntoView(trnBlock);
+                    //trnBlock.SetControlFocus();
 
-                        message = "Errors found in Contact section. Please fix them and " +
-                            "resubmit your appliication";
-                        MessageBox.Show(message);
-                        return;
-                    }
+                    message = "Errors found in Contact section. Please fix them and " +
+                        "resubmit your appliication";
+                    MessageBox.Show(message);
+                    return;
                 }
 
-                using (var imageBlock = flwFormEntryControls.Controls[4] as usrUploadImageBlock)
+
+                // I'm ignoring this until i have time to fix wtvs
+                if(isBlockOkay)
                 {
                     if (!(imageBlock.ProfilePicture == null))
                     {
@@ -148,7 +208,7 @@ namespace JAHub_Winforms
                     }
                 }
 
-                 using (var holdingsBlock = flwFormEntryControls.Controls[5] as usrHoldingsBlock)
+                if (isBlockOkay)
                 {
                     if (holdingsBlock.IsBlockValid())
                     {
@@ -162,16 +222,25 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        holdingsBlock.SetControlFocus();
+                        //ScrollControlIntoView(holdingsBlock);
+                        //holdingsBlock.SetControlFocus();
 
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
 
-                using (var industryBlock = flwFormEntryControls.Controls[6] as usrIndustryBlock)
+                if (isBlockOkay)
+                {
+                    if (organizationsBlock.Organizations != null)
+                    {
+                        farmer.Organizations = organizationsBlock.Organizations;
+                    }
+                }
+
+                if (isBlockOkay)
                 {
                     if (industryBlock.IsBlockValid())
                     {
@@ -179,22 +248,21 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        industryBlock.SetControlFocus();
+                        //ScrollControlIntoView(industryBlock);
+                        //industryBlock.SetControlFocus();
                         
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
+                }
+                else
+                {
+                    farmer = null;
                 }
 
-                using (var organizationsBlock = flwFormEntryControls.Controls[7] as usrOrganizationsBlock)
-                {
-                    if (organizationsBlock.Organizations != null)
-                    {
-                        farmer.Organizations = organizationsBlock.Organizations;
-                    }
-                }
+                
             }
             
             // Other submission format for People with already existing RADA Records
@@ -202,7 +270,7 @@ namespace JAHub_Winforms
             {
                 farmer.RadaRegistrationPhase = _registrationPhase;
 
-                using (var nameBlock = flwFormEntryControls.Controls[0] as usrNameBlock)
+                if (isBlockOkay)
                 {
                     if (nameBlock.IsBlockValid())
                     {
@@ -212,35 +280,35 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        nameBlock.SetControlFocus();
+                        //ScrollControlIntoView(nameBlock);
+                        //nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
 
-                using (var dateBlock = flwFormEntryControls.Controls[1] as usrDateOfBirthBlock)
+                if (isBlockOkay)
                 {
                     if (dateBlock.IsBlockValid())
                     {
-                        farmer.DateOfBirth = new DateTime(Int32.Parse(dateBlock.Year),
-                            Int32.Parse(dateBlock.Month), Int32.Parse(dateBlock.Day));
+                        farmer.DateOfBirth = new SqlDateTime(new DateTime(dateBlock.Year, dateBlock.Month, dateBlock.Day));
                     }
                     else
                     {
-                        dateBlock.SetControlFocus();
+                        //ScrollControlIntoView(dateBlock);
+                        //dateBlock.SetControlFocus();
                         
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
-
                 }
                 
-                using (var trnBlock = flwFormEntryControls.Controls[2] as usrTrnBlock)
+                if (isBlockOkay)
                 {
                     if (trnBlock.IsBlockValid())
                     {
@@ -248,46 +316,103 @@ namespace JAHub_Winforms
                     }
                     else
                     {
-                        trnBlock.SetControlFocus();
+                        //ScrollControlIntoView(trnBlock);
+                        //trnBlock.SetControlFocus();
 
                         message = "Errors found in TRN section. Please fix them and " +
                             "resubmit your appliication";
                         MessageBox.Show(message);
-                        return;
+                        isBlockOkay = false;
                     }
                 }
             }
 
-            //if (farmer.WriteRecordToDatabase())
-            //{
-                if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
+            if (isBlockOkay)
+            {
+                // This changes a customer into a farmer, in case the customer wants to register
+                if (Session.UserRole == UserRole.Customer)
                 {
-                    message = "Successfully created record for " + farmer.FirstName +
-                        " " + farmer.LastName + "! \n Please wait to be verified.";
-                    MessageBox.Show(message);
+                    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                    {
+                        connection.Open();
+
+                        // First: Change the UserRole in the User Table
+                        String command = $"UPDATE [User] SET UserRole = 3 WHERE ID = {Session.UserId}";
+
+                        SqlCommand changeCustomerToFarmer = new SqlCommand(command, connection);
+
+                        changeCustomerToFarmer.ExecuteNonQuery();
+
+                        // Then: Create a new record for the Farmer-to-be using their UserID
+                        changeCustomerToFarmer.CommandText = $"INSERT INTO [Farmer] (UserId) VALUES ({Session.UserId})";
+
+                        changeCustomerToFarmer.ExecuteNonQuery();
+
+                        connection.Close();
+                    }
+                }
+
+                if (farmer.WriteRecordToDatabase(Session.UserId))
+                {
+                    if (_registrationPhase == RadaRegistrationType.AwaitingVerification)
+                    {
+                        message = "Successfully created record for " + farmer.FirstName +
+                            " " + farmer.LastName + "! \n Please wait to be verified.";
+                        MessageBox.Show(message);
+                    }
+                    else
+                    {
+                        message = "Successfully entered request to connect account for " + farmer.FirstName +
+                            " " + farmer.LastName + "! \n Please wait to be connected.";
+                        MessageBox.Show(message);
+                    }
                 }
                 else
                 {
-                    message = "Successfully entered request to connect account for " + farmer.FirstName +
-                        " " + farmer.LastName + "! \n Please wait to be connected.";
-                    MessageBox.Show(message);
+                    // tell them there was an error
                 }
 
-                // end the form and return to wherever you were before
-
-            //}
-            //else
-            //{
-                message = "Could not write to database";
-                MessageBox.Show(message);
-
-                // end the form and return to wherever
-            //}
-
+                _profile.OpenChildForm(new FrmDashboard());
+                this.Close();
+            }
+            else
+            {
+                // tell them this won't work
+            }
         }
 
         private void FrmRadaRegister_Load(object sender, EventArgs e)
         {
+            
+            flwFormEntryControls.Controls.Clear();
+
+            nameBlock = new usrNameBlock();
+            flwFormEntryControls.Controls.Add(nameBlock);
+
+            dateBlock = new usrDateOfBirthBlock();
+            flwFormEntryControls.Controls.Add(dateBlock);
+
+            contactBlock = new usrContactBlock();
+            flwFormEntryControls.Controls.Add(contactBlock);
+
+            trnBlock = new usrTrnBlock();
+            flwFormEntryControls.Controls.Add(trnBlock);
+
+            imageBlock = new usrUploadImageBlock();
+            flwFormEntryControls.Controls.Add(imageBlock);
+
+            industryBlock = new usrIndustryBlock();
+            flwFormEntryControls.Controls.Add(industryBlock);
+
+            holdingsBlock = new usrHoldingsBlock();
+            flwFormEntryControls.Controls.Add(holdingsBlock);
+
+            organizationsBlock = new usrOrganizationsBlock();
+            flwFormEntryControls.Controls.Add(organizationsBlock);
+
+            // Information will add to DB, but will not show from user perspective until verification
+            _registrationPhase = RadaRegistrationType.AwaitingVerification;
+
 
         }
     }

@@ -32,7 +32,7 @@ namespace JAHub_Winforms.Verification
 
         public usrAddressBlock(String town, String poBox, String parish)
         {
-            InitializeComponent();
+            InitializeFilledComponent();
             txtAddressTown.Text = town;
             txtAddressPostOffice.Text = poBox;
             txtAddressParish.Text = parish;
@@ -123,15 +123,15 @@ namespace JAHub_Winforms.Verification
             // Bet good money it doesn't work though lol.
             if (!isTownValid)
             {
-                txtAddressTown.Focus();
+                txtAddressTown.Select();
             }
             else if (!isPoBoxValid)
             {
-                txtAddressPostOffice.Focus();
+                txtAddressPostOffice.Select();
             }
             else if (!isParishValid)
             {
-                txtAddressParish.Focus();
+                txtAddressParish.Select();
             }
         }
 

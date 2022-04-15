@@ -36,6 +36,7 @@ namespace JAHub_Winforms
                 errorProviderOldPassword.Clear();
                 //uary database get password from database "select from user where session,id......."
                 SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+                connection.Open();
                 String Sqlquery = "select * from [dbo].[User] where ID = " + Session.UserId + " and Password = '" + txtOldPassword.Text + "'";
                 //read on suldatareader...... check if whats in the text box is same as in the database if ture return t else return false
                 SqlDataAdapter sda = new SqlDataAdapter(Sqlquery, connection);
@@ -48,6 +49,7 @@ namespace JAHub_Winforms
                     errorProviderOldPassword.SetError(txtOldPassword, "Password not Matched.");
                     txtOldPassword.Focus();
                 }
+                connection.Close();
 
                     //errorProviderOldPassword.Clear();
 

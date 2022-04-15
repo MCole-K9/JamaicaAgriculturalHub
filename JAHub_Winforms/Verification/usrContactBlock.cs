@@ -20,7 +20,7 @@ namespace JAHub_Winforms.Verification
 
          
         public String Email => txtEmail.Text;
-        public List<String> PhoneNumbers;
+        public List<String> PhoneNumbers => _phoneNumbers;
 
         #endregion
 
@@ -29,12 +29,12 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
         }
 
-        public usrContactBlock(Farmer farmer)
+        public usrContactBlock(String email, List<String>phoneNumbers)
         {
-            InitializeFilledComponent(farmer);
-            txtEmail.Text = farmer.Email;
+            InitializeFilledComponent();
+            txtEmail.Text = email;
 
-            foreach (string phoneNumber in farmer.PhoneNumbers)
+            foreach (string phoneNumber in phoneNumbers)
             {
                 flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock(phoneNumber));
             }
@@ -122,7 +122,7 @@ namespace JAHub_Winforms.Verification
         {
             if (!isEmailValid)
             {
-                txtEmail.Focus();
+                txtEmail.Select();
             }
             else
             {

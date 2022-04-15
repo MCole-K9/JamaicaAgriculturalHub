@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
 using System.Data.SqlClient;
+using JAHub_Winforms.Verification;
 
 namespace JAHub_Winforms
 {
@@ -83,23 +84,9 @@ namespace JAHub_Winforms
                     lblInformation.Visible = true;
                     btnEdit.Visible = true;
 
-                    flwInformationHolder.Visible = true;
-
-                    // generate all of the controls and then write the values insidd of them
-                    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-                    {
-                        connection.Open();
-
-                        /* so overall i need to pull:
-                         * 
-                         */
-                        
-                        // basically need to use farmerId as the primary key to read a record into memory
-                        // then create the corresponding user controls
+                    
 
 
-                        connection.Close();
-                    }
                     break;
                 default:
                     lblStatusType.Text = "Not Registered";
@@ -112,18 +99,18 @@ namespace JAHub_Winforms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            foreach (Control control in flwInformationHolder.Controls)
-            {
-                control.Enabled = true;
-            }
+            // This opens a form that holds all of the information that they registered with.
+
+            FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
+            mdi.ShowRadaDetails();
         }
 
         private void btnRegisterWithRada_Click(object sender, EventArgs e)
         {
-            // Current problem: OpenChildForm is going to close this form before i can pass the reference to 
-            // FrmProfile, which causes the value for _formContainer to be null
-            
-            _formContainer.OpenChildForm(new FrmRadaRegister(_formContainer, farmerRegistrationPhase));
+            FrmMainWindow mdi = _formContainer.MdiParent as FrmMainWindow;
+
+            mdi.GenerateRadaForm(_formContainer, farmerRegistrationPhase);
+            _formContainer.OpenChildForm(new FrmDashboard());
         }
     }
 }

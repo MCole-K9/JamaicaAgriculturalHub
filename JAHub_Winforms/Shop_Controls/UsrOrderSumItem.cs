@@ -28,7 +28,7 @@ namespace JAHub_Winforms.Shop_Controls
 
         public void PopulateFields()
         {
-            pbImage.Image = Image.FromFile(product.Image);
+            pbImage.ImageLocation = product.Image;
             lblItemName.Text = product.Name;
             lblPrice.Text = $"${product.Price} / lbs";
             lblQty.Text = $"Qty: {quantity}";

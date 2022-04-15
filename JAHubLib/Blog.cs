@@ -57,7 +57,7 @@ namespace JAHubLib
             newBlog.AuthorID = userID;
             newBlog.Title = title;
             newBlog.Description = desc;
-            newBlog.PublishDateString = DateTime.Now.ToShortDateString();
+            newBlog.PublishDateString = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             newBlog.BlogBody = body;
             newBlog.Rating = 0;
             SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
