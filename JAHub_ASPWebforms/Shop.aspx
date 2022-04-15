@@ -14,7 +14,7 @@
     
         <div class="container-fluid" style="display: flex; width: 100%; margin: 20px 0 0 0">
             <div style="flex-grow: 1;">
-                <asp:DropDownList CssClass="category-dropdown" ID="CategoryDropDown" runat="server" Height="32px"></asp:DropDownList>
+                <asp:DropDownList CssClass="category-dropdown" AutoPostBack="true" ID="CategoryDropDown" runat="server" Height="32px" OnSelectedIndexChanged="CategoryDropDown_SelectedIndexChanged"></asp:DropDownList>
             </div>
             <div style="display: flex; justify-content: space-evenly">
 
