@@ -35,32 +35,32 @@
             this.panelBasicInfo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDiaplayGender = new System.Windows.Forms.Label();
-            this.btnUpdateGender = new System.Windows.Forms.Button();
-            this.btnUpdateBirthday = new System.Windows.Forms.Button();
             this.lblDisplaysUserName = new System.Windows.Forms.Label();
-            this.btnUpdateName = new System.Windows.Forms.Button();
             this.panelBasicInfoTitle = new System.Windows.Forms.Panel();
             this.lblBasicInfolabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelContactInfo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblDisplayemail = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelContactInfoTitle = new System.Windows.Forms.Panel();
             this.lblContactInformationLabel = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUpdateGender = new System.Windows.Forms.Button();
+            this.btnUpdateBirthday = new System.Windows.Forms.Button();
+            this.btnUpdateName = new System.Windows.Forms.Button();
             this.panelAccountHeader.SuspendLayout();
             this.panelBasicInfo.SuspendLayout();
             this.panelBasicInfoTitle.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContactInfo.SuspendLayout();
             this.panelContactInfoTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAccountHeader
@@ -70,7 +70,7 @@
             this.panelAccountHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAccountHeader.Location = new System.Drawing.Point(0, 0);
             this.panelAccountHeader.Name = "panelAccountHeader";
-            this.panelAccountHeader.Size = new System.Drawing.Size(889, 98);
+            this.panelAccountHeader.Size = new System.Drawing.Size(906, 98);
             this.panelAccountHeader.TabIndex = 0;
             // 
             // lblInfoAboutYouLabel
@@ -130,42 +130,6 @@
             this.lblDiaplayGender.TabIndex = 26;
             this.lblDiaplayGender.Text = "I\'d rather not say.";
             // 
-            // btnUpdateGender
-            // 
-            this.btnUpdateGender.BackColor = System.Drawing.Color.White;
-            this.btnUpdateGender.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateGender.FlatAppearance.BorderSize = 0;
-            this.btnUpdateGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateGender.ForeColor = System.Drawing.Color.DimGray;
-            this.btnUpdateGender.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
-            this.btnUpdateGender.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateGender.Location = new System.Drawing.Point(0, 228);
-            this.btnUpdateGender.Name = "btnUpdateGender";
-            this.btnUpdateGender.Size = new System.Drawing.Size(662, 66);
-            this.btnUpdateGender.TabIndex = 23;
-            this.btnUpdateGender.Text = "GENDER";
-            this.btnUpdateGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateGender.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdateBirthday
-            // 
-            this.btnUpdateBirthday.BackColor = System.Drawing.Color.White;
-            this.btnUpdateBirthday.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateBirthday.FlatAppearance.BorderSize = 0;
-            this.btnUpdateBirthday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateBirthday.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateBirthday.ForeColor = System.Drawing.Color.DimGray;
-            this.btnUpdateBirthday.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
-            this.btnUpdateBirthday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateBirthday.Location = new System.Drawing.Point(0, 148);
-            this.btnUpdateBirthday.Name = "btnUpdateBirthday";
-            this.btnUpdateBirthday.Size = new System.Drawing.Size(662, 80);
-            this.btnUpdateBirthday.TabIndex = 22;
-            this.btnUpdateBirthday.Text = "BIRTHDAY          ";
-            this.btnUpdateBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateBirthday.UseVisualStyleBackColor = false;
-            // 
             // lblDisplaysUserName
             // 
             this.lblDisplaysUserName.AutoSize = true;
@@ -176,25 +140,6 @@
             this.lblDisplaysUserName.Size = new System.Drawing.Size(89, 17);
             this.lblDisplaysUserName.TabIndex = 20;
             this.lblDisplaysUserName.Text = "Farmer Brown";
-            // 
-            // btnUpdateName
-            // 
-            this.btnUpdateName.BackColor = System.Drawing.Color.White;
-            this.btnUpdateName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateName.FlatAppearance.BorderSize = 0;
-            this.btnUpdateName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateName.ForeColor = System.Drawing.Color.DimGray;
-            this.btnUpdateName.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
-            this.btnUpdateName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateName.Location = new System.Drawing.Point(0, 68);
-            this.btnUpdateName.Name = "btnUpdateName";
-            this.btnUpdateName.Size = new System.Drawing.Size(662, 80);
-            this.btnUpdateName.TabIndex = 18;
-            this.btnUpdateName.Text = "NAME              ";
-            this.btnUpdateName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateName.UseVisualStyleBackColor = false;
-            this.btnUpdateName.Click += new System.EventHandler(this.btnUpdateName_Click);
             // 
             // panelBasicInfoTitle
             // 
@@ -223,18 +168,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 98);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(889, 108);
+            this.panel1.Size = new System.Drawing.Size(906, 108);
             this.panel1.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.concept_of_user_profile;
-            this.pictureBox1.Location = new System.Drawing.Point(542, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -292,22 +227,6 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "TELEPHONE";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(0, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(651, 80);
-            this.button2.TabIndex = 26;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // lblDisplayemail
             // 
             this.lblDisplayemail.AutoSize = true;
@@ -329,22 +248,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "EMAIL";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(0, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(651, 80);
-            this.button1.TabIndex = 24;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // panelContactInfoTitle
             // 
             this.panelContactInfoTitle.Controls.Add(this.lblContactInformationLabel);
@@ -364,13 +267,111 @@
             this.lblContactInformationLabel.TabIndex = 0;
             this.lblContactInformationLabel.Text = "Contact Information";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DimGray;
+            this.button2.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(0, 133);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(651, 80);
+            this.button2.TabIndex = 26;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(0, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(651, 80);
+            this.button1.TabIndex = 24;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.concept_of_user_profile;
+            this.pictureBox1.Location = new System.Drawing.Point(542, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUpdateGender
+            // 
+            this.btnUpdateGender.BackColor = System.Drawing.Color.White;
+            this.btnUpdateGender.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateGender.FlatAppearance.BorderSize = 0;
+            this.btnUpdateGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateGender.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUpdateGender.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
+            this.btnUpdateGender.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateGender.Location = new System.Drawing.Point(0, 228);
+            this.btnUpdateGender.Name = "btnUpdateGender";
+            this.btnUpdateGender.Size = new System.Drawing.Size(662, 66);
+            this.btnUpdateGender.TabIndex = 23;
+            this.btnUpdateGender.Text = "GENDER";
+            this.btnUpdateGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateGender.UseVisualStyleBackColor = false;
+            this.btnUpdateGender.Click += new System.EventHandler(this.btnUpdateGender_Click);
+            // 
+            // btnUpdateBirthday
+            // 
+            this.btnUpdateBirthday.BackColor = System.Drawing.Color.White;
+            this.btnUpdateBirthday.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateBirthday.FlatAppearance.BorderSize = 0;
+            this.btnUpdateBirthday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateBirthday.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateBirthday.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUpdateBirthday.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
+            this.btnUpdateBirthday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateBirthday.Location = new System.Drawing.Point(0, 148);
+            this.btnUpdateBirthday.Name = "btnUpdateBirthday";
+            this.btnUpdateBirthday.Size = new System.Drawing.Size(662, 80);
+            this.btnUpdateBirthday.TabIndex = 22;
+            this.btnUpdateBirthday.Text = "BIRTHDAY          ";
+            this.btnUpdateBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateBirthday.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdateName
+            // 
+            this.btnUpdateName.BackColor = System.Drawing.Color.White;
+            this.btnUpdateName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateName.FlatAppearance.BorderSize = 0;
+            this.btnUpdateName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateName.ForeColor = System.Drawing.Color.DimGray;
+            this.btnUpdateName.Image = global::JAHub_Winforms.Properties.Resources.right_arrows__2_;
+            this.btnUpdateName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateName.Location = new System.Drawing.Point(0, 68);
+            this.btnUpdateName.Name = "btnUpdateName";
+            this.btnUpdateName.Size = new System.Drawing.Size(662, 80);
+            this.btnUpdateName.TabIndex = 18;
+            this.btnUpdateName.Text = "NAME              ";
+            this.btnUpdateName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateName.UseVisualStyleBackColor = false;
+            this.btnUpdateName.Click += new System.EventHandler(this.btnUpdateName_Click);
+            // 
             // FrmAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(906, 753);
+            this.ClientSize = new System.Drawing.Size(923, 753);
             this.Controls.Add(this.panelContactInfo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBasicInfo);
@@ -386,11 +387,11 @@
             this.panelBasicInfoTitle.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContactInfo.ResumeLayout(false);
             this.panelContactInfo.PerformLayout();
             this.panelContactInfoTitle.ResumeLayout(false);
             this.panelContactInfoTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
