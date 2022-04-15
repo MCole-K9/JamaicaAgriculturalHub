@@ -23,45 +23,30 @@ namespace JAHub_Winforms
         {
            
             InitializeComponent();
-            txtexpirydate.Text = grantinfo.ExpiryDate.ToString();
-            lbltitle.Text = grantinfo.Title;
-            rtbgrantdescription.Text = grantinfo.GrantDescription;
-            rtbRequirement.Text = grantinfo.Requirement;    
-
-
+            lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
+            txtcreategranttitle.Text = grantinfo.Title;
+            rtbdescription.Text = grantinfo.GrantDescription;
+            rtbrequirement.Text = grantinfo.Requirement;
+            txtapplicationnumber.Text = grantinfo.ApplicationId;
+           
         }
-
-
-
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Size = new Size(1102, 1200);
 
-
-
-           Grantinfo grantinfo = new Grantinfo();
+            Grantinfo grantinfo = new Grantinfo();
             
-
-           /* //grantinfo.ExpiryDate =;
-            grantinfo.Title = lbltitle.Text;
-            grantinfo.GrantDescription = rtbgrantdescription.Text;*/
-
-
             FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-           // form1.MdiParent = this.MdiParent;
-            // form1.Show(); 
-
-
-
+ 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                rtbRequirement.ImageLocation = ofd.FileName;
+            {//  rtbRequirement.ImageLocation = ofd.FileName;
 
                 //Form2 form2 = new Form2();
                 //form2.Show();

@@ -99,6 +99,12 @@
     <Compile Include="FrmAdminViewModeration.Designer.cs">
       <DependentUpon>FrmAdminViewModeration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDeleteGrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeleteGrant.Designer.cs">
+      <DependentUpon>FrmDeleteGrant.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGrantDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,12 @@
     </Compile>
     <Compile Include="FrmViewAllMyApplication.Designer.cs">
       <DependentUpon>FrmViewAllMyApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grant_Controls\ucGrantDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grant_Controls\ucGrantDelete.Designer.cs">
+      <DependentUpon>ucGrantDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="Grant_Controls\ucGrantDisplay.cs">
       <SubType>UserControl</SubType>
@@ -452,6 +464,9 @@
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeleteGrant.resx">
+      <DependentUpon>FrmDeleteGrant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneralGrantInfo.resx">
       <DependentUpon>FrmGeneralGrantInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -524,6 +539,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmViewAllMyApplication.resx">
       <DependentUpon>FrmViewAllMyApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grant_Controls\ucGrantDelete.resx">
+      <DependentUpon>ucGrantDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grant_Controls\ucGrantDisplay.resx">
       <DependentUpon>ucGrantDisplay.cs</DependentUpon>
