@@ -111,5 +111,29 @@ namespace JAHub_ASPWebforms
             }
       
         }
+
+        protected void btnProductSearch_ServerClick(object sender, EventArgs e)
+        {
+            if (txtSearch.Value != "")
+            {
+                products = (List<Product>)Session["Products"];
+                List<Product> searchFilteredProducts = new List<Product>();
+
+                searchFilteredProducts = products.Where(q => q.Name.ToUpper().Contains(txtSearch.Value.ToUpper()) || q.Name.ToUpper().StartsWith(txtSearch.Value.ToUpper())).ToList();
+
+                if (searchFilteredProducts.Count == 0)
+                {
+                   // No results found
+                }
+                else
+                {
+                    LoadProducts(searchFilteredProducts);
+                }
+            }
+            else
+            {
+               // Nothing was entered
+            }
+        }
     }
 }
