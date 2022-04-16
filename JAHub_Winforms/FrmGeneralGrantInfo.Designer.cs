@@ -33,6 +33,9 @@
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.btntest = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.btnDeleteGrant = new FontAwesome.Sharp.IconButton();
+            this.btnViewall = new FontAwesome.Sharp.IconButton();
+            this.btncreatetesting = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnMyBlogs = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
@@ -64,7 +67,7 @@
             this.label1.Size = new System.Drawing.Size(229, 31);
             this.label1.TabIndex = 61;
             this.label1.Text = "Available Grants";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // pnlContainer
             // 
@@ -99,7 +102,79 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(188, 822);
             this.pnlNav.TabIndex = 63;
-            this.pnlNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNav_Paint);
+           
+            // 
+            // btnDeleteGrant
+            // 
+            this.btnDeleteGrant.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnDeleteGrant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteGrant.FlatAppearance.BorderSize = 0;
+            this.btnDeleteGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnDeleteGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDeleteGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeleteGrant.IconSize = 30;
+            this.btnDeleteGrant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteGrant.Location = new System.Drawing.Point(0, 441);
+            this.btnDeleteGrant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteGrant.Name = "btnDeleteGrant";
+            this.btnDeleteGrant.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
+            this.btnDeleteGrant.Size = new System.Drawing.Size(188, 58);
+            this.btnDeleteGrant.TabIndex = 7;
+            this.btnDeleteGrant.Text = "Delete Grant";
+            this.btnDeleteGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteGrant.UseVisualStyleBackColor = false;
+            this.btnDeleteGrant.Click += new System.EventHandler(this.btnDeleteGrant_Click);
+            // 
+            // btnViewall
+            // 
+            this.btnViewall.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnViewall.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewall.FlatAppearance.BorderSize = 0;
+            this.btnViewall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewall.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnViewall.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnViewall.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnViewall.IconSize = 30;
+            this.btnViewall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewall.Location = new System.Drawing.Point(0, 383);
+            this.btnViewall.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewall.Name = "btnViewall";
+            this.btnViewall.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
+            this.btnViewall.Size = new System.Drawing.Size(188, 58);
+            this.btnViewall.TabIndex = 6;
+            this.btnViewall.Text = "View All";
+            this.btnViewall.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewall.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewall.UseVisualStyleBackColor = false;
+            this.btnViewall.Click += new System.EventHandler(this.btnViewall_Click);
+            // 
+            // btncreatetesting
+            // 
+            this.btncreatetesting.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btncreatetesting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncreatetesting.FlatAppearance.BorderSize = 0;
+            this.btncreatetesting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncreatetesting.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncreatetesting.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btncreatetesting.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncreatetesting.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btncreatetesting.IconSize = 30;
+            this.btncreatetesting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncreatetesting.Location = new System.Drawing.Point(0, 325);
+            this.btncreatetesting.Margin = new System.Windows.Forms.Padding(4);
+            this.btncreatetesting.Name = "btncreatetesting";
+            this.btncreatetesting.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
+            this.btncreatetesting.Size = new System.Drawing.Size(188, 58);
+            this.btncreatetesting.TabIndex = 5;
+            this.btncreatetesting.Text = "Create Grants";
+            this.btncreatetesting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncreatetesting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btncreatetesting.UseVisualStyleBackColor = false;
+            this.btncreatetesting.Click += new System.EventHandler(this.btncreatetesting_Click);
             // 
             // pnlLogo
             // 
@@ -133,7 +208,7 @@
             this.btnMyBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMyBlogs.UseVisualStyleBackColor = false;
-            this.btnMyBlogs.Click += new System.EventHandler(this.btnMyBlogs_Click);
+           
             // 
             // btnCreateBlog
             // 
@@ -157,7 +232,7 @@
             this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateBlog.UseVisualStyleBackColor = false;
-            this.btnCreateBlog.Click += new System.EventHandler(this.btnCreateBlog_Click);
+           
             // 
             // btnBlogs
             // 

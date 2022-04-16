@@ -50,12 +50,28 @@ namespace JAHubLib
             this.FileName = grantinfo.FileName;
             this.ExpiryDate = grantinfo.ExpiryDate;
             this.ApplicationId = grantinfo.ApplicationId;
+            this.GrantOfficerId = grantinfo.GrantOfficerId;
+            this.ID=grantinfo.ID;   
+
             this.GrantOfficerId = grantinfo.GrantOfficerId; 
             
         }
 
 
+        public int DeleteGrant(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                Grantinfo grantinfo = new Grantinfo();
+                connection.Open();
+                string query = $" Delete FROM [Grant] WHERE ID = {id}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
         
+
+
+            }
 
 
 

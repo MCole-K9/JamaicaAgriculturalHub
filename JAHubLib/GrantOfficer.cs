@@ -20,6 +20,25 @@ namespace JAHubLib
             string query = $"INSERT INTO [Grant] ( Description,Requirement,Deadline,Application,GrantOfficer)" +
                     $"Values ( '{grantinfo.GrantDescription}', {grantinfo.Requirement}, {grantinfo.ExpiryDate}, '',{GrantOfficerId})";
 
+       
+
+       /* public bool isLoggedin = true;
+        public void FetchGrantOfficerID()
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = isLoggedin ? $"SELECT * FROM [User] WHERE ID = {Session.UserId}" : $"SELECT * FROM User WHERE ID = {this.GrantOfficerId}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataReader sqlData = cmd.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    this.GrantOfficerId = (int)sqlData["ID"];
+
 
             SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
             connection.Open();
@@ -28,8 +47,33 @@ namespace JAHubLib
 
             return i;
 
+            }
+
+        }*/
+
+            public int CreateGrant(Grantinfo grantinfo)
+             {
+                
+                string query = $"INSERT INTO [Grant] ( Description,Requirements,Deadline,GrantOfficer)" +
+                        $"Values ( '{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
+
+                Utilities.executeInputQuery(query);
+
+
+
+                return 1;
+
+             }
         }
     }
 
 
+            }
+            return grantinfo.GrantOfficerId;
+        }
+
+
+
+    }
+}
 }

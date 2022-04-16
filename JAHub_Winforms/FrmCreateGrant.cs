@@ -21,6 +21,11 @@ namespace JAHub_Winforms
 
         }
 
+        private void FrmCreateGrant_Load(object sender, EventArgs e)
+        {
+            Size = new Size(1102, 1200);
+        }
+
         private void btnCreateGrant_Click(object sender, EventArgs e)
         {
             Grantinfo grantinfo = new Grantinfo();
@@ -41,6 +46,23 @@ namespace JAHub_Winforms
 
      
        
+            
+            GrantOfficer grantOfficer = new GrantOfficer();
+            Grantinfo grantinfo = new Grantinfo();
+            grantinfo.GrantDescription = rtbdescription.Text;
+            grantinfo.Requirement = rtbrequirement.Text;
+            grantinfo.ExpiryDate = dtpExpirydate.Value;
+            grantinfo.Title = txtcreategranttitle.Text;
+            grantinfo.ApplicationId = txtapplicationnumber.Text;
+            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);           
+            grantOfficer.CreateGrant(grantinfo);
+
+            rtbdescription.Clear();
+            rtbrequirement.Clear(); 
+            dtpExpirydate.ResetText();
+            txtcreategranttitle.ResetText();
+            txtapplicationnumber.ResetText();
+
 
 
 
@@ -50,3 +72,6 @@ namespace JAHub_Winforms
 
             }
         }
+      
+    }
+ }

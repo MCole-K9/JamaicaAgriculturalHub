@@ -155,6 +155,13 @@
             // 
             // btntest
             // 
+            this.btnViewAllMyGrants.Location = new System.Drawing.Point(960, 32);
+            this.btnViewAllMyGrants.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewAllMyGrants.Name = "btnViewAllMyGrants";
+            this.btnViewAllMyGrants.Size = new System.Drawing.Size(100, 28);
+            this.btnViewAllMyGrants.TabIndex = 64;
+            this.btnViewAllMyGrants.Text = "View";
+             
             this.btntest.Location = new System.Drawing.Point(960, 32);
             this.btntest.Margin = new System.Windows.Forms.Padding(4);
             this.btntest.Name = "btntest";
