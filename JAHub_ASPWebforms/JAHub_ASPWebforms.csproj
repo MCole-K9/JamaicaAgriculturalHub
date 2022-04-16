@@ -193,6 +193,7 @@
     <Content Include="Resources\cart-arrow-down-solid.svg" />
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
+    <Content Include="Shop_Controls\UsrReview.ascx" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -410,6 +411,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrProduct.ascx.designer.cs">
       <DependentUpon>UsrProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrReview.ascx.cs">
+      <DependentUpon>UsrReview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrReview.ascx.designer.cs">
+      <DependentUpon>UsrReview.ascx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
