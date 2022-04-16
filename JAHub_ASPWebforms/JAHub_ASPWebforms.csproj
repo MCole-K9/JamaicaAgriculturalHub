@@ -230,8 +230,10 @@
     <Content Include="Verification\usrAddressBlock.ascx" />
     <Content Include="Verification\usrContactBlock.ascx" />
     <Content Include="Verification\usrDateOfBirthBlock.ascx" />
+    <Content Include="Verification\usrHoldingsBlock.ascx" />
     <Content Include="Verification\usrNameBlock.ascx" />
     <Content Include="Verification\usrPhoneNumberBlock.ascx" />
+    <Content Include="Verification\usrProductBlock.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -466,6 +468,13 @@
     <Compile Include="Verification\usrDateOfBirthBlock.ascx.designer.cs">
       <DependentUpon>usrDateOfBirthBlock.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Verification\usrHoldingsBlock.ascx.cs">
+      <DependentUpon>usrHoldingsBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrHoldingsBlock.ascx.designer.cs">
+      <DependentUpon>usrHoldingsBlock.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Verification\usrNameBlock.ascx.cs">
       <DependentUpon>usrNameBlock.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -479,6 +488,13 @@
     </Compile>
     <Compile Include="Verification\usrPhoneNumberBlock.ascx.designer.cs">
       <DependentUpon>usrPhoneNumberBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Verification\usrProductBlock.ascx.cs">
+      <DependentUpon>usrProductBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrProductBlock.ascx.designer.cs">
+      <DependentUpon>usrProductBlock.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
