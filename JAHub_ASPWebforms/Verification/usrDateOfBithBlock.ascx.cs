@@ -7,18 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace JAHub_ASPWebforms.Verification
 {
-    public partial class usrPhoneNumberBlock : System.Web.UI.UserControl
+    public partial class usrDateOfBithBlock : System.Web.UI.UserControl
     {
-        bool isPhoneNumberValid;
-        public String PhoneNumber => txtPhoneNumber.Text;
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public usrPhoneNumberBlock()
-        {
-            // so i can make constructors for this, cool
         }
     }
 }

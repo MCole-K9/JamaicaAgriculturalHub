@@ -228,6 +228,7 @@
     <Content Include="Site.Master" />
     <Content Include="Verification\usrAddressBlock.ascx" />
     <Content Include="Verification\usrContactBlock.ascx" />
+    <Content Include="Verification\usrDateOfBithBlock.ascx" />
     <Content Include="Verification\usrNameBlock.ascx" />
     <Content Include="Verification\usrPhoneNumberBlock.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -449,6 +450,13 @@
     </Compile>
     <Compile Include="Verification\usrContactBlock.ascx.designer.cs">
       <DependentUpon>usrContactBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Verification\usrDateOfBithBlock.ascx.cs">
+      <DependentUpon>usrDateOfBithBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrDateOfBithBlock.ascx.designer.cs">
+      <DependentUpon>usrDateOfBithBlock.ascx</DependentUpon>
     </Compile>
     <Compile Include="Verification\usrNameBlock.ascx.cs">
       <DependentUpon>usrNameBlock.ascx</DependentUpon>
