@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrHoldingsBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrHoldingsBlock" %>
+<%@ Reference Control="~/Verification/usrLandBlock.ascx" %>
+<%@ Reference Control="~/Verification/usrProductBlock.ascx" %>
 
 <div>
     <div>

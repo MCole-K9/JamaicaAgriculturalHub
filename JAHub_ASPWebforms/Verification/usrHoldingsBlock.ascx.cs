@@ -26,6 +26,8 @@ namespace JAHub_ASPWebforms.Verification
             // Create a product block in the product block placeholder
             phProducts.Controls.Add((usrProductBlock)LoadControl("~/Verification/usrProductBlock.ascx.cs"));
 
+            phLandBlock.Controls.Add((usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx.cs"));
+
             // Create a Land block in the landblock holder
             // Empty constructor, nothing worth caring about
         }
@@ -46,76 +48,76 @@ namespace JAHub_ASPWebforms.Verification
         {
             bool isListValid = true;
 
-            // foreach (usrProductsBlock product in flwProductsBlock.Controls)
+            foreach (usrProductBlock product in phProducts.Controls)
             {
-                //if (product.IsBlockValid())
+                if (product.IsBlockValid())
                 {
-                    //_productsList.Add(product.Product);
+                    _productsList.Add(product.Product);
                 }
-                //else
+                else
                 {
-                    //isListValid = false;
-                   // _productsList.Clear();
-                   // break;
-                }
-            }
-
-            //foreach (usrLandBlock land in flwLandBlockHolder.Controls)
-            {
-                //if (land.IsBlockValid())
-                {
-                    //_landInformationList.Add(land.LandInformation);
-                }
-                //else
-                {
-                    //isListValid = false;
-                    //_landInformationList.Clear();
+                    isListValid = false;
+                    _productsList.Clear();
+                    break;
                 }
             }
 
-            //if (isListValid)
+            foreach (usrLandBlock land in phLandBlock.Controls)
             {
-                //return true;
+                if (land.IsBlockValid())
+                {
+                    _landInformationList.Add(land.LandInformation);
+                }
+                else
+                {
+                    isListValid = false;
+                    _landInformationList.Clear();
+                }
             }
-            //else
+
+            if (isListValid)
             {
-                //return false;
+                return true;
+            }
+            else
+            {
+                return false;
             }
             return false;
         }
 
         public void SetControlFocus()
         {
-            //foreach (usrLandBlock land in flwLandBlockHolder.Controls)
+            foreach (usrLandBlock land in phLandBlock.Controls)
             {
-                //if (!land.IsBlockValid())
+                if (!land.IsBlockValid())
                 {
                     //land.SetControlFocus();
-                    //return;
+                    return;
                 }
             }
 
-            //foreach (usrProductsBlock product in flwProductsBlock.Controls)
+            foreach (usrProductBlock product in phProducts.Controls)
             {
-                //if (!product.IsBlockValid())
+                if (!product.IsBlockValid())
                 {
                     //product.SetControlFocus();
-                    //return;
+                    return;
                 }
             }
         }
 
         protected void btnAddLandEntry_Click(object sender, EventArgs e)
         {
-            //flwLandBlockHolder.Controls.Add(new usrLandBlock());
+            phLandBlock.Controls.Add((usrLandBlock)LoadControl("~/Verification/usrLandBlock"));
             btnRemoveLandEntry.Visible = true;
         }
 
         protected void btnRemoveLandEntry_Click(object sender, EventArgs e)
         {
-            //flwLandBlockHolder.Controls.RemoveAt(flwLandBlockHolder.Controls.Count - 1);
+            phLandBlock.Controls.RemoveAt(phLandBlock.Controls.Count - 1);
 
-            //if (flwLandBlockHolder.Controls.Count == 1)
+            if (phLandBlock.Controls.Count == 1)
             {
                 btnRemoveLandEntry.Visible = false;
             }
