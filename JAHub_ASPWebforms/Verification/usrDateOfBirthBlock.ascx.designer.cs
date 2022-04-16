@@ -11,7 +11,7 @@ namespace JAHub_ASPWebforms.Verification
 {
 
 
-    public partial class usrDateOfBithBlock
+    public partial class usrDateOfBirthBlock
     {
 
         /// <summary>

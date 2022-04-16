@@ -25,6 +25,25 @@ namespace JAHub_ASPWebforms.Verification
         {
             
         }
+
+        public usrAddressBlock()
+        {
+
+        }
+
+        public usrAddressBlock(String town, String poBox, String parish)
+        {
+            txtAddressTown.Text = town;
+            txtAddressPostOffice.Text = poBox;
+            txtAddressParish.Text = parish;
+
+            // This is necessary to prevent an oversight that affects submission if you use a parameterised
+            // construction
+            isParishValid = true;
+            isPoBoxValid = true;
+            isTownValid = true;
+        }
+
         public bool IsBlockValid()
         {
             if (isTownValid)

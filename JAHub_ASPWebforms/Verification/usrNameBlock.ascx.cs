@@ -24,10 +24,26 @@ namespace JAHub_ASPWebforms.Verification
         public String LastName => txtLastName.Text;
 
 
+        public usrNameBlock()
+        {
+
+        }
+
+        public usrNameBlock(String firstName, String middleName, String lastName)
+        {
+            txtFirstName.Text = firstName;
+            txtMiddleName.Text = middleName;
+            txtLastName.Text = lastName;
+
+            isFirstNameValid = true;
+            isMiddleNameValid = true;
+            isLastNameValid = true;
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            // This needs to distinguish between when parameters are given and when it's not
-            // Job for a constructor, maybe.
+            
         }
 
         // copying the signature of these in case i need them

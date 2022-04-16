@@ -18,7 +18,14 @@ namespace JAHub_ASPWebforms.Verification
 
         public usrPhoneNumberBlock()
         {
-            // so i can make constructors for this, cool
+            
+        }
+
+        public usrPhoneNumberBlock(string PhoneNumber)
+        {
+            txtPhoneNumber.Text = PhoneNumber;
+
+            isPhoneNumberValid = true;
         }
     }
 }
