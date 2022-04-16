@@ -84,31 +84,37 @@ namespace JAHub_Winforms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            Blog newBlog = new Blog();
-            try
+            if(txtTitle.Text != "" && rtbDescription.Text != "" && rtbBody.Text != "")
             {
-                newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
-                MessageBox.Show("Blog Post Created!");
-                if (Utils.IsFormOpen("FrmBlog"))
+                Blog newBlog = new Blog();
+                try
                 {
-                    foreach (var form in this.MdiParent.MdiChildren)
+                    newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
+                    MessageBox.Show("Blog Post Created!");
+                    if (Utils.IsFormOpen("FrmBlog"))
                     {
-                        if (form.Text == "FrmBlog")
+                        foreach (var form in this.MdiParent.MdiChildren)
                         {
-                            form.Close();
+                            if (form.Text == "FrmBlog")
+                            {
+                                form.Close();
+                            }
                         }
+                        FrmBlog frmBlog = new FrmBlog();
+                        frmBlog.MdiParent = this.MdiParent;
+                        frmBlog.Show();
+                        this.Close();
                     }
-                    FrmBlog frmBlog = new FrmBlog();
-                    frmBlog.MdiParent = this.MdiParent;
-                    frmBlog.Show();
-                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please Fill Out All Feilds","Empty Feilds",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-            
         }
     }
 }
