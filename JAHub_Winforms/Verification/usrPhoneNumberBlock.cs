@@ -11,9 +11,6 @@ using JAHubLib;
 
 namespace JAHub_Winforms.Verification
 {
-    /* TO DO
-     * [x] actually populate the list of phone numbers using the farmer object
-     */
     public partial class usrPhoneNumberBlock : UserControl
     {
         bool isPhoneNumberValid;
