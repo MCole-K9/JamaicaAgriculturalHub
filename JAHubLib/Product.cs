@@ -85,6 +85,49 @@ namespace JAHubLib
            
         }
 
+        public List<float> CalculateReviewPercentage()
+        {
+            try
+            {
+                int totalReviews = this.Reviews.Count;
+
+                List<Review> Rating5Reviews = this.Reviews.Where(q => q.Rating == 5).ToList();
+                List<Review> Rating4Reviews = this.Reviews.Where(q => q.Rating == 4).ToList();
+                List<Review> Rating3Reviews = this.Reviews.Where(q => q.Rating == 3).ToList();
+                List<Review> Rating2Reviews = this.Reviews.Where(q => q.Rating == 2).ToList();
+                List<Review> Rating1Reviews = this.Reviews.Where(q => q.Rating == 1).ToList();
+
+
+                float ratingCount5 = Rating5Reviews.Count();
+                float ratingCount4 = Rating4Reviews.Count();
+                float ratingCount3 = Rating3Reviews.Count();
+                float ratingCount2 = Rating2Reviews.Count();
+                float ratingCount1 = Rating1Reviews.Count();
+
+
+                List<float> rating = new List<float>();
+                float star5Percentage = (ratingCount5 / totalReviews) * 100;
+                float star4Percentage = (ratingCount4 / totalReviews) * 100;
+                float star3Percentage = (ratingCount3 / totalReviews) * 100;
+                float star2Percentage = (ratingCount2 / totalReviews) * 100;
+                float star1Percentage = (ratingCount1 / totalReviews) * 100;
+
+                rating.Add(star5Percentage);
+                rating.Add(star4Percentage);
+                rating.Add(star3Percentage);
+                rating.Add(star2Percentage);
+                rating.Add(star1Percentage);
+
+                return rating;
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
 
