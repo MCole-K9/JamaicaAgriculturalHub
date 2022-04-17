@@ -347,7 +347,7 @@
             // 
             // FrmCreateGrant
             // 
-           this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1182, 1055);
@@ -367,11 +367,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmCreateGrant";
-          //  this.Text = "FrmCreateGrantPage";
+            this.Load += new System.EventHandler(this.FrmCreateGrant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).EndInit();
-            this.pnlNav.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
           this.ResumeLayout(false);
           this.PerformLayout();
 

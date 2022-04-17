@@ -47,19 +47,8 @@
             this.lblexpirydategrantdetails = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
             this.pnlNav.SuspendLayout();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbltitle = new System.Windows.Forms.Label();
-            this.rtbRequirement = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtexpirydate = new System.Windows.Forms.TextBox();
-            this.lblgrantdescription = new System.Windows.Forms.Label();
-            this.lblexpirtydate = new System.Windows.Forms.Label();
-            this.rtbgrantdescription = new System.Windows.Forms.TextBox();
-            this.lblReqquirement = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rtbRequirement)).BeginInit();
+            
+            ((System.ComponentModel.ISupportInitialize)(this.rtbrequirement)).BeginInit();
             this.SuspendLayout();
             // 
             // txtapplicationnumber
@@ -92,8 +81,7 @@
             this.lblrequirements.Text = "Requirements";
             // 
             // rtbrequirement
-            // lbltitle
-            // 
+            //
             this.rtbrequirement.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbrequirement.Location = new System.Drawing.Point(243, 414);
             this.rtbrequirement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -101,12 +89,15 @@
             this.rtbrequirement.Size = new System.Drawing.Size(706, 151);
             this.rtbrequirement.TabIndex = 68;
             this.rtbrequirement.Text = "";
+            //
+            // lbltitle
+            // 
             this.lbltitle.AutoSize = true;
             this.lbltitle.Location = new System.Drawing.Point(302, 24);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(44, 16);
+            this.lbltitle.Size = new System.Drawing.Size(33, 16);
             this.lbltitle.TabIndex = 43;
-            this.lbltitle.Text = "label1";
+            this.lbltitle.Text = "Title";
             // 
             // lbldecription
             // 
@@ -286,15 +277,6 @@
             this.lblexpirydategrantdetails.TabIndex = 76;
             this.lblexpirydategrantdetails.Text = "deadline";
             // 
-            // lblReqquirement
-            // 
-            this.lblReqquirement.AutoSize = true;
-            this.lblReqquirement.Location = new System.Drawing.Point(78, 349);
-            this.lblReqquirement.Name = "lblReqquirement";
-            this.lblReqquirement.Size = new System.Drawing.Size(76, 16);
-            this.lblReqquirement.TabIndex = 44;
-            this.lblReqquirement.Text = "Requiremts";
-            // 
             // FrmGrantDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,5 +320,7 @@
         private FontAwesome.Sharp.IconButton btnViewall;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label lblexpirydategrantdetails;
+        private System.Windows.Forms.Label lbltitle;
+
     }
 }

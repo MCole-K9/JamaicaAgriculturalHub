@@ -10,11 +10,12 @@ using System.Windows.Forms;
 using JAHubLib;
 using System.Data.SqlClient;
 
+
 namespace JAHub_Winforms
 {
     public partial class FrmGeneralGrantInfo : Form
     {
-        
+
         public FrmGeneralGrantInfo()
         {
             InitializeComponent();
@@ -51,6 +52,7 @@ namespace JAHub_Winforms
                     }
                 }
             }
+
         }
 
         private void btnBlogs_Click(object sender, EventArgs e)
@@ -73,13 +75,12 @@ namespace JAHub_Winforms
         {
 
         }
-      
+
 
         private void btncreatetesting_Click(object sender, EventArgs e)
         {
             FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
             frmCreateGrant.Show();
-        }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -89,8 +90,13 @@ namespace JAHub_Winforms
 
         private void btnDeleteGrant_Click(object sender, EventArgs e)
         {
-            FrmDeleteGrant frmDeleteGrant = new FrmDeleteGrant();
-            frmDeleteGrant.Show();  
+
+        }
+
+        private void btnViewall_Click(object sender, EventArgs e)
+        {
+            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+            frmViewAllMyApplication.Show();
         }
     }
 }
