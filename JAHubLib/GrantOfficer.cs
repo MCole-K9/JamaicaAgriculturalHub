@@ -8,17 +8,23 @@ using JAHubLib;
 
 namespace JAHubLib
 {
+
     public class GrantOfficer : User
     {
-        string AgencyName { get; set; }
-        int GrantOfficerId { get; set; }
 
-        public int CreateGrant(Grantinfo grantinfo)
+        private string agencyName;
+        private int grantofficerId;
+       public string AgencyName
         {
-
-            //  grantinfo.ID = ;
-            string query = $"INSERT INTO [Grant] ( Description,Requirement,Deadline,Application,GrantOfficer)" +
-                    $"Values ( '{grantinfo.GrantDescription}', {grantinfo.Requirement}, {grantinfo.ExpiryDate}, '',{GrantOfficerId})";
+            get { return agencyName; }  
+            set { agencyName = value; } 
+        }
+        public int GrantOfficerId
+        {
+            get { return grantofficerId; }  
+            set { grantofficerId = value; } 
+        }
+       
 
        
 
@@ -45,7 +51,17 @@ namespace JAHubLib
             SqlCommand cmd = new SqlCommand(query, connection);
             int i = cmd.ExecuteNonQuery();
 
-            return i;
+                SqlDataReader sqlData = cmd.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    this.GrantOfficerId = (int)sqlData["ID"];
+
+
+                }
+                sqlData.Close();
+
+            }
 
             }
 
@@ -68,12 +84,29 @@ namespace JAHubLib
     }
 
 
+         public static int FetchGrantOfficerID(int userid)
+        {
+            int grantOId = 0;
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query =  $"SELECT ID FROM [GrantOfficer] WHERE UserID = {userid}" ;
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                SqlDataReader sqlData = cmd.ExecuteReader();
+
+                while (sqlData.Read())
+                {
+                    grantOId= (int)sqlData["ID"];
+
+
+                }
+                sqlData.Close();
+
             }
-            return grantinfo.GrantOfficerId;
+            return grantOId;
         }
-
-
-
     }
-}
 }

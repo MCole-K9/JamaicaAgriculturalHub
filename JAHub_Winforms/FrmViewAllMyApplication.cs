@@ -32,6 +32,8 @@ namespace JAHub_Winforms
             //{
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
+                Grantinfo grantinfo = new Grantinfo();
+                grantinfo.ViewAllMyGrants();
                 connection.Open();
 
                 String query = $"SELECT * FROM [Grant] WHERE GrantOfficer = {userId}";
@@ -79,7 +81,7 @@ namespace JAHub_Winforms
             var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 while (sqlData.Read())
                 {
-                    Grantinfo grantinfo = new Grantinfo();
+                    
                     grantinfo.ID = (int)sqlData["ID"];
                     grantinfo.GrantDescription = sqlData["Description"].ToString();
                     grantinfo.Requirement = sqlData["Requirements"].ToString();
@@ -88,9 +90,8 @@ namespace JAHub_Winforms
                     grantinfo.GrantOfficerId = (int)sqlData["GrantOfficer"];
                     grantinfo.Title = sqlData["Title"].ToString();
 
-
                     Grant_Controls.ucGrantDisplay ucGrantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
-                    pnlContainer.Controls.Add(ucGrantDisplay);
+                    pnlContainerAdminViewGrants.Controls.Add(ucGrantDisplay);
                     ucGrantDisplay.Dock = DockStyle.Top;
 
             if (result == DialogResult.Yes)
@@ -100,14 +101,11 @@ namespace JAHub_Winforms
                 grantinfo.DeleteGrant(J);
 
 
-            }
+
                 }
                 sqlData.Close();
             }
         }
-
-      
-    }
-}
-        } 
+        
+        }
     }

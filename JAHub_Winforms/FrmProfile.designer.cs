@@ -44,6 +44,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelHomeContainer = new System.Windows.Forms.Panel();
+            this.btnRadaStatus = new System.Windows.Forms.Button();
+            this.btnCreateGrnat = new System.Windows.Forms.Button();
+            this.btnEditGrant = new System.Windows.Forms.Button();
+            this.btnViewGrants = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,6 +56,9 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panelMenu.Controls.Add(this.btnViewGrants);
+            this.panelMenu.Controls.Add(this.btnEditGrant);
+            this.panelMenu.Controls.Add(this.btnCreateGrnat);
             this.panelMenu.Controls.Add(this.btnRadaStatus);
             this.panelMenu.Controls.Add(this.btnGrant);
             this.panelMenu.Controls.Add(this.btnManageProducts);
@@ -133,7 +140,7 @@
             this.btnLogout.ForeColor = System.Drawing.Color.Transparent;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.Location = new System.Drawing.Point(0, 437);
+            this.btnLogout.Location = new System.Drawing.Point(0, 607);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(291, 48);
@@ -291,6 +298,81 @@
             this.panelHomeContainer.Size = new System.Drawing.Size(1277, 738);
             this.panelHomeContainer.TabIndex = 1;
             // 
+            // btnRadaStatus
+            // 
+            this.btnRadaStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRadaStatus.FlatAppearance.BorderSize = 0;
+            this.btnRadaStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRadaStatus.ForeColor = System.Drawing.Color.White;
+            this.btnRadaStatus.Image = global::JAHub_Winforms.Properties.Resources.user_0_;
+            this.btnRadaStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRadaStatus.Location = new System.Drawing.Point(4, 569);
+            this.btnRadaStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRadaStatus.Name = "btnRadaStatus";
+            this.btnRadaStatus.Size = new System.Drawing.Size(291, 48);
+            this.btnRadaStatus.TabIndex = 8;
+            this.btnRadaStatus.Text = "Rada Status";
+            this.btnRadaStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRadaStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRadaStatus.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateGrnat
+            // 
+            this.btnCreateGrnat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCreateGrnat.FlatAppearance.BorderSize = 0;
+            this.btnCreateGrnat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateGrnat.ForeColor = System.Drawing.Color.White;
+            this.btnCreateGrnat.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateGrnat.Image")));
+            this.btnCreateGrnat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateGrnat.Location = new System.Drawing.Point(0, 399);
+            this.btnCreateGrnat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateGrnat.Name = "btnCreateGrnat";
+            this.btnCreateGrnat.Size = new System.Drawing.Size(291, 48);
+            this.btnCreateGrnat.TabIndex = 9;
+            this.btnCreateGrnat.Text = "Create Grant";
+            this.btnCreateGrnat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreateGrnat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreateGrnat.UseVisualStyleBackColor = true;
+            this.btnCreateGrnat.Click += new System.EventHandler(this.btnCreateGrnat_Click);
+            // 
+            // btnEditGrant
+            // 
+            this.btnEditGrant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditGrant.FlatAppearance.BorderSize = 0;
+            this.btnEditGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditGrant.ForeColor = System.Drawing.Color.White;
+            this.btnEditGrant.Image = ((System.Drawing.Image)(resources.GetObject("btnEditGrant.Image")));
+            this.btnEditGrant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditGrant.Location = new System.Drawing.Point(0, 447);
+            this.btnEditGrant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditGrant.Name = "btnEditGrant";
+            this.btnEditGrant.Size = new System.Drawing.Size(291, 48);
+            this.btnEditGrant.TabIndex = 10;
+            this.btnEditGrant.Text = "Edit Grant";
+            this.btnEditGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditGrant.UseVisualStyleBackColor = true;
+            this.btnEditGrant.Click += new System.EventHandler(this.btnEditGrant_Click);
+            // 
+            // btnViewGrants
+            // 
+            this.btnViewGrants.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewGrants.FlatAppearance.BorderSize = 0;
+            this.btnViewGrants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewGrants.ForeColor = System.Drawing.Color.White;
+            this.btnViewGrants.Image = ((System.Drawing.Image)(resources.GetObject("btnViewGrants.Image")));
+            this.btnViewGrants.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewGrants.Location = new System.Drawing.Point(0, 495);
+            this.btnViewGrants.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewGrants.Name = "btnViewGrants";
+            this.btnViewGrants.Size = new System.Drawing.Size(291, 48);
+            this.btnViewGrants.TabIndex = 11;
+            this.btnViewGrants.Text = "View Grants ";
+            this.btnViewGrants.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewGrants.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewGrants.UseVisualStyleBackColor = true;
+            this.btnViewGrants.Click += new System.EventHandler(this.btnViewGrants_Click);
+            // 
             // FrmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,6 +410,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnManageProducts;
         private System.Windows.Forms.Button btnGrant;
+        private System.Windows.Forms.Button btnViewGrants;
+        private System.Windows.Forms.Button btnEditGrant;
+        private System.Windows.Forms.Button btnCreateGrnat;
         private System.Windows.Forms.Button btnRadaStatus;
     }
 }

@@ -89,8 +89,19 @@ namespace JAHub_Winforms
 
         private void btnDeleteGrant_Click(object sender, EventArgs e)
         {
-            FrmDeleteGrant frmDeleteGrant = new FrmDeleteGrant();
-            frmDeleteGrant.Show();  
+
+        }
+
+        private void btncreatetesting_Click(object sender, EventArgs e)
+        {
+            FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
+            frmCreateGrant.Show();
+        }
+
+        private void btnViewall_Click(object sender, EventArgs e)
+        {
+            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();    
+            frmViewAllMyApplication.Show(); 
         }
     }
 }

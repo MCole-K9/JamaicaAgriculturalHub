@@ -82,6 +82,12 @@ namespace JAHub_Winforms
             {
                 btnRadaStatus.Visible = false;
             }
+                
+                btnViewGrants.Visible = false;
+                btnEditGrant.Visible = false;
+                btnCreateGrnat.Visible = false;
+
+
 
         }
 
@@ -134,13 +140,31 @@ namespace JAHub_Winforms
 
         private void btnGrant_Click(object sender, EventArgs e)
         {
+            btnCreateGrnat.Show();
+            HighlightButtons(btnCreateGrnat);
+
+            btnEditGrant.Show();
+            HighlightButtons(btnEditGrant);
+
+            btnViewGrants.Show();
+            HighlightButtons(btnViewGrants);
             OpenChildForm(new FrmCreateGrant());
-            HighlightButtons(btnGrant);
+            
         }
 
-        private void btnRadaStatus_Click(object sender, EventArgs e)
+        private void btnCreateGrnat_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmRadaStatus(this));
+            OpenChildForm(new FrmCreateGrant());
+        }
+
+        private void btnEditGrant_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmCreateGrant());
+        }
+
+        private void btnViewGrants_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmViewAllMyApplication());
         }
     }
 

@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditGrantInfo));
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnremovefile = new System.Windows.Forms.Button();
-            this.btndownload = new System.Windows.Forms.Button();
-            this.btnuploadfile = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pbcwj = new System.Windows.Forms.PictureBox();
@@ -41,7 +37,7 @@
             this.pansidebarcwj = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.btnuploadfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbcwj)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,55 +51,6 @@
             this.label2.Size = new System.Drawing.Size(244, 29);
             this.label2.TabIndex = 27;
             this.label2.Text = "Edit Grant Information";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.btnremovefile, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btndownload, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnuploadfile, 0, 0);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(613, 423);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(364, 166);
-            this.tableLayoutPanel1.TabIndex = 23;
-            // 
-            // btnremovefile
-            // 
-            this.btnremovefile.Location = new System.Drawing.Point(245, 2);
-            this.btnremovefile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnremovefile.Name = "btnremovefile";
-            this.btnremovefile.Size = new System.Drawing.Size(107, 50);
-            this.btnremovefile.TabIndex = 2;
-            this.btnremovefile.Text = "Remove File";
-            this.btnremovefile.UseVisualStyleBackColor = true;
-            // 
-            // btndownload
-            // 
-            this.btndownload.Location = new System.Drawing.Point(124, 2);
-            this.btndownload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btndownload.Name = "btndownload";
-            this.btndownload.Size = new System.Drawing.Size(115, 50);
-            this.btndownload.TabIndex = 1;
-            this.btndownload.Text = "Dowload File";
-            this.btndownload.UseVisualStyleBackColor = true;
-            // 
-            // btnuploadfile
-            // 
-            this.btnuploadfile.Location = new System.Drawing.Point(3, 2);
-            this.btnuploadfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnuploadfile.Name = "btnuploadfile";
-            this.btnuploadfile.Size = new System.Drawing.Size(115, 50);
-            this.btnuploadfile.TabIndex = 0;
-            this.btnuploadfile.Text = "Upload File";
-            this.btnuploadfile.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -167,10 +114,20 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(699, 331);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
             this.dateTimePicker1.TabIndex = 30;
+            // 
+            // btnuploadfile
+            // 
+            this.btnuploadfile.Location = new System.Drawing.Point(281, 693);
+            this.btnuploadfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnuploadfile.Name = "btnuploadfile";
+            this.btnuploadfile.Size = new System.Drawing.Size(104, 39);
+            this.btnuploadfile.TabIndex = 0;
+            this.btnuploadfile.Text = "Upload File";
+            this.btnuploadfile.UseVisualStyleBackColor = true;
             // 
             // FrmEditGrantInfo
             // 
@@ -179,18 +136,17 @@
             this.ClientSize = new System.Drawing.Size(1067, 809);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnuploadfile);
             this.Controls.Add(this.pansidebarcwj);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbcwj);
             this.Controls.Add(this.rtbcwj);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmEditGrantInfo";
             this.Text = "FrmUserGeneralInfo";
             this.Load += new System.EventHandler(this.FrmEditGrantInfo_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbcwj)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,10 +156,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnremovefile;
-        private System.Windows.Forms.Button btndownload;
-        private System.Windows.Forms.Button btnuploadfile;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbcwj;
@@ -211,5 +163,6 @@
         private System.Windows.Forms.Panel pansidebarcwj;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnuploadfile;
     }
 }
