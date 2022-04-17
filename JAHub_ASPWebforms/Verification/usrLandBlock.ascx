@@ -4,7 +4,7 @@
 <div>
     <asp:PlaceHolder runat="server" ID="phAddressBlock"></asp:PlaceHolder>
     <div>
-        Need to put in land measurement here, no spinner
+        <asp:TextBox runat="server" ID="txtLandMeasurement"></asp:TextBox>
     </div>
 
 </div>

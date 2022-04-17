@@ -27,15 +27,11 @@ namespace JAHub_ASPWebforms.Verification
 
         public usrLandBlock(LandInformation landInformation)
         {
-            //udLandMeasurement.Value = landInformation.LandMeasurement;
-            //tblLandBlock.Controls.Add(new usrAddressBlock(landInformation.LandAddressTown,
-                //landInformation.LandAddressPoBox, landInformation.LandAddressParish));
+            txtLandMeasurement.Text = landInformation.LandMeasurement.ToString();
+            phAddressBlock.Controls.Add((usrAddressBlock)LoadControl("~/usrAddressBlock.ascx.cs"/*, [landInformation.LandAddressTown,
+                landInformation.LandAddressPoBox, landInformation.LandAddressParish]*/));
 
-            //var addressBlock = tblLandBlock.Controls[tblLandBlock.Controls.Count - 1];
-
-            //tblLandBlock.SetCellPosition(addressBlock, new TableLayoutPanelCellPosition(1, 0));
-
-            //isLandBlockValid = true;
+            isLandBlockValid = true;
         }
 
         private void nudLandMeasurement_Validating(object sender)
@@ -60,15 +56,17 @@ namespace JAHub_ASPWebforms.Verification
 
         public bool IsBlockValid()
         {
-            //if ((usrLandBlock)phAddressBlock.Controls[0].IsBlockValid())
+            var addressBlock = phAddressBlock.Controls[0] as usrAddressBlock;
+
+            if (addressBlock.IsBlockValid())
             {
                 if (isLandBlockValid)
                 {
-                    //land.LandAddressTown = usrAddressBlock1.AddressTown;
-                    //land.LandAddressPoBox = usrAddressBlock1.AddressPostOffice;
-                    //land.LandAddressParish = usrAddressBlock1.AddressParish;
+                    land.LandAddressTown = addressBlock.AddressTown;
+                    land.LandAddressPoBox = addressBlock.AddressPostOffice;
+                    land.LandAddressParish = addressBlock.AddressParish;
 
-                   // land.LandMeasurement = nudLandMeasurement.Value;
+                    land.LandMeasurement = Decimal.Parse(txtLandMeasurement.Text);
 
                     return true;
                 }
