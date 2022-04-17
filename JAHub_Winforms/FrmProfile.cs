@@ -166,7 +166,10 @@ namespace JAHub_Winforms
         {
             OpenChildForm(new FrmViewAllMyApplication());
         }
-    }
 
-    
+        private void btnRadaStatus_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmRadaStatus(this));
+        }
+    }
 }
