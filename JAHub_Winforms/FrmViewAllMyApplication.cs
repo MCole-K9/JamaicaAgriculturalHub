@@ -22,29 +22,24 @@ namespace JAHub_Winforms
         }
 
         public void ReadFromDatabase(int userId)
-        private bool isLoggedin;
-        Grantinfo grantinfo = new Grantinfo();
-        private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
         {
-           
-
-            // public void FetchFarmerData()
-            //{
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 Grantinfo grantinfo = new Grantinfo();
                 grantinfo.ViewAllMyGrants();
                 connection.Open();
 
+                // fetch GrantOfficer Table ID
+
                 String query = $"SELECT * FROM [Grant] WHERE GrantOfficer = {userId}";
-                string query = isLoggedin ? $"SELECT * FROM Farmer WHERE UserID = {Session.UserId}" : $"SELECT * FROM Farmer WHERE ID = {grantinfo.ID}";
+
 
                 SqlCommand cmd = new SqlCommand(query, connection);
 
 
                 SqlDataReader reader = cmd.ExecuteReader();
-               
-                    while (reader.Read())
+
+                while (reader.Read())
                 {
                     grantinfo.ID = userId;
                     grantinfo.requirement = reader["Requirements"].ToString();
@@ -63,7 +58,8 @@ namespace JAHub_Winforms
             }
         }
 
-                SqlDataReader sqlData = cmd.ExecuteReader();
+        private bool isLoggedin;
+        Grantinfo grantinfo = new Grantinfo();
 
         private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
         {
@@ -74,38 +70,42 @@ namespace JAHub_Winforms
             ReadFromDatabase(grantinfo.GrantOfficerId);
         }
 
-        private void pnlGrantDeleteContainer_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            const string message = "Are you sure you wish to delete this grant?";
-            const string caption = "Deleting Grant";
-            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                while (sqlData.Read())
-                {
+        //private void pnlGrantDeleteContainer_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+            //const string message = "Are you sure you wish to delete this grant?";
+            //const string caption = "Deleting Grant";
+            //var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            
+            //SqlDataReader sqlData = cmd.ExecuteReader();
+
+            //while (sqlData.Read())
+                //{
                     
-                    grantinfo.ID = (int)sqlData["ID"];
-                    grantinfo.GrantDescription = sqlData["Description"].ToString();
-                    grantinfo.Requirement = sqlData["Requirements"].ToString();
-                    grantinfo.ExpiryDate = (DateTime)sqlData["Deadline"];
-                    grantinfo.ApplicationId = sqlData["Application_Form"].ToString();
-                    grantinfo.GrantOfficerId = (int)sqlData["GrantOfficer"];
-                    grantinfo.Title = sqlData["Title"].ToString();
+                    //grantinfo.ID = (int)sqlData["ID"];
+                    //grantinfo.GrantDescription = sqlData["Description"].ToString();
+                    //grantinfo.Requirement = sqlData["Requirements"].ToString();
+                    //grantinfo.ExpiryDate = (DateTime)sqlData["Deadline"];
+                    //grantinfo.ApplicationId = sqlData["Application_Form"].ToString();
+                    //grantinfo.GrantOfficerId = (int)sqlData["GrantOfficer"];
+                    //grantinfo.Title = sqlData["Title"].ToString();
 
-                    Grant_Controls.ucGrantDisplay ucGrantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
-                    pnlContainerAdminViewGrants.Controls.Add(ucGrantDisplay);
-                    ucGrantDisplay.Dock = DockStyle.Top;
+                    //Grant_Controls.ucGrantDisplay ucGrantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
+                    //pnlContainerAdminViewGrants.Controls.Add(ucGrantDisplay);
+                    //ucGrantDisplay.Dock = DockStyle.Top;
 
-            if (result == DialogResult.Yes)
-            {
-                Grantinfo grantinfo = new Grantinfo();
-                int J = grantinfo.ID;
-                grantinfo.DeleteGrant(J);
+            //if (result == DialogResult.Yes)
+            //{
+                //Grantinfo grantinfo = new Grantinfo();
+                //int J = grantinfo.ID;
+                //grantinfo.DeleteGrant(J);
 
 
 
-                }
-                sqlData.Close();
-            }
-        }
+                //}
+                //sqlData.Close();
+            //}
+        //}
         
-        }
     }
+}

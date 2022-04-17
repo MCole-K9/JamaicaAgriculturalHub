@@ -343,5 +343,6 @@
         private System.Windows.Forms.Panel pnlLogo;
         private FontAwesome.Sharp.IconButton btnViewall;
         private FontAwesome.Sharp.IconButton btncreatetesting;
+        private FontAwesome.Sharp.IconButton btnDeleteGrant;
     }
 }

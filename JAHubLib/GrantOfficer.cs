@@ -24,74 +24,15 @@ namespace JAHubLib
             get { return grantofficerId; }  
             set { grantofficerId = value; } 
         }
-       
 
-       
-
-       /* public bool isLoggedin = true;
-        public void FetchGrantOfficerID()
-        {
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-                string query = isLoggedin ? $"SELECT * FROM [User] WHERE ID = {Session.UserId}" : $"SELECT * FROM User WHERE ID = {this.GrantOfficerId}";
-
-                SqlCommand cmd = new SqlCommand(query, connection);
-
-                SqlDataReader sqlData = cmd.ExecuteReader();
-
-                while (sqlData.Read())
-                {
-                    this.GrantOfficerId = (int)sqlData["ID"];
-
-
-            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
-            connection.Open();
-            SqlCommand cmd = new SqlCommand(query, connection);
-            int i = cmd.ExecuteNonQuery();
-
-                SqlDataReader sqlData = cmd.ExecuteReader();
-
-                while (sqlData.Read())
-                {
-                    this.GrantOfficerId = (int)sqlData["ID"];
-
-
-                }
-                sqlData.Close();
-
-            }
-
-            }
-
-        }*/
-
-            public int CreateGrant(Grantinfo grantinfo)
-             {
-                
-                string query = $"INSERT INTO [Grant] ( Description,Requirements,Deadline,GrantOfficer)" +
-                        $"Values ( '{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
-
-                Utilities.executeInputQuery(query);
-
-
-
-                return 1;
-
-             }
-        }
-    }
-
-
-         public static int FetchGrantOfficerID(int userid)
+        public static int FetchGrantOfficerID(int userid)
         {
             int grantOId = 0;
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
 
-                string query =  $"SELECT ID FROM [GrantOfficer] WHERE UserID = {userid}" ;
+                string query = $"SELECT ID FROM [GrantOfficer] WHERE UserID = {userid}";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -99,7 +40,7 @@ namespace JAHubLib
 
                 while (sqlData.Read())
                 {
-                    grantOId= (int)sqlData["ID"];
+                    grantOId = (int)sqlData["ID"];
 
 
                 }
@@ -108,5 +49,60 @@ namespace JAHubLib
             }
             return grantOId;
         }
+
+        public int CreateGrant(Grantinfo grantinfo)
+        {
+
+            string query = $"INSERT INTO [Grant] ( Description,Requirements,Deadline,GrantOfficer)" +
+                    $"Values ( '{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
+
+            Utilities.executeInputQuery(query);
+
+
+
+            return 1;
+
+        }
     }
 }
+
+
+
+/* public bool isLoggedin = true;
+ public void FetchGrantOfficerID()
+ {
+     using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+     {
+         connection.Open();
+
+         string query = isLoggedin ? $"SELECT * FROM [User] WHERE ID = {Session.UserId}" : $"SELECT * FROM User WHERE ID = {this.GrantOfficerId}";
+
+         SqlCommand cmd = new SqlCommand(query, connection);
+
+         SqlDataReader sqlData = cmd.ExecuteReader();
+
+         while (sqlData.Read())
+         {
+             this.GrantOfficerId = (int)sqlData["ID"];
+
+
+     SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+     connection.Open();
+     SqlCommand cmd = new SqlCommand(query, connection);
+     int i = cmd.ExecuteNonQuery();
+
+         SqlDataReader sqlData = cmd.ExecuteReader();
+
+         while (sqlData.Read())
+         {
+             this.GrantOfficerId = (int)sqlData["ID"];
+
+
+         }
+         sqlData.Close();
+
+     }
+
+     }
+
+ }*/

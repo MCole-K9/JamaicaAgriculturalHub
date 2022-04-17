@@ -59,7 +59,7 @@ namespace JAHubLib
         }
 
 
-        public int DeleteGrant(int id)
+        public void DeleteGrant(int id)
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -68,18 +68,16 @@ namespace JAHubLib
                 string query = $" Delete FROM [Grant] WHERE ID = {id}";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
+            }
 
-        
-
-
+            return;
+        }
 
         public void ViewAllMyGrants()
         {
 
 
         }
-
-
        
     }
 

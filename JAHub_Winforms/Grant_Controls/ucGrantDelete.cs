@@ -46,7 +46,7 @@ namespace JAHub_Winforms.Grant_Controls
          
             {
                 Grantinfo grantinfo = new Grantinfo();
-                grantinfo.ID = GrantOfficer.FetchID();
+                grantinfo.ID = GrantOfficer.FetchGrantOfficerID(Session.UserId);
                 
 
             }
