@@ -11,7 +11,7 @@
 
             <div style="display: flex; justify-content:space-between; margin: 20px 0 0 0;">
                 <button id="btnViewProduct" runat="server"  onserverclick="btnViewProduct_ServerClick"> View</button>
-                <button id="btnAddToCart" runat="server">Add to Cart</button>
+                <button id="btnAddToCart" onserverclick="btnAddToCart_ServerClick" runat="server">Add to Cart</button>
             </div>
         </div>
     </div>

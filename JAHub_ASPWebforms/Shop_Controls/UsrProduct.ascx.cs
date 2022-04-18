@@ -40,5 +40,20 @@ namespace JAHub_ASPWebforms.Shop_Controls
             Session["ProductDetail"] = this.product;
             Response.Redirect("~/ProductDetail.aspx");
         }
+
+        protected void btnAddToCart_ServerClick(object sender, EventArgs e)
+        {
+            try
+            {
+                JAHubLib.Cart.AddToCart(this.product, 1);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+
+        }
     }
 }
