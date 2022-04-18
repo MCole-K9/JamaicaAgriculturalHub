@@ -78,7 +78,7 @@
             this.txtOrganizationEntry.Location = new System.Drawing.Point(0, 0);
             this.txtOrganizationEntry.Margin = new System.Windows.Forms.Padding(0);
             this.txtOrganizationEntry.Name = "txtOrganizationEntry";
-            this.txtOrganizationEntry.Size = new System.Drawing.Size(200, 27);
+            this.txtOrganizationEntry.Size = new System.Drawing.Size(400, 27);
             this.txtOrganizationEntry.TabIndex = 3;
             // 
             // flwOrganizationBlock
@@ -107,7 +107,7 @@
             this.flwOrganizationsTextHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwOrganizationsTextHolder.Location = new System.Drawing.Point(3, 104);
             this.flwOrganizationsTextHolder.Name = "flwOrganizationsTextHolder";
-            this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(200, 27);
+            this.flwOrganizationsTextHolder.Size = new System.Drawing.Size(400, 27);
             this.flwOrganizationsTextHolder.TabIndex = 0;
             // 
             // btnRemoveOrganization

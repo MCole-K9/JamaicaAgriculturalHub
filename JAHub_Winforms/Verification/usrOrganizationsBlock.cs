@@ -38,6 +38,7 @@ namespace JAHub_Winforms.Verification
                 flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].
                     Size = new System.Drawing.Size(175, 22);
             }
+            btnAddAnotherOrganization.Visible = false;
         }
 
 

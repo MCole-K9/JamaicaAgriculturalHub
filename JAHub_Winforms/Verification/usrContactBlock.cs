@@ -42,6 +42,7 @@ namespace JAHub_Winforms.Verification
             // Makes it possible to submit the details without having to click on the form
             isEmailValid = true;
             // the phone number are all valid when parameterized constructed
+            btnAddAnotherPhoneNumber.Visible = false;
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)

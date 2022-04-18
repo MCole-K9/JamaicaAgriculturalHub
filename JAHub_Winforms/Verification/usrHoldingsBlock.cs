@@ -39,7 +39,8 @@ namespace JAHub_Winforms.Verification
                 flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
             }
 
-            // the products and Landblocks will return valid on their own
+            btnAddAnotherProduct.Visible = false;
+            btnAddLandEntry.Visible = false;
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
