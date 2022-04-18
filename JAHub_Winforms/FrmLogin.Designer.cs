@@ -69,11 +69,11 @@
             this.lblLoginHeading.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLoginHeading.AutoSize = true;
             this.lblLoginHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginHeading.Location = new System.Drawing.Point(123, 0);
+            this.lblLoginHeading.Location = new System.Drawing.Point(105, 0);
             this.lblLoginHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginHeading.Name = "lblLoginHeading";
             this.lblLoginHeading.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.lblLoginHeading.Size = new System.Drawing.Size(163, 48);
+            this.lblLoginHeading.Size = new System.Drawing.Size(207, 53);
             this.lblLoginHeading.TabIndex = 0;
             this.lblLoginHeading.Text = "Log in to Continue";
             // 
@@ -81,13 +81,13 @@
             // 
             this.lblLoginInstruction.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLoginInstruction.AutoSize = true;
-            this.lblLoginInstruction.Location = new System.Drawing.Point(4, 48);
+            this.lblLoginInstruction.Location = new System.Drawing.Point(4, 53);
             this.lblLoginInstruction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginInstruction.Name = "lblLoginInstruction";
             this.lblLoginInstruction.Padding = new System.Windows.Forms.Padding(4, 0, 4, 12);
-            this.lblLoginInstruction.Size = new System.Drawing.Size(402, 46);
+            this.lblLoginInstruction.Size = new System.Drawing.Size(409, 52);
             this.lblLoginInstruction.TabIndex = 1;
-            this.lblLoginInstruction.Text = "To continue, please log into your account using your User ID and password";
+            this.lblLoginInstruction.Text = "To continue, please log into your account using your Email and password";
             // 
             // tblLoginCredentials
             // 
@@ -99,7 +99,7 @@
             this.tblLoginCredentials.Controls.Add(this.txtEmailAddress, 1, 0);
             this.tblLoginCredentials.Controls.Add(this.lblEmailAddress, 0, 0);
             this.tblLoginCredentials.Controls.Add(this.lblLoginPassword, 0, 1);
-            this.tblLoginCredentials.Location = new System.Drawing.Point(24, 97);
+            this.tblLoginCredentials.Location = new System.Drawing.Point(27, 108);
             this.tblLoginCredentials.Name = "tblLoginCredentials";
             this.tblLoginCredentials.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.tblLoginCredentials.RowCount = 2;
@@ -111,29 +111,29 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtPassword.Location = new System.Drawing.Point(95, 40);
+            this.txtPassword.Location = new System.Drawing.Point(110, 40);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(191, 23);
+            this.txtPassword.Size = new System.Drawing.Size(191, 27);
             this.txtPassword.TabIndex = 5;
             // 
             // txtEmailAddress
             // 
             this.txtEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtEmailAddress.Location = new System.Drawing.Point(95, 4);
+            this.txtEmailAddress.Location = new System.Drawing.Point(110, 4);
             this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(191, 23);
+            this.txtEmailAddress.Size = new System.Drawing.Size(191, 27);
             this.txtEmailAddress.TabIndex = 4;
             // 
             // lblEmailAddress
             // 
             this.lblEmailAddress.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblEmailAddress.AutoSize = true;
-            this.lblEmailAddress.Location = new System.Drawing.Point(42, 7);
+            this.lblEmailAddress.Location = new System.Drawing.Point(47, 7);
             this.lblEmailAddress.Name = "lblEmailAddress";
-            this.lblEmailAddress.Size = new System.Drawing.Size(46, 17);
+            this.lblEmailAddress.Size = new System.Drawing.Size(56, 20);
             this.lblEmailAddress.TabIndex = 6;
             this.lblEmailAddress.Text = "Email:";
             // 
@@ -143,14 +143,14 @@
             this.lblLoginPassword.AutoSize = true;
             this.lblLoginPassword.Location = new System.Drawing.Point(15, 43);
             this.lblLoginPassword.Name = "lblLoginPassword";
-            this.lblLoginPassword.Size = new System.Drawing.Size(73, 17);
+            this.lblLoginPassword.Size = new System.Drawing.Size(88, 20);
             this.lblLoginPassword.TabIndex = 7;
             this.lblLoginPassword.Text = "Password:";
             // 
             // btnLogin
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLogin.Location = new System.Drawing.Point(158, 176);
+            this.btnLogin.Location = new System.Drawing.Point(161, 187);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 29);
@@ -163,10 +163,10 @@
             // 
             this.lblCredentialEntryError.AutoSize = true;
             this.lblCredentialEntryError.ForeColor = System.Drawing.Color.Red;
-            this.lblCredentialEntryError.Location = new System.Drawing.Point(3, 209);
+            this.lblCredentialEntryError.Location = new System.Drawing.Point(3, 220);
             this.lblCredentialEntryError.Name = "lblCredentialEntryError";
             this.lblCredentialEntryError.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.lblCredentialEntryError.Size = new System.Drawing.Size(238, 17);
+            this.lblCredentialEntryError.Size = new System.Drawing.Size(275, 20);
             this.lblCredentialEntryError.TabIndex = 7;
             this.lblCredentialEntryError.Text = "You shouldn\'t be able to see this";
             this.lblCredentialEntryError.Visible = false;
@@ -192,7 +192,7 @@
             this.lblSignUp.ForeColor = System.Drawing.Color.White;
             this.lblSignUp.Location = new System.Drawing.Point(110, 218);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(57, 20);
+            this.lblSignUp.Size = new System.Drawing.Size(73, 25);
             this.lblSignUp.TabIndex = 4;
             this.lblSignUp.Text = "&SignUp";
             this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
@@ -203,7 +203,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 219);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 20);
+            this.label4.Size = new System.Drawing.Size(143, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Not a Member?";
             // 
@@ -215,7 +215,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(2, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 15);
+            this.label3.Size = new System.Drawing.Size(206, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "All Local Products in One Place";
             // 
@@ -227,13 +227,13 @@
             this.lblWelcomeToJAH.ForeColor = System.Drawing.Color.White;
             this.lblWelcomeToJAH.Location = new System.Drawing.Point(3, 103);
             this.lblWelcomeToJAH.Name = "lblWelcomeToJAH";
-            this.lblWelcomeToJAH.Size = new System.Drawing.Size(164, 36);
+            this.lblWelcomeToJAH.Size = new System.Drawing.Size(211, 48);
             this.lblWelcomeToJAH.TabIndex = 0;
             this.lblWelcomeToJAH.Text = "           Welcome To\r\nJamaica Agricultural Hub\r\n";
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(590, 340);

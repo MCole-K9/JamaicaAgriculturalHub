@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using JAHubLib;
 
 namespace JAHub_ASPWebforms
 {
@@ -69,13 +70,31 @@ namespace JAHub_ASPWebforms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["UserId"] != null)
+            {
+                // this should show some kind of "currently logged in as"
+                // include:
+                // * First Name
+                // * Last Name
+                // * UserId
+                // * Role
+            }
+            else
+            {
+                // Set up 
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void btnLogin_OnClick(object sender, EventArgs e)
+        {
+            pnlLoginModal.Visible = true;
+        }
+
     }
 
 }
