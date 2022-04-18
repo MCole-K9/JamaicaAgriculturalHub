@@ -55,25 +55,34 @@
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                     </ul>
-                    <div>
-                        <asp:Button runat="server" ID="btnLogin" Text="Log In" OnClick="btnLogin_OnClick"/>
+                    
+                    <!--<ul class="nav navbar-nav navbar-right">
+                        <li>Log In</li>
+                        <li>Register</li>
 
+                    </ul>-->
+                    <div class="nav navbar-nav navbar-right" margin="auto" id="divLogin">
+                        <asp:Button runat="server" ID="btnLogin" Text="Log In" OnClick="btnLogin_OnClick" 
+                            CssClass="btn btn-default navbar-text" Height="2em" Width="10em" 
+                            />
+                        <asp:Button runat="server" ID="btnRegister" Text="Register"
+                            CssClass="btn btn-default navbar-text" Height="2em" Width="10em"
+                            />
                     </div>
-
-                    <asp:Panel runat="server" class="col-lg-2 col-md-4 col-sm-3 col-xs-6 modal" ID="pnlLoginModal">
-                        <asp:Label runat="server" ID="lblLoginPrompt">To continue, please log into your account using your Email and password</asp:Label>
-                        <br />
-                        <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
-                        <br />
-                        <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
-                        <br />
-                        <asp:Button runat="server" ID="btnSubmit" Text="Submit"/>
-                        <br />
-                        <asp:Label runat="server" ID="lblLoginResult" Visible ="false"></asp:Label>
-                    </asp:Panel>
                 </div>
             </div>
         </div>
+        <asp:Panel runat="server" cssClass="col-lg-2 col-md-4 col-sm-3 col-xs-6 modal float-right" ID="pnlLoginModal">
+            <asp:Label runat="server" ID="lblLoginPrompt">To continue, please log into your account using your Email and password</asp:Label>
+            <br />
+            <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
+            <br />
+            <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
+            <br />
+            <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default"/>
+            <br />
+            <asp:Label runat="server" ID="lblLoginResult" Visible ="false"></asp:Label>
+        </asp:Panel>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

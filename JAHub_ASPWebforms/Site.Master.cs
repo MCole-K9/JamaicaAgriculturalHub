@@ -78,10 +78,11 @@ namespace JAHub_ASPWebforms
                 // * Last Name
                 // * UserId
                 // * Role
+                // Should also allow the ability to log out (Does this require ajax/jquery?
             }
             else
             {
-                // Set up 
+                // Show the options to log in and register and such, i would imagine
             }
         }
 
