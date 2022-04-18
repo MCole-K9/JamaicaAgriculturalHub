@@ -14,7 +14,15 @@ namespace JAHubLib
         {
             try
             {
-                ShoppingCart.Add(product, quantity);
+               
+                if (ShoppingCart.ContainsKey(product))
+                {
+                    ShoppingCart[product]++;
+                }
+                else
+                {
+                   ShoppingCart.Add(product, quantity);
+                }
             }
             catch (Exception ex)
             {
@@ -25,17 +33,44 @@ namespace JAHubLib
 
         public static void UpdateProductQuantity(Product product, int quantity)
         {
-            ShoppingCart[product] = quantity;
+            try
+            {
+                ShoppingCart[product] = quantity;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public static void RemoveFromCart(Product product)
         {
-            ShoppingCart.Remove(product);
+            try
+            {
+                ShoppingCart.Remove(product);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public static List<Product> GetProductsInCart()
         {
-            return ShoppingCart.Keys.ToList();
+            try
+            {
+                return ShoppingCart.Keys.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public static float CaluculateTotal()
