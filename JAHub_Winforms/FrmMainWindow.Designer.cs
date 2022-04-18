@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainWindow));
             this.mnsMainForm = new System.Windows.Forms.MenuStrip();
             this.miHome = new System.Windows.Forms.ToolStripMenuItem();
             this.miShop = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,8 +151,10 @@
             // 
             // icnJaHub
             // 
-            this.icnJaHub.Text = "JAHub";
+            this.icnJaHub.Icon = ((System.Drawing.Icon)(resources.GetObject("icnJaHub.Icon")));
+            this.icnJaHub.Text = "Jamaica Agricultural Hub";
             this.icnJaHub.Visible = true;
+            this.icnJaHub.Click += new System.EventHandler(this.icnJaHub_Click);
             // 
             // FrmMainWindow
             // 
@@ -162,7 +165,7 @@
             this.Controls.Add(this.mnsMainForm);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsMainForm;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMainWindow";
             this.Text = "Jamaica Agricultural Hub";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainWindow_FormClosed);

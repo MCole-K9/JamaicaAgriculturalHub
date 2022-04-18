@@ -246,5 +246,13 @@ namespace JAHub_Winforms
             rada.MdiParent = this;
             rada.Show();
         }
+
+        private void icnJaHub_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }
