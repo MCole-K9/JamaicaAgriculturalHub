@@ -18,7 +18,7 @@
             </div>
             <div style="display: flex; justify-content: space-evenly">
 
-                <a href="#">
+                <a href="Cart.aspx">
                     <div style="margin: 0 70px 0  0; display: flex; align-items: center">
                         <img style="max-height: 33px; margin-right: 5px;" class="img-responsive img-rounded" src="Resources/cart-arrow-down-solid.svg" />
                         <h4 style="position: relative;" id="Cart" runat="server">$0.0</h4>
