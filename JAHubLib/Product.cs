@@ -128,6 +128,16 @@ namespace JAHubLib
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Product product &&
+                   Id == product.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return 2108858624 + Id.GetHashCode();
+        }
     }
 }
 
