@@ -55,12 +55,6 @@
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                     </ul>
-                    
-                    <!--<ul class="nav navbar-nav navbar-right">
-                        <li>Log In</li>
-                        <li>Register</li>
-
-                    </ul>-->
                     <div class="nav navbar-nav navbar-right" margin="auto" id="divLogin">
                         <asp:Button runat="server" ID="btnLogin" Text="Log In" OnClick="btnLogin_OnClick" 
                             CssClass="btn btn-default navbar-text" Height="2em" Width="10em" 
@@ -72,6 +66,7 @@
                 </div>
             </div>
         </div>
+        <!-- I don't yet know how to raise this modal-->
         <asp:Panel runat="server" cssClass="col-lg-2 col-md-4 col-sm-3 col-xs-6 modal float-right" ID="pnlLoginModal">
             <asp:Label runat="server" ID="lblLoginPrompt">To continue, please log into your account using your Email and password</asp:Label>
             <br />
