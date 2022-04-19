@@ -42,10 +42,10 @@ namespace JAHub_Winforms
         public void LoadOrderSummery()
         {
             //Makes Keys in the dictionary a list then access the values in the list using foreach-loop 
-            foreach (Product item in _shippingCheckout._frmCart._frmShop.Cart.Keys.ToList())
+            foreach (Product item in Cart.GetProductsInCart())
             {
                 //Passing in Product and Quantity
-                Shop_Controls.UsrOrderSumItem usrOrderSumItem = new Shop_Controls.UsrOrderSumItem(item, _shippingCheckout._frmCart._frmShop.Cart[item]);
+                Shop_Controls.UsrOrderSumItem usrOrderSumItem = new Shop_Controls.UsrOrderSumItem(item, Cart.ShoppingCart[item]);
                 fpnlOrderSummery.Controls.Add(usrOrderSumItem);
             }
 
@@ -68,7 +68,7 @@ namespace JAHub_Winforms
         private void FrmPayment_Load(object sender, EventArgs e)
         {
             LoadOrderSummery();
-            CaluculateSubtotal(_shippingCheckout._frmCart._frmShop.Cart);
+            CaluculateSubtotal(Cart.ShoppingCart);
 
             lblStreetAddress.Text = newOrder.ShipStreetAddress;
             lblTown.Text = newOrder.ShipCity;
@@ -145,11 +145,14 @@ namespace JAHub_Winforms
                 else
                 {
                     paymentType = "Credit/Debit Card ***123}"; //$"Credit/Debit Card ***{txtCardNumber.Text.Substring(11, 4)}";
+
                 }
-                
+
+
+
 
             }
-            else if(!chkBillingIsShipping.Checked)
+            if(!chkBillingIsShipping.Checked)
             {
                 if(txtFirstName.Text == "")
                 {
@@ -201,7 +204,7 @@ namespace JAHub_Winforms
                 {
                     newOrder.FetchLastOrderData(customer.CustomerID);
 
-                    if (newOrder.WriteOrderItems(_shippingCheckout._frmCart._frmShop.Cart) > 0)
+                    if (newOrder.WriteOrderItems(Cart.ShoppingCart) > 0)
                     {
                         MessageBox.Show("Order Was Successful");
                     }
