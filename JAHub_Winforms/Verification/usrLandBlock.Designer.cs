@@ -56,8 +56,8 @@
             this.tblLandBlock.Name = "tblLandBlock";
             this.tblLandBlock.RowCount = 2;
             this.tblLandBlock.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLandBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tblLandBlock.Size = new System.Drawing.Size(360, 186);
+            this.tblLandBlock.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tblLandBlock.Size = new System.Drawing.Size(510, 186);
             this.tblLandBlock.TabIndex = 0;
             // 
             // lblAddress
@@ -92,7 +92,7 @@
             this.usrAddressBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrAddressBlock1.Location = new System.Drawing.Point(143, 3);
             this.usrAddressBlock1.Name = "usrAddressBlock1";
-            this.usrAddressBlock1.Size = new System.Drawing.Size(214, 120);
+            this.usrAddressBlock1.Size = new System.Drawing.Size(364, 120);
             this.usrAddressBlock1.TabIndex = 3;
             // 
             // nudLandMeasurement
@@ -119,7 +119,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblLandBlock);
             this.Name = "usrLandBlock";
-            this.Size = new System.Drawing.Size(366, 192);
+            this.Size = new System.Drawing.Size(516, 192);
             this.tblLandBlock.ResumeLayout(false);
             this.tblLandBlock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLandMeasurement)).EndInit();

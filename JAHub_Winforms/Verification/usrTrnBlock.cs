@@ -32,6 +32,7 @@ namespace JAHub_Winforms.Verification
             InitializeComponent();
             mskTrn.Text = trn;
             lblTrn.Text = "TRN: ";
+            mskTrn.Enabled = false;
         }
 
         private void mskTrn_Validating(object sender, CancelEventArgs e)

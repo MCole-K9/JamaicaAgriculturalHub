@@ -61,7 +61,7 @@ namespace JAHub_Winforms.Verification
             this.flwHoldingBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwHoldingBlock.Location = new System.Drawing.Point(3, 3);
             this.flwHoldingBlock.Name = "flwHoldingBlock";
-            this.flwHoldingBlock.Size = new System.Drawing.Size(378, 426);
+            this.flwHoldingBlock.Size = new System.Drawing.Size(528, 426);
             this.flwHoldingBlock.TabIndex = 0;
             // 
             // lblHoldings
@@ -127,7 +127,7 @@ namespace JAHub_Winforms.Verification
             this.flwLandBlockHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwLandBlockHolder.Location = new System.Drawing.Point(3, 149);
             this.flwLandBlockHolder.Name = "flwLandBlockHolder";
-            this.flwLandBlockHolder.Size = new System.Drawing.Size(372, 198);
+            this.flwLandBlockHolder.Size = new System.Drawing.Size(522, 198);
             this.flwLandBlockHolder.TabIndex = 6;
             // 
             // usrLandBlock1
@@ -137,7 +137,7 @@ namespace JAHub_Winforms.Verification
             this.usrLandBlock1.BackColor = System.Drawing.Color.Transparent;
             this.usrLandBlock1.Location = new System.Drawing.Point(3, 3);
             this.usrLandBlock1.Name = "usrLandBlock1";
-            this.usrLandBlock1.Size = new System.Drawing.Size(366, 192);
+            this.usrLandBlock1.Size = new System.Drawing.Size(516, 192);
             this.usrLandBlock1.TabIndex = 4;
             // 
             // btnAddLandEntry
@@ -171,8 +171,9 @@ namespace JAHub_Winforms.Verification
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flwHoldingBlock);
+            this.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.Name = "usrHoldingsBlock";
-            this.Size = new System.Drawing.Size(384, 432);
+            this.Size = new System.Drawing.Size(534, 432);
             this.flwHoldingBlock.ResumeLayout(false);
             this.flwHoldingBlock.PerformLayout();
             this.flwProductsBlock.ResumeLayout(false);

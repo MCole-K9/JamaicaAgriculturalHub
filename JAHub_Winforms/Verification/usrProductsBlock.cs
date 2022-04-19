@@ -29,6 +29,7 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             txtProduct.Text = farmerProduct;
+            txtProduct.Enabled = false;
 
             isProductValid = true;
         }

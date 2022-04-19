@@ -39,7 +39,6 @@
             // 
             // tblProductBlock
             // 
-            this.tblProductBlock.AutoSize = true;
             this.tblProductBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblProductBlock.BackColor = System.Drawing.Color.Transparent;
             this.tblProductBlock.ColumnCount = 2;
@@ -53,7 +52,7 @@
             this.tblProductBlock.Name = "tblProductBlock";
             this.tblProductBlock.RowCount = 1;
             this.tblProductBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblProductBlock.Size = new System.Drawing.Size(300, 33);
+            this.tblProductBlock.Size = new System.Drawing.Size(400, 33);
             this.tblProductBlock.TabIndex = 0;
             // 
             // lblProduct
@@ -73,8 +72,9 @@
             // 
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.Location = new System.Drawing.Point(153, 3);
+            this.txtProduct.MaxLength = 50;
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(120, 27);
+            this.txtProduct.Size = new System.Drawing.Size(211, 27);
             this.txtProduct.TabIndex = 1;
             this.txtProduct.Validating += new System.ComponentModel.CancelEventHandler(this.txtProduct_Validating);
             // 
@@ -92,12 +92,11 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tblProductBlock);
             this.Name = "usrProductsBlock";
-            this.Size = new System.Drawing.Size(300, 33);
+            this.Size = new System.Drawing.Size(400, 33);
             this.tblProductBlock.ResumeLayout(false);
             this.tblProductBlock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProductsBlock)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

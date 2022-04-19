@@ -34,13 +34,17 @@ namespace JAHub_Winforms.Verification
                 flwProductsBlock.Controls.Add(new usrProductsBlock(product));
             }
 
-            foreach(LandInformation land in farmer.OwnedLand)
+            if(farmer.OwnedLand.Count > 0)
             {
-                flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
+                foreach (LandInformation land in farmer.OwnedLand)
+                {
+                    flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
+                }
             }
 
             btnAddAnotherProduct.Visible = false;
             btnAddLandEntry.Visible = false;
+
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
