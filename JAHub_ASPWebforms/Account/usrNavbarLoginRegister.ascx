@@ -6,7 +6,7 @@
             <button type="button" class="btn btn-default navbar-text center-block" id="btnLogin" data-toggle="modal"
         data-target="#pnlLoginModal" style="width:10em;">Login</button>
         <asp:Button runat="server" ID="btnRegister" Text="Register"
-            CssClass="btn btn-default navbar-text" style="width:10em;"
+            CssClass="btn btn-default navbar-text navbar-right text-default" style="width:10em;"
             />
         </div>
     </ContentTemplate>
