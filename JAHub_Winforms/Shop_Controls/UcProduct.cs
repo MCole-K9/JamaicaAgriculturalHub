@@ -45,7 +45,8 @@ namespace JAHub_Winforms.Shop_Controls
         {
             try
             {
-                this._frmProducts._frmShop.Cart.Add(product, 1);
+                Cart.AddToCart(this.product, 1);
+                //this._frmProducts._frmShop.Cart.Add(product, 1);
             }
             catch (ArgumentException)
             {

@@ -18,8 +18,21 @@
         h4 {
             margin: 0 0 40px 0;
         }
-        .tab-pane{
+
+        .tab-pane {
             padding: 20px 0;
+        }
+
+        .review-panel {
+            overflow-y: scroll;
+            max-height: 400px;
+        }
+        .rating-percentage{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 10px 0;
+            
         }
     </style>
 
@@ -58,8 +71,53 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class ="">
+                    <div class="">
                         <h3>Customer Reviews</h3>
+                        <div class="rating-percentage">
+                            <h4 style="padding:  0 5px;">5 Star</h4>
+                            <div class="progress" style="flex-grow: 1; padding:  0 5px;">
+                                <div runat="server" id="rating5" class="progress-bar" role="progressbar" 
+                                    aria-valuemin="0" aria-valuemax="100" >
+                                </div>
+                            </div>
+                            <h4 id="lblpercentage5" runat="server" style="padding:  0 5px;">55%</h4>
+                        </div>
+                        <div class="rating-percentage">
+                            <h4 style="padding: 0 5px;">4 Star</h4>
+                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                                <div runat="server" id="rating4" class="progress-bar" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                </div>
+                            </div>
+                            <h4 id="lblpercentage4" runat="server" style="padding: 0 5px;">55%</h4>
+                        </div>
+                         <div class="rating-percentage">
+                            <h4 style="padding: 0 5px;">3 Star</h4>
+                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                                <div runat="server" id="rating3" class="progress-bar" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                </div>
+                            </div>
+                            <h4 id="lblpercentage3" runat="server" style="padding: 0 5px;">55%</h4>
+                        </div>
+                        <div class="rating-percentage">
+                            <h4 style="padding: 0 5px;">2 Star</h4>
+                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                                <div runat="server" id="rating2" class="progress-bar" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                </div>
+                            </div>
+                            <h4 id="lblpercentage2" runat="server" style="padding: 0 5px;">55%</h4>
+                        </div>
+                        <div class="rating-percentage">
+                            <h4 style="padding: 0 5px;">1 Star</h4>
+                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                                <div runat="server" id="rating1" class="progress-bar" role="progressbar"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                </div>
+                            </div>
+                            <h4 id="lblpercentage1" runat="server" style="padding: 0 5px;">55%</h4>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -71,19 +129,21 @@
                     <div class="tab-content">
                         <div id="reviews" class="tab-pane fade in active">
                             <h4>No Reviews Yet</h4>
-                            <p>Be the First To Review</p>    
+                            <p>Be the First To Review</p>
+                            <asp:Panel ID="pnlReviews" runat="server" CssClass="review-panel">
+                            </asp:Panel>
                         </div>
-                        <div id="add-review" class="tab-pane fade" >
+                        <div id="add-review" class="tab-pane fade">
                             <h4>Over All Rating</h4>
 
-                            <div class="form-group" style="width: 100%" >
+                            <div class="form-group" style="width: 100%">
                                 <label for="headline">Healine/Summery:</label>
                                 <input style="max-width: 100%" runat="server" type="text" class="form-control" id="headline">
                             </div>
 
                             <div class="form-group">
                                 <label for="comment">Comment:</label>
-                                <textarea  runat="server" class="form-control" rows="8" id="comment"></textarea>
+                                <textarea runat="server" class="form-control" rows="8" id="comment"></textarea>
                             </div>
                             <div style="display: flex; justify-content: end">
                                 <asp:Button CssClass="btn btn-primary text-center" ID="btnReviewSubmit" runat="server" Text="Submit" Width="70px" />
@@ -94,5 +154,6 @@
             </div>
         </div>
     </div>
+    
 
 </asp:Content>

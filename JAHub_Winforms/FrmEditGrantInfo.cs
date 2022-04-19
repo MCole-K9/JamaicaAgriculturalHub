@@ -21,5 +21,28 @@ namespace JAHub_Winforms
         {
 
         }
+
+        private void btngrantcreate_Click(object sender, EventArgs e)
+        {
+            FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
+            frmCreateGrant.ShowDialog();    
+        }
+
+        private void btngrantHome_Click(object sender, EventArgs e)
+        {
+            FrmGeneralGrantInfo frmGeneralGrantinfo = new FrmGeneralGrantInfo();    
+            frmGeneralGrantinfo.ShowDialog();
+        }
+
+        private void btnViewall_Click(object sender, EventArgs e)
+        {
+            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+            frmViewAllMyApplication.ShowDialog();   
+        }
+
+        private void btnDeleteGrant_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

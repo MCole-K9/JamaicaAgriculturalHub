@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UsrProduct.ascx.cs" Inherits="JAHub_ASPWebforms.Shop_Controls.UsrProduct" %>
+﻿<%@ Control Language="C#"  AutoEventWireup="true" CodeBehind="UsrProduct.ascx.cs" Inherits="JAHub_ASPWebforms.Shop_Controls.UsrProduct" %>
 
 <div class="col-lg-3 col-md-6">
     <div class="panel panel-default ">
@@ -10,9 +10,8 @@
             <h4 id="ProductPrice" runat="server">Product Price</h4>
 
             <div style="display: flex; justify-content:space-between; margin: 20px 0 0 0;">
-                <asp:Button ID="btnViewProduct" runat="server" Text="View" OnClick="btnViewProduct_Click"/>
-                <%--<button onclick="cff" id="btnView" style="margin: auto 10px auto auto" runat="server">View</button>--%>
-                <button id="btnAddToCart" runat="server">Add to Cart</button>
+                <button id="btnViewProduct" runat="server"  onserverclick="btnViewProduct_ServerClick"> View</button>
+                <button id="btnAddToCart" onserverclick="btnAddToCart_ServerClick" runat="server">Add to Cart</button>
             </div>
         </div>
     </div>

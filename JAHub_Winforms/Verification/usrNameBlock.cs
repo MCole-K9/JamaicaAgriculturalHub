@@ -36,6 +36,20 @@ namespace JAHub_Winforms.Verification
             isFirstNameValid = true;
             isMiddleNameValid = true;
             isLastNameValid = true;
+
+            lblNameSectionTitle.Text = "Name";
+
+            txtFirstName.Enabled = false;
+            txtFirstName.ForeColor = Color.Black;
+            txtFirstName.BackColor = Color.White;
+
+            txtMiddleName.Enabled = false;
+            txtMiddleName.ForeColor = Color.Black;
+            txtMiddleName.BackColor = Color.White;
+
+            txtLastName.Enabled = false;
+            txtLastName.ForeColor = Color.Black;
+            txtLastName.BackColor = Color.White;
         }
 
         private void txtFirstName_Validating(object sender, CancelEventArgs e)

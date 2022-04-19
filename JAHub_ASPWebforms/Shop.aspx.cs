@@ -16,34 +16,35 @@ namespace JAHub_ASPWebforms
         protected void Page_Load(object sender, EventArgs e)
         {
             products = new List<Product>();
-            if (!IsPostBack)
+            
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
-                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                connection.Open();
+
+                string query = "Select * from Product";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
                 {
-                    connection.Open();
-
-                    string query = "Select * from Product";
-
-                    SqlCommand cmd = new SqlCommand(query, connection);
-
-                    using (SqlDataReader sqlData = cmd.ExecuteReader())
+                    while (sqlData.Read())
                     {
-                        while (sqlData.Read())
-                        {
-                            Product product = new Product();
+                        Product product = new Product();
 
-                            product.Id = (int)sqlData["ID"];
-                            product.Name = sqlData["Name"].ToString();
-                            product.Stock = (int)sqlData["Stock"];
-                            product.Price = float.Parse(sqlData["Price"].ToString());
-                            product.Image = $"http://vtdics.com/ead22/" + sqlData["Image"].ToString();
-                            product.Farmer = new Farmer((int)sqlData["Farmer"]);
-                            product.Category = (int)sqlData["Category"];
-                            products.Add(product);
-
-                        }
+                        product.Id = (int)sqlData["ID"];
+                        product.Name = sqlData["Name"].ToString();
+                        product.Stock = (int)sqlData["Stock"];
+                        product.Price = float.Parse(sqlData["Price"].ToString());
+                        product.Image = $"http://vtdics.com/ead22/" + sqlData["Image"].ToString();
+                        product.Farmer = new Farmer((int)sqlData["Farmer"]);
+                        product.Category = (int)sqlData["Category"];
+                        products.Add(product);
 
                     }
+
+                }
+                if (!IsPostBack){
+
                     query = "Select * From Category";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -62,12 +63,14 @@ namespace JAHub_ASPWebforms
 
                     CategoryDropDown.DataBind();
                     CategoryDropDown.Items.Insert(0, new ListItem("Filter by Category", "NA"));
-
                 }
+                
 
-                LoadProducts(products);
-                Session["Products"] = products;
             }
+
+            LoadProducts(products);
+            Session["Products"] = products;
+            
             
             
         }

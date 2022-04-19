@@ -48,7 +48,7 @@ namespace JAHub_ASPWebforms.Shop_Controls
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewProduct;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnViewProduct;
 
         /// <summary>
         /// btnAddToCart control.

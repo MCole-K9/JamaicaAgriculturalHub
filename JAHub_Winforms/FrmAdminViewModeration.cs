@@ -119,11 +119,11 @@ namespace JAHub_Winforms
             if (dtbCurrentInfractions.Rows.Count > 0)
             {
                 // This just gets rid of the placeholder text that says "user has no infractions"
-                flwInfractionsHolder.Controls.RemoveAt(Controls.Count - 1);
+                flpInfractionsHolder.Controls.RemoveAt(Controls.Count - 1);
                 
                 foreach (DataRow row in dtbCurrentInfractions.Rows)
                 {
-                    flwInfractionsHolder.Controls.Add(new usrInfractionItem(row, flwInfractionsHolder, dtbRemovedInfractions));
+                    flpInfractionsHolder.Controls.Add(new usrInfractionItem(row, flpInfractionsHolder, dtbRemovedInfractions));
                 }
             }
 
@@ -132,12 +132,12 @@ namespace JAHub_Winforms
 
         private void btnAddInfraction_Click(object sender, EventArgs e)
         {
-            if (flwInfractionsHolder.Controls.Contains(lblNoInfractions))
+            if (flpInfractionsHolder.Controls.Contains(lblNoInfractions))
             {
-                flwInfractionsHolder.Controls.Remove(lblNoInfractions);
+                flpInfractionsHolder.Controls.Remove(lblNoInfractions);
             }
 
-            flwInfractionsHolder.Controls.Add(new usrInfractionAdder(dtbAddedInfractions, _userId, Session.UserId, flwInfractionsHolder));
+            flpInfractionsHolder.Controls.Add(new usrInfractionAdder(dtbAddedInfractions, _userId, Session.UserId, flpInfractionsHolder));
         }
 
         private void FrmAdminViewModeration_FormClosing(object sender, FormClosingEventArgs e)

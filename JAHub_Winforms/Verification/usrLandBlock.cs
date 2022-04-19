@@ -39,6 +39,7 @@ namespace JAHub_Winforms.Verification
             tblLandBlock.SetCellPosition(addressBlock, new TableLayoutPanelCellPosition(1, 0));
 
             isLandBlockValid = true;
+            nudLandMeasurement.Enabled = false;
         }
 
         private void nudLandMeasurement_Validating(object sender, CancelEventArgs e)

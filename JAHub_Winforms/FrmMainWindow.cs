@@ -135,7 +135,7 @@ namespace JAHub_Winforms
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
-                grantsToolStripMenuItem.Visible = true;
+                miGrants.Visible = true;
                 
                 mnsMainForm.Show();
             }
@@ -147,7 +147,7 @@ namespace JAHub_Winforms
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
-                grantsToolStripMenuItem.Visible = false;
+                miGrants.Visible = false;
 
                 mnsMainForm.Show();
             }
@@ -159,7 +159,7 @@ namespace JAHub_Winforms
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
-                grantsToolStripMenuItem.Visible = true;
+                miGrants.Visible = true;
 
                 mnsMainForm.Show();
             }
@@ -172,7 +172,7 @@ namespace JAHub_Winforms
                 miHome.Visible= true;
                 miShop.Visible = false;
                 miUserProfile.Visible = false;
-                grantsToolStripMenuItem.Visible = true;
+                miGrants.Visible = true;
 
                 mnsMainForm.Show();
             }
@@ -202,7 +202,7 @@ namespace JAHub_Winforms
             if (!Utils.IsFormOpen("FrmGeneralGrantInfo"))
             {
 
-                FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+               FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
                 frmGeneralGrantInfo.MdiParent = this;
                 frmGeneralGrantInfo.Show();
             }
@@ -245,6 +245,30 @@ namespace JAHub_Winforms
             FrmRadaViewRegistration rada = new FrmRadaViewRegistration(Session.UserId);
             rada.MdiParent = this;
             rada.Show();
+        }
+
+//<<<<<<< HEAD
+        private void adminToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();    
+            frmViewAllMyApplication.MdiParent=this; 
+            frmViewAllMyApplication.Show(); 
+        }
+
+        private void farmerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+            frmGeneralGrantInfo.MdiParent = this;
+            frmGeneralGrantInfo.Show();
+        }
+//=======
+        private void icnJaHub_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+//>>>>>>> 77ad05d1efed44d490c9e0c3a8f925dcb1b4528c
         }
     }
 }

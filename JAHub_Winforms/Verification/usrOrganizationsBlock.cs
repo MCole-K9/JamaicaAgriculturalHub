@@ -32,12 +32,13 @@ namespace JAHub_Winforms.Verification
             
             foreach (String organization in organizations)
             {
-                flwOrganizationsTextHolder.Controls.Add(new TextBox());
-                flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].
+                flpOrganizationsTextHolder.Controls.Add(new TextBox());
+                flpOrganizationsTextHolder.Controls[flpOrganizationsTextHolder.Controls.Count - 1].
                     Text = organization;
-                flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].
+                flpOrganizationsTextHolder.Controls[flpOrganizationsTextHolder.Controls.Count - 1].
                     Size = new System.Drawing.Size(175, 22);
             }
+            btnAddAnotherOrganization.Visible = false;
         }
 
 
@@ -47,18 +48,18 @@ namespace JAHub_Winforms.Verification
             btnRemoveOrganization.Show();
 
             // this creates a new textbox underneath the one that was there before
-            flwOrganizationsTextHolder.Controls.Add(new TextBox());
-            flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].Size = new System.Drawing.Size(175, 22);
+            flpOrganizationsTextHolder.Controls.Add(new TextBox());
+            flpOrganizationsTextHolder.Controls[flpOrganizationsTextHolder.Controls.Count - 1].Size = new System.Drawing.Size(400, 22);
 
-            Organizations.Add(flwOrganizationsTextHolder.Controls[flwOrganizationsTextHolder.Controls.Count - 1].Text);
+            Organizations.Add(flpOrganizationsTextHolder.Controls[flpOrganizationsTextHolder.Controls.Count - 1].Text);
         }
 
         private void btnRemoveOrganization_Click(object sender, EventArgs e)
         {
-            flwOrganizationsTextHolder.Controls.RemoveAt(flwOrganizationsTextHolder.Controls.Count - 1);
+            flpOrganizationsTextHolder.Controls.RemoveAt(flpOrganizationsTextHolder.Controls.Count - 1);
             Organizations.RemoveAt(Organizations.Count - 1);
 
-            if (flwOrganizationsTextHolder.Controls.Count == 1)
+            if (flpOrganizationsTextHolder.Controls.Count == 1)
             {
                 btnRemoveOrganization.Hide();
             }

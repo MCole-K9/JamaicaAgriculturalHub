@@ -45,34 +45,34 @@ namespace JAHub_Winforms
 
         private void btnNewRegistration_Click(object sender, EventArgs e)
         {
-            if (flwFormEntryControls.Controls.Count <= 3)
+            if (flpFormEntryControls.Controls.Count <= 3)
             {
-                flwFormEntryControls.Controls.Clear();
+                flpFormEntryControls.Controls.Clear();
 
 
                 nameBlock = new usrNameBlock();
-                flwFormEntryControls.Controls.Add(nameBlock);
+                flpFormEntryControls.Controls.Add(nameBlock);
 
                 dateBlock = new usrDateOfBirthBlock();
-                flwFormEntryControls.Controls.Add(dateBlock);
+                flpFormEntryControls.Controls.Add(dateBlock);
 
                 contactBlock = new usrContactBlock();
-                flwFormEntryControls.Controls.Add(contactBlock);
+                flpFormEntryControls.Controls.Add(contactBlock);
 
                 trnBlock = new usrTrnBlock();
-                flwFormEntryControls.Controls.Add(trnBlock);
+                flpFormEntryControls.Controls.Add(trnBlock);
 
                 imageBlock = new usrUploadImageBlock();
-                flwFormEntryControls.Controls.Add(imageBlock);
+                flpFormEntryControls.Controls.Add(imageBlock);
 
                 industryBlock = new usrIndustryBlock();
-                flwFormEntryControls.Controls.Add(industryBlock);
+                flpFormEntryControls.Controls.Add(industryBlock);
                 
                 holdingsBlock = new usrHoldingsBlock();
-                flwFormEntryControls.Controls.Add(holdingsBlock);
+                flpFormEntryControls.Controls.Add(holdingsBlock);
 
                 organizationsBlock = new usrOrganizationsBlock();
-                flwFormEntryControls.Controls.Add(organizationsBlock);
+                flpFormEntryControls.Controls.Add(organizationsBlock);
 
                 // Information will add to DB, but will not show from user perspective until verification
                 _registrationPhase = RadaRegistrationType.AwaitingVerification;
@@ -83,20 +83,20 @@ namespace JAHub_Winforms
         {
             // Basically: Clear controls, and then create the list of sections necessary to connect an account
             
-            if (flwFormEntryControls.Controls.Count > 3)
+            if (flpFormEntryControls.Controls.Count > 3)
             {
-                flwFormEntryControls.Controls.Clear();
+                flpFormEntryControls.Controls.Clear();
 
                 nameBlock = new usrNameBlock();
-                flwFormEntryControls.Controls.Add(nameBlock);
+                flpFormEntryControls.Controls.Add(nameBlock);
 
                 dateBlock = new usrDateOfBirthBlock();
-                flwFormEntryControls.Controls.Add(dateBlock);
+                flpFormEntryControls.Controls.Add(dateBlock);
 
                 contactBlock = null;
 
                 trnBlock = new usrTrnBlock();
-                flwFormEntryControls.Controls.Add(trnBlock);
+                flpFormEntryControls.Controls.Add(trnBlock);
 
                 industryBlock = null;
                 holdingsBlock = null;
@@ -384,31 +384,31 @@ namespace JAHub_Winforms
         private void FrmRadaRegister_Load(object sender, EventArgs e)
         {
             
-            flwFormEntryControls.Controls.Clear();
+            flpFormEntryControls.Controls.Clear();
 
             nameBlock = new usrNameBlock();
-            flwFormEntryControls.Controls.Add(nameBlock);
+            flpFormEntryControls.Controls.Add(nameBlock);
 
             dateBlock = new usrDateOfBirthBlock();
-            flwFormEntryControls.Controls.Add(dateBlock);
+            flpFormEntryControls.Controls.Add(dateBlock);
 
             contactBlock = new usrContactBlock();
-            flwFormEntryControls.Controls.Add(contactBlock);
+            flpFormEntryControls.Controls.Add(contactBlock);
 
             trnBlock = new usrTrnBlock();
-            flwFormEntryControls.Controls.Add(trnBlock);
+            flpFormEntryControls.Controls.Add(trnBlock);
 
             imageBlock = new usrUploadImageBlock();
-            flwFormEntryControls.Controls.Add(imageBlock);
+            flpFormEntryControls.Controls.Add(imageBlock);
 
             industryBlock = new usrIndustryBlock();
-            flwFormEntryControls.Controls.Add(industryBlock);
+            flpFormEntryControls.Controls.Add(industryBlock);
 
             holdingsBlock = new usrHoldingsBlock();
-            flwFormEntryControls.Controls.Add(holdingsBlock);
+            flpFormEntryControls.Controls.Add(holdingsBlock);
 
             organizationsBlock = new usrOrganizationsBlock();
-            flwFormEntryControls.Controls.Add(organizationsBlock);
+            flpFormEntryControls.Controls.Add(organizationsBlock);
 
             // Information will add to DB, but will not show from user perspective until verification
             _registrationPhase = RadaRegistrationType.AwaitingVerification;

@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tblIndustryBlock = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpIndustryBlock = new System.Windows.Forms.TableLayoutPanel();
             this.lblNumberOfEmployees = new System.Windows.Forms.Label();
             this.lblHeavyMachinery = new System.Windows.Forms.Label();
             this.rdoIndustryYes = new System.Windows.Forms.RadioButton();
             this.rdoIndustryNo = new System.Windows.Forms.RadioButton();
             this.nudNumberOfEmployees = new System.Windows.Forms.NumericUpDown();
             this.errIndustryBlock = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblIndustryBlock.SuspendLayout();
+            this.tlpIndustryBlock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIndustryBlock)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblIndustryBlock
+            // tlpIndustryBlock
             // 
-            this.tblIndustryBlock.AutoSize = true;
-            this.tblIndustryBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tblIndustryBlock.BackColor = System.Drawing.Color.Transparent;
-            this.tblIndustryBlock.ColumnCount = 2;
-            this.tblIndustryBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tblIndustryBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tblIndustryBlock.Controls.Add(this.lblNumberOfEmployees, 0, 0);
-            this.tblIndustryBlock.Controls.Add(this.lblHeavyMachinery, 0, 1);
-            this.tblIndustryBlock.Controls.Add(this.rdoIndustryYes, 0, 2);
-            this.tblIndustryBlock.Controls.Add(this.rdoIndustryNo, 1, 2);
-            this.tblIndustryBlock.Controls.Add(this.nudNumberOfEmployees, 1, 0);
-            this.tblIndustryBlock.Location = new System.Drawing.Point(0, 0);
-            this.tblIndustryBlock.Margin = new System.Windows.Forms.Padding(0);
-            this.tblIndustryBlock.MaximumSize = new System.Drawing.Size(562, 0);
-            this.tblIndustryBlock.Name = "tblIndustryBlock";
-            this.tblIndustryBlock.RowCount = 3;
-            this.tblIndustryBlock.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblIndustryBlock.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblIndustryBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tblIndustryBlock.Size = new System.Drawing.Size(562, 125);
-            this.tblIndustryBlock.TabIndex = 0;
+            this.tlpIndustryBlock.AutoSize = true;
+            this.tlpIndustryBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpIndustryBlock.BackColor = System.Drawing.Color.Transparent;
+            this.tlpIndustryBlock.ColumnCount = 2;
+            this.tlpIndustryBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpIndustryBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpIndustryBlock.Controls.Add(this.lblNumberOfEmployees, 0, 0);
+            this.tlpIndustryBlock.Controls.Add(this.lblHeavyMachinery, 0, 1);
+            this.tlpIndustryBlock.Controls.Add(this.rdoIndustryYes, 0, 2);
+            this.tlpIndustryBlock.Controls.Add(this.rdoIndustryNo, 1, 2);
+            this.tlpIndustryBlock.Controls.Add(this.nudNumberOfEmployees, 1, 0);
+            this.tlpIndustryBlock.Location = new System.Drawing.Point(0, 0);
+            this.tlpIndustryBlock.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpIndustryBlock.MaximumSize = new System.Drawing.Size(562, 0);
+            this.tlpIndustryBlock.Name = "tlpIndustryBlock";
+            this.tlpIndustryBlock.RowCount = 3;
+            this.tlpIndustryBlock.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpIndustryBlock.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpIndustryBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpIndustryBlock.Size = new System.Drawing.Size(562, 125);
+            this.tlpIndustryBlock.TabIndex = 0;
             // 
             // lblNumberOfEmployees
             // 
@@ -80,7 +80,7 @@
             // lblHeavyMachinery
             // 
             this.lblHeavyMachinery.BackColor = System.Drawing.Color.Transparent;
-            this.tblIndustryBlock.SetColumnSpan(this.lblHeavyMachinery, 2);
+            this.tlpIndustryBlock.SetColumnSpan(this.lblHeavyMachinery, 2);
             this.lblHeavyMachinery.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeavyMachinery.Location = new System.Drawing.Point(4, 35);
             this.lblHeavyMachinery.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -92,8 +92,8 @@
             // 
             // rdoIndustryYes
             // 
-            this.rdoIndustryYes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.rdoIndustryYes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoIndustryYes.AutoSize = true;
             this.rdoIndustryYes.BackColor = System.Drawing.Color.Transparent;
@@ -111,8 +111,8 @@
             // 
             // rdoIndustryNo
             // 
-            this.rdoIndustryNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.rdoIndustryNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoIndustryNo.AutoSize = true;
             this.rdoIndustryNo.BackColor = System.Drawing.Color.Transparent;
@@ -146,14 +146,14 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.tblIndustryBlock);
+            this.Controls.Add(this.tlpIndustryBlock);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(562, 0);
             this.Name = "usrIndustryBlock";
             this.Size = new System.Drawing.Size(562, 125);
-            this.tblIndustryBlock.ResumeLayout(false);
-            this.tblIndustryBlock.PerformLayout();
+            this.tlpIndustryBlock.ResumeLayout(false);
+            this.tlpIndustryBlock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIndustryBlock)).EndInit();
             this.ResumeLayout(false);
@@ -163,7 +163,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tblIndustryBlock;
+        private System.Windows.Forms.TableLayoutPanel tlpIndustryBlock;
         private System.Windows.Forms.Label lblNumberOfEmployees;
         private System.Windows.Forms.Label lblHeavyMachinery;
         private System.Windows.Forms.RadioButton rdoIndustryYes;

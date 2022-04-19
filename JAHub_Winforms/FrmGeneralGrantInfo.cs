@@ -10,32 +10,19 @@ using System.Windows.Forms;
 using JAHubLib;
 using System.Data.SqlClient;
 
+
 namespace JAHub_Winforms
 {
     public partial class FrmGeneralGrantInfo : Form
     {
-        
+
         public FrmGeneralGrantInfo()
         {
             InitializeComponent();
-
-
         }
 
-      /*  private void btntest_Click(object sender, EventArgs e)
-        {       
-         
-           
-          
-        }*/
 
-       /* private void btnCreateBlog_Click(object sender, EventArgs e)
-        {
-          /*  FrmCreateGrant frmCreateGrant= new FrmCreateGrant();
-            frmCreateGrant.Show();    
-        } */
-
-        private void FrmGeneralGrantInfo_Load(object sender, EventArgs e)
+        public void DisplayGrantinfo()
         {
             using (SqlConnection conn = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -65,35 +52,27 @@ namespace JAHub_Winforms
                 }
             }
         }
-
-        private void btnBlogs_Click(object sender, EventArgs e)
+        private void FrmGeneralGrantInfo_Load(object sender, EventArgs e)
         {
+
+            Size = new Size(1102, 1200);
+            DisplayGrantinfo();
+           
 
         }
-
-        private void pnlLogo_Paint(object sender, PaintEventArgs e)
+       
+        private void btnGrantHome_Click (object sender, EventArgs e)
         {
+
+            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+            frmGeneralGrantInfo.Show();
 
         }
-
-        private void btnCreateBlog_Click(object sender, EventArgs e)
+        
+        private void btnApplyforGrant_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnMyBlogs_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlNav_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            FrmCreateGrant frmCreateGrant= new FrmCreateGrant();
+            frmCreateGrant.Show();
         }
     }
 }

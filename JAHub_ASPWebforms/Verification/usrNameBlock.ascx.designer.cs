@@ -33,6 +33,15 @@ namespace JAHub_ASPWebforms.Verification
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
 
         /// <summary>
+        /// reqFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFirstName;
+
+        /// <summary>
         /// lblMiddleName control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace JAHub_ASPWebforms.Verification
         protected global::System.Web.UI.WebControls.TextBox txtMiddleName;
 
         /// <summary>
+        /// reqMiddleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqMiddleName;
+
+        /// <summary>
         /// lblLastName control.
         /// </summary>
         /// <remarks>
@@ -67,5 +85,14 @@ namespace JAHub_ASPWebforms.Verification
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
+
+        /// <summary>
+        /// reqLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqLastName;
     }
 }

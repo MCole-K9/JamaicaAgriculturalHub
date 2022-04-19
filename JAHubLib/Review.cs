@@ -9,6 +9,7 @@ namespace JAHubLib
     public class Review
     {
         private int id;
+        private string headline;
         private int rating;
         private string comment;
         private int productID;
@@ -19,5 +20,6 @@ namespace JAHubLib
         public string Comment { get => comment; set => comment = value; }
         public Customer Customer { get => customer; set => customer = value; }
         public int ProductID { get => productID; set => productID = value; }
+        public string Headline { get => headline; set => headline = value; }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flwOptionsContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flpOptionsContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.tlpCurrentUser = new System.Windows.Forms.TableLayoutPanel();
             this.lblCurrentUser = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
             this.lblUserIdValue = new System.Windows.Forms.Label();
@@ -43,57 +43,57 @@
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnCreateNewUser = new System.Windows.Forms.Button();
             this.pnlFormHolder = new System.Windows.Forms.Panel();
-            this.flwOptionsContainer.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.flpOptionsContainer.SuspendLayout();
+            this.tlpCurrentUser.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flwOptionsContainer
+            // flpOptionsContainer
             // 
-            this.flwOptionsContainer.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.flwOptionsContainer.Controls.Add(this.tableLayoutPanel1);
-            this.flwOptionsContainer.Controls.Add(this.btnSelectUser);
-            this.flwOptionsContainer.Controls.Add(this.btnEditUser);
-            this.flwOptionsContainer.Controls.Add(this.btnViewModeration);
-            this.flwOptionsContainer.Controls.Add(this.btnDeleteUser);
-            this.flwOptionsContainer.Controls.Add(this.btnCreateNewUser);
-            this.flwOptionsContainer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flwOptionsContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwOptionsContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flwOptionsContainer.Location = new System.Drawing.Point(0, 0);
-            this.flwOptionsContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.flwOptionsContainer.Name = "flwOptionsContainer";
-            this.flwOptionsContainer.Size = new System.Drawing.Size(200, 451);
-            this.flwOptionsContainer.TabIndex = 0;
+            this.flpOptionsContainer.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.flpOptionsContainer.Controls.Add(this.tlpCurrentUser);
+            this.flpOptionsContainer.Controls.Add(this.btnSelectUser);
+            this.flpOptionsContainer.Controls.Add(this.btnEditUser);
+            this.flpOptionsContainer.Controls.Add(this.btnViewModeration);
+            this.flpOptionsContainer.Controls.Add(this.btnDeleteUser);
+            this.flpOptionsContainer.Controls.Add(this.btnCreateNewUser);
+            this.flpOptionsContainer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flpOptionsContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpOptionsContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpOptionsContainer.Location = new System.Drawing.Point(0, 0);
+            this.flpOptionsContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.flpOptionsContainer.Name = "flpOptionsContainer";
+            this.flpOptionsContainer.Size = new System.Drawing.Size(200, 451);
+            this.flpOptionsContainer.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // tlpCurrentUser
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.lblCurrentUser, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblUserId, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUserIdValue, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblName, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblNameValue, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblRole, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblRoleValue, 1, 3);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(140, 85);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.tlpCurrentUser.AutoSize = true;
+            this.tlpCurrentUser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpCurrentUser.ColumnCount = 2;
+            this.tlpCurrentUser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCurrentUser.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpCurrentUser.Controls.Add(this.lblCurrentUser, 0, 0);
+            this.tlpCurrentUser.Controls.Add(this.lblUserId, 0, 1);
+            this.tlpCurrentUser.Controls.Add(this.lblUserIdValue, 1, 1);
+            this.tlpCurrentUser.Controls.Add(this.lblName, 0, 2);
+            this.tlpCurrentUser.Controls.Add(this.lblNameValue, 1, 2);
+            this.tlpCurrentUser.Controls.Add(this.lblRole, 0, 3);
+            this.tlpCurrentUser.Controls.Add(this.lblRoleValue, 1, 3);
+            this.tlpCurrentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpCurrentUser.Location = new System.Drawing.Point(3, 3);
+            this.tlpCurrentUser.Name = "tlpCurrentUser";
+            this.tlpCurrentUser.RowCount = 4;
+            this.tlpCurrentUser.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpCurrentUser.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCurrentUser.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpCurrentUser.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpCurrentUser.Size = new System.Drawing.Size(140, 85);
+            this.tlpCurrentUser.TabIndex = 6;
             // 
             // lblCurrentUser
             // 
             this.lblCurrentUser.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lblCurrentUser, 2);
+            this.tlpCurrentUser.SetColumnSpan(this.lblCurrentUser, 2);
             this.lblCurrentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentUser.Location = new System.Drawing.Point(3, 0);
             this.lblCurrentUser.Name = "lblCurrentUser";
@@ -228,27 +228,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.pnlFormHolder);
-            this.Controls.Add(this.flwOptionsContainer);
+            this.Controls.Add(this.flpOptionsContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAdminContainer";
             this.Text = "Admininstration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.flwOptionsContainer.ResumeLayout(false);
-            this.flwOptionsContainer.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.flpOptionsContainer.ResumeLayout(false);
+            this.flpOptionsContainer.PerformLayout();
+            this.tlpCurrentUser.ResumeLayout(false);
+            this.tlpCurrentUser.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flwOptionsContainer;
+        private System.Windows.Forms.FlowLayoutPanel flpOptionsContainer;
         private System.Windows.Forms.Button btnSelectUser;
         private System.Windows.Forms.Button btnCreateNewUser;
         private System.Windows.Forms.Button btnViewModeration;
         private System.Windows.Forms.Button btnEditUser;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpCurrentUser;
         private System.Windows.Forms.Label lblCurrentUser;
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Label lblUserIdValue;

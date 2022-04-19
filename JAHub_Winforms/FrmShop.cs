@@ -14,14 +14,11 @@ namespace JAHub_Winforms
     public partial class FrmShop : Form
     {
         private Form CurrentChildForm;
-
-        // Using a key value pair to represent product and quanitity
-        public Dictionary<Product, int> Cart;
         public FrmShop()
         {
             InitializeComponent();
             CurrentChildForm = null;
-            Cart = new Dictionary<Product, int>();
+            
         }
 
         // Opens Form inside of Panel

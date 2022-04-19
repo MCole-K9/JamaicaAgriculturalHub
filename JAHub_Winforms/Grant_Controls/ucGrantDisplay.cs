@@ -16,19 +16,22 @@ namespace JAHub_Winforms.Grant_Controls
         Grantinfo grantinfo = new Grantinfo();
         public ucGrantDisplay()
         {
+           
             InitializeComponent();
         }
-        public ucGrantDisplay(Grantinfo g)
+        public ucGrantDisplay(Grantinfo grantinfo)
         {
-            this.grantinfo = g;
+            
             InitializeComponent();
-            lblGrantAgency.Text = grantinfo.Title;
+            txtUcAgencyName.Text = grantinfo.Title;
             rtbGrantDescription.Text = grantinfo.GrantDescription;
-            //txtExpirationDate.Text = grantinfo.ExpiryDate;
+            
+           
         }
 
         private void btnViewGrant_Click(object sender, EventArgs e)
         {
+            Grantinfo grantinfo = new Grantinfo(); 
             FrmGrantDetails frmGrantDetails = new FrmGrantDetails(grantinfo);
             frmGrantDetails.Show();
         }
