@@ -31,6 +31,7 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             mskTrn.Text = trn;
+            lblTrn.Text = "TRN: ";
         }
 
         private void mskTrn_Validating(object sender, CancelEventArgs e)

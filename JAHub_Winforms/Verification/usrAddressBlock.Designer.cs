@@ -73,7 +73,7 @@
             this.lblAddressTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddressTown.Location = new System.Drawing.Point(3, 0);
             this.lblAddressTown.Name = "lblAddressTown";
-            this.lblAddressTown.Size = new System.Drawing.Size(58, 39);
+            this.lblAddressTown.Size = new System.Drawing.Size(58, 40);
             this.lblAddressTown.TabIndex = 0;
             this.lblAddressTown.Text = "Town";
             this.lblAddressTown.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -84,9 +84,9 @@
             this.lblAddressPostOffice.BackColor = System.Drawing.Color.Transparent;
             this.lblAddressPostOffice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAddressPostOffice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressPostOffice.Location = new System.Drawing.Point(3, 39);
+            this.lblAddressPostOffice.Location = new System.Drawing.Point(3, 40);
             this.lblAddressPostOffice.Name = "lblAddressPostOffice";
-            this.lblAddressPostOffice.Size = new System.Drawing.Size(58, 39);
+            this.lblAddressPostOffice.Size = new System.Drawing.Size(58, 40);
             this.lblAddressPostOffice.TabIndex = 1;
             this.lblAddressPostOffice.Text = "Post Office";
             this.lblAddressPostOffice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -97,9 +97,9 @@
             this.lblAddressParish.BackColor = System.Drawing.Color.Transparent;
             this.lblAddressParish.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAddressParish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressParish.Location = new System.Drawing.Point(3, 78);
+            this.lblAddressParish.Location = new System.Drawing.Point(3, 80);
             this.lblAddressParish.Name = "lblAddressParish";
-            this.lblAddressParish.Size = new System.Drawing.Size(58, 42);
+            this.lblAddressParish.Size = new System.Drawing.Size(58, 40);
             this.lblAddressParish.TabIndex = 2;
             this.lblAddressParish.Text = "Parish";
             this.lblAddressParish.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,6 +108,7 @@
             // 
             this.txtAddressTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddressTown.Location = new System.Drawing.Point(67, 3);
+            this.txtAddressTown.MaxLength = 80;
             this.txtAddressTown.Name = "txtAddressTown";
             this.txtAddressTown.Size = new System.Drawing.Size(250, 27);
             this.txtAddressTown.TabIndex = 3;
@@ -116,7 +117,8 @@
             // txtAddressPostOffice
             // 
             this.txtAddressPostOffice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddressPostOffice.Location = new System.Drawing.Point(67, 42);
+            this.txtAddressPostOffice.Location = new System.Drawing.Point(67, 43);
+            this.txtAddressPostOffice.MaxLength = 80;
             this.txtAddressPostOffice.Name = "txtAddressPostOffice";
             this.txtAddressPostOffice.Size = new System.Drawing.Size(250, 27);
             this.txtAddressPostOffice.TabIndex = 4;
@@ -125,7 +127,8 @@
             // txtAddressParish
             // 
             this.txtAddressParish.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddressParish.Location = new System.Drawing.Point(67, 81);
+            this.txtAddressParish.Location = new System.Drawing.Point(67, 83);
+            this.txtAddressParish.MaxLength = 80;
             this.txtAddressParish.Name = "txtAddressParish";
             this.txtAddressParish.Size = new System.Drawing.Size(250, 27);
             this.txtAddressParish.TabIndex = 5;
