@@ -97,7 +97,6 @@ namespace JAHub_ASPWebforms
             {
                 lblLoginResult.Text = "Please enter both the Email Address and Password and try" +
                     " " + " again.";
-                lblLoginResult.Visible = true;
             }
 
         }
