@@ -12,6 +12,9 @@ namespace JAHub_ASPWebforms
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadCart();
+
+            subtotal.InnerText = JAHubLib.Cart.CaluculateTotal().ToString();
+            itemCount.InnerText = JAHubLib.Cart.ShoppingCart.Count().ToString();
         }
         private void LoadCart()
         {
@@ -25,6 +28,12 @@ namespace JAHub_ASPWebforms
 
                 index++;
             }
+        }
+
+        public void CartSum()
+        {
+            subtotal.InnerText = JAHubLib.Cart.CaluculateTotal().ToString();
+            itemCount.InnerText = JAHubLib.Cart.ShoppingCart.Count().ToString();
         }
     }
 }
