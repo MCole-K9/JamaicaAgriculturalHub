@@ -177,6 +177,7 @@
     <Content Include="CreateBlog.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
+    <Content Include="farmer-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
