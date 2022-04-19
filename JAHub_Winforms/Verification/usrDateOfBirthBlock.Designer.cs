@@ -159,9 +159,9 @@
             "30",
             "31"});
             this.cmbDay.Location = new System.Drawing.Point(3, 36);
-            this.cmbDay.MaximumSize = new System.Drawing.Size(52, 0);
+            this.cmbDay.MaximumSize = new System.Drawing.Size(72, 0);
             this.cmbDay.Name = "cmbDay";
-            this.cmbDay.Size = new System.Drawing.Size(50, 28);
+            this.cmbDay.Size = new System.Drawing.Size(68, 28);
             this.cmbDay.TabIndex = 4;
             this.cmbDay.SelectedIndexChanged += new System.EventHandler(this.cmbDay_SelectedIndexChanged);
             this.cmbDay.Validating += new System.ComponentModel.CancelEventHandler(this.cmbDay_Validating);
@@ -186,7 +186,7 @@
             "December"});
             this.cmbMonth.Location = new System.Drawing.Point(103, 36);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(100, 28);
+            this.cmbMonth.Size = new System.Drawing.Size(111, 28);
             this.cmbMonth.TabIndex = 5;
             this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
             this.cmbMonth.Validating += new System.ComponentModel.CancelEventHandler(this.cmbMonth_Validating);
