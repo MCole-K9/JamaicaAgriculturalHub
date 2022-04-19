@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="col-xs-2 col-height">
-            <button type="button" class="btn btn-link btn-xs btn-style">
+            <button runat="server" id="btnDelete" onserverclick="btnDelete_ServerClick" type="button" class="btn btn-link btn-xs btn-style">
                 <span class="glyphicon glyphicon-trash"></span>
             </button>
         </div>

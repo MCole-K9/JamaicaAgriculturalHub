@@ -26,10 +26,10 @@ namespace JAHub_Winforms
         public void LoadOrderSummery()
         {
             //Makes Keys in the dictionary a list then access the values in the list using foreach-loop 
-            foreach (Product item in _frmCart._frmShop.Cart.Keys.ToList())
+            foreach (Product item in Cart.GetProductsInCart())
             {
                 //Passing in Product and Quantity
-                Shop_Controls.UsrOrderSumItem usrOrderSumItem = new Shop_Controls.UsrOrderSumItem(item, _frmCart._frmShop.Cart[item]);
+                Shop_Controls.UsrOrderSumItem usrOrderSumItem = new Shop_Controls.UsrOrderSumItem(item, Cart.ShoppingCart[item]);
                 fpnlOrderSummery.Controls.Add(usrOrderSumItem);
             }
 

@@ -49,8 +49,8 @@ namespace JAHub_Winforms
 
         private void FrmCart_Load(object sender, EventArgs e)
         {
-            LoadCart(_frmShop.Cart);
-            CaluculateSubtotal(_frmShop.Cart);
+            LoadCart(Cart.ShoppingCart);
+            CaluculateSubtotal(Cart.ShoppingCart);
 
             if (!(fpnlCart.Controls.Count > 0)){
                 

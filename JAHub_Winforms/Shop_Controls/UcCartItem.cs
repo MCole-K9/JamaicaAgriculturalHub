@@ -31,23 +31,11 @@ namespace JAHub_Winforms.Shop_Controls
             lblItemName.Text = _product.Name;
             lblPrice.Text = $"${_product.Price} Per Lbs";
             pcbImage.ImageLocation = _product.Image;
+            txtQty.Text = Cart.ShoppingCart[this._product].ToString();
         }
         private void UcCartItem_Load(object sender, EventArgs e)
         {
             PopulateFields();
-
-            // Quantity
-            //Defualt Quntity value is 1, code below stops the quantity from being set to 1 if it was already changed
-            //Quantiy Retention While Browsering the application
-            if(_frmCart._frmShop.Cart[_product] < 1)
-            {
-               this._frmCart._frmShop.Cart[_product] = 1;
-            }
-            else
-            {
-                txtQty.Text = this._frmCart._frmShop.Cart[_product].ToString();
-            }
-            
 
         }
 
@@ -92,9 +80,10 @@ namespace JAHub_Winforms.Shop_Controls
             this.Hide();
 
             //Remove Item From Cart Dictionary
-            this._frmCart._frmShop.Cart.Remove(_product);
+            //this._frmCart._frmShop.Cart.Remove(_product);
+            Cart.RemoveFromCart(_product);
 
-            this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
+            this._frmCart.CaluculateSubtotal(Cart.ShoppingCart);
 
 
         }
@@ -109,9 +98,9 @@ namespace JAHub_Winforms.Shop_Controls
                 txtQty.Text = qtyValue.ToString();
 
                 //Assigns Quantity
-                this._frmCart._frmShop.Cart[_product] = qtyValue;
+                Cart.ShoppingCart[_product] = qtyValue;
 
-                this._frmCart.CaluculateSubtotal(this._frmCart._frmShop.Cart);
+                this._frmCart.CaluculateSubtotal(Cart.ShoppingCart);
                
                 txtQty.BackColor = Color.White;
             }
