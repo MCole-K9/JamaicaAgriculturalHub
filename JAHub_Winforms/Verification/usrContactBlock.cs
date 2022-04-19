@@ -43,6 +43,11 @@ namespace JAHub_Winforms.Verification
             isEmailValid = true;
             // the phone number are all valid when parameterized constructed
             btnAddAnotherPhoneNumber.Visible = false;
+
+            if (email == null)
+            {
+                tblEmailSection.Visible = false;
+            }
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)

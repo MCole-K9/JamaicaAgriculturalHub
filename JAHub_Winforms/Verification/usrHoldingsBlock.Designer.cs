@@ -218,7 +218,7 @@ namespace JAHub_Winforms.Verification
             this.flwHoldingBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flwHoldingBlock.Location = new System.Drawing.Point(3, 3);
             this.flwHoldingBlock.Name = "flwHoldingBlock";
-            this.flwHoldingBlock.Size = new System.Drawing.Size(372, 463);
+            this.flwHoldingBlock.Size = new System.Drawing.Size(516, 463);
             this.flwHoldingBlock.TabIndex = 0;
             // 
             // lblHoldings
