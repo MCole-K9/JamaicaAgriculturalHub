@@ -47,7 +47,7 @@
             this.tblLandBlock.BackColor = System.Drawing.Color.Transparent;
             this.tblLandBlock.ColumnCount = 2;
             this.tblLandBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tblLandBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLandBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblLandBlock.Controls.Add(this.lblAddress, 0, 0);
             this.tblLandBlock.Controls.Add(this.lblLandMeasurement, 0, 1);
             this.tblLandBlock.Controls.Add(this.usrAddressBlock1, 1, 0);

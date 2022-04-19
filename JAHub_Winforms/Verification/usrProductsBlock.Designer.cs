@@ -49,6 +49,7 @@
             this.tblProductBlock.Controls.Add(this.txtProduct, 1, 0);
             this.tblProductBlock.Location = new System.Drawing.Point(0, 0);
             this.tblProductBlock.Margin = new System.Windows.Forms.Padding(0);
+            this.tblProductBlock.MaximumSize = new System.Drawing.Size(400, 400);
             this.tblProductBlock.Name = "tblProductBlock";
             this.tblProductBlock.RowCount = 1;
             this.tblProductBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -73,7 +74,7 @@
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.Location = new System.Drawing.Point(153, 3);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(125, 27);
+            this.txtProduct.Size = new System.Drawing.Size(120, 27);
             this.txtProduct.TabIndex = 1;
             this.txtProduct.Validating += new System.ComponentModel.CancelEventHandler(this.txtProduct_Validating);
             // 
