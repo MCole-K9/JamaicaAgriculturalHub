@@ -47,16 +47,16 @@ namespace JAHub_Winforms
             organizationsBlock = new usrOrganizationsBlock(farmer.Organizations);
 
             // Adding the controls to the FlowLayoutPanel
-            flwRadaViewRegistration.Controls.Add(nameBlock);
-            flwRadaViewRegistration.Controls.Add(dateOfBirthBlock);
-            flwRadaViewRegistration.Controls.Add(trnBlock);
-            flwRadaViewRegistration.Controls.Add(contactBlock);
-            flwRadaViewRegistration.Controls.Add(holdingsBlock);
-            flwRadaViewRegistration.Controls.Add(industryBlock);
+            flpRadaViewRegistration.Controls.Add(nameBlock);
+            flpRadaViewRegistration.Controls.Add(dateOfBirthBlock);
+            flpRadaViewRegistration.Controls.Add(trnBlock);
+            flpRadaViewRegistration.Controls.Add(contactBlock);
+            flpRadaViewRegistration.Controls.Add(holdingsBlock);
+            flpRadaViewRegistration.Controls.Add(industryBlock);
 
             if (farmer.Organizations.Count != 0)
             {
-                flwRadaViewRegistration.Controls.Add(organizationsBlock);
+                flpRadaViewRegistration.Controls.Add(organizationsBlock);
             }
         }
     }

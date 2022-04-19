@@ -29,49 +29,49 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.flwAdminCreateNewUser = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpAdminCreateNewUser = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCreateUser = new System.Windows.Forms.Label();
-            this.flwSelectUserRole = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpSelectUserRole = new System.Windows.Forms.FlowLayoutPanel();
             this.lblUserRole = new System.Windows.Forms.Label();
             this.cmbUserRole = new System.Windows.Forms.ComboBox();
-            this.flwControlsHolder = new System.Windows.Forms.FlowLayoutPanel();
-            this.flwUserCreationFields = new System.Windows.Forms.FlowLayoutPanel();
-            this.tblEmailEntry = new System.Windows.Forms.TableLayoutPanel();
+            this.flpControlsHolder = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpUserCreationFields = new System.Windows.Forms.FlowLayoutPanel();
+            this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
+            this.tlpEmailEntry = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmailEntry = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.tblPasswordEntry = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpPasswordEntry = new System.Windows.Forms.TableLayoutPanel();
             this.txtPasswordSecondEntry = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblRetypePassword = new System.Windows.Forms.Label();
             this.txtPasswordFirstEntry = new System.Windows.Forms.TextBox();
             this.btnSubmitRecord = new System.Windows.Forms.Button();
             this.errCreateNewUser = new System.Windows.Forms.ErrorProvider(this.components);
-            this.usrNameBlock1 = new JAHub_Winforms.Verification.usrNameBlock();
-            this.flwAdminCreateNewUser.SuspendLayout();
-            this.flwSelectUserRole.SuspendLayout();
-            this.flwUserCreationFields.SuspendLayout();
-            this.tblEmailEntry.SuspendLayout();
-            this.tblPasswordEntry.SuspendLayout();
+            this.flpAdminCreateNewUser.SuspendLayout();
+            this.flpSelectUserRole.SuspendLayout();
+            this.flpUserCreationFields.SuspendLayout();
+            this.tlpEmailEntry.SuspendLayout();
+            this.tlpPasswordEntry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errCreateNewUser)).BeginInit();
             this.SuspendLayout();
             // 
-            // flwAdminCreateNewUser
+            // flpAdminCreateNewUser
             // 
-            this.flwAdminCreateNewUser.AutoSize = true;
-            this.flwAdminCreateNewUser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwAdminCreateNewUser.Controls.Add(this.lblCreateUser);
-            this.flwAdminCreateNewUser.Controls.Add(this.flwSelectUserRole);
-            this.flwAdminCreateNewUser.Controls.Add(this.flwControlsHolder);
-            this.flwAdminCreateNewUser.Controls.Add(this.flwUserCreationFields);
-            this.flwAdminCreateNewUser.Controls.Add(this.btnSubmitRecord);
-            this.flwAdminCreateNewUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flwAdminCreateNewUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwAdminCreateNewUser.Location = new System.Drawing.Point(0, 0);
-            this.flwAdminCreateNewUser.Margin = new System.Windows.Forms.Padding(4);
-            this.flwAdminCreateNewUser.Name = "flwAdminCreateNewUser";
-            this.flwAdminCreateNewUser.Size = new System.Drawing.Size(607, 498);
-            this.flwAdminCreateNewUser.TabIndex = 0;
-            this.flwAdminCreateNewUser.WrapContents = false;
+            this.flpAdminCreateNewUser.AutoSize = true;
+            this.flpAdminCreateNewUser.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpAdminCreateNewUser.Controls.Add(this.lblCreateUser);
+            this.flpAdminCreateNewUser.Controls.Add(this.flpSelectUserRole);
+            this.flpAdminCreateNewUser.Controls.Add(this.flpControlsHolder);
+            this.flpAdminCreateNewUser.Controls.Add(this.flpUserCreationFields);
+            this.flpAdminCreateNewUser.Controls.Add(this.btnSubmitRecord);
+            this.flpAdminCreateNewUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAdminCreateNewUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpAdminCreateNewUser.Location = new System.Drawing.Point(0, 0);
+            this.flpAdminCreateNewUser.Margin = new System.Windows.Forms.Padding(4);
+            this.flpAdminCreateNewUser.Name = "flpAdminCreateNewUser";
+            this.flpAdminCreateNewUser.Size = new System.Drawing.Size(607, 498);
+            this.flpAdminCreateNewUser.TabIndex = 0;
+            this.flpAdminCreateNewUser.WrapContents = false;
             // 
             // lblCreateUser
             // 
@@ -84,17 +84,17 @@
             this.lblCreateUser.TabIndex = 0;
             this.lblCreateUser.Text = "Create New User";
             // 
-            // flwSelectUserRole
+            // flpSelectUserRole
             // 
-            this.flwSelectUserRole.AutoSize = true;
-            this.flwSelectUserRole.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwSelectUserRole.Controls.Add(this.lblUserRole);
-            this.flwSelectUserRole.Controls.Add(this.cmbUserRole);
-            this.flwSelectUserRole.Location = new System.Drawing.Point(4, 33);
-            this.flwSelectUserRole.Margin = new System.Windows.Forms.Padding(4);
-            this.flwSelectUserRole.Name = "flwSelectUserRole";
-            this.flwSelectUserRole.Size = new System.Drawing.Size(260, 36);
-            this.flwSelectUserRole.TabIndex = 1;
+            this.flpSelectUserRole.AutoSize = true;
+            this.flpSelectUserRole.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpSelectUserRole.Controls.Add(this.lblUserRole);
+            this.flpSelectUserRole.Controls.Add(this.cmbUserRole);
+            this.flpSelectUserRole.Location = new System.Drawing.Point(4, 33);
+            this.flpSelectUserRole.Margin = new System.Windows.Forms.Padding(4);
+            this.flpSelectUserRole.Name = "flpSelectUserRole";
+            this.flpSelectUserRole.Size = new System.Drawing.Size(260, 36);
+            this.flpSelectUserRole.TabIndex = 1;
             // 
             // lblUserRole
             // 
@@ -123,44 +123,57 @@
             this.cmbUserRole.Size = new System.Drawing.Size(150, 28);
             this.cmbUserRole.TabIndex = 0;
             // 
-            // flwControlsHolder
+            // flpControlsHolder
             // 
-            this.flwControlsHolder.AutoSize = true;
-            this.flwControlsHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwControlsHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwControlsHolder.Location = new System.Drawing.Point(3, 76);
-            this.flwControlsHolder.Name = "flwControlsHolder";
-            this.flwControlsHolder.Size = new System.Drawing.Size(0, 0);
-            this.flwControlsHolder.TabIndex = 2;
-            this.flwControlsHolder.WrapContents = false;
+            this.flpControlsHolder.AutoSize = true;
+            this.flpControlsHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpControlsHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpControlsHolder.Location = new System.Drawing.Point(3, 76);
+            this.flpControlsHolder.Name = "flpControlsHolder";
+            this.flpControlsHolder.Size = new System.Drawing.Size(0, 0);
+            this.flpControlsHolder.TabIndex = 2;
+            this.flpControlsHolder.WrapContents = false;
             // 
-            // flwUserCreationFields
+            // flpUserCreationFields
             // 
-            this.flwUserCreationFields.AutoSize = true;
-            this.flwUserCreationFields.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwUserCreationFields.Controls.Add(this.usrNameBlock1);
-            this.flwUserCreationFields.Controls.Add(this.tblEmailEntry);
-            this.flwUserCreationFields.Controls.Add(this.tblPasswordEntry);
-            this.flwUserCreationFields.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwUserCreationFields.Location = new System.Drawing.Point(3, 82);
-            this.flwUserCreationFields.Name = "flwUserCreationFields";
-            this.flwUserCreationFields.Size = new System.Drawing.Size(369, 258);
-            this.flwUserCreationFields.TabIndex = 4;
-            this.flwUserCreationFields.WrapContents = false;
+            this.flpUserCreationFields.AutoSize = true;
+            this.flpUserCreationFields.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpUserCreationFields.Controls.Add(this.usrNameBlock1);
+            this.flpUserCreationFields.Controls.Add(this.tlpEmailEntry);
+            this.flpUserCreationFields.Controls.Add(this.tlpPasswordEntry);
+            this.flpUserCreationFields.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpUserCreationFields.Location = new System.Drawing.Point(3, 82);
+            this.flpUserCreationFields.Name = "flpUserCreationFields";
+            this.flpUserCreationFields.Size = new System.Drawing.Size(425, 258);
+            this.flpUserCreationFields.TabIndex = 4;
+            this.flpUserCreationFields.WrapContents = false;
             // 
-            // tblEmailEntry
+            // usrNameBlock1
             // 
-            this.tblEmailEntry.ColumnCount = 2;
-            this.tblEmailEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tblEmailEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblEmailEntry.Controls.Add(this.lblEmailEntry, 0, 0);
-            this.tblEmailEntry.Controls.Add(this.txtEmail, 1, 0);
-            this.tblEmailEntry.Location = new System.Drawing.Point(3, 127);
-            this.tblEmailEntry.Name = "tblEmailEntry";
-            this.tblEmailEntry.RowCount = 1;
-            this.tblEmailEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblEmailEntry.Size = new System.Drawing.Size(363, 48);
-            this.tblEmailEntry.TabIndex = 2;
+            this.usrNameBlock1.AutoSize = true;
+            this.usrNameBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrNameBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrNameBlock1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.usrNameBlock1.Location = new System.Drawing.Point(0, 0);
+            this.usrNameBlock1.Margin = new System.Windows.Forms.Padding(0);
+            this.usrNameBlock1.Name = "usrNameBlock1";
+            this.usrNameBlock1.Padding = new System.Windows.Forms.Padding(48, 0, 0, 0);
+            this.usrNameBlock1.Size = new System.Drawing.Size(425, 124);
+            this.usrNameBlock1.TabIndex = 1;
+            // 
+            // tlpEmailEntry
+            // 
+            this.tlpEmailEntry.ColumnCount = 2;
+            this.tlpEmailEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tlpEmailEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpEmailEntry.Controls.Add(this.lblEmailEntry, 0, 0);
+            this.tlpEmailEntry.Controls.Add(this.txtEmail, 1, 0);
+            this.tlpEmailEntry.Location = new System.Drawing.Point(3, 127);
+            this.tlpEmailEntry.Name = "tlpEmailEntry";
+            this.tlpEmailEntry.RowCount = 1;
+            this.tlpEmailEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpEmailEntry.Size = new System.Drawing.Size(363, 48);
+            this.tlpEmailEntry.TabIndex = 2;
             // 
             // lblEmailEntry
             // 
@@ -181,22 +194,22 @@
             this.txtEmail.TabIndex = 2;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
-            // tblPasswordEntry
+            // tlpPasswordEntry
             // 
-            this.tblPasswordEntry.ColumnCount = 2;
-            this.tblPasswordEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tblPasswordEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPasswordEntry.Controls.Add(this.txtPasswordSecondEntry, 1, 1);
-            this.tblPasswordEntry.Controls.Add(this.lblPassword, 0, 0);
-            this.tblPasswordEntry.Controls.Add(this.lblRetypePassword, 0, 1);
-            this.tblPasswordEntry.Controls.Add(this.txtPasswordFirstEntry, 1, 0);
-            this.tblPasswordEntry.Location = new System.Drawing.Point(3, 181);
-            this.tblPasswordEntry.Name = "tblPasswordEntry";
-            this.tblPasswordEntry.RowCount = 2;
-            this.tblPasswordEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblPasswordEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblPasswordEntry.Size = new System.Drawing.Size(363, 74);
-            this.tblPasswordEntry.TabIndex = 5;
+            this.tlpPasswordEntry.ColumnCount = 2;
+            this.tlpPasswordEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tlpPasswordEntry.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPasswordEntry.Controls.Add(this.txtPasswordSecondEntry, 1, 1);
+            this.tlpPasswordEntry.Controls.Add(this.lblPassword, 0, 0);
+            this.tlpPasswordEntry.Controls.Add(this.lblRetypePassword, 0, 1);
+            this.tlpPasswordEntry.Controls.Add(this.txtPasswordFirstEntry, 1, 0);
+            this.tlpPasswordEntry.Location = new System.Drawing.Point(3, 181);
+            this.tlpPasswordEntry.Name = "tlpPasswordEntry";
+            this.tlpPasswordEntry.RowCount = 2;
+            this.tlpPasswordEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpPasswordEntry.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpPasswordEntry.Size = new System.Drawing.Size(363, 74);
+            this.tlpPasswordEntry.TabIndex = 5;
             // 
             // txtPasswordSecondEntry
             // 
@@ -251,19 +264,6 @@
             this.errCreateNewUser.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errCreateNewUser.ContainerControl = this;
             // 
-            // usrNameBlock1
-            // 
-            this.usrNameBlock1.AutoSize = true;
-            this.usrNameBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrNameBlock1.BackColor = System.Drawing.Color.Transparent;
-            this.usrNameBlock1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.usrNameBlock1.Location = new System.Drawing.Point(0, 0);
-            this.usrNameBlock1.Margin = new System.Windows.Forms.Padding(0);
-            this.usrNameBlock1.Name = "usrNameBlock1";
-            this.usrNameBlock1.Padding = new System.Windows.Forms.Padding(48, 0, 0, 0);
-            this.usrNameBlock1.Size = new System.Drawing.Size(363, 124);
-            this.usrNameBlock1.TabIndex = 1;
-            // 
             // FrmAdminCreateNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -272,7 +272,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(607, 498);
-            this.Controls.Add(this.flwAdminCreateNewUser);
+            this.Controls.Add(this.flpAdminCreateNewUser);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -280,16 +280,16 @@
             this.Text = "FrmAdminCreateNewUser";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminCreateNewUser_Load);
-            this.flwAdminCreateNewUser.ResumeLayout(false);
-            this.flwAdminCreateNewUser.PerformLayout();
-            this.flwSelectUserRole.ResumeLayout(false);
-            this.flwSelectUserRole.PerformLayout();
-            this.flwUserCreationFields.ResumeLayout(false);
-            this.flwUserCreationFields.PerformLayout();
-            this.tblEmailEntry.ResumeLayout(false);
-            this.tblEmailEntry.PerformLayout();
-            this.tblPasswordEntry.ResumeLayout(false);
-            this.tblPasswordEntry.PerformLayout();
+            this.flpAdminCreateNewUser.ResumeLayout(false);
+            this.flpAdminCreateNewUser.PerformLayout();
+            this.flpSelectUserRole.ResumeLayout(false);
+            this.flpSelectUserRole.PerformLayout();
+            this.flpUserCreationFields.ResumeLayout(false);
+            this.flpUserCreationFields.PerformLayout();
+            this.tlpEmailEntry.ResumeLayout(false);
+            this.tlpEmailEntry.PerformLayout();
+            this.tlpPasswordEntry.ResumeLayout(false);
+            this.tlpPasswordEntry.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errCreateNewUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -298,19 +298,19 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flwAdminCreateNewUser;
+        private System.Windows.Forms.FlowLayoutPanel flpAdminCreateNewUser;
         private System.Windows.Forms.Label lblCreateUser;
-        private System.Windows.Forms.FlowLayoutPanel flwSelectUserRole;
+        private System.Windows.Forms.FlowLayoutPanel flpSelectUserRole;
         private System.Windows.Forms.Label lblUserRole;
         private System.Windows.Forms.ComboBox cmbUserRole;
-        private System.Windows.Forms.FlowLayoutPanel flwControlsHolder;
+        private System.Windows.Forms.FlowLayoutPanel flpControlsHolder;
         private System.Windows.Forms.Button btnSubmitRecord;
-        private System.Windows.Forms.FlowLayoutPanel flwUserCreationFields;
+        private System.Windows.Forms.FlowLayoutPanel flpUserCreationFields;
         private Verification.usrNameBlock usrNameBlock1;
-        private System.Windows.Forms.TableLayoutPanel tblPasswordEntry;
+        private System.Windows.Forms.TableLayoutPanel tlpPasswordEntry;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblRetypePassword;
-        private System.Windows.Forms.TableLayoutPanel tblEmailEntry;
+        private System.Windows.Forms.TableLayoutPanel tlpEmailEntry;
         private System.Windows.Forms.Label lblEmailEntry;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.ErrorProvider errCreateNewUser;

@@ -135,7 +135,7 @@ namespace JAHub_Winforms
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
-                grantsToolStripMenuItem.Visible = true;
+                miGrants.Visible = true;
                 
                 mnsMainForm.Show();
             }
@@ -147,7 +147,7 @@ namespace JAHub_Winforms
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
-                grantsToolStripMenuItem.Visible = false;
+                miGrants.Visible = false;
 
                 mnsMainForm.Show();
             }
@@ -159,7 +159,7 @@ namespace JAHub_Winforms
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
-                grantsToolStripMenuItem.Visible = true;
+                miGrants.Visible = true;
 
                 mnsMainForm.Show();
             }
@@ -172,7 +172,7 @@ namespace JAHub_Winforms
                 miHome.Visible= true;
                 miShop.Visible = false;
                 miUserProfile.Visible = false;
-                grantsToolStripMenuItem.Visible = true;
+                miGrants.Visible = true;
 
                 mnsMainForm.Show();
             }
