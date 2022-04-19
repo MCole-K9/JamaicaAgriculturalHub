@@ -60,5 +60,11 @@ namespace JAHub_ASPWebforms.Shop_Controls
 
             }
         }
+
+        protected void btnDelete_ServerClick(object sender, EventArgs e)
+        {
+            JAHubLib.Cart.RemoveFromCart(this.product);
+            this.Parent.Controls.Remove(this);
+        }
     }
 }
