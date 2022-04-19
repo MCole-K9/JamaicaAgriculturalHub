@@ -117,21 +117,26 @@ namespace JAHub_ASPWebforms
                 {
                     using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
                     {
-                        String userReadUserInfo = "SELECT UserId, FirstName, LastName, UserRole FROM " +
-                            $"[User] WHERE EmailAddress = '{txtEmail.Text}";
+                        connection.Open();
+
+                        String userReadUserInfo = "SELECT ID, FirstName, LastName, UserRole FROM " +
+                            $"[User] WHERE EmailAddress = '{txtEmail.Text}';";
 
                         SqlCommand cmd = new SqlCommand(userReadUserInfo, connection);
 
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        if (reader["UserId"] != null)
+                        if (reader.Read())
                         {
-                            Session["UserId"] = reader["UserId"];
+                            Session["UserId"] = reader["ID"];
                             Session["FirstName"] = reader["FirstName"];
                             Session["LastName"] = reader["LastName"];
-                            Session["Role"] = reader["Role"];
+                            Session["UserRole"] = reader["UserRole"];
                             Session.Timeout = 60;
                         }
+                        reader.Close();
+
+                        connection.Close();
                     }
 
                     // idk if this actually goes where it should
