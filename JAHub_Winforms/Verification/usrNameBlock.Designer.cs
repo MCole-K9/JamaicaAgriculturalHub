@@ -49,7 +49,7 @@
             this.tblNameBlock.BackColor = System.Drawing.Color.Transparent;
             this.tblNameBlock.ColumnCount = 2;
             this.tblNameBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblNameBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tblNameBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tblNameBlock.Controls.Add(this.lblFirstName, 0, 1);
             this.tblNameBlock.Controls.Add(this.lblNameSectionTitle, 0, 0);
             this.tblNameBlock.Controls.Add(this.lblMiddleName, 0, 2);
@@ -65,7 +65,7 @@
             this.tblNameBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblNameBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblNameBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblNameBlock.Size = new System.Drawing.Size(263, 124);
+            this.tblNameBlock.Size = new System.Drawing.Size(313, 124);
             this.tblNameBlock.TabIndex = 0;
             // 
             // lblFirstName
@@ -90,7 +90,7 @@
             this.lblNameSectionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameSectionTitle.Location = new System.Drawing.Point(3, 0);
             this.lblNameSectionTitle.Name = "lblNameSectionTitle";
-            this.lblNameSectionTitle.Size = new System.Drawing.Size(257, 31);
+            this.lblNameSectionTitle.Size = new System.Drawing.Size(307, 31);
             this.lblNameSectionTitle.TabIndex = 0;
             this.lblNameSectionTitle.Text = "Name*";
             this.lblNameSectionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,9 +125,9 @@
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(116, 33);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFirstName.MaxLength = 200;
+            this.txtFirstName.MaxLength = 60;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(125, 27);
+            this.txtFirstName.Size = new System.Drawing.Size(150, 27);
             this.txtFirstName.TabIndex = 3;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtFirstName_Validating);
             // 
@@ -136,9 +136,9 @@
             this.txtMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMiddleName.Location = new System.Drawing.Point(116, 64);
             this.txtMiddleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMiddleName.MaxLength = 200;
+            this.txtMiddleName.MaxLength = 60;
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(125, 27);
+            this.txtMiddleName.Size = new System.Drawing.Size(150, 27);
             this.txtMiddleName.TabIndex = 3;
             this.txtMiddleName.Validating += new System.ComponentModel.CancelEventHandler(this.txtMiddleName_Validating);
             // 
@@ -147,9 +147,9 @@
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(116, 95);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtLastName.MaxLength = 200;
+            this.txtLastName.MaxLength = 60;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(125, 27);
+            this.txtLastName.Size = new System.Drawing.Size(150, 27);
             this.txtLastName.TabIndex = 3;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtLastName_Validating);
             // 
@@ -169,7 +169,7 @@
             this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "usrNameBlock";
-            this.Size = new System.Drawing.Size(263, 124);
+            this.Size = new System.Drawing.Size(313, 124);
             this.tblNameBlock.ResumeLayout(false);
             this.tblNameBlock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errNameBlock)).EndInit();

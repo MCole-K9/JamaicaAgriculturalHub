@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tblProductBlock = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpProductBlock = new System.Windows.Forms.TableLayoutPanel();
             this.lblProduct = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.errProductsBlock = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblProductBlock.SuspendLayout();
+            this.tlpProductBlock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProductsBlock)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblProductBlock
+            // tlpProductBlock
             // 
-            this.tblProductBlock.AutoSize = true;
-            this.tblProductBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tblProductBlock.BackColor = System.Drawing.Color.Transparent;
-            this.tblProductBlock.ColumnCount = 2;
-            this.tblProductBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblProductBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblProductBlock.Controls.Add(this.lblProduct, 0, 0);
-            this.tblProductBlock.Controls.Add(this.txtProduct, 1, 0);
-            this.tblProductBlock.Location = new System.Drawing.Point(0, 0);
-            this.tblProductBlock.Margin = new System.Windows.Forms.Padding(0);
-            this.tblProductBlock.Name = "tblProductBlock";
-            this.tblProductBlock.RowCount = 1;
-            this.tblProductBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblProductBlock.Size = new System.Drawing.Size(300, 33);
-            this.tblProductBlock.TabIndex = 0;
+            this.tlpProductBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpProductBlock.BackColor = System.Drawing.Color.Transparent;
+            this.tlpProductBlock.ColumnCount = 2;
+            this.tlpProductBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpProductBlock.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tlpProductBlock.Controls.Add(this.lblProduct, 0, 0);
+            this.tlpProductBlock.Controls.Add(this.txtProduct, 1, 0);
+            this.tlpProductBlock.Location = new System.Drawing.Point(0, 0);
+            this.tlpProductBlock.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpProductBlock.MaximumSize = new System.Drawing.Size(400, 400);
+            this.tlpProductBlock.Name = "tlpProductBlock";
+            this.tlpProductBlock.RowCount = 1;
+            this.tlpProductBlock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpProductBlock.Size = new System.Drawing.Size(400, 33);
+            this.tlpProductBlock.TabIndex = 0;
             // 
             // lblProduct
             // 
@@ -72,8 +72,9 @@
             // 
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.Location = new System.Drawing.Point(153, 3);
+            this.txtProduct.MaxLength = 50;
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(125, 27);
+            this.txtProduct.Size = new System.Drawing.Size(211, 27);
             this.txtProduct.TabIndex = 1;
             this.txtProduct.Validating += new System.ComponentModel.CancelEventHandler(this.txtProduct_Validating);
             // 
@@ -89,20 +90,19 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.tblProductBlock);
+            this.Controls.Add(this.tlpProductBlock);
             this.Name = "usrProductsBlock";
-            this.Size = new System.Drawing.Size(300, 33);
-            this.tblProductBlock.ResumeLayout(false);
-            this.tblProductBlock.PerformLayout();
+            this.Size = new System.Drawing.Size(400, 33);
+            this.tlpProductBlock.ResumeLayout(false);
+            this.tlpProductBlock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errProductsBlock)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tblProductBlock;
+        private System.Windows.Forms.TableLayoutPanel tlpProductBlock;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.ErrorProvider errProductsBlock;

@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tblPhoneNumber = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpPhoneNumber = new System.Windows.Forms.TableLayoutPanel();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.mskPhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.errPhoneNumber = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblPhoneNumber.SuspendLayout();
+            this.tlpPhoneNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errPhoneNumber)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblPhoneNumber
+            // tlpPhoneNumber
             // 
-            this.tblPhoneNumber.AutoSize = true;
-            this.tblPhoneNumber.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
-            this.tblPhoneNumber.ColumnCount = 2;
-            this.tblPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tblPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
-            this.tblPhoneNumber.Controls.Add(this.lblPhoneNumber, 0, 0);
-            this.tblPhoneNumber.Controls.Add(this.mskPhoneNumber, 1, 0);
-            this.tblPhoneNumber.Location = new System.Drawing.Point(3, 3);
-            this.tblPhoneNumber.Name = "tblPhoneNumber";
-            this.tblPhoneNumber.RowCount = 1;
-            this.tblPhoneNumber.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPhoneNumber.Size = new System.Drawing.Size(302, 33);
-            this.tblPhoneNumber.TabIndex = 0;
+            this.tlpPhoneNumber.AutoSize = true;
+            this.tlpPhoneNumber.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpPhoneNumber.BackColor = System.Drawing.Color.Transparent;
+            this.tlpPhoneNumber.ColumnCount = 2;
+            this.tlpPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tlpPhoneNumber.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tlpPhoneNumber.Controls.Add(this.lblPhoneNumber, 0, 0);
+            this.tlpPhoneNumber.Controls.Add(this.mskPhoneNumber, 1, 0);
+            this.tlpPhoneNumber.Location = new System.Drawing.Point(3, 3);
+            this.tlpPhoneNumber.Name = "tlpPhoneNumber";
+            this.tlpPhoneNumber.RowCount = 1;
+            this.tlpPhoneNumber.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPhoneNumber.Size = new System.Drawing.Size(302, 33);
+            this.tlpPhoneNumber.TabIndex = 0;
             // 
             // lblPhoneNumber
             // 
@@ -91,11 +91,11 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.tblPhoneNumber);
+            this.Controls.Add(this.tlpPhoneNumber);
             this.Name = "usrPhoneNumberBlock";
             this.Size = new System.Drawing.Size(308, 39);
-            this.tblPhoneNumber.ResumeLayout(false);
-            this.tblPhoneNumber.PerformLayout();
+            this.tlpPhoneNumber.ResumeLayout(false);
+            this.tlpPhoneNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errPhoneNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -104,7 +104,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tblPhoneNumber;
+        private System.Windows.Forms.TableLayoutPanel tlpPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.ErrorProvider errPhoneNumber;
         private System.Windows.Forms.MaskedTextBox mskPhoneNumber;

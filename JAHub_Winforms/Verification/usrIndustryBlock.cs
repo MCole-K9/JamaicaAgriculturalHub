@@ -32,6 +32,13 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             nudNumberOfEmployees.Value = farmer.NumberOfEmployees;
+            
+            if (farmer.NumberOfEmployees == 0)
+            {
+                lblNumberOfEmployees.Visible = false;
+                nudNumberOfEmployees.Visible = false;
+            }
+            
             if (farmer.UsesHeavyMachinery == true)
             {
                 rdoIndustryYes.Select();
@@ -40,6 +47,10 @@ namespace JAHub_Winforms.Verification
             {
                 rdoIndustryNo.Select();
             }
+
+            rdoIndustryNo.Enabled = false;
+            rdoIndustryYes.Enabled = false;
+            nudNumberOfEmployees.Enabled = false;
 
             isChoiceSelected = true;
         }

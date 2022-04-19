@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tblRadaStatus = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpRadaStatus = new System.Windows.Forms.TableLayoutPanel();
             this.lblRadaStatus = new System.Windows.Forms.Label();
             this.lblStatusType = new System.Windows.Forms.Label();
-            this.flwRadaStatus = new System.Windows.Forms.FlowLayoutPanel();
-            this.tblTextHolder = new System.Windows.Forms.TableLayoutPanel();
+            this.flpRadaStatus = new System.Windows.Forms.FlowLayoutPanel();
+            this.tlpTextHolder = new System.Windows.Forms.TableLayoutPanel();
             this.lblStatusExplanation = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblInformation = new System.Windows.Forms.Label();
             this.btnRegisterWithRada = new System.Windows.Forms.Button();
-            this.tblRadaStatus.SuspendLayout();
-            this.flwRadaStatus.SuspendLayout();
-            this.tblTextHolder.SuspendLayout();
+            this.tlpRadaStatus.SuspendLayout();
+            this.flpRadaStatus.SuspendLayout();
+            this.tlpTextHolder.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tblRadaStatus
+            // tlpRadaStatus
             // 
-            this.tblRadaStatus.ColumnCount = 2;
-            this.tblRadaStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblRadaStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblRadaStatus.Controls.Add(this.lblRadaStatus, 0, 0);
-            this.tblRadaStatus.Controls.Add(this.lblStatusType, 1, 0);
-            this.tblRadaStatus.Location = new System.Drawing.Point(3, 3);
-            this.tblRadaStatus.Name = "tblRadaStatus";
-            this.tblRadaStatus.RowCount = 1;
-            this.tblRadaStatus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblRadaStatus.Size = new System.Drawing.Size(398, 38);
-            this.tblRadaStatus.TabIndex = 0;
+            this.tlpRadaStatus.ColumnCount = 2;
+            this.tlpRadaStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRadaStatus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRadaStatus.Controls.Add(this.lblRadaStatus, 0, 0);
+            this.tlpRadaStatus.Controls.Add(this.lblStatusType, 1, 0);
+            this.tlpRadaStatus.Location = new System.Drawing.Point(3, 3);
+            this.tlpRadaStatus.Name = "tlpRadaStatus";
+            this.tlpRadaStatus.RowCount = 1;
+            this.tlpRadaStatus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpRadaStatus.Size = new System.Drawing.Size(398, 38);
+            this.tlpRadaStatus.TabIndex = 0;
             // 
             // lblRadaStatus
             // 
@@ -82,44 +82,45 @@
             this.lblStatusType.Text = "Not Registered";
             this.lblStatusType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // flwRadaStatus
+            // flpRadaStatus
             // 
-            this.flwRadaStatus.AutoSize = true;
-            this.flwRadaStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwRadaStatus.Controls.Add(this.tblRadaStatus);
-            this.flwRadaStatus.Controls.Add(this.tblTextHolder);
-            this.flwRadaStatus.Controls.Add(this.btnRegisterWithRada);
-            this.flwRadaStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flwRadaStatus.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwRadaStatus.Location = new System.Drawing.Point(0, 0);
-            this.flwRadaStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.flwRadaStatus.Name = "flwRadaStatus";
-            this.flwRadaStatus.Size = new System.Drawing.Size(409, 285);
-            this.flwRadaStatus.TabIndex = 1;
-            this.flwRadaStatus.WrapContents = false;
+            this.flpRadaStatus.AutoSize = true;
+            this.flpRadaStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpRadaStatus.BackColor = System.Drawing.Color.Transparent;
+            this.flpRadaStatus.Controls.Add(this.tlpRadaStatus);
+            this.flpRadaStatus.Controls.Add(this.tlpTextHolder);
+            this.flpRadaStatus.Controls.Add(this.btnRegisterWithRada);
+            this.flpRadaStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpRadaStatus.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpRadaStatus.Location = new System.Drawing.Point(0, 0);
+            this.flpRadaStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.flpRadaStatus.Name = "flpRadaStatus";
+            this.flpRadaStatus.Size = new System.Drawing.Size(409, 285);
+            this.flpRadaStatus.TabIndex = 1;
+            this.flpRadaStatus.WrapContents = false;
             // 
-            // tblTextHolder
+            // tlpTextHolder
             // 
-            this.tblTextHolder.AutoSize = true;
-            this.tblTextHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tblTextHolder.ColumnCount = 2;
-            this.tblTextHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tblTextHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblTextHolder.Controls.Add(this.lblStatusExplanation, 0, 0);
-            this.tblTextHolder.Controls.Add(this.btnEdit, 1, 1);
-            this.tblTextHolder.Controls.Add(this.lblInformation, 0, 1);
-            this.tblTextHolder.Location = new System.Drawing.Point(3, 47);
-            this.tblTextHolder.Name = "tblTextHolder";
-            this.tblTextHolder.RowCount = 2;
-            this.tblTextHolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblTextHolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblTextHolder.Size = new System.Drawing.Size(381, 58);
-            this.tblTextHolder.TabIndex = 3;
+            this.tlpTextHolder.AutoSize = true;
+            this.tlpTextHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpTextHolder.ColumnCount = 2;
+            this.tlpTextHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpTextHolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTextHolder.Controls.Add(this.lblStatusExplanation, 0, 0);
+            this.tlpTextHolder.Controls.Add(this.btnEdit, 1, 1);
+            this.tlpTextHolder.Controls.Add(this.lblInformation, 0, 1);
+            this.tlpTextHolder.Location = new System.Drawing.Point(3, 47);
+            this.tlpTextHolder.Name = "tlpTextHolder";
+            this.tlpTextHolder.RowCount = 2;
+            this.tlpTextHolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpTextHolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpTextHolder.Size = new System.Drawing.Size(381, 58);
+            this.tlpTextHolder.TabIndex = 3;
             // 
             // lblStatusExplanation
             // 
             this.lblStatusExplanation.AutoSize = true;
-            this.tblTextHolder.SetColumnSpan(this.lblStatusExplanation, 2);
+            this.tlpTextHolder.SetColumnSpan(this.lblStatusExplanation, 2);
             this.lblStatusExplanation.Location = new System.Drawing.Point(3, 0);
             this.lblStatusExplanation.Name = "lblStatusExplanation";
             this.lblStatusExplanation.Size = new System.Drawing.Size(375, 20);
@@ -128,11 +129,11 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(155, 23);
+            this.btnEdit.Location = new System.Drawing.Point(165, 23);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(102, 32);
             this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "View";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -144,9 +145,9 @@
             this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.Location = new System.Drawing.Point(3, 26);
             this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(146, 25);
+            this.lblInformation.Size = new System.Drawing.Size(156, 25);
             this.lblInformation.TabIndex = 3;
-            this.lblInformation.Text = "Edit Information";
+            this.lblInformation.Text = "View Information";
             this.lblInformation.Visible = false;
             // 
             // btnRegisterWithRada
@@ -166,20 +167,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(409, 285);
-            this.Controls.Add(this.flwRadaStatus);
+            this.Controls.Add(this.flpRadaStatus);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRadaStatus";
             this.Text = "Rada Status (This should not be visible!)";
             this.Load += new System.EventHandler(this.FrmRadaStatus_Load);
-            this.tblRadaStatus.ResumeLayout(false);
-            this.tblRadaStatus.PerformLayout();
-            this.flwRadaStatus.ResumeLayout(false);
-            this.flwRadaStatus.PerformLayout();
-            this.tblTextHolder.ResumeLayout(false);
-            this.tblTextHolder.PerformLayout();
+            this.tlpRadaStatus.ResumeLayout(false);
+            this.tlpRadaStatus.PerformLayout();
+            this.flpRadaStatus.ResumeLayout(false);
+            this.flpRadaStatus.PerformLayout();
+            this.tlpTextHolder.ResumeLayout(false);
+            this.tlpTextHolder.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,12 +190,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tblRadaStatus;
+        private System.Windows.Forms.TableLayoutPanel tlpRadaStatus;
         private System.Windows.Forms.Label lblRadaStatus;
         private System.Windows.Forms.Label lblStatusType;
-        private System.Windows.Forms.FlowLayoutPanel flwRadaStatus;
+        private System.Windows.Forms.FlowLayoutPanel flpRadaStatus;
         private System.Windows.Forms.Label lblStatusExplanation;
-        private System.Windows.Forms.TableLayoutPanel tblTextHolder;
+        private System.Windows.Forms.TableLayoutPanel tlpTextHolder;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRegisterWithRada;
         private System.Windows.Forms.Label lblInformation;

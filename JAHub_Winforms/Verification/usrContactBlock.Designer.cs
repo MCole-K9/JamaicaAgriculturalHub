@@ -31,38 +31,38 @@ namespace JAHub_Winforms.Verification
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.flwContactBlock = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpContactBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.lblContantInformation = new System.Windows.Forms.Label();
             this.tblEmailSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.flwPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
             this.usrPhoneNumberBlock1 = new JAHub_Winforms.Verification.usrPhoneNumberBlock();
             this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
             this.btnRemoveNumber = new System.Windows.Forms.Button();
             this.errContactBlock = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flwContactBlock.SuspendLayout();
+            this.flpContactBlock.SuspendLayout();
             this.tblEmailSection.SuspendLayout();
-            this.flwPhoneNumbers.SuspendLayout();
+            this.flpPhoneNumbers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errContactBlock)).BeginInit();
             this.SuspendLayout();
             // 
-            // flwContactBlock
+            // flpContactBlock
             // 
-            this.flwContactBlock.AutoSize = true;
-            this.flwContactBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwContactBlock.BackColor = System.Drawing.Color.Transparent;
-            this.flwContactBlock.Controls.Add(this.lblContantInformation);
-            this.flwContactBlock.Controls.Add(this.tblEmailSection);
-            this.flwContactBlock.Controls.Add(this.flwPhoneNumbers);
-            this.flwContactBlock.Controls.Add(this.btnAddAnotherPhoneNumber);
-            this.flwContactBlock.Controls.Add(this.btnRemoveNumber);
-            this.flwContactBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwContactBlock.Location = new System.Drawing.Point(0, 0);
-            this.flwContactBlock.Margin = new System.Windows.Forms.Padding(0);
-            this.flwContactBlock.Name = "flwContactBlock";
-            this.flwContactBlock.Size = new System.Drawing.Size(400, 210);
-            this.flwContactBlock.TabIndex = 0;
+            this.flpContactBlock.AutoSize = true;
+            this.flpContactBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpContactBlock.BackColor = System.Drawing.Color.Transparent;
+            this.flpContactBlock.Controls.Add(this.lblContantInformation);
+            this.flpContactBlock.Controls.Add(this.tblEmailSection);
+            this.flpContactBlock.Controls.Add(this.flpPhoneNumbers);
+            this.flpContactBlock.Controls.Add(this.btnAddAnotherPhoneNumber);
+            this.flpContactBlock.Controls.Add(this.btnRemoveNumber);
+            this.flpContactBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpContactBlock.Location = new System.Drawing.Point(0, 0);
+            this.flpContactBlock.Margin = new System.Windows.Forms.Padding(0);
+            this.flpContactBlock.Name = "flpContactBlock";
+            this.flpContactBlock.Size = new System.Drawing.Size(445, 210);
+            this.flpContactBlock.TabIndex = 0;
             // 
             // lblContantInformation
             // 
@@ -79,14 +79,14 @@ namespace JAHub_Winforms.Verification
             this.tblEmailSection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblEmailSection.ColumnCount = 2;
             this.tblEmailSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
-            this.tblEmailSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tblEmailSection.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 249F));
             this.tblEmailSection.Controls.Add(this.lblEmail, 0, 0);
             this.tblEmailSection.Controls.Add(this.txtEmail, 1, 0);
             this.tblEmailSection.Location = new System.Drawing.Point(3, 28);
             this.tblEmailSection.Name = "tblEmailSection";
             this.tblEmailSection.RowCount = 1;
             this.tblEmailSection.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblEmailSection.Size = new System.Drawing.Size(386, 46);
+            this.tblEmailSection.Size = new System.Drawing.Size(439, 46);
             this.tblEmailSection.TabIndex = 1;
             // 
             // lblEmail
@@ -105,22 +105,22 @@ namespace JAHub_Winforms.Verification
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(193, 9);
-            this.txtEmail.MaxLength = 65;
+            this.txtEmail.MaxLength = 75;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(159, 27);
+            this.txtEmail.Size = new System.Drawing.Size(201, 27);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
-            // flwPhoneNumbers
+            // flpPhoneNumbers
             // 
-            this.flwPhoneNumbers.AutoSize = true;
-            this.flwPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
-            this.flwPhoneNumbers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwPhoneNumbers.Location = new System.Drawing.Point(3, 80);
-            this.flwPhoneNumbers.Name = "flwPhoneNumbers";
-            this.flwPhoneNumbers.Size = new System.Drawing.Size(394, 51);
-            this.flwPhoneNumbers.TabIndex = 5;
+            this.flpPhoneNumbers.AutoSize = true;
+            this.flpPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
+            this.flpPhoneNumbers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpPhoneNumbers.Location = new System.Drawing.Point(3, 80);
+            this.flpPhoneNumbers.Name = "flpPhoneNumbers";
+            this.flpPhoneNumbers.Size = new System.Drawing.Size(394, 51);
+            this.flpPhoneNumbers.TabIndex = 5;
             // 
             // usrPhoneNumberBlock1
             // 
@@ -140,7 +140,7 @@ namespace JAHub_Winforms.Verification
             this.btnAddAnotherPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAnotherPhoneNumber.Location = new System.Drawing.Point(3, 137);
             this.btnAddAnotherPhoneNumber.Name = "btnAddAnotherPhoneNumber";
-            this.btnAddAnotherPhoneNumber.Size = new System.Drawing.Size(394, 32);
+            this.btnAddAnotherPhoneNumber.Size = new System.Drawing.Size(439, 32);
             this.btnAddAnotherPhoneNumber.TabIndex = 2;
             this.btnAddAnotherPhoneNumber.Text = "Add Another Phone Number";
             this.btnAddAnotherPhoneNumber.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@ namespace JAHub_Winforms.Verification
             this.btnRemoveNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveNumber.Location = new System.Drawing.Point(3, 175);
             this.btnRemoveNumber.Name = "btnRemoveNumber";
-            this.btnRemoveNumber.Size = new System.Drawing.Size(394, 32);
+            this.btnRemoveNumber.Size = new System.Drawing.Size(439, 32);
             this.btnRemoveNumber.TabIndex = 4;
             this.btnRemoveNumber.Text = "Remove a Number";
             this.btnRemoveNumber.UseVisualStyleBackColor = true;
@@ -171,16 +171,16 @@ namespace JAHub_Winforms.Verification
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.flwContactBlock);
+            this.Controls.Add(this.flpContactBlock);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "usrContactBlock";
-            this.Size = new System.Drawing.Size(400, 210);
-            this.flwContactBlock.ResumeLayout(false);
-            this.flwContactBlock.PerformLayout();
+            this.Size = new System.Drawing.Size(445, 210);
+            this.flpContactBlock.ResumeLayout(false);
+            this.flpContactBlock.PerformLayout();
             this.tblEmailSection.ResumeLayout(false);
             this.tblEmailSection.PerformLayout();
-            this.flwPhoneNumbers.ResumeLayout(false);
-            this.flwPhoneNumbers.PerformLayout();
+            this.flpPhoneNumbers.ResumeLayout(false);
+            this.flpPhoneNumbers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errContactBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,37 +194,37 @@ namespace JAHub_Winforms.Verification
         private void InitializeFilledComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.flwContactBlock = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpContactBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.lblContantInformation = new System.Windows.Forms.Label();
             this.tblEmailSection = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.flwPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpPhoneNumbers = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddAnotherPhoneNumber = new System.Windows.Forms.Button();
             this.btnRemoveNumber = new System.Windows.Forms.Button();
             this.errContactBlock = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flwContactBlock.SuspendLayout();
+            this.flpContactBlock.SuspendLayout();
             this.tblEmailSection.SuspendLayout();
-            this.flwPhoneNumbers.SuspendLayout();
+            this.flpPhoneNumbers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errContactBlock)).BeginInit();
             this.SuspendLayout();
             // 
             // flwContactBlock
             // 
-            this.flwContactBlock.AutoSize = true;
-            this.flwContactBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwContactBlock.BackColor = System.Drawing.Color.Transparent;
-            this.flwContactBlock.Controls.Add(this.lblContantInformation);
-            this.flwContactBlock.Controls.Add(this.tblEmailSection);
-            this.flwContactBlock.Controls.Add(this.flwPhoneNumbers);
-            this.flwContactBlock.Controls.Add(this.btnAddAnotherPhoneNumber);
-            this.flwContactBlock.Controls.Add(this.btnRemoveNumber);
-            this.flwContactBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwContactBlock.Location = new System.Drawing.Point(0, 0);
-            this.flwContactBlock.Margin = new System.Windows.Forms.Padding(0);
-            this.flwContactBlock.Name = "flwContactBlock";
-            this.flwContactBlock.Size = new System.Drawing.Size(400, 210);
-            this.flwContactBlock.TabIndex = 0;
+            this.flpContactBlock.AutoSize = true;
+            this.flpContactBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpContactBlock.BackColor = System.Drawing.Color.Transparent;
+            this.flpContactBlock.Controls.Add(this.lblContantInformation);
+            this.flpContactBlock.Controls.Add(this.tblEmailSection);
+            this.flpContactBlock.Controls.Add(this.flpPhoneNumbers);
+            this.flpContactBlock.Controls.Add(this.btnAddAnotherPhoneNumber);
+            this.flpContactBlock.Controls.Add(this.btnRemoveNumber);
+            this.flpContactBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpContactBlock.Location = new System.Drawing.Point(0, 0);
+            this.flpContactBlock.Margin = new System.Windows.Forms.Padding(0);
+            this.flpContactBlock.Name = "flwContactBlock";
+            this.flpContactBlock.Size = new System.Drawing.Size(400, 210);
+            this.flpContactBlock.TabIndex = 0;
             // 
             // lblContantInformation
             // 
@@ -275,13 +275,13 @@ namespace JAHub_Winforms.Verification
             // 
             // flwPhoneNumbers
             // 
-            this.flwPhoneNumbers.AutoSize = true;
-            this.flwPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
-            this.flwPhoneNumbers.Location = new System.Drawing.Point(3, 80);
-            this.flwPhoneNumbers.Name = "flwPhoneNumbers";
-            this.flwPhoneNumbers.Size = new System.Drawing.Size(394, 51);
-            this.flwPhoneNumbers.TabIndex = 5;
+            this.flpPhoneNumbers.AutoSize = true;
+            this.flpPhoneNumbers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpPhoneNumbers.Controls.Add(this.usrPhoneNumberBlock1);
+            this.flpPhoneNumbers.Location = new System.Drawing.Point(3, 80);
+            this.flpPhoneNumbers.Name = "flwPhoneNumbers";
+            this.flpPhoneNumbers.Size = new System.Drawing.Size(394, 51);
+            this.flpPhoneNumbers.TabIndex = 5;
             // 
             // btnAddAnotherPhoneNumber
             // 
@@ -320,16 +320,16 @@ namespace JAHub_Winforms.Verification
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.flwContactBlock);
+            this.Controls.Add(this.flpContactBlock);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "usrContactBlock";
             this.Size = new System.Drawing.Size(400, 210);
-            this.flwContactBlock.ResumeLayout(false);
-            this.flwContactBlock.PerformLayout();
+            this.flpContactBlock.ResumeLayout(false);
+            this.flpContactBlock.PerformLayout();
             this.tblEmailSection.ResumeLayout(false);
             this.tblEmailSection.PerformLayout();
-            this.flwPhoneNumbers.ResumeLayout(false);
-            this.flwPhoneNumbers.PerformLayout();
+            this.flpPhoneNumbers.ResumeLayout(false);
+            this.flpPhoneNumbers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errContactBlock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -337,7 +337,7 @@ namespace JAHub_Winforms.Verification
         }
 
 
-        private System.Windows.Forms.FlowLayoutPanel flwContactBlock;
+        private System.Windows.Forms.FlowLayoutPanel flpContactBlock;
         private System.Windows.Forms.Label lblContantInformation;
         private System.Windows.Forms.TableLayoutPanel tblEmailSection;
         private System.Windows.Forms.Label lblEmail;
@@ -346,6 +346,6 @@ namespace JAHub_Winforms.Verification
         private System.Windows.Forms.ErrorProvider errContactBlock;
         private usrPhoneNumberBlock usrPhoneNumberBlock1;
         private System.Windows.Forms.Button btnRemoveNumber;
-        private System.Windows.Forms.FlowLayoutPanel flwPhoneNumbers;
+        private System.Windows.Forms.FlowLayoutPanel flpPhoneNumbers;
     }
 }

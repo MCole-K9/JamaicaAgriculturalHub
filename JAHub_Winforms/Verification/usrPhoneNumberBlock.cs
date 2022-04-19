@@ -25,7 +25,9 @@ namespace JAHub_Winforms.Verification
         {
             InitializeComponent();
             mskPhoneNumber.Text = PhoneNumber;
+            lblPhoneNumber.Text = "Phone Number";
 
+            mskPhoneNumber.Enabled = false;
             isPhoneNumberValid = true;
         }
 

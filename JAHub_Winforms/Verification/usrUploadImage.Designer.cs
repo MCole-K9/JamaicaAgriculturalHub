@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flwImageBlock = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpImageBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.picProfileImage = new System.Windows.Forms.PictureBox();
-            this.tblUploadDialog = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpUploadDialog = new System.Windows.Forms.TableLayoutPanel();
             this.lblUploadPrompt = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flwImageBlock.SuspendLayout();
+            this.btnUploadImage = new System.Windows.Forms.Button();
+            this.flpImageBlock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfileImage)).BeginInit();
-            this.tblUploadDialog.SuspendLayout();
+            this.tlpUploadDialog.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flwImageBlock
+            // flpImageBlock
             // 
-            this.flwImageBlock.AutoSize = true;
-            this.flwImageBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwImageBlock.Controls.Add(this.picProfileImage);
-            this.flwImageBlock.Controls.Add(this.tblUploadDialog);
-            this.flwImageBlock.Location = new System.Drawing.Point(3, 3);
-            this.flwImageBlock.Name = "flwImageBlock";
-            this.flwImageBlock.Size = new System.Drawing.Size(331, 106);
-            this.flwImageBlock.TabIndex = 0;
+            this.flpImageBlock.AutoSize = true;
+            this.flpImageBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpImageBlock.Controls.Add(this.picProfileImage);
+            this.flpImageBlock.Controls.Add(this.tlpUploadDialog);
+            this.flpImageBlock.Location = new System.Drawing.Point(3, 3);
+            this.flpImageBlock.Name = "flpImageBlock";
+            this.flpImageBlock.Size = new System.Drawing.Size(331, 106);
+            this.flpImageBlock.TabIndex = 0;
             // 
             // picProfileImage
             // 
@@ -58,20 +58,20 @@
             this.picProfileImage.TabIndex = 2;
             this.picProfileImage.TabStop = false;
             // 
-            // tblUploadDialog
+            // tlpUploadDialog
             // 
-            this.tblUploadDialog.BackColor = System.Drawing.Color.Transparent;
-            this.tblUploadDialog.ColumnCount = 1;
-            this.tblUploadDialog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblUploadDialog.Controls.Add(this.lblUploadPrompt, 0, 0);
-            this.tblUploadDialog.Controls.Add(this.button1, 0, 1);
-            this.tblUploadDialog.Location = new System.Drawing.Point(109, 3);
-            this.tblUploadDialog.Name = "tblUploadDialog";
-            this.tblUploadDialog.RowCount = 2;
-            this.tblUploadDialog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblUploadDialog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblUploadDialog.Size = new System.Drawing.Size(219, 100);
-            this.tblUploadDialog.TabIndex = 1;
+            this.tlpUploadDialog.BackColor = System.Drawing.Color.Transparent;
+            this.tlpUploadDialog.ColumnCount = 1;
+            this.tlpUploadDialog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpUploadDialog.Controls.Add(this.lblUploadPrompt, 0, 0);
+            this.tlpUploadDialog.Controls.Add(this.btnUploadImage, 0, 1);
+            this.tlpUploadDialog.Location = new System.Drawing.Point(109, 3);
+            this.tlpUploadDialog.Name = "tlpUploadDialog";
+            this.tlpUploadDialog.RowCount = 2;
+            this.tlpUploadDialog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpUploadDialog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpUploadDialog.Size = new System.Drawing.Size(219, 100);
+            this.tlpUploadDialog.TabIndex = 1;
             // 
             // lblUploadPrompt
             // 
@@ -84,17 +84,17 @@
             this.lblUploadPrompt.TabIndex = 0;
             this.lblUploadPrompt.Text = "Upload an picture of yourself (Passport Sized)";
             // 
-            // button1
+            // btnUploadImage
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Upload Image";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUploadImage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnUploadImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadImage.Location = new System.Drawing.Point(3, 53);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(121, 44);
+            this.btnUploadImage.TabIndex = 1;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.button1_Click);
             // 
             // usrUploadImageBlock
             // 
@@ -103,13 +103,13 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.flwImageBlock);
+            this.Controls.Add(this.flpImageBlock);
             this.Name = "usrUploadImageBlock";
             this.Size = new System.Drawing.Size(337, 112);
-            this.flwImageBlock.ResumeLayout(false);
+            this.flpImageBlock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfileImage)).EndInit();
-            this.tblUploadDialog.ResumeLayout(false);
-            this.tblUploadDialog.PerformLayout();
+            this.tlpUploadDialog.ResumeLayout(false);
+            this.tlpUploadDialog.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,10 +117,10 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flwImageBlock;
-        private System.Windows.Forms.TableLayoutPanel tblUploadDialog;
+        private System.Windows.Forms.FlowLayoutPanel flpImageBlock;
+        private System.Windows.Forms.TableLayoutPanel tlpUploadDialog;
         private System.Windows.Forms.Label lblUploadPrompt;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.PictureBox picProfileImage;
     }
 }

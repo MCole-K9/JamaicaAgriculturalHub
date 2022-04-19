@@ -31,28 +31,33 @@ namespace JAHub_Winforms.Verification
             
             foreach (String product in farmer.ProductsTypicallyProduced)
             {
-                flwProductsBlock.Controls.Add(new usrProductsBlock(product));
+                flpProductsBlock.Controls.Add(new usrProductsBlock(product));
             }
 
-            foreach(LandInformation land in farmer.OwnedLand)
+            if(farmer.OwnedLand.Count > 0)
             {
-                flwLandBlockHolder.Controls.Add(new usrLandBlock(land));
+                foreach (LandInformation land in farmer.OwnedLand)
+                {
+                    flpLandBlockHolder.Controls.Add(new usrLandBlock(land));
+                }
             }
 
-            // the products and Landblocks will return valid on their own
+            btnAddAnotherProduct.Visible = false;
+            btnAddLandEntry.Visible = false;
+
         }
 
         private void btnAddAnotherProduct_Click(object sender, EventArgs e)
         {
-            flwProductsBlock.Controls.Add(new usrProductsBlock());
+            flpProductsBlock.Controls.Add(new usrProductsBlock());
             btnRemoveLastProduct.Visible = true;
         }
 
         private void btnRemoveLastProduct_Click(object sender, EventArgs e)
         {
-            flwProductsBlock.Controls.RemoveAt(flwProductsBlock.Controls.Count-1);
+            flpProductsBlock.Controls.RemoveAt(flpProductsBlock.Controls.Count-1);
             
-            if (flwProductsBlock.Controls.Count == 1)
+            if (flpProductsBlock.Controls.Count == 1)
             {
                 btnRemoveLastProduct.Hide();
             }
@@ -62,7 +67,7 @@ namespace JAHub_Winforms.Verification
         {
             bool isListValid = true;
 
-            foreach(usrProductsBlock product in flwProductsBlock.Controls)
+            foreach(usrProductsBlock product in flpProductsBlock.Controls)
             {
                 if (product.IsBlockValid())
                 {
@@ -76,7 +81,7 @@ namespace JAHub_Winforms.Verification
                 }
             }
 
-            foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+            foreach(usrLandBlock land in flpLandBlockHolder.Controls)
             {
                 if (land.IsBlockValid()){
                     _landInformationList.Add(land.LandInformation);
@@ -100,7 +105,7 @@ namespace JAHub_Winforms.Verification
 
         public void SetControlFocus()
         {
-            foreach(usrLandBlock land in flwLandBlockHolder.Controls)
+            foreach(usrLandBlock land in flpLandBlockHolder.Controls)
             {
                 if (!land.IsBlockValid())
                 {
@@ -109,7 +114,7 @@ namespace JAHub_Winforms.Verification
                 }
             }
 
-            foreach (usrProductsBlock product in flwProductsBlock.Controls)
+            foreach (usrProductsBlock product in flpProductsBlock.Controls)
             {
                 if (!product.IsBlockValid())
                 {
@@ -121,15 +126,15 @@ namespace JAHub_Winforms.Verification
 
         private void btnAddLandEntry_Click(object sender, EventArgs e)
         {
-            flwLandBlockHolder.Controls.Add(new usrLandBlock());
+            flpLandBlockHolder.Controls.Add(new usrLandBlock());
             btnRemoveLandEntry.Show();
         }
 
         private void btnRemoveLandEntry_Click(object sender, EventArgs e)
         {
-            flwLandBlockHolder.Controls.RemoveAt(flwLandBlockHolder.Controls.Count - 1);
+            flpLandBlockHolder.Controls.RemoveAt(flpLandBlockHolder.Controls.Count - 1);
 
-            if (flwLandBlockHolder.Controls.Count == 1){
+            if (flpLandBlockHolder.Controls.Count == 1){
                 btnRemoveLandEntry.Hide();
             }
         }

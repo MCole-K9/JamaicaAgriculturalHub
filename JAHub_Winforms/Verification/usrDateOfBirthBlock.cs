@@ -62,14 +62,21 @@ namespace JAHub_Winforms.Verification
 
             // need to figure out how to make this correspond to farmer
             DateTime givenDate = date.Value;
+            Month month = (Month)givenDate.Month;
 
-            cmbDay.SelectedIndex = cmbDay.FindString("{0}", givenDate.Day);
-            cmbMonth.SelectedIndex = cmbMonth.FindString("{0}", givenDate.Month);
+            cmbDay.SelectedIndex = cmbDay.FindString(givenDate.Day.ToString());
+            cmbMonth.SelectedIndex = cmbMonth.FindString(month.ToString());
             cmbYear.SelectedIndex = cmbYear.FindString((givenDate.Year).ToString());
 
             isDayValid = true;
             isMonthValid = true;
             isYearValid = true;
+
+            cmbYear.Enabled = false;
+            cmbMonth.Enabled = false;
+            cmbDay.Enabled = false;
+
+            lblDateOfBirth.Text = "Date of Birth";
         }
 
         private void cmbYear_Validating(object sender, CancelEventArgs e)

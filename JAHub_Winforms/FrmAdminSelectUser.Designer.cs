@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.dgvUserInformation = new System.Windows.Forms.DataGridView();
-            this.userId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GovernmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.colUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGovernmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSelectUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flpAdminSelectUser = new System.Windows.Forms.FlowLayoutPanel();
+            this.tlpSearchOption = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnClearSearchTerm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.flpAdminSelectUser.SuspendLayout();
+            this.tlpSearchOption.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvUserInformation
             // 
             this.dgvUserInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userId,
-            this.GovernmentName,
-            this.userRole,
-            this.selectUser});
+            this.colUserId,
+            this.colGovernmentName,
+            this.colUserRole,
+            this.colSelectUser});
             this.dgvUserInformation.Location = new System.Drawing.Point(4, 51);
             this.dgvUserInformation.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUserInformation.Name = "dgvUserInformation";
@@ -60,63 +60,63 @@
             this.dgvUserInformation.TabIndex = 0;
             this.dgvUserInformation.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUserInformation_CellMouseClick);
             // 
-            // userId
+            // colUserId
             // 
-            this.userId.HeaderText = "User ID";
-            this.userId.MinimumWidth = 6;
-            this.userId.Name = "userId";
-            this.userId.Width = 125;
+            this.colUserId.HeaderText = "User ID";
+            this.colUserId.MinimumWidth = 6;
+            this.colUserId.Name = "colUserId";
+            this.colUserId.Width = 125;
             // 
-            // GovernmentName
+            // colGovernmentName
             // 
-            this.GovernmentName.HeaderText = "Name";
-            this.GovernmentName.MinimumWidth = 6;
-            this.GovernmentName.Name = "GovernmentName";
-            this.GovernmentName.Width = 125;
+            this.colGovernmentName.HeaderText = "Name";
+            this.colGovernmentName.MinimumWidth = 6;
+            this.colGovernmentName.Name = "colGovernmentName";
+            this.colGovernmentName.Width = 125;
             // 
-            // userRole
+            // colUserRole
             // 
-            this.userRole.HeaderText = "Role";
-            this.userRole.MinimumWidth = 6;
-            this.userRole.Name = "userRole";
-            this.userRole.Width = 125;
+            this.colUserRole.HeaderText = "Role";
+            this.colUserRole.MinimumWidth = 6;
+            this.colUserRole.Name = "colUserRole";
+            this.colUserRole.Width = 125;
             // 
-            // selectUser
+            // colSelectUser
             // 
-            this.selectUser.HeaderText = "Select User";
-            this.selectUser.MinimumWidth = 6;
-            this.selectUser.Name = "selectUser";
-            this.selectUser.Width = 125;
+            this.colSelectUser.HeaderText = "Select User";
+            this.colSelectUser.MinimumWidth = 6;
+            this.colSelectUser.Name = "colSelectUser";
+            this.colSelectUser.Width = 125;
             // 
-            // flowLayoutPanel1
+            // flpAdminSelectUser
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.dgvUserInformation);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 443);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flpAdminSelectUser.BackColor = System.Drawing.Color.White;
+            this.flpAdminSelectUser.Controls.Add(this.tlpSearchOption);
+            this.flpAdminSelectUser.Controls.Add(this.dgvUserInformation);
+            this.flpAdminSelectUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAdminSelectUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpAdminSelectUser.Location = new System.Drawing.Point(0, 0);
+            this.flpAdminSelectUser.Margin = new System.Windows.Forms.Padding(4);
+            this.flpAdminSelectUser.Name = "flpAdminSelectUser";
+            this.flpAdminSelectUser.Size = new System.Drawing.Size(849, 443);
+            this.flpAdminSelectUser.TabIndex = 1;
             // 
-            // tableLayoutPanel1
+            // tlpSearchOption
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.lblSearch, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtSearchBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnClearSearchTerm, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(637, 39);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tlpSearchOption.ColumnCount = 3;
+            this.tlpSearchOption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpSearchOption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlpSearchOption.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tlpSearchOption.Controls.Add(this.lblSearch, 0, 0);
+            this.tlpSearchOption.Controls.Add(this.txtSearchBox, 1, 0);
+            this.tlpSearchOption.Controls.Add(this.btnClearSearchTerm, 2, 0);
+            this.tlpSearchOption.Location = new System.Drawing.Point(4, 4);
+            this.tlpSearchOption.Margin = new System.Windows.Forms.Padding(4);
+            this.tlpSearchOption.Name = "tlpSearchOption";
+            this.tlpSearchOption.RowCount = 1;
+            this.tlpSearchOption.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpSearchOption.Size = new System.Drawing.Size(637, 39);
+            this.tlpSearchOption.TabIndex = 1;
             // 
             // lblSearch
             // 
@@ -155,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 443);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpAdminSelectUser);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -164,9 +164,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminSelectUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.flpAdminSelectUser.ResumeLayout(false);
+            this.tlpSearchOption.ResumeLayout(false);
+            this.tlpSearchOption.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -174,14 +174,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvUserInformation;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpAdminSelectUser;
+        private System.Windows.Forms.TableLayoutPanel tlpSearchOption;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Button btnClearSearchTerm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GovernmentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userRole;
-        private System.Windows.Forms.DataGridViewTextBoxColumn selectUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGovernmentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUserRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSelectUser;
     }
 }
