@@ -32,9 +32,9 @@
             this.tblLandBlock = new System.Windows.Forms.TableLayoutPanel();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblLandMeasurement = new System.Windows.Forms.Label();
+            this.usrAddressBlock1 = new JAHub_Winforms.Verification.usrAddressBlock();
             this.nudLandMeasurement = new System.Windows.Forms.NumericUpDown();
             this.errLandBlock = new System.Windows.Forms.ErrorProvider(this.components);
-            this.usrAddressBlock1 = new JAHub_Winforms.Verification.usrAddressBlock();
             this.tblLandBlock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLandMeasurement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errLandBlock)).BeginInit();
@@ -85,9 +85,20 @@
             this.lblLandMeasurement.Text = "Land Measurement (In Hectares)*";
             this.lblLandMeasurement.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // usrAddressBlock1
+            // 
+            this.usrAddressBlock1.AutoSize = true;
+            this.usrAddressBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrAddressBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrAddressBlock1.Location = new System.Drawing.Point(143, 3);
+            this.usrAddressBlock1.Name = "usrAddressBlock1";
+            this.usrAddressBlock1.Size = new System.Drawing.Size(364, 120);
+            this.usrAddressBlock1.TabIndex = 3;
+            // 
             // nudLandMeasurement
             // 
             this.nudLandMeasurement.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nudLandMeasurement.DecimalPlaces = 3;
             this.nudLandMeasurement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudLandMeasurement.Location = new System.Drawing.Point(143, 142);
             this.nudLandMeasurement.Name = "nudLandMeasurement";
@@ -99,16 +110,6 @@
             // errLandBlock
             // 
             this.errLandBlock.ContainerControl = this;
-            // 
-            // usrAddressBlock1
-            // 
-            this.usrAddressBlock1.AutoSize = true;
-            this.usrAddressBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrAddressBlock1.BackColor = System.Drawing.Color.Transparent;
-            this.usrAddressBlock1.Location = new System.Drawing.Point(143, 3);
-            this.usrAddressBlock1.Name = "usrAddressBlock1";
-            this.usrAddressBlock1.Size = new System.Drawing.Size(364, 120);
-            this.usrAddressBlock1.TabIndex = 3;
             // 
             // usrLandBlock
             // 

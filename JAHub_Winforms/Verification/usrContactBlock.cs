@@ -36,7 +36,7 @@ namespace JAHub_Winforms.Verification
 
             foreach (string phoneNumber in phoneNumbers)
             {
-                flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock(phoneNumber));
+                flpPhoneNumbers.Controls.Add(new usrPhoneNumberBlock(phoneNumber));
             }
 
             // Makes it possible to submit the details without having to click on the form
@@ -80,15 +80,15 @@ namespace JAHub_Winforms.Verification
         private void btnAddAnotherPhoneNumber_Click(object sender, EventArgs e)
         {
 
-            flwPhoneNumbers.Controls.Add(new usrPhoneNumberBlock());
+            flpPhoneNumbers.Controls.Add(new usrPhoneNumberBlock());
             btnRemoveNumber.Show();
         }
 
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-            flwPhoneNumbers.Controls.RemoveAt(flwPhoneNumbers.Controls.Count - 1);
+            flpPhoneNumbers.Controls.RemoveAt(flpPhoneNumbers.Controls.Count - 1);
             
-            if(flwPhoneNumbers.Controls.Count == 1)
+            if(flpPhoneNumbers.Controls.Count == 1)
             {
                 btnRemoveNumber.Hide();
             }
@@ -100,7 +100,7 @@ namespace JAHub_Winforms.Verification
             {
                 bool areAllNumbersValid = true;
                 
-                foreach(usrPhoneNumberBlock phoneNumber in flwPhoneNumbers.Controls)
+                foreach(usrPhoneNumberBlock phoneNumber in flpPhoneNumbers.Controls)
                 {
                     if (phoneNumber.IsBlockValid())
                     {
@@ -132,7 +132,7 @@ namespace JAHub_Winforms.Verification
             }
             else
             {
-                foreach(usrPhoneNumberBlock phoneNumber in flwPhoneNumbers.Controls)
+                foreach(usrPhoneNumberBlock phoneNumber in flpPhoneNumbers.Controls)
                 {
                     if (!phoneNumber.IsBlockValid())
                     {

@@ -30,39 +30,39 @@ namespace JAHub_Winforms.Verification
         /// </summary>
         private void InitializeComponent()
         {
-            this.flwHoldingBlock = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpHoldingBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHoldings = new System.Windows.Forms.Label();
-            this.flwProductsBlock = new System.Windows.Forms.FlowLayoutPanel();
-            this.usrProductsBlock1 = new JAHub_Winforms.Verification.usrProductsBlock();
+            this.flpProductsBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddAnotherProduct = new System.Windows.Forms.Button();
             this.btnRemoveLastProduct = new System.Windows.Forms.Button();
-            this.flwLandBlockHolder = new System.Windows.Forms.FlowLayoutPanel();
-            this.usrLandBlock1 = new JAHub_Winforms.Verification.usrLandBlock();
+            this.flpLandBlockHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddLandEntry = new System.Windows.Forms.Button();
             this.btnRemoveLandEntry = new System.Windows.Forms.Button();
-            this.flwHoldingBlock.SuspendLayout();
-            this.flwProductsBlock.SuspendLayout();
-            this.flwLandBlockHolder.SuspendLayout();
+            this.usrProductsBlock1 = new JAHub_Winforms.Verification.usrProductsBlock();
+            this.usrLandBlock1 = new JAHub_Winforms.Verification.usrLandBlock();
+            this.flpHoldingBlock.SuspendLayout();
+            this.flpProductsBlock.SuspendLayout();
+            this.flpLandBlockHolder.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flwHoldingBlock
+            // flpHoldingBlock
             // 
-            this.flwHoldingBlock.AutoSize = true;
-            this.flwHoldingBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwHoldingBlock.BackColor = System.Drawing.Color.Transparent;
-            this.flwHoldingBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flwHoldingBlock.Controls.Add(this.lblHoldings);
-            this.flwHoldingBlock.Controls.Add(this.flwProductsBlock);
-            this.flwHoldingBlock.Controls.Add(this.btnAddAnotherProduct);
-            this.flwHoldingBlock.Controls.Add(this.btnRemoveLastProduct);
-            this.flwHoldingBlock.Controls.Add(this.flwLandBlockHolder);
-            this.flwHoldingBlock.Controls.Add(this.btnAddLandEntry);
-            this.flwHoldingBlock.Controls.Add(this.btnRemoveLandEntry);
-            this.flwHoldingBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwHoldingBlock.Location = new System.Drawing.Point(3, 3);
-            this.flwHoldingBlock.Name = "flwHoldingBlock";
-            this.flwHoldingBlock.Size = new System.Drawing.Size(528, 426);
-            this.flwHoldingBlock.TabIndex = 0;
+            this.flpHoldingBlock.AutoSize = true;
+            this.flpHoldingBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpHoldingBlock.BackColor = System.Drawing.Color.Transparent;
+            this.flpHoldingBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flpHoldingBlock.Controls.Add(this.lblHoldings);
+            this.flpHoldingBlock.Controls.Add(this.flpProductsBlock);
+            this.flpHoldingBlock.Controls.Add(this.btnAddAnotherProduct);
+            this.flpHoldingBlock.Controls.Add(this.btnRemoveLastProduct);
+            this.flpHoldingBlock.Controls.Add(this.flpLandBlockHolder);
+            this.flpHoldingBlock.Controls.Add(this.btnAddLandEntry);
+            this.flpHoldingBlock.Controls.Add(this.btnRemoveLandEntry);
+            this.flpHoldingBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpHoldingBlock.Location = new System.Drawing.Point(3, 3);
+            this.flpHoldingBlock.Name = "flpHoldingBlock";
+            this.flpHoldingBlock.Size = new System.Drawing.Size(528, 426);
+            this.flpHoldingBlock.TabIndex = 0;
             // 
             // lblHoldings
             // 
@@ -74,27 +74,17 @@ namespace JAHub_Winforms.Verification
             this.lblHoldings.TabIndex = 0;
             this.lblHoldings.Text = "Holdings";
             // 
-            // flwProductsBlock
+            // flpProductsBlock
             // 
-            this.flwProductsBlock.AutoSize = true;
-            this.flwProductsBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwProductsBlock.Controls.Add(this.usrProductsBlock1);
-            this.flwProductsBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwProductsBlock.Location = new System.Drawing.Point(3, 28);
-            this.flwProductsBlock.Name = "flwProductsBlock";
-            this.flwProductsBlock.Size = new System.Drawing.Size(306, 39);
-            this.flwProductsBlock.TabIndex = 5;
-            this.flwProductsBlock.WrapContents = false;
-            // 
-            // usrProductsBlock1
-            // 
-            this.usrProductsBlock1.AutoSize = true;
-            this.usrProductsBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrProductsBlock1.BackColor = System.Drawing.Color.Transparent;
-            this.usrProductsBlock1.Location = new System.Drawing.Point(3, 3);
-            this.usrProductsBlock1.Name = "usrProductsBlock1";
-            this.usrProductsBlock1.Size = new System.Drawing.Size(300, 33);
-            this.usrProductsBlock1.TabIndex = 1;
+            this.flpProductsBlock.AutoSize = true;
+            this.flpProductsBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpProductsBlock.Controls.Add(this.usrProductsBlock1);
+            this.flpProductsBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpProductsBlock.Location = new System.Drawing.Point(3, 28);
+            this.flpProductsBlock.Name = "flpProductsBlock";
+            this.flpProductsBlock.Size = new System.Drawing.Size(406, 39);
+            this.flpProductsBlock.TabIndex = 5;
+            this.flpProductsBlock.WrapContents = false;
             // 
             // btnAddAnotherProduct
             // 
@@ -119,26 +109,16 @@ namespace JAHub_Winforms.Verification
             this.btnRemoveLastProduct.Visible = false;
             this.btnRemoveLastProduct.Click += new System.EventHandler(this.btnRemoveLastProduct_Click);
             // 
-            // flwLandBlockHolder
+            // flpLandBlockHolder
             // 
-            this.flwLandBlockHolder.AutoSize = true;
-            this.flwLandBlockHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwLandBlockHolder.Controls.Add(this.usrLandBlock1);
-            this.flwLandBlockHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwLandBlockHolder.Location = new System.Drawing.Point(3, 149);
-            this.flwLandBlockHolder.Name = "flwLandBlockHolder";
-            this.flwLandBlockHolder.Size = new System.Drawing.Size(522, 198);
-            this.flwLandBlockHolder.TabIndex = 6;
-            // 
-            // usrLandBlock1
-            // 
-            this.usrLandBlock1.AutoSize = true;
-            this.usrLandBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrLandBlock1.BackColor = System.Drawing.Color.Transparent;
-            this.usrLandBlock1.Location = new System.Drawing.Point(3, 3);
-            this.usrLandBlock1.Name = "usrLandBlock1";
-            this.usrLandBlock1.Size = new System.Drawing.Size(516, 192);
-            this.usrLandBlock1.TabIndex = 4;
+            this.flpLandBlockHolder.AutoSize = true;
+            this.flpLandBlockHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpLandBlockHolder.Controls.Add(this.usrLandBlock1);
+            this.flpLandBlockHolder.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpLandBlockHolder.Location = new System.Drawing.Point(3, 149);
+            this.flpLandBlockHolder.Name = "flpLandBlockHolder";
+            this.flpLandBlockHolder.Size = new System.Drawing.Size(522, 198);
+            this.flpLandBlockHolder.TabIndex = 6;
             // 
             // btnAddLandEntry
             // 
@@ -163,6 +143,26 @@ namespace JAHub_Winforms.Verification
             this.btnRemoveLandEntry.Visible = false;
             this.btnRemoveLandEntry.Click += new System.EventHandler(this.btnRemoveLandEntry_Click);
             // 
+            // usrProductsBlock1
+            // 
+            this.usrProductsBlock1.AutoSize = true;
+            this.usrProductsBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrProductsBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrProductsBlock1.Location = new System.Drawing.Point(3, 3);
+            this.usrProductsBlock1.Name = "usrProductsBlock1";
+            this.usrProductsBlock1.Size = new System.Drawing.Size(400, 33);
+            this.usrProductsBlock1.TabIndex = 1;
+            // 
+            // usrLandBlock1
+            // 
+            this.usrLandBlock1.AutoSize = true;
+            this.usrLandBlock1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrLandBlock1.BackColor = System.Drawing.Color.Transparent;
+            this.usrLandBlock1.Location = new System.Drawing.Point(3, 3);
+            this.usrLandBlock1.Name = "usrLandBlock1";
+            this.usrLandBlock1.Size = new System.Drawing.Size(516, 192);
+            this.usrLandBlock1.TabIndex = 4;
+            // 
             // usrHoldingsBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,16 +170,16 @@ namespace JAHub_Winforms.Verification
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.flwHoldingBlock);
+            this.Controls.Add(this.flpHoldingBlock);
             this.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.Name = "usrHoldingsBlock";
             this.Size = new System.Drawing.Size(534, 432);
-            this.flwHoldingBlock.ResumeLayout(false);
-            this.flwHoldingBlock.PerformLayout();
-            this.flwProductsBlock.ResumeLayout(false);
-            this.flwProductsBlock.PerformLayout();
-            this.flwLandBlockHolder.ResumeLayout(false);
-            this.flwLandBlockHolder.PerformLayout();
+            this.flpHoldingBlock.ResumeLayout(false);
+            this.flpHoldingBlock.PerformLayout();
+            this.flpProductsBlock.ResumeLayout(false);
+            this.flpProductsBlock.PerformLayout();
+            this.flpLandBlockHolder.ResumeLayout(false);
+            this.flpLandBlockHolder.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,37 +189,37 @@ namespace JAHub_Winforms.Verification
 
         private void InitializeFilledComponent(Farmer farmer)
         {
-            this.flwHoldingBlock = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpHoldingBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHoldings = new System.Windows.Forms.Label();
-            this.flwProductsBlock = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpProductsBlock = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddAnotherProduct = new System.Windows.Forms.Button();
             this.btnRemoveLastProduct = new System.Windows.Forms.Button();
-            this.flwLandBlockHolder = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpLandBlockHolder = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddLandEntry = new System.Windows.Forms.Button();
             this.btnRemoveLandEntry = new System.Windows.Forms.Button();
-            this.flwHoldingBlock.SuspendLayout();
-            this.flwProductsBlock.SuspendLayout();
-            this.flwLandBlockHolder.SuspendLayout();
+            this.flpHoldingBlock.SuspendLayout();
+            this.flpProductsBlock.SuspendLayout();
+            this.flpLandBlockHolder.SuspendLayout();
             this.SuspendLayout();
             // 
             // flwHoldingBlock
             // 
-            this.flwHoldingBlock.AutoSize = true;
-            this.flwHoldingBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwHoldingBlock.BackColor = System.Drawing.Color.Transparent;
-            this.flwHoldingBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flwHoldingBlock.Controls.Add(this.lblHoldings);
-            this.flwHoldingBlock.Controls.Add(this.flwProductsBlock);
-            this.flwHoldingBlock.Controls.Add(this.btnAddAnotherProduct);
-            this.flwHoldingBlock.Controls.Add(this.btnRemoveLastProduct);
-            this.flwHoldingBlock.Controls.Add(this.flwLandBlockHolder);
-            this.flwHoldingBlock.Controls.Add(this.btnAddLandEntry);
-            this.flwHoldingBlock.Controls.Add(this.btnRemoveLandEntry);
-            this.flwHoldingBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwHoldingBlock.Location = new System.Drawing.Point(3, 3);
-            this.flwHoldingBlock.Name = "flwHoldingBlock";
-            this.flwHoldingBlock.Size = new System.Drawing.Size(516, 463);
-            this.flwHoldingBlock.TabIndex = 0;
+            this.flpHoldingBlock.AutoSize = true;
+            this.flpHoldingBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpHoldingBlock.BackColor = System.Drawing.Color.Transparent;
+            this.flpHoldingBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flpHoldingBlock.Controls.Add(this.lblHoldings);
+            this.flpHoldingBlock.Controls.Add(this.flpProductsBlock);
+            this.flpHoldingBlock.Controls.Add(this.btnAddAnotherProduct);
+            this.flpHoldingBlock.Controls.Add(this.btnRemoveLastProduct);
+            this.flpHoldingBlock.Controls.Add(this.flpLandBlockHolder);
+            this.flpHoldingBlock.Controls.Add(this.btnAddLandEntry);
+            this.flpHoldingBlock.Controls.Add(this.btnRemoveLandEntry);
+            this.flpHoldingBlock.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpHoldingBlock.Location = new System.Drawing.Point(3, 3);
+            this.flpHoldingBlock.Name = "flwHoldingBlock";
+            this.flpHoldingBlock.Size = new System.Drawing.Size(516, 463);
+            this.flpHoldingBlock.TabIndex = 0;
             // 
             // lblHoldings
             // 
@@ -233,13 +233,13 @@ namespace JAHub_Winforms.Verification
             // 
             // flwProductsBlock
             // 
-            this.flwProductsBlock.AutoSize = true;
-            this.flwProductsBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flwProductsBlock.Controls.Add(this.usrProductsBlock1);
-            this.flwProductsBlock.Location = new System.Drawing.Point(3, 28);
-            this.flwProductsBlock.Name = "flwProductsBlock";
-            this.flwProductsBlock.Size = new System.Drawing.Size(306, 39);
-            this.flwProductsBlock.TabIndex = 5;
+            this.flpProductsBlock.AutoSize = true;
+            this.flpProductsBlock.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flpProductsBlock.Controls.Add(this.usrProductsBlock1);
+            this.flpProductsBlock.Location = new System.Drawing.Point(3, 28);
+            this.flpProductsBlock.Name = "flwProductsBlock";
+            this.flpProductsBlock.Size = new System.Drawing.Size(306, 39);
+            this.flpProductsBlock.TabIndex = 5;
             // 
             // btnAddAnotherProduct
             // 
@@ -266,11 +266,11 @@ namespace JAHub_Winforms.Verification
             // 
             // flwLandBlockHolder
             // 
-            this.flwLandBlockHolder.Controls.Add(this.usrLandBlock1);
-            this.flwLandBlockHolder.Location = new System.Drawing.Point(3, 149);
-            this.flwLandBlockHolder.Name = "flwLandBlockHolder";
-            this.flwLandBlockHolder.Size = new System.Drawing.Size(366, 235);
-            this.flwLandBlockHolder.TabIndex = 6;
+            this.flpLandBlockHolder.Controls.Add(this.usrLandBlock1);
+            this.flpLandBlockHolder.Location = new System.Drawing.Point(3, 149);
+            this.flpLandBlockHolder.Name = "flwLandBlockHolder";
+            this.flpLandBlockHolder.Size = new System.Drawing.Size(366, 235);
+            this.flpLandBlockHolder.TabIndex = 6;
             // 
             // btnAddLandEntry
             // 
@@ -302,28 +302,28 @@ namespace JAHub_Winforms.Verification
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.flwHoldingBlock);
+            this.Controls.Add(this.flpHoldingBlock);
             this.Name = "usrHoldingsBlock";
             this.Size = new System.Drawing.Size(378, 469);
-            this.flwHoldingBlock.ResumeLayout(false);
-            this.flwHoldingBlock.PerformLayout();
-            this.flwProductsBlock.ResumeLayout(false);
-            this.flwProductsBlock.PerformLayout();
-            this.flwLandBlockHolder.ResumeLayout(false);
-            this.flwLandBlockHolder.PerformLayout();
+            this.flpHoldingBlock.ResumeLayout(false);
+            this.flpHoldingBlock.PerformLayout();
+            this.flpProductsBlock.ResumeLayout(false);
+            this.flpProductsBlock.PerformLayout();
+            this.flpLandBlockHolder.ResumeLayout(false);
+            this.flpLandBlockHolder.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private System.Windows.Forms.FlowLayoutPanel flwHoldingBlock;
+        private System.Windows.Forms.FlowLayoutPanel flpHoldingBlock;
         private System.Windows.Forms.Label lblHoldings;
         private usrProductsBlock usrProductsBlock1;
         private System.Windows.Forms.Button btnAddAnotherProduct;
         private System.Windows.Forms.Button btnRemoveLastProduct;
         private usrLandBlock usrLandBlock1;
-        private System.Windows.Forms.FlowLayoutPanel flwProductsBlock;
-        private System.Windows.Forms.FlowLayoutPanel flwLandBlockHolder;
+        private System.Windows.Forms.FlowLayoutPanel flpProductsBlock;
+        private System.Windows.Forms.FlowLayoutPanel flpLandBlockHolder;
         private System.Windows.Forms.Button btnAddLandEntry;
         private System.Windows.Forms.Button btnRemoveLandEntry;
     }
