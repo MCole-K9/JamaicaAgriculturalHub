@@ -51,21 +51,21 @@ namespace JAHub_ASPWebforms
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                // Set Anti-XSRF token
-                ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
-                ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
-            }
-            else
-            {
-                // Validate the Anti-XSRF token
-                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
-                {
-                    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
-                }
-            }
+            //if (!IsPostBack)
+            //{
+            //    // Set Anti-XSRF token
+            //    ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
+            //    ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
+            //}
+            //else
+            //{
+            //    // Validate the Anti-XSRF token
+            //    if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
+            //        || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+            //    {
+            //        throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
+            //    }
+            //}
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -97,7 +97,36 @@ namespace JAHub_ASPWebforms
             {
                 lblLoginResult.Text = "Please enter both the Email Address and Password and try" +
                     " " + " again.";
+                lblLoginResult.CssClass = "text-danger";
             }
+            else if (!String.IsNullOrEmpty(txtEmail.Text) && !String.IsNullOrEmpty(txtPassword.Text))
+            {
+                PasswordResult result = JAHubLib.Session.Login(txtEmail.Text.ToLower(), txtPassword.Text);
+
+                if (result == PasswordResult.Success)
+                {
+                    Session["UserId"] = 1;
+                    Session["FirstName"] = "test";
+                    Session["LastName"] = "test";
+                    Session["Role"] = "test";
+                    Session.Timeout = 60;
+                }
+                else if (result == PasswordResult.CredentialsIncorrect)
+                {
+                    lblLoginResult.Text = "Email Address or Password is incorrect, please check your" +
+                        " " + "credentials and try again";
+                    lblLoginResult.CssClass = "text-danger";
+
+                }
+                else if (result == PasswordResult.NoMatchingCredentials)
+                {
+                    lblLoginResult.Text = "Email Address not found, please check your credentials" +
+                        " " + "or register for an account";
+                    lblLoginResult.CssClass = "text-danger";
+
+                }
+            }
+
 
         }
 

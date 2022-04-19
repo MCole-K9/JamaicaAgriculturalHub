@@ -91,11 +91,10 @@
                                 <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default center-block" Width="15em" 
                                     onclick="btnLogin_OnClick"/>
                                 <br />
-                                <asp:Label runat="server" ID="lblLoginResult">Placeholder</asp:Label>
+                                <asp:Label runat="server" ID="lblLoginResult" CssClass="text-danger invisible">Placeholder</asp:Label>
                             </asp:Panel>
                         </ContentTemplate>
                     </asp:UpdatePanel>
-                    
                     
                 </div>
                 
