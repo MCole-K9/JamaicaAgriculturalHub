@@ -72,6 +72,8 @@ namespace JAHub_ASPWebforms
         {
             if(Session["UserId"] != null)
             {
+                // add the "YOUR ACCOUNT/LOGOUT" user control
+                
                 // this should show some kind of "currently logged in as"
                 // include:
                 // * First Name
@@ -82,7 +84,7 @@ namespace JAHub_ASPWebforms
             }
             else
             {
-                // Show the options to log in and register and such, i would imagine
+                // add the "LOG IN/REGISTER" section
             }
         }
 
@@ -110,6 +112,9 @@ namespace JAHub_ASPWebforms
                     Session["LastName"] = "test";
                     Session["Role"] = "test";
                     Session.Timeout = 60;
+
+                    // idk if this actually goes where it should
+                    Response.Redirect(Request.RawUrl);
                 }
                 else if (result == PasswordResult.CredentialsIncorrect)
                 {
@@ -126,7 +131,6 @@ namespace JAHub_ASPWebforms
 
                 }
             }
-
 
         }
 

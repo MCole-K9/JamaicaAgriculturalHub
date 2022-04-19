@@ -11,7 +11,7 @@ namespace JAHub_ASPWebforms.Account
 {
 
 
-    public partial class Lockout
+    public partial class usrNavbarLoginRegister
     {
     }
 }
