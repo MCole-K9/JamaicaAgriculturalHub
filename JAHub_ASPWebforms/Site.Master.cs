@@ -8,6 +8,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using JAHubLib;
+using JAHub_ASPWebforms.Account;
+using System.Data.SqlClient;
 
 namespace JAHub_ASPWebforms
 {
@@ -72,6 +74,10 @@ namespace JAHub_ASPWebforms
         {
             if(Session["UserId"] != null)
             {
+                usrNavbarAccountLogout accountLogoutSection = (usrNavbarAccountLogout)LoadControl("~/Account/usrNavbarAccountLogout.ascx");
+
+                phAccount.Controls.Add(accountLogoutSection);
+                
                 // add the "YOUR ACCOUNT/LOGOUT" user control
                 
                 // this should show some kind of "currently logged in as"
@@ -84,7 +90,9 @@ namespace JAHub_ASPWebforms
             }
             else
             {
-                // add the "LOG IN/REGISTER" section
+                usrNavbarLoginRegister loginRegister = (usrNavbarLoginRegister)LoadControl("~/Account/usrNavbarLoginRegister.ascx");
+
+                phAccount.Controls.Add(loginRegister);
             }
         }
 
@@ -107,11 +115,24 @@ namespace JAHub_ASPWebforms
 
                 if (result == PasswordResult.Success)
                 {
-                    Session["UserId"] = 1;
-                    Session["FirstName"] = "test";
-                    Session["LastName"] = "test";
-                    Session["Role"] = "test";
-                    Session.Timeout = 60;
+                    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                    {
+                        String userReadUserInfo = "SELECT UserId, FirstName, LastName, UserRole FROM " +
+                            $"[User] WHERE EmailAddress = '{txtEmail.Text}";
+
+                        SqlCommand cmd = new SqlCommand(userReadUserInfo, connection);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader["UserId"] != null)
+                        {
+                            Session["UserId"] = reader["UserId"];
+                            Session["FirstName"] = reader["FirstName"];
+                            Session["LastName"] = reader["LastName"];
+                            Session["Role"] = reader["Role"];
+                            Session.Timeout = 60;
+                        }
+                    }
 
                     // idk if this actually goes where it should
                     Response.Redirect(Request.RawUrl);

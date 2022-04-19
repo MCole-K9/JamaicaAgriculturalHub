@@ -55,13 +55,9 @@
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                     </ul>
-                    <div class="nav navbar-nav navbar-right" margin="auto" id="divLogin">
-                        <button type="button" class="btn btn-default navbar-text" id="btnLogin" data-toggle="modal"
-                            data-target="#pnlLoginModal">Login</button>
-                        <asp:Button runat="server" ID="btnRegister" Text="Register"
-                            CssClass="btn btn-default navbar-text" Height="2em" Width="10em"
-                            />
-                    </div>
+                    <asp:Placeholder runat="server"  id="phAccount">
+                        
+                    </asp:Placeholder>
                 </div>
             </div>
         </div>
