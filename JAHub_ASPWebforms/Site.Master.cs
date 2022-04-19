@@ -93,7 +93,13 @@ namespace JAHub_ASPWebforms
 
         protected void btnLogin_OnClick(object sender, EventArgs e)
         {
-            pnlLoginModal.Visible = true;
+            if (String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtPassword.Text))
+            {
+                lblLoginResult.Text = "Please enter both the Email Address and Password and try" +
+                    " " + " again.";
+                lblLoginResult.Visible = true;
+            }
+
         }
 
     }

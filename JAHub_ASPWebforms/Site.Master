@@ -56,9 +56,8 @@
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                     </ul>
                     <div class="nav navbar-nav navbar-right" margin="auto" id="divLogin">
-                        <asp:Button runat="server" ID="btnLogin" Text="Log In" OnClick="btnLogin_OnClick" 
-                            CssClass="btn btn-default navbar-text" Height="2em" Width="10em" 
-                            />
+                        <button type="button" class="btn btn-default navbar-text" id="btnLogin" data-toggle="modal"
+                            data-target="#pnlLoginModal">Login</button>
                         <asp:Button runat="server" ID="btnRegister" Text="Register"
                             CssClass="btn btn-default navbar-text" Height="2em" Width="10em"
                             />
@@ -66,18 +65,37 @@
                 </div>
             </div>
         </div>
-        <!-- I don't yet know how to raise this modal-->
-        <asp:Panel runat="server" cssClass="col-lg-2 col-md-4 col-sm-3 col-xs-6 modal float-right" ID="pnlLoginModal">
-            <asp:Label runat="server" ID="lblLoginPrompt">To continue, please log into your account using your Email and password</asp:Label>
-            <br />
-            <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
-            <br />
-            <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
-            <br />
-            <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default"/>
-            <br />
-            <asp:Label runat="server" ID="lblLoginResult" Visible ="false"></asp:Label>
-        </asp:Panel>
+
+        <div class="modal" id="pnlLoginModal" class="modal">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content modal-sm">
+                    <div class="modal-title center-block" style="padding-top:0.5em;">
+                        <h4 style="padding-left:2em;">Log in to continue</h4>
+                    </div>
+                    <asp:Panel runat="server" cssClass="modal-body center-block">
+                        <p style="padding-bottom:1em;">
+                            To continue, please log into your account using your Email and password
+                        </p>
+                        <div style="padding-left:1em;padding-bottom:0.5em;">
+                            <p>Email: </p>
+                            <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
+                        </div>
+                        <div style="padding-left:1em;padding-bottom:0.5em;margin:auto;">
+                            <p>Password: </p>
+                            <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
+                        </div>
+                        <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default center-block" Width="15em" />
+                        <br />
+                        <asp:Label runat="server" ID="lblLoginResult">Placeholder</asp:Label>
+                    </asp:Panel>
+                </div>
+                
+            </div>           
+        </div>
+        
+        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
