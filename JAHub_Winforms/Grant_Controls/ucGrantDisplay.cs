@@ -25,6 +25,7 @@ namespace JAHub_Winforms.Grant_Controls
             InitializeComponent();
             txtUcAgencyName.Text = grantinfo.Title;
             rtbGrantDescription.Text = grantinfo.GrantDescription;
+            
            
         }
 

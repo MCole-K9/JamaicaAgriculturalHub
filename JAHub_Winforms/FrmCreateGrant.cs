@@ -23,14 +23,50 @@ namespace JAHub_Winforms
 
         private void FrmCreateGrant_Load(object sender, EventArgs e)
         {
+            pnlNav.Size = new System.Drawing.Size(188, 804);
             Size = new Size(1102, 1200);
+            
+        }
 
-            /* Grantinfo grantinfo = new Grantinfo() ;  
-             CreateGrant(grantinfo);*/
+        private void btnuploadfile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "txt | *.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Grantinfo grantinfo = new Grantinfo();
+                grantinfo.FilePath = openFileDialog.FileName;
+                grantinfo.FileName = openFileDialog.SafeFileName;
+
+                Utilities.FTPFileUpload(grantinfo.FileName, grantinfo.FilePath);
+                MessageBox.Show(grantinfo.FileName + grantinfo.FilePath);
+            }
+
         }
 
         private void btnCreateGrant_Click(object sender, EventArgs e)
         {
+            if (rtbdescription == null) 
+            {
+                rtbdescription.Focus();
+            }
+
+            if(rtbrequirement == null)
+            {
+                rtbrequirement.Focus();
+            }   
+
+            if (txtapplicationnumber == null)
+            {
+                txtapplicationnumber.Focus();   
+            }
+
+            if (txtcreategranttitle == null)
+            {
+                txtcreategranttitle.Focus();
+            }
+
+
             GrantOfficer grantOfficer = new GrantOfficer();
             Grantinfo grantinfo = new Grantinfo();
             grantinfo.GrantDescription = rtbdescription.Text;
@@ -39,14 +75,22 @@ namespace JAHub_Winforms
             grantinfo.Title = txtcreategranttitle.Text;
             grantinfo.ApplicationId = txtapplicationnumber.Text;
             grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
-            grantOfficer.CreateGrant(grantinfo);
+            //grantOfficer.CreateGrant(grantinfo);
 
             rtbdescription.Clear();
             rtbrequirement.Clear();
             dtpExpirydate.ResetText();
-            txtcreategranttitle.ResetText();
+            txtcreategranttitle.Clear();
             txtapplicationnumber.ResetText();
 
+           
+            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
+            grantOfficer.CreateGrant(grantinfo);
+
         }
+
+       
+
+       
     }
 }

@@ -7,36 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Account {
-    
-    
-    public partial class VerifyPhoneNumber {
-        
+namespace JAHub_ASPWebforms.Account
+{
+
+
+    public partial class usrNavbarAccountLogout
+    {
+
         /// <summary>
-        /// ErrorMessage control.
+        /// lblUserInformation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
-        
+        protected global::System.Web.UI.WebControls.Label lblUserInformation;
+
         /// <summary>
-        /// PhoneNumber control.
+        /// btnLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField PhoneNumber;
-        
-        /// <summary>
-        /// Code control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Code;
+        protected global::System.Web.UI.WebControls.Button btnLogout;
     }
 }

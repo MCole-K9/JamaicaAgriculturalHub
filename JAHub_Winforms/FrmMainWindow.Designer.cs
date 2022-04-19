@@ -43,6 +43,8 @@
             this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
+         //   this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          //  this.farmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
@@ -155,6 +157,20 @@
             this.icnJaHub.Text = "Jamaica Agricultural Hub";
             this.icnJaHub.Visible = true;
             this.icnJaHub.Click += new System.EventHandler(this.icnJaHub_Click);
+            // 
+            // adminToolStripMenuItem
+            // 
+         /*   this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click_1);
+            // 
+            // farmerToolStripMenuItem
+            // 
+            this.farmerToolStripMenuItem.Name = "farmerToolStripMenuItem";
+            this.farmerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.farmerToolStripMenuItem.Text = "Farmer";
+            this.farmerToolStripMenuItem.Click += new System.EventHandler(this.farmerToolStripMenuItem_Click);*/
             // 
             // FrmMainWindow
             // 

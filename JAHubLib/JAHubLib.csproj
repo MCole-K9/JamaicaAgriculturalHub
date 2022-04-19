@@ -46,6 +46,7 @@
     <Compile Include="Blog.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Dashboard.cs" />
     <Compile Include="Grantinfo.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />

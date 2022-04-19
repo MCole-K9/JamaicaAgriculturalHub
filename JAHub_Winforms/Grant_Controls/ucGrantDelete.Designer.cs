@@ -83,7 +83,6 @@
             this.pnlGrantDeleteContainer.Name = "pnlGrantDeleteContainer";
             this.pnlGrantDeleteContainer.Size = new System.Drawing.Size(1058, 137);
             this.pnlGrantDeleteContainer.TabIndex = 49;
-            this.pnlGrantDeleteContainer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pnlGrantDeleteContainer_MouseDoubleClick);
             // 
             // button1
             // 

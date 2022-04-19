@@ -14,15 +14,15 @@ namespace JAHubLib
 
         private string agencyName;
         private int grantofficerId;
-       public string AgencyName
+        public string AgencyName
         {
-            get { return agencyName; }  
-            set { agencyName = value; } 
+            get { return agencyName; }
+            set { agencyName = value; }
         }
         public int GrantOfficerId
         {
-            get { return grantofficerId; }  
-            set { grantofficerId = value; } 
+            get { return grantofficerId; }
+            set { grantofficerId = value; }
         }
 
         public static int FetchGrantOfficerID(int userid)
@@ -52,17 +52,15 @@ namespace JAHubLib
 
         public int CreateGrant(Grantinfo grantinfo)
         {
-
-            string query = $"INSERT INTO [Grant] ( Description,Requirements,Deadline,GrantOfficer)" +
-                    $"Values ( '{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
+            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Deadline,GrantOfficer)" +
+                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
 
             Utilities.executeInputQuery(query);
-
-
-
             return 1;
 
         }
+
+     
     }
 }
 

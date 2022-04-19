@@ -52,22 +52,5 @@ namespace JAHub_Winforms.Grant_Controls
             }
         }
 
-        private void pnlGrantDeleteContainer_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            const string message = "Are you sure you wish to delete this grant?";
-            const string caption = "Deleting Grant";
-            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-            if (result == DialogResult.Yes)
-            {
-                Grantinfo grantinfo = new Grantinfo();
-                int J = grantinfo.ID;
-                grantinfo.DeleteGrant(J);
-            }
-
-          
-
-        }
     }
 }

@@ -21,10 +21,9 @@ namespace JAHub_Winforms
             InitializeComponent();
         }
 
-        private void FrmGeneralGrantInfo_Load(object sender, EventArgs e)
-        {
 
-            Size = new Size(1102, 1200);
+        public void DisplayGrantinfo()
+        {
             using (SqlConnection conn = new SqlConnection(Utilities.getConnectionString()))
             {
                 conn.Open();
@@ -52,51 +51,28 @@ namespace JAHub_Winforms
                     }
                 }
             }
+        }
+        private void FrmGeneralGrantInfo_Load(object sender, EventArgs e)
+        {
+
+            Size = new Size(1102, 1200);
+            DisplayGrantinfo();
+           
 
         }
-
-        private void btnBlogs_Click(object sender, EventArgs e)
+       
+        private void btnGrantHome_Click (object sender, EventArgs e)
         {
 
             FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
             frmGeneralGrantInfo.Show();
-            /* FrmViewAllMyApplication frmViewMyApplication = new FrmViewAllMyApplication();
-              Grantinfo grantinfo = new Grantinfo();
-              frmViewMyApplication.Show();*/
 
         }
-
-        private void pnlLogo_Paint(object sender, PaintEventArgs e)
+        
+        private void btnApplyforGrant_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnCreateBlog_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btncreatetesting_Click(object sender, EventArgs e)
-        {
-            FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
+            FrmCreateGrant frmCreateGrant= new FrmCreateGrant();
             frmCreateGrant.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDeleteGrant_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnViewall_Click(object sender, EventArgs e)
-        {
-            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
-            frmViewAllMyApplication.Show();
         }
     }
 }

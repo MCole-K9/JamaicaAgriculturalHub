@@ -87,7 +87,7 @@
             this.lblLoginInstruction.Padding = new System.Windows.Forms.Padding(4, 0, 4, 12);
             this.lblLoginInstruction.Size = new System.Drawing.Size(409, 52);
             this.lblLoginInstruction.TabIndex = 1;
-            this.lblLoginInstruction.Text = "To continue, please log into your account using your User ID and password";
+            this.lblLoginInstruction.Text = "To continue, please log into your account using your Email and password";
             // 
             // tlpLoginCredentials
             // 

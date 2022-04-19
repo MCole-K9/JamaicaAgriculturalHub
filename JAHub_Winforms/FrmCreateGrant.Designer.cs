@@ -48,11 +48,13 @@
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtapplicationnumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
             this.pnlNav.SuspendLayout();
+            this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-    //        this.SuspendLayout();
             // 
             // btnuploadfile
             // 
@@ -63,6 +65,7 @@
             this.btnuploadfile.TabIndex = 0;
             this.btnuploadfile.Text = "Upload File";
             this.btnuploadfile.UseVisualStyleBackColor = true;
+            this.btnuploadfile.Click += new System.EventHandler(this.btnuploadfile_Click);
             // 
             // pbfile
             // 
@@ -84,7 +87,6 @@
             this.rtbdescription.Size = new System.Drawing.Size(705, 181);
             this.rtbdescription.TabIndex = 9;
             this.rtbdescription.Text = "";
-           
             // 
             // lbltitlcreategrant
             // 
@@ -106,14 +108,13 @@
             this.label1.Size = new System.Drawing.Size(206, 27);
             this.label1.TabIndex = 29;
             this.label1.Text = "Grant Description";
-          
             // 
             // btnCreateGrant
             // 
             this.btnCreateGrant.Location = new System.Drawing.Point(761, 983);
             this.btnCreateGrant.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateGrant.Name = "btnCreateGrant";
-            this.btnCreateGrant.Size = new System.Drawing.Size(76, 38);
+            this.btnCreateGrant.Size = new System.Drawing.Size(82, 38);
             this.btnCreateGrant.TabIndex = 32;
             this.btnCreateGrant.Text = "Submit";
             this.btnCreateGrant.UseVisualStyleBackColor = true;
@@ -147,7 +148,6 @@
             this.rtbrequirement.Size = new System.Drawing.Size(706, 151);
             this.rtbrequirement.TabIndex = 35;
             this.rtbrequirement.Text = "";
-           
             // 
             // label3
             // 
@@ -159,7 +159,6 @@
             this.label3.Size = new System.Drawing.Size(165, 27);
             this.label3.TabIndex = 36;
             this.label3.Text = "Requirements";
-           
             // 
             // txtcreategranttitle
             // 
@@ -169,7 +168,6 @@
             this.txtcreategranttitle.Size = new System.Drawing.Size(266, 15);
             this.txtcreategranttitle.TabIndex = 37;
             this.txtcreategranttitle.Text = "Enter Title";
-          
             // 
             // pnlNav
             // 
@@ -275,7 +273,7 @@
             this.btnMyBlogs.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
             this.btnMyBlogs.Size = new System.Drawing.Size(188, 58);
             this.btnMyBlogs.TabIndex = 4;
-            this.btnMyBlogs.Text = "Exit";
+            this.btnMyBlogs.Text = "0";
             this.btnMyBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMyBlogs.UseVisualStyleBackColor = false;
@@ -298,11 +296,11 @@
             this.btnCreateBlog.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
             this.btnCreateBlog.Size = new System.Drawing.Size(188, 58);
             this.btnCreateBlog.TabIndex = 3;
-            this.btnCreateBlog.Text = "Apply";
+            this.btnCreateBlog.Text = "Edit Grant";
             this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateBlog.UseVisualStyleBackColor = false;
-            // 
+         
             // btnBlogs
             // 
             this.btnBlogs.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -328,12 +326,23 @@
             // 
             // pnlLogo
             // 
+            this.pnlLogo.Controls.Add(this.pictureBox1);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(188, 151);
             this.pnlLogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // txtapplicationnumber
             // 
@@ -343,13 +352,14 @@
             this.txtapplicationnumber.Size = new System.Drawing.Size(118, 15);
             this.txtapplicationnumber.TabIndex = 65;
             this.txtapplicationnumber.Text = "Application  #";
-           
             // 
             // FrmCreateGrant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1182, 1055);
             this.Controls.Add(this.txtapplicationnumber);
             this.Controls.Add(this.pnlNav);
@@ -367,10 +377,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmCreateGrant";
+            this.Text = "Update Information";
             this.Load += new System.EventHandler(this.FrmCreateGrant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).EndInit();
-          this.ResumeLayout(false);
-          this.PerformLayout();
+            this.pnlNav.ResumeLayout(false);
+            this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -395,5 +409,6 @@
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.TextBox txtapplicationnumber;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

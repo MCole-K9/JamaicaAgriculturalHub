@@ -48,8 +48,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
             this.pnlNav.SuspendLayout();
             
-            ((System.ComponentModel.ISupportInitialize)(this.rtbrequirement)).BeginInit();
-            this.SuspendLayout();
+         /*   ((System.ComponentModel.ISupportInitialize)(this.rtbrequirement)).BeginInit();
+            this.SuspendLayout();*/
             // 
             // txtapplicationnumber
             // 

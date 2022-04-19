@@ -25,7 +25,7 @@ namespace JAHub_Winforms
         {
             Grantinfo grantinfo = new Grantinfo();
             grantinfo.ID = Int32.Parse  (txtDeletetitleinfo.Text);
-            grantinfo.DeleteGrant(grantinfo.ID);
+            grantinfo.DeleteGrant();
           
         }
             
