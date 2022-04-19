@@ -42,6 +42,8 @@
             this.lblLoggedInAs = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.farmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +90,9 @@
             // 
             // grantsToolStripMenuItem
             // 
+            this.grantsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adminToolStripMenuItem,
+            this.farmerToolStripMenuItem});
             this.grantsToolStripMenuItem.Name = "grantsToolStripMenuItem";
             this.grantsToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.grantsToolStripMenuItem.Text = "Grants";
@@ -153,6 +158,20 @@
             this.icnJaHub.Text = "JAHub";
             this.icnJaHub.Visible = true;
             // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click_1);
+            // 
+            // farmerToolStripMenuItem
+            // 
+            this.farmerToolStripMenuItem.Name = "farmerToolStripMenuItem";
+            this.farmerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.farmerToolStripMenuItem.Text = "Farmer";
+            this.farmerToolStripMenuItem.Click += new System.EventHandler(this.farmerToolStripMenuItem_Click);
+            // 
             // FrmMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,7 +181,7 @@
             this.Controls.Add(this.mnsMainForm);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsMainForm;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMainWindow";
             this.Text = "Jamaica Agricultural Hub";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainWindow_FormClosed);
@@ -192,6 +211,8 @@
         private System.Windows.Forms.NotifyIcon icnJaHub;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grantsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem farmerToolStripMenuItem;
     }
 }
 

@@ -16,6 +16,7 @@ namespace JAHubLib
         public string filename;
         public string requirement;
         private DateTime expiryDate;
+        private string filePath;
 
 
 
@@ -27,6 +28,8 @@ namespace JAHubLib
         public string ApplicationId { get; set; }
         public int GrantOfficerId { get; set; }
         public int ID { get; set; }
+        public string FilePath { get; set; }
+
 
         public Grantinfo()
         {
@@ -59,18 +62,33 @@ namespace JAHubLib
         }
 
 
-        public void DeleteGrant(int id)
+        public void DeleteGrant()
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 Grantinfo grantinfo = new Grantinfo();
+               
                 connection.Open();
-                string query = $" Delete FROM [Grant] WHERE ID = {id}";
-
+                string query = $" Delete FROM [Grant] WHERE ID = {grantinfo.ID}";
                 SqlCommand cmd = new SqlCommand(query, connection);
-            }
+                SqlDataReader sqlRead = cmd.ExecuteReader();
 
-            return;
+                {
+                    while (sqlRead.Read())
+                    {
+                        
+                        grantinfo.ID = (int)sqlRead["ID"];
+                        grantinfo.GrantDescription = sqlRead["Description"].ToString();
+                        grantinfo.Requirement = sqlRead["Requirements"].ToString();
+                        grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
+                        grantinfo.ApplicationId = sqlRead["Application_Form"].ToString();
+                        grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
+                        grantinfo.Title = sqlRead["Title"].ToString();
+
+                    }
+                }
+
+            }
         }
 
         public void ViewAllMyGrants()
@@ -78,6 +96,8 @@ namespace JAHubLib
 
 
         }
+
+
        
     }
 

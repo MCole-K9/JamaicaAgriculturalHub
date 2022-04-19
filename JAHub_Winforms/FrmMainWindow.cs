@@ -202,9 +202,9 @@ namespace JAHub_Winforms
             if (!Utils.IsFormOpen("FrmGeneralGrantInfo"))
             {
 
-                FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+              /*  FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
                 frmGeneralGrantInfo.MdiParent = this;
-                frmGeneralGrantInfo.Show();
+                frmGeneralGrantInfo.Show();*/
             }
             else
             {
@@ -245,6 +245,20 @@ namespace JAHub_Winforms
             FrmRadaViewRegistration rada = new FrmRadaViewRegistration(Session.UserId);
             rada.MdiParent = this;
             rada.Show();
+        }
+
+        private void adminToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();    
+            frmViewAllMyApplication.MdiParent=this; 
+            frmViewAllMyApplication.Show(); 
+        }
+
+        private void farmerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+            frmGeneralGrantInfo.MdiParent = this;
+            frmGeneralGrantInfo.Show();
         }
     }
 }

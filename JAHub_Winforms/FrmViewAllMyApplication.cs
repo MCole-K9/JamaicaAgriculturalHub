@@ -14,6 +14,7 @@ namespace JAHub_Winforms
 {
     public partial class FrmViewAllMyApplication : Form
     {
+     
         public FrmViewAllMyApplication()
         {
            
@@ -21,17 +22,18 @@ namespace JAHub_Winforms
 
         }
 
-        public void ReadFromDatabase(int userId)
+        public void ReadFromDatabase(int grantofficerID)
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
-                Grantinfo grantinfo = new Grantinfo();
-                grantinfo.ViewAllMyGrants();
+                
+               /// grantinfo.ViewAllMyGrants();
                 connection.Open();
+                Grantinfo grantinfo = new Grantinfo();
 
                 // fetch GrantOfficer Table ID
 
-                String query = $"SELECT * FROM [Grant] WHERE GrantOfficer = {userId}";
+                String query = $"SELECT * FROM [Grant] WHERE GrantOfficer = {grantofficerID}";
 
 
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -41,7 +43,7 @@ namespace JAHub_Winforms
 
                 while (reader.Read())
                 {
-                    grantinfo.ID = userId;
+                    grantinfo.ID =(int)reader["ID"];;
                     grantinfo.requirement = reader["Requirements"].ToString();
                     grantinfo.GrantDescription = reader["Description"].ToString();
                     grantinfo.ExpiryDate = (DateTime)reader["Deadline"];
@@ -49,27 +51,19 @@ namespace JAHub_Winforms
                     grantinfo.GrantOfficerId = (int)reader["GrantOfficer"];
                     grantinfo.Title = reader["Title"].ToString();
 
-                    Grant_Controls.ucGrantDisplay ucGRantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
-                    pnlContainerAdminViewGrants.Controls.Add(ucGRantDisplay);
-                    ucGRantDisplay.Dock = DockStyle.Top;
+                    Grant_Controls.UserControlDisplayGrant userControlDisplayGrant = new Grant_Controls.UserControlDisplayGrant(grantinfo);
+                    pnlContainerAdminViewGrants.Controls.Add(userControlDisplayGrant);
+                    userControlDisplayGrant.Dock = DockStyle.Top;
                 }
 
                 connection.Close();
             }
         }
 
-        private bool isLoggedin;
-        Grantinfo grantinfo = new Grantinfo();
+        
+        //Grantinfo grantinfo = new Grantinfo();
 
-        private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
-        {
-            Size = new Size(1102, 1200);
-            Grantinfo grantinfo = new Grantinfo();
-            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
-
-            ReadFromDatabase(grantinfo.GrantOfficerId);
-        }
-
+        
         //private void pnlGrantDeleteContainer_MouseDoubleClick(object sender, MouseEventArgs e)
         //{
             //const string message = "Are you sure you wish to delete this grant?";
@@ -111,6 +105,14 @@ namespace JAHub_Winforms
         {
 
         }
-        
+
+        private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
+        {
+            Size = new Size(1102, 1200);
+            Grantinfo grantinfo = new Grantinfo();
+            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
+
+            ReadFromDatabase(grantinfo.GrantOfficerId);
+        }
     }
 }
