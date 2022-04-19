@@ -86,6 +86,7 @@
             // 
             this.flwRadaStatus.AutoSize = true;
             this.flwRadaStatus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flwRadaStatus.BackColor = System.Drawing.Color.Transparent;
             this.flwRadaStatus.Controls.Add(this.tblRadaStatus);
             this.flwRadaStatus.Controls.Add(this.tblTextHolder);
             this.flwRadaStatus.Controls.Add(this.btnRegisterWithRada);
@@ -128,11 +129,11 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(155, 23);
+            this.btnEdit.Location = new System.Drawing.Point(165, 23);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(102, 32);
             this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "View";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -144,9 +145,9 @@
             this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.Location = new System.Drawing.Point(3, 26);
             this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(146, 25);
+            this.lblInformation.Size = new System.Drawing.Size(156, 25);
             this.lblInformation.TabIndex = 3;
-            this.lblInformation.Text = "Edit Information";
+            this.lblInformation.Text = "View Information";
             this.lblInformation.Visible = false;
             // 
             // btnRegisterWithRada
@@ -166,9 +167,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(409, 285);
             this.Controls.Add(this.flwRadaStatus);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRadaStatus";

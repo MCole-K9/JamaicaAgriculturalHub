@@ -53,7 +53,11 @@ namespace JAHub_Winforms
             flwRadaViewRegistration.Controls.Add(contactBlock);
             flwRadaViewRegistration.Controls.Add(holdingsBlock);
             flwRadaViewRegistration.Controls.Add(industryBlock);
-            flwRadaViewRegistration.Controls.Add(organizationsBlock);
+
+            if (farmer.Organizations.Count != 0)
+            {
+                flwRadaViewRegistration.Controls.Add(organizationsBlock);
+            }
         }
     }
 }
