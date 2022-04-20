@@ -44,7 +44,7 @@
             this.lblLoggedInRole = new System.Windows.Forms.ToolStripStatusLabel();
             this.icnJaHub = new System.Windows.Forms.NotifyIcon(this.components);
          //   this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          //  this.farmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          //         this.farmerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMainForm.SuspendLayout();
             this.ssrMainForm.SuspendLayout();
             this.SuspendLayout();

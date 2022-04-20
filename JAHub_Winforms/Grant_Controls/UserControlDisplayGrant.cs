@@ -14,17 +14,19 @@ namespace JAHub_Winforms.Grant_Controls
 {
     public partial class UserControlDisplayGrant : UserControl
     {
+        Grantinfo grantinfo = new Grantinfo();
         public UserControlDisplayGrant()
         {
             InitializeComponent();
         }
 
-        public UserControlDisplayGrant(Grantinfo grantinfo)
+        public UserControlDisplayGrant(Grantinfo g)
         {
-            
+            grantinfo = g;
             InitializeComponent();
             rtbgrantdescription.Text = grantinfo.GrantDescription;
             txtviewgranttitle.Text = grantinfo.Title;
+            
 
         }
 
@@ -38,18 +40,25 @@ namespace JAHub_Winforms.Grant_Controls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Grantinfo grantinfo = new Grantinfo();
-           int  x = grantinfo.ID;
-            string y = x.ToString();
 
             if(CbSelected.Checked==true)
             {
-                grantinfo.DeleteGrant();
-
-                MessageBox.Show(y);
+                grantinfo.DeleteGrant(grantinfo.ID);
+                CbSelected.Checked=false; 
             }
         }
 
-        
+        private void btnUpdategrant_Click(object sender, EventArgs e)
+        {
+            FrmEditGrantInfo frmEditGrantInfo = new FrmEditGrantInfo();
+            frmEditGrantInfo.Show();    
+
+            if (CbSelected.Checked == true)
+            {
+                FrmEditGrantInfo frmEditGrantInfo1 = new FrmEditGrantInfo(grantinfo);
+                frmEditGrantInfo.Show();
+                grantinfo.UpdateGrant(grantinfo.ID);
+            }
+        }
     }
 }

@@ -14,7 +14,7 @@
 
         <div class="container">
           <div class="jumbotron">
-            <h1>Your Blogs</h1>
+            <h1 runat="server" id="lblTitle">Your Blogs</h1>
               <p class="AgriBlogDesc">Here you can view all the Blogs you have posted to our Website</p>
           </div>
         </div>

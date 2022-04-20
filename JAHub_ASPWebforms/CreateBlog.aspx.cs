@@ -19,7 +19,7 @@ namespace JAHub_ASPWebforms
         {
             Blog blog = new Blog();
             string ParsedBlody = txtBlogBody.Value.Replace("'","''");
-            blog.CreateBlogPost(3, txtTitle.Value, txtDescription.Value, ParsedBlody);
+            blog.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBlody);
             
         }
     }

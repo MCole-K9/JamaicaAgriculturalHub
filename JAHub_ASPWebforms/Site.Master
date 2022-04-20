@@ -12,7 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Resources/farmer-icon.png" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
@@ -45,35 +45,59 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Jamaica Agricultural Hub</a>
+                    <a class="navbar-brand" runat="server" href="~/Default">Jamaica Agricultural Hub</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Default">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Grants</a></li>
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                    <asp:Placeholder runat="server"  id="phAccount">
+                        
+                    </asp:Placeholder>
                 </div>
             </div>
         </div>
+
+        <div class="modal" id="pnlLoginModal" class="modal">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content modal-sm">
+                    <asp:UpdatePanel ID="udpLogin" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div class="modal-title center-block" style="padding-top:0.5em;">
+                                <h4 style="padding-left:2em;">Log in to continue</h4>
+                            </div>
+                            <asp:Panel runat="server" cssClass="modal-body center-block">
+                                <p style="padding-bottom:1em;">
+                                    To continue, please log into your account using your Email and password
+                                </p>
+                                <div style="padding-left:1em;padding-bottom:0.5em;">
+                                    <p>Email: </p>
+                                    <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
+                                </div>
+                                <div style="padding-left:1em;padding-bottom:0.5em;margin:auto;">
+                                    <p>Password: </p>
+                                    <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
+                                </div>
+                                <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default center-block" Width="15em" 
+                                    onclick="btnLogin_OnClick"/>
+                                <br />
+                                <asp:Label runat="server" ID="lblLoginResult" CssClass="text-danger invisible">Placeholder</asp:Label>
+                            </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    
+                </div>
+                
+            </div>           
+        </div>
+        
+        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

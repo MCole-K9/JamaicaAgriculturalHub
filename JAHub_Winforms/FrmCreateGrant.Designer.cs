@@ -44,7 +44,6 @@
             this.btnDeleteGrant = new FontAwesome.Sharp.IconButton();
             this.btnViewall = new FontAwesome.Sharp.IconButton();
             this.btncreatetesting = new FontAwesome.Sharp.IconButton();
-            this.btnMyBlogs = new FontAwesome.Sharp.IconButton();
             this.btnCreateBlog = new FontAwesome.Sharp.IconButton();
             this.btnBlogs = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -175,7 +174,6 @@
             this.pnlNav.Controls.Add(this.btnDeleteGrant);
             this.pnlNav.Controls.Add(this.btnViewall);
             this.pnlNav.Controls.Add(this.btncreatetesting);
-            this.pnlNav.Controls.Add(this.btnMyBlogs);
             this.pnlNav.Controls.Add(this.btnCreateBlog);
             this.pnlNav.Controls.Add(this.btnBlogs);
             this.pnlNav.Controls.Add(this.pnlLogo);
@@ -192,13 +190,14 @@
             this.btnDeleteGrant.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDeleteGrant.FlatAppearance.BorderSize = 0;
             this.btnDeleteGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteGrant.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDeleteGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteGrant.IconSize = 30;
             this.btnDeleteGrant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteGrant.Location = new System.Drawing.Point(0, 441);
+            this.btnDeleteGrant.Location = new System.Drawing.Point(0, 383);
             this.btnDeleteGrant.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteGrant.Name = "btnDeleteGrant";
             this.btnDeleteGrant.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
@@ -215,13 +214,14 @@
             this.btnViewall.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnViewall.FlatAppearance.BorderSize = 0;
             this.btnViewall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewall.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewall.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.BorderAll;
             this.btnViewall.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnViewall.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnViewall.IconSize = 30;
             this.btnViewall.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewall.Location = new System.Drawing.Point(0, 383);
+            this.btnViewall.Location = new System.Drawing.Point(0, 325);
             this.btnViewall.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewall.Name = "btnViewall";
             this.btnViewall.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
@@ -238,13 +238,14 @@
             this.btncreatetesting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btncreatetesting.FlatAppearance.BorderSize = 0;
             this.btncreatetesting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncreatetesting.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncreatetesting.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncreatetesting.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btncreatetesting.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.btncreatetesting.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btncreatetesting.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncreatetesting.IconSize = 30;
             this.btncreatetesting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncreatetesting.Location = new System.Drawing.Point(0, 325);
+            this.btncreatetesting.Location = new System.Drawing.Point(0, 267);
             this.btncreatetesting.Margin = new System.Windows.Forms.Padding(4);
             this.btncreatetesting.Name = "btncreatetesting";
             this.btncreatetesting.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
@@ -255,37 +256,15 @@
             this.btncreatetesting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btncreatetesting.UseVisualStyleBackColor = false;
             // 
-            // btnMyBlogs
-            // 
-            this.btnMyBlogs.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnMyBlogs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMyBlogs.FlatAppearance.BorderSize = 0;
-            this.btnMyBlogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyBlogs.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMyBlogs.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            this.btnMyBlogs.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMyBlogs.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMyBlogs.IconSize = 30;
-            this.btnMyBlogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyBlogs.Location = new System.Drawing.Point(0, 267);
-            this.btnMyBlogs.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMyBlogs.Name = "btnMyBlogs";
-            this.btnMyBlogs.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.btnMyBlogs.Size = new System.Drawing.Size(188, 58);
-            this.btnMyBlogs.TabIndex = 4;
-            this.btnMyBlogs.Text = "0";
-            this.btnMyBlogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyBlogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyBlogs.UseVisualStyleBackColor = false;
-            // 
             // btnCreateBlog
             // 
             this.btnCreateBlog.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCreateBlog.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCreateBlog.FlatAppearance.BorderSize = 0;
             this.btnCreateBlog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateBlog.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateBlog.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCreateBlog.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnCreateBlog.IconChar = FontAwesome.Sharp.IconChar.PenSquare;
             this.btnCreateBlog.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCreateBlog.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCreateBlog.IconSize = 30;
@@ -300,15 +279,16 @@
             this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateBlog.UseVisualStyleBackColor = false;
-         
+            // 
             // btnBlogs
             // 
             this.btnBlogs.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBlogs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBlogs.FlatAppearance.BorderSize = 0;
             this.btnBlogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlogs.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlogs.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBlogs.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.btnBlogs.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btnBlogs.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBlogs.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBlogs.IconSize = 30;
@@ -377,7 +357,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmCreateGrant";
-            this.Text = "Update Information";
+            this.Text = "Create Grant";
             this.Load += new System.EventHandler(this.FrmCreateGrant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).EndInit();
             this.pnlNav.ResumeLayout(false);
@@ -404,7 +384,6 @@
         private FontAwesome.Sharp.IconButton btnDeleteGrant;
         private FontAwesome.Sharp.IconButton btnViewall;
         private FontAwesome.Sharp.IconButton btncreatetesting;
-        private FontAwesome.Sharp.IconButton btnMyBlogs;
         private FontAwesome.Sharp.IconButton btnCreateBlog;
         private FontAwesome.Sharp.IconButton btnBlogs;
         private System.Windows.Forms.Panel pnlLogo;

@@ -16,5 +16,12 @@ namespace JAHub_Winforms
         {
             InitializeComponent();
         }
+
+        private void btngrantHome_Click(object sender, EventArgs e)
+        {
+            Grant_Controls.UserControlGrantSubmission userControlGrantSubmission = new Grant_Controls.UserControlGrantSubmission();  
+            pnlGrantSubmission.Controls.Add(userControlGrantSubmission);
+            userControlGrantSubmission.Dock = DockStyle.Top;
+        }
     }
 }
