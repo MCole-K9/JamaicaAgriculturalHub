@@ -49,11 +49,10 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Default">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Grants</a></li>
                         <li><a runat="server" href="~/Shop">Shop</a></li>
+                        <li><a runat="server" href="~/Grants">Grants</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
                     </ul>
                     <asp:Placeholder runat="server"  id="phAccount">
                         
@@ -103,7 +102,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Jamica Agricultural Hub</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Jamaica Agricultural Hub</p>
             </footer>
         </div>
     </form>

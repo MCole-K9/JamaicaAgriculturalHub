@@ -164,6 +164,7 @@
     <Content Include="CreateBlog.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
+    <Content Include="Grants.aspx" />
     <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -302,6 +303,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Grants.aspx.cs">
+      <DependentUpon>Grants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grants.aspx.designer.cs">
+      <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Moderation\usrAddInfraction.ascx.cs">
