@@ -74,5 +74,11 @@ namespace JAHub_Winforms
             FrmCreateGrant frmCreateGrant= new FrmCreateGrant();
             frmCreateGrant.Show();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+            frmViewAllMyApplication.Show(); 
+        }
     }
 }

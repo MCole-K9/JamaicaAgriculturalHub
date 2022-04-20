@@ -42,13 +42,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpExpirydate = new System.Windows.Forms.DateTimePicker();
             this.lblExpirationDate = new System.Windows.Forms.Label();
-            this.btnCreateGrant = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbltitlcreategrant = new System.Windows.Forms.Label();
             this.rtbrequirement = new System.Windows.Forms.RichTextBox();
             this.btnuploadfile = new System.Windows.Forms.Button();
             this.pbfile = new System.Windows.Forms.PictureBox();
             this.rtbdescription = new System.Windows.Forms.RichTextBox();
+            this.btnupdateform = new System.Windows.Forms.Button();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlNav.SuspendLayout();
@@ -194,6 +195,7 @@
             this.btnUpdateGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateGrant.UseVisualStyleBackColor = false;
+            this.btnUpdateGrant.Click += new System.EventHandler(this.btnUpdateGrant_Click);
             // 
             // btnViewall
             // 
@@ -258,15 +260,15 @@
             this.lblExpirationDate.TabIndex = 72;
             this.lblExpirationDate.Text = "Expiration Date";
             // 
-            // btnCreateGrant
+            // btnUpdate
             // 
-            this.btnCreateGrant.Location = new System.Drawing.Point(730, 877);
-            this.btnCreateGrant.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCreateGrant.Name = "btnCreateGrant";
-            this.btnCreateGrant.Size = new System.Drawing.Size(82, 38);
-            this.btnCreateGrant.TabIndex = 71;
-            this.btnCreateGrant.Text = "Submit";
-            this.btnCreateGrant.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(730, 877);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(82, 38);
+            this.btnUpdate.TabIndex = 71;
+            this.btnUpdate.Text = "Submit";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -330,19 +332,31 @@
             this.rtbdescription.TabIndex = 67;
             this.rtbdescription.Text = "";
             // 
+            // btnupdateform
+            // 
+            this.btnupdateform.Location = new System.Drawing.Point(845, 778);
+            this.btnupdateform.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnupdateform.Name = "btnupdateform";
+            this.btnupdateform.Size = new System.Drawing.Size(88, 38);
+            this.btnupdateform.TabIndex = 79;
+            this.btnupdateform.Text = "Updateform";
+            this.btnupdateform.UseVisualStyleBackColor = true;
+            this.btnupdateform.Click += new System.EventHandler(this.btnupdateform_Click);
+            // 
             // FrmEditGrantInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1067, 809);
+            this.Controls.Add(this.btnupdateform);
             this.Controls.Add(this.txtapplicationnumber);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.txtcreategranttitle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpExpirydate);
             this.Controls.Add(this.lblExpirationDate);
-            this.Controls.Add(this.btnCreateGrant);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbltitlcreategrant);
             this.Controls.Add(this.rtbrequirement);
@@ -375,7 +389,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpExpirydate;
         private System.Windows.Forms.Label lblExpirationDate;
-        private System.Windows.Forms.Button btnCreateGrant;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbltitlcreategrant;
         private System.Windows.Forms.RichTextBox rtbrequirement;
@@ -384,5 +398,6 @@
         private System.Windows.Forms.RichTextBox rtbdescription;
         private FontAwesome.Sharp.IconButton btnUpdateGrant;
         private FontAwesome.Sharp.IconButton btnViewall;
+        private System.Windows.Forms.Button btnupdateform;
     }
 }

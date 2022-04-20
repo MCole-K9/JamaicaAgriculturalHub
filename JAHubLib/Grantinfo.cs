@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JAHubLib;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace JAHubLib
 {
@@ -62,14 +63,14 @@ namespace JAHubLib
         }
 
 
-        public void DeleteGrant()
+        public void DeleteGrant(int userID)
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 Grantinfo grantinfo = new Grantinfo();
                
                 connection.Open();
-                string query = $" Delete FROM [Grant] WHERE ID = {grantinfo.ID}";
+                string query = $" Delete FROM [Grant] WHERE ID = {userID}";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 SqlDataReader sqlRead = cmd.ExecuteReader();
 
@@ -91,15 +92,46 @@ namespace JAHubLib
             }
         }
 
-        public void ViewAllMyGrants()
-        {
 
+
+        public void UpdateGrant(int userID)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                Grantinfo grantinfo = new Grantinfo();
+
+                connection.Open();
+                string query = $" UPDATE [Grant] SET Description = '{grantinfo.GrantDescription}', Requirements = '{grantinfo.Requirement}', Deadline = {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},Application_Form = '{grantinfo.ApplicationId}' WHERE ID = {userID}";
+                SqlCommand cmd = new SqlCommand(query, connection);
+               SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+               DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                cmd.ExecuteNonQuery();
+
+
+               /* {
+                    while (sqlRead.Read())
+                    {
+
+                        grantinfo.ID = (int)sqlRead["ID"];
+                        grantinfo.GrantDescription = sqlRead["Description"].ToString();
+                        grantinfo.Requirement = sqlRead["Requirements"].ToString();
+                        grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
+                        grantinfo.ApplicationId = sqlRead["Application_Form"].ToString();
+                        grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
+                        grantinfo.Title = sqlRead["Title"].ToString();
+
+                    }*/
+                }
+
+            }
 
         }
 
 
        
-    }
+    
 
 }
 

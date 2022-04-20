@@ -38,8 +38,8 @@ namespace JAHub_Winforms
                 grantinfo.FilePath = openFileDialog.FileName;
                 grantinfo.FileName = openFileDialog.SafeFileName;
 
-                Utilities.FTPFileUpload(grantinfo.FileName, grantinfo.FilePath);
-                MessageBox.Show(grantinfo.FileName + grantinfo.FilePath);
+                Utilities.FTPFileUpload(grantinfo.FilePath, grantinfo.FileName);
+                //MessageBox.Show(grantinfo.FileName + grantinfo.FilePath);
             }
 
         }

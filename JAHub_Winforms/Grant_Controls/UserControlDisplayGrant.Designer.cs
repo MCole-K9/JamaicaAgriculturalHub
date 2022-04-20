@@ -31,7 +31,7 @@
             this.pnlgrantcontainer = new System.Windows.Forms.Panel();
             this.btnviewmore = new System.Windows.Forms.Button();
             this.CbSelected = new System.Windows.Forms.CheckBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnUpdategrant = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.rtbgrantdescription = new System.Windows.Forms.RichTextBox();
             this.txtviewgranttitle = new System.Windows.Forms.TextBox();
@@ -42,13 +42,13 @@
             // 
             this.pnlgrantcontainer.Controls.Add(this.btnviewmore);
             this.pnlgrantcontainer.Controls.Add(this.CbSelected);
-            this.pnlgrantcontainer.Controls.Add(this.btnUpdate);
+            this.pnlgrantcontainer.Controls.Add(this.btnUpdategrant);
             this.pnlgrantcontainer.Controls.Add(this.btnDelete);
             this.pnlgrantcontainer.Controls.Add(this.rtbgrantdescription);
             this.pnlgrantcontainer.Controls.Add(this.txtviewgranttitle);
-            this.pnlgrantcontainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlgrantcontainer.Location = new System.Drawing.Point(0, 16);
             this.pnlgrantcontainer.Name = "pnlgrantcontainer";
-            this.pnlgrantcontainer.Size = new System.Drawing.Size(782, 282);
+            this.pnlgrantcontainer.Size = new System.Drawing.Size(782, 309);
             this.pnlgrantcontainer.TabIndex = 0;
             // 
             // btnviewmore
@@ -73,16 +73,17 @@
             this.CbSelected.TabIndex = 5;
             this.CbSelected.UseVisualStyleBackColor = true;
             // 
-            // btnUpdate
+            // btnUpdategrant
             // 
-            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(197, 203);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(80, 32);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdategrant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnUpdategrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdategrant.Location = new System.Drawing.Point(197, 203);
+            this.btnUpdategrant.Name = "btnUpdategrant";
+            this.btnUpdategrant.Size = new System.Drawing.Size(80, 32);
+            this.btnUpdategrant.TabIndex = 4;
+            this.btnUpdategrant.Text = "Update";
+            this.btnUpdategrant.UseVisualStyleBackColor = true;
+            this.btnUpdategrant.Click += new System.EventHandler(this.btnUpdategrant_Click);
             // 
             // btnDelete
             // 
@@ -122,7 +123,7 @@
             this.AutoScroll = true;
             this.Controls.Add(this.pnlgrantcontainer);
             this.Name = "UserControlDisplayGrant";
-            this.Size = new System.Drawing.Size(801, 278);
+            this.Size = new System.Drawing.Size(780, 343);
             this.pnlgrantcontainer.ResumeLayout(false);
             this.pnlgrantcontainer.PerformLayout();
             this.ResumeLayout(false);
@@ -135,7 +136,7 @@
         private System.Windows.Forms.RichTextBox rtbgrantdescription;
         private System.Windows.Forms.TextBox txtviewgranttitle;
         private System.Windows.Forms.CheckBox CbSelected;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnUpdategrant;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnviewmore;
     }

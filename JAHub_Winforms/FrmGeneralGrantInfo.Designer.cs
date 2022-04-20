@@ -37,6 +37,7 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pbgeneralgrantinfonav = new System.Windows.Forms.PictureBox();
             this.btnDeleteGrant = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnlNav.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbgeneralgrantinfonav)).BeginInit();
@@ -81,6 +82,7 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlNav.Controls.Add(this.iconButton1);
             this.pnlNav.Controls.Add(this.btnApplyforGrant);
             this.pnlNav.Controls.Add(this.btngrantHome);
             this.pnlNav.Controls.Add(this.pnlLogo);
@@ -182,6 +184,30 @@
             this.btnDeleteGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteGrant.UseVisualStyleBackColor = false;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.iconButton1.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 267);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
+            this.iconButton1.Size = new System.Drawing.Size(188, 58);
+            this.iconButton1.TabIndex = 4;
+            this.iconButton1.Text = "Apply";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // FrmGeneralGrantInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,5 +240,6 @@
         private System.Windows.Forms.Panel pnlLogo;
         private FontAwesome.Sharp.IconButton btnDeleteGrant;
         private System.Windows.Forms.PictureBox pbgeneralgrantinfonav;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
