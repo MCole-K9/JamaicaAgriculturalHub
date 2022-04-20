@@ -50,7 +50,7 @@
               <div class="panel-body"><img src="Resources/grant-icon.jpg" /></div>
               <div class="panel-body"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
-                <a class="btn btn-default" href="Blog">Learn More &raquo;</a>
+                <a class="btn btn-default" href="Grants">Learn More &raquo;</a>
             </div>
             </div>
         </div>
