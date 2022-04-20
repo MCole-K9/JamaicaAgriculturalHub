@@ -46,6 +46,7 @@ namespace JAHub_ASPWebforms.Shop_Controls
             try
             {
                 JAHubLib.Cart.AddToCart(this.product, 1);
+                Response.Redirect(Request.RawUrl);
             }
             catch (Exception ex)
             {
