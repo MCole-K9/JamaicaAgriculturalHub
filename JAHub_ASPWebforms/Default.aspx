@@ -3,40 +3,100 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1 class="fade"><b>Jamiaca Agricultural Hub</b></h1>
+        <p class="lead">Welcome to the Official Webpage for the Jamaica Argicultural Hub</p>
     </div>
 
-    <div class="row">
+
+    <div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slide"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4 class="slide"><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p class="slide"><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="row" style="margin-top:30px;">
         <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+           <div class="panel panel-success" >
+              <div class="panel-heading"><h2 class="text-center" style="margin:5px;">Online Farmers Market</h2></div>
+              <div class="panel-body"> Browse our wide variety of fruit, vegetables, ground provisions and other argicultural products on the Shop section of our website</div>
+               <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
+                <a class="btn btn-default" href="~/Default">Shop Now &raquo;</a>
+            </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+            <div class="panel panel-success" >
+              <div class="panel-heading"><h2 class="text-center" style="margin:5px;">Sign up</h2></div>
+              <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+               <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
+                <a class="btn btn-default" href="~/Default">Sign Up &raquo;</a>
+            </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+          <div class="panel panel-success" >
+              <div class="panel-heading"><h2 class="text-center" style="margin:5px;">Apply for a Grant</h2></div>
+              <div class="panel-body"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+               <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
+                <a class="btn btn-default" href="~/Default">Learn More &raquo;</a>
+            </div>
+            </div>
         </div>
     </div>
+    <style>
+        .jumbotron{
+            background-color: green;
 
+          }
+        .logo {
+            color: green;
+            font-size: 300px;
+          }   
+        .container-fluid {
+            padding: 30px 25px;
+          }
+        .bg-grey {
+            background-color: #f6f6f6;
+          }
+          .slide {
+            animation-name: slide;
+            animation-duration: 1s;
+            visibility: visible;
+          }
+          .fade {
+            animation-name: rise;
+            animation-duration: 2s;
+            visibility: visible;
+            animation-fill-mode: forwards;
+          }
+            @keyframes slide {
+            0% {
+              opacity: 0;
+              transform: translateY(70%);
+            } 
+            100% {
+              opacity: 1;
+              transform: translateY(0%);
+            }
+          }
+             @keyframes rise {
+            0% {
+              opacity: 0;
+              transform: translateY(10%);
+            } 
+            100% {
+              opacity: 1;
+              transform: translateY(0%);
+            }
+          }
+    </style>
 </asp:Content>
