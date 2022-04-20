@@ -176,6 +176,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Moderation\usrAddInfraction.ascx" />
+    <Content Include="Moderation\usrInfractionItem.ascx" />
     <Content Include="MyBlogs.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Resources\cart-arrow-down-solid.svg" />
@@ -220,10 +222,13 @@
     <Content Include="Verification\usrContactBlock.ascx" />
     <Content Include="Verification\usrDateOfBirthBlock.ascx" />
     <Content Include="Verification\usrHoldingsBlock.ascx" />
+    <Content Include="Verification\usrIndustryBlock.ascx" />
     <Content Include="Verification\usrLandBlock.ascx" />
     <Content Include="Verification\usrNameBlock.ascx" />
+    <Content Include="Verification\usrOrganizationsBlock.ascx" />
     <Content Include="Verification\usrPhoneNumberBlock.ascx" />
     <Content Include="Verification\usrProductBlock.ascx" />
+    <Content Include="Verification\usrTrnBlock.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -294,6 +299,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Moderation\usrAddInfraction.ascx.cs">
+      <DependentUpon>usrAddInfraction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrAddInfraction.ascx.designer.cs">
+      <DependentUpon>usrAddInfraction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionItem.ascx.cs">
+      <DependentUpon>usrInfractionItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderation\usrInfractionItem.ascx.designer.cs">
+      <DependentUpon>usrInfractionItem.ascx</DependentUpon>
+    </Compile>
     <Compile Include="MyBlogs.aspx.cs">
       <DependentUpon>MyBlogs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -388,6 +407,13 @@
     <Compile Include="Verification\usrHoldingsBlock.ascx.designer.cs">
       <DependentUpon>usrHoldingsBlock.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Verification\usrIndustryBlock.ascx.cs">
+      <DependentUpon>usrIndustryBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrIndustryBlock.ascx.designer.cs">
+      <DependentUpon>usrIndustryBlock.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Verification\usrLandBlock.ascx.cs">
       <DependentUpon>usrLandBlock.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,6 +428,13 @@
     <Compile Include="Verification\usrNameBlock.ascx.designer.cs">
       <DependentUpon>usrNameBlock.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Verification\usrOrganizationsBlock.ascx.cs">
+      <DependentUpon>usrOrganizationsBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrOrganizationsBlock.ascx.designer.cs">
+      <DependentUpon>usrOrganizationsBlock.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Verification\usrPhoneNumberBlock.ascx.cs">
       <DependentUpon>usrPhoneNumberBlock.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,6 +448,13 @@
     </Compile>
     <Compile Include="Verification\usrProductBlock.ascx.designer.cs">
       <DependentUpon>usrProductBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Verification\usrTrnBlock.ascx.cs">
+      <DependentUpon>usrTrnBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrTrnBlock.ascx.designer.cs">
+      <DependentUpon>usrTrnBlock.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

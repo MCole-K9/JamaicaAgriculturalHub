@@ -44,7 +44,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelHomeContainer = new System.Windows.Forms.Panel();
-            this.btnRadaStatus = new System.Windows.Forms.Button();
             this.btnCreateGrnat = new System.Windows.Forms.Button();
             this.btnEditGrant = new System.Windows.Forms.Button();
             this.btnViewGrants = new System.Windows.Forms.Button();
