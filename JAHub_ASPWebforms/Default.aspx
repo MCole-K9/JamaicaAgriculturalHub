@@ -52,6 +52,7 @@
             </div>
         </div>
     </div>
+
     <style>
         .jumbotron{
             background-color: green;

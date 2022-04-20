@@ -15,6 +15,15 @@ namespace JAHub_ASPWebforms
     {
 
         /// <summary>
+        /// lblTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTitle;
+
+        /// <summary>
         /// txtSearch control.
         /// </summary>
         /// <remarks>
