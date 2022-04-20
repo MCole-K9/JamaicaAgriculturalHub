@@ -153,12 +153,6 @@
     <Compile Include="FrmGrantOfficer.Designer.cs">
       <DependentUpon>FrmGrantOfficer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGrantStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGrantStatus.Designer.cs">
-      <DependentUpon>FrmGrantStatus.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmRadaRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +302,12 @@
     </Compile>
     <Compile Include="Grant_Controls\UserControlDisplayGrant.Designer.cs">
       <DependentUpon>UserControlDisplayGrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grant_Controls\UserControlGrantSubmission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grant_Controls\UserControlGrantSubmission.Designer.cs">
+      <DependentUpon>UserControlGrantSubmission.cs</DependentUpon>
     </Compile>
     <Compile Include="Moderation\usrInfractionItem.cs">
       <SubType>UserControl</SubType>
@@ -500,9 +500,6 @@
     <EmbeddedResource Include="FrmGrantOfficer.resx">
       <DependentUpon>FrmGrantOfficer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmGrantStatus.resx">
-      <DependentUpon>FrmGrantStatus.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -581,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grant_Controls\UserControlDisplayGrant.resx">
       <DependentUpon>UserControlDisplayGrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grant_Controls\UserControlGrantSubmission.resx">
+      <DependentUpon>UserControlGrantSubmission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Moderation\usrInfractionItem.resx">
       <DependentUpon>usrInfractionItem.cs</DependentUpon>

@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using JAHubLib;
 
 namespace JAHub_Winforms
 {
     public partial class FrmEditGrantInfo : Form
     {
+        Grantinfo grantinfo =  new Grantinfo(); 
         public FrmEditGrantInfo()
         {
             InitializeComponent();
+        }
+
+        public FrmEditGrantInfo(Grantinfo g)
+        {
+            grantinfo = g;
+            InitializeComponent();
+           ;  
+            
+           
         }
 
         private void FrmEditGrantInfo_Load(object sender, EventArgs e)
@@ -43,6 +55,21 @@ namespace JAHub_Winforms
         private void btnDeleteGrant_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdateGrant_Click(object sender, EventArgs e)
+        {
+            FrmEditGrantInfo frmEditGrantInfo = new FrmEditGrantInfo();
+            frmEditGrantInfo.Show();
+        }
+
+        private void btnupdateform_Click(object sender, EventArgs e)
+        {
+            grantinfo.Requirement = rtbrequirement.Text;
+            grantinfo.GrantDescription = rtbdescription.Text;
+            grantinfo.Title = txtcreategranttitle.Text;
+            grantinfo.Application_Form = txtapplicationnumber.Text;
+            grantinfo.UpdateGrant(grantinfo.ID);
         }
     }
 }
