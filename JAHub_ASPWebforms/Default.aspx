@@ -8,7 +8,7 @@
     </div>
 
 
-    <div class="container-fluid bg-grey">
+  <div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-globe logo slide"></span>
@@ -23,37 +23,43 @@
 </div>
 
 
-    <div class="row" style="margin-top:30px;">
+    <div class="row panelWrapper" style="margin-top:30px;">
         <div class="col-md-4">
            <div class="panel panel-success" >
               <div class="panel-heading"><h2 class="text-center" style="margin:5px;">Online Farmers Market</h2></div>
+               <div class="panel-body"><img src="Resources/freshproduce.jpg" /></div>
               <div class="panel-body"> Browse our wide variety of fruit, vegetables, ground provisions and other argicultural products on the Shop section of our website</div>
                <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
-                <a class="btn btn-default" href="~/Default">Shop Now &raquo;</a>
+                <a class="btn btn-default" href="Shop">Shop Now &raquo;</a>
             </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="panel panel-success" >
               <div class="panel-heading"><h2 class="text-center" style="margin:5px;">Sign up</h2></div>
+                <div class="panel-body"><img src="Resources/farmer-icon.png" /></div>
               <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
-                <a class="btn btn-default" href="~/Default">Sign Up &raquo;</a>
+                <a class="btn btn-default" href="Default">Sign Up &raquo;</a>
             </div>
             </div>
         </div>
         <div class="col-md-4">
           <div class="panel panel-success" >
               <div class="panel-heading"><h2 class="text-center" style="margin:5px;">Apply for a Grant</h2></div>
+              <div class="panel-body"><img src="Resources/grant-icon.jpg" /></div>
               <div class="panel-body"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                <div style="display:flex; justify-content:right; padding: 0 10px 10px 0;">
-                <a class="btn btn-default" href="~/Default">Learn More &raquo;</a>
+                <a class="btn btn-default" href="Blog">Learn More &raquo;</a>
             </div>
             </div>
         </div>
     </div>
 
     <style>
+        .panelWrapper{
+            height: 600px;
+        }
         .jumbotron{
             background-color: green;
 
@@ -99,5 +105,9 @@
               transform: translateY(0%);
             }
           }
+             .panel-body > img {
+              width: 100%;
+              height: 100%;
+            }
     </style>
 </asp:Content>

@@ -27,7 +27,7 @@ namespace JAHub_ASPWebforms
                 }
             }catch(Exception ex)
             {
-                lblTitle.InnerHtml = "Not Signed In";
+                lblTitle.InnerHtml = "Not Signed In: " + ex.Message;
             }
             
         }

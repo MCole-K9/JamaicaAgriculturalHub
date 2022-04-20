@@ -164,7 +164,7 @@
     <Content Include="CreateBlog.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
-    <Content Include="farmer-icon.png" />
+    <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -181,6 +181,10 @@
     <Content Include="MyBlogs.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Resources\cart-arrow-down-solid.svg" />
+    <Content Include="Resources\farmers-market-icon.png" />
+    <Content Include="Resources\food.jpeg" />
+    <Content Include="Resources\freshproduce.jpg" />
+    <Content Include="Resources\grant-icon.jpg" />
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
