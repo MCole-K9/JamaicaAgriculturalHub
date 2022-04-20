@@ -220,6 +220,7 @@
     <Content Include="Verification\usrContactBlock.ascx" />
     <Content Include="Verification\usrDateOfBirthBlock.ascx" />
     <Content Include="Verification\usrHoldingsBlock.ascx" />
+    <Content Include="Verification\usrIndustryBlock.ascx" />
     <Content Include="Verification\usrLandBlock.ascx" />
     <Content Include="Verification\usrNameBlock.ascx" />
     <Content Include="Verification\usrPhoneNumberBlock.ascx" />
@@ -387,6 +388,13 @@
     </Compile>
     <Compile Include="Verification\usrHoldingsBlock.ascx.designer.cs">
       <DependentUpon>usrHoldingsBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Verification\usrIndustryBlock.ascx.cs">
+      <DependentUpon>usrIndustryBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrIndustryBlock.ascx.designer.cs">
+      <DependentUpon>usrIndustryBlock.ascx</DependentUpon>
     </Compile>
     <Compile Include="Verification\usrLandBlock.ascx.cs">
       <DependentUpon>usrLandBlock.ascx</DependentUpon>
