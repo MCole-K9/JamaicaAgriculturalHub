@@ -72,5 +72,33 @@ namespace JAHub_ASPWebforms
             lblpercentage1.InnerText = (int)ratingPercentage[4] < 0 ? "0%" : $"{(int)ratingPercentage[4]}%";
 
         }
+
+        protected void btnReviewSubmit_Click(object sender, EventArgs e)
+        {
+            if(Session["UserId"] != null)
+            {
+                Customer customer = new Customer(true);
+                this.product = (Product)Session["ProductDetail"];
+                Review newReview = new Review
+                {
+                    Headline = headline.Value,
+                    Comment = comment.Value,
+                   Rating = 5,//Temp
+                   ProductID  = this.product.Id,
+
+                };
+
+                
+
+                customer.AddReview(newReview);
+                Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
+ 
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "clickLoginNavBtn", "clickLoginNavBtn()", true);
+            }
+            
+        }
     }
 }
