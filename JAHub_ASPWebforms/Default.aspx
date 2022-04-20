@@ -4,7 +4,7 @@
 
     <div class="jumbotron">
         <h1 class="fade"><b>Jamiaca Agricultural Hub</b></h1>
-        <p class="lead">Welcome to the Official Webpage for the Jamaica Argicultural Hub</p>
+        <p class="lead" style="color: #fefefe;">Welcome to the Official Webpage for the Jamaica Argicultural Hub</p>
     </div>
 
 
@@ -57,11 +57,15 @@
     </div>
 
     <style>
+        .panel:hover{
+            box-shadow: 0 0 10px 1px rgba(0,0,0,0.4);
+            transition: .3s;
+        }
         .panelWrapper{
             height: 600px;
         }
         .jumbotron{
-            background-color: green;
+            background-image: url(Resources/landscape.jpg);
 
           }
         .logo {

@@ -186,6 +186,7 @@
     <Content Include="Resources\freshproduce.jpg" />
     <Content Include="Resources\grant-icon.jpg" />
     <Content Include="Resources\grapes.jpg" />
+    <Content Include="Resources\landscape.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
