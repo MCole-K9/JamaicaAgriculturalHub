@@ -226,6 +226,7 @@
     <Content Include="Verification\usrOrganizationsBlock.ascx" />
     <Content Include="Verification\usrPhoneNumberBlock.ascx" />
     <Content Include="Verification\usrProductBlock.ascx" />
+    <Content Include="Verification\usrTrnBlock.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -431,6 +432,13 @@
     </Compile>
     <Compile Include="Verification\usrProductBlock.ascx.designer.cs">
       <DependentUpon>usrProductBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Verification\usrTrnBlock.ascx.cs">
+      <DependentUpon>usrTrnBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrTrnBlock.ascx.designer.cs">
+      <DependentUpon>usrTrnBlock.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
