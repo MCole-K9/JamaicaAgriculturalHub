@@ -12,6 +12,7 @@ namespace JAHub_ASPWebforms.Shop_Controls
     {
         Product product;
         int IDSequence;
+        
         public void SetProduct(Product product)
         {
             this.product = product;
@@ -64,7 +65,9 @@ namespace JAHub_ASPWebforms.Shop_Controls
         protected void btnDelete_ServerClick(object sender, EventArgs e)
         {
             JAHubLib.Cart.RemoveFromCart(this.product);
-            this.Parent.Controls.Remove(this);
+ 
+            Response.Redirect(Request.RawUrl);
+
         }
     }
 }

@@ -12,10 +12,10 @@ namespace JAHub_ASPWebforms
 {
     public partial class Shop : System.Web.UI.Page
     {
-        List<Product> products;
+        List<Product> products = new List<Product>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            products = new List<Product>();
+            
             
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -70,6 +70,7 @@ namespace JAHub_ASPWebforms
 
             LoadProducts(products);
             Session["Products"] = products;
+            Cart.InnerText = JAHubLib.Cart.ShoppingCart.Count < 1 ? "$0.0":  $"${JAHubLib.Cart.CaluculateTotal()}";
             
             
             

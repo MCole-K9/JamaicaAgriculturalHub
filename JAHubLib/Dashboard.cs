@@ -157,7 +157,7 @@ namespace JAHubLib
                     var TableResult = new List<KeyValuePair<DateTime, decimal>>();
                     while (reader.Read())// while continue to read this add the result from the reader to the Tableresult list
                     {
-                        TableResult.Add(new KeyValuePair<DateTime, decimal>((DateTime)reader[0], (decimal)reader[1])); //Convert.ToDecimal(reader[1])));
+                        TableResult.Add(new KeyValuePair<DateTime, decimal>((DateTime)reader[0], (decimal)reader[1]));  //Convert.ToDecimal(reader[1])));  (decimal)reader[1]))
 
                         TotalRevenue += (decimal)reader[1];
                     }

@@ -29,10 +29,10 @@ namespace JAHub_Winforms
             {
                 txtOldPassword.Focus();
                 errorProviderOldPassword.SetError(txtOldPassword, "Please enter current password.");
+                check = false;
             }
             else
             {
-                //errorProviderOldPassword.SetError(txtOldPassword, "");
                 errorProviderOldPassword.Clear();
                 //uary database get password from database "select from user where session,id......."
                 SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
@@ -43,15 +43,20 @@ namespace JAHub_Winforms
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
-                { }
+                {
+                    check = true;
+                }
                 else
                 {
                     errorProviderOldPassword.SetError(txtOldPassword, "Password not Matched.");
                     txtOldPassword.Focus();
+                    check = false;
                 }
-                connection.Close();
 
-                    //errorProviderOldPassword.Clear();
+                connection.Close();
+                //check = true;
+
+                //errorProviderOldPassword.Clear();
 
             }
             return check;
@@ -65,10 +70,15 @@ namespace JAHub_Winforms
             {
                 txtNewPassword.Focus();
                 errorProviderNewPassword.SetError(txtNewPassword, "Please enter a new password.");
+                check = false;
                 
             }
             else
+            {
                 errorProviderNewPassword.Clear();
+                check = true;
+            }
+                
             return check;
         }
 
@@ -80,6 +90,7 @@ namespace JAHub_Winforms
             {
                 txtConfirmPassword.Focus();
                 errorProviderConfirmPassword.SetError(txtConfirmPassword, "Please re-enter new password.");
+                check=false;
                 
             }
             else if (txtNewPassword.Text == txtConfirmPassword.Text)
@@ -95,11 +106,17 @@ namespace JAHub_Winforms
                 sqlcmd.ExecuteNonQuery();
                 MessageBox.Show("Your password as changed successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 connection.Close();
+                check = true;
             }
             else if(txtNewPassword.Text != txtConfirmPassword.Text)
             {
                 errorProviderConfirmPassword.SetError(txtConfirmPassword, "Conform password doesn't match New password");
                 txtConfirmPassword.ForeColor = System.Drawing.Color.Red;
+                check = false;
+            }
+            else if (ValidatingOldPassword())
+            {
+                check = false;
             }
             else
             {
@@ -114,12 +131,23 @@ namespace JAHub_Winforms
 
         private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
-            
-            ValidatingOldPassword();
-           
-            ValidatingNewPassword();
+            bool UpdateSuccess = false;
+            if (ValidatingOldPassword() == true && ValidatingNewPassword() ==true && ValidatingConfirmPassword() == true)
+            {
+               
 
-            ValidatingConfirmPassword();   
+                UpdateSuccess = true;
+             
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to Update");
+                UpdateSuccess = false;
+
+            }
+               
+                
 
         }
 

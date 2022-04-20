@@ -12,13 +12,12 @@ namespace JAHub_ASPWebforms
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadCart();
-
-            subtotal.InnerText = JAHubLib.Cart.CaluculateTotal().ToString();
-            itemCount.InnerText = JAHubLib.Cart.ShoppingCart.Count().ToString();
         }
         private void LoadCart()
         {
+            pnlCart.Controls.Clear();
             int index = 0;
+
             foreach (var item in JAHubLib.Cart.GetProductsInCart())
             {
                 Shop_Controls.UsrCartItem cartItem = (Shop_Controls.UsrCartItem)Page.LoadControl("~/Shop_Controls/UsrCartItem.ascx");
@@ -28,6 +27,7 @@ namespace JAHub_ASPWebforms
 
                 index++;
             }
+            CartSum();
         }
 
         public void CartSum()
