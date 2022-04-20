@@ -108,13 +108,6 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Jamaica Agricultural Hub</p>
-            </footer>
-        </div>
-    </form>
-
         </div>
 
     </form>
