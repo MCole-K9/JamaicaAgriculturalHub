@@ -146,7 +146,7 @@
                                 <textarea runat="server" class="form-control" rows="8" id="comment"></textarea>
                             </div>
                             <div style="display: flex; justify-content: end">
-                                <asp:Button CssClass="btn btn-primary text-center" ID="btnReviewSubmit" runat="server" Text="Submit" Width="70px" />
+                                <asp:Button CssClass="btn btn-primary text-center" ID="btnReviewSubmit" runat="server" OnClick="btnReviewSubmit_Click" Text="Submit" Width="70px" />
                             </div>
                         </div>
                     </div>
