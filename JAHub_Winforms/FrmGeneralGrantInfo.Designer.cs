@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnApplyforGrant = new FontAwesome.Sharp.IconButton();
             this.btngrantHome = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pbgeneralgrantinfonav = new System.Windows.Forms.PictureBox();
             this.btnDeleteGrant = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnlNav.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbgeneralgrantinfonav)).BeginInit();
@@ -47,24 +47,24 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.Navy;
-            this.richTextBox1.Location = new System.Drawing.Point(269, 59);
+            this.richTextBox1.Location = new System.Drawing.Point(269, 63);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(549, 53);
             this.richTextBox1.TabIndex = 42;
-            this.richTextBox1.Text = "Please click \'View more\' on available grants to see further information on grants" +
-    "";
+            this.richTextBox1.Text = "Please click \'View more\' on available grants to see further information about gra" +
+    "nts";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(264, 26);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 31);
+            this.label1.Size = new System.Drawing.Size(290, 40);
             this.label1.TabIndex = 61;
             this.label1.Text = "Available Grants";
             // 
@@ -93,12 +93,38 @@
             this.pnlNav.Size = new System.Drawing.Size(188, 822);
             this.pnlNav.TabIndex = 63;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.iconButton1.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 267);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
+            this.iconButton1.Size = new System.Drawing.Size(188, 58);
+            this.iconButton1.TabIndex = 4;
+            this.iconButton1.Text = "Apply";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // btnApplyforGrant
             // 
             this.btnApplyforGrant.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnApplyforGrant.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnApplyforGrant.FlatAppearance.BorderSize = 0;
             this.btnApplyforGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApplyforGrant.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApplyforGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnApplyforGrant.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.btnApplyforGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
@@ -123,8 +149,9 @@
             this.btngrantHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btngrantHome.FlatAppearance.BorderSize = 0;
             this.btngrantHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngrantHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngrantHome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btngrantHome.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btngrantHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btngrantHome.IconSize = 30;
@@ -183,30 +210,6 @@
             this.btnDeleteGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteGrant.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 267);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.iconButton1.Size = new System.Drawing.Size(188, 58);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "Apply";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // FrmGeneralGrantInfo
             // 

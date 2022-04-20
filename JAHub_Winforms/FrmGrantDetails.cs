@@ -14,43 +14,42 @@ namespace JAHub_Winforms
 {
     public partial class FrmGrantDetails : Form
     {
+        Grantinfo grantinfo =new Grantinfo();
         public FrmGrantDetails()
         {
             InitializeComponent();
         }
 
-        public FrmGrantDetails(Grantinfo grantinfo)
+        public FrmGrantDetails(Grantinfo g)
         {
-           
+           grantinfo = g;
             InitializeComponent();
             lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
             txtcreategranttitle.Text = grantinfo.Title;
             rtbdescription.Text = grantinfo.GrantDescription;
             rtbrequirement.Text = grantinfo.Requirement;
-            txtapplicationnumber.Text = grantinfo.ApplicationId;
+            txtapplicationnumber.Text = grantinfo.Application_Form;
            
         }
 
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FrmGrantDetails_Load (object sender, EventArgs e)
         {
             Size = new Size(1102, 1200);
 
-            Grantinfo grantinfo = new Grantinfo();
-            
-            FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
- 
+            lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
+            txtcreategranttitle.Text = grantinfo.Title;
+            rtbdescription.Text = grantinfo.GrantDescription;
+            rtbrequirement.Text = grantinfo.Requirement;
+            txtapplicationnumber.Text = grantinfo.Application_Form;
+
+            // FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnuploadfile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {//  rtbRequirement.ImageLocation = ofd.FileName;
-
-                //Form2 form2 = new Form2();
-                //form2.Show();
-            }
+            grantinfo.uploadfile(grantinfo.Application_Form);
         }
     }
 }

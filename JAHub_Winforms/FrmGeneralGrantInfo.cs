@@ -39,7 +39,7 @@ namespace JAHub_Winforms
                         grantinfo.GrantDescription = sqlRead["Description"].ToString();
                         grantinfo.Requirement = sqlRead["Requirements"].ToString();
                         grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
-                        grantinfo.ApplicationId = sqlRead["Application_Form"].ToString();
+                        grantinfo.Application_Form = sqlRead["Application_Form"].ToString();
                         grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
                         grantinfo.Title = sqlRead["Title"].ToString();
 
@@ -64,21 +64,52 @@ namespace JAHub_Winforms
         private void btnGrantHome_Click (object sender, EventArgs e)
         {
 
-            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
-            frmGeneralGrantInfo.Show();
+            if (!Utils.IsFormOpen(" FrmGeneralGrantInfo"))
+            {
+
+                FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+                frmGeneralGrantInfo.MdiParent = this.MdiParent;
+                frmGeneralGrantInfo.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == " FrmGeneralGrantInfo")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
 
         }
         
         private void btnApplyforGrant_Click(object sender, EventArgs e)
         {
-            FrmCreateGrant frmCreateGrant= new FrmCreateGrant();
-            frmCreateGrant.Show();
+            if (!Utils.IsFormOpen(" FrmGrantDetails"))
+            {
+
+                FrmGrantDetails frmGrantDetails = new FrmGrantDetails();
+                frmGrantDetails.MdiParent = this.MdiParent;
+                frmGrantDetails.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == " FrmGrantDetails")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+           
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
-            frmViewAllMyApplication.Show(); 
+           /* FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+            frmViewAllMyApplication.Show(); */
         }
     }
 }

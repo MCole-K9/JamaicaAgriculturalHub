@@ -52,28 +52,30 @@
             // 
             this.txtUcAgencyName.BackColor = System.Drawing.SystemColors.Menu;
             this.txtUcAgencyName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUcAgencyName.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUcAgencyName.Location = new System.Drawing.Point(180, 29);
+            this.txtUcAgencyName.Font = new System.Drawing.Font("Century Gothic", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUcAgencyName.Location = new System.Drawing.Point(11, 9);
             this.txtUcAgencyName.Name = "txtUcAgencyName";
-            this.txtUcAgencyName.Size = new System.Drawing.Size(161, 29);
+            this.txtUcAgencyName.Size = new System.Drawing.Size(174, 37);
             this.txtUcAgencyName.TabIndex = 53;
             // 
             // rtbGrantDescription
             // 
             this.rtbGrantDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbGrantDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rtbGrantDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbGrantDescription.Location = new System.Drawing.Point(24, 58);
+            this.rtbGrantDescription.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbGrantDescription.Location = new System.Drawing.Point(11, 58);
             this.rtbGrantDescription.Margin = new System.Windows.Forms.Padding(4);
             this.rtbGrantDescription.Name = "rtbGrantDescription";
             this.rtbGrantDescription.ReadOnly = true;
             this.rtbGrantDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbGrantDescription.Size = new System.Drawing.Size(696, 64);
+            this.rtbGrantDescription.Size = new System.Drawing.Size(709, 64);
             this.rtbGrantDescription.TabIndex = 51;
             this.rtbGrantDescription.Text = "";
             // 
             // btnViewGrant
             // 
+            this.btnViewGrant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnViewGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewGrant.Location = new System.Drawing.Point(620, 18);
             this.btnViewGrant.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewGrant.Name = "btnViewGrant";

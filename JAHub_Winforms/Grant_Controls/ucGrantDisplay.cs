@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
+using System.Windows.Forms;
 
 namespace JAHub_Winforms.Grant_Controls
 {
     public partial class ucGrantDisplay : UserControl
     {
         Grantinfo grantinfo = new Grantinfo();
+        private object MdiParent;
+
         public ucGrantDisplay()
         {
            
@@ -31,11 +34,18 @@ namespace JAHub_Winforms.Grant_Controls
 
         private void btnViewGrant_Click(object sender, EventArgs e)
         {
-            Grantinfo grantinfo = new Grantinfo(); 
-            FrmGrantDetails frmGrantDetails = new FrmGrantDetails(grantinfo);
-            frmGrantDetails.Show();
-        }
+            if (!Utils.IsFormOpen(" FrmGrantDetails"))
+            {
 
+                FrmGrantDetails frmGrantDetails = new FrmGrantDetails();
+                frmGrantDetails.MdiParent = (Form)MdiParent;
+                frmGrantDetails.Show();
+                var form = frmGrantDetails;
+                form.BringToFront();
+
+            }
+
+        }
        
     }
 }

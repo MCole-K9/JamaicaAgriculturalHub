@@ -71,8 +71,9 @@
             this.btnDeleteGrant.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDeleteGrant.FlatAppearance.BorderSize = 0;
             this.btnDeleteGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteGrant.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDeleteGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteGrant.IconSize = 30;
@@ -95,8 +96,9 @@
             this.btngrantcreate.Dock = System.Windows.Forms.DockStyle.Top;
             this.btngrantcreate.FlatAppearance.BorderSize = 0;
             this.btngrantcreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngrantcreate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngrantcreate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btngrantcreate.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btngrantcreate.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.btngrantcreate.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btngrantcreate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btngrantcreate.IconSize = 30;
@@ -119,8 +121,9 @@
             this.btngrantHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btngrantHome.FlatAppearance.BorderSize = 0;
             this.btngrantHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngrantHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngrantHome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btngrantHome.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btngrantHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btngrantHome.IconSize = 30;
@@ -179,8 +182,9 @@
             this.btnUpdateGrant.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUpdateGrant.FlatAppearance.BorderSize = 0;
             this.btnUpdateGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateGrant.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdateGrant.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnUpdateGrant.IconChar = FontAwesome.Sharp.IconChar.PenSquare;
             this.btnUpdateGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdateGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpdateGrant.IconSize = 30;
@@ -203,8 +207,9 @@
             this.btnViewall.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnViewall.FlatAppearance.BorderSize = 0;
             this.btnViewall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewall.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewall.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.BorderAll;
             this.btnViewall.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnViewall.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnViewall.IconSize = 30;

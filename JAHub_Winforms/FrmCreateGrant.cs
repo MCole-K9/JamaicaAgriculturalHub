@@ -14,7 +14,7 @@ namespace JAHub_Winforms
 {
     public partial class FrmCreateGrant : Form
     {
-        Grantinfo grantinfo;
+        Grantinfo grantinfo = new Grantinfo();
         public FrmCreateGrant()
         {
             InitializeComponent();
@@ -25,72 +25,70 @@ namespace JAHub_Winforms
         {
             pnlNav.Size = new System.Drawing.Size(188, 804);
             Size = new Size(1102, 1200);
-            
+
         }
 
         private void btnuploadfile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "txt | *.txt";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                Grantinfo grantinfo = new Grantinfo();
-                grantinfo.FilePath = openFileDialog.FileName;
-                grantinfo.FileName = openFileDialog.SafeFileName;
 
-                Utilities.FTPFileUpload(grantinfo.FilePath, grantinfo.FileName);
-                //MessageBox.Show(grantinfo.FileName + grantinfo.FilePath);
-            }
+            grantinfo.uploadfile(grantinfo.Application_Form);
 
         }
 
         private void btnCreateGrant_Click(object sender, EventArgs e)
         {
-            if (rtbdescription == null) 
+            if (rtbdescription == null)
             {
+                MessageBox.Show("Please enter description", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 rtbdescription.Focus();
+
+
+                if (rtbrequirement == null)
+                {
+                    MessageBox.Show("Please enter requirements", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    rtbrequirement.Focus();
+
+                }
+
+                /* if (txtapplicationnumber == null)
+                 {
+                     MessageBox.Show("Please enter application", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     txtapplicationnumber.Focus();
+
+                 }*/
+
+                if (txtcreategranttitle == null)
+                {
+                    MessageBox.Show("Please enter title", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtcreategranttitle.Focus();
+                }
+
+
+                GrantOfficer grantOfficer = new GrantOfficer();
+                //Grantinfo grantinfo = new Grantinfo();
+                grantinfo.GrantDescription = rtbdescription.Text;
+                grantinfo.Requirement = rtbrequirement.Text;
+                grantinfo.ExpiryDate = dtpExpirydate.Value;
+                grantinfo.Title = txtcreategranttitle.Text;
+                grantinfo.Application_Form = txtapplicationnumber.Text;
+                grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
+                //grantOfficer.CreateGrant(grantinfo);
+
+                rtbdescription.Clear();
+                rtbrequirement.Clear();
+                dtpExpirydate.ResetText();
+                txtcreategranttitle.Clear();
+                txtapplicationnumber.ResetText();
+
+
+                grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
+                grantOfficer.CreateGrant(grantinfo);
+
             }
 
-            if(rtbrequirement == null)
-            {
-                rtbrequirement.Focus();
-            }   
-
-            if (txtapplicationnumber == null)
-            {
-                txtapplicationnumber.Focus();   
-            }
-
-            if (txtcreategranttitle == null)
-            {
-                txtcreategranttitle.Focus();
-            }
 
 
-            GrantOfficer grantOfficer = new GrantOfficer();
-            Grantinfo grantinfo = new Grantinfo();
-            grantinfo.GrantDescription = rtbdescription.Text;
-            grantinfo.Requirement = rtbrequirement.Text;
-            grantinfo.ExpiryDate = dtpExpirydate.Value;
-            grantinfo.Title = txtcreategranttitle.Text;
-            grantinfo.ApplicationId = txtapplicationnumber.Text;
-            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
-            //grantOfficer.CreateGrant(grantinfo);
-
-            rtbdescription.Clear();
-            rtbrequirement.Clear();
-            dtpExpirydate.ResetText();
-            txtcreategranttitle.Clear();
-            txtapplicationnumber.ResetText();
-
-           
-            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
-            grantOfficer.CreateGrant(grantinfo);
 
         }
-
-       
-
-       
     }
 }
