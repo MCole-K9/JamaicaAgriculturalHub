@@ -223,6 +223,7 @@
     <Content Include="Verification\usrIndustryBlock.ascx" />
     <Content Include="Verification\usrLandBlock.ascx" />
     <Content Include="Verification\usrNameBlock.ascx" />
+    <Content Include="Verification\usrOrganizationsBlock.ascx" />
     <Content Include="Verification\usrPhoneNumberBlock.ascx" />
     <Content Include="Verification\usrProductBlock.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -409,6 +410,13 @@
     </Compile>
     <Compile Include="Verification\usrNameBlock.ascx.designer.cs">
       <DependentUpon>usrNameBlock.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Verification\usrOrganizationsBlock.ascx.cs">
+      <DependentUpon>usrOrganizationsBlock.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Verification\usrOrganizationsBlock.ascx.designer.cs">
+      <DependentUpon>usrOrganizationsBlock.ascx</DependentUpon>
     </Compile>
     <Compile Include="Verification\usrPhoneNumberBlock.ascx.cs">
       <DependentUpon>usrPhoneNumberBlock.ascx</DependentUpon>
