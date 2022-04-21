@@ -25,9 +25,9 @@ namespace JAHub_ASPWebforms
                     ucWeb.ID = "BlogControl" + IDinc.ToString();
                     pnlBlogContainer.Controls.Add(ucWeb);
                 }
-            }catch(Exception ex)
+            }catch(Exception)
             {
-                lblTitle.InnerHtml = "Not Signed In: " + ex.Message;
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "clickLoginNavBtn()", true);
             }
             
         }

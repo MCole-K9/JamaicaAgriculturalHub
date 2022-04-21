@@ -22,9 +22,9 @@ namespace JAHub_ASPWebforms
                 lblDescription.InnerHtml += blog.Description;
                 lblBlogBody.InnerHtml = blog.BlogBody;
             }
-            catch (NullReferenceException nex)
+            catch (NullReferenceException)
             {
-                lblTitle.InnerHtml = nex.Message;
+                Response.Redirect("~/Default.aspx");
             }
 
         }

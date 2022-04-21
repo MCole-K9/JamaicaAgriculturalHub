@@ -40,14 +40,14 @@ namespace JAHubLib
 
         public static PasswordResult Login(String email, String password)
         {
-            
+
             // K.S.: This is just to make sure that you can't access login twice without first loggin out
             // but it shouldn't really matter
-            if (_userRole != UserRole.NotLoggedIn)
-            {
-                return PasswordResult.NoMatchingCredentials;
-            }
-            
+            //if (_userRole != UserRole.NotLoggedIn)
+            //{
+            //    return PasswordResult.NoMatchingCredentials;
+            //}
+
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
