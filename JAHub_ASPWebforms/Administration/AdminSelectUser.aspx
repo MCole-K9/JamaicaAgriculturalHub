@@ -2,9 +2,15 @@
     MasterPageFile="~/Site.Master"%>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server" ID="AdmiSelectUser">
-    <div>Title Here</div>
+    <div>
+        <h3>Select User</h3>
+    </div>
 
-    <div>Search Bar here</div>
+    <div>
+        <label for="#txtSearchBar">Search for User by Name: </label>
+        <asp:TextBox runat="server" ID="txtSearchBar" CssClass=""></asp:TextBox>
+        <asp:Button runat="server" ID="btnClearSearchBar" />
+    </div>
 
-    <div><asp:GridView runat="server" ID="tblUsers"></asp:GridView></div>
+    <div><asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False"></asp:GridView></div>
 </asp:Content>

@@ -15,6 +15,24 @@ namespace JAHub_ASPWebforms.Administration
     {
 
         /// <summary>
+        /// txtSearchBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchBar;
+
+        /// <summary>
+        /// btnClearSearchBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClearSearchBar;
+
+        /// <summary>
         /// tblUsers control.
         /// </summary>
         /// <remarks>

@@ -16,9 +16,29 @@ namespace JAHub_ASPWebforms.Administration
         {
             DataTable dtAllusers = Admin.GetUserDataTable();
             tblUsers.DataSource = dtAllusers;
-            // Create the columns
-            // Make sure they work
-            // make sure they pass the right references and such to wherever
+
+            // Creating the BoundFields
+
+            BoundField bfIdColumn = new BoundField();
+            bfIdColumn.DataField = "ID";
+            bfIdColumn.HeaderText = "ID";
+
+            BoundField bfNameColumn = new BoundField();
+            bfIdColumn.DataField = "Name";
+            bfIdColumn.HeaderText = "Name";
+
+            BoundField bfUserRoleColumn = new BoundField();
+            bfUserRoleColumn.DataField = "UserRole";
+            bfUserRoleColumn.HeaderText = "User Role";
+
+            // need to create a Template field for the selectUser  parts
+            // It needs to have a method that gets the corresponding value of ID in that row
+            // When it gets that method, it needs to fire some kind of event that produces the necessary values
+            // that another form can add its own method to
+
+
+            // Adding the BoundFields (and TemplateField) to the Table
+
         }
     }
 }
