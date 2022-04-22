@@ -8,11 +8,10 @@
 
     <div>
         <div class="form-group">
-            <label for="#txtSearchBar" class="form-control control-label">Search for User by Name: </label>
+            <label for="#txtSearchBar" class="control-label col-sm-3">Search for User by Name: </label>
             <asp:TextBox runat="server" ID="txtSearchBar" CssClass="form-control col-sm-6 input-sm"></asp:TextBox>
-            <asp:Button runat="server" ID="btnClearSearchBar" CssClass="btn btn-default input-sm col-sm-3"/>
+            <asp:Button runat="server" ID="btnClearSearchBar" CssClass="btn btn-default input-sm col-sm-3" Text="Clear Search"/>
         </div>
-        
     </div>
 
     <div><asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False"></asp:GridView></div>

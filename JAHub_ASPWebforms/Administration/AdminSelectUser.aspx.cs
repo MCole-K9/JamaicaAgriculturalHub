@@ -38,7 +38,9 @@ namespace JAHub_ASPWebforms.Administration
 
 
             // Adding the BoundFields (and TemplateField) to the Table
-
+            tblUsers.Columns.Add(bfIdColumn);
+            tblUsers.Columns.Add(bfNameColumn);
+            tblUsers.Columns.Add(bfUserRoleColumn);
         }
     }
 }

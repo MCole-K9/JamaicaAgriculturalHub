@@ -154,7 +154,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\usrNavbarAccountLogout.ascx" />
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
-    <Content Include="Administration.aspx" />
+    <Content Include="AdministrationPage.aspx" />
     <Content Include="Administration\AdminSelectUser.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
@@ -258,12 +258,12 @@
     <Compile Include="Account\usrNavbarLoginRegister.ascx.designer.cs">
       <DependentUpon>usrNavbarLoginRegister.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Administration.aspx.cs">
-      <DependentUpon>Administration.aspx</DependentUpon>
+    <Compile Include="AdministrationPage.aspx.cs">
+      <DependentUpon>AdministrationPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administration.aspx.designer.cs">
-      <DependentUpon>Administration.aspx</DependentUpon>
+    <Compile Include="AdministrationPage.aspx.designer.cs">
+      <DependentUpon>AdministrationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\AdminSelectUser.aspx.cs">
       <DependentUpon>AdminSelectUser.aspx</DependentUpon>
