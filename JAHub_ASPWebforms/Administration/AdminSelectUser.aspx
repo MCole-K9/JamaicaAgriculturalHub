@@ -2,11 +2,11 @@
     MasterPageFile="~/Site.Master"%>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server" ID="AdmiSelectUser">
-    <div>
+    <div class="row">
         <h3>Select User</h3>
     </div>
 
-    <div>
+    <div class="row">
         <div class="form-group">
             <label for="#txtSearchBar" class="control-label col-sm-3">Search for User by Name: </label>
             <asp:TextBox runat="server" ID="txtSearchBar" CssClass="form-control col-sm-6 input-sm"></asp:TextBox>
@@ -14,5 +14,5 @@
         </div>
     </div>
 
-    <div><asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False"></asp:GridView></div>
+    <div class="row"><asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False"></asp:GridView></div>
 </asp:Content>

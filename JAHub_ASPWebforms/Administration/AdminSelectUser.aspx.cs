@@ -28,7 +28,7 @@ namespace JAHub_ASPWebforms.Administration
             bfIdColumn.HeaderText = "Name";
 
             BoundField bfUserRoleColumn = new BoundField();
-            bfUserRoleColumn.DataField = "UserRole";
+            bfUserRoleColumn.DataField = "User Role";
             bfUserRoleColumn.HeaderText = "User Role";
 
             // need to create a Template field for the selectUser  parts
@@ -41,6 +41,7 @@ namespace JAHub_ASPWebforms.Administration
             tblUsers.Columns.Add(bfIdColumn);
             tblUsers.Columns.Add(bfNameColumn);
             tblUsers.Columns.Add(bfUserRoleColumn);
+            tblUsers.DataBind();
         }
     }
 }
