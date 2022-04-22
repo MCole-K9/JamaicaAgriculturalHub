@@ -21,6 +21,14 @@
              $("#btnLogin").trigger("click");
          }
 
+         // K.S.: Necessary to make Administration Option only visible when the user is an admin
+         function makeAdmininstrationVisible(){
+             if (Session.getItem('UserRole') == 1){
+                 $("#btnAdministration").removeClass('hidden');
+             }
+         }
+
+         $(document).ready(makeAdmininstrationVisible);
      </script>
 
 </head>
@@ -61,6 +69,7 @@
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Grants">Grants</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
+                        <li><a runat="server" href="~/Administration" class="hidden" id="btnAdministration">Admininstration</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <%--<li><a runat="server" href="~/UserProfile">Profile(temp)</a></li>--%>
                     </ul>

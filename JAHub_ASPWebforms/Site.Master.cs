@@ -78,21 +78,29 @@ namespace JAHub_ASPWebforms
 
                 phAccount.Controls.Add(accountLogoutSection);
                 
-                // add the "YOUR ACCOUNT/LOGOUT" user control
-                
                 // this should show some kind of "currently logged in as"
                 // include:
                 // * First Name
                 // * Last Name
                 // * UserId
                 // * Role
-                // Should also allow the ability to log out (Does this require ajax/jquery?
             }
             else
             {
                 usrNavbarLoginRegister loginRegister = (usrNavbarLoginRegister)LoadControl("~/Account/usrNavbarLoginRegister.ascx");
 
                 phAccount.Controls.Add(loginRegister);
+
+                // K.S. Using this to check to see if the user is an admin, this is probably bad UI design but tbh...
+                // also leaving this here in case i need it later, not presently used
+                switch (Session["UserRole"])
+                {
+                    default:
+                        // this shouldn't actually happen
+                        break;
+                    case UserRole.Admin:
+                        break;
+                }
             }
         }
 
