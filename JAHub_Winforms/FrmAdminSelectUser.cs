@@ -31,47 +31,8 @@ namespace JAHub_Winforms
             dgvUserInformation.Rows.Clear();
             dgvUserInformation.AutoGenerateColumns = false;
             
-            allUsersSelection = new DataTable();
-
-            DataColumn idDataColumn = new DataColumn();
-            idDataColumn.ColumnName = "ID";
-
-            DataColumn nameDataColumn = new DataColumn();
-            nameDataColumn.ColumnName = "Name";
-
-            DataColumn roleDataColumn = new DataColumn();
-            roleDataColumn.ColumnName = "User Role";
-
-            DataColumn selectDataColumn = new DataColumn();
-            selectDataColumn.ColumnName = "Select User";
-
-            allUsersSelection.Columns.Add(idDataColumn);
-            allUsersSelection.Columns.Add(nameDataColumn);
-            allUsersSelection.Columns.Add(roleDataColumn);
-            allUsersSelection.Columns.Add(selectDataColumn);
-
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-                String command = "SELECT ID, FirstName, LastName, UserRole" +
-                    " FROM [User]";
-
-                SqlCommand listUsersCommand = new SqlCommand(command, connection);
-
-                SqlDataReader reader = listUsersCommand.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    allUsersSelection.Rows.Add((int)reader["ID"], reader["FirstName"].ToString() + " " +
-                        reader["LastName"].ToString(), (UserRole)reader["UserRole"], (int)reader["ID"]);
-                }
-
-                connection.Close();
-            }
-            
             // Assigning the data source here
-            dgvUserInformation.DataSource = allUsersSelection;
+            dgvUserInformation.DataSource = Admin.GetUserDataTable();
             dgvUserInformation.AllowUserToAddRows = false;
 
             // This creates the column for the "Select User" buttons
