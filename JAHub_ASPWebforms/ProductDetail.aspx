@@ -75,7 +75,7 @@
                         <h3>Customer Reviews</h3>
                         <div class="rating-percentage">
                             <h4 style="padding:  0 5px;">5 Star</h4>
-                            <div class="progress" style="flex-grow: 1; padding:  0 5px;">
+                            <div class="progress" style="flex-grow: 1;">
                                 <div runat="server" id="rating5" class="progress-bar" role="progressbar" 
                                     aria-valuemin="0" aria-valuemax="100" >
                                 </div>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="rating-percentage">
                             <h4 style="padding: 0 5px;">4 Star</h4>
-                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                            <div class="progress" style="flex-grow: 1;">
                                 <div runat="server" id="rating4" class="progress-bar" role="progressbar"
                                     aria-valuemin="0" aria-valuemax="100" style="width: 70%">
                                 </div>
@@ -93,7 +93,7 @@
                         </div>
                          <div class="rating-percentage">
                             <h4 style="padding: 0 5px;">3 Star</h4>
-                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                            <div class="progress" style="flex-grow: 1; ">
                                 <div runat="server" id="rating3" class="progress-bar" role="progressbar"
                                     aria-valuemin="0" aria-valuemax="100" style="width: 70%">
                                 </div>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="rating-percentage">
                             <h4 style="padding: 0 5px;">2 Star</h4>
-                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                            <div class="progress" style="flex-grow: 1; ">
                                 <div runat="server" id="rating2" class="progress-bar" role="progressbar"
                                     aria-valuemin="0" aria-valuemax="100" style="width: 70%">
                                 </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="rating-percentage">
                             <h4 style="padding: 0 5px;">1 Star</h4>
-                            <div class="progress" style="flex-grow: 1; padding: 0 5px;">
+                            <div class="progress" style="flex-grow: 1;">
                                 <div runat="server" id="rating1" class="progress-bar" role="progressbar"
                                     aria-valuemin="0" aria-valuemax="100" style="width: 70%">
                                 </div>
