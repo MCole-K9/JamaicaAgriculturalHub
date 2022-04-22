@@ -155,6 +155,7 @@
     <Content Include="Account\usrNavbarAccountLogout.ascx" />
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
     <Content Include="Administration.aspx" />
+    <Content Include="Administration\AdminSelectUser.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -178,8 +179,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Moderation\usrAddInfraction.ascx" />
-    <Content Include="Moderation\usrInfractionItem.ascx" />
+    <Content Include="Administration\usrAddInfraction.ascx" />
+    <Content Include="Administration\usrInfractionItem.ascx" />
     <Content Include="MyBlogs.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Resources\cart-arrow-down-solid.svg" />
@@ -264,6 +265,13 @@
     <Compile Include="Administration.aspx.designer.cs">
       <DependentUpon>Administration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\AdminSelectUser.aspx.cs">
+      <DependentUpon>AdminSelectUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AdminSelectUser.aspx.designer.cs">
+      <DependentUpon>AdminSelectUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -321,18 +329,18 @@
       <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Moderation\usrAddInfraction.ascx.cs">
+    <Compile Include="Administration\usrAddInfraction.ascx.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Moderation\usrAddInfraction.ascx.designer.cs">
+    <Compile Include="Administration\usrAddInfraction.ascx.designer.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Moderation\usrInfractionItem.ascx.cs">
+    <Compile Include="Administration\usrInfractionItem.ascx.cs">
       <DependentUpon>usrInfractionItem.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Moderation\usrInfractionItem.ascx.designer.cs">
+    <Compile Include="Administration\usrInfractionItem.ascx.designer.cs">
       <DependentUpon>usrInfractionItem.ascx</DependentUpon>
     </Compile>
     <Compile Include="MyBlogs.aspx.cs">
