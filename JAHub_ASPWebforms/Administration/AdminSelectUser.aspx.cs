@@ -39,7 +39,10 @@ namespace JAHub_ASPWebforms.Administration
                 btfSelectUserColumn.ButtonType = ButtonType.Button;
                 btfSelectUserColumn.CommandName = "SelectUser";
                 btfSelectUserColumn.Text = "Select User";
-                
+                btfSelectUserColumn.ControlStyle.CssClass = "btn btn-default input-sm col-sm-3";
+
+                // i can tell the new columns are being added infront of the old ones. also there's a ghost column
+                // the id isn't showing, not sure why
 
 
                 // Adding the BoundFields and Buttonfield to the Table
@@ -59,7 +62,13 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void txtSearchBar_TextChanged(object sender, EventArgs e)
         {
-            // foreach row and hide it if it doesn't contain the string, this may require turning off some feature or another
+            foreach (GridViewRow row in tblUsers.Rows)
+            {
+                //if (!row[2].ToString().Contains(txtSearchBar.Text))
+                //{
+                //    row.Visible = false;
+                //}
+            }
         }
     }
 }
