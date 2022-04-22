@@ -9,8 +9,8 @@
     <div class="row">
         <div class="form-group">
             <label for="#txtSearchBar" class="control-label col-sm-3">Search for User by Name: </label>
-            <asp:TextBox runat="server" ID="txtSearchBar" CssClass="form-control col-sm-6 input-sm"></asp:TextBox>
-            <asp:Button runat="server" ID="btnClearSearchBar" CssClass="btn btn-default input-sm col-sm-3" Text="Clear Search"/>
+            <asp:TextBox runat="server" ID="txtSearchBar" CssClass="form-control col-sm-6 input-sm" OnTextChanged="txtSearchBar_TextChanged"></asp:TextBox>
+            <asp:Button runat="server" ID="btnClearSearchBar" CssClass="btn btn-default input-sm col-sm-3" Text="Clear Search" OnClick="btnClearSearchBar_Click"/>
         </div>
     </div>
 

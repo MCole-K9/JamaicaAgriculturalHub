@@ -14,36 +14,52 @@ namespace JAHub_ASPWebforms.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dtAllusers = Admin.GetUserDataTable();
-            tblUsers.DataSource = dtAllusers;
+            if(tblUsers.DataSource == null)
+            {
+                DataTable dtAllusers = Admin.GetUserDataTable();
+                tblUsers.DataSource = dtAllusers;
 
-            // Creating the BoundFields
+                // Creating the BoundFields
 
-            // this column isn't showing for some reason
-            BoundField bfIdColumn = new BoundField();
-            bfIdColumn.DataField = "ID";
-            bfIdColumn.HeaderText = "ID";
+                // this column isn't showing for some reason
+                BoundField bfIdColumn = new BoundField();
+                bfIdColumn.DataField = "ID";
+                bfIdColumn.HeaderText = "ID";
 
-            BoundField bfNameColumn = new BoundField();
-            bfIdColumn.DataField = "Name";
-            bfIdColumn.HeaderText = "Name";
+                // these columns are repeating for some reason
+                BoundField bfNameColumn = new BoundField();
+                bfIdColumn.DataField = "Name";
+                bfIdColumn.HeaderText = "Name";
 
-            BoundField bfUserRoleColumn = new BoundField();
-            bfUserRoleColumn.DataField = "User Role";
-            bfUserRoleColumn.HeaderText = "User Role";
+                BoundField bfUserRoleColumn = new BoundField();
+                bfUserRoleColumn.DataField = "User Role";
+                bfUserRoleColumn.HeaderText = "User Role";
+
+                ButtonField btfSelectUserColumn = new ButtonField();
+                btfSelectUserColumn.ButtonType = ButtonType.Button;
+                btfSelectUserColumn.CommandName = "SelectUser";
+                btfSelectUserColumn.Text = "Select User";
+                
+
+
+                // Adding the BoundFields and Buttonfield to the Table
+                tblUsers.Columns.Add(bfIdColumn);
+                tblUsers.Columns.Add(bfNameColumn);
+                tblUsers.Columns.Add(bfUserRoleColumn);
+                tblUsers.Columns.Add(btfSelectUserColumn);
+                tblUsers.DataBind();
+            }
             
-            ButtonField btfSelectUserColumn = new ButtonField();
-            btfSelectUserColumn.ButtonType = ButtonType.Button;
-            btfSelectUserColumn.CommandName = "SelectUser";
-            btfSelectUserColumn.Text = "Select User";
+        }
 
+        protected void btnClearSearchBar_Click(object sender, EventArgs e)
+        {
+            txtSearchBar.Text = "";
+        }
 
-            // Adding the BoundFields (and TemplateField) to the Table
-            tblUsers.Columns.Add(bfIdColumn);
-            tblUsers.Columns.Add(bfNameColumn);
-            tblUsers.Columns.Add(bfUserRoleColumn);
-            tblUsers.Columns.Add(btfSelectUserColumn);
-            tblUsers.DataBind();
+        protected void txtSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            // foreach row and hide it if it doesn't contain the string, this may require turning off some feature or another
         }
     }
 }
