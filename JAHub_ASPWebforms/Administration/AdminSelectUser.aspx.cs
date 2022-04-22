@@ -16,6 +16,9 @@ namespace JAHub_ASPWebforms.Administration
         {
             if(tblUsers.DataSource == null)
             {
+                tblUsers.Columns.Clear();
+                tblUsers.AutoGenerateColumns = false;
+
                 DataTable dtAllusers = Admin.GetUserDataTable();
                 tblUsers.DataSource = dtAllusers;
 
@@ -43,6 +46,7 @@ namespace JAHub_ASPWebforms.Administration
 
                 // i can tell the new columns are being added infront of the old ones. also there's a ghost column
                 // the id isn't showing, not sure why
+                // may need to change where this is written to a different event
 
 
                 // Adding the BoundFields and Buttonfield to the Table
