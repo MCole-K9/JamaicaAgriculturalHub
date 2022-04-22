@@ -104,7 +104,7 @@
                                         <asp:TextBox runat="server" ID="txtPassword" CssClass="col-sm-10 input-sm" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <div class="row center-block form-group">
-                                        <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default center-block col-sm-5 input-sm" 
+                                        <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn btn-default center-block col-sm-5 input-sm" 
                                         OnClick="btnLogin_OnClick"/>
                                 </div>
                                 <div class="row center-block">
