@@ -14,5 +14,7 @@
         </div>
     </div>
 
-    <div class="row"><asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False"></asp:GridView></div>
+    <div class="row">
+        <asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False" CssClass="table table-striped"></asp:GridView>
+    </div>
 </asp:Content>
