@@ -1,7 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminSelectUser.aspx.cs" Inherits="JAHub_ASPWebforms.Administration.AdminSelectUser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminSelectUser.aspx.cs" Inherits="JAHub_ASPWebforms.Administration.AdminSelectUser" 
+    MasterPageFile="~/Site.Master"%>
 
-Select User
+<asp:Content ContentPlaceHolderID="MainContent" runat="server" ID="AdmiSelectUser">
+    <div>Title Here</div>
 
-Search bar
+    <div>Search Bar here</div>
 
-Table here
+    <div><asp:GridView runat="server" ID="tblUsers"></asp:GridView></div>
+</asp:Content>
