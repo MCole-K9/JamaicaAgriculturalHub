@@ -7,9 +7,12 @@
     </div>
 
     <div>
-        <label for="#txtSearchBar">Search for User by Name: </label>
-        <asp:TextBox runat="server" ID="txtSearchBar" CssClass=""></asp:TextBox>
-        <asp:Button runat="server" ID="btnClearSearchBar" />
+        <div class="form-group">
+            <label for="#txtSearchBar" class="form-control control-label">Search for User by Name: </label>
+            <asp:TextBox runat="server" ID="txtSearchBar" CssClass="form-control col-sm-6 input-sm"></asp:TextBox>
+            <asp:Button runat="server" ID="btnClearSearchBar" CssClass="btn btn-default input-sm col-sm-3"/>
+        </div>
+        
     </div>
 
     <div><asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False"></asp:GridView></div>

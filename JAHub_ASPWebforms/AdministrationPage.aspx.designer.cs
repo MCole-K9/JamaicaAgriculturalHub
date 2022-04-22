@@ -11,7 +11,7 @@ namespace JAHub_ASPWebforms
 {
 
 
-    public partial class Administration
+    public partial class AdministrationPage
     {
 
         /// <summary>
