@@ -20,15 +20,6 @@
          function clickLoginNavBtn() {
              $("#btnLogin").trigger("click");
          }
-
-         // K.S.: Necessary to make Administration Option only visible when the user is an admin
-         function makeAdmininstrationVisible(){
-             if (Session.getItem('UserRole') == 1){
-                 $("#btnAdministration").removeClass('hidden');
-             }
-         }
-
-         $(document).ready(makeAdmininstrationVisible);
      </script>
 
 </head>
