@@ -12,6 +12,9 @@ namespace JAHub_ASPWebforms
         protected void Page_Load(object sender, EventArgs e)
         {
             // Start with Loading the SelectUser Form here, I think
+
+            // I want a Navbar for SelectUser, CreateNewUser, and when a user is selected it should show
+            // ViewModeration, DeleteUser, and EditUserInformation as OPTIONS in a separate grouping of buttons
         }
     }
 }
