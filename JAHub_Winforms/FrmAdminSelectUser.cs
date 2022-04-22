@@ -39,14 +39,14 @@ namespace JAHub_Winforms
             DataGridViewButtonColumn selectUserButtonColumn = new DataGridViewButtonColumn();
             selectUserButtonColumn.Text = "Select User";
             selectUserButtonColumn.UseColumnTextForButtonValue = true;
-            selectUserButtonColumn.DataPropertyName = "ID";
+            selectUserButtonColumn.DataPropertyName = "UserID";
 
             // This creates the column for the "ID" Section
             DataGridViewColumn idViewColumn = new DataGridViewColumn();
             idViewColumn.DefaultCellStyle = new DataGridViewCellStyle();
             idViewColumn.CellTemplate = new DataGridViewTextBoxCell();
             idViewColumn.Name = "ID";
-            idViewColumn.DataPropertyName = "ID";
+            idViewColumn.DataPropertyName = "UserID";
 
             // This creates the column for the "Name" Section
             DataGridViewColumn nameViewColumn = new DataGridViewColumn();

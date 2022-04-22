@@ -26,13 +26,14 @@ namespace JAHub_ASPWebforms.Administration
 
                 // this column isn't showing for some reason
                 BoundField bfIdColumn = new BoundField();
-                bfIdColumn.DataField = "ID";
+                bfIdColumn.DataField = "Select User";
                 bfIdColumn.HeaderText = "ID";
+                bfIdColumn.ControlStyle.CssClass = "text input-sm col-sm-2";
 
                 // these columns are repeating for some reason
-                BoundField bfNameColumn = new BoundField();
-                bfIdColumn.DataField = "Name";
-                bfIdColumn.HeaderText = "Name";
+                //BoundField bfNameColumn = new BoundField();
+                //bfIdColumn.DataField = "Name";
+                //bfIdColumn.HeaderText = "Name";
 
                 BoundField bfUserRoleColumn = new BoundField();
                 bfUserRoleColumn.DataField = "User Role";
@@ -51,7 +52,7 @@ namespace JAHub_ASPWebforms.Administration
 
                 // Adding the BoundFields and Buttonfield to the Table
                 tblUsers.Columns.Add(bfIdColumn);
-                tblUsers.Columns.Add(bfNameColumn);
+                //tblUsers.Columns.Add(bfNameColumn);
                 tblUsers.Columns.Add(bfUserRoleColumn);
                 tblUsers.Columns.Add(btfSelectUserColumn);
                 tblUsers.DataBind();
@@ -74,6 +75,16 @@ namespace JAHub_ASPWebforms.Administration
                 {
                     row.Visible = false;
                 }
+            }
+        }
+
+        protected void tblUsers_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "SelectUser")
+            {
+                // Get the Name, ID, And Role
+                // Wrap them up into event args
+                // fire the event
             }
         }
     }

@@ -16,7 +16,7 @@ namespace JAHubLib
             DataTable allUsers = new DataTable();
 
             DataColumn idDataColumn = new DataColumn();
-            idDataColumn.ColumnName = "ID";
+            idDataColumn.ColumnName = "UserID";
 
             DataColumn nameDataColumn = new DataColumn();
             nameDataColumn.ColumnName = "Name";
@@ -37,7 +37,7 @@ namespace JAHubLib
                 connection.Open();
 
                 String command = "SELECT ID, FirstName, LastName, UserRole" +
-                    " FROM [User]";
+                    " FROM [User];";
 
                 SqlCommand listUsersCommand = new SqlCommand(command, connection);
 
