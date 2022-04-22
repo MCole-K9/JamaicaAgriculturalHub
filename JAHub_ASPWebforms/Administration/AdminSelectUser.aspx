@@ -15,6 +15,11 @@
     </div>
 
     <div class="row">
+        <asp:UpdatePanel runat="server" ID="udpTable">
+            <ContentTemplate>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False" CssClass="table table-striped"></asp:GridView>
     </div>
 </asp:Content>

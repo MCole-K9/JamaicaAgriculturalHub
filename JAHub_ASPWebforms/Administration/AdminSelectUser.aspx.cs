@@ -66,12 +66,14 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void txtSearchBar_TextChanged(object sender, EventArgs e)
         {
+            // This is only going to work if you set the updatepanels and triggers correctly
+
             foreach (GridViewRow row in tblUsers.Rows)
             {
-                //if (!row[2].ToString().Contains(txtSearchBar.Text))
-                //{
-                //    row.Visible = false;
-                //}
+                if (!row.Cells[1].ToString().Contains(txtSearchBar.Text))
+                {
+                    row.Visible = false;
+                }
             }
         }
     }
