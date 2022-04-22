@@ -19,6 +19,7 @@ namespace JAHub_ASPWebforms.Administration
 
             // Creating the BoundFields
 
+            // this column isn't showing for some reason
             BoundField bfIdColumn = new BoundField();
             bfIdColumn.DataField = "ID";
             bfIdColumn.HeaderText = "ID";
@@ -30,17 +31,18 @@ namespace JAHub_ASPWebforms.Administration
             BoundField bfUserRoleColumn = new BoundField();
             bfUserRoleColumn.DataField = "User Role";
             bfUserRoleColumn.HeaderText = "User Role";
-
-            // need to create a Template field for the selectUser  parts
-            // It needs to have a method that gets the corresponding value of ID in that row
-            // When it gets that method, it needs to fire some kind of event that produces the necessary values
-            // that another form can add its own method to
+            
+            ButtonField btfSelectUserColumn = new ButtonField();
+            btfSelectUserColumn.ButtonType = ButtonType.Button;
+            btfSelectUserColumn.CommandName = "SelectUser";
+            btfSelectUserColumn.Text = "Select User";
 
 
             // Adding the BoundFields (and TemplateField) to the Table
             tblUsers.Columns.Add(bfIdColumn);
             tblUsers.Columns.Add(bfNameColumn);
             tblUsers.Columns.Add(bfUserRoleColumn);
+            tblUsers.Columns.Add(btfSelectUserColumn);
             tblUsers.DataBind();
         }
     }
