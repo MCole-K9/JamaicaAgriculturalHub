@@ -75,36 +75,5 @@ namespace JAHub_ASPWebforms.Verification
             return false;
         }
 
-        public void SetControlFocus()
-        {
-            //if (!usrAddressBlock1.IsBlockValid())
-            {
-                //usrAddressBlock1.SetControlFocus();
-            }
-            //else if (!isLandBlockValid)
-            {
-                //nudLandMeasurement.Select();
-            }
-        }
-
-        private void nudLandMeasurement_ValueChanged(object sender, EventArgs e)
-        {
-            // I would probably prefer to use "TextChanged" or some other event like that, but
-            // this will work for the time being
-           // if (nudLandMeasurement.Value <= 0)
-            {
-                //errLandBlock.SetIconAlignment(nudLandMeasurement, ErrorIconAlignment.MiddleRight);
-                //errLandBlock.SetError(nudLandMeasurement, "Value must be greater than 0");
-
-                //isLandBlockValid = false;
-            }
-            //else
-            {
-               // errLandBlock.SetError(nudLandMeasurement, "");
-
-
-                //isLandBlockValid = true;
-            }
-        }
     }
 }
