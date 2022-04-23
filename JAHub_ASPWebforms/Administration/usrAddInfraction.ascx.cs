@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.SqlTypes;
 
-namespace JAHub_ASPWebforms.Moderation
+namespace JAHub_ASPWebforms.Administration
 {
     public partial class usrAddInfraction : System.Web.UI.UserControl
     {

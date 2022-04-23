@@ -155,7 +155,7 @@
     <Content Include="Account\usrNavbarAccountLogout.ascx" />
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
     <Content Include="AdministrationPage.aspx" />
-    <Content Include="Administration\AdminSelectUser.aspx" />
+    <Content Include="Administration\AdminSelectUser.ascx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -265,12 +265,12 @@
     <Compile Include="AdministrationPage.aspx.designer.cs">
       <DependentUpon>AdministrationPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\AdminSelectUser.aspx.cs">
-      <DependentUpon>AdminSelectUser.aspx</DependentUpon>
+    <Compile Include="Administration\AdminSelectUser.ascx.cs">
+      <DependentUpon>AdminSelectUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administration\AdminSelectUser.aspx.designer.cs">
-      <DependentUpon>AdminSelectUser.aspx</DependentUpon>
+    <Compile Include="Administration\AdminSelectUser.ascx.designer.cs">
+      <DependentUpon>AdminSelectUser.ascx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

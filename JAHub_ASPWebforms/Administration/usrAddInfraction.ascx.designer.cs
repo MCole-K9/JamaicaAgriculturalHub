@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Moderation
+namespace JAHub_ASPWebforms.Administration
 {
 
 

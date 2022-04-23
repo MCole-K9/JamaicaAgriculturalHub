@@ -15,8 +15,10 @@ namespace JAHub_ASPWebforms
         {
             if(phAdministration.Controls.Count == 0)
             {
-                AdminSelectUser selectUser = new AdminSelectUser();
+                AdminSelectUser selectUser = (AdminSelectUser)LoadControl("~/Admininstration/AdminSelectuser.ascx");
                 selectUser.UserSelected += new EventHandler<UserSelectEventArgs>(SelectUser_UserSelected);
+
+                phAdministration.Controls.Add(selectUser);
             }
 
                 
@@ -26,6 +28,31 @@ namespace JAHub_ASPWebforms
         {
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
             this.UserID = e.UserID;
+        }
+
+        protected void btnSelectUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCreateNewUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnViewModeration_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

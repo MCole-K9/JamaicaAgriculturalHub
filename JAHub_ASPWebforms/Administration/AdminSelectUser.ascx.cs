@@ -10,7 +10,7 @@ using System.Data;
 
 namespace JAHub_ASPWebforms.Administration
 {
-    public partial class AdminSelectUser : System.Web.UI.Page
+    public partial class AdminSelectUser : System.Web.UI.UserControl
     {
         public event EventHandler<UserSelectEventArgs> UserSelected;
 
@@ -50,16 +50,16 @@ namespace JAHub_ASPWebforms.Administration
                 tblUsers.Columns.Add(bfUserRoleColumn);
                 tblUsers.Columns.Add(btfSelectUserColumn);
                 tblUsers.DataBind();
-                
+
             }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(tblUsers.DataSource == null)
+            if (tblUsers.DataSource == null)
             {
-                
+
             }
-            
+
         }
 
         protected void btnClearSearchBar_Click(object sender, EventArgs e)
@@ -92,15 +92,15 @@ namespace JAHub_ASPWebforms.Administration
                     }
                 }
             }
-            
+
         }
 
         protected void tblUsers_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if(e.CommandName == "SelectUser")
+            if (e.CommandName == "SelectUser")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                
+
                 UserSelectEventArgs args = new UserSelectEventArgs();
 
                 args.UserRole = tblUsers.Rows[index].Cells[2].ToString();
