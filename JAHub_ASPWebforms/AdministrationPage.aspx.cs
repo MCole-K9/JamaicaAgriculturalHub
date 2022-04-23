@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using JAHub_ASPWebforms.Administration;
 using System.Data;
 using System.Data.SqlClient;
+using JAHubLib;
 
 namespace JAHub_ASPWebforms
 {
     public partial class AdministrationPage : System.Web.UI.Page
     {
-        int UserID;
+        int userID;
         protected void Page_Load(object sender, EventArgs e)
         {
             OpenSelectUserControl();
@@ -21,7 +22,9 @@ namespace JAHub_ASPWebforms
         public void SelectUser_UserSelected (object sender, UserSelectEventArgs e)
         {
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
-            this.UserID = e.UserID;
+            this.userID = e.UserID;
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "useroptions", "OpenUserOptions", true);
         }
 
         protected void btnSelectUser_Click(object sender, EventArgs e)
@@ -50,33 +53,7 @@ namespace JAHub_ASPWebforms
 
             //if (result == DialogResult.Yes)
             //{
-            //    using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            //    {
-            //        connection.Open();
-
-            //        String command = $"DELETE FROM [User] WHERE ID = {_userId};";
-
-            //        SqlCommand deleteRecord = new SqlCommand(command, connection);
-
-            //        deleteRecord.ExecuteNonQuery();
-
-            //        connection.Close();
-            //    }
-
-            //    //HideUserOptions();
-
-            //    if (phAdministration.Controls.Count > 0)
-            //    {
-            //        //Form form = (Form)pnlFormHolder.Controls[0];
-
-            //        //form.Close();
-            //        //phAdministration.Controls.Clear();
-            //    }
-
-            //    OpenSelectUserControl();
-
-            //    // these just empty the "Current User" section
-            //    lblCurrentUser.Text = "Current User: none selected";
+            //   
             //}
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "idk", "OpenModal()", true);
@@ -115,6 +92,38 @@ namespace JAHub_ASPWebforms
                 phAdministration.Controls.Add(selectUser);
             }
             
+        }
+
+        protected void btnDeleteYes_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                String command = $"DELETE FROM [User] WHERE ID = {userID};";
+
+                SqlCommand deleteRecord = new SqlCommand(command, connection);
+
+                deleteRecord.ExecuteNonQuery();
+
+                connection.Close();
+            }
+
+            // This should hide the user options
+            if (phAdministration.Controls.Count > 0)
+            {
+                if(!(phAdministration.Controls[0] is AdminSelectUser))
+                {
+                    phAdministration.Controls.Clear();
+                    OpenSelectUserControl();
+                }
+            }
+            else
+            {
+                OpenSelectUserControl();
+            }
+
+            lblCurrentUser.Text = "Current User: none selected";
         }
     }
 }

@@ -33,6 +33,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.WebControls.Button btnCreateNewUser;
 
         /// <summary>
+        /// udpUserOptions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel udpUserOptions;
+
+        /// <summary>
         /// lblCurrentUser control.
         /// </summary>
         /// <remarks>
@@ -85,5 +94,23 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phAdministration;
+
+        /// <summary>
+        /// btnDeleteYes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteYes;
+
+        /// <summary>
+        /// btnDeleteNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteNo;
     }
 }
