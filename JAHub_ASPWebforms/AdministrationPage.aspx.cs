@@ -38,7 +38,6 @@ namespace JAHub_ASPWebforms
         protected void btnDeleteUser_Click(object sender, EventArgs e)
         {
 
-
             //String message = "Are you sure you want to delete the account of" +
             //    lblNameValue.Text + " (ID: " + _userId.ToString() + ", Role: " +
             //    lblRoleValue.Text + ")";
@@ -80,6 +79,7 @@ namespace JAHub_ASPWebforms
             //    lblCurrentUser.Text = "Current User: none selected";
             //}
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "idk", "OpenModal()", true);
 
         }
 

@@ -1,6 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministrationPage.aspx.cs" Inherits="JAHub_ASPWebforms.AdministrationPage" MasterPageFile="~/Site.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="AdminContent">
+    <script type="text/javascript">
+
+        function OpenModal() {
+            $('#deleteModal').modal('show');
+        }
+    </script>
+    
+    
     <div class ="row">
         <asp:Button runat="server" ID="btnSelectUser" Text="Select User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnSelectUser_Click"/>
         <asp:Button runat="server" ID="btnCreateNewUser" Text="Create New User" CssClass="text btn btn-default input-sm col-sm-2" OnClick="btnCreateNewUser_Click"/>
@@ -9,7 +17,7 @@
             <ContentTemplate>
                 <asp:Label runat="server" ID="lblCurrentUser" CssClass="input-sm col-sm-2">Current User: none selected</asp:Label>
 
-                <asp:Button runat="server" ID="btnDeleteUser" Text="Edit User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnDeleteUser_Click"/>
+                <asp:Button runat="server" ID="btnDeleteUser" Text="Delete User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnDeleteUser_Click"/>
                 <asp:Button runat="server" ID="btnEditUser" Text="Edit User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnEditUser_Click"/>
                 <asp:Button runat="server" ID="btnViewModeration" Text="View User Moderation" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnViewModeration_Click" />
             </ContentTemplate>
@@ -26,11 +34,12 @@
     
 
 
-    <div class="modal">
+    <div class="modal" id="deleteModal">
         <div class="modal-dialog">
             <div class="modal-content modal-sm">
-                <div>This is for asking wtf</div>
-                <div>This is for seeing the result</div>
+                <div class="modal-body">
+
+                </div>
             </div>
         </div>
     </div>
