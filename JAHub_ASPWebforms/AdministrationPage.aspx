@@ -17,7 +17,22 @@
         
     </div>
 
-    <asp:PlaceHolder runat="server" ID="phAdministration">
-    </asp:PlaceHolder>
+    <asp:UpdatePanel runat="server" ID="udpAdminPlaceholder">
+        <ContentTemplate>
+            <asp:PlaceHolder runat="server" ID="phAdministration">
+            </asp:PlaceHolder>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    
+
+
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content modal-sm">
+                <div>This is for asking wtf</div>
+                <div>This is for seeing the result</div>
+            </div>
+        </div>
+    </div>
     
 </asp:Content>

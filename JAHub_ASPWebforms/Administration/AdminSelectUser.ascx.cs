@@ -103,7 +103,7 @@ namespace JAHub_ASPWebforms.Administration
 
                 UserSelectEventArgs args = new UserSelectEventArgs();
 
-                args.UserRole = tblUsers.Rows[index].Cells[2].ToString();
+                args.UserRole = tblUsers.Rows[index].Cells[2].Text;
 
                 args.UserFullName = tblUsers.Rows[index].Cells[1].Text;
 
