@@ -156,7 +156,9 @@
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
     <Content Include="AdministrationPage.aspx" />
     <Content Include="Administration\AdminCreateUser.ascx" />
+    <Content Include="Administration\AdminEditUser.ascx" />
     <Content Include="Administration\AdminSelectUser.ascx" />
+    <Content Include="Administration\AdminViewModeration.ascx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -273,12 +275,26 @@
     <Compile Include="Administration\AdminCreateUser.ascx.designer.cs">
       <DependentUpon>AdminCreateUser.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\AdminEditUser.ascx.cs">
+      <DependentUpon>AdminEditUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AdminEditUser.ascx.designer.cs">
+      <DependentUpon>AdminEditUser.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\AdminSelectUser.ascx.cs">
       <DependentUpon>AdminSelectUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Administration\AdminSelectUser.ascx.designer.cs">
       <DependentUpon>AdminSelectUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\AdminViewModeration.ascx.cs">
+      <DependentUpon>AdminViewModeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AdminViewModeration.ascx.designer.cs">
+      <DependentUpon>AdminViewModeration.ascx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
