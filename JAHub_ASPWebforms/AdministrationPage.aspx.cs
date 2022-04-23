@@ -24,7 +24,7 @@ namespace JAHub_ASPWebforms
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
             this.userID = e.UserID;
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "useroptions", "OpenUserOptions", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "useroptions", "OpenUserOptions()", true);
         }
 
         protected void btnSelectUser_Click(object sender, EventArgs e)
@@ -40,22 +40,7 @@ namespace JAHub_ASPWebforms
 
         protected void btnDeleteUser_Click(object sender, EventArgs e)
         {
-
-            //String message = "Are you sure you want to delete the account of" +
-            //    lblNameValue.Text + " (ID: " + _userId.ToString() + ", Role: " +
-            //    lblRoleValue.Text + ")";
-            //const String caption = "Delete Account";
-
-            //var result = MessageBox.Show(message, caption,
-            //                             MessageBoxButtons.YesNo,
-            //                             MessageBoxIcon.Question);
-
-
-            //if (result == DialogResult.Yes)
-            //{
-            //   
-            //}
-
+            // All this does is bring up the modal where the user can choose to delete or not
             ScriptManager.RegisterStartupScript(this, this.GetType(), "idk", "OpenModal()", true);
 
         }
@@ -109,7 +94,9 @@ namespace JAHub_ASPWebforms
                 connection.Close();
             }
 
-            // This should hide the user options
+            // This should re-hide the options
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "hideUserOption", "CloseUserOption()", true);
+
             if (phAdministration.Controls.Count > 0)
             {
                 if(!(phAdministration.Controls[0] is AdminSelectUser))
@@ -124,6 +111,11 @@ namespace JAHub_ASPWebforms
             }
 
             lblCurrentUser.Text = "Current User: none selected";
+        }
+
+        protected void btnDeleteNo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

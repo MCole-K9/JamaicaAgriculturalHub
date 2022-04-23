@@ -13,7 +13,8 @@
         }
 
         function CloseUserOption() {
-            $('#divUserOptions').addclass('hidden');
+            $('#divUserOptions').removeClass('visible');
+            $('#divUserOptions').addclass('invisible');
         }
     </script>
     
@@ -24,11 +25,10 @@
         <!-- Options that should only become available when a user is selected-->
         <asp:UpdatePanel runat="server" ID="udpUserOptions">
             <Triggers>
-                <asp:AsyncPostBackTrigger />
             </Triggers>
             <ContentTemplate>
                 <asp:Label runat="server" ID="lblCurrentUser" CssClass="input-sm col-sm-2">Current User: none selected</asp:Label>
-                <div id="divUserOptions" class="">
+                <div id="divUserOptions" class="invisible">
                     <asp:Button runat="server" ID="btnDeleteUser" Text="Delete User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnDeleteUser_Click"/>
                     <asp:Button runat="server" ID="btnEditUser" Text="Edit User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnEditUser_Click"/>
                     <asp:Button runat="server" ID="btnViewModeration" Text="View User Moderation" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnViewModeration_Click" />
@@ -55,8 +55,10 @@
                         <p class="text">Are you sure you want to delete this account?</p>
                     </div>
                     <div class="row center-block">
-                        <asp:Button runat="server" ID="btnDeleteYes" Text="Yes" CssClass="btn btn-danger col-lg-4 input-sm" OnClick="btnDeleteYes_Click"/>
-                        <asp:Button runat="server" ID="btnDeleteNo" Text="No" CssClass="btn btn-default col-lg-4 input-sm"/>
+                        <asp:Button runat="server" ID="btnDeleteYes" Text="Yes" CssClass="btn btn-danger col-lg-4 input-sm" 
+                            OnClick="btnDeleteYes_Click"/>
+                        <asp:Button runat="server" ID="btnDeleteNo" Text="No" CssClass="btn btn-default col-lg-4 input-sm" 
+                            OnClick="btnDeleteNo_Click"/>
                     </div>
                 </div>
             </div>
