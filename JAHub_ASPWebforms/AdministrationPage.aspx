@@ -18,7 +18,6 @@
     </div>
 
     <asp:PlaceHolder runat="server" ID="phAdministration">
-        This is basically where all the important stuff goes
     </asp:PlaceHolder>
     
 </asp:Content>

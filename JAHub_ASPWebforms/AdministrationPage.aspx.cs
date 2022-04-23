@@ -15,7 +15,7 @@ namespace JAHub_ASPWebforms
         {
             if(phAdministration.Controls.Count == 0)
             {
-                AdminSelectUser selectUser = (AdminSelectUser)LoadControl("~/Admininstration/AdminSelectuser.ascx");
+                AdminSelectUser selectUser = (AdminSelectUser)LoadControl("~/Administration/AdminSelectUser.ascx");
                 selectUser.UserSelected += new EventHandler<UserSelectEventArgs>(SelectUser_UserSelected);
 
                 phAdministration.Controls.Add(selectUser);

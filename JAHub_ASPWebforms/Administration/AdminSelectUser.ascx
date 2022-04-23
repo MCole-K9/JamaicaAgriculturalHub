@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AdminSelectUser.ascx.cs" Inherits="JAHub_ASPWebforms.Administration.AdminSelectUser1" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AdminSelectUser.ascx.cs" Inherits="JAHub_ASPWebforms.Administration.AdminSelectUser" %>
 
 <div class="row">
     <h3>Select User</h3>
