@@ -16,8 +16,6 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
                 tblUsers.Columns.Clear();
                 tblUsers.AutoGenerateColumns = false;
 
@@ -50,8 +48,6 @@ namespace JAHub_ASPWebforms.Administration
                 tblUsers.Columns.Add(bfUserRoleColumn);
                 tblUsers.Columns.Add(btfSelectUserColumn);
                 tblUsers.DataBind();
-
-            }
         }
         protected void Page_Load(object sender, EventArgs e)
         {

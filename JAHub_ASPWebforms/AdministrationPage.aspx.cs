@@ -34,14 +34,17 @@ namespace JAHub_ASPWebforms
 
         protected void btnCreateNewUser_Click(object sender, EventArgs e)
         {
-            // scrub the last page
-            // open the new one
+            phAdministration.Controls.Clear();
+
+            AdminCreateUser createUser = (AdminCreateUser)LoadControl("~/Administration/AdminCreateUser.ascx");
+
+            phAdministration.Controls.Add(createUser);
         }
 
         protected void btnDeleteUser_Click(object sender, EventArgs e)
         {
             // All this does is bring up the modal where the user can choose to delete or not
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "idk", "OpenModal()", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "idk", "OpenDeleteModal()", true);
 
         }
 
@@ -81,6 +84,8 @@ namespace JAHub_ASPWebforms
 
         protected void btnDeleteYes_Click(object sender, EventArgs e)
         {
+
+            // This doesn't actually seem to delete the user, however, however
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
@@ -115,7 +120,7 @@ namespace JAHub_ASPWebforms
 
         protected void btnDeleteNo_Click(object sender, EventArgs e)
         {
-
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "NoModalDelete", "CloseDeleteModal()", true);
         }
     }
 }

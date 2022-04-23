@@ -3,8 +3,12 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="AdminContent">
     <script type="text/javascript">
 
-        function OpenModal() {
+        function OpenDeleteModal() {
             $('#deleteModal').modal('show');
+        }
+
+        function CloseDeleteModal() {
+            $('#deleteModal').modal('hide');
         }
 
         function OpenUserOptions() {
@@ -55,9 +59,10 @@
                         <p class="text">Are you sure you want to delete this account?</p>
                     </div>
                     <div class="row center-block">
-                        <asp:Button runat="server" ID="btnDeleteYes" Text="Yes" CssClass="btn btn-danger col-lg-4 input-sm" 
+                        <asp:Button runat="server" ID="btnDeleteYes" Text="Yes" CssClass="btn btn-danger col-lg-4 input-sm text-left" 
                             OnClick="btnDeleteYes_Click"/>
-                        <asp:Button runat="server" ID="btnDeleteNo" Text="No" CssClass="btn btn-default col-lg-4 input-sm" 
+                        <div class="col-lg-4 input-sm"></div>
+                        <asp:Button runat="server" ID="btnDeleteNo" Text="No" CssClass="btn btn-default col-lg-4 input-sm text-right" 
                             OnClick="btnDeleteNo_Click"/>
                     </div>
                 </div>
