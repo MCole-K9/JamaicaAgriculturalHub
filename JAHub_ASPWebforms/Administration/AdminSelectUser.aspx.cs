@@ -12,9 +12,11 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminSelectUser : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public event EventHandler<UserSelectEventArgs> UserSelected;
+
+        protected void Page_Init(object sender, EventArgs e)
         {
-            if(tblUsers.DataSource == null)
+            if (!IsPostBack)
             {
                 tblUsers.Columns.Clear();
                 tblUsers.AutoGenerateColumns = false;
@@ -23,17 +25,14 @@ namespace JAHub_ASPWebforms.Administration
                 tblUsers.DataSource = dtAllusers;
 
                 // Creating the BoundFields
-
-                // this column isn't showing for some reason
                 BoundField bfIdColumn = new BoundField();
-                bfIdColumn.DataField = "Select User";
+                bfIdColumn.DataField = "UserID";
                 bfIdColumn.HeaderText = "ID";
                 bfIdColumn.ControlStyle.CssClass = "text input-sm col-sm-2";
 
-                // these columns are repeating for some reason
-                //BoundField bfNameColumn = new BoundField();
-                //bfIdColumn.DataField = "Name";
-                //bfIdColumn.HeaderText = "Name";
+                BoundField bfNameColumn = new BoundField();
+                bfNameColumn.DataField = "UserFullName";
+                bfNameColumn.HeaderText = "Name";
 
                 BoundField bfUserRoleColumn = new BoundField();
                 bfUserRoleColumn.DataField = "User Role";
@@ -45,17 +44,20 @@ namespace JAHub_ASPWebforms.Administration
                 btfSelectUserColumn.Text = "Select User";
                 btfSelectUserColumn.ControlStyle.CssClass = "btn btn-default input-sm col-sm-3";
 
-                // i can tell the new columns are being added infront of the old ones. also there's a ghost column
-                // the id isn't showing, not sure why
-                // may need to change where this is written to a different event
-
-
                 // Adding the BoundFields and Buttonfield to the Table
                 tblUsers.Columns.Add(bfIdColumn);
-                //tblUsers.Columns.Add(bfNameColumn);
+                tblUsers.Columns.Add(bfNameColumn);
                 tblUsers.Columns.Add(bfUserRoleColumn);
                 tblUsers.Columns.Add(btfSelectUserColumn);
                 tblUsers.DataBind();
+                
+            }
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(tblUsers.DataSource == null)
+            {
+                
             }
             
         }
@@ -67,25 +69,60 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void txtSearchBar_TextChanged(object sender, EventArgs e)
         {
-            // This is only going to work if you set the updatepanels and triggers correctly
-
-            foreach (GridViewRow row in tblUsers.Rows)
+            if (String.IsNullOrEmpty(txtSearchBar.Text))
             {
-                if (!row.Cells[1].ToString().Contains(txtSearchBar.Text))
+                foreach (GridViewRow row in tblUsers.Rows)
                 {
-                    row.Visible = false;
+                    row.Visible = true;
                 }
             }
+            else
+            {
+                foreach (GridViewRow row in tblUsers.Rows)
+                {
+                    String value = row.Cells[1].ToString();
+
+                    if (value.Contains(txtSearchBar.Text))
+                    {
+                        row.CssClass = "";
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            
         }
 
         protected void tblUsers_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if(e.CommandName == "SelectUser")
             {
-                // Get the Name, ID, And Role
-                // Wrap them up into event args
-                // fire the event
+                int index = Convert.ToInt32(e.CommandArgument);
+                
+                UserSelectEventArgs args = new UserSelectEventArgs();
+
+                args.UserRole = tblUsers.Rows[index].Cells[2].ToString();
+
+                args.UserFullName = tblUsers.Rows[index].Cells[1].Text;
+
+                args.UserID = Convert.ToInt32(tblUsers.Rows[index].Cells[0].Text);
+
+                if (UserSelected != null)
+                {
+                    UserSelected(this, args);
+                }
             }
         }
+    }
+
+
+    // Doing this entirely because I don't know how classes relate to each other in ASP
+    public class UserSelectEventArgs : EventArgs
+    {
+        public int UserID { get; set; }
+        public string UserFullName { get; set; }
+        public string UserRole { get; set; }
     }
 }

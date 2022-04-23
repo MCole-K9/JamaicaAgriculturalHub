@@ -19,7 +19,7 @@ namespace JAHubLib
             idDataColumn.ColumnName = "UserID";
 
             DataColumn nameDataColumn = new DataColumn();
-            nameDataColumn.ColumnName = "Name";
+            nameDataColumn.ColumnName = "UserFullName";
 
             DataColumn roleDataColumn = new DataColumn();
             roleDataColumn.ColumnName = "User Role";
@@ -45,8 +45,10 @@ namespace JAHubLib
 
                 while (reader.Read())
                 {
-                    allUsers.Rows.Add((int)reader["ID"], reader["FirstName"].ToString() + " " +
-                        reader["LastName"].ToString(), (UserRole)reader["UserRole"], (int)reader["ID"]);
+                    int id = (int)reader["ID"];
+                    String name = reader["FirstName"].ToString() + " " + reader["LastName"];
+                    
+                    allUsers.Rows.Add(id, name, (UserRole)reader["UserRole"], (int)reader["ID"]);
                 }
 
                 connection.Close();
