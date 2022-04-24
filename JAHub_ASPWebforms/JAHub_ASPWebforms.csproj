@@ -191,6 +191,7 @@
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Resources\landscape.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
+    <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
     <Content Include="ucWebBlog.ascx" />
@@ -371,6 +372,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrCartItem.ascx.designer.cs">
       <DependentUpon>UsrCartItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.cs">
+      <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.designer.cs">
+      <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrProduct.ascx.cs">
       <DependentUpon>UsrProduct.ascx</DependentUpon>
