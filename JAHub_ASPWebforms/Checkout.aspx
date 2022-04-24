@@ -207,45 +207,50 @@
                         </div>
 
 
+                        <div class="checkbox">
+                            <label>
+                                <input id="billingIsShipping" type="checkbox" class="fit-content-x" checked  value="">Billing Address is the same as Shipping Address</label>
+                        </div>
                         <%----Address Block--%>
-                        <div id="BillingAddress" class="row" style="display: none">
+
+                        <div id="BillingAddress" class="row" style="display: none ">
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">First Name:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipFirstName">
+                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingFirstName">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">Last Name:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipLastName">
+                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingLastName">
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">Email Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipEmail">
+                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingEmail">
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">Street Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipStreetAdress">
+                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingStreetAdress">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">City/Town:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipCity">
+                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingCity">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">Parish:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipParish">
+                                    <input type="text" class="form-control" style="max-width: 100%" id="BIllingParish">
                                 </div>
                             </div>
-                            1
+                            
                         </div>
                         <%----Address Block--%>
                         <div style="display: flex; justify-content: start">
@@ -273,6 +278,13 @@
             event.preventDefault();
             $('.nav-tabs > .active').next('li').find('a').trigger('click');
 
+            //Billing is Shipping by Default 
+            $("#BillingFirstName").val($("#ShipFirstName").val());
+            $("#BillingLastName").val($("#ShipLastName").val());
+            $("#BillingEmail").val($("#ShipEmail").val());
+            $("#BillingStreetAdress").val($("#ShipStreetAdress").val());
+            $("#BillingCity").val($("#ShipCity").val());
+            $("#BillingParish").val($("#ShipParish").val());
         });
 
         var acc = document.getElementsByClassName("accordion");
@@ -320,6 +332,44 @@
                 panel.css("display", "none");
             }
         });
+
+       
+
+        let billingShippingRdb = document.getElementById("billingIsShipping");
+
+        billingShippingRdb.addEventListener("change", () => {
+
+
+            if (!billingShippingRdb.checked) {
+
+                $("#BillingFirstName").val("");
+                $("#BillingLastName").val("");
+                $("#BillingEmail").val("");
+                $("#BillingStreetAdress").val("");
+                $("#BillingCity").val("");
+                $("#BillingParish").val("");
+
+                $("#BillingAddress").css("display", "block");
+                
+
+            }else {
+
+                $("#BillingFirstName").val($("#ShipFirstName").val());
+                $("#BillingLastName").val($("#ShipLastName").val());
+                $("#BillingEmail").val($("#ShipEmail").val());
+                $("#BillingStreetAdress").val($("#ShipStreetAdress").val());
+                $("#BillingCity").val($("#ShipCity").val());
+                $("#BillingParish").val($("#ShipParish").val());
+
+                
+                $("#BillingAddress").css("display", "none");
+                
+            }
+
+        });
+
+        
+        
 
     </script>
 
