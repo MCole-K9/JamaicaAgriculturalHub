@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using JAHubLib;
+using JAHub_ASPWebforms.Verification;
 
 namespace JAHub_ASPWebforms.Administration
 {
@@ -18,6 +19,8 @@ namespace JAHub_ASPWebforms.Administration
             ddlUserRole.DataBind();
             ddlUserRole.DataValueField = "Id";
             ddlUserRole.DataTextField = "UserRole";
+
+            phNameBlock.Controls.Add((usrNameBlock)LoadControl("~/Verification/usrNameBlock.ascx"));
         }
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)

@@ -60,7 +60,7 @@
                     </div>
                     <div class="row center-block">
                         <asp:Button runat="server" ID="btnDeleteYes" Text="Yes" CssClass="btn btn-danger col-lg-4 input-sm text-left" 
-                            OnClick="btnDeleteYes_Click"/>
+                            OnClick="btnDeleteYes_Click" />
                         <div class="col-lg-4 input-sm"></div>
                         <asp:Button runat="server" ID="btnDeleteNo" Text="No" CssClass="btn btn-default col-lg-4 input-sm text-right" 
                             OnClick="btnDeleteNo_Click"/>

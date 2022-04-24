@@ -32,9 +32,10 @@ namespace JAHub_Winforms
             // This is just in case i have anything in the cmb already
             cmbUserRole.Items.Clear();
 
-            cmbUserRole.DataSource = Admin.GetUserDataTable();
+            
             cmbUserRole.DisplayMember = "UserRole";
             cmbUserRole.ValueMember = "Id";
+            cmbUserRole.DataSource = Admin.GetUserDataTable();
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
