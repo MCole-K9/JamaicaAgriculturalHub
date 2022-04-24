@@ -11,7 +11,26 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LoadOrderSummery();
+        }
+        public void LoadOrderSummery()
+        {
 
+            pnlOrderSummery.Controls.Clear();
+            int index = 0;
+
+            foreach (var item in JAHubLib.Cart.GetProductsInCart())
+            {
+                Shop_Controls.UsrOrderSumItem orderSumItem = (Shop_Controls.UsrOrderSumItem)Page.LoadControl("~/Shop_Controls/UsrOrderSumItem.ascx");
+                orderSumItem.SetProduct(item);
+                orderSumItem.SetIDSequence(index);
+                pnlOrderSummery.Controls.Add(orderSumItem);
+
+                index++;
+            }
+
+            CartCount.InnerText = JAHubLib.Cart.ShoppingCart.Count.ToString();
+            Subtotal.InnerText = $"${JAHubLib.Cart.CaluculateTotal()}";
         }
     }
 }

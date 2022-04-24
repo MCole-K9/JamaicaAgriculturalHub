@@ -24,12 +24,21 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl CartCount;
 
         /// <summary>
-        /// Span1 control.
+        /// pnlOrderSummery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span1;
+        protected global::System.Web.UI.WebControls.Panel pnlOrderSummery;
+
+        /// <summary>
+        /// Subtotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Subtotal;
     }
 }

@@ -113,8 +113,15 @@
                 </div>
                 <div class="col-lg-5 fit-content-y">
                     <div class="content-container">
-                        <h4>Order Summary</h4>
-                        <h5><span runat="server" id="CartCount">0</span> Items in Cart</h5>
+                        <div id="so-summery">
+                            <h4>Order Summary</h4>
+                            <h5><span runat="server" id="CartCount">0</span> Item(s) in Cart</h5>
+                            <asp:Panel ID="pnlOrderSummery" runat="server">
+
+                            </asp:Panel>
+                        </div>
+
+
                     </div>
 
 
@@ -209,11 +216,11 @@
 
                         <div class="checkbox">
                             <label>
-                                <input id="billingIsShipping" type="checkbox" class="fit-content-x" checked  value="">Billing Address is the same as Shipping Address</label>
+                                <input id="billingIsShipping" type="checkbox" class="fit-content-x" checked value="">Billing Address is the same as Shipping Address</label>
                         </div>
                         <%----Address Block--%>
 
-                        <div id="BillingAddress" class="row" style="display: none ">
+                        <div id="BillingAddress" class="row" style="display: none">
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="usr">First Name:</label>
@@ -250,7 +257,7 @@
                                     <input type="text" class="form-control" style="max-width: 100%" id="BIllingParish">
                                 </div>
                             </div>
-                            
+
                         </div>
                         <%----Address Block--%>
                         <div style="display: flex; justify-content: start">
@@ -260,11 +267,15 @@
                 </div>
                 <div class="col-lg-5 fit-content-y">
                     <div class="content-container">
-                        <h4>Order Summary</h4>
-                        <h5><span runat="server" id="Span1">0</span> Items in Cart</h5>
+                        <div id="bo-summery">
+                            <%--Cloneing Order Summery Div from Shipping address Tab here--%>
+                        </div>
+                        <hr />
+                        <div style="display: flex; justify-content:space-between">
+                            <h4>Subtotal</h4>
+                            <h4 id="Subtotal" runat="server"></h4>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
 
@@ -333,7 +344,7 @@
             }
         });
 
-       
+
 
         let billingShippingRdb = document.getElementById("billingIsShipping");
 
@@ -350,9 +361,9 @@
                 $("#BillingParish").val("");
 
                 $("#BillingAddress").css("display", "block");
-                
 
-            }else {
+
+            } else {
 
                 $("#BillingFirstName").val($("#ShipFirstName").val());
                 $("#BillingLastName").val($("#ShipLastName").val());
@@ -361,15 +372,19 @@
                 $("#BillingCity").val($("#ShipCity").val());
                 $("#BillingParish").val($("#ShipParish").val());
 
-                
+
                 $("#BillingAddress").css("display", "none");
-                
+
             }
 
         });
 
-        
-        
+        <%--let divToClone = document.getElementById('<%=pnlOrderSummery.ClientID%>');--%>
+
+        let divToClone = document.getElementById("so-summery");
+        let clone = divToClone.cloneNode(true);
+        clone.id += 1;
+        document.getElementById("bo-summery").appendChild(clone);
 
     </script>
 
