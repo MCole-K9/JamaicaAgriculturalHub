@@ -25,7 +25,7 @@
             <asp:AsyncPostBackTrigger ControlID="txtSearchBar" EventName="TextChanged" />
         </Triggers>
         <ContentTemplate>
-            <asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False" CssClass="table table-striped" OnRowCommand="tblUsers_RowCommand">
+            <asp:GridView runat="server" ID="tblUsers" AutoGenerateColumns="False" CssClass="table table-striped" OnRowCommand="tblUsers_RowCommand" EnableViewState="False">
             </asp:GridView>
         </ContentTemplate>
     </asp:UpdatePanel>
