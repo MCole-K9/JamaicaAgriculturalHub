@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" OnCheckedChanged="chkShowPassword_CheckedChanged"/>
+        <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" />
     </div>
     
     <asp:UpdatePanel runat="server" ID="udpPassword" >

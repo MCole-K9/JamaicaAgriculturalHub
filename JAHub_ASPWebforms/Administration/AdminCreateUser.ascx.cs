@@ -15,10 +15,48 @@ namespace JAHub_ASPWebforms.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlUserRole.DataSource = Admin.GetUserRoles();
-            ddlUserRole.DataBind();
+            DataColumn idColumn = new DataColumn();
+            idColumn.ColumnName = "Id";
+            idColumn.DataType = typeof(UserRole);
+
+            // Creating the datacolumn for userRole
+            DataColumn userRoleColumn = new DataColumn();
+            userRoleColumn.ColumnName = "UserRole";
+            userRoleColumn.DataType = typeof(String);
+
+            DataTable userRoleTable = new DataTable("User Roles");
+            userRoleTable.Columns.Add(idColumn);
+            userRoleTable.Columns.Add(userRoleColumn);
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                String userTypeQuery = "SELECT * FROM UserRole";
+
+                SqlCommand command = new SqlCommand(userTypeQuery, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DataRow row;
+
+                    row = userRoleTable.NewRow();
+                    row["Id"] = reader[0];
+                    row["UserRole"] = reader[1];
+
+                    userRoleTable.Rows.Add(row);
+                }
+
+                connection.Close();
+            }
+
             ddlUserRole.DataValueField = "Id";
             ddlUserRole.DataTextField = "UserRole";
+            ddlUserRole.DataSource = userRoleTable;
+            ddlUserRole.DataBind();
+            
 
             phNameBlock.Controls.Add((usrNameBlock)LoadControl("~/Verification/usrNameBlock.ascx"));
         }

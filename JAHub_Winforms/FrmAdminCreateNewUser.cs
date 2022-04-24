@@ -32,10 +32,47 @@ namespace JAHub_Winforms
             // This is just in case i have anything in the cmb already
             cmbUserRole.Items.Clear();
 
-            
+            DataColumn idColumn = new DataColumn();
+            idColumn.ColumnName = "Id";
+            idColumn.DataType = typeof(UserRole);
+
+            // Creating the datacolumn for userRole
+            DataColumn userRoleColumn = new DataColumn();
+            userRoleColumn.ColumnName = "UserRole";
+            userRoleColumn.DataType = typeof(String);
+
+            DataTable userRoleTable = new DataTable("User Roles");
+            userRoleTable.Columns.Add(idColumn);
+            userRoleTable.Columns.Add(userRoleColumn);
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                String userTypeQuery = "SELECT * FROM UserRole";
+
+                SqlCommand command = new SqlCommand(userTypeQuery, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DataRow row;
+
+                    row = userRoleTable.NewRow();
+                    row["Id"] = reader[0];
+                    row["UserRole"] = reader[1];
+
+                    userRoleTable.Rows.Add(row);
+                }
+
+                connection.Close();
+            }
+
+            cmbUserRole.DataSource = userRoleTable;
             cmbUserRole.DisplayMember = "UserRole";
             cmbUserRole.ValueMember = "Id";
-            cmbUserRole.DataSource = Admin.GetUserDataTable();
+            
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)

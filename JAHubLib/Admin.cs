@@ -57,48 +57,9 @@ namespace JAHubLib
             return allUsers;
         }
 
-        public static DataTable GetUserRoles()
+        public static void GetUserRoles(DataTable tableToCopy)
         {
-            DataColumn idColumn = new DataColumn();
-            idColumn.ColumnName = "Id";
-            idColumn.DataType = typeof(UserRole);
 
-            // Creating the datacolumn for userRole
-            DataColumn userRoleColumn = new DataColumn();
-            userRoleColumn.ColumnName = "UserRole";
-            userRoleColumn.DataType = typeof(String);
-
-            DataTable userRoleTable = new DataTable("User Roles");
-            userRoleTable.Columns.Add(idColumn);
-            userRoleTable.Columns.Add(userRoleColumn);
-
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-                String userTypeQuery = "SELECT * FROM UserRole";
-
-                SqlCommand command = new SqlCommand(userTypeQuery, connection);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-
-
-                while (reader.Read())
-                {
-                    DataRow row;
-
-                    row = userRoleTable.NewRow();
-                    row["Id"] = reader[0];
-                    row["UserRole"] = reader[1];
-
-                    userRoleTable.Rows.Add(row);
-                }
-
-                connection.Close();
-            }
-
-            return userRoleTable;
         }
     }
 }
