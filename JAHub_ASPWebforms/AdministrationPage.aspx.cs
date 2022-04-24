@@ -14,6 +14,7 @@ namespace JAHub_ASPWebforms
     public partial class AdministrationPage : System.Web.UI.Page
     {
         int userID;
+        String userFullName;
         protected void Page_Load(object sender, EventArgs e)
         {
             OpenSelectUserControl();
@@ -23,6 +24,7 @@ namespace JAHub_ASPWebforms
         {
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
             this.userID = e.UserID;
+            this.userFullName = e.UserFullName;
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "useroptions", "OpenUserOptions()", true);
         }
@@ -50,12 +52,25 @@ namespace JAHub_ASPWebforms
 
         protected void btnEditUser_Click(object sender, EventArgs e)
         {
+            phAdministration.Controls.Clear();
 
+            AdminEditUser editUser = (AdminEditUser)LoadControl("~/Administration/AdminEditUser.ascx");
+
+            phAdministration.Controls.Add(editUser);
         }
 
         protected void btnViewModeration_Click(object sender, EventArgs e)
         {
+            if (phAdministration.Controls.Count > 0)
+            {
+                phAdministration.Controls.Clear();
+            }
+            
+            AdminViewModeration viewModeration = (AdminViewModeration)LoadControl("~/Administration/AdminViewModeration.ascx");
+            viewModeration.UserId = this.userID;
+            viewModeration.Name = this.userFullName;
 
+            phAdministration.Controls.Add(viewModeration);
         }
 
         protected void OpenSelectUserControl()
