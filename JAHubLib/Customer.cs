@@ -40,8 +40,8 @@ namespace JAHubLib
         {
             if (IsCustomer())
             {
-                string query = $"INSERT INTO [Review] (Rating, Comment, Product, Customer)" +
-                $" VALUES ({review.Rating}, '{review.Comment}', {review.ProductID}, {CustomerID})";
+                string query = $"INSERT INTO [Review] (Rating, Comment, Product, Customer, Headline)" +
+                $" VALUES ({review.Rating}, '{review.Comment}', {review.ProductID}, {CustomerID}, '{review.Headline}')";
 
                 return Utilities.executeInputQuery(query);
             }
