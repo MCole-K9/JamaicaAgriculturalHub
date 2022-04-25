@@ -13,8 +13,30 @@ namespace JAHub_ASPWebforms
 {
     public partial class AdministrationPage : System.Web.UI.Page
     {
-        int userID;
-        String userFullName;
+        // Praying this works
+        public int userID
+        {
+            get
+            {
+                return this.ViewState["userID"] == null ? 0 : Int32.Parse(this.ViewState["userID"] as String);
+            }
+            set
+            {
+                this.ViewState["userID"] = value;
+            }
+        }
+
+        // This too
+        public String userFullName { 
+            get
+            {
+                return this.ViewState["userFullName"] == null ? "" : this.ViewState["userFullName"] as String;
+            } 
+            set 
+            {
+                this.ViewState["userFullName"] = value;
+            } 
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -28,6 +50,8 @@ namespace JAHub_ASPWebforms
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
             this.userID = e.UserID;
             this.userFullName = e.UserFullName;
+
+            this.TrackViewState();
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "useroptions", "OpenUserOptions()", true);
         }
