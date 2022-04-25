@@ -24,8 +24,8 @@
     
     
     <div class ="row">
-        <asp:Button runat="server" ID="btnSelectUser" Text="Select User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnSelectUser_Click"/>
-        <asp:Button runat="server" ID="btnCreateNewUser" Text="Create New User" CssClass="text btn btn-default input-sm col-sm-2" OnClick="btnCreateNewUser_Click"/>
+        <asp:Button runat="server" ID="btnSelectUser" Text="Select User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnSelectUser_Click" CausesValidation="False" />
+        <asp:Button runat="server" ID="btnCreateNewUser" Text="Create New User" CssClass="text btn btn-default input-sm col-sm-2" OnClick="btnCreateNewUser_Click" CausesValidation="False" />
         <!-- Options that should only become available when a user is selected-->
         <asp:UpdatePanel runat="server" ID="udpUserOptions">
             <Triggers>
@@ -33,9 +33,9 @@
             <ContentTemplate>
                 <asp:Label runat="server" ID="lblCurrentUser" CssClass="input-sm col-sm-2">Current User: none selected</asp:Label>
                 <div id="divUserOptions" class="invisible">
-                    <asp:Button runat="server" ID="btnDeleteUser" Text="Delete User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnDeleteUser_Click"/>
-                    <asp:Button runat="server" ID="btnEditUser" Text="Edit User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnEditUser_Click"/>
-                    <asp:Button runat="server" ID="btnViewModeration" Text="View User Moderation" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnViewModeration_Click" />
+                    <asp:Button runat="server" ID="btnDeleteUser" Text="Delete User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnDeleteUser_Click" CausesValidation="False" />
+                    <asp:Button runat="server" ID="btnEditUser" Text="Edit User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnEditUser_Click" CausesValidation="False" />
+                    <asp:Button runat="server" ID="btnViewModeration" Text="View User Moderation" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnViewModeration_Click" CausesValidation="False" />
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -60,10 +60,10 @@
                     </div>
                     <div class="row center-block">
                         <asp:Button runat="server" ID="btnDeleteYes" Text="Yes" CssClass="btn btn-danger col-lg-4 input-sm text-left" 
-                            OnClick="btnDeleteYes_Click" />
+                            OnClick="btnDeleteYes_Click" CausesValidation="False" />
                         <div class="col-lg-4 input-sm"></div>
                         <asp:Button runat="server" ID="btnDeleteNo" Text="No" CssClass="btn btn-default col-lg-4 input-sm text-right" 
-                            OnClick="btnDeleteNo_Click"/>
+                            OnClick="btnDeleteNo_Click" CausesValidation="False" />
                     </div>
                 </div>
             </div>
