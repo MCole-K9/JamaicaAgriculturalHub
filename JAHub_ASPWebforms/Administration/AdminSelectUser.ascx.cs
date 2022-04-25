@@ -14,6 +14,42 @@ namespace JAHub_ASPWebforms.Administration
     {
         public event EventHandler<UserSelectEventArgs> UserSelected;
 
+        public AdminSelectUser()
+        {
+            //tblUsers.Columns.Clear();
+            //tblUsers.AutoGenerateColumns = false;
+
+            //DataTable dtAllusers = Admin.GetUserDataTable();
+            //tblUsers.DataSource = dtAllusers;
+
+            //// Creating the BoundFields
+            //BoundField bfIdColumn = new BoundField();
+            //bfIdColumn.DataField = "UserID";
+            //bfIdColumn.HeaderText = "ID";
+            //bfIdColumn.ControlStyle.CssClass = "text input-sm col-sm-2";
+
+            //BoundField bfNameColumn = new BoundField();
+            //bfNameColumn.DataField = "UserFullName";
+            //bfNameColumn.HeaderText = "Name";
+
+            //BoundField bfUserRoleColumn = new BoundField();
+            //bfUserRoleColumn.DataField = "User Role";
+            //bfUserRoleColumn.HeaderText = "User Role";
+
+            //ButtonField btfSelectUserColumn = new ButtonField();
+            //btfSelectUserColumn.ButtonType = ButtonType.Button;
+            //btfSelectUserColumn.CommandName = "SelectUser";
+            //btfSelectUserColumn.Text = "Select User";
+            //btfSelectUserColumn.ControlStyle.CssClass = "btn btn-default input-sm col-sm-3";
+
+            //// Adding the BoundFields and Buttonfield to the Table
+            //tblUsers.Columns.Add(bfIdColumn);
+            //tblUsers.Columns.Add(bfNameColumn);
+            //tblUsers.Columns.Add(bfUserRoleColumn);
+            //tblUsers.Columns.Add(btfSelectUserColumn);
+            //tblUsers.DataBind();
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             tblUsers.Columns.Clear();

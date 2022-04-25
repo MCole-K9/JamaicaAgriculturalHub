@@ -188,6 +188,7 @@ namespace JAHub_ASPWebforms
                 if(!(phAdministration.Controls[0] is AdminSelectUser))
                 {
                     phAdministration.Controls.Clear();
+
                     OpenSelectUserControl();
                 }
             }
