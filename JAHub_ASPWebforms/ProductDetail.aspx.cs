@@ -33,11 +33,15 @@ namespace JAHub_ASPWebforms
         }
         private void LoadReviews()
         {
+            int index = 0;
             pnlReviews.Controls.Clear();
             foreach (var review in product.Reviews)
             {
                 Shop_Controls.UsrReview review1 =  (Shop_Controls.UsrReview)Page.LoadControl("~/Shop_Controls/UsrReview.ascx");
+                review1.SetReview(review);
+                review1.SetIDSequence(index);
                 pnlReviews.Controls.Add(review1);
+                index++;
             }
             //CalculateReviews();
         }
