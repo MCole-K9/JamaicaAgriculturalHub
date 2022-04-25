@@ -18,7 +18,7 @@ namespace JAHub_ASPWebforms
         {
             get
             {
-                return this.ViewState["userID"] == null ? 0 : Int32.Parse(this.ViewState["userID"] as String);
+                return this.ViewState["userID"] == null ? 0 : (int)this.ViewState["userID"];
             }
             set
             {
@@ -39,19 +39,16 @@ namespace JAHub_ASPWebforms
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+
                 OpenSelectUserControl();
-            }
         }
 
         public void SelectUser_UserSelected (object sender, UserSelectEventArgs e)
         {
+
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
             this.userID = e.UserID;
             this.userFullName = e.UserFullName;
-
-            this.TrackViewState();
 
             ScriptManager.RegisterStartupScript(this, this.GetType(), "useroptions", "OpenUserOptions()", true);
         }
