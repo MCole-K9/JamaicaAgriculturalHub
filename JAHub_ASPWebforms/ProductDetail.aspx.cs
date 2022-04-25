@@ -87,7 +87,7 @@ namespace JAHub_ASPWebforms
                 {
                     Headline = headline.Value,
                     Comment = comment.Value,
-                   Rating = 5,//Temp
+                   Rating = int.Parse(hidRating.Value),
                    ProductID  = this.product.Id,
 
                 };
