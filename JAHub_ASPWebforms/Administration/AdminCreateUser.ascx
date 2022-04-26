@@ -2,6 +2,19 @@
 
 <%@ Register Src="~/Verification/usrNameBlock.ascx" TagName="NameBlock" TagPrefix="uc"%>
 
+<script>
+
+    function RaiseSubmitModal() {
+        $('#submitModal').modal('show');
+    }
+
+    function CloseSubmitModal() {
+        $('#submitModal').modal('hide');
+    }
+
+</script>
+
+
 <div>
     <h2>Create New User</h2>
     <p>Fields marked with '*' are Mandatory</p>
@@ -36,18 +49,38 @@
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>
                     <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False"></asp:TextBox>
-                    <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" />
+                    <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
+                        ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate"/>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Re-Type Password: </asp:Label>
                     <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="Password" EnableViewState="False" />
-                    <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" />
+                    <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" 
+                        ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate"/>
                 </div>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
     <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" />
+
+    <div class="modal" id="submitModal">
+        <div class="modal-dialog">
+            <div class="modal-content center-block">
+                <div class="modal-header">
+                    <asp:Label ID="lblSubmitTitle" runat="server"/>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <asp:Label runat="server" ID="lblSubmitText"/>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-default" data-dismiss="modal"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

@@ -93,16 +93,49 @@ namespace JAHub_ASPWebforms.Administration
 
                 newUser.WriteToDatabase();
 
-                // Set the text for the modal and then raise it
+                isWriteSuccessful = true;
             }
 
             if (isWriteSuccessful)
             {
-                // set the text for the modal and then raise it (not successful)
+                lblSubmitTitle.Text = "Result Successful";
+                lblSubmitText.Text = $"Successfully created record for {newUser.FirstName} {newUser.LastName}.";
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "submit", "RaiseSubmitModal()", true);
             }
             else
             {
-                // set the text for the modal and then raise it (not successful)
+                lblSubmitTitle.Text = "Result Unsuccessful";
+                lblSubmitText.Text = "One or more field(s) is not valid. Please correct these fields and resubmit.";
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "submit", "RaiseSubmitModal()", true);
+            }
+
+        }
+
+        protected void cusPasswordSecond_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if(txtPasswordOnce.Text == txtPasswordSecond.Text)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                cusPasswordSecond.Text = "Passwords must match!";
+                args.IsValid = false;
+            }
+        }
+
+        protected void cusPasswordOnce_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (String.IsNullOrEmpty(txtPasswordOnce.Text))
+            {
+                cusPasswordOnce.ErrorMessage = "Field cannot be blank";
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
             }
 
         }
