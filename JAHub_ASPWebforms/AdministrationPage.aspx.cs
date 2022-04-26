@@ -82,7 +82,10 @@ namespace JAHub_ASPWebforms
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
                 OpenSelectUserControl();
+            }
         }
 
         public void SelectUser_UserSelected (object sender, UserSelectEventArgs e)

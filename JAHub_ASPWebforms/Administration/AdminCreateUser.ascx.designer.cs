@@ -51,15 +51,6 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// chkShowPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkShowPassword;
-
-        /// <summary>
         /// udpPassword control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace JAHub_ASPWebforms.Administration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel udpPassword;
+
+        /// <summary>
+        /// chkShowPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkShowPassword;
 
         /// <summary>
         /// txtPasswordOnce control.

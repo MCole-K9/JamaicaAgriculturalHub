@@ -35,16 +35,17 @@
                 ControlToValidate="txtEmail" EnableViewState="False"></asp:RegularExpressionValidator>
         </div>
     </div>
-    <div class="row">
-        <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" 
-            OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" CausesValidation="False" EnableViewState="False" />
-    </div>
+    
     
     <asp:UpdatePanel runat="server" ID="udpPassword" >
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="chkShowPassword" EventName="CheckedChanged" />
         </Triggers>
         <ContentTemplate>
+            <div class="row">
+                <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" 
+                    OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" CausesValidation="False" EnableViewState="False" />
+            </div>
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>

@@ -64,6 +64,7 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
+            // This causes postback in a way that comes off of this page and opens selectuser. why?
             if (chkShowPassword.Checked)
             {
                 txtPasswordOnce.TextMode = TextBoxMode.SingleLine;
