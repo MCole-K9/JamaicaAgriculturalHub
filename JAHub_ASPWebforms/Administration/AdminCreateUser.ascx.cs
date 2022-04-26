@@ -15,6 +15,8 @@ namespace JAHub_ASPWebforms.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Part of me wants to move this to the Init, since it really shouldn't change and doesn't need viewstate
+            
             DataColumn idColumn = new DataColumn();
             idColumn.ColumnName = "Id";
             idColumn.DataType = typeof(UserRole);
@@ -58,7 +60,6 @@ namespace JAHub_ASPWebforms.Administration
             ddlUserRole.DataBind();
             
 
-            phNameBlock.Controls.Add((usrNameBlock)LoadControl("~/Verification/usrNameBlock.ascx"));
         }
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -73,11 +74,37 @@ namespace JAHub_ASPWebforms.Administration
                 txtPasswordOnce.TextMode = TextBoxMode.Password;
                 txtPasswordSecond.TextMode = TextBoxMode.Password;
             }
-
-            // for some reason this isn't accessible
-            //updPassword.Update();
             
         }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            User newUser = new User();
+            bool isWriteSuccessful = false;
+
+            if (Page.IsValid)
+            {
+                newUser.FirstName = nbNewUserName.FirstName;
+                newUser.LastName = nbNewUserName.LastName;
+                newUser.MiddleName = nbNewUserName.MiddleName;
+                newUser.Email = txtEmail.Text;
+                newUser.UserRole = (UserRole)ddlUserRole.SelectedIndex;
+                newUser.Password = txtPasswordOnce.Text;
+
+                newUser.WriteToDatabase();
+
+                // Set the text for the modal and then raise it
+            }
+
+            if (isWriteSuccessful)
+            {
+                // set the text for the modal and then raise it (not successful)
+            }
+            else
+            {
+                // set the text for the modal and then raise it (not successful)
+            }
+
+        }
     }
 }

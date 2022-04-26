@@ -24,13 +24,13 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.WebControls.DropDownList ddlUserRole;
 
         /// <summary>
-        /// phNameBlock control.
+        /// nbNewUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phNameBlock;
+        protected global::JAHub_ASPWebforms.Verification.usrNameBlock nbNewUserName;
 
         /// <summary>
         /// lblEmail control.
@@ -78,6 +78,15 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.WebControls.TextBox txtPasswordOnce;
 
         /// <summary>
+        /// cusPasswordOnce control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cusPasswordOnce;
+
+        /// <summary>
         /// txtPasswordSecond control.
         /// </summary>
         /// <remarks>
@@ -85,5 +94,23 @@ namespace JAHub_ASPWebforms.Administration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPasswordSecond;
+
+        /// <summary>
+        /// cusPasswordSecond control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cusPasswordSecond;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }
