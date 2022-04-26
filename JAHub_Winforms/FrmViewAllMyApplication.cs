@@ -60,52 +60,6 @@ namespace JAHub_Winforms
             }
         }
 
-        
-        //Grantinfo grantinfo = new Grantinfo();
-
-        
-        //private void pnlGrantDeleteContainer_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-            //const string message = "Are you sure you wish to delete this grant?";
-            //const string caption = "Deleting Grant";
-            //var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            
-            //SqlDataReader sqlData = cmd.ExecuteReader();
-
-            //while (sqlData.Read())
-                //{
-                    
-                    //grantinfo.ID = (int)sqlData["ID"];
-                    //grantinfo.GrantDescription = sqlData["Description"].ToString();
-                    //grantinfo.Requirement = sqlData["Requirements"].ToString();
-                    //grantinfo.ExpiryDate = (DateTime)sqlData["Deadline"];
-                    //grantinfo.ApplicationId = sqlData["Application_Form"].ToString();
-                    //grantinfo.GrantOfficerId = (int)sqlData["GrantOfficer"];
-                    //grantinfo.Title = sqlData["Title"].ToString();
-
-                    //Grant_Controls.ucGrantDisplay ucGrantDisplay = new Grant_Controls.ucGrantDisplay(grantinfo);
-                    //pnlContainerAdminViewGrants.Controls.Add(ucGrantDisplay);
-                    //ucGrantDisplay.Dock = DockStyle.Top;
-
-            //if (result == DialogResult.Yes)
-            //{
-                //Grantinfo grantinfo = new Grantinfo();
-                //int J = grantinfo.ID;
-                //grantinfo.DeleteGrant(J);
-
-
-
-                //}
-                //sqlData.Close();
-            //}
-        //}
-
-        private void btnViewAllMyGrants_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
         {
             Size = new Size(1102, 1200);
@@ -113,6 +67,92 @@ namespace JAHub_Winforms
             grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
 
             ReadFromDatabase(grantinfo.GrantOfficerId);
+        }
+
+        private void btnViewAllMyGrants_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen(" FrmViewAllMyApplication"))
+            {
+
+                FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+                frmViewAllMyApplication.MdiParent = this.MdiParent;
+                frmViewAllMyApplication.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmViewAllMyApplication")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+        }
+
+        private void btngrantcreate_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen(" FrmCreateGrant"))
+            {
+
+                FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
+                frmCreateGrant.MdiParent = this.MdiParent;
+                frmCreateGrant.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmCreateGrant")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+            
+        }
+
+        private void btnDeleteGrant_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen(" FrmViewAllMyApplication"))
+            {
+
+                FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+                frmViewAllMyApplication.MdiParent = this.MdiParent;
+                frmViewAllMyApplication.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmViewAllMyApplication")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+        }
+
+        private void btnUpdateGrant_Click(object sender, EventArgs e)
+        {
+            if (!Utils.IsFormOpen(" FrmViewAllMyApplication"))
+            {
+
+                FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
+                frmViewAllMyApplication.MdiParent = this.MdiParent;
+                frmViewAllMyApplication.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmViewAllMyApplication")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }
+           
         }
     }
 }

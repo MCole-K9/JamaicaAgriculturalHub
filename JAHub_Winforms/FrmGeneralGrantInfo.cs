@@ -55,7 +55,7 @@ namespace JAHub_Winforms
         private void FrmGeneralGrantInfo_Load(object sender, EventArgs e)
         {
 
-            Size = new Size(1102, 1200);
+          //  Size = new Size(1102, 1200);
             DisplayGrantinfo();
            
 
@@ -106,10 +106,5 @@ namespace JAHub_Winforms
            
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-           /* FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
-            frmViewAllMyApplication.Show(); */
-        }
     }
 }
