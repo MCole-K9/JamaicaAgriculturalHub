@@ -43,37 +43,10 @@ namespace JAHub_Winforms
         {
             try
             {
-                List<Product> products = new List<Product>();
-
-                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-                {
-                    connection.Open();
-
-                    Farmer farmer = new Farmer(true);
-                    farmer.FetchFarmerData();
-
-                    string query = $"Select * from Product Where Farmer = {farmer.FarmerId}";
-
-                    SqlCommand cmd = new SqlCommand(query, connection);
-
-                    using (SqlDataReader sqlData = cmd.ExecuteReader())
-                    {
-                        while (sqlData.Read())
-                        {
-                            Product product = new Product();
-
-                            product.Id = (int)sqlData["ID"];
-                            product.Name = sqlData["Name"].ToString();
-                            product.Stock = (int)sqlData["Stock"];
-                            product.Price = float.Parse(sqlData["Price"].ToString());
-                            product.Image = $"http://vtdics.com/ead22/" + sqlData["Image"].ToString();
-                            products.Add(product);
-
-                        }
-                    }
-                    LoadProducts(products);
-
-                }
+                Farmer farmer = new Farmer(true);
+                    
+                LoadProducts(farmer.GetFarmerProducts());
+                
             }
             catch (SqlException ex)
             {
