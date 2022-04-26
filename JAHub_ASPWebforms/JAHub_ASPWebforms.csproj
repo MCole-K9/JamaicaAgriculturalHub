@@ -167,6 +167,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
+    <Content Include="ManageProducts.aspx" />
     <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -191,6 +192,7 @@
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Resources\landscape.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
+    <Content Include="Shop_Controls\UsrFarmerProduct.ascx" />
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
@@ -329,6 +331,13 @@
     <Compile Include="Grants.aspx.designer.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Moderation\usrAddInfraction.ascx.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
@@ -372,6 +381,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrCartItem.ascx.designer.cs">
       <DependentUpon>UsrCartItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrFarmerProduct.ascx.cs">
+      <DependentUpon>UsrFarmerProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrFarmerProduct.ascx.designer.cs">
+      <DependentUpon>UsrFarmerProduct.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.cs">
       <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
