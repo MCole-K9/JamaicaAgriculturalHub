@@ -35,7 +35,7 @@
         <div class="col-lg-4">
             <div class="content-container">
                 <h3>Subtotal(Items: <span id="itemCount" runat="server"></span> ): $<span id="subtotal" runat="server"></span></h3>
-                <button class="btn btn-primary btn-style">Proceed to Checkout</button>
+                <button id="btnCheckout" runat="server" onserverclick="btnCheckout_ServerClick"  class="btn btn-primary btn-style">Proceed to Checkout</button>
             </div>
             
         </div>

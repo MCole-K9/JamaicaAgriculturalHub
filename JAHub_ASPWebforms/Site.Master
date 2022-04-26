@@ -13,7 +13,16 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="Resources/farmer-icon.png" rel="shortcut icon" type="image/x-icon" />
+    <style>
 
+        .fit-content-y{
+            height: fit-content;
+        }
+        .fit-content-x{
+            width: fit-content;
+        }
+
+    </style>
      <script type="text/javascript">
 
          //Programitically Calls the Login Modal..M.C
@@ -30,7 +39,7 @@
 
          $(document).ready(makeAdmininstrationVisible);
      </script>
-
+    
 </head>
 <body>
     <form runat="server">

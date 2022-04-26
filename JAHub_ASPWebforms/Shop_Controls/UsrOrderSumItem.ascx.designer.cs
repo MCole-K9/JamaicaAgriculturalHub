@@ -11,43 +11,43 @@ namespace JAHub_ASPWebforms.Shop_Controls
 {
 
 
-    public partial class UsrReview
+    public partial class UsrOrderSumItem
     {
 
         /// <summary>
-        /// Name control.
+        /// ProductImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Name;
+        protected global::System.Web.UI.HtmlControls.HtmlImage ProductImage;
 
         /// <summary>
-        /// Rating control.
+        /// ProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Rating;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProductName;
 
         /// <summary>
-        /// Headline control.
+        /// ProductPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Headline;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProductPrice;
 
         /// <summary>
-        /// Comment control.
+        /// Quantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Comment;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Quantity;
     }
 }

@@ -156,6 +156,7 @@
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
     <Content Include="Administration.aspx" />
     <Content Include="Cart.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -190,6 +191,7 @@
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Resources\landscape.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
+    <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
     <Content Include="ucWebBlog.ascx" />
@@ -282,6 +284,13 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -363,6 +372,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrCartItem.ascx.designer.cs">
       <DependentUpon>UsrCartItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.cs">
+      <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.designer.cs">
+      <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrProduct.ascx.cs">
       <DependentUpon>UsrProduct.ascx</DependentUpon>
