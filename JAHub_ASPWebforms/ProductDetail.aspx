@@ -152,11 +152,11 @@
                             <%--<h5>Over All Rating</h5>--%>
                             <label for="">Over All Rating</label>
                             <div style="position: relative;">
-                                <img class="star fit-content-y" src="http://vtdics.com/ead22/whitestar.png"/>
-                                <img class="star fit-content-y" src="http://vtdics.com/ead22/whitestar.png"/>
-                                <img class="star fit-content-y" src="http://vtdics.com/ead22/whitestar.png"/>
-                                <img class="star fit-content-y" src="http://vtdics.com/ead22/whitestar.png"/>
-                                <img class="star fit-content-y" src="http://vtdics.com/ead22/whitestar.png"/>
+                                <img class="star fit-content-y" src="https://vtdics.com/ead22/whitestar.png"/>
+                                <img class="star fit-content-y" src="https://vtdics.com/ead22/whitestar.png"/>
+                                <img class="star fit-content-y" src="https://vtdics.com/ead22/whitestar.png"/>
+                                <img class="star fit-content-y" src="https://vtdics.com/ead22/whitestar.png"/>
+                                <img class="star fit-content-y" src="https://vtdics.com/ead22/whitestar.png"/>
                                 <p id="clr-rating" class="d-none" onclick="deselectStars()">Clear Rating</p>
                             </div>
                             <div class="form-group" style="width: 100%">
@@ -190,11 +190,14 @@
 
             for (var i = 0; i <= stars.length; i++) {
 
-                stars[i].setAttribute("src", "http://vtdics.com/ead22/whitestar.png");
+                rating = 0;
+               
+                document.getElementById("<%=hidRating.ClientID%>").value = rating;
+
+                stars[i].setAttribute("src", "https://vtdics.com/ead22/whitestar.png");
 
             }
-            rating = 0;
-            document.getElementById("<%=hidRating.ClientID%>").value = rating;
+           
         }
 
         stars.forEach((star, index) => {
@@ -205,7 +208,7 @@
 
                 for (var i = 0; i <= index; i++) {
 
-                    stars[i].setAttribute("src", "http://vtdics.com/ead22/yellowstar.png");
+                    stars[i].setAttribute("src", "https://vtdics.com/ead22/yellowstar.png");
                 }
                 
             });
@@ -216,7 +219,7 @@
 
                 for (var i = 0; i <= index; i++) {
 
-                    stars[i].setAttribute("src", "http://vtdics.com/ead22/yellowstar.png");
+                    stars[i].setAttribute("src", "https://vtdics.com/ead22/yellowstar.png");
 
                 }
 
@@ -224,7 +227,7 @@
 
                     star.removeEventListener("mouseout", deselectStars);
                    
-                    if (star.getAttribute("src") === "http://vtdics.com/ead22/yellowstar.png") {
+                    if (star.getAttribute("src") === "https://vtdics.com/ead22/yellowstar.png") {
                         //Doesnt really prevent edge cases
                         if (rating <= 5) {
                             rating++
