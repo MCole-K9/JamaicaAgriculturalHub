@@ -88,7 +88,7 @@
             this.btnUpdateGrant.FlatAppearance.BorderSize = 0;
             this.btnUpdateGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdateGrant.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnUpdateGrant.IconChar = FontAwesome.Sharp.IconChar.PenSquare;
             this.btnUpdateGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdateGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpdateGrant.IconSize = 30;
@@ -103,6 +103,7 @@
             this.btnUpdateGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateGrant.UseVisualStyleBackColor = false;
+            this.btnUpdateGrant.Click += new System.EventHandler(this.btnUpdateGrant_Click);
             // 
             // btnDeleteGrant
             // 
@@ -111,7 +112,7 @@
             this.btnDeleteGrant.FlatAppearance.BorderSize = 0;
             this.btnDeleteGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnDeleteGrant.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnDeleteGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDeleteGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteGrant.IconSize = 30;
@@ -126,6 +127,7 @@
             this.btnDeleteGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteGrant.UseVisualStyleBackColor = false;
+            this.btnDeleteGrant.Click += new System.EventHandler(this.btnDeleteGrant_Click);
             // 
             // btnViewall
             // 
@@ -134,7 +136,7 @@
             this.btnViewall.FlatAppearance.BorderSize = 0;
             this.btnViewall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewall.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btnViewall.IconChar = FontAwesome.Sharp.IconChar.BorderAll;
             this.btnViewall.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnViewall.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnViewall.IconSize = 30;
@@ -157,7 +159,7 @@
             this.btngrantcreate.FlatAppearance.BorderSize = 0;
             this.btngrantcreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btngrantcreate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btngrantcreate.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            this.btngrantcreate.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.btngrantcreate.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btngrantcreate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btngrantcreate.IconSize = 30;
@@ -172,6 +174,7 @@
             this.btngrantcreate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btngrantcreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btngrantcreate.UseVisualStyleBackColor = false;
+            this.btngrantcreate.Click += new System.EventHandler(this.btngrantcreate_Click);
             // 
             // btngrantHome
             // 
@@ -180,7 +183,7 @@
             this.btngrantHome.FlatAppearance.BorderSize = 0;
             this.btngrantHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btngrantHome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btngrantHome.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btngrantHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btngrantHome.IconSize = 30;

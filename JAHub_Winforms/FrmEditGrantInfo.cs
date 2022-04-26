@@ -31,13 +31,28 @@ namespace JAHub_Winforms
 
         private void FrmEditGrantInfo_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         private void btngrantcreate_Click(object sender, EventArgs e)
         {
-            FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
-            frmCreateGrant.ShowDialog();    
+            if (!Utils.IsFormOpen(" FrmCreateGrant"))
+            {
+
+                FrmCreateGrant frmCreateGrant = new FrmCreateGrant();
+                frmCreateGrant.MdiParent = this.MdiParent;
+                frmCreateGrant.Show();
+            }
+            else
+            {
+                foreach (var form in this.MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmCreateGrant")
+                    {
+                        form.BringToFront();
+                    }
+                }
+            }  
         }
 
         private void btngrantHome_Click(object sender, EventArgs e)
