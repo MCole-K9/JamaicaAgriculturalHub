@@ -23,9 +23,36 @@
             <blockquote>
                 <p runat="server" id="lblBlogBody">Some text in the body of the blog</p>
          </blockquote>
+
+            <div class="ratingWrap">
+                <label>Rating</label>
+                <div class="ratingBtnWrap">
+                    <button type="button" class="btn btn-default btnRating btn-primary" runat="server" id="btnRatingUp" onserverClick="RatingUp">
+                        <span class="glyphicon glyphicon-thumbs-up" style="color:white; font-size:large;"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btnRating btn-primary" runat="server" id="btnRatingDown" onserverClick="RatingDown">
+                        <span class="glyphicon glyphicon-thumbs-down" style="color:white; font-size:large;"></span>
+                    </button>
+                </div>
+            </div>
+
         </div>
+        
     </div>
     <style>
+        .ratingWrap, .ratingBtnWrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .ratingBtnWrap{
+            width: 95px;
+        }
+        .ratingWrap label{
+            float: left;
+        }
+        .btnRating{
+            width: fit-content;
+        }
         .container{
             padding: 0;
         }
