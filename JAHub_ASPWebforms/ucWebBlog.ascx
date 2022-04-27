@@ -8,14 +8,14 @@
         <h5>Description:<b runat="server" id="lblDescription"></b></h5>
     </div>
     <div class="View-Rating-Wrap" style="height:100%;">
-        <asp:button type="button" class="btn btn-default btnView" runat="server" id="btnView" OnClick="btnView_Click" Text="View"></asp:button>
+        <asp:button type="button" class="btn btn-default btnView btn-primary" runat="server" id="btnView" OnClick="btnView_Click" Text="View"></asp:button>
         <button type="button" class="btn btn-basic btnRating"><span class="glyphicon glyphicon-thumbs-up" style="margin-right: 5px; color:black; font-size:large;"></span><span class="badge" runat="server" id="lblRating">7</span></button>
     </div>
     
 </div>
 <style>
     .well{
-        background-color: lightseagreen;
+        background-color: #ddd;
         box-shadow: 0 0 10px 1px rgba(0,0,0,0.4);
         height: 162px;
     }
@@ -50,7 +50,7 @@
         list-style: none;
     }
     .ViewButton{
-      float:right;
+        float:right;
         height: 26px;
     }
     .blog-text-wrapper{
