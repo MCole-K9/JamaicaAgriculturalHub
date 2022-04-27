@@ -102,8 +102,6 @@ namespace JAHubLib
             }
         }
 
-
-
         public void UpdateGrant(int userID)
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
@@ -119,25 +117,9 @@ namespace JAHubLib
                 adapter.Fill(dataTable);
                 cmd.ExecuteNonQuery();
 
-
-               /* {
-                    while (sqlRead.Read())
-                    {
-
-                        grantinfo.ID = (int)sqlRead["ID"];
-                        grantinfo.GrantDescription = sqlRead["Description"].ToString();
-                        grantinfo.Requirement = sqlRead["Requirements"].ToString();
-                        grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
-                        grantinfo.ApplicationId = sqlRead["Application_Form"].ToString();
-                        grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
-                        grantinfo.Title = sqlRead["Title"].ToString();
-
-                    }*/
                 }
 
             }
-
-
 
         public string uploadfile( string filename)
         {
@@ -152,8 +134,6 @@ namespace JAHubLib
                 Utilities.FTPFileUpload(grantinfo.FilePath, grantinfo.FileName);
 
                 filename = grantinfo.FileName; 
-
-
             }
             return filename;
         }

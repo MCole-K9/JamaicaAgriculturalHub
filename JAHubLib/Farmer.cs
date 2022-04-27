@@ -133,6 +133,40 @@ namespace JAHubLib
            
         }
 
+        public List<Product> GetFarmerProducts()
+        {
+            List<Product> products = new List<Product>();
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                FetchFarmerData();
+
+                string query = $"Select * from Product Where Farmer = {FarmerId}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    while (sqlData.Read())
+                    {
+                        Product product = new Product();
+
+                        product.Id = (int)sqlData["ID"];
+                        product.Name = sqlData["Name"].ToString();
+                        product.Stock = (int)sqlData["Stock"];
+                        product.Price = float.Parse(sqlData["Price"].ToString());
+                        product.Image = $"http://vtdics.com/ead22/" + sqlData["Image"].ToString();
+                        products.Add(product);
+
+                    }
+                }
+
+                
+            }
+            return products;
+        }
         public int UpdateProduct(Product product)
         {
             string productImageName = Path.GetFileName(product.GetUploadedImagePath());

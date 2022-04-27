@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnApplyforGrant = new FontAwesome.Sharp.IconButton();
             this.btngrantHome = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -64,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(264, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 40);
+            this.label1.Size = new System.Drawing.Size(285, 39);
             this.label1.TabIndex = 61;
             this.label1.Text = "Available Grants";
             // 
@@ -82,7 +81,6 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlNav.Controls.Add(this.iconButton1);
             this.pnlNav.Controls.Add(this.btnApplyforGrant);
             this.pnlNav.Controls.Add(this.btngrantHome);
             this.pnlNav.Controls.Add(this.pnlLogo);
@@ -90,33 +88,8 @@
             this.pnlNav.Location = new System.Drawing.Point(0, 0);
             this.pnlNav.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(188, 822);
+            this.pnlNav.Size = new System.Drawing.Size(194, 822);
             this.pnlNav.TabIndex = 63;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 267);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.iconButton1.Size = new System.Drawing.Size(188, 58);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "Apply";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btnApplyforGrant
             // 
@@ -135,7 +108,7 @@
             this.btnApplyforGrant.Margin = new System.Windows.Forms.Padding(4);
             this.btnApplyforGrant.Name = "btnApplyforGrant";
             this.btnApplyforGrant.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.btnApplyforGrant.Size = new System.Drawing.Size(188, 58);
+            this.btnApplyforGrant.Size = new System.Drawing.Size(194, 58);
             this.btnApplyforGrant.TabIndex = 3;
             this.btnApplyforGrant.Text = "Apply";
             this.btnApplyforGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,7 +133,7 @@
             this.btngrantHome.Margin = new System.Windows.Forms.Padding(4);
             this.btngrantHome.Name = "btngrantHome";
             this.btngrantHome.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.btngrantHome.Size = new System.Drawing.Size(188, 58);
+            this.btngrantHome.Size = new System.Drawing.Size(194, 58);
             this.btngrantHome.TabIndex = 1;
             this.btngrantHome.Text = "Home";
             this.btngrantHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -175,7 +148,7 @@
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(188, 151);
+            this.pnlLogo.Size = new System.Drawing.Size(194, 151);
             this.pnlLogo.TabIndex = 0;
             // 
             // pbgeneralgrantinfonav
@@ -243,6 +216,5 @@
         private System.Windows.Forms.Panel pnlLogo;
         private FontAwesome.Sharp.IconButton btnDeleteGrant;
         private System.Windows.Forms.PictureBox pbgeneralgrantinfonav;
-        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

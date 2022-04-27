@@ -63,6 +63,7 @@ namespace JAHubLib
                             Review review = new Review();
 
                             review.Id = (int)sqlData["ID"];
+                            review.Headline = sqlData["Headline"].ToString();
                             review.Comment = sqlData["Comment"].ToString();
                             review.Rating = (int)sqlData["Rating"];
                             review.Customer = new Customer((int)sqlData["Customer"]);
