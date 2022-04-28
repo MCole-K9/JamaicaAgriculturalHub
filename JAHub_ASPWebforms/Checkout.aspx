@@ -70,38 +70,38 @@
                         <div class="row">
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">First Name:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipFirstName">
+                                    <label for="ShipFirstName">First Name:</label>
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipFirstName">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Last Name:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipLastName">
+                                    <label for="ShipLastName">Last Name:</label>
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipLastName">
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Email Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipEmail">
+                                    <label for="ShipEmail">Email Address:</label>
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipEmail">
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Street Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipStreetAdress">
+                                    <label for="ShipStreetAdress">Street Address:</label>
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipStreetAdress">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">City/Town:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipCity">
+                                    <label for="ShipCity">City/Town:</label>
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipCity">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Parish:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="ShipParish">
+                                    <label for="ShipParish">Parish:</label>
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipParish">
                                 </div>
                             </div>
 
@@ -140,7 +140,7 @@
                             <%--<button class="accordion ">Section 1</button>--%>
                             <div class="radio fit-content-x">
                                 <label>
-                                    <input class="accordion fit-content-x" name="paymentMethod" type="radio" value="Card">Pay With Credit/Debit Card</label>
+                                    <input class="accordion fit-content-x" name="paymentMethod" type="radio" value="Credit/Debit Card">Pay With Credit/Debit Card</label>
                             </div>
                             <div class="acc-content">
                                 <div class="row">
@@ -192,13 +192,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel-footer">
+                                           <%-- <div class="panel-footer">
                                                 <div class="row">
                                                     <div class="col-xs-12 fit-content-y">
                                                         <button class="btn btn-success btn-lg btn-block">Confirm Payment</button>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>--%>
                                         </div>
                                     </div>
                                 </div>
@@ -223,45 +223,46 @@
                         <div id="BillingAddress" class="row" style="display: none">
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">First Name:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingFirstName">
+                                    <label for="BillingFirstNam">First Name:</label>
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingFirstName">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Last Name:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingLastName">
+                                    <label for="BillingLastName">Last Name:</label>
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingLastName">
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Email Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingEmail">
+                                    <label for="BillingEmail">Email Address:</label>
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingEmail">
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Street Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingStreetAdress">
+                                    <label for="BillingStreetAdress">Street Address:</label>
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingStreetAdress">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">City/Town:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="BillingCity">
+                                    <label for="BillingCity">City/Town:</label>
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingCity">
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
-                                    <label for="usr">Parish:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" id="BIllingParish">
+                                    <label for="BIllingParish">Parish:</label>
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BIllingParish">
                                 </div>
                             </div>
 
                         </div>
                         <%----Address Block--%>
-                        <div style="display: flex; justify-content: start">
-                            <button type="button" id="btnBack" class="btn btn-primary fit-content-x" style="padding: 5px 30px">Back</button>
+                        <div style="display: flex; justify-content: space-between">
+                            <button type="button" id="btnBack" class="btn btn-primary fit-content-x" style="padding: 5px 30px;">Back</button>
+                            <button type="button" runat="server" onserverclick="btnPlaceOrder_ServerClick" id="btnPlaceOrder" class="btn btn-primary fit-content-x" style="padding: 5px 50px; visibility: hidden;">Place Order</button>
                         </div>
                     </div>
                 </div>
@@ -281,6 +282,8 @@
 
         </div>
     </div>
+    <input type="hidden" name="hidPaymentMethod" id="hidPaymentMethod" runat="server" enableviewstate="true" />
+    <input type="hidden" name="hidBIS" id="hidBillingIsShipping" runat="server" value="true" enableviewstate="true" />
 
 
     <script type="text/javascript">
@@ -296,6 +299,12 @@
             $("#BillingStreetAdress").val($("#ShipStreetAdress").val());
             $("#BillingCity").val($("#ShipCity").val());
             $("#BillingParish").val($("#ShipParish").val());
+        });
+
+        $("#btnBack").on("click", (event) => {
+            event.preventDefault();
+            $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+
         });
 
         var acc = document.getElementsByClassName("accordion");
@@ -326,6 +335,11 @@
             }
             // Processing only those that match the name attribute of the currently clicked button...
             $('input[name="' + $(this).attr('name') + '"]').not($(this)).trigger('deselect'); // Every member of the current radio group except the clicked one...
+
+            //Make Place Order Btn Visible
+            $("#" + "<%=btnPlaceOrder.ClientID%>").css("visibility", " visible")
+            //Set Payment Method
+            $("#" + "<%=hidPaymentMethod.ClientID%>").val($(this).val());
         });
 
         $('input[type="radio"]').bind('deselect', function () {
@@ -362,7 +376,7 @@
 
                 $("#BillingAddress").css("display", "block");
 
-
+                $("#<%=hidBillingIsShipping.ClientID%>").val("true");
             } else {
 
                 $("#BillingFirstName").val($("#ShipFirstName").val());
@@ -374,6 +388,8 @@
 
 
                 $("#BillingAddress").css("display", "none");
+
+                $("#<%=hidBillingIsShipping.ClientID%>").val("false");
 
             }
 
