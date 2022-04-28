@@ -263,6 +263,7 @@
     </Compile>
     <Compile Include="AdministrationPage.aspx.cs">
       <DependentUpon>AdministrationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdministrationPage.aspx.designer.cs">
       <DependentUpon>AdministrationPage.aspx</DependentUpon>

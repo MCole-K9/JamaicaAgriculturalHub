@@ -24,8 +24,8 @@
     
     
     <div class ="row">
-        <asp:Button runat="server" ID="btnSelectUser" Text="Select User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnSelectUser_Click" CausesValidation="False" />
-        <asp:Button runat="server" ID="btnCreateNewUser" Text="Create New User" CssClass="text btn btn-default input-sm col-sm-2" OnClick="btnCreateNewUser_Click" CausesValidation="False" />
+        <asp:Button runat="server" ID="btnSelectUser" Text="Select User" CssClass="btn btn-default input-sm col-sm-2" OnClick="btnSelectUser_Click" CausesValidation="False" EnableViewState="False" />
+        <asp:Button runat="server" ID="btnCreateNewUser" Text="Create New User" CssClass="text btn btn-default input-sm col-sm-2" OnClick="btnCreateNewUser_Click" CausesValidation="False" EnableViewState="False" />
         <!-- Options that should only become available when a user is selected-->
         <asp:UpdatePanel runat="server" ID="udpUserOptions">
             <Triggers>

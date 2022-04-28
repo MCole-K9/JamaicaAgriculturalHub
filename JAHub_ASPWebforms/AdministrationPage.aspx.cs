@@ -11,46 +11,6 @@ using JAHubLib;
 
 namespace JAHub_ASPWebforms
 {
-    public class UserGridView : GridView
-    {
-        public UserGridView()
-        {
-            GridView dataGrid = new GridView();
-
-            dataGrid.Columns.Clear();
-            dataGrid.AutoGenerateColumns = false;
-
-            DataTable dtAllusers = Admin.GetUserDataTable();
-            dataGrid.DataSource = dtAllusers;
-
-            // Creating the BoundFields
-            BoundField bfIdColumn = new BoundField();
-            bfIdColumn.DataField = "UserID";
-            bfIdColumn.HeaderText = "ID";
-            bfIdColumn.ControlStyle.CssClass = "text input-sm col-sm-2";
-
-            BoundField bfNameColumn = new BoundField();
-            bfNameColumn.DataField = "UserFullName";
-            bfNameColumn.HeaderText = "Name";
-
-            BoundField bfUserRoleColumn = new BoundField();
-            bfUserRoleColumn.DataField = "User Role";
-            bfUserRoleColumn.HeaderText = "User Role";
-
-            ButtonField btfSelectUserColumn = new ButtonField();
-            btfSelectUserColumn.ButtonType = ButtonType.Button;
-            btfSelectUserColumn.CommandName = "SelectUser";
-            btfSelectUserColumn.Text = "Select User";
-            btfSelectUserColumn.ControlStyle.CssClass = "btn btn-default input-sm col-sm-3";
-
-            // Adding the BoundFields and Buttonfield to the Table
-            dataGrid.Columns.Add(bfIdColumn);
-            dataGrid.Columns.Add(bfNameColumn);
-            dataGrid.Columns.Add(bfUserRoleColumn);
-            dataGrid.Columns.Add(btfSelectUserColumn);
-            dataGrid.DataBind();
-        }
-    }
 
 
     public partial class AdministrationPage : System.Web.UI.Page
