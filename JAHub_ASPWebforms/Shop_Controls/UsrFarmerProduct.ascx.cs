@@ -54,5 +54,11 @@ namespace JAHub_ASPWebforms.Shop_Controls
         {
 
         }
+
+        protected void btnEdit_ServerClick(object sender, EventArgs e)
+        {
+            Session["ProdToEdit"] = this.product;
+            Response.Redirect("AddProduct.aspx");
+        }
     }
 }

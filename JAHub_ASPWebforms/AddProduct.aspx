@@ -17,7 +17,7 @@
     <div style="margin: 40px 0">
         <div class="content-container row" style="padding: 40px 40px; margin: 0 auto; max-width: 80%">
             <div class="col-lg-6 fit-content-y">
-                <img id="ProductImage" class="img-responsive img-rounded img-thumbnail" src="Resources/700x500.png"/>
+                <img id="ProductImage" runat="server" class="img-responsive img-rounded img-thumbnail" src="Resources/700x500.png"/>
                 <asp:FileUpload ID="fupProductImage" CssClass="mt-4" runat="server" />
 
             </div>
@@ -40,7 +40,6 @@
                 </div>
                 <div class="form-group">
                     <label for="usr">Category:</label>
-                    <%--<input type="text" class="form-control" id="usr">--%>  
                     <asp:DropDownList ID="CategoryDropDown" CssClass="d-block mw-input" runat="server" Height="35px"></asp:DropDownList>
                 </div>
 
@@ -62,7 +61,7 @@
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     
-                    $('#ProductImage').attr('src', e.target.result);
+                    $('#'+'<%=ProductImage.ClientID%>').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(files[0]);
             }
