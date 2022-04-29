@@ -22,7 +22,7 @@
 
 <div>
     <div class="row">
-        <asp:DropDownList runat="server" ID="ddlUserRole" CssClass="btn btn-default input-sm col-lg-2" ValidationGroup="CreateNewUserGroup"></asp:DropDownList>
+        <asp:DropDownList runat="server" ID="ddlUserRole" CssClass="btn btn-default input-sm col-lg-2" ValidationGroup="CreateNewUserGroup" CausesValidation="True"></asp:DropDownList>
     </div>
     <div>
         <uc:NameBlock ID="nbNewUserName" runat="server" />
@@ -62,7 +62,7 @@
                         ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate" EnableClientScript="False" />
                 </div>
             </div>
-                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" ValidationGroup="CreateNewUserGroup" />
+                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" ValidationGroup="CreateNewUserGroup" CausesValidation="True" />
         </ContentTemplate>
     </asp:UpdatePanel>
 

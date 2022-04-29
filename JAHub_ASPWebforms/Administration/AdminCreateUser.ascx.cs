@@ -106,7 +106,7 @@ namespace JAHub_ASPWebforms.Administration
                 newUser.UserRole = (UserRole)ddlUserRole.SelectedIndex;
                 newUser.Password = txtPasswordOnce.Text;
 
-                newUser.WriteToDatabase();
+                //newUser.WriteToDatabase();
 
                 isWriteSuccessful = true;
             }
