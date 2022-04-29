@@ -32,7 +32,7 @@
             <asp:Label runat="server" ID="lblEmail" EnableViewState="False">Email: </asp:Label>
             <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" ValidationGroup="CreateNewUserGroup"></asp:TextBox>
             <asp:RegularExpressionValidator runat="server" ErrorMessage="Must be a Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                ControlToValidate="txtEmail" EnableViewState="False"></asp:RegularExpressionValidator>
+                ControlToValidate="txtEmail" EnableViewState="False" EnableClientScript="False"></asp:RegularExpressionValidator>
         </div>
     </div>
     
@@ -51,7 +51,7 @@
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>
                     <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False" ValidationGroup="CreateNewUserGroup"></asp:TextBox>
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
-                        ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate"/>
+                        ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
                 </div>
             </div>
             <div class="row">
@@ -59,7 +59,7 @@
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Re-Type Password: </asp:Label>
                     <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="Password" EnableViewState="False" ValidationGroup="CreateNewUserGroup" />
                     <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" 
-                        ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate"/>
+                        ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate" EnableClientScript="False" />
                 </div>
             </div>
                 <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" ValidationGroup="CreateNewUserGroup" />
