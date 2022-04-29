@@ -285,12 +285,6 @@
     <Compile Include="FrmViewAllMyApplication.Designer.cs">
       <DependentUpon>FrmViewAllMyApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grant_Controls\ucGrantDelete.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Grant_Controls\ucGrantDelete.Designer.cs">
-      <DependentUpon>ucGrantDelete.cs</DependentUpon>
-    </Compile>
     <Compile Include="Grant_Controls\ucGrantDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -569,9 +563,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmViewAllMyApplication.resx">
       <DependentUpon>FrmViewAllMyApplication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grant_Controls\ucGrantDelete.resx">
-      <DependentUpon>ucGrantDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grant_Controls\ucGrantDisplay.resx">
       <DependentUpon>ucGrantDisplay.cs</DependentUpon>

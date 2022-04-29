@@ -7,47 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Shop_Controls
+namespace JAHub_ASPWebforms
 {
 
 
-    public partial class UsrReview
+    public partial class Checkout
     {
 
         /// <summary>
-        /// Name control.
+        /// CartCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Name;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CartCount;
 
         /// <summary>
-        /// Rating control.
+        /// pnlOrderSummery control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Rating;
+        protected global::System.Web.UI.WebControls.Panel pnlOrderSummery;
 
         /// <summary>
-        /// Headline control.
+        /// Subtotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Headline;
-
-        /// <summary>
-        /// Comment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Comment;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Subtotal;
     }
 }

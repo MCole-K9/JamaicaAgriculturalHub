@@ -43,13 +43,17 @@ namespace JAHub_Winforms
             rtbrequirement.Text = grantinfo.Requirement;
             txtapplicationnumber.Text = grantinfo.Application_Form;
 
-            // FrmGrantDetails form1 = new FrmGrantDetails(grantinfo);
-
         }
 
         private void btnuploadfile_Click(object sender, EventArgs e)
         {
             grantinfo.uploadfile(grantinfo.Application_Form);
+        }
+
+        private void btnHome_Click (object sender, EventArgs e)
+        {
+            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
+            frmGeneralGrantInfo.ShowDialog();   
         }
     }
 }

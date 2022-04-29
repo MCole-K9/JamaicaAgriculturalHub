@@ -35,5 +35,10 @@ namespace JAHub_ASPWebforms
             subtotal.InnerText = JAHubLib.Cart.CaluculateTotal().ToString();
             itemCount.InnerText = JAHubLib.Cart.ShoppingCart.Count().ToString();
         }
+
+        protected void btnCheckout_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Checkout.aspx");
+        }
     }
 }
