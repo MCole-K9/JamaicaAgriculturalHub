@@ -2,7 +2,7 @@
 
 <%@ Register Src="~/Verification/usrNameBlock.ascx" TagName="NameBlock" TagPrefix="uc"%>
 
-<script>
+<script type="text/javascript">
 
     function RaiseSubmitModal() {
         $('#submitModal').modal('show');
@@ -13,6 +13,8 @@
     }
 
 </script>
+
+<asp:ScriptManagerProxy runat="server"></asp:ScriptManagerProxy>
 
 
 <div>
