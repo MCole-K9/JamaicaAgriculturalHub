@@ -12,15 +12,28 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int id = (int)Session["UserID"];
+            }catch(Exception)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "clickLoginNavBtn()", true);
+            }
         }
 
         protected void btnPost_Click(object sender, EventArgs e)
         {
-            Blog blog = new Blog();
-            string ParsedBlody = txtBlogBody.Value.Replace("'","''");
-            blog.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBlody);
-            
+            if (txtBlogBody.Value == " " || txtDescription.Value == "" || txtTitle.Value == "")
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "alertFunction", "alert(\"Fill Out All Feilds\")", true);
+            }
+            else
+            {
+                Blog blog = new Blog();
+                string ParsedBlody = txtBlogBody.Value.Replace("'", "''");
+                blog.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBlody);
+                Response.Redirect("~/Blog.aspx");
+            }
         }
     }
 }

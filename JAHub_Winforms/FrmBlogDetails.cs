@@ -86,9 +86,8 @@ namespace JAHub_Winforms
 
         private void btnRatingUp_Click(object sender, EventArgs e)
         {
-            List<FrmBlog> bloglist = new List<FrmBlog>();
             displayedBlog.Rating++;
-            SqlConnection connection = new SqlConnection("Data Source = jamaicaagriculturalhub.mssql.somee.com; Initial Catalog = jamaicaagriculturalhub; Persist Security Info = True; User ID = Ethan_Hughs_SQLLogin_1; Password = yq8mavdef8");
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
             connection.Open();
             SqlCommand cmd = new SqlCommand($"UPDATE Blog SET Rating = {displayedBlog.Rating} WHERE ID = {displayedBlog.BlogID}",connection);
             cmd.ExecuteNonQuery();

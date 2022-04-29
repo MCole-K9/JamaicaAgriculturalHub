@@ -154,6 +154,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\usrNavbarAccountLogout.ascx" />
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="Administration.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -168,6 +169,7 @@
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
     <Content Include="ManageProducts.aspx" />
+    <Content Include="Resources\700x500.png" />
     <Content Include="Register.aspx" />
     <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
@@ -261,6 +263,13 @@
     </Compile>
     <Compile Include="Account\usrNavbarLoginRegister.ascx.designer.cs">
       <DependentUpon>usrNavbarLoginRegister.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration.aspx.cs">
       <DependentUpon>Administration.aspx</DependentUpon>
@@ -442,7 +451,6 @@
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
@@ -542,6 +550,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Temp\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

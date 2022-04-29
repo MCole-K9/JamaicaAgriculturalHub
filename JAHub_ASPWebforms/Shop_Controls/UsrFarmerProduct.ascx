@@ -13,13 +13,13 @@
            <h5>$<span id="Price" runat="server">25.00</span> Per <asp:Label ID="lblUnit" runat="server" Text="Lbs"></asp:Label></h5>
         </div>
         <div class="col-xs-4 fit-content-y">
-            <button runat="server" id="btnEdit" type="button" class="btn btn-link fit-content-x">
+            <button runat="server" id="btnEdit" onserverclick="btnEdit_ServerClick" type="button" class="btn btn-link fit-content-x">
                 <span class="glyphicon glyphicon-pencil"></span>
                 Edit
             </button>
         </div>
         <div class="col-xs-4 fit-content-y">
-            <button runat="server" id="btnDelete" onserverclick="btnDelete_ServerClick" type="button" class="btn btn-link fit-content-x">
+            <button runat="server" id="btnDelete" onclick="if(window.confirmDelete()) {return true;}" onserverclick="btnDelete_ServerClick" type="button" class="btn btn-link fit-content-x">
                 <span class="glyphicon glyphicon-trash"></span>
                 Delete
             </button>
