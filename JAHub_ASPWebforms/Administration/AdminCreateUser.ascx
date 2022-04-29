@@ -22,7 +22,7 @@
 
 <div>
     <div class="row">
-        <asp:DropDownList runat="server" ID="ddlUserRole" CssClass="btn btn-default input-sm col-lg-2"></asp:DropDownList>
+        <asp:DropDownList runat="server" ID="ddlUserRole" CssClass="btn btn-default input-sm col-lg-2" ValidationGroup="CreateNewUserGroup"></asp:DropDownList>
     </div>
     <div>
         <uc:NameBlock ID="nbNewUserName" runat="server" />
