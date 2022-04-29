@@ -92,6 +92,8 @@ namespace JAHub_ASPWebforms.Administration
             User newUser = new User();
             bool isWriteSuccessful = false;
 
+            Page.Validate("CreateNewUserGroup");
+
             if (Page.IsValid)
             {
                 newUser.FirstName = nbNewUserName.FirstName;
