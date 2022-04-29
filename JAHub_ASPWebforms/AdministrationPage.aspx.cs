@@ -161,6 +161,7 @@ namespace JAHub_ASPWebforms
             LastControl = AdminUserControls.SelectUser;
 
             lblCurrentUser.Text = "Current User: none selected";
+
         }
 
         protected void btnDeleteNo_Click(object sender, EventArgs e)
