@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div style="margin: 40px 0 ">
         <div class="content-container" style="padding: 40px 40px">
-            <button runat="server" id="btnAddProduct" type="button" class="btn btn-primary  fit-content-x" style="padding: 8px 15px">
+            <button runat="server" id="btnAddProduct" onserverclick="btnAddProduct_ServerClick" type="button" class="btn btn-primary  fit-content-x" style="padding: 8px 15px">
                 <span class="glyphicon glyphicon-plus"></span>
                 Add Product
             </button>
@@ -17,5 +17,12 @@
         </div>
 
     </div>
+    <script type="text/javascript">
+        
+        function confirmDelete() {
+            
+            return !confirm("Are you sure you want to delete this item");
+        }
+    </script>
 
 </asp:Content>

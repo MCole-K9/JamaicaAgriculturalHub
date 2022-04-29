@@ -53,6 +53,17 @@ namespace JAHub_ASPWebforms.Shop_Controls
         protected void btnDelete_ServerClick(object sender, EventArgs e)
         {
 
+            Farmer farmer = new Farmer(1);
+            if(farmer.DeleteProduct(this.product) > 0)
+            {
+                Response.Redirect(Request.RawUrl);
+            }
+        }
+
+        protected void btnEdit_ServerClick(object sender, EventArgs e)
+        {
+            Session["ProdToEdit"] = this.product;
+            Response.Redirect("AddProduct.aspx");
         }
     }
 }

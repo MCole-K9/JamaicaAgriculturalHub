@@ -10,10 +10,10 @@ namespace JAHub_ASPWebforms
 {
     public static class Util
     {
-        public static string GetSolFilePath()
+        public static string GetFilePath()
         {
             string path = HttpRuntime.AppDomainAppPath;
-            return path.Substring(0, path.Length - 19);
+            return path.Substring(0, path.Length - 1);
         }
         public static string getConnectionString()
         {
