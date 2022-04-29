@@ -42,7 +42,7 @@
         
     </div>
 
-    <asp:UpdatePanel runat="server" ID="udpAdminPlaceholder" ChildrenAsTriggers="False" UpdateMode="Conditional" EnableViewState="False">
+    <asp:UpdatePanel runat="server" ID="udpAdminPlaceholder" ChildrenAsTriggers="True" UpdateMode="Always" EnableViewState="False">
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="btnSelectuser" EventName="Click" />
             <asp:AsyncPostBackTrigger ControlID="btnCreatenewUser" EventName="Click" />

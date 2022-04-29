@@ -25,7 +25,7 @@ namespace JAHub_ASPWebforms
         {
             get
             {
-                return this.ViewState["LastControl"] == null ? 0 : (AdminUserControls)this.ViewState["LastControl"];
+                return this.ViewState["LastControl"] == null ? AdminUserControls.SelectUser : (AdminUserControls)this.ViewState["LastControl"];
             }
             set
             {
@@ -70,6 +70,10 @@ namespace JAHub_ASPWebforms
             {
                 switch (LastControl)
                 {
+                    // When I call an async postback on stuff inside of the updatepanel, it seems to get a version of LastControl
+                    // that isn't set to anything, and thus does the default option (which is InsertSelectUser)
+                    // This means i need to somehow add something that works across postbacks in updatepanels, or postbacks generally
+                    // not sure yet
                     default:
                         InsertSelectUser();
                         break;
@@ -107,12 +111,14 @@ namespace JAHub_ASPWebforms
         protected void btnSelectUser_Click(object sender, EventArgs e)
         {
             LastControl = AdminUserControls.SelectUser;
+            ViewState.SetItemDirty("LastControl", true);
             InsertSelectUser();
         }
 
         protected void btnCreateNewUser_Click(object sender, EventArgs e)
         {
             LastControl = AdminUserControls.CreateUser;
+            ViewState.SetItemDirty("LastControl", true);
             InsertCreateUser();
         }
 
@@ -126,14 +132,14 @@ namespace JAHub_ASPWebforms
         protected void btnEditUser_Click(object sender, EventArgs e)
         {
             LastControl = AdminUserControls.EditUser;
-
+            ViewState.SetItemDirty("LastControl", true);
             InsertEditUser();            
         }
 
         protected void btnViewModeration_Click(object sender, EventArgs e)
         {
             LastControl = AdminUserControls.ViewModeration;
-
+            ViewState.SetItemDirty("LastControl", true);
             InsertViewModeration();
         }
 
@@ -159,7 +165,7 @@ namespace JAHub_ASPWebforms
 
             // This ensures that on the next pageback, it will bring up the SelectUser UC
             LastControl = AdminUserControls.SelectUser;
-
+            ViewState.SetItemDirty("LastControl", true);
             lblCurrentUser.Text = "Current User: none selected";
 
         }

@@ -37,7 +37,7 @@
     </div>
     
     
-    <asp:UpdatePanel runat="server" ID="udpPassword" UpdateMode="Conditional">
+    <asp:UpdatePanel runat="server" ID="udpPassword" UpdateMode="Conditional" ChildrenAsTriggers="False">
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="chkShowPassword" EventName="CheckedChanged" />
         </Triggers>
