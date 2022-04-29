@@ -30,7 +30,7 @@
     <div class="row">
         <div>
             <asp:Label runat="server" ID="lblEmail" EnableViewState="False">Email: </asp:Label>
-            <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" ValidationGroup="CreateNewUserGroup"></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" ValidationGroup="CreateNewUserGroup" CausesValidation="True"></asp:TextBox>
             <asp:RegularExpressionValidator runat="server" ErrorMessage="Must be a Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                 ControlToValidate="txtEmail" EnableViewState="False" EnableClientScript="False"></asp:RegularExpressionValidator>
         </div>
@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False" ValidationGroup="CreateNewUserGroup"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False" ValidationGroup="CreateNewUserGroup" CausesValidation="True"></asp:TextBox>
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
                         ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
                 </div>
