@@ -90,11 +90,37 @@ namespace JAHub_ASPWebforms
 
             }
         }
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                InsertSelectUser();
+                LastControl = AdminUserControls.SelectUser;
+            }
+            else
+            {
+                switch (LastControl)
+                {
+                    // When I call an async postback on stuff inside of the updatepanel, it seems to get a version of LastControl
+                    // that isn't set to anything, and thus does the default option (which is InsertSelectUser)
+                    // This means i need to somehow add something that works across postbacks in updatepanels, or postbacks generally
+                    // not sure yet
+                    default:
+                        InsertSelectUser();
+                        break;
+                    case AdminUserControls.CreateUser:
+                        InsertCreateUser();
+                        break;
+                    case AdminUserControls.EditUser:
+                        InsertEditUser();
+                        break;
+                    case AdminUserControls.ViewModeration:
+                        InsertViewModeration();
+                        break;
+                }
 
-            
+            }
         }
 
         public void SelectUser_UserSelected (object sender, UserSelectEventArgs e)
