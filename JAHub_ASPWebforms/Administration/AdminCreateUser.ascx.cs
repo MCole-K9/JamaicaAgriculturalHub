@@ -13,10 +13,8 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminCreateUser : System.Web.UI.UserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
-            // Part of me wants to move this to the Init, since it really shouldn't change and doesn't need viewstate
-            
             DataColumn idColumn = new DataColumn();
             idColumn.ColumnName = "Id";
             idColumn.DataType = typeof(UserRole);
@@ -58,6 +56,13 @@ namespace JAHub_ASPWebforms.Administration
             ddlUserRole.DataTextField = "UserRole";
             ddlUserRole.DataSource = userRoleTable;
             ddlUserRole.DataBind();
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Part of me wants to move this to the Init, since it really shouldn't change and doesn't need viewstate
+            
+            
             
 
         }

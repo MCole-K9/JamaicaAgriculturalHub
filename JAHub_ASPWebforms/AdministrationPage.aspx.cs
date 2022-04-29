@@ -11,11 +11,30 @@ using JAHubLib;
 
 namespace JAHub_ASPWebforms
 {
-
+    public enum AdminUserControls
+    {
+        SelectUser = 0,
+        CreateUser = 1,
+        EditUser = 2,
+        ViewModeration = 3
+    }
 
     public partial class AdministrationPage : System.Web.UI.Page
     {
-        // Praying this works
+        protected AdminUserControls LastControl
+        {
+            get
+            {
+                return this.ViewState["LastControl"] == null ? 0 : (AdminUserControls)this.ViewState["LastControl"];
+            }
+            set
+            {
+                this.ViewState["LastControl"] = value;
+            }
+        }
+
+
+
         public int userID
         {
             get
@@ -39,17 +58,44 @@ namespace JAHub_ASPWebforms
                 this.ViewState["userFullName"] = value;
             } 
         }
+        
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                InsertSelectUser();
+                LastControl = AdminUserControls.SelectUser;
+            }
+            else
+            {
+                switch (LastControl)
+                {
+                    default:
+                        InsertSelectUser();
+                        break;
+                    case AdminUserControls.CreateUser:
+                        InsertCreateUser();
+                        break;
+                    case AdminUserControls.EditUser:
+                        InsertEditUser();
+                        break;
+                    case AdminUserControls.ViewModeration:
+                        InsertViewModeration();
+                        break;
+                }
+
+            }
+        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
-                OpenSelectUserControl();
-            }
+            
         }
 
         public void SelectUser_UserSelected (object sender, UserSelectEventArgs e)
         {
+            LastControl = AdminUserControls.SelectUser;
 
             this.lblCurrentUser.Text = $"{e.UserFullName} (ID: {e.UserID}; Role: {e.UserRole})";
             this.userID = e.UserID;
@@ -60,16 +106,14 @@ namespace JAHub_ASPWebforms
 
         protected void btnSelectUser_Click(object sender, EventArgs e)
         {
-            OpenSelectUserControl();
+            LastControl = AdminUserControls.SelectUser;
+            InsertSelectUser();
         }
 
         protected void btnCreateNewUser_Click(object sender, EventArgs e)
         {
-            phAdministration.Controls.Clear();
-
-            AdminCreateUser createUser = (AdminCreateUser)LoadControl("~/Administration/AdminCreateUser.ascx");
-
-            phAdministration.Controls.Add(createUser);
+            LastControl = AdminUserControls.CreateUser;
+            InsertCreateUser();
         }
 
         protected void btnDeleteUser_Click(object sender, EventArgs e)
@@ -81,49 +125,16 @@ namespace JAHub_ASPWebforms
 
         protected void btnEditUser_Click(object sender, EventArgs e)
         {
-            phAdministration.Controls.Clear();
+            LastControl = AdminUserControls.EditUser;
 
-            AdminEditUser editUser = (AdminEditUser)LoadControl("~/Administration/AdminEditUser.ascx");
-
-            phAdministration.Controls.Add(editUser);
+            InsertEditUser();            
         }
 
         protected void btnViewModeration_Click(object sender, EventArgs e)
         {
-            if (phAdministration.Controls.Count > 0)
-            {
-                phAdministration.Controls.Clear();
-            }
-            
-            AdminViewModeration viewModeration = (AdminViewModeration)LoadControl("~/Administration/AdminViewModeration.ascx");
-            viewModeration.UserId = this.userID;
-            viewModeration.Name = this.userFullName;
+            LastControl = AdminUserControls.ViewModeration;
 
-            phAdministration.Controls.Add(viewModeration);
-        }
-
-        protected void OpenSelectUserControl()
-        {
-            foreach (Control control in phAdministration.Controls)
-            {
-                if (control is AdminSelectUser)
-                {
-                    // do nothing;
-                }
-                else
-                {
-                    phAdministration.Controls.Remove(control);
-                }
-            }
-
-            if (phAdministration.Controls.Count == 0)
-            {
-                AdminSelectUser selectUser = (AdminSelectUser)LoadControl("~/Administration/AdminSelectUser.ascx");
-                selectUser.UserSelected += new EventHandler<UserSelectEventArgs>(SelectUser_UserSelected);
-
-                phAdministration.Controls.Add(selectUser);
-            }
-            
+            InsertViewModeration();
         }
 
         protected void btnDeleteYes_Click(object sender, EventArgs e)
@@ -146,19 +157,8 @@ namespace JAHub_ASPWebforms
             // This should re-hide the options
             ScriptManager.RegisterStartupScript(this, this.GetType(), "hideUserOption", "CloseUserOption()", true);
 
-            if (phAdministration.Controls.Count > 0)
-            {
-                if(!(phAdministration.Controls[0] is AdminSelectUser))
-                {
-                    phAdministration.Controls.Clear();
-
-                    OpenSelectUserControl();
-                }
-            }
-            else
-            {
-                OpenSelectUserControl();
-            }
+            // This ensures that on the next pageback, it will bring up the SelectUser UC
+            LastControl = AdminUserControls.SelectUser;
 
             lblCurrentUser.Text = "Current User: none selected";
         }
@@ -167,5 +167,57 @@ namespace JAHub_ASPWebforms
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "NoModalDelete", "CloseDeleteModal()", true);
         }
+
+        protected void InsertSelectUser()
+        {
+            if (phAdministration.Controls.Count > 0)
+            {
+                phAdministration.Controls.Clear();
+            }
+
+            AdminSelectUser selectUser = (AdminSelectUser)LoadControl("~/Administration/AdminSelectUser.ascx");
+            selectUser.UserSelected += new EventHandler<UserSelectEventArgs>(SelectUser_UserSelected);
+
+            phAdministration.Controls.Add(selectUser);
+        }
+
+        protected void InsertCreateUser()
+        {
+            if (phAdministration.Controls.Count > 0)
+            {
+                phAdministration.Controls.Clear();
+            }
+            
+            AdminCreateUser createUser = (AdminCreateUser)LoadControl("~/Administration/AdminCreateUser.ascx");
+
+            phAdministration.Controls.Add(createUser);
+        }
+
+        protected void InsertEditUser()
+        {
+            if (phAdministration.Controls.Count > 0)
+            {
+                phAdministration.Controls.Clear();
+            }
+
+            AdminEditUser editUser = (AdminEditUser)LoadControl("~/Administration/AdminEditUser.ascx");
+
+            phAdministration.Controls.Add(editUser);
+        }
+
+        protected void InsertViewModeration()
+        {
+            if (phAdministration.Controls.Count > 0)
+            {
+                phAdministration.Controls.Clear();
+            }
+
+            AdminViewModeration viewModeration = (AdminViewModeration)LoadControl("~/Administration/AdminViewModeration.ascx");
+            viewModeration.UserId = this.userID;
+            viewModeration.Name = this.userFullName;
+
+            phAdministration.Controls.Add(viewModeration);
+        }
+
     }
 }
