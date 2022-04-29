@@ -60,7 +60,10 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Part of me wants to move this to the Init, since it really shouldn't change and doesn't need viewstate
+            if (IsPostBack)
+            {
+                Page.Validate("CreateNewUserGroup");
+            }
             
             
             
