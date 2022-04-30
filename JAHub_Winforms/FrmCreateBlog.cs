@@ -14,10 +14,21 @@ namespace JAHub_Winforms
 {
     public partial class FrmCreateBlog : Form
     {
-        
+        Blog blog = new Blog();
+        bool IsUpdate = false;
         public FrmCreateBlog()
         {
             InitializeComponent();
+        }
+        public FrmCreateBlog(Blog b)
+        {
+            InitializeComponent();
+            blog = b;
+            txtTitle.Text = b.Title;
+            rtbDescription.Text = b.Description;
+            rtbBody.Text = b.BlogBody;
+            btnPost.Text = "Save";
+            IsUpdate = true;
         }
         private void btnCreateBlog_Click(object sender, EventArgs e)
         {
@@ -86,29 +97,61 @@ namespace JAHub_Winforms
         {
             if(txtTitle.Text != "" && rtbDescription.Text != "" && rtbBody.Text != "")
             {
-                Blog newBlog = new Blog();
-                try
+                if (IsUpdate)
                 {
-                    newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
-                    MessageBox.Show("Blog Post Created!");
-                    if (Utils.IsFormOpen("FrmBlog"))
+                    try
                     {
-                        foreach (var form in this.MdiParent.MdiChildren)
+                        blog.Title = txtTitle.Text;
+                        blog.Description = rtbDescription.Text;
+                        blog.BlogBody = rtbBody.Text;
+                        blog.UpdateBlogPost(blog);
+                        MessageBox.Show("Blog Post Updated!");
+                        if (Utils.IsFormOpen("FrmBlog"))
                         {
-                            if (form.Text == "FrmBlog")
+                            foreach (var form in this.MdiParent.MdiChildren)
                             {
-                                form.Close();
+                                if (form.Text == "FrmBlog")
+                                {
+                                    form.Close();
+                                }
                             }
+                            FrmBlog frmBlog = new FrmBlog();
+                            frmBlog.MdiParent = this.MdiParent;
+                            frmBlog.Show();
+                            this.Close();
                         }
-                        FrmBlog frmBlog = new FrmBlog();
-                        frmBlog.MdiParent = this.MdiParent;
-                        frmBlog.Show();
-                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    Blog newBlog = new Blog();
+                    try
+                    {
+                        newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
+                        MessageBox.Show("Blog Post Created!");
+                        if (Utils.IsFormOpen("FrmBlog"))
+                        {
+                            foreach (var form in this.MdiParent.MdiChildren)
+                            {
+                                if (form.Text == "FrmBlog")
+                                {
+                                    form.Close();
+                                }
+                            }
+                            FrmBlog frmBlog = new FrmBlog();
+                            frmBlog.MdiParent = this.MdiParent;
+                            frmBlog.Show();
+                            this.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else

@@ -21,8 +21,13 @@ namespace JAHub_Winforms
         }
         public FrmBlogDetails(Blog blog)
         {
-            displayedBlog = blog;
             InitializeComponent();
+            if (blog.AuthorID == Session.UserId)
+            {
+                btnEditBlog.Visible = true;
+                btnDeleteBlog.Visible = true;
+            }
+            displayedBlog = blog;
             lblTitle.Text = displayedBlog.Title;
             try
             {
@@ -103,6 +108,22 @@ namespace JAHub_Winforms
                 SqlCommand cmd = new SqlCommand($"UPDATE Blog SET Rating = {displayedBlog.Rating} WHERE ID = {displayedBlog.BlogID}", connection);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void btnEditBlog_Click(object sender, EventArgs e)
+        {
+          
+            FrmCreateBlog frmCreateBlog = new FrmCreateBlog(displayedBlog);
+            frmCreateBlog.MdiParent = this.MdiParent;
+            frmCreateBlog.Show();
+        }
+
+        private void btnDeleteBlog_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand cmd = new SqlCommand($"DELETE FROM Blog WHERE ID = {displayedBlog.BlogID}", connection);
+            cmd.ExecuteNonQuery();
         }
     }
 
