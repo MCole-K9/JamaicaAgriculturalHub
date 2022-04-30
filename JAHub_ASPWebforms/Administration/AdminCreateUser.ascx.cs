@@ -64,9 +64,20 @@ namespace JAHub_ASPWebforms.Administration
             {
                 Page.Validate("CreateNewUserGroup");
             }
-            
-            
-            
+
+            String scriptString = "<script type=\"text / javascript\">" +
+                "function RaiseSubmitModal(){" +
+                "$('#submitModal').modal('show');}" +
+                "function CloseSubmitModal(){" +
+                "$('#submitModal').modal('hide');}" +
+                "</ script >";
+
+            ClientScriptManager cs = Page.ClientScript;
+
+            if (!cs.IsClientScriptBlockRegistered("CreateUserModal"))
+            {
+                cs.RegisterClientScriptBlock(this.GetType(), "CreateUserModal", scriptString);
+            }
 
         }
 

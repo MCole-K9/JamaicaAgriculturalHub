@@ -2,17 +2,7 @@
 
 <%@ Register Src="~/Verification/usrNameBlock.ascx" TagName="NameBlock" TagPrefix="uc"%>
 
-<script type="text/javascript">
 
-    function RaiseSubmitModal() {
-        $('#submitModal').modal('show');
-    }
-
-    function CloseSubmitModal() {
-        $('#submitModal').modal('hide');
-    }
-
-</script>
 
 <asp:ScriptManagerProxy runat="server"></asp:ScriptManagerProxy>
 
