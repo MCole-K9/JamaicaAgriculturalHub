@@ -56,6 +56,15 @@ namespace JAHub_ASPWebforms.Administration
             ddlUserRole.DataTextField = "UserRole";
             ddlUserRole.DataSource = userRoleTable;
             ddlUserRole.DataBind();
+
+            String scriptString = /*"<script type=\"text/javascript\">" +*/
+                "function RaiseSubmitModal(){" +
+                "$('#submitModal').modal('show');}" +
+                "function CloseSubmitModal(){" +
+                "$('#submitModal').modal('hide');}"
+                /*"</script>"*/;
+
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "CreateUserModal", scriptString, true);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -65,19 +74,7 @@ namespace JAHub_ASPWebforms.Administration
                 Page.Validate("CreateNewUserGroup");
             }
 
-            String scriptString = "<script type=\"text / javascript\">" +
-                "function RaiseSubmitModal(){" +
-                "$('#submitModal').modal('show');}" +
-                "function CloseSubmitModal(){" +
-                "$('#submitModal').modal('hide');}" +
-                "</ script >";
 
-            ClientScriptManager cs = Page.ClientScript;
-
-            if (!cs.IsClientScriptBlockRegistered("CreateUserModal"))
-            {
-                cs.RegisterClientScriptBlock(this.GetType(), "CreateUserModal", scriptString);
-            }
 
         }
 
