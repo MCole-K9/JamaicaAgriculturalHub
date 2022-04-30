@@ -13,6 +13,28 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminCreateUser : System.Web.UI.UserControl
     {
+        private int currentIndex = 0;
+
+        protected override void OnInit(EventArgs e)
+        {
+            // here is probably where i'm going to try this ControlState fuckery
+            Page.RegisterRequiresControlState(this);
+            base.OnInit(e);
+        }
+
+        protected override object SaveControlState()
+        {
+            return currentIndex == 0 ? null : (object)currentIndex;
+        }
+
+        protected override void LoadControlState(object state)
+        {
+            if(state != null)
+            {
+                currentIndex = (int)state;
+            }
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             DataColumn idColumn = new DataColumn();
