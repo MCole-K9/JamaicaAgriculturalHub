@@ -25,12 +25,17 @@
          </blockquote>
 
             <div class="ratingWrap">
-                <label>Rating</label>
+                <div class="updateBtnWrap">
+                    <asp:button type="button" class="btn btn-default btn-success fit" runat="server" Text="Edit Blog" ID="btnEditBlog" Visible="False" OnClick="btnEditBlog_Click">
+                    </asp:button>
+                    <asp:button type="button" class="btn btn-default btn-danger fit" runat="server" Text="Delete Blog" ID="btnDeleteBlog" Visible="False" OnClick="btnDeleteBlog_Click">
+                    </asp:button>
+                </div>
                 <div class="ratingBtnWrap">
-                    <button type="button" class="btn btn-default btnRating btn-primary" runat="server" id="btnRatingUp" onserverClick="RatingUp">
+                    <button type="button" class="btn btn-default btnRating btn-primary fit" runat="server" id="btnRatingUp" onserverClick="RatingUp">
                         <span class="glyphicon glyphicon-thumbs-up" style="color:white; font-size:large;"></span>
                     </button>
-                    <button type="button" class="btn btn-default btnRating btn-primary" runat="server" id="btnRatingDown" onserverClick="RatingDown">
+                    <button type="button" class="btn btn-default btnRating btn-primary fit" runat="server" id="btnRatingDown" onserverClick="RatingDown">
                         <span class="glyphicon glyphicon-thumbs-down" style="color:white; font-size:large;"></span>
                     </button>
                 </div>
@@ -40,6 +45,9 @@
         
     </div>
     <style>
+        .fit{
+            width: fit-content;
+        }
         .ratingWrap, .ratingBtnWrap{
             display: flex;
             justify-content: space-between;

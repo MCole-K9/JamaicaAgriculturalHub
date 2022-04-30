@@ -13,11 +13,12 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Blog blog = new Blog();
             if (!IsPostBack)
             {
                 try
                 {
-                    Blog blog = (Blog)Session["BlogData"];
+                    blog = (Blog)Session["BlogData"];
                     this.Title = blog.Title;
                     lblTitle.InnerHtml = blog.Title;
                     lblAuthor.InnerHtml += blog.GetAuthorName(blog.AuthorID);
@@ -32,9 +33,20 @@ namespace JAHub_ASPWebforms
             }
             else
             {
-                Blog blog = (Blog)Session["BlogData"];
+                blog = (Blog)Session["BlogData"];
                 this.Title = blog.Title;
             }
+            try
+            {
+                int id = (int)Session["UserId"];
+                if (blog.AuthorID == id)
+                {
+                    btnDeleteBlog.Visible = true;
+                    btnEditBlog.Visible = true;
+                }
+            }
+            catch (NullReferenceException) { }
+            
         }
         public void RatingUp(object sender, EventArgs e)
         {
@@ -56,6 +68,23 @@ namespace JAHub_ASPWebforms
                 SqlCommand cmd = new SqlCommand($"UPDATE Blog SET Rating = {displayedBlog.Rating} WHERE ID = {displayedBlog.BlogID}", connection);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        protected void btnDeleteBlog_Click(object sender, EventArgs e)
+        {
+            Blog displayedBlog = (Blog)Session["BlogData"];
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand cmd = new SqlCommand($"DELETE FROM Blog WHERE ID = {displayedBlog.BlogID}", connection);
+            cmd.ExecuteNonQuery();
+            Response.Redirect("~/MyBlogs.aspx");
+        }
+
+        protected void btnEditBlog_Click(object sender, EventArgs e)
+        {
+            Blog displayedBlog = (Blog)Session["BlogData"];
+            Session["BlogForEdit"] = displayedBlog;
+            Response.Redirect("~/CreateBlog.aspx");
         }
     }
 }
