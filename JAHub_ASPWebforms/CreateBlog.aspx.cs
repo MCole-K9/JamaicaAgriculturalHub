@@ -19,6 +19,17 @@ namespace JAHub_ASPWebforms
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "clickLoginNavBtn()", true);
             }
+            if(Session["BlogForEdit"] != null)
+            {
+                if (!IsPostBack)
+                {
+                    Blog b = (Blog)Session["BlogForEdit"];
+                    btnPost.Text = "Save";
+                    txtBlogBody.Value = b.BlogBody;
+                    txtDescription.Value = b.Description;
+                    txtTitle.Value = b.Title;
+                }
+            }
         }
 
         protected void btnPost_Click(object sender, EventArgs e)
@@ -29,10 +40,39 @@ namespace JAHub_ASPWebforms
             }
             else
             {
-                Blog blog = new Blog();
-                string ParsedBlody = txtBlogBody.Value.Replace("'", "''");
-                blog.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBlody);
-                Response.Redirect("~/Blog.aspx");
+                Blog b = (Blog)Session["BlogForEdit"];
+                string ParsedBody = txtBlogBody.Value.Replace("'", "''");
+                b.BlogBody = ParsedBody;
+                b.Description = txtDescription.Value;
+                b.Title = txtTitle.Value;
+
+                if (Session["BlogForEdit"] != null)
+                {
+                    try
+                    {
+                        b.UpdateBlogPost(b);
+                        Session.Remove("BlogForEdit");
+                        Response.Redirect("~/MyBlogs.aspx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "alertFunction", $"alert(\"{ex.Message}\")", true);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        b.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBody);
+                        Response.Redirect("~/Blog.aspx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "alertFunction", $"alert(\"{ex.Message}\")", true);
+                    }
+                }
+                
+                
             }
         }
     }

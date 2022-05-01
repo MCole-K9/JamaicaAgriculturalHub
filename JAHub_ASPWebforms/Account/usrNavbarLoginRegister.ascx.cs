@@ -13,5 +13,10 @@ namespace JAHub_ASPWebforms.Account
         {
 
         }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
     }
 }
