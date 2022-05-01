@@ -13,34 +13,33 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminViewModeration : System.Web.UI.UserControl
     {
-        int _userid;
-        String _name;
 
         public int UserId
         {
             get
             {
-                return _userid;
+                return ViewState["ModerationUserId"] == null ? 0 : (int)ViewState["ModerationId"];
             }
             set
             {
-                _userid = value;
+                ViewState["ModerationUserId"] = value;
             }
         }
         public String Name
         {
             get
             {
-                return _name;
+                return ViewState["ModerationUserFullName"] == null ? 
+                    String.Empty : (String)ViewState["ModerationUserFullName"];
             }
             set {
-                _name = value; 
+                ViewState["ModerationUserFullName"] = value; 
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblViewModerationFor.Text = $"View Moderation for User {_name} (ID: {_userid})";
+            lblViewModerationFor.Text = $"View Moderation for User {Name} (ID: {UserId})";
 
             DataTable dtbAddedInfractions = new DataTable();
 
