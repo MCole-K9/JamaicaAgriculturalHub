@@ -169,6 +169,7 @@
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
     <Content Include="ManageProducts.aspx" />
+    <Content Include="OrderDetails.aspx" />
     <Content Include="Resources\700x500.png" />
     <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
@@ -195,6 +196,7 @@
     <Content Include="Resources\landscape.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
     <Content Include="Shop_Controls\UsrFarmerProduct.ascx" />
+    <Content Include="Shop_Controls\UsrOrderItem.ascx" />
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
@@ -369,6 +371,13 @@
     <Compile Include="MyBlogs.aspx.designer.cs">
       <DependentUpon>MyBlogs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -397,6 +406,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrFarmerProduct.ascx.designer.cs">
       <DependentUpon>UsrFarmerProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.ascx.cs">
+      <DependentUpon>UsrOrderItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.ascx.designer.cs">
+      <DependentUpon>UsrOrderItem.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.cs">
       <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
