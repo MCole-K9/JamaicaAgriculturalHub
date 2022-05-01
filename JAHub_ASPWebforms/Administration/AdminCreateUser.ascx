@@ -35,14 +35,14 @@
             <asp:AsyncPostBackTrigger ControlID="chkShowPassword" EventName="CheckedChanged" />
         </Triggers>
         <ContentTemplate>
-            <div class="row">
-                <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" 
+            <!--<div class="row">
+                <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-xs" 
                     OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" CausesValidation="False" EnableViewState="False" />
-            </div>
+            </div>-->
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False" CausesValidation="True"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="SingleLine" EnableViewState="False" CausesValidation="True"></asp:TextBox>
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
                         ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" ErrorMessage="Field Cannot be Blank!"/>
@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Re-Type Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="Password" EnableViewState="False" />
+                    <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="SingleLine" EnableViewState="False" />
                     <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" 
                         ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordSecond" runat="server" ControlToValidate="txtPasswordSecond" ErrorMessage="Field Cannot be Blank!"/>
@@ -73,7 +73,7 @@
                         <asp:Label runat="server" ID="lblSubmitText"/>
                     </div>
                     <div class="row">
-                        <button class="btn btn-default" data-dismiss="modal"></button>
+                        <button class="btn btn-default input-sm col-lg-1" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
