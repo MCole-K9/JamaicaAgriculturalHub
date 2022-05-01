@@ -12,6 +12,10 @@ namespace JAHubLib
         public int CustomerID { get; set; }
         private bool isLoggedIn;
 
+        public Customer()
+        {
+            
+        }
         public Customer(int customerID)
         {
             isLoggedIn = false;
@@ -125,8 +129,9 @@ namespace JAHubLib
                 {
                     order.PaymentDetails.FetchPaymentID();
 
-                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails) " +
-                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID})");
+
+                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails, Subtotal) " +
+                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID}, {Cart.CaluculateTotal()} )");
 
 
                     return i;
