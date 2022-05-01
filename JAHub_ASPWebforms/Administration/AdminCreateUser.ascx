@@ -33,6 +33,7 @@
     <asp:UpdatePanel runat="server" ID="udpPassword" UpdateMode="Conditional" ChildrenAsTriggers="True">
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="chkShowPassword" EventName="CheckedChanged" />
+            <asp:AsyncPostBackTrigger ControlID="btnSubmit" EventName="Click" />
         </Triggers>
         <ContentTemplate>
             <!--<div class="row">
@@ -42,7 +43,7 @@
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="SingleLine" EnableViewState="False" CausesValidation="True"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="SingleLine" EnableViewState="True" CausesValidation="True" ViewStateMode="Inherit"></asp:TextBox>
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
                         ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" ErrorMessage="Field Cannot be Blank!"/>
@@ -51,7 +52,7 @@
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Re-Type Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="SingleLine" EnableViewState="False" />
+                    <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="SingleLine" EnableViewState="True" />
                     <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" 
                         ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordSecond" runat="server" ControlToValidate="txtPasswordSecond" ErrorMessage="Field Cannot be Blank!"/>
