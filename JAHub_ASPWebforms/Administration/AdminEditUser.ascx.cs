@@ -10,6 +10,8 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminEditUser : System.Web.UI.UserControl
     {
+        // Should i use loadstate here?
+
         public String UserName
         {
             get { return ViewState["EditUserName"] == null ? String.Empty: (String)ViewState["EditUserName"]; }
