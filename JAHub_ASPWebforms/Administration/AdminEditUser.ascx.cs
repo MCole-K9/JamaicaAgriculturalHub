@@ -16,7 +16,17 @@ namespace JAHub_ASPWebforms.Administration
             set { ViewState["EditUserName"] = value; }
         }
 
-        public int UserId { get; set; }
+        public int UserId
+        {
+            get
+            {
+                return ViewState["EditUserId"] == null ? 0 : (int)ViewState["EditUserId"];
+            }
+            set
+            {
+                ViewState["EditUserId"] = value;
+            }
+        }
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -25,7 +35,19 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                User currentUser = new User();
 
+                currentUser.UserID = UserId;
+                currentUser.ReadFromDatabase(this.UserId);
+
+                txtEmail.Text = currentUser.Email;
+                txtPasswordOnce.Text = currentUser.Password;
+                txtPasswordSecond.Text = currentUser.Password;
+                // i don't know how to get the nameblock
+            }
+            
         }
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -55,10 +77,9 @@ namespace JAHub_ASPWebforms.Administration
                 newUser.LastName = nbNewUserName.LastName;
                 newUser.MiddleName = nbNewUserName.MiddleName;
                 newUser.Email = txtEmail.Text;
-                newUser.UserRole = (UserRole)ddlUserRole.SelectedIndex;
                 newUser.Password = txtPasswordOnce.Text;
 
-                newUser.WriteToDatabase();
+                //newUser.WriteToDatabase();
 
                 isWriteSuccessful = true;
             }

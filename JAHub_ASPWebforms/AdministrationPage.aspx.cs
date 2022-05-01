@@ -123,6 +123,7 @@ namespace JAHub_ASPWebforms
             }
         }
 
+        // Eventhandler for an event that first when the admin select a user from the gridview
         public void SelectUser_UserSelected (object sender, UserSelectEventArgs e)
         {
             LastControl = AdminUserControls.SelectUser;
@@ -234,6 +235,8 @@ namespace JAHub_ASPWebforms
             }
 
             AdminEditUser editUser = (AdminEditUser)LoadControl("~/Administration/AdminEditUser.ascx");
+            editUser.UserName = this.userFullName;
+            editUser.UserId = this.userID;
 
             phAdministration.Controls.Add(editUser);
         }
