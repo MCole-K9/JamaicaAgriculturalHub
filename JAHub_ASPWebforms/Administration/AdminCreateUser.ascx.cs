@@ -125,7 +125,7 @@ namespace JAHub_ASPWebforms.Administration
             User newUser = new User();
             bool isWriteSuccessful = false;
 
-            Page.Validate("CreateNewUserGroup");
+            Page.Validate();
 
             if (Page.IsValid)
             {
@@ -146,14 +146,14 @@ namespace JAHub_ASPWebforms.Administration
                 lblSubmitTitle.Text = "Result Successful";
                 lblSubmitText.Text = $"Successfully created record for {newUser.FirstName} {newUser.LastName}.";
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "submit", "RaiseSubmitModal()", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "raiseSubmit", "RaiseSubmitModal()", true);
             }
             else
             {
                 lblSubmitTitle.Text = "Result Unsuccessful";
                 lblSubmitText.Text = "One or more field(s) is not valid. Please correct these fields and resubmit.";
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "submit", "RaiseSubmitModal()", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "raiseSubmitError", "RaiseSubmitModal()", true);
             }
 
         }
