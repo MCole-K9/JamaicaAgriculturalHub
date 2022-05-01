@@ -1,4 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministrationPage.aspx.cs" Inherits="JAHub_ASPWebforms.AdministrationPage" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministrationPage.aspx.cs" 
+    Inherits="JAHub_ASPWebforms.AdministrationPage" MasterPageFile="~/Site.Master" 
+    Trace="true"%>
+
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="AdminContent">
     <script type="text/javascript">
