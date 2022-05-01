@@ -32,8 +32,7 @@
                 ControlToValidate="txtEmail" EnableViewState="False"></asp:RegularExpressionValidator>
         </div>
     </div>
-    
-    
+
     <asp:UpdatePanel runat="server" ID="udpPassword" >
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="chkShowPassword" EventName="CheckedChanged" />
