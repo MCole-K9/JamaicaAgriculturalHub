@@ -18,25 +18,25 @@ namespace JAHub_ASPWebforms.Administration
 
         public int UserId
         {
-            get
-            {
-                return ViewState["EditUserId"] == null ? 0 : (int)ViewState["EditUserId"];
-            }
-            set
-            {
-                ViewState["EditUserId"] = value;
-            }
+            get {  return ViewState["EditUserId"] == null ? 0 : (int)ViewState["EditUserId"]; }
+            set { ViewState["EditUserId"] = value; }
         }
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            
+            String scriptString = /*"<script type=\"text/javascript\">" +*/
+               "function RaiseSubmitModal(){" +
+               "$('#submitModal').modal('show');}" +
+               "function CloseSubmitModal(){" +
+               "$('#submitModal').modal('hide');}"
+               /*"</script>"*/;
+
+            ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "CreateUserModal", scriptString, true);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
+
                 User currentUser = new User();
 
                 currentUser.UserID = UserId;
@@ -45,15 +45,18 @@ namespace JAHub_ASPWebforms.Administration
                 txtEmail.Text = currentUser.Email;
                 txtPasswordOnce.Text = currentUser.Password;
                 txtPasswordSecond.Text = currentUser.Password;
-                // i don't know how to get the nameblock
-            }
+                // need to program nameblock so that it can take values (without using a constructor?)
             
         }
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            // This causes postback in a way that comes off of this page and opens selectuser. why?
-            if (chkShowPassword.Checked)
+            if (!chkShowPassword.Checked)
+            {
+                chkShowPassword.Checked = true;
+            }
+
+            if (chkShowPassword.Checked == true)
             {
                 txtPasswordOnce.TextMode = TextBoxMode.SingleLine;
                 txtPasswordSecond.TextMode = TextBoxMode.SingleLine;
@@ -71,6 +74,8 @@ namespace JAHub_ASPWebforms.Administration
             User newUser = new User();
             bool isWriteSuccessful = false;
 
+            Page.Validate();
+
             if (Page.IsValid)
             {
                 newUser.FirstName = nbNewUserName.FirstName;
@@ -79,7 +84,7 @@ namespace JAHub_ASPWebforms.Administration
                 newUser.Email = txtEmail.Text;
                 newUser.Password = txtPasswordOnce.Text;
 
-                //newUser.WriteToDatabase();
+                //newUser.UpdateUserRecord();
 
                 isWriteSuccessful = true;
             }

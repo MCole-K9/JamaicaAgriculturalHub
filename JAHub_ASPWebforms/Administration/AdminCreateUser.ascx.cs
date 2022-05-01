@@ -17,7 +17,6 @@ namespace JAHub_ASPWebforms.Administration
 
         protected override void OnInit(EventArgs e)
         {
-            // here is probably where i'm going to try this ControlState fuckery
             Page.RegisterRequiresControlState(this);
             base.OnInit(e);
         }
@@ -86,15 +85,15 @@ namespace JAHub_ASPWebforms.Administration
                 "$('#submitModal').modal('hide');}"
                 /*"</script>"*/;
 
-                ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "CreateUserModal", scriptString, true);
+            ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "CreateUserModal", scriptString, true);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                Page.Validate("CreateNewUserGroup");
-            }
+            //if (IsPostBack)
+            //{
+            //    Page.Validate("CreateNewUserGroup");
+            //}
 
 
 

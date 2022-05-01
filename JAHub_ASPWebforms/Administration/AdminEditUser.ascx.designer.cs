@@ -42,6 +42,15 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
+        /// reqEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmail;
+
+        /// <summary>
         /// udpPassword control.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.WebControls.CustomValidator cusPasswordOnce;
 
         /// <summary>
+        /// reqPasswordOnce control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPasswordOnce;
+
+        /// <summary>
         /// txtPasswordSecond control.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,15 @@ namespace JAHub_ASPWebforms.Administration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cusPasswordSecond;
+
+        /// <summary>
+        /// reqPasswordSecond control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPasswordSecond;
 
         /// <summary>
         /// btnSubmit control.
