@@ -160,7 +160,7 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void cusPasswordSecond_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if(txtPasswordOnce.Text == txtPasswordSecond.Text && String.IsNullOrEmpty(txtPasswordSecond.Text))
+            if(txtPasswordOnce.Text == txtPasswordSecond.Text && !String.IsNullOrEmpty(txtPasswordSecond.Text))
             {
                 args.IsValid = true;
             }
