@@ -92,7 +92,7 @@ namespace JAHub_ASPWebforms.Administration
             if (isWriteSuccessful)
             {
                 lblSubmitTitle.Text = "Result Successful";
-                lblSubmitText.Text = $"Successfully created record for {newUser.FirstName} {newUser.LastName}.";
+                lblSubmitText.Text = $"Successfully modified record for {newUser.FirstName} {newUser.LastName}.";
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "submit", "RaiseSubmitModal()", true);
             }
