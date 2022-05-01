@@ -36,17 +36,17 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            User currentUser = new User();
 
-                User currentUser = new User();
+            currentUser.UserID = UserId;
+            currentUser.ReadFromDatabase(this.UserId);
 
-                currentUser.UserID = UserId;
-                currentUser.ReadFromDatabase(this.UserId);
-
-                txtEmail.Text = currentUser.Email;
-                txtPasswordOnce.Text = currentUser.Password;
-                txtPasswordSecond.Text = currentUser.Password;
-                // need to program nameblock so that it can take values (without using a constructor?)
-            
+            txtEmail.Text = currentUser.Email;
+            txtPasswordOnce.Text = currentUser.Password;
+            txtPasswordSecond.Text = currentUser.Password;
+            nbNewUserName.FirstName = currentUser.FirstName;
+            nbNewUserName.LastName = currentUser.LastName;
+            nbNewUserName.MiddleName = currentUser.MiddleName;
         }
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)

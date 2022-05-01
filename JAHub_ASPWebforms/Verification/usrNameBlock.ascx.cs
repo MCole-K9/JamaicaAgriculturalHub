@@ -19,9 +19,39 @@ namespace JAHub_ASPWebforms.Verification
         bool isMiddleNameValid;
         bool isLastNameValid;
 
-        public String FirstName => txtFirstName.Text;
-        public String MiddleName => txtMiddleName.Text;
-        public String LastName => txtLastName.Text;
+        public String FirstName
+        {
+            get
+            {
+                return txtFirstName.Text;
+            }
+            set
+            {
+                txtFirstName.Text = value;
+            }
+        }
+        public String MiddleName
+        {
+            get
+            {
+                return txtMiddleName.Text;
+            }
+            set
+            {
+                txtMiddleName.Text = value;
+            }
+        }
+        public String LastName
+        {
+            get
+            {
+                return txtLastName.Text;
+            }
+            set
+            {
+                txtLastName.Text = value;
+            }
+        }
 
 
         public usrNameBlock()
