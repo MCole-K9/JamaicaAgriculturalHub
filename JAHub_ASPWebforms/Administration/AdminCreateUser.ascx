@@ -58,7 +58,7 @@
                     <asp:RequiredFieldValidator ID="reqPasswordSecond" runat="server" ControlToValidate="txtPasswordSecond" ErrorMessage="Field Cannot be Blank!"/>
                 </div>
             </div>
-                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" CausesValidation="True" />
+                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" CausesValidation="False" />
         </ContentTemplate>
     </asp:UpdatePanel>
 
