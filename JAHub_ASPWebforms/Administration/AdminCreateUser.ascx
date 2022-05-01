@@ -14,7 +14,7 @@
 
 <div>
     <div class="row">
-        <asp:DropDownList runat="server" ID="ddlUserRole" CssClass="btn btn-default input-sm col-lg-2" ValidationGroup="CreateNewUserGroup" CausesValidation="True"></asp:DropDownList>
+        <asp:DropDownList runat="server" ID="ddlUserRole" CssClass="btn btn-default input-sm col-lg-2" CausesValidation="True"></asp:DropDownList>
     </div>
     <div>
         <uc:NameBlock ID="nbNewUserName" runat="server" />
@@ -22,7 +22,7 @@
     <div class="row">
         <div>
             <asp:Label runat="server" ID="lblEmail" EnableViewState="False">Email: </asp:Label>
-            <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" ValidationGroup="CreateNewUserGroup" CausesValidation="True"></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" CausesValidation="True"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="reqEmail" ControlToValidate="txtEmail" ErrorMessage="Field cannot be blank!" />
             <asp:RegularExpressionValidator runat="server" ErrorMessage="Must be a Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                 ControlToValidate="txtEmail" EnableViewState="False" EnableClientScript="False"></asp:RegularExpressionValidator>
@@ -37,12 +37,12 @@
         <ContentTemplate>
             <div class="row">
                 <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" 
-                    OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" CausesValidation="False" EnableViewState="False" ValidationGroup="CreateNewUserGroup" />
+                    OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" CausesValidation="False" EnableViewState="False" />
             </div>
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False" ValidationGroup="CreateNewUserGroup" CausesValidation="True"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="Password" EnableViewState="False" CausesValidation="True"></asp:TextBox>
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
                         ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" ErrorMessage="Field Cannot be Blank!"/>
@@ -51,13 +51,13 @@
             <div class="row">
                 <div class="form-group">
                     <asp:Label runat="server" CssClass="form-label" EnableViewState="False">Re-Type Password: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="Password" EnableViewState="False" ValidationGroup="CreateNewUserGroup" />
+                    <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="Password" EnableViewState="False" />
                     <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" 
                         ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordSecond" runat="server" ControlToValidate="txtPasswordSecond" ErrorMessage="Field Cannot be Blank!"/>
                 </div>
             </div>
-                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" ValidationGroup="CreateNewUserGroup" CausesValidation="True" />
+                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" CausesValidation="True" />
         </ContentTemplate>
     </asp:UpdatePanel>
 
