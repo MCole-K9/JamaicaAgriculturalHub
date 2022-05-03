@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrInfractionItem.ascx.cs" Inherits="JAHub_ASPWebforms.Moderation.usrInfractionItem" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrInfractionItem.ascx.cs" Inherits="JAHub_ASPWebforms.Administration.usrInfractionItem" %>
 
 <div>
     <asp:Label runat="server" ID="lblDateOfEntry">XXXX-XX-XX</asp:Label>

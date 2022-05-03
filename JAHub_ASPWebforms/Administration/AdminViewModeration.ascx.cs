@@ -149,7 +149,19 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void rptUserInfractions_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            // not sure how to do this
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                usrInfractionItem item = (usrInfractionItem)e.Item.FindControl("admUserInfraction");
+
+                DataRowView drvItem = e.Item.DataItem as DataRowView;
+
+                DataRow itemRow = drvItem.Row;
+
+                item.Reason = itemRow["Reason"].ToString();
+                item.ID = itemRow["ID"].ToString();
+                item.AddedBy = itemRow["Admin"].ToString();
+                item.DateOfEntry = itemRow["TimeStamp"].ToString();
+            }
         }
     }
 }
