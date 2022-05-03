@@ -7,14 +7,15 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Data.SqlTypes;
+using JAHubLib;
 
 namespace JAHub_ASPWebforms.Administration
 {
     public partial class usrAddInfraction : System.Web.UI.UserControl
     {
-        DataTable addedInfractions;
-        SqlDateTime currentTime;
-        int userId;
+        // DataTable addedInfractions;
+        protected SqlDateTime currentTime;
+        public int UserId;
         int adminId;
         PlaceHolder controlParent;
 
@@ -23,16 +24,47 @@ namespace JAHub_ASPWebforms.Administration
         {
             currentTime = new SqlDateTime(DateTime.Now);
             lblTimeStamp.Text = currentTime.ToString();
+
+            // need to set:
+            // - userId
+            // - adminID
+            // - 
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // This should add the the generated infraction information to dtbAddedInfractions
-            // it should also remove this control and create a new usrInfractionItem
-            //addedInfractions.Rows.Add(currentTime, userId, adminId, txtInfractionReason.Text);
+            // First, add the record
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
 
-            //controlParent.Controls.Add(new usrInfractionItem(controlParent, addedInfractions.Rows[addedInfractions.Rows.Count - 1]));
-            //controlParent.Controls.Remove(this);
+                if (txtReason.Text.Contains("'"))
+                {
+                    txtReason.Text = txtReason.Text.Replace("'", "''");
+                }
+
+
+                String command = "INSERT INTO Infraction (TimeStamp, Infraction.[User], Infraction.[Admin], Reason) VALUES " +
+                    $"({currentTime}, {UserId}, {adminId}, {txtReason.Text}";
+
+
+                SqlCommand addNewInfractions = new SqlCommand(command, connection);
+
+                addNewInfractions.ExecuteNonQuery();
+
+                connection.Close();
+            }
+
+            // Then, remove the field from the placeholder
+                if (this.Parent != null)
+            {
+                var containerPlaceholder = this.Parent as PlaceHolder;
+
+                containerPlaceholder.Controls.Remove(this);
+            }
+            
+            // then cause a postback
+
         }
     }
 }

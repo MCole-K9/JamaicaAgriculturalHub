@@ -142,7 +142,6 @@ namespace JAHub_ASPWebforms.Administration
         {
             // why is this not showing up?
             usrInfractionItem infraction = (usrInfractionItem)LoadControl("~/Administration/usrInfractionItem.ascx");
-            
 
             phUserInfractions.Controls.Add(infraction);
         }
