@@ -24,7 +24,7 @@
             <asp:Label runat="server" ID="lblEmail" EnableViewState="False" Text="Email: " CssClass="col-1g-1 input-sm text" />
             <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" CausesValidation="True"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="reqEmail" ControlToValidate="txtEmail" ErrorMessage="Field cannot be blank!" />
-            <asp:RegularExpressionValidator runat="server" ErrorMessage="Must be a Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+            <asp:RegularExpressionValidator runat="server" ID="regEmail" ErrorMessage="Must be a Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
                 ControlToValidate="txtEmail" EnableViewState="False" EnableClientScript="False"></asp:RegularExpressionValidator>
         </div>
     </div>

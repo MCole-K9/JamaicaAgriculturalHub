@@ -33,8 +33,6 @@ namespace JAHub_ASPWebforms
             }
         }
 
-
-
         public int userID
         {
             get
@@ -47,7 +45,6 @@ namespace JAHub_ASPWebforms
             }
         }
 
-        // This too
         public String userFullName { 
             get
             {

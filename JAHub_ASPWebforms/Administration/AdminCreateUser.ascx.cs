@@ -13,6 +13,20 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminCreateUser : System.Web.UI.UserControl
     {
+        public int PostbacksSinceCreation
+        {
+            get
+            {
+                return ViewState["PostbacksSinceCreation"] == null ? 0 : (int)ViewState["PostbacksSinceCreation"];
+            }
+            set
+            {
+                ViewState["PostbacksSinceCreation"] = value;
+            }
+        }
+
+
+        // i have no idea why this is necessary to do viewstate
         private int currentIndex = 0;
 
         protected override void OnInit(EventArgs e)

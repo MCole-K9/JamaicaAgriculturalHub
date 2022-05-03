@@ -118,7 +118,10 @@ namespace JAHub_ASPWebforms.Administration
                 connection.Close();
             }
 
-            // populate the repeater for each thing
+            foreach (DataRow row in dtbCurrentInfractions.Rows)
+            {
+                // I'd the list of infractions, probably
+            }
         }
 
         public AdminViewModeration()

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AdminViewModeration.ascx.cs" Inherits="JAHub_ASPWebforms.Administration.AdminViewModeration" EnableViewState="False" %>
 
-<%@ Register Src="~/Administration/usrAddInfraction.ascx" Tagname="AddInfraction" TagPrefix="uc"%>
+<%@ Register Src="~/Administration/usrAddInfraction.ascx" TagName="AddInfraction" TagPrefix="uc"%>
 
 <div class="row">
     <asp:Label runat="server" ID="lblViewModerationFor"></asp:Label>
