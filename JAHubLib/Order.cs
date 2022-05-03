@@ -61,14 +61,15 @@ namespace JAHubLib
                     {
                         this.OrderId = (int)sqlData["ID"];
                         this.OrderDate = (DateTime)sqlData["OrderDate"];
-                        
+                        this.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
                     }
                 }
             }
+            FetchOrderItems();
         }
 
         
-        private void FetchOrderItems()
+        public void FetchOrderItems()
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -106,7 +107,7 @@ namespace JAHubLib
                     }
                 }
             }
-            FetchOrderItems();
+            
 
         }
 
