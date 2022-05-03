@@ -148,6 +148,57 @@ namespace JAHubLib
 
         }
 
+        public List<Order> GetOrders()
+        {
+            List<Order> orders = new List<Order>();
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"SELECT * from [Order] WHERE Customer = {this.CustomerID}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+
+                    while (sqlData.Read())
+                    {
+                        Order order = new Order();
+                        order.OrderId = (int)sqlData["ID"];
+                        order.OrderDate = (DateTime)sqlData["OrderDate"];
+                        order.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                        orders.Add(order);
+                    }
+                }
+            }
+
+            return orders;
+        }
+
+        public Order FetchLastOrderData()
+        {
+            Order order = new Order();
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"SELECT * from [Order] WHERE Customer = {this.CustomerID}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    
+                    while (sqlData.Read())
+                    {
+                        order.OrderId = (int)sqlData["ID"];
+                        order.OrderDate = (DateTime)sqlData["OrderDate"];
+                        order.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                    }
+                }
+            }
+            order.FetchOrderItems();
+            return order;
+        }
 
     }
 }
