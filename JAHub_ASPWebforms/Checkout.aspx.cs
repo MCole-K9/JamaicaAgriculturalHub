@@ -66,13 +66,13 @@ namespace JAHub_ASPWebforms
 
                 if (order.WriteOrderItems(JAHubLib.Cart.ShoppingCart) > 0)
                 {
-                    //MessageBox.Show("Order Was Successful");
+                   
                     Session["LastOrder"] = order;
                     Response.Redirect("OrderDetails.aspx");
                 }
                 else
                 {
-                    //MessageBox.Show("Order Items Error");
+                    //Something Went Wrong
                 }
             }
 
