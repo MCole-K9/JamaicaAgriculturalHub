@@ -24,6 +24,14 @@ namespace JAHub_ASPWebforms
                     order = (Order)Session["LastOrder"];
 
 
+                }else if(Session["Order"] != null)
+                {
+                    order = (Order)Session["Order"];
+                    order.FetchOrderItems();
+                }
+                else
+                {
+                    //Error
                 }
 
 

@@ -2,8 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <style>
+        .items-panel {
+            overflow-y: scroll;
+            max-height: 300px;
+            overflow-x: hidden;
+        }
+    </style>
+
     <div style="margin: 40px 0">
-        <div class="content-container" style="padding: 40px 40px; max-width: 70%; margin: 0 auto;">
+        <div class="content-container" style="padding: 40px 40px; max-width: 80%; margin: 0 auto;">
             <h3>Order Details</h3>
 
             <hr />
@@ -11,8 +19,8 @@
                 <h4>Items Ordered</h4>
                 <h4 id="OrderDate" runat="server">Date</h4>
             </div>
-            <div class="row">
-                <asp:Panel ID="pnlOrderItems" runat="server" ScrollBars="Vertical" Height="300px">
+            <div class="row" style="padding: 0 15px;">
+                <asp:Panel ID="pnlOrderItems" runat="server" CssClass="items-panel" >
                 </asp:Panel>
             </div>
              <div style="display: flex; justify-content: space-between">
