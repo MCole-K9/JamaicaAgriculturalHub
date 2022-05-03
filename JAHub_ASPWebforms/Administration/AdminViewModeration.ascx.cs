@@ -125,7 +125,10 @@ namespace JAHub_ASPWebforms.Administration
             // if the list of controls is empty it should probably just show 
             if(rptUserInfractions.Items.Count == 0)
             {
-                // Make some thing that says "No items lol" visible
+                Label noInfractions = new Label();
+                noInfractions.Text = $"{this.Name} has no infractions";
+
+                phUserInfractions.Controls.Add(noInfractions);
             }
         }
 

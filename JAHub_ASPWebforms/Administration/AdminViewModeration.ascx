@@ -6,13 +6,18 @@
     <h2>View Infractions for user <%= Name %> (ID: <%= UserId %>)</h2>
 </div>
 
-<div>
-    <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions" OnItemDataBound="rptUserInfractions_ItemDataBound">
-        <ItemTemplate>
-            <uc:AddInfraction runat="server" ID="admUserInfraction" />
-        </ItemTemplate>
-    </asp:Repeater>
-    <asp:PlaceHolder runat="server" ID="phUserInfractions" />
+<div class="row">
+    
+    <div class="row">
+        <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions" OnItemDataBound="rptUserInfractions_ItemDataBound">
+            <ItemTemplate>
+                <uc:AddInfraction runat="server" ID="admUserInfraction" />
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+    <div class="row">
+        <asp:PlaceHolder runat="server" ID="phUserInfractions" />
+    </div>
 </div>
 
 <asp:SqlDataSource runat="server" ID="dsInfractions" SelectCommand="SELECT [ID], [TimeStamp], [Admin], [Reason] FROM [Infraction];" 
