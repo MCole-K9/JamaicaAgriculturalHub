@@ -133,6 +133,41 @@ namespace JAHubLib
            
         }
 
+        public List<Product> GetFarmerProducts()
+        {
+            List<Product> products = new List<Product>();
+
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                FetchFarmerData();
+
+                string query = $"Select * from Product Where Farmer = {FarmerId}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    while (sqlData.Read())
+                    {
+                        Product product = new Product();
+
+                        product.Id = (int)sqlData["ID"];
+                        product.Name = sqlData["Name"].ToString();
+                        product.Stock = (int)sqlData["Stock"];
+                        product.Category = (int)sqlData["Category"];
+                        product.Price = float.Parse(sqlData["Price"].ToString());
+                        product.Image = $"http://vtdics.com/ead22/" + sqlData["Image"].ToString();
+                        products.Add(product);
+
+                    }
+                }
+
+                
+            }
+            return products;
+        }
         public int UpdateProduct(Product product)
         {
             string productImageName = Path.GetFileName(product.GetUploadedImagePath());
@@ -148,8 +183,15 @@ namespace JAHubLib
 
                 SqlCommand cmd = new SqlCommand(query, connection);
                 int i = cmd.ExecuteNonQuery();
+                
 
-                Utilities.FTPFileUpload(product.GetUploadedImagePath(), productImageName);
+                if(product.GetUploadedImagePath().StartsWith("http://vtdics.com/ead22/") == false)
+                {
+                    //Then file is coming from the web server or client device
+
+                    Utilities.FTPFileUpload(product.GetUploadedImagePath(), productImageName);
+                }
+                
 
                 return i;
             }

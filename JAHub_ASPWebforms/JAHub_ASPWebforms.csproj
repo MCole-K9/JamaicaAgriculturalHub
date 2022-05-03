@@ -154,6 +154,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\usrNavbarAccountLogout.ascx" />
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="Administration.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
@@ -167,6 +168,10 @@
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
+    <Content Include="ManageProducts.aspx" />
+    <Content Include="OrderDetails.aspx" />
+    <Content Include="Resources\700x500.png" />
+    <Content Include="Register.aspx" />
     <Content Include="Grant_Controls\ucGrantControls.ascx" />
     <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
@@ -192,6 +197,8 @@
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Resources\landscape.jpg" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
+    <Content Include="Shop_Controls\UsrFarmerProduct.ascx" />
+    <Content Include="Shop_Controls\UsrOrderItem.ascx" />
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
@@ -231,7 +238,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Shop.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="UserProfile.aspx" />
     <Content Include="Verification\usrAddressBlock.ascx" />
     <Content Include="Verification\usrContactBlock.ascx" />
     <Content Include="Verification\usrDateOfBirthBlock.ascx" />
@@ -262,6 +268,13 @@
     </Compile>
     <Compile Include="Account\usrNavbarLoginRegister.ascx.designer.cs">
       <DependentUpon>usrNavbarLoginRegister.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration.aspx.cs">
       <DependentUpon>Administration.aspx</DependentUpon>
@@ -333,13 +346,6 @@
     <Compile Include="Grants.aspx.designer.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Grant_Controls\ucGrantControls.ascx.cs">
-      <DependentUpon>ucGrantControls.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Grant_Controls\ucGrantControls.ascx.designer.cs">
-      <DependentUpon>ucGrantControls.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Moderation\usrAddInfraction.ascx.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
@@ -362,6 +368,13 @@
     <Compile Include="MyBlogs.aspx.designer.cs">
       <DependentUpon>MyBlogs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -370,6 +383,13 @@
       <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -383,6 +403,20 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrCartItem.ascx.designer.cs">
       <DependentUpon>UsrCartItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrFarmerProduct.ascx.cs">
+      <DependentUpon>UsrFarmerProduct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrFarmerProduct.ascx.designer.cs">
+      <DependentUpon>UsrFarmerProduct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.ascx.cs">
+      <DependentUpon>UsrOrderItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.ascx.designer.cs">
+      <DependentUpon>UsrOrderItem.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrOrderSumItem.ascx.cs">
       <DependentUpon>UsrOrderSumItem.ascx</DependentUpon>
@@ -426,13 +460,6 @@
     </Compile>
     <Compile Include="ucWebBlog.ascx.designer.cs">
       <DependentUpon>ucWebBlog.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserProfile.aspx.cs">
-      <DependentUpon>UserProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserProfile.aspx.designer.cs">
-      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="Verification\usrAddressBlock.ascx.cs">
@@ -550,6 +577,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Temp\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

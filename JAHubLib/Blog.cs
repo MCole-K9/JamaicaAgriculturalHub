@@ -73,6 +73,21 @@ namespace JAHubLib
                 connection.Close();
             }
         }
+        public void UpdateBlogPost(Blog blog)
+        {
+            SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(Utilities.getUpdateBlogSqlString(blog), connection);
+            int i = cmd.ExecuteNonQuery();
+            if (i == 0)
+            {
+                throw new Exception("DATABASE_ERROR_NO_ROWS_AFFECTED");
+            }
+            else
+            {
+                connection.Close();
+            }
+        }
 
     }
 }
