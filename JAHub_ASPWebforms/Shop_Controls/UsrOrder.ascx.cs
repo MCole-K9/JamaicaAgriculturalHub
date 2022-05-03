@@ -35,5 +35,11 @@ namespace JAHub_ASPWebforms.Shop_Controls
             }
            
         }
+
+        protected void btnViewOrder_ServerClick(object sender, EventArgs e)
+        {
+            Session["Order"] = this.order;
+            Response.Redirect("OrderDetails.aspx");
+        }
     }
 }

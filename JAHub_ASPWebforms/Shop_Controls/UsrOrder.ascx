@@ -16,6 +16,6 @@
             <h5 class="text-muted"><strong>Subtotal</strong> </h5>
              <h5 id="Subtotal" runat="server">Date</h5>
         </div>
-        <button class="btn btn-default btn-link fit-content-x">View Order Details</button>
+        <button runat="server" id="btnViewOrder" onserverclick="btnViewOrder_ServerClick" class="btn btn-default btn-link fit-content-x">View Order Details</button>
     </div>
 </div>
