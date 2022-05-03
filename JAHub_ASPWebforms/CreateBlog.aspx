@@ -40,7 +40,8 @@
             input[type="text"]{
                 max-width: 100%;
             }
-            .lblBody{
+            .lblBody
+            {
                 margin-top: 50px;
             }
             .btnPost{

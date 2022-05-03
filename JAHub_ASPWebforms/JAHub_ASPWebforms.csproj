@@ -173,6 +173,7 @@
     <Content Include="Orders.aspx" />
     <Content Include="Resources\700x500.png" />
     <Content Include="Register.aspx" />
+    <Content Include="Grant_Controls\ucGrantControls.ascx" />
     <Content Include="Resources\farmer-icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -205,6 +206,9 @@
     <Content Include="Shop_Controls\UsrReview.ascx" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
+    <Content Include="CreateGrants.aspx" />
+    <Content Include="GrantDetails.aspx" />
+    <Content Include="WebForm3.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -343,13 +347,6 @@
     </Compile>
     <Compile Include="Grants.aspx.designer.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageProducts.aspx.cs">
-      <DependentUpon>ManageProducts.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageProducts.aspx.designer.cs">
-      <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Moderation\usrAddInfraction.ascx.cs">
@@ -571,6 +568,27 @@
     </Compile>
     <Compile Include="Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateGrants.aspx.cs">
+      <DependentUpon>CreateGrants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateGrants.aspx.designer.cs">
+      <DependentUpon>CreateGrants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GrantDetails.aspx.cs">
+      <DependentUpon>GrantDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GrantDetails.aspx.designer.cs">
+      <DependentUpon>GrantDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
