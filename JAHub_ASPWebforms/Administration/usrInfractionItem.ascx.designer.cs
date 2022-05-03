@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Moderation
+namespace JAHub_ASPWebforms.Administration
 {
 
 
-    public partial class usrViewInfraction
+    public partial class usrInfractionItem
     {
 
         /// <summary>

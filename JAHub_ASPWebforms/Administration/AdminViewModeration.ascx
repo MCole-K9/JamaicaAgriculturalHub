@@ -2,6 +2,8 @@
 
 <%@ Register TagPrefix="uc" TagName="AddInfraction" Src="~/Administration/usrAddInfraction.ascx" %>
 
+<%@ Register TagPrefix="uc" TagName="InfractionItem" Src="~/Administration/usrInfractionItem.ascx" %>
+
 <div class="row">
     <h2>View Infractions for user <%= Name %> (ID: <%= UserId %>)</h2>
 </div>
@@ -11,7 +13,7 @@
     <div class="row">
         <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions" OnItemDataBound="rptUserInfractions_ItemDataBound">
             <ItemTemplate>
-                <uc:AddInfraction runat="server" ID="admUserInfraction" />
+                <uc:InfractionItem runat="server" ID="admUserInfraction" />
             </ItemTemplate>
         </asp:Repeater>
     </div>

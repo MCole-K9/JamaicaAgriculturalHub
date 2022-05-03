@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.SqlTypes;
 using JAHubLib;
+using JAHub_ASPWebforms.Administration;
 
 namespace JAHub_ASPWebforms.Administration
 {
@@ -140,7 +141,7 @@ namespace JAHub_ASPWebforms.Administration
         protected void btnAddInfraction_Click(object sender, EventArgs e)
         {
             // why is this not showing up?
-            usrAddInfraction infraction = (usrAddInfraction)LoadControl("~/Administration/usrAddInfraction.ascx");
+            usrInfractionItem infraction = (usrInfractionItem)LoadControl("~/Administration/usrInfractionItem.ascx");
             
 
             phUserInfractions.Controls.Add(infraction);

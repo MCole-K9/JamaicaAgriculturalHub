@@ -8,9 +8,9 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
 
-namespace JAHub_ASPWebforms.Moderation
+namespace JAHub_ASPWebforms.Administration
 {
-    public partial class usrViewInfraction : System.Web.UI.UserControl
+    public partial class usrInfractionItem : System.Web.UI.UserControl
     {
         int recordId;
         PlaceHolder controlParent;
