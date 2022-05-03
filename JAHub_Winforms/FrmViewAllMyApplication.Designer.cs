@@ -51,7 +51,7 @@
             this.pnlContainerAdminViewGrants.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContainerAdminViewGrants.Name = "pnlContainerAdminViewGrants";
             this.pnlContainerAdminViewGrants.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
-            this.pnlContainerAdminViewGrants.Size = new System.Drawing.Size(765, 628);
+            this.pnlContainerAdminViewGrants.Size = new System.Drawing.Size(765, 682);
             this.pnlContainerAdminViewGrants.TabIndex = 66;
             // 
             // lblAgency
@@ -224,6 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1083, 822);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.pnlContainerAdminViewGrants);
