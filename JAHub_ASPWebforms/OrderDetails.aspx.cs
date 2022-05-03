@@ -17,7 +17,6 @@ namespace JAHub_ASPWebforms
         {
             if (!IsPostBack)
             {
-                order = new Order();
 
                 
                 if(Session["LastOrder"] != null)
@@ -26,12 +25,28 @@ namespace JAHub_ASPWebforms
 
 
                 }
-                
 
 
                 
-                LoadOrderItems();
-                OrderDate.InnerText = order.OrderDate.ToString("dddd, MMMM dd, yyyy");
+                if(this.order != null)
+                {
+                    ShipStreetAdress.InnerText = order.ShipStreetAddress;
+                    ShipCity.InnerText = order.ShipCity;
+                    ShipParish.InnerText = order.ShipParish;
+
+                    PaymentMethod.InnerText = order.PaymentDetails.PaymentType;
+                    BillingStreetAddress.InnerText = order.PaymentDetails.BillingStreetAddress;
+                    BillingCity.InnerText = order.PaymentDetails.BillingCity;
+                    BillingParish.InnerText = order.PaymentDetails.BIllingParish;
+
+                    Subtotal.InnerText = $"${order.TotalAmount}"; 
+
+                    LoadOrderItems();
+                    OrderDate.InnerText = order.OrderDate.ToString("dddd, MMMM dd, yyyy");
+                }
+
+                
+                
             }
            
         }
