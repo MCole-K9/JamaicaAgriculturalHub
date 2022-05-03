@@ -15,15 +15,6 @@ namespace JAHub_ASPWebforms.Administration
     {
 
         /// <summary>
-        /// lblViewModerationFor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblViewModerationFor;
-
-        /// <summary>
         /// rptUserInfractions control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace JAHub_ASPWebforms.Administration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phUserInfractions;
+
+        /// <summary>
+        /// dsInfractions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsInfractions;
 
         /// <summary>
         /// btnAddInfraction control.

@@ -18,7 +18,7 @@ namespace JAHub_ASPWebforms.Administration
         {
             get
             {
-                return ViewState["ModerationUserId"] == null ? 0 : (int)ViewState["ModerationId"];
+                return ViewState["ModerationUserId"] == null ? 0 : (int)ViewState["ModerationUserId"];
             }
             set
             {
@@ -39,89 +39,88 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblViewModerationFor.Text = $"View Moderation for User {Name} (ID: {UserId})";
 
-            DataTable dtbAddedInfractions = new DataTable();
+            //DataTable dtbAddedInfractions = new DataTable();
 
-            DataColumn dclAddedInfractionTime = new DataColumn();
-            dclAddedInfractionTime.ColumnName = "TimeStamp";
-            dclAddedInfractionTime.DataType = typeof(SqlDateTime);
+            //DataColumn dclAddedInfractionTime = new DataColumn();
+            //dclAddedInfractionTime.ColumnName = "TimeStamp";
+            //dclAddedInfractionTime.DataType = typeof(SqlDateTime);
 
-            DataColumn dclAddedInfractionUser = new DataColumn();
-            dclAddedInfractionUser.ColumnName = "User";
-            dclAddedInfractionUser.DataType = typeof(int);
+            //DataColumn dclAddedInfractionUser = new DataColumn();
+            //dclAddedInfractionUser.ColumnName = "User";
+            //dclAddedInfractionUser.DataType = typeof(int);
 
-            DataColumn dclAddedInfractionAdmin = new DataColumn();
-            dclAddedInfractionAdmin.ColumnName = "Admin";
-            dclAddedInfractionAdmin.DataType = typeof(int);
+            //DataColumn dclAddedInfractionAdmin = new DataColumn();
+            //dclAddedInfractionAdmin.ColumnName = "Admin";
+            //dclAddedInfractionAdmin.DataType = typeof(int);
 
-            DataColumn dclAddedInfractionReason = new DataColumn();
-            dclAddedInfractionReason.ColumnName = "Reason";
-            dclAddedInfractionReason.DataType = typeof(String);
-            dclAddedInfractionReason.MaxLength = 120;
+            //DataColumn dclAddedInfractionReason = new DataColumn();
+            //dclAddedInfractionReason.ColumnName = "Reason";
+            //dclAddedInfractionReason.DataType = typeof(String);
+            //dclAddedInfractionReason.MaxLength = 120;
 
-            dtbAddedInfractions.Columns.Add(dclAddedInfractionTime);
-            dtbAddedInfractions.Columns.Add(dclAddedInfractionUser);
-            dtbAddedInfractions.Columns.Add(dclAddedInfractionAdmin);
-            dtbAddedInfractions.Columns.Add(dclAddedInfractionReason);
+            //dtbAddedInfractions.Columns.Add(dclAddedInfractionTime);
+            //dtbAddedInfractions.Columns.Add(dclAddedInfractionUser);
+            //dtbAddedInfractions.Columns.Add(dclAddedInfractionAdmin);
+            //dtbAddedInfractions.Columns.Add(dclAddedInfractionReason);
 
 
-            // This is just for dtbRemovedInfraction
-            DataTable dtbRemovedInfractions = new DataTable();
+            //// This is just for dtbRemovedInfraction
+            //DataTable dtbRemovedInfractions = new DataTable();
 
-            DataColumn dclRemovedInfractionId = new DataColumn();
-            dclRemovedInfractionId.ColumnName = "ID";
-            dclRemovedInfractionId.DataType = typeof(int);
+            //DataColumn dclRemovedInfractionId = new DataColumn();
+            //dclRemovedInfractionId.ColumnName = "ID";
+            //dclRemovedInfractionId.DataType = typeof(int);
 
-            dtbRemovedInfractions.Columns.Add(dclRemovedInfractionId);
+            //dtbRemovedInfractions.Columns.Add(dclRemovedInfractionId);
 
-            // These are all for dtbCurrentInfractions
-            DataTable dtbCurrentInfractions = new DataTable();
+            //// These are all for dtbCurrentInfractions
+            //DataTable dtbCurrentInfractions = new DataTable();
 
-            DataColumn dclInfractionId = new DataColumn();
-            dclInfractionId.ColumnName = "ID";
-            dclInfractionId.DataType = typeof(int);
+            //DataColumn dclInfractionId = new DataColumn();
+            //dclInfractionId.ColumnName = "ID";
+            //dclInfractionId.DataType = typeof(int);
 
-            DataColumn dclTimeStamp = new DataColumn();
-            dclTimeStamp.ColumnName = "TimeStamp";
-            dclTimeStamp.DataType = typeof(SqlDateTime);
+            //DataColumn dclTimeStamp = new DataColumn();
+            //dclTimeStamp.ColumnName = "TimeStamp";
+            //dclTimeStamp.DataType = typeof(SqlDateTime);
 
-            DataColumn dclAdmin = new DataColumn();
-            dclAdmin.ColumnName = "Administered By";
-            dclAdmin.DataType = typeof(String);
+            //DataColumn dclAdmin = new DataColumn();
+            //dclAdmin.ColumnName = "Administered By";
+            //dclAdmin.DataType = typeof(String);
 
-            DataColumn dclReason = new DataColumn();
-            dclReason.ColumnName = "Reason/Nature of Infraction";
-            dclReason.DataType = typeof(String);
+            //DataColumn dclReason = new DataColumn();
+            //dclReason.ColumnName = "Reason/Nature of Infraction";
+            //dclReason.DataType = typeof(String);
 
-            dtbCurrentInfractions.Columns.Add(dclInfractionId);
-            dtbCurrentInfractions.Columns.Add(dclTimeStamp);
-            dtbCurrentInfractions.Columns.Add(dclAdmin);
-            dtbCurrentInfractions.Columns.Add(dclReason);
+            //dtbCurrentInfractions.Columns.Add(dclInfractionId);
+            //dtbCurrentInfractions.Columns.Add(dclTimeStamp);
+            //dtbCurrentInfractions.Columns.Add(dclAdmin);
+            //dtbCurrentInfractions.Columns.Add(dclReason);
 
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
+            //using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            //{
+            //    connection.Open();
 
-                String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction];";
+            //    String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction];";
 
-                SqlCommand infractionsQuery = new SqlCommand(command, connection);
+            //    SqlCommand infractionsQuery = new SqlCommand(command, connection);
 
-                SqlDataReader reader = infractionsQuery.ExecuteReader();
+            //    SqlDataReader reader = infractionsQuery.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    dtbCurrentInfractions.Rows.Add(reader["ID"], reader["TimeStamp"], reader["Admin"].ToString(),
-                        reader["Reason"].ToString());
-                }
+            //    while (reader.Read())
+            //    {
+            //        dtbCurrentInfractions.Rows.Add(reader["ID"], reader["TimeStamp"], reader["Admin"].ToString(),
+            //            reader["Reason"].ToString());
+            //    }
 
-                connection.Close();
-            }
+            //    connection.Close();
+            //}
 
-            foreach (DataRow row in dtbCurrentInfractions.Rows)
-            {
-                // I'd the list of infractions, probably
-            }
+            //foreach (DataRow row in dtbCurrentInfractions.Rows)
+            //{
+            //    // I'd the list of infractions, probably
+            //}
         }
 
         public AdminViewModeration()

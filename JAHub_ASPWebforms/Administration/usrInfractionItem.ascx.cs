@@ -21,29 +21,6 @@ namespace JAHub_ASPWebforms.Moderation
 
         }
 
-        public usrViewInfraction(DataRow row, PlaceHolder controlParent, DataTable removedInfractions)
-        {
-
-            this.recordId = (int)row[0];
-            this.controlParent = controlParent;
-            this.removedInfractions = removedInfractions;
-
-            lblDateOfEntry.Text = row[1].ToString();
-            lblAddedById.Text = $"Added by ID: {row[2].ToString()}";
-            lblReason.Text = $"Reason: {row[3].ToString()}";
-        }
-
-        // This constructor is for what usrInfractionAdder should make after the admin submits
-        public usrViewInfraction(PlaceHolder controlParent, DataRow infractionRecord)
-        {
-
-            this.controlParent = controlParent;
-
-            lblDateOfEntry.Text = infractionRecord[0].ToString();
-            lblAddedById.Text = $"Added by ID: {infractionRecord[2]}";
-            lblReason.Text = $"Reason: {infractionRecord[3]}";
-        }
-
         private void btnRemoveInfraction_Click(object sender, EventArgs e)
         {
             // All this does is add the recordId of the entry, which it got from dtbCurrentInfractions

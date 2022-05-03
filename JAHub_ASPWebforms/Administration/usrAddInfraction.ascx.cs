@@ -25,16 +25,6 @@ namespace JAHub_ASPWebforms.Administration
             lblTimeStamp.Text = currentTime.ToString();
         }
 
-        
-
-        public usrAddInfraction (DataTable addedInfractions, int userId, int adminId, PlaceHolder controlParent)
-        {
-            this.userId = userId;
-            this.adminId = adminId;
-            this.addedInfractions = addedInfractions;
-            this.controlParent = controlParent;
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // This should add the the generated infraction information to dtbAddedInfractions
