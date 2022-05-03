@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions">
+    <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions" OnItemDataBound="rptUserInfractions_ItemDataBound">
         <ItemTemplate>
             <uc:AddInfraction runat="server" ID="admUserInfraction" />
         </ItemTemplate>

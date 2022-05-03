@@ -16,6 +16,29 @@ namespace JAHub_ASPWebforms.Moderation
         PlaceHolder controlParent;
         DataTable removedInfractions;
 
+        public String Reason
+        {
+            get { return lblReason.Text; }
+            set { lblReason.Text = value; }
+        }
+
+        public String DateOfEntry
+        {
+            get { return lblDateOfEntry.Text; }
+            set { lblDateOfEntry.Text = value; }
+        }
+
+        public String AddedBy
+        {
+            get { return lblAddedById.Text; }
+            set { lblAddedById.Text = value; }
+        }
+
+        public int RecordId
+        {
+            get { return ViewState[$"{this.NamingContainer}RecordID"] == null ? 0 : (int)ViewState[$"{this.NamingContainer}RecordId"]; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -40,6 +63,12 @@ namespace JAHub_ASPWebforms.Moderation
                 // i suggest timestamps
             }
 
+        }
+
+        protected void btnClearReason_Click(object sender, EventArgs e)
+        {
+            // Add the method to delete this from the thingy
+            // also add the method to force postback
         }
     }
 }

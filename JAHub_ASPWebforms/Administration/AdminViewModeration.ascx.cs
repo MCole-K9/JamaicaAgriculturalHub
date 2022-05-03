@@ -121,6 +121,12 @@ namespace JAHub_ASPWebforms.Administration
             //{
             //    // I'd the list of infractions, probably
             //}
+
+            // if the list of controls is empty it should probably just show 
+            if(rptUserInfractions.Items.Count == 0)
+            {
+                // Make some thing that says "No items lol" visible
+            }
         }
 
         public AdminViewModeration()
@@ -130,9 +136,16 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void btnAddInfraction_Click(object sender, EventArgs e)
         {
+            // why is this not showing up?
             usrAddInfraction infraction = (usrAddInfraction)LoadControl("~/Administration/usrAddInfraction.ascx");
+            
 
             phUserInfractions.Controls.Add(infraction);
+        }
+
+        protected void rptUserInfractions_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            // not sure how to do this
         }
     }
 }
