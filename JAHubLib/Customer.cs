@@ -155,7 +155,10 @@ namespace JAHubLib
             {
                 connection.Open();
 
-                string query = $"SELECT * from [Order] WHERE Customer = {this.CustomerID}";
+                string query = $"SELECT * from [Order] AS O " +
+                    $" Inner JOIN Payment as Pymt " +
+                    $" ON O.PaymentDetails = Pymt.ID " +
+                    $" WHERE Customer = {this.CustomerID}";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
                 using (SqlDataReader sqlData = cmd.ExecuteReader())
@@ -167,6 +170,13 @@ namespace JAHubLib
                         order.OrderId = (int)sqlData["ID"];
                         order.OrderDate = (DateTime)sqlData["OrderDate"];
                         order.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                        order.ShipStreetAddress = sqlData["ShipStreetAddress"].ToString();
+                        order.ShipCity = sqlData["ShipCity"].ToString();
+                        order.ShipParish = sqlData["ShipParish"].ToString();
+                        order.PaymentDetails.PaymentType = sqlData["PaymentType"].ToString();
+                        order.PaymentDetails.BillingStreetAddress = sqlData["BillingStreetAddress"].ToString();
+                        order.PaymentDetails.BillingCity = sqlData["BillingCity"].ToString();
+                        order.PaymentDetails.BIllingParish = sqlData["BillingParish"].ToString();
                         orders.Add(order);
                     }
                 }
