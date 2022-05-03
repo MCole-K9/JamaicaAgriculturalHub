@@ -197,6 +197,7 @@ namespace JAHub_Winforms
 
                                 switch ((UserRole)cmbUserRole.SelectedValue)
                                 {
+
                                     case UserRole.Customer:
                                         command = $"INSERT INTO Customer (UserID) VALUES ({newUser.UserID})";
                                         break;
@@ -213,8 +214,10 @@ namespace JAHub_Winforms
 
 
                                 SqlCommand populateTable = new SqlCommand(command, connection);
-
-                                populateTable.ExecuteNonQuery();
+                                if (command != "")
+                                {
+                                    populateTable.ExecuteNonQuery();
+                                }
 
                                 connection.Close();
                             }

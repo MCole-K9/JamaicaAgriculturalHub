@@ -53,7 +53,7 @@ namespace JAHub_Winforms
             nameViewColumn.DefaultCellStyle = new DataGridViewCellStyle();
             nameViewColumn.CellTemplate = new DataGridViewTextBoxCell();
             nameViewColumn.Name = "Name";
-            nameViewColumn.DataPropertyName = "NUserFullame";
+            nameViewColumn.DataPropertyName = "UserFullName";
 
             // This creates the column for the "User Role" Section
             DataGridViewColumn userRoleViewColumn = new DataGridViewColumn();
