@@ -14,6 +14,27 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class AdminViewModeration : System.Web.UI.UserControl
     {
+        private int currentIndex = 0;
+
+        protected override void OnInit(EventArgs e)
+        {
+            Page.RegisterRequiresControlState(this);
+            base.OnInit(e);
+        }
+
+        protected override object SaveControlState()
+        {
+            return currentIndex == 0 ? null : (object)currentIndex;
+        }
+
+        protected override void LoadControlState(object state)
+        {
+            if (state != null)
+            {
+                currentIndex = (int)state;
+            }
+        }
+
 
         public int UserId
         {
