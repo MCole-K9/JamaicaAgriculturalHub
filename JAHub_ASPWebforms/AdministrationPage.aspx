@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministrationPage.aspx.cs" 
     Inherits="JAHub_ASPWebforms.AdministrationPage" MasterPageFile="~/Site.Master" 
-    Trace="true"%>
+    Trace="false"%>
 
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="AdminContent">

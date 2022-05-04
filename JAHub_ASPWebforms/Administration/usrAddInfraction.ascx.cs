@@ -28,7 +28,7 @@ namespace JAHub_ASPWebforms.Administration
             lblTimeStamp.Text = currentTime.ToString();
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // Check to see if this is blank
             if (!String.IsNullOrEmpty(txtReason.Text))
