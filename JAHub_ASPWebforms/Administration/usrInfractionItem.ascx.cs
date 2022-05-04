@@ -13,7 +13,6 @@ namespace JAHub_ASPWebforms.Administration
 {
     public partial class usrInfractionItem : System.Web.UI.UserControl
     {
-        int recordId;
         PlaceHolder controlParent;
 
         public String Reason
@@ -36,7 +35,8 @@ namespace JAHub_ASPWebforms.Administration
 
         public int RecordId
         {
-            get; set;
+            get { return ViewState[$"{this.NamingContainer.UniqueID}RecordId"] == null ? 0 : (int)ViewState[$"{this.NamingContainer.UniqueID}RecordId"]; }
+            set { ViewState[$"{this.NamingContainer.UniqueID}RecordId"] = value; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void btnClearReason_Click(object sender, EventArgs e)
         {
-
+            // Okay but why is the delete not working? Or is it?
             if (RecordId != 0)
             {
                 using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
@@ -68,7 +68,7 @@ namespace JAHub_ASPWebforms.Administration
 
             ClientScriptManager cs = Page.ClientScript;
 
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(),"test", cs.GetCallbackEventReference(this, String.Empty, String.Empty, String.Empty), true);
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(),"test", cs.GetPostBackEventReference(this, String.Empty), true);
         }
     }
 }

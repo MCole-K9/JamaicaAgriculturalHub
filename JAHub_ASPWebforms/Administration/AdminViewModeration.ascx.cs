@@ -41,96 +41,16 @@ namespace JAHub_ASPWebforms.Administration
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //DataTable dtbAddedInfractions = new DataTable();
+        }
 
-            //DataColumn dclAddedInfractionTime = new DataColumn();
-            //dclAddedInfractionTime.ColumnName = "TimeStamp";
-            //dclAddedInfractionTime.DataType = typeof(SqlDateTime);
-
-            //DataColumn dclAddedInfractionUser = new DataColumn();
-            //dclAddedInfractionUser.ColumnName = "User";
-            //dclAddedInfractionUser.DataType = typeof(int);
-
-            //DataColumn dclAddedInfractionAdmin = new DataColumn();
-            //dclAddedInfractionAdmin.ColumnName = "Admin";
-            //dclAddedInfractionAdmin.DataType = typeof(int);
-
-            //DataColumn dclAddedInfractionReason = new DataColumn();
-            //dclAddedInfractionReason.ColumnName = "Reason";
-            //dclAddedInfractionReason.DataType = typeof(String);
-            //dclAddedInfractionReason.MaxLength = 120;
-
-            //dtbAddedInfractions.Columns.Add(dclAddedInfractionTime);
-            //dtbAddedInfractions.Columns.Add(dclAddedInfractionUser);
-            //dtbAddedInfractions.Columns.Add(dclAddedInfractionAdmin);
-            //dtbAddedInfractions.Columns.Add(dclAddedInfractionReason);
-
-
-            //// This is just for dtbRemovedInfraction
-            //DataTable dtbRemovedInfractions = new DataTable();
-
-            //DataColumn dclRemovedInfractionId = new DataColumn();
-            //dclRemovedInfractionId.ColumnName = "ID";
-            //dclRemovedInfractionId.DataType = typeof(int);
-
-            //dtbRemovedInfractions.Columns.Add(dclRemovedInfractionId);
-
-            //// These are all for dtbCurrentInfractions
-            //DataTable dtbCurrentInfractions = new DataTable();
-
-            //DataColumn dclInfractionId = new DataColumn();
-            //dclInfractionId.ColumnName = "ID";
-            //dclInfractionId.DataType = typeof(int);
-
-            //DataColumn dclTimeStamp = new DataColumn();
-            //dclTimeStamp.ColumnName = "TimeStamp";
-            //dclTimeStamp.DataType = typeof(SqlDateTime);
-
-            //DataColumn dclAdmin = new DataColumn();
-            //dclAdmin.ColumnName = "Administered By";
-            //dclAdmin.DataType = typeof(String);
-
-            //DataColumn dclReason = new DataColumn();
-            //dclReason.ColumnName = "Reason/Nature of Infraction";
-            //dclReason.DataType = typeof(String);
-
-            //dtbCurrentInfractions.Columns.Add(dclInfractionId);
-            //dtbCurrentInfractions.Columns.Add(dclTimeStamp);
-            //dtbCurrentInfractions.Columns.Add(dclAdmin);
-            //dtbCurrentInfractions.Columns.Add(dclReason);
-
-            //using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            //{
-            //    connection.Open();
-
-            //    String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction];";
-
-            //    SqlCommand infractionsQuery = new SqlCommand(command, connection);
-
-            //    SqlDataReader reader = infractionsQuery.ExecuteReader();
-
-            //    while (reader.Read())
-            //    {
-            //        dtbCurrentInfractions.Rows.Add(reader["ID"], reader["TimeStamp"], reader["Admin"].ToString(),
-            //            reader["Reason"].ToString());
-            //    }
-
-            //    connection.Close();
-            //}
-
-            //foreach (DataRow row in dtbCurrentInfractions.Rows)
-            //{
-            //    // I'd the list of infractions, probably
-            //}
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
 
             // if the list of controls is empty it should probably just show 
-            if(rptUserInfractions.Items.Count == 0)
-            {
-                Label noInfractions = new Label();
-                noInfractions.Text = $"{this.Name} has no infractions";
-
-                phUserInfractions.Controls.Add(noInfractions);
-            }
+            //if (rptUserInfractions.Items.Count == 0)
+            //{
+            //    lblNoInfractions.Visible = true;
+            //}
         }
 
         public AdminViewModeration()
@@ -140,7 +60,7 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void btnAddInfraction_Click(object sender, EventArgs e)
         {
-            if (phUserInfractions.Controls.Count >= 1)
+            if (phUserInfractions.Controls.Count < 1)
             {
                 usrAddInfraction infraction = (usrAddInfraction)LoadControl("~/Administration/usrAddInfraction.ascx");
 
@@ -161,6 +81,7 @@ namespace JAHub_ASPWebforms.Administration
 
                 DataRow itemRow = drvItem.Row;
 
+                // Inserting the values for each part of the row
                 item.Reason = "Reason: " + itemRow["Reason"].ToString();
                 item.ID = itemRow["ID"].ToString();
                 item.RecordId = Int32.Parse(itemRow["ID"].ToString());

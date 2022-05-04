@@ -11,15 +11,25 @@
 <div class="row">
     
     <div class="row">
-        <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions" OnItemDataBound="rptUserInfractions_ItemDataBound">
-            <ItemTemplate>
-                <uc:InfractionItem runat="server" ID="admUserInfraction" />
-            </ItemTemplate>
-            <SeparatorTemplate></br></SeparatorTemplate>
-        </asp:Repeater>
+        <asp:UpdatePanel runat="server" ID="udpInfractions" UpdateMode="Always">
+            <ContentTemplate>
+                <asp:Repeater runat="server" ID="rptUserInfractions" DataSourceID="dsInfractions" OnItemDataBound="rptUserInfractions_ItemDataBound">
+                    <ItemTemplate>
+                        <uc:InfractionItem runat="server" ID="admUserInfraction" />
+                    </ItemTemplate>
+                    <SeparatorTemplate></br></SeparatorTemplate>
+                </asp:Repeater>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        
     </div>
     <div class="row">
-        <asp:PlaceHolder runat="server" ID="phUserInfractions" />
+        <asp:UpdatePanel runat="server" ID="udpAddInfractions" UpdateMode="Always">
+            <ContentTemplate>
+                <asp:Label runat="server" ID="lblNoInfractions" Visible="false"><%= this.Name %> has no Infractions</asp:Label>
+                <asp:PlaceHolder runat="server" ID="phUserInfractions" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 </div>
 

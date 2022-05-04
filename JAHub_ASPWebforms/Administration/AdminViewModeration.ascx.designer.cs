@@ -15,6 +15,15 @@ namespace JAHub_ASPWebforms.Administration
     {
 
         /// <summary>
+        /// udpInfractions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel udpInfractions;
+
+        /// <summary>
         /// rptUserInfractions control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,24 @@ namespace JAHub_ASPWebforms.Administration
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptUserInfractions;
+
+        /// <summary>
+        /// udpAddInfractions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel udpAddInfractions;
+
+        /// <summary>
+        /// lblNoInfractions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNoInfractions;
 
         /// <summary>
         /// phUserInfractions control.
