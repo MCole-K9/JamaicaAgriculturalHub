@@ -24,15 +24,14 @@ namespace JAHub_ASPWebforms.Shop_Controls
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                ShipStreetAdress.InnerText = order.ShipStreetAddress;
-                ShipCity.InnerText = order.ShipCity;
-                ShipParish.InnerText = order.ShipParish;
+            
+            ShipStreetAdress.InnerText = order.ShipStreetAddress;
+            ShipCity.InnerText = order.ShipCity;
+            ShipParish.InnerText = order.ShipParish;
 
-                OrderDate.InnerText = order.OrderDate.ToString("dddd, MMMM dd, yyyy");
-                Subtotal.InnerText = $"${order.TotalAmount}";
-            }
+            OrderDate.InnerText = order.OrderDate.ToString("dddd, MMMM dd, yyyy");
+            Subtotal.InnerText = $"${order.TotalAmount}";
+
            
         }
 
