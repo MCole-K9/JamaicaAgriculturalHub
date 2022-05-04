@@ -12,6 +12,10 @@ namespace JAHubLib
         public int CustomerID { get; set; }
         private bool isLoggedIn;
 
+        public Customer()
+        {
+            
+        }
         public Customer(int customerID)
         {
             isLoggedIn = false;
@@ -40,8 +44,8 @@ namespace JAHubLib
         {
             if (IsCustomer())
             {
-                string query = $"INSERT INTO [Review] (Rating, Comment, Product, Customer)" +
-                $" VALUES ({review.Rating}, '{review.Comment}', {review.ProductID}, {CustomerID})";
+                string query = $"INSERT INTO [Review] (Rating, Comment, Product, Customer, Headline)" +
+                $" VALUES ({review.Rating}, '{review.Comment}', {review.ProductID}, {CustomerID}, '{review.Headline}')";
 
                 return Utilities.executeInputQuery(query);
             }
@@ -125,8 +129,9 @@ namespace JAHubLib
                 {
                     order.PaymentDetails.FetchPaymentID();
 
-                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails) " +
-                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID})");
+
+                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails, Subtotal) " +
+                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID}, {Cart.CaluculateTotal()} )");
 
 
                     return i;
@@ -143,6 +148,67 @@ namespace JAHubLib
 
         }
 
+        public List<Order> GetOrders()
+        {
+            List<Order> orders = new List<Order>();
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"SELECT * from [Order] AS O " +
+                    $" Inner JOIN Payment as Pymt " +
+                    $" ON O.PaymentDetails = Pymt.ID " +
+                    $" WHERE Customer = {this.CustomerID}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+
+                    while (sqlData.Read())
+                    {
+                        Order order = new Order();
+                        order.OrderId = (int)sqlData["ID"];
+                        order.OrderDate = (DateTime)sqlData["OrderDate"];
+                        order.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                        order.ShipStreetAddress = sqlData["ShipStreetAddress"].ToString();
+                        order.ShipCity = sqlData["ShipCity"].ToString();
+                        order.ShipParish = sqlData["ShipParish"].ToString();
+                        order.PaymentDetails.PaymentType = sqlData["PaymentType"].ToString();
+                        order.PaymentDetails.BillingStreetAddress = sqlData["BillingStreetAddress"].ToString();
+                        order.PaymentDetails.BillingCity = sqlData["BillingCity"].ToString();
+                        order.PaymentDetails.BIllingParish = sqlData["BillingParish"].ToString();
+                        orders.Add(order);
+                    }
+                }
+            }
+
+            return orders;
+        }
+
+        public Order FetchLastOrderData()
+        {
+            Order order = new Order();
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"SELECT * from [Order] WHERE Customer = {this.CustomerID}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    
+                    while (sqlData.Read())
+                    {
+                        order.OrderId = (int)sqlData["ID"];
+                        order.OrderDate = (DateTime)sqlData["OrderDate"];
+                        order.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                    }
+                }
+            }
+            order.FetchOrderItems();
+            return order;
+        }
 
     }
 }

@@ -33,13 +33,24 @@ namespace JAHub_ASPWebforms
         }
         private void LoadReviews()
         {
+            int index = 0;
             pnlReviews.Controls.Clear();
-            foreach (var review in product.Reviews)
+
+            if(product.Reviews.Count != 0)
             {
-                Shop_Controls.UsrReview review1 =  (Shop_Controls.UsrReview)Page.LoadControl("~/Shop_Controls/UsrReview.ascx");
-                pnlReviews.Controls.Add(review1);
+                foreach (var review in product.Reviews)
+                {
+                    Shop_Controls.UsrReview review1 = (Shop_Controls.UsrReview)Page.LoadControl("~/Shop_Controls/UsrReview.ascx");
+                    review1.SetReview(review);
+                    review1.SetIDSequence(index);
+                    pnlReviews.Controls.Add(review1);
+                    index++;
+                }
+                ZRMessage.Attributes.Add("style", "display: none");
             }
-            //CalculateReviews();
+          
+            
+            
         }
 
         public void LoadRatingPercentage()
@@ -83,7 +94,7 @@ namespace JAHub_ASPWebforms
                 {
                     Headline = headline.Value,
                     Comment = comment.Value,
-                   Rating = 5,//Temp
+                   Rating = int.Parse(hidRating.Value),
                    ProductID  = this.product.Id,
 
                 };

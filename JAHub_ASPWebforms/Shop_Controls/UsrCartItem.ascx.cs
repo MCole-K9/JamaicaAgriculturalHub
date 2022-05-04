@@ -24,16 +24,11 @@ namespace JAHub_ASPWebforms.Shop_Controls
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
-
                 PopulateFields();
                 Price.ID += IDSequence;
                 ProductImage.ID += IDSequence;
                 lblProductName.ID += IDSequence;
                 txtQuantity.Text = JAHubLib.Cart.ShoppingCart[product].ToString();
-
-            }
         }
 
         private void PopulateFields()

@@ -27,15 +27,18 @@
             <div class="content-container container-fluid">
                 <h2>Shopping Cart</h2>
                 <hr />
+                <div id="ECMessage" runat="server">
+                    <h4>No Items Have Been Added To Your Cart</h4>
+                    <p>Add a Product To Your Cart From Our Shop Page</p>
+                </div>
                 <asp:Panel ID="pnlCart" runat="server">
-
                 </asp:Panel>
              </div>  
         </div>
         <div class="col-lg-4">
             <div class="content-container">
                 <h3>Subtotal(Items: <span id="itemCount" runat="server"></span> ): $<span id="subtotal" runat="server"></span></h3>
-                <button class="btn btn-primary btn-style">Proceed to Checkout</button>
+                <button id="btnCheckout" runat="server" onserverclick="btnCheckout_ServerClick"  class="btn btn-primary btn-style">Proceed to Checkout</button>
             </div>
             
         </div>

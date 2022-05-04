@@ -13,7 +13,22 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="Resources/farmer-icon.png" rel="shortcut icon" type="image/x-icon" />
+    <style>
 
+        .fit-content-y{
+            height: fit-content;
+        }
+        .fit-content-x{
+            width: fit-content;
+        }
+        .content-container {
+            box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            -webkit-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            -moz-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            border-radius: 6px;
+        }
+
+    </style>
      <script type="text/javascript">
 
          //Programitically Calls the Login Modal..M.C
@@ -21,7 +36,7 @@
              $("#btnLogin").trigger("click");
          }
      </script>
-
+    
 </head>
 <body>
     <form runat="server">
@@ -62,6 +77,7 @@
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                         <li><a runat="server" href="~/Administration" class="hidden" id="btnAdministration">Admininstration</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
+                         <li><a runat="server" href="~/Register">About</a></li>
                         <%--<li><a runat="server" href="~/UserProfile">Profile(temp)</a></li>--%>
                     </ul>
                     <asp:PlaceHolder runat="server" ID="phAccount"></asp:PlaceHolder>
@@ -73,28 +89,34 @@
 
             <div class="modal-dialog">
 
-                <div class="modal-content modal-sm">
+                <div class="modal-content modal-sm center-block">
                     <asp:UpdatePanel ID="udpLogin" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
                             <div class="modal-title center-block" style="padding-top: 0.5em;">
                                 <h4 style="padding-left: 2em;">Log in to continue</h4>
                             </div>
                             <asp:Panel runat="server" CssClass="modal-body center-block">
-                                <p style="padding-bottom: 1em;">
-                                    To continue, please log into your account using your Email and password
-                                </p>
-                                <div style="padding-left: 1em; padding-bottom: 0.5em;">
-                                    <p>Email: </p>
-                                    <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
+                                <div class="row center-block">
+                                    <p style="padding-bottom: 1em;">
+                                        To continue, please log into your account using your Email and password
+                                    </p>
                                 </div>
-                                <div style="padding-left: 1em; padding-bottom: 0.5em; margin: auto;">
-                                    <p>Password: </p>
-                                    <asp:TextBox runat="server" ID="txtPassword"></asp:TextBox>
+                                <div class="row center-block form-group">
+                                        <label for="#txtEmail" class="row">Email: </label>
+                                    <br />
+                                        <asp:TextBox runat="server" ID="txtEmail" CssClass="col-sm-10 input-sm"></asp:TextBox>
                                 </div>
-                                <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn-default center-block" Width="15em"
-                                    OnClick="btnLogin_OnClick" />
-                                <br />
-                                <asp:Label runat="server" ID="lblLoginResult" CssClass="text-danger invisible">Placeholder</asp:Label>
+                                <div class="row center-block form-group">
+                                        <label for="#txtPassword" class="control-label">Password: </label>
+                                        <asp:TextBox runat="server" ID="txtPassword" CssClass="col-sm-10 input-sm" TextMode="Password"></asp:TextBox>
+                                </div>
+                                <div class="row center-block form-group">
+                                        <asp:Button runat="server" ID="btnSubmit" Text="Submit" CssClass="btn btn-default center-block col-sm-5 input-sm" 
+                                        OnClick="btnLogin_OnClick"/>
+                                </div>
+                                <div class="row center-block">
+                                    <asp:Label runat="server" ID="lblLoginResult" CssClass="text-danger invisible">Placeholder</asp:Label>
+                                </div>
                             </asp:Panel>
                         </ContentTemplate>
                     </asp:UpdatePanel>

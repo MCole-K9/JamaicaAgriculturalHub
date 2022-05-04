@@ -43,7 +43,7 @@ namespace JAHub_Winforms.Blog_Controls
         private void btnViewBlog_Click(object sender, EventArgs e)
         {
             FrmBlogDetails blogDetails = new FrmBlogDetails(blog);
-            //blogDetails.MdiParent = this.FindForm().MdiParent;
+            blogDetails.MdiParent = this.FindForm().MdiParent;
             blogDetails.Show();
         }
     }

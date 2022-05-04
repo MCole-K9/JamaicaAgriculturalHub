@@ -168,6 +168,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblpercentage1;
 
         /// <summary>
+        /// ZRMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ZRMessage;
+
+        /// <summary>
         /// pnlReviews control.
         /// </summary>
         /// <remarks>
@@ -202,5 +211,14 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnReviewSubmit;
+
+        /// <summary>
+        /// hidRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidRating;
     }
 }

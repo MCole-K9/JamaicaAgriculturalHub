@@ -17,16 +17,20 @@ namespace JAHub_ASPWebforms
         {
             pnlCart.Controls.Clear();
             int index = 0;
-
-            foreach (var item in JAHubLib.Cart.GetProductsInCart())
+            if(JAHubLib.Cart.ShoppingCart.Count != 0)
             {
-                Shop_Controls.UsrCartItem cartItem = (Shop_Controls.UsrCartItem)Page.LoadControl("~/Shop_Controls/UsrCartItem.ascx");
-                cartItem.SetProduct(item);
-                cartItem.SetIDSequence(index);
-                pnlCart.Controls.Add(cartItem);
+                foreach (var item in JAHubLib.Cart.GetProductsInCart())
+                {
+                    Shop_Controls.UsrCartItem cartItem = (Shop_Controls.UsrCartItem)Page.LoadControl("~/Shop_Controls/UsrCartItem.ascx");
+                    cartItem.SetProduct(item);
+                    cartItem.SetIDSequence(index);
+                    pnlCart.Controls.Add(cartItem);
 
-                index++;
+                    index++;
+                }
+                ECMessage.Attributes.Add("style", "display: none");
             }
+            
             CartSum();
         }
 
@@ -34,6 +38,18 @@ namespace JAHub_ASPWebforms
         {
             subtotal.InnerText = JAHubLib.Cart.CaluculateTotal().ToString();
             itemCount.InnerText = JAHubLib.Cart.ShoppingCart.Count().ToString();
+        }
+
+        protected void btnCheckout_ServerClick(object sender, EventArgs e)
+        {
+            if (Session["UserId"] != null)
+            {
+                Response.Redirect("Checkout.aspx");
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "clickLoginNavBtn", "clickLoginNavBtn()", true);
+            }
         }
     }
 }
