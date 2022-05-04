@@ -56,6 +56,18 @@ namespace JAHub_ASPWebforms
             } 
         }
         
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if(Session["UserRole"] == null)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+            else if ((UserRole)Session["UserRole"] != UserRole.Admin)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!IsPostBack)
