@@ -14,7 +14,6 @@ namespace JAHubLib
         public DateTime OrderDate { get; set; }
         public int OrderNumber { get; set; }
         public float TotalAmount { get; set; }
-        public Customer Customer { get; set; }
         public string ShipStreetAddress { get; set; }
         public string ShipCity { get; set; }
         public string ShipParish { get; set; }
@@ -26,24 +25,13 @@ namespace JAHubLib
             OrderId = 0;
             OrderNumber = 0;
             TotalAmount = 0;
-            Customer = new Customer();
             ShipStreetAddress = "";
             ShipCity = "";
             ShipParish = "";
             PaymentDetails = new Payment();
             Items = new List<OrderItem>();
         }
-        //Incomplete 
-        public void FetchOrderData()
-        {
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-                string query = $"SELECT * from [Order] WHERE Customer = {Customer.CustomerID}";
-            }
-        }
-
+       
         //Fetches Last Order Made by customer
         //Incomplete but in use
         public void FetchLastOrderData(int customerID)
