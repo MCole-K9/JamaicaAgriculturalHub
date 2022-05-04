@@ -43,7 +43,9 @@ namespace JAHub_ASPWebforms
             order.ShipCity = ShipCity.Value;
             order.ShipParish = ShipParish.Value;
 
-            if(bool.Parse(hidBillingIsShipping.Value))
+            bool shippingIsBiling = bool.Parse(hidBillingIsShipping.Value);
+
+            if (shippingIsBiling)
             {
                 order.PaymentDetails.BillingStreetAddress = order.ShipStreetAddress;
                 order.PaymentDetails.BillingCity = order.ShipCity;

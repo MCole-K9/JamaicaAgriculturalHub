@@ -376,7 +376,8 @@
 
                 $("#BillingAddress").css("display", "block");
 
-                $("#<%=hidBillingIsShipping.ClientID%>").val("true");
+                $("#<%=hidBillingIsShipping.ClientID%>").val("false");
+                
             } else {
 
                 $("#BillingFirstName").val($("#ShipFirstName").val());
@@ -389,7 +390,8 @@
 
                 $("#BillingAddress").css("display", "none");
 
-                $("#<%=hidBillingIsShipping.ClientID%>").val("false");
+                
+                $("#<%=hidBillingIsShipping.ClientID%>").val("true");
 
             }
 
