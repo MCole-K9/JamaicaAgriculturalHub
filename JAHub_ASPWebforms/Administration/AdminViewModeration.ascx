@@ -15,6 +15,7 @@
             <ItemTemplate>
                 <uc:InfractionItem runat="server" ID="admUserInfraction" />
             </ItemTemplate>
+            <SeparatorTemplate></br></SeparatorTemplate>
         </asp:Repeater>
     </div>
     <div class="row">

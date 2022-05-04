@@ -140,10 +140,15 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void btnAddInfraction_Click(object sender, EventArgs e)
         {
-            // why is this not showing up?
-            usrInfractionItem infraction = (usrInfractionItem)LoadControl("~/Administration/usrInfractionItem.ascx");
+            if (phUserInfractions.Controls.Count >= 1)
+            {
+                usrAddInfraction infraction = (usrAddInfraction)LoadControl("~/Administration/usrAddInfraction.ascx");
 
-            phUserInfractions.Controls.Add(infraction);
+                // AddInfraction needs to insert UserId
+                infraction.UserId = this.UserId;
+
+                phUserInfractions.Controls.Add(infraction);
+            }
         }
 
         protected void rptUserInfractions_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -156,9 +161,10 @@ namespace JAHub_ASPWebforms.Administration
 
                 DataRow itemRow = drvItem.Row;
 
-                item.Reason = itemRow["Reason"].ToString();
+                item.Reason = "Reason: " + itemRow["Reason"].ToString();
                 item.ID = itemRow["ID"].ToString();
-                item.AddedBy = itemRow["Admin"].ToString();
+                item.RecordId = Int32.Parse(itemRow["ID"].ToString());
+                item.AddedBy = "Added By ID: " + itemRow["Admin"].ToString();
                 item.DateOfEntry = itemRow["TimeStamp"].ToString();
             }
         }

@@ -15,7 +15,6 @@ namespace JAHub_ASPWebforms.Administration
     {
         int recordId;
         PlaceHolder controlParent;
-        DataTable removedInfractions;
 
         public String Reason
         {
@@ -37,7 +36,7 @@ namespace JAHub_ASPWebforms.Administration
 
         public int RecordId
         {
-            get { return ViewState[$"{this.NamingContainer}RecordID"] == null ? 0 : (int)ViewState[$"{this.NamingContainer}RecordId"]; }
+            get; set;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -48,13 +47,13 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void btnClearReason_Click(object sender, EventArgs e)
         {
-            if (recordId != 0)
+
+            if (RecordId != 0)
             {
                 using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
                 {
 
-                    String command = $"DELETE FROM Infraction WHERE ID = ({this.recordId})";
-
+                    String command = $"DELETE FROM Infraction WHERE ID = ({this.RecordId})";
 
                     connection.Open();
 
@@ -66,6 +65,10 @@ namespace JAHub_ASPWebforms.Administration
 
                 }
             }
+
+            ClientScriptManager cs = Page.ClientScript;
+
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(),"test", cs.GetCallbackEventReference(this, String.Empty, String.Empty, String.Empty), true);
         }
     }
 }
