@@ -312,7 +312,6 @@
     </Compile>
     <Compile Include="Administration\AdminViewModeration.ascx.cs">
       <DependentUpon>AdminViewModeration.ascx</DependentUpon>
-	</Compile>
     <Compile Include="Administration\AdminViewModeration.ascx.designer.cs">
       <DependentUpon>AdminViewModeration.ascx</DependentUpon>
     </Compile>
