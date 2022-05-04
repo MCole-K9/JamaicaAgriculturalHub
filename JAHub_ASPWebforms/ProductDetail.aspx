@@ -143,8 +143,12 @@
 
                     <div class="tab-content">
                         <div id="reviews" class="tab-pane fade in active">
-                            <h4>No Reviews Yet</h4>
-                            <p>Be the First To Review</p>
+
+                            <div id="ZRMessage" runat="server">
+                                <h4>No Reviews Yet</h4>
+                                <p>Be the First To Review</p>
+                            </div>
+                            
                             <asp:Panel ID="pnlReviews" runat="server" CssClass="review-panel">
                             </asp:Panel>
                         </div>
