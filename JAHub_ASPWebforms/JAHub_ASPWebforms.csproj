@@ -156,10 +156,10 @@
     <Content Include="Account\usrNavbarLoginRegister.ascx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="AdministrationPage.aspx" />
-	<Content Include="Administration\AdminCreateUser.ascx" />
-	<Content Include="Administration\AdminEditUser.ascx" />
-	<Content Include="Administration\AdminSelectUser.ascx" />
-	<Content Include="Administration\AdminViewModeration.ascx" />
+    <Content Include="Administration\AdminCreateUser.ascx" />
+    <Content Include="Administration\AdminEditUser.ascx" />
+    <Content Include="Administration\AdminSelectUser.ascx" />
+    <Content Include="Administration\AdminViewModeration.ascx" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
@@ -312,7 +312,8 @@
     </Compile>
     <Compile Include="Administration\AdminViewModeration.ascx.cs">
       <DependentUpon>AdminViewModeration.ascx</DependentUpon>
-	</Compile>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Administration\AdminViewModeration.ascx.designer.cs">
       <DependentUpon>AdminViewModeration.ascx</DependentUpon>
     </Compile>
