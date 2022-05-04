@@ -38,7 +38,14 @@ namespace JAHub_ASPWebforms
 
         protected void btnCheckout_ServerClick(object sender, EventArgs e)
         {
-            Response.Redirect("Checkout.aspx");
+            if (Session["UserId"] != null)
+            {
+                Response.Redirect("Checkout.aspx");
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "clickLoginNavBtn", "clickLoginNavBtn()", true);
+            }
         }
     }
 }
