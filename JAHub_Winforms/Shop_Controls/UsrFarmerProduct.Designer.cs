@@ -91,6 +91,7 @@
             this.pcbImage.Margin = new System.Windows.Forms.Padding(4);
             this.pcbImage.Name = "pcbImage";
             this.pcbImage.Size = new System.Drawing.Size(242, 160);
+            this.pcbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbImage.TabIndex = 3;
             this.pcbImage.TabStop = false;
             // 
