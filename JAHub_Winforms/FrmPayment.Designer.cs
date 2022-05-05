@@ -64,6 +64,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblCardNumber = new System.Windows.Forms.Label();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.gbPaymentMethods.SuspendLayout();
             this.pnlShippingAddress.SuspendLayout();
             this.pnlBillingAddress.SuspendLayout();
@@ -233,21 +235,24 @@
             this.pnlBillingAddress.Controls.Add(this.label6);
             this.pnlBillingAddress.Controls.Add(this.txtCity);
             this.pnlBillingAddress.Controls.Add(this.label5);
+            this.pnlBillingAddress.Controls.Add(this.txtEmail);
             this.pnlBillingAddress.Controls.Add(this.txtStreetAddress);
+            this.pnlBillingAddress.Controls.Add(this.label11);
             this.pnlBillingAddress.Controls.Add(this.label4);
             this.pnlBillingAddress.Controls.Add(this.txtLastName);
             this.pnlBillingAddress.Controls.Add(this.label3);
             this.pnlBillingAddress.Controls.Add(this.txtFirstName);
             this.pnlBillingAddress.Controls.Add(this.label7);
-            this.pnlBillingAddress.Location = new System.Drawing.Point(15, 398);
+            this.pnlBillingAddress.Location = new System.Drawing.Point(15, 389);
             this.pnlBillingAddress.Name = "pnlBillingAddress";
-            this.pnlBillingAddress.Size = new System.Drawing.Size(332, 325);
+            this.pnlBillingAddress.Size = new System.Drawing.Size(332, 334);
             this.pnlBillingAddress.TabIndex = 8;
             this.pnlBillingAddress.Visible = false;
+            this.pnlBillingAddress.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBillingAddress_Paint);
             // 
             // txtParish
             // 
-            this.txtParish.Location = new System.Drawing.Point(7, 278);
+            this.txtParish.Location = new System.Drawing.Point(8, 306);
             this.txtParish.Name = "txtParish";
             this.txtParish.Size = new System.Drawing.Size(300, 20);
             this.txtParish.TabIndex = 1;
@@ -255,7 +260,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 252);
+            this.label6.Location = new System.Drawing.Point(5, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 0;
@@ -263,7 +268,7 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(7, 222);
+            this.txtCity.Location = new System.Drawing.Point(8, 250);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(300, 20);
             this.txtCity.TabIndex = 1;
@@ -271,7 +276,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 196);
+            this.label5.Location = new System.Drawing.Point(5, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 13);
             this.label5.TabIndex = 0;
@@ -279,7 +284,7 @@
             // 
             // txtStreetAddress
             // 
-            this.txtStreetAddress.Location = new System.Drawing.Point(7, 159);
+            this.txtStreetAddress.Location = new System.Drawing.Point(8, 187);
             this.txtStreetAddress.Name = "txtStreetAddress";
             this.txtStreetAddress.Size = new System.Drawing.Size(300, 20);
             this.txtStreetAddress.TabIndex = 1;
@@ -287,7 +292,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 133);
+            this.label4.Location = new System.Drawing.Point(5, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 0;
@@ -295,7 +300,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(7, 97);
+            this.txtLastName.Location = new System.Drawing.Point(8, 88);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(300, 20);
             this.txtLastName.TabIndex = 1;
@@ -303,7 +308,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 71);
+            this.label3.Location = new System.Drawing.Point(5, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 0;
@@ -414,6 +419,22 @@
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
             this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(5, 111);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(8, 137);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(300, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
             // FrmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,5 +506,7 @@
         private System.Windows.Forms.Label lblStreetAddress;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label11;
     }
 }
