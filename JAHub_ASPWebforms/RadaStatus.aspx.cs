@@ -13,18 +13,33 @@ namespace JAHub_ASPWebforms
 {
     public partial class RadaStatus : System.Web.UI.Page
     {
-        protected RadaRegistrationType farmerRegistrationPhase;
+        public RadaRegistrationType FarmerRegistrationPhase
+        {
+            get
+            {
+                return ViewState["RadaStatusRegistrationType"] == null ? RadaRegistrationType.NotRegistered : (RadaRegistrationType)ViewState["RadaStatusRegistrationType"];
+            }
+            set
+            {
+                ViewState["RadaStatusRegistrationType"] = value;
+            }
+        }
         protected String RadaExplanation;
         protected String RadaStatusHeading;
         int farmerId;
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
 
-                String command = $"SELECT ID, RadaRegistrationStatus FROM Farmer WHERE UserID = {Session["UserId"]}";
+                String command = $"SELECT ID, RadaRegistrationStatus FROM Farmer WHERE UserID = {Session["UserId"]};";
 
                 SqlCommand pullFarmer = new SqlCommand(command, connection);
 
@@ -34,25 +49,26 @@ namespace JAHub_ASPWebforms
                 {
                     if (DBNull.Value.Equals(reader["RadaRegistrationStatus"]))
                     {
-                        farmerRegistrationPhase = RadaRegistrationType.NotRegistered;
+                        FarmerRegistrationPhase = RadaRegistrationType.NotRegistered;
                     }
                     else
                     {
                         farmerId = (int)reader["ID"];
-                        farmerRegistrationPhase = (RadaRegistrationType)Int32.Parse(reader["RadaRegistrationStatus"].ToString());
+                        FarmerRegistrationPhase = (RadaRegistrationType)Int32.Parse(reader["RadaRegistrationStatus"].ToString());
                     }
                 }
 
                 connection.Close();
             }
 
-            switch (farmerRegistrationPhase)
+            switch (FarmerRegistrationPhase)
             {
                 case RadaRegistrationType.NotRegistered:
                     lblStatusHeading.Text = "Rada Status: Not Registered";
                     lblStatusExplanation.Text = "You are not currently registered with RADA. Click the button below to apply.";
 
                     btnRegisterOrViewInformation.Visible = true;
+                    btnRegisterOrViewInformation.Text = "Click Here to Register";
                     break;
                 case RadaRegistrationType.AwaitingVerification:
                     lblStatusHeading.Text = "Rada Status: Awaiting Verification";
@@ -74,12 +90,14 @@ namespace JAHub_ASPWebforms
                         "below";
 
                     btnRegisterOrViewInformation.Visible = true;
+                    btnRegisterOrViewInformation.Text = "View or Change Information";
                     break;
                 default:
                     lblStatusHeading.Text = "Rada Status: Not Registered";
                     lblStatusExplanation.Text = "You are not currently registered with RADA. Click the button below to apply.";
 
                     btnRegisterOrViewInformation.Visible = true;
+                    btnRegisterOrViewInformation.Text = "Click here to Register";
                     break;
             }
         }
@@ -87,6 +105,18 @@ namespace JAHub_ASPWebforms
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnRegisterOrViewInformation_Click(object sender, EventArgs e)
+        {
+            if (FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
+            {
+                // i don't think this is necessary, since the next page should be able to see previous
+            }
+            else if (FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
+            {
+                // This isn't necessary either, probably
+            }
         }
     }
 }
