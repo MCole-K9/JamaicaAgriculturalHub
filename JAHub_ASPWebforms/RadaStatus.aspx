@@ -3,14 +3,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="RadaStatus">
+    <div>
+        <div class="row">
+            <h2><asp:Label runat="server" ID="lblStatusHeading">Explanation</asp:Label></h2>
         </div>
-    </form>
-</body>
-</html>
+
+        <div class="row">
+            <asp:Label runat="server" ID="lblStatusExplanation">Explanation</asp:Label>  
+        </div>
+
+        <div class="row">
+            <asp:Button runat="server" ID="btnRegisterOrViewInformation" Visible="false" />
+        </div>
+    </div>
+
+</asp:Content>
+        
