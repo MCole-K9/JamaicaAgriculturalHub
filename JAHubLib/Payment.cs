@@ -12,6 +12,10 @@ namespace JAHubLib
         public int PaymentID { get; set; }
         public string PaymentType { get; set; }
         public DateTime PaymentDate { get; set; }
+        public string BillingFirstName { get; set; }
+        public string BillingLastName { get; set; }
+        public string BillingEmail { get; set; }
+
         public string BillingStreetAddress { get; set; }
         public string BillingCity { get; set; }
         public string BIllingParish { get; set; }

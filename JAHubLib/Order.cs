@@ -17,6 +17,9 @@ namespace JAHubLib
         public string ShipStreetAddress { get; set; }
         public string ShipCity { get; set; }
         public string ShipParish { get; set; }
+        public string ShipFirstName { get; set; }
+        public string ShipLastName { get; set; }
+        public string ShipEmail { get; set; }
         public Payment PaymentDetails { get; set; }
         public List<OrderItem> Items { get; set; }
 
