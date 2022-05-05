@@ -117,6 +117,12 @@
     <Compile Include="FrmManageProducts.Designer.cs">
       <DependentUpon>FrmManageProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrders.Designer.cs">
+      <DependentUpon>FrmOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,14 @@
     <Compile Include="Moderation\usrInfractionAdder.Designer.cs">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Orders.cs">
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -503,6 +517,9 @@
     <EmbeddedResource Include="FrmManageProducts.resx">
       <DependentUpon>FrmManageProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrders.resx">
+      <DependentUpon>FrmOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPayment.resx">
       <DependentUpon>FrmPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -635,6 +652,17 @@
     <EmbeddedResource Include="Verification\usrUploadImage.resx">
       <DependentUpon>usrUploadImage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Orders.xsc">
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </None>
+    <None Include="Orders.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Orders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Orders.xss">
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
