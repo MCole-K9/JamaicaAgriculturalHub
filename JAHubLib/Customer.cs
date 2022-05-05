@@ -118,8 +118,8 @@ namespace JAHubLib
         {
             if (isLoggedIn)
             {
-                int j = Utilities.executeInputQuery($"INSERT INTO Payment (PaymentType, PaymentDate, BillingStreetAddress, BilingCity, BillingParish ) " +
-                    $"VALUES ('{order.PaymentDetails.PaymentType}', GETDATE(), '{order.PaymentDetails.BillingStreetAddress}', '{order.PaymentDetails.BillingCity}', '{order.PaymentDetails.BIllingParish}')");
+                int j = Utilities.executeInputQuery($"INSERT INTO Payment (PaymentType, PaymentDate, BillingStreetAddress, BillingCity, BillingParish, BillingFirstName, BillingLastName, BillingEmail ) " +
+                    $"VALUES ('{order.PaymentDetails.PaymentType}', GETDATE(), '{order.PaymentDetails.BillingStreetAddress}', '{order.PaymentDetails.BillingCity}', '{order.PaymentDetails.BIllingParish}' , '{order.PaymentDetails.BillingFirstName}', '{order.PaymentDetails.BillingLastName}',  '{order.PaymentDetails.BillingEmail}' )");
 
                 if (j < 0)
                 {
@@ -130,8 +130,8 @@ namespace JAHubLib
                     order.PaymentDetails.FetchPaymentID();
 
 
-                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails, Subtotal) " +
-                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID}, {Cart.CaluculateTotal()} )");
+                    int i = Utilities.executeInputQuery($"INSERT INTO [Order] (Customer, OrderDate, ShipStreetAddress, ShipCity, ShipParish,PaymentDetails, Subtotal, ShipFirstName, ShipLastName, ShipEmail) " +
+                    $"Values ({CustomerID},GETDATE(), '{order.ShipStreetAddress}', '{order.ShipCity}', '{order.ShipParish}', {order.PaymentDetails.PaymentID}, {Cart.CaluculateTotal()}, '{order.ShipFirstName}', '{order.ShipLastName}', '{order.ShipEmail}' )");
 
 
                     return i;
@@ -170,10 +170,16 @@ namespace JAHubLib
                         order.OrderId = (int)sqlData["ID"];
                         order.OrderDate = (DateTime)sqlData["OrderDate"];
                         order.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                        order.ShipFirstName = sqlData["ShipFirstName"].ToString();
+                        order.ShipLastName = sqlData["ShipLastName"].ToString();
+                        order.ShipEmail = sqlData["ShipEmail"].ToString();
                         order.ShipStreetAddress = sqlData["ShipStreetAddress"].ToString();
                         order.ShipCity = sqlData["ShipCity"].ToString();
                         order.ShipParish = sqlData["ShipParish"].ToString();
                         order.PaymentDetails.PaymentType = sqlData["PaymentType"].ToString();
+                        order.PaymentDetails.BillingFirstName = sqlData["BillingFirstName"].ToString();
+                        order.PaymentDetails.BillingLastName = sqlData["BillingLastName"].ToString();
+                        order.PaymentDetails.BillingEmail = sqlData["BillingEmail"].ToString();
                         order.PaymentDetails.BillingStreetAddress = sqlData["BillingStreetAddress"].ToString();
                         order.PaymentDetails.BillingCity = sqlData["BillingCity"].ToString();
                         order.PaymentDetails.BIllingParish = sqlData["BillingParish"].ToString();
