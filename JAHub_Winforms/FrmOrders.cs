@@ -13,9 +13,15 @@ namespace JAHub_Winforms
 {
     public partial class FrmOrders : Form
     {
+        private FrmShop _frmShop;
         public FrmOrders()
         {
             InitializeComponent();
+        }
+        public FrmOrders(FrmShop frmshop)
+        {
+            InitializeComponent();
+            this._frmShop = frmshop;
         }
 
         private void orderBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -57,6 +63,30 @@ namespace JAHub_Winforms
         private void orderBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnViewOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Order order = new Order
+                {
+                    OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value,
+
+
+                };
+                order.FetchOrderData();
+                _frmShop.OpenChildForm(new FrmOrderDetails(order));
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+            
+            
         }
     }
 }

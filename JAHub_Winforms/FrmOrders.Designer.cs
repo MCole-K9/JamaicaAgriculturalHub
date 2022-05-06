@@ -32,24 +32,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrders));
             this.label1 = new System.Windows.Forms.Label();
             this.orderBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orders = new JAHub_Winforms.Orders();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.orderDataGridView = new System.Windows.Forms.DataGridView();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orders = new JAHub_Winforms.Orders();
             this.orderTableAdapter = new JAHub_Winforms.OrdersTableAdapters.OrderTableAdapter();
             this.tableAdapterManager = new JAHub_Winforms.OrdersTableAdapters.TableAdapterManager();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.customerToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.customerToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.btnViewOrder = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,12 +60,11 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingNavigator)).BeginInit();
             this.orderBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,24 @@
             this.orderBindingNavigator.TabIndex = 1;
             this.orderBindingNavigator.Text = "bindingNavigator1";
             // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataMember = "Order";
+            this.orderBindingSource.DataSource = this.orders;
+            this.orderBindingSource.CurrentChanged += new System.EventHandler(this.orderBindingSource_CurrentChanged);
+            // 
+            // orders
+            // 
+            this.orders.DataSetName = "Orders";
+            this.orders.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -131,21 +150,15 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -168,7 +181,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // orderDataGridView
@@ -176,6 +189,7 @@
             this.orderDataGridView.AutoGenerateColumns = false;
             this.orderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn7,
@@ -183,25 +197,12 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn6});
             this.orderDataGridView.DataSource = this.orderBindingSource;
-            this.orderDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.orderDataGridView.Location = new System.Drawing.Point(0, 76);
             this.orderDataGridView.Name = "orderDataGridView";
-            this.orderDataGridView.Size = new System.Drawing.Size(936, 374);
+            this.orderDataGridView.Size = new System.Drawing.Size(936, 323);
             this.orderDataGridView.TabIndex = 2;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataMember = "Order";
-            this.orderBindingSource.DataSource = this.orders;
-            this.orderBindingSource.CurrentChanged += new System.EventHandler(this.orderBindingSource_CurrentChanged);
-            // 
-            // orders
-            // 
-            this.orders.DataSetName = "Orders";
-            this.orders.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // orderTableAdapter
             // 
@@ -234,6 +235,7 @@
             // customerToolStripTextBox
             // 
             this.customerToolStripTextBox.Enabled = false;
+            this.customerToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.customerToolStripTextBox.Name = "customerToolStripTextBox";
             this.customerToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.customerToolStripTextBox.Click += new System.EventHandler(this.customerToolStripTextBox_Click);
@@ -245,6 +247,23 @@
             this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
             this.fillByToolStripButton.Text = "FillBy";
             this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
+            // btnViewOrder
+            // 
+            this.btnViewOrder.Location = new System.Drawing.Point(0, 415);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnViewOrder.TabIndex = 4;
+            this.btnViewOrder.Text = "View Order";
+            this.btnViewOrder.UseVisualStyleBackColor = true;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -294,19 +313,12 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Subtotal";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
             // FrmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 450);
+            this.Controls.Add(this.btnViewOrder);
             this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.orderDataGridView);
             this.Controls.Add(this.orderBindingNavigator);
@@ -317,9 +329,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingNavigator)).EndInit();
             this.orderBindingNavigator.ResumeLayout(false);
             this.orderBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -345,6 +357,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView orderDataGridView;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripLabel customerToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox customerToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.Button btnViewOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -353,10 +371,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripLabel customerToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox customerToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
