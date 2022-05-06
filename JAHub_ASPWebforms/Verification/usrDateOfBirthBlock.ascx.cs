@@ -25,17 +25,42 @@ namespace JAHub_ASPWebforms.Verification
 
     public partial class usrDateOfBirthBlock : System.Web.UI.UserControl
     {
-        bool isYearValid;
-        bool isMonthValid;
-        bool isDayValid;
-
-        int year;
-        int month;
         int day;
 
-        public int Day => day;
-        public int Month => month;
-        public int Year => year;
+        public int Day 
+        {
+            get
+            {
+                return Int32.Parse(ddlDay.SelectedValue);
+            }
+            set
+            {
+                ddlDay.SelectedIndex = ddlDay.Items.IndexOf(ddlDay.Items.FindByValue(value.ToString()));
+            }
+        }
+        
+        public int Month
+        {
+            get
+            {
+                return Int32.Parse(ddlMonth.SelectedValue);
+            }
+            set
+            {
+                ddlMonth.SelectedIndex = ddlMonth.Items.IndexOf(ddlMonth.Items.FindByValue(value.ToString()));
+            }
+        }
+        public int Year
+        {
+            get
+            {
+                return Int32.Parse(ddlYear.SelectedValue);
+            }
+            set
+            {
+                ddlYear.SelectedIndex = ddlYear.Items.IndexOf(ddlYear.Items.FindByValue(value.ToString()));
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,9 +81,6 @@ namespace JAHub_ASPWebforms.Verification
             ddlMonth.SelectedIndex = givenDate.Month;
             ddlYear.SelectedIndex = givenDate.Year;
 
-            isDayValid = true;
-            isMonthValid = true;
-            isYearValid = true;
         }
 
         protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)

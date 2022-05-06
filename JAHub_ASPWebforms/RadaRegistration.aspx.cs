@@ -64,7 +64,17 @@ namespace JAHub_ASPWebforms
                     Farmer farmer = new Farmer();
                     farmer.GetFullRecordFromDatabase((int)Session["UserId"]);
 
+                    nameBlock.FirstName = farmer.FirstName;
+                    nameBlock.MiddleName = farmer.MiddleName;
+                    nameBlock.LastName = farmer.LastName;
 
+                    var date = (DateTime)farmer.DateOfBirth;
+
+                    dateOfBirthBlock.Day = date.Day;
+                    dateOfBirthBlock.Month = date.Month;
+                    dateOfBirthBlock.Year = date.Year;
+
+                    trnBlock.TaxRegistrationNumber = farmer.TaxRegistrationNumber;
                 }
                 // what if a postback happens?
             }
