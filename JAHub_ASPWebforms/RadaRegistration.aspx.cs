@@ -29,7 +29,7 @@ namespace JAHub_ASPWebforms
             }
             else if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
             {
-                // Change the text to say view/edit information
+                lblRadaRegistrationHeading.Text = "Edit Information";
                 // hide the button to choose between the short and long forms of doing the thing
                 // Either hide the submit button or choose edit or something, idk
             }
@@ -42,11 +42,11 @@ namespace JAHub_ASPWebforms
             {
                 if (fullRegistration)
                 {
-                    // Add all of the controls
+                    GenerateFullRegistration();
                 }
                 else
                 {
-                    // Add the reduced amount of controls
+                    GeneratePartialRegistration();
                 }
 
             }
@@ -56,18 +56,63 @@ namespace JAHub_ASPWebforms
                 btnSubmit.Visible = false;
                 FindControl("divAccountCreation").Visible = false;
 
+                GenerateFullRegistration();
+
                 // query the entire farmer thing and write it out
+                // what if a postback happens?
             }
         }
 
         protected void btnCreateNewAccount_Click(object sender, EventArgs e)
         {
             fullRegistration = true;
+
+            GenerateFullRegistration();
         }
 
         protected void btnPreexistingAccount_Click(object sender, EventArgs e)
         {
-            fullRegistration = false; 
+            fullRegistration = false;
+
+            GeneratePartialRegistration();
+        }
+
+        protected void GenerateFullRegistration()
+        {
+            addressBlock = (usrAddressBlock)LoadControl("~/Verification/usrAddressBlock.ascx");
+            contactBlock = (usrContactBlock)LoadControl("~/Verification/usrContactBlock.ascx");
+            dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verificaton/usrDateOfBirthBlock.ascx");
+            holdingsBlock = (usrHoldingsBlock)LoadControl("~/Verificaton/usrHoldingsBlock.ascx");
+            trnBlock = (usrTrnBlock)LoadControl("~/Verification/usrTrnBlock.ascx");
+            industryBlock = (usrIndustryBlock)LoadControl("~/Verificaton/usrIndustryBlock.ascx");
+            organizationsBlock = (usrOrganizationsBlock)LoadControl("~/Verification/usrOrganizationzBlock.ascx");
+        }
+
+        protected void GeneratePartialRegistration()
+        {
+            addressBlock = (usrAddressBlock)LoadControl("~/Verification/usrAddressBlock.ascx");
+            contactBlock = (usrContactBlock)LoadControl("~/Verification/usrContactBlock.ascx");
+            dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verificaton/usrDateOfBirthBlock.ascx");
+            holdingsBlock = (usrHoldingsBlock)LoadControl("~/Verificaton/usrHoldingsBlock.ascx");
+            trnBlock = (usrTrnBlock)LoadControl("~/Verification/usrTrnBlock.ascx");
+            industryBlock = (usrIndustryBlock)LoadControl("~/Verificaton/usrIndustryBlock.ascx");
+            organizationsBlock = (usrOrganizationsBlock)LoadControl("~/Verification/usrOrganizationzBlock.ascx");
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Page.Validate();
+
+            // change customer to farmer if they're so and so.
+
+            if (fullRegistration)
+            {
+                // do the full submission for blah blah
+            }
+            else
+            {
+                // do the partial submission
+            }
         }
     }
 }

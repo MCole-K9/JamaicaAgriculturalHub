@@ -21,7 +21,7 @@
             </asp:UpdatePanel>
         </div>
         <div class="row">
-            <asp:Button runat="server" ID="btnSubmit" Text="Submit" />
+            <asp:Button runat="server" ID="btnSubmit" Text="Submit" OnClick="btnSubmit_Click" />
         </div>
     </div>
 </asp:Content>
