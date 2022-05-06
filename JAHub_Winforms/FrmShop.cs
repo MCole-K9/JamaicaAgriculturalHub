@@ -59,7 +59,7 @@ namespace JAHub_Winforms
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmOrders());
+            OpenChildForm(new FrmOrders(this));
         }
     }
 }

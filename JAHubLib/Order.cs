@@ -59,6 +59,42 @@ namespace JAHubLib
             FetchOrderItems();
         }
 
+        public void FetchOrderData()
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"SELECT * from [Order] AS O " +
+                    $" Inner JOIN Payment as Pymt " +
+                    $" ON O.PaymentDetails = Pymt.ID " +
+                    $" WHERE O.ID = {this.OrderId}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    if (sqlData.Read())
+                    {
+                        this.OrderDate = (DateTime)sqlData["OrderDate"];
+                        this.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                        this.ShipFirstName = sqlData["ShipFirstName"].ToString();
+                        this.ShipLastName = sqlData["ShipLastName"].ToString();
+                        this.ShipEmail = sqlData["ShipEmail"].ToString();
+                        this.ShipStreetAddress = sqlData["ShipStreetAddress"].ToString();
+                        this.ShipCity = sqlData["ShipCity"].ToString();
+                        this.ShipParish = sqlData["ShipParish"].ToString();
+                        this.PaymentDetails.PaymentType = sqlData["PaymentType"].ToString();
+                        this.PaymentDetails.BillingFirstName = sqlData["BillingFirstName"].ToString();
+                        this.PaymentDetails.BillingLastName = sqlData["BillingLastName"].ToString();
+                        this.PaymentDetails.BillingEmail = sqlData["BillingEmail"].ToString();
+                        this.PaymentDetails.BillingStreetAddress = sqlData["BillingStreetAddress"].ToString();
+                        this.PaymentDetails.BillingCity = sqlData["BillingCity"].ToString();
+                        this.PaymentDetails.BIllingParish = sqlData["BillingParish"].ToString();
+                    }
+                }
+            }
+            FetchOrderItems();
+        }
         
         public void FetchOrderItems()
         {

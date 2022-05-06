@@ -321,6 +321,12 @@
     <Compile Include="Moderation\usrInfractionAdder.Designer.cs">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderDetails.Designer.cs">
+      <DependentUpon>FrmOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orders.cs">
       <DependentUpon>Orders.xsd</DependentUpon>
     </Compile>
@@ -351,6 +357,12 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrFarmerProduct.Designer.cs">
       <DependentUpon>UsrFarmerProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.Designer.cs">
+      <DependentUpon>UsrOrderItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrOrderSumItem.cs">
       <SubType>UserControl</SubType>
@@ -596,6 +608,9 @@
     <EmbeddedResource Include="Moderation\usrInfractionAdder.resx">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderDetails.resx">
+      <DependentUpon>FrmOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -609,6 +624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UsrFarmerProduct.resx">
       <DependentUpon>UsrFarmerProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop_Controls\UsrOrderItem.resx">
+      <DependentUpon>UsrOrderItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UsrOrderSumItem.resx">
       <DependentUpon>UsrOrderSumItem.cs</DependentUpon>
