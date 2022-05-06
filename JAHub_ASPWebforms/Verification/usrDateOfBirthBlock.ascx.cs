@@ -72,16 +72,6 @@ namespace JAHub_ASPWebforms.Verification
 
         }
 
-        public usrDateOfBirthBlock(SqlDateTime date)
-        {
-            // need to figure out how to make this correspond to farmer
-            DateTime givenDate = date.Value;
-
-            ddlDay.SelectedIndex = givenDate.Day;
-            ddlMonth.SelectedIndex = givenDate.Month;
-            ddlYear.SelectedIndex = givenDate.Year;
-
-        }
 
         protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
