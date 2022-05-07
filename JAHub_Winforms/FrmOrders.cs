@@ -70,7 +70,7 @@ namespace JAHub_Winforms
             try
             {
                 Order order = new Order();
-                order.OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value
+                order.OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value;
 
 
                 
