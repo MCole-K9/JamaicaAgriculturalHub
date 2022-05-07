@@ -16,12 +16,14 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="StyleSheet2.css" rel="stylesheet" />
+    <link href="UserPortalCss.css" rel="stylesheet" />
     
 
     <style>
 
         body{
-            padding-top: 0px;
+            padding: 0;
+
         }
 
         .fit-content-y{
@@ -36,16 +38,18 @@
             background-color: #20b2aa;
         }
 
+       
+        .content-container {
+            box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            -webkit-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            -moz-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            border-radius: 6px;
+        }
         
     
     </style>
 
      <script type="text/javascript">
-
-         //Programitically Calls the Login Modal..M.C
-         function clickLoginNavBtn() {
-             $("#btnLogin").trigger("click");
-         }
 
          // K.S.: Necessary to make Administration Option only visible when the user is an admin
          function makeAdmininstrationVisible(){
@@ -132,15 +136,16 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="col-sm-9 col-lg-10">
-                    <div class="container body-content" style="padding: 0 20px;">
-                        <!-- your page content -->
-                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
+                    <!-- your page content -->
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+
                 </div>
             </div>
         </div>
