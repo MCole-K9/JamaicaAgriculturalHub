@@ -13,10 +13,14 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="Resources/farmer-icon.png" rel="shortcut icon" type="image/x-icon" />
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="StyleSheet2.css" rel="stylesheet" />
     <link href="UserPortalCss.css" rel="stylesheet" />
+    
+
+    <%--<link href="StyleSheet2.css" rel="stylesheet" />--%>
+
+    
     
 
     <style>
@@ -62,12 +66,12 @@
 
       
          
-
+        
 
 
      </script>
 
-    
+    <script src="https://kit.fontawesome.com/860ff83f21.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form runat="server">
@@ -85,7 +89,7 @@
                 <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />               
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
@@ -116,16 +120,16 @@
                         <div id="sidebar-wrapper">
                             <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
                                 <li class="active">
-                                    <a href="test1.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
                                 </li>
                                 <li>
-                                    <a href="test2.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x"></i></span>Security</a>
                                 </li>
                                 <li>
-                                    <a href="test1.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o fa-stack-1x "></i></span>Grants</a>
