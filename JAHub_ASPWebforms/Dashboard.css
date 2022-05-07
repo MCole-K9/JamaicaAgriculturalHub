@@ -1,0 +1,50 @@
+﻿    body {
+        font: 10px;
+    }
+
+    .main{
+        margin-top:1.4rem;
+    }
+
+    .date-buttons{
+        margin-left: 40rem;
+    }
+
+    .box {
+        height: 30px;
+        width: 150px;
+        margin-left: 20px;
+        /*box-shadow:  #ff0000;*/
+    
+    }
+
+    .box:hover {
+        border: 1px solid;
+        box-shadow: 1px 1px 1px 1px #888888;
+    }
+
+
+
+    main .insight{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    }
+
+
+
+
+    main .insight > div {
+       background: #ffd800;
+       padding: 20px;
+       border-radius: 10px;
+       margin-top: 1rem;
+       box-shadow: #ff0000;
+        
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    }
+
+
+    main .insight > div:hover {
+        box-shadow: none;
+    }

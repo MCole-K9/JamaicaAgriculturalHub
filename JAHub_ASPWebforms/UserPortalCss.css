@@ -22,7 +22,7 @@
     position: absolute;
     left: 250px;
     width: 0;
-    height: 100%;
+    height: 100vh;
     margin-left: -250px;
     margin-right: -250px;
     overflow-y: auto;
@@ -145,22 +145,22 @@
             width: 250px;
         }
 
-    #page-content-wrapper {
+   /* #page-content-wrapper {
         padding: 20px;
         position: relative;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
-    }
+    }*/
 
-    #wrapper.toggled #page-content-wrapper {
+    /*#wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
         padding-left: 250px;
-    }
+    }*/
 
-    #wrapper.toggled-2 #page-content-wrapper {
+    /*#wrapper.toggled-2 #page-content-wrapper {
         position: relative;
         margin-right: 0;
         margin-left: -200px;
@@ -169,5 +169,5 @@
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
         width: auto;
-    }
+    }*/
 }

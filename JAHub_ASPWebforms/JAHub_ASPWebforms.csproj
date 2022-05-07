@@ -169,6 +169,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateBlog.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Dashboard.css" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
@@ -359,6 +361,13 @@
     </Compile>
     <Compile Include="CreateBlog.aspx.designer.cs">
       <DependentUpon>CreateBlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
