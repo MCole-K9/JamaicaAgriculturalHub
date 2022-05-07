@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RadaStatus.aspx.cs" Inherits="JAHub_ASPWebforms.RadaStatus" 
-    MasterPageFile="~/Site.Master"%>
+    MasterPageFile="~/UserPortal.Master"%>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="RadaStatus">
     <div>

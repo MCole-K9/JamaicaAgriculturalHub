@@ -16,7 +16,7 @@ namespace JAHub_ASPWebforms
         protected bool fullRegistration;
 
         usrNameBlock nameBlock;
-        usrAddressBlock addressBlock;
+        //usrAddressBlock addressBlock;
         usrContactBlock contactBlock;
         usrDateOfBirthBlock dateOfBirthBlock;
         usrHoldingsBlock holdingsBlock;
@@ -79,7 +79,12 @@ namespace JAHub_ASPWebforms
                     contactBlock.Email = farmer.Email;
                     contactBlock.PhoneNumbers = farmer.PhoneNumbers;
 
+                    industryBlock.NumberOfEmployees = farmer.NumberOfEmployees;
+                    industryBlock.UsesHeavyMachinery = farmer.UsesHeavyMachinery;
 
+                    holdingsBlock.LandInformation = farmer.OwnedLand;
+                    
+                    organizationsBlock.Organizations = farmer.Organizations;
                 }
                 // what if a postback happens?
             }
@@ -102,7 +107,7 @@ namespace JAHub_ASPWebforms
         protected void GenerateFullRegistration()
         {
             nameBlock = (usrNameBlock)LoadControl("~/Verification/usrNameBlock.ascx");
-            addressBlock = (usrAddressBlock)LoadControl("~/Verification/usrAddressBlock.ascx");
+            //addressBlock = (usrAddressBlock)LoadControl("~/Verification/usrAddressBlock.ascx");
             contactBlock = (usrContactBlock)LoadControl("~/Verification/usrContactBlock.ascx");
             dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verificaton/usrDateOfBirthBlock.ascx");
             holdingsBlock = (usrHoldingsBlock)LoadControl("~/Verificaton/usrHoldingsBlock.ascx");
