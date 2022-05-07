@@ -33,12 +33,21 @@ namespace JAHub_ASPWebforms.Verification
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
 
         /// <summary>
+        /// regPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regPhoneNumber;
+
+        /// <summary>
         /// reqPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator reqPhoneNumber;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPhoneNumber;
     }
 }

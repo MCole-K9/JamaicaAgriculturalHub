@@ -105,7 +105,6 @@ namespace JAHubLib
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             
@@ -115,6 +114,11 @@ namespace JAHubLib
         public static string getCreateBlogSqlString(Blog newBlog)
         {
             return "INSERT INTO Blog (Title, Author, Description, Body, PublishedDate, Rating) VALUES ('" + newBlog.Title + "','" + newBlog.AuthorID + "','" + newBlog.Description + "','" + newBlog.BlogBody + "','" + newBlog.PublishDateString + "'," + newBlog.Rating + ");";
+        }
+
+        public static string getUpdateBlogSqlString(Blog newBlog)
+        {
+            return $"UPDATE [Blog] SET Title = '{newBlog.Title}', Description = '{newBlog.Description}', Body = '{newBlog.BlogBody}' WHERE ID = '{newBlog.BlogID}'";
         }
 
         //M.C..Trying to kill repitition

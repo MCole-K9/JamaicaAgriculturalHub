@@ -42,6 +42,8 @@
             this.btnRatingDown = new System.Windows.Forms.Button();
             this.btnRatingUp = new System.Windows.Forms.Button();
             this.lblUpOrDownVote = new System.Windows.Forms.Label();
+            this.btnEditBlog = new System.Windows.Forms.Button();
+            this.btnDeleteBlog = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
@@ -236,12 +238,38 @@
             this.lblUpOrDownVote.TabIndex = 22;
             this.lblUpOrDownVote.Text = "Found This Helpful?";
             // 
+            // btnEditBlog
+            // 
+            this.btnEditBlog.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnEditBlog.Location = new System.Drawing.Point(184, 565);
+            this.btnEditBlog.Name = "btnEditBlog";
+            this.btnEditBlog.Size = new System.Drawing.Size(75, 23);
+            this.btnEditBlog.TabIndex = 23;
+            this.btnEditBlog.Text = "Edit";
+            this.btnEditBlog.UseVisualStyleBackColor = false;
+            this.btnEditBlog.Visible = false;
+            this.btnEditBlog.Click += new System.EventHandler(this.btnEditBlog_Click);
+            // 
+            // btnDeleteBlog
+            // 
+            this.btnDeleteBlog.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteBlog.Location = new System.Drawing.Point(266, 564);
+            this.btnDeleteBlog.Name = "btnDeleteBlog";
+            this.btnDeleteBlog.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteBlog.TabIndex = 24;
+            this.btnDeleteBlog.Text = "Delete";
+            this.btnDeleteBlog.UseVisualStyleBackColor = false;
+            this.btnDeleteBlog.Visible = false;
+            this.btnDeleteBlog.Click += new System.EventHandler(this.btnDeleteBlog_Click);
+            // 
             // FrmBlogDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1148, 604);
+            this.Controls.Add(this.btnDeleteBlog);
+            this.Controls.Add(this.btnEditBlog);
             this.Controls.Add(this.lblUpOrDownVote);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.btnRatingDown);
@@ -273,5 +301,7 @@
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblUpOrDownVote;
+        private System.Windows.Forms.Button btnEditBlog;
+        private System.Windows.Forms.Button btnDeleteBlog;
     }
 }

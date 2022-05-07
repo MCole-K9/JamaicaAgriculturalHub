@@ -1,9 +1,9 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrDateOfBirthBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrDateOfBithBlock" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrDateOfBirthBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrDateOfBirthBlock" %>
 
-<div>
-    <h4>Date Of Birth*</h4>
-    <div>
-        <div>
+<div class="row">
+    <h4 class="text">Date Of Birth*</h4>
+    <div class="row">
+        <div class="row">
             <asp:DropDownList runat="server" ID="ddlDay">
                 <asp:ListItem Value="1"></asp:ListItem>
                 <asp:ListItem Value="2"></asp:ListItem>
@@ -37,9 +37,9 @@
                 <asp:ListItem>30</asp:ListItem>
                 <asp:ListItem>31</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqDay" ErrorMessage="Field is Required"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator runat="server" ID="reqDay" ErrorMessage="Field is Required" CssClass="text text-danger"></asp:RequiredFieldValidator>
         </div>
-        <div>
+        <div class="row">
             <asp:DropDownList runat="server" ID="ddlMonth" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
                 <asp:ListItem Value="1">January</asp:ListItem>
                 <asp:ListItem Value="2">February</asp:ListItem>
@@ -54,9 +54,9 @@
                 <asp:ListItem Value="11">November</asp:ListItem>
                 <asp:ListItem Value="12">December</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqMonth" ErrorMessage="Field is Required"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator runat="server" ID="reqMonth" ErrorMessage="Field is Required" CssClass="text text-danger"></asp:RequiredFieldValidator>
         </div>
-        <div>
+        <div class="row">
             <asp:DropDownList runat="server" ID="ddlYear">
                 <asp:ListItem>2021</asp:ListItem>
                 <asp:ListItem>2020</asp:ListItem>
@@ -180,7 +180,7 @@
                 <asp:ListItem>1901</asp:ListItem>
                 <asp:ListItem>1900</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqYear" ErrorMessage="Field is Required"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator runat="server" ID="reqYear" ErrorMessage="Field is Required" CssClass="text text-danger"></asp:RequiredFieldValidator>
         </div>
     </div>
 

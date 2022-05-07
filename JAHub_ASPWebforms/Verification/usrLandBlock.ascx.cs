@@ -54,26 +54,26 @@ namespace JAHub_ASPWebforms.Verification
             }
         }
 
-        public bool IsBlockValid()
-        {
-            var addressBlock = phAddressBlock.Controls[0] as usrAddressBlock;
+        //public bool IsBlockValid()
+        //{
+        //    var addressBlock = phAddressBlock.Controls[0] as usrAddressBlock;
 
-            if (addressBlock.IsBlockValid())
-            {
-                if (isLandBlockValid)
-                {
-                    land.LandAddressTown = addressBlock.AddressTown;
-                    land.LandAddressPoBox = addressBlock.AddressPostOffice;
-                    land.LandAddressParish = addressBlock.AddressParish;
+        //    if (addressBlock.IsBlockValid())
+        //    {
+        //        if (isLandBlockValid)
+        //        {
+        //            land.LandAddressTown = addressBlock.AddressTown;
+        //            land.LandAddressPoBox = addressBlock.AddressPostOffice;
+        //            land.LandAddressParish = addressBlock.AddressParish;
 
-                    land.LandMeasurement = Decimal.Parse(txtLandMeasurement.Text);
+        //            land.LandMeasurement = Decimal.Parse(txtLandMeasurement.Text);
 
-                    return true;
-                }
-            }
+        //            return true;
+        //        }
+        //    }
 
-            return false;
-        }
+        //    return false;
+        //}
 
     }
 }

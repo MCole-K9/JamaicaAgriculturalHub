@@ -7,38 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Moderation
+namespace JAHub_ASPWebforms.Administration
 {
 
 
-    public partial class usrAddInfraction
+    public partial class usrInfractionItem
     {
 
         /// <summary>
-        /// lblTimeStamp control.
+        /// lblDateOfEntry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTimeStamp;
+        protected global::System.Web.UI.WebControls.Label lblDateOfEntry;
 
         /// <summary>
-        /// txtReason control.
+        /// lblReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReason;
+        protected global::System.Web.UI.WebControls.Label lblReason;
 
         /// <summary>
-        /// btnSubmit control.
+        /// lblAddedById control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Label lblAddedById;
+
+        /// <summary>
+        /// btnClearReason control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClearReason;
     }
 }
