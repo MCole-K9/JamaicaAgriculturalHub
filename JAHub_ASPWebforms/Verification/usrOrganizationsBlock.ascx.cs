@@ -43,19 +43,6 @@ namespace JAHub_ASPWebforms.Verification
 
         }
 
-        public usrOrganizationsBlock(List<string> organizations)
-        {
-            _organizations = organizations;
-
-            foreach(string organization in _organizations)
-            {
-                TextBox textbox = new TextBox();
-                textbox.Text = organization;
-
-                phOrganizatons.Controls.Add(textbox);
-            }
-        }
-
 
         protected void btnAddAnotherOrganization_Click(object sender, EventArgs e)
         {

@@ -44,6 +44,9 @@ namespace JAHub_ASPWebforms
             {
                 if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
                 {
+                    lblRadaRegistrationHeading.Text = "Register with Rada";
+                    btnSubmit.Text = "Submit Application";
+
                     if (fullRegistration)
                     {
                         GenerateFullRegistration();

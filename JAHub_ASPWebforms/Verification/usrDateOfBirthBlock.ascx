@@ -3,8 +3,8 @@
 <div class="row">
     <h4 class="text">Date Of Birth*</h4>
     <div class="row">
-        <div class="row">
-            <asp:DropDownList runat="server" ID="ddlDay">
+        <div class="row center-block">
+            <asp:DropDownList runat="server" ID="ddlDay" CssClass="input-sm col-lg-2">
                 <asp:ListItem Value="1"></asp:ListItem>
                 <asp:ListItem Value="2"></asp:ListItem>
                 <asp:ListItem Value="3"></asp:ListItem>
@@ -37,10 +37,10 @@
                 <asp:ListItem>30</asp:ListItem>
                 <asp:ListItem>31</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqDay" ErrorMessage="Field is Required" CssClass="text text-danger" ControlToValidate="ddlDay" />
+            <asp:RequiredFieldValidator runat="server" ID="reqDay" ErrorMessage="Field is Required" CssClass="text text-danger input-sm" ControlToValidate="ddlDay" />
         </div>
         <div class="row">
-            <asp:DropDownList runat="server" ID="ddlMonth" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
+            <asp:DropDownList runat="server" ID="ddlMonth" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged" CssClass="input-sm col-lg-2">
                 <asp:ListItem Value="1">January</asp:ListItem>
                 <asp:ListItem Value="2">February</asp:ListItem>
                 <asp:ListItem Value="3">March</asp:ListItem>
@@ -54,11 +54,11 @@
                 <asp:ListItem Value="11">November</asp:ListItem>
                 <asp:ListItem Value="12">December</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqMonth" ErrorMessage="Field is Required" CssClass="text text-danger"
+            <asp:RequiredFieldValidator runat="server" ID="reqMonth" ErrorMessage="Field is Required" CssClass="text text-danger input-sm"
                 ControlToValidate="ddlMonth" />
         </div>
         <div class="row">
-            <asp:DropDownList runat="server" ID="ddlYear">
+            <asp:DropDownList runat="server" ID="ddlYear" CssClass="input-sm col-lg-2">
                 <asp:ListItem>2021</asp:ListItem>
                 <asp:ListItem>2020</asp:ListItem>
                 <asp:ListItem>2019</asp:ListItem>
@@ -181,7 +181,7 @@
                 <asp:ListItem>1901</asp:ListItem>
                 <asp:ListItem>1900</asp:ListItem>
             </asp:DropDownList>
-            <asp:RequiredFieldValidator runat="server" ID="reqYear" ErrorMessage="Field is Required" CssClass="text text-danger" 
+            <asp:RequiredFieldValidator runat="server" ID="reqYear" ErrorMessage="Field is Required" CssClass="text text-danger input-sm" 
                 ControlToValidate="ddlYear" />
         </div>
     </div>
