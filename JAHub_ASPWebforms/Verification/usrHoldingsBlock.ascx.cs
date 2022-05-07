@@ -24,12 +24,47 @@ namespace JAHub_ASPWebforms.Verification
                 _landInformationList.Clear();
                 phLandBlock.Controls.Clear();
 
+                _landInformationList = value;
+                foreach (LandInformation l in _landInformationList)
+                {
+                    usrLandBlock landblock = (usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx");
+                    landblock.LandInformation = l;
 
+                    phLandBlock.Controls.Add(landblock);
+                }
 
+                if (_landInformationList.Count > 1)
+                {
+                    btnRemoveLandEntry.Visible = true;
+                }
             }
-
         }
-        public List<String> ProductList => _productsList;
+        
+        public List<String> ProductList
+        {
+            get
+            {
+                return _productsList;
+            }
+            set
+            {
+                _productsList.Clear();
+                phProducts.Controls.Clear();
+
+                _productsList = value;
+                foreach (String product in _productsList)
+                {
+                    usrProductBlock productblock = (usrProductBlock)LoadControl("~/Verificaton/usrProductBlock.ascx");
+                    productblock.Product = product;
+                    phProducts.Controls.Add(productblock);
+                }
+
+                if (_productsList.Count > 1)
+                {
+                    btnRemoveProduct.Visible = true;
+                }
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,35 +86,21 @@ namespace JAHub_ASPWebforms.Verification
 
             phLandBlock.Controls.Add(landblock);
 
-            // Create a Land block in the landblock holder
-            // Empty constructor, nothing worth caring about
         }
-
-        public usrHoldingsBlock(Farmer farmer)
-        {
-            // Maybe need to specify a special way of initializing components, not sure
-
-            // Will need to foreach create entries into the asp placeholder for products
-
-            // Will need to foreach create entries for each LandInformation
-            
-            // the products and Landblocks will return valid on their own
-        }
-        
-        // pretty much everything here needs a rewrite
-
-        
 
         protected void btnAddLandEntry_Click(object sender, EventArgs e)
         {
-            phLandBlock.Controls.Add((usrLandBlock)LoadControl("~/Verification/usrLandBlock"));
+            usrLandBlock landBlock = (usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx");
+
+            _landInformationList.Add(landBlock.LandInformation);
+            phLandBlock.Controls.Add(landBlock);
             
             btnRemoveLandEntry.Visible = true;
         }
 
         protected void btnRemoveLandEntry_Click(object sender, EventArgs e)
         {
-
+            _landInformationList.RemoveAt(_landInformationList.Count - 1);
             phLandBlock.Controls.RemoveAt(phLandBlock.Controls.Count - 1);
 
             if (phLandBlock.Controls.Count == 1)
@@ -88,5 +109,23 @@ namespace JAHub_ASPWebforms.Verification
             }
         }
 
+        protected void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            usrProductBlock productBlock = (usrProductBlock)LoadControl("~/Verification/usrProductBlock.ascx");
+            productBlock.Controls.Add(productBlock);
+
+            btnRemoveProduct.Visible = true;
+        }
+
+        protected void btnRemoveProduct_Click(object sender, EventArgs e)
+        {
+            _productsList.RemoveAt(_productsList.Count - 1);
+            phProducts.Controls.RemoveAt(phProducts.Controls.Count - 1);
+
+            if (phProducts.Controls.Count == 1)
+            {
+                btnRemoveProduct.Visible = false;
+            }
+        }
     }
 }
