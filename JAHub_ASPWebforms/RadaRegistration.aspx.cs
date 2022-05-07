@@ -13,7 +13,17 @@ namespace JAHub_ASPWebforms
 {
     public partial class RadaRegistration : System.Web.UI.Page
     {
-        protected bool fullRegistration;
+        protected bool fullRegistration
+        {
+            get
+            {
+                return ViewState["registrationFullRegistration"] == null ? true : (bool)ViewState["registrationFullRegistration"];
+            }
+            set
+            {
+                ViewState["registrationFullRegistration"] = value;
+            }
+        }
 
         usrNameBlock nameBlock;
         //usrAddressBlock addressBlock;
@@ -25,20 +35,8 @@ namespace JAHub_ASPWebforms
         usrOrganizationsBlock organizationsBlock;
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
-                {
-                    // 
 
-                }
-                else if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
-                {
-
-                }
-            }
         }
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -91,7 +89,6 @@ namespace JAHub_ASPWebforms
 
                         organizationsBlock.Organizations = farmer.Organizations;
                     }
-                    // what if a postback happens?
                 }
             }
             
@@ -117,10 +114,10 @@ namespace JAHub_ASPWebforms
             nameBlock = (usrNameBlock)LoadControl("~/Verification/usrNameBlock.ascx");
             //addressBlock = (usrAddressBlock)LoadControl("~/Verification/usrAddressBlock.ascx");
             contactBlock = (usrContactBlock)LoadControl("~/Verification/usrContactBlock.ascx");
-            dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verificaton/usrDateOfBirthBlock.ascx");
-            holdingsBlock = (usrHoldingsBlock)LoadControl("~/Verificaton/usrHoldingsBlock.ascx");
+            dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verification/usrDateOfBirthBlock.ascx");
+            holdingsBlock = (usrHoldingsBlock)LoadControl("~/Verification/usrHoldingsBlock.ascx");
             trnBlock = (usrTrnBlock)LoadControl("~/Verification/usrTrnBlock.ascx");
-            industryBlock = (usrIndustryBlock)LoadControl("~/Verificaton/usrIndustryBlock.ascx");
+            industryBlock = (usrIndustryBlock)LoadControl("~/Verification/usrIndustryBlock.ascx");
             organizationsBlock = (usrOrganizationsBlock)LoadControl("~/Verification/usrOrganizationsBlock.ascx");
 
             phRadaRegistration.Controls.Add(nameBlock);

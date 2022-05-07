@@ -13,7 +13,7 @@
         <asp:TextBox runat="server" ID="txtAddressPostOffice"></asp:TextBox>
         <asp:CustomValidator runat="server" ID="cusAddressPostOffice" ControlToValidate="txtAddressPostOffice"
             ErrorMessage="Address Fields must either be all Filled, or All Empty"
-            onServerValidate="txtAddresPostOffice_Validating" CssClass="text text-danger col-lg-3"></asp:CustomValidator>
+            onServerValidate="txtAddressPostOffice_Validating" CssClass="text text-danger col-lg-3"></asp:CustomValidator>
     </div>
     <div class="row">
         <asp:Label runat="server" ID="lblAddressParish" CssClass="col-lg-3 text">Parish</asp:Label>
