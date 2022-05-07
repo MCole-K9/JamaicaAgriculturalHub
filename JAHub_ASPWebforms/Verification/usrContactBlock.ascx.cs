@@ -9,15 +9,41 @@ namespace JAHub_ASPWebforms.Verification
 {
     public partial class usrContactBlock : System.Web.UI.UserControl
     {
-        /* TO DO
-         * [] add in some way of putting the values of phone numbers into the list
-         * */
-        
-        bool isEmailValid;
+
         List<string> _phoneNumbers = new List<string>();
 
-        public String Email => txtEmail.Text;
-        public List<String> PhoneNumbers => _phoneNumbers;
+
+        public String Email
+        {
+            get
+            {
+                return txtEmail.Text;
+            }
+            set
+            {
+                txtEmail.Text = value;
+            }
+        }
+        public List<String> PhoneNumbers
+        {
+            get
+            {
+                return _phoneNumbers;
+            }
+            set
+            {
+                _phoneNumbers = value;
+
+                phPhoneNumbers.Controls.Clear();
+                
+                foreach (string phoneNumber in _phoneNumbers)
+                {
+                    usrPhoneNumberBlock phoneNumberBlock = (usrPhoneNumberBlock)LoadControl("~/Verificaton/usrPhoneNumberBlock.ascx");
+                    phoneNumberBlock.PhoneNumber = phoneNumber;
+                    phPhoneNumbers.Controls.Add(phoneNumberBlock);
+                }
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             // here is probably where i distinguish between parameter add and non params

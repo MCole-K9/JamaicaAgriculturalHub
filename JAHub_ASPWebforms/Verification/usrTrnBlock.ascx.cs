@@ -9,7 +9,17 @@ namespace JAHub_ASPWebforms.Verification
 {
     public partial class usrTrnBlock : System.Web.UI.UserControl
     {
-        public String TaxRegistrationNumber => txtTaxRegistrationNumber.Text;
+        public String TaxRegistrationNumber
+        {
+            get
+            {
+                return txtTaxRegistrationNumber.Text;
+            }
+            set
+            {
+                txtTaxRegistrationNumber.Text = value;
+            }
+        }
 
         public bool isTrnValid = false;
         protected void Page_Load(object sender, EventArgs e)
