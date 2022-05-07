@@ -111,11 +111,11 @@ namespace JAHub_ASPWebforms
         {
             if (FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
             {
-                // i don't think this is necessary, since the next page should be able to see previous
+                Response.Redirect("~/RadaRegistration");
             }
             else if (FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
             {
-                // This isn't necessary either, probably
+                Response.Redirect("~/RadaRegistration");
             }
         }
     }
