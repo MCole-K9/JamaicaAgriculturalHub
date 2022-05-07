@@ -168,6 +168,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
+    <Content Include="JavaScript.js" />
     <Content Include="ManageProducts.aspx" />
     <Content Include="Resources\700x500.png" />
     <Content Include="Register.aspx" />
@@ -199,6 +200,7 @@
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
+    <Content Include="UserPortalCss.css" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -232,7 +234,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Shop.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="UserProfile.aspx" />
     <Content Include="Verification\usrAddressBlock.ascx" />
     <Content Include="Verification\usrContactBlock.ascx" />
     <Content Include="Verification\usrDateOfBirthBlock.ascx" />
@@ -449,11 +450,12 @@
     <Compile Include="ucWebBlog.ascx.designer.cs">
       <DependentUpon>ucWebBlog.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserProfile.aspx.cs">
-      <DependentUpon>UserProfile.aspx</DependentUpon>
+    <Compile Include="UserPortal.Master.cs">
+      <DependentUpon>UserPortal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserProfile.aspx.designer.cs">
-      <DependentUpon>UserProfile.aspx</DependentUpon>
+    <Compile Include="UserPortal.Master.designer.cs">
+      <DependentUpon>UserPortal.Master</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="Verification\usrAddressBlock.ascx.cs">
@@ -556,6 +558,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="UserPortal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
