@@ -79,9 +79,9 @@
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Grants">Grants</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
-                        <li id="liAdmin" runat="server"><a runat="server" href="~/AdministrationPage" id="btnAdministration">Admininstration</a></li>
+                        <li><a runat="server" href="~/test1">User Portal</a></li>
+                        <li><a runat="server" href="~/Administration" class="hidden" id="btnAdministration">Admininstration</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Register">About</a></li>
                         <%--<li><a runat="server" href="~/UserProfile">Profile(temp)</a></li>--%>
                     </ul>
                     <asp:PlaceHolder runat="server" ID="phAccount"></asp:PlaceHolder>

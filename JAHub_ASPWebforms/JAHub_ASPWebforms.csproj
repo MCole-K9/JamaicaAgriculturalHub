@@ -172,6 +172,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
+    <Content Include="JavaScript.js" />
     <Content Include="ManageProducts.aspx" />
     <Content Include="OrderDetails.aspx" />
     <Content Include="Orders.aspx" />
@@ -210,6 +211,7 @@
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
+    <Content Include="UserPortalCss.css" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
     <Content Include="CreateGrants.aspx" />
@@ -525,6 +527,13 @@
     <Compile Include="ucWebBlog.ascx.designer.cs">
       <DependentUpon>ucWebBlog.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserPortal.Master.cs">
+      <DependentUpon>UserPortal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPortal.Master.designer.cs">
+      <DependentUpon>UserPortal.Master</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="Verification\usrAddressBlock.ascx.cs">
       <DependentUpon>usrAddressBlock.ascx</DependentUpon>
@@ -647,6 +656,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="UserPortal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
