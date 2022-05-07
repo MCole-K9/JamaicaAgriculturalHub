@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RadaRegistration.aspx.cs" Inherits="JAHub_ASPWebforms.RadaRegistration" 
-    MasterPageFile="~/Site.Master"%>
+    MasterPageFile="~/UserPortal.Master"%>
 
 <%@ PreviousPageType VirtualPath="~/RadaStatus.aspx" %>
 

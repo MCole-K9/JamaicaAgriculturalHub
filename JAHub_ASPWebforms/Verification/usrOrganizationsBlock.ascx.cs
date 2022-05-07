@@ -11,7 +11,27 @@ namespace JAHub_ASPWebforms.Verification
     {
         List<String> _organizations = new List<string>();
 
-        public List<String> Organizations => _organizations;
+        public List<String> Organizations
+        {
+            get
+            {
+                _organizations.Add(txtOrganizations.Text);
+                return _organizations;
+            }
+            set
+            {
+                _organizations = value;
+                foreach (string organization in _organizations)
+                {
+                    TextBox textbox = new TextBox();
+                    textbox.CssClass = "col-lg-3 input-sm";
+                    textbox.Text = organization;
+
+                    phOrganizatons.Controls.Add(textbox);
+                }
+            }
+
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
