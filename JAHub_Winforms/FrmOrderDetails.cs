@@ -37,11 +37,15 @@ namespace JAHub_Winforms
         }
         private void PopulateFields()
         {
+            lblShipName.Text += order.ShipName;
             lblShipStreetAddress.Text += order.ShipStreetAddress;
             lblShipTown.Text += order.ShipCity;
             lblShipParish.Text += order.ShipParish;
+            lblShipName.Text += order.ShipEmail;
 
-            //PaymentMethod.InnerText = order.PaymentDetails.PaymentType;
+            lblPaymentMethod.Text += order.PaymentDetails.PaymentType;
+            lblBillingName.Text += order.PaymentDetails.BillingName;
+            lblBillingEmail.Text += order.PaymentDetails.BillingEmail;
             lblBillingStreetAddress.Text += order.PaymentDetails.BillingStreetAddress;
             lblBillingTown.Text += order.PaymentDetails.BillingCity;
             lblBilllingParish.Text += order.PaymentDetails.BIllingParish;
@@ -62,6 +66,11 @@ namespace JAHub_Winforms
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblShipStreetAddress_Click(object sender, EventArgs e)
         {
 
         }

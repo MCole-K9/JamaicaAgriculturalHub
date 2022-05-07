@@ -38,17 +38,18 @@
             this.lblBillingEmail = new System.Windows.Forms.Label();
             this.lblBillingName = new System.Windows.Forms.Label();
             this.lblShipParish = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblShipTown = new System.Windows.Forms.Label();
             this.lblShipStreetAddress = new System.Windows.Forms.Label();
             this.lblShipEmail = new System.Windows.Forms.Label();
             this.lblShipName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.l = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.l = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblPaymentMethod = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,8 +83,10 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.lblBilllingParish);
             this.panel1.Controls.Add(this.lblBillingTown);
+            this.panel1.Controls.Add(this.lblPaymentMethod);
             this.panel1.Controls.Add(this.lblBillingStreetAddress);
             this.panel1.Controls.Add(this.lblBillingEmail);
             this.panel1.Controls.Add(this.lblBillingName);
@@ -97,109 +100,128 @@
             this.panel1.Controls.Add(this.splitter1);
             this.panel1.Location = new System.Drawing.Point(398, 121);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 248);
+            this.panel1.Size = new System.Drawing.Size(476, 248);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblBilllingParish
             // 
             this.lblBilllingParish.AutoSize = true;
-            this.lblBilllingParish.Location = new System.Drawing.Point(223, 181);
+            this.lblBilllingParish.Location = new System.Drawing.Point(237, 198);
             this.lblBilllingParish.Name = "lblBilllingParish";
-            this.lblBilllingParish.Size = new System.Drawing.Size(36, 13);
+            this.lblBilllingParish.Size = new System.Drawing.Size(45, 13);
             this.lblBilllingParish.TabIndex = 8;
-            this.lblBilllingParish.Text = "Parish";
+            this.lblBilllingParish.Text = "Parish:  ";
             // 
             // lblBillingTown
             // 
             this.lblBillingTown.AutoSize = true;
-            this.lblBillingTown.Location = new System.Drawing.Point(223, 145);
+            this.lblBillingTown.Location = new System.Drawing.Point(237, 162);
             this.lblBillingTown.Name = "lblBillingTown";
-            this.lblBillingTown.Size = new System.Drawing.Size(34, 13);
+            this.lblBillingTown.Size = new System.Drawing.Size(43, 13);
             this.lblBillingTown.TabIndex = 9;
-            this.lblBillingTown.Text = "Town";
+            this.lblBillingTown.Text = "Town:  ";
             // 
             // lblBillingStreetAddress
             // 
             this.lblBillingStreetAddress.AutoSize = true;
-            this.lblBillingStreetAddress.Location = new System.Drawing.Point(223, 110);
+            this.lblBillingStreetAddress.Location = new System.Drawing.Point(237, 134);
             this.lblBillingStreetAddress.Name = "lblBillingStreetAddress";
             this.lblBillingStreetAddress.Size = new System.Drawing.Size(82, 13);
             this.lblBillingStreetAddress.TabIndex = 10;
-            this.lblBillingStreetAddress.Text = "Street Adddress";
+            this.lblBillingStreetAddress.Text = "Street Address: ";
             // 
             // lblBillingEmail
             // 
             this.lblBillingEmail.AutoSize = true;
-            this.lblBillingEmail.Location = new System.Drawing.Point(223, 79);
+            this.lblBillingEmail.Location = new System.Drawing.Point(237, 79);
             this.lblBillingEmail.Name = "lblBillingEmail";
-            this.lblBillingEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblBillingEmail.Size = new System.Drawing.Size(41, 13);
             this.lblBillingEmail.TabIndex = 11;
-            this.lblBillingEmail.Text = "Email";
+            this.lblBillingEmail.Text = "Email:  ";
             // 
             // lblBillingName
             // 
             this.lblBillingName.AutoSize = true;
-            this.lblBillingName.Location = new System.Drawing.Point(223, 51);
+            this.lblBillingName.Location = new System.Drawing.Point(237, 51);
             this.lblBillingName.Name = "lblBillingName";
-            this.lblBillingName.Size = new System.Drawing.Size(35, 13);
+            this.lblBillingName.Size = new System.Drawing.Size(44, 13);
             this.lblBillingName.TabIndex = 12;
-            this.lblBillingName.Text = "Name";
+            this.lblBillingName.Text = "Name:  ";
             // 
             // lblShipParish
             // 
             this.lblShipParish.AutoSize = true;
             this.lblShipParish.Location = new System.Drawing.Point(11, 181);
             this.lblShipParish.Name = "lblShipParish";
-            this.lblShipParish.Size = new System.Drawing.Size(36, 13);
+            this.lblShipParish.Size = new System.Drawing.Size(45, 13);
             this.lblShipParish.TabIndex = 3;
-            this.lblShipParish.Text = "Parish";
+            this.lblShipParish.Text = "Parish:  ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Shipping Details";
             // 
             // lblShipTown
             // 
             this.lblShipTown.AutoSize = true;
             this.lblShipTown.Location = new System.Drawing.Point(11, 145);
             this.lblShipTown.Name = "lblShipTown";
-            this.lblShipTown.Size = new System.Drawing.Size(34, 13);
+            this.lblShipTown.Size = new System.Drawing.Size(43, 13);
             this.lblShipTown.TabIndex = 4;
-            this.lblShipTown.Text = "Town";
+            this.lblShipTown.Text = "Town:  ";
             // 
             // lblShipStreetAddress
             // 
             this.lblShipStreetAddress.AutoSize = true;
             this.lblShipStreetAddress.Location = new System.Drawing.Point(11, 110);
             this.lblShipStreetAddress.Name = "lblShipStreetAddress";
-            this.lblShipStreetAddress.Size = new System.Drawing.Size(82, 13);
+            this.lblShipStreetAddress.Size = new System.Drawing.Size(85, 13);
             this.lblShipStreetAddress.TabIndex = 5;
-            this.lblShipStreetAddress.Text = "Street Adddress";
+            this.lblShipStreetAddress.Text = "Street Address:  \r\n";
+            this.lblShipStreetAddress.Click += new System.EventHandler(this.lblShipStreetAddress_Click);
             // 
             // lblShipEmail
             // 
             this.lblShipEmail.AutoSize = true;
             this.lblShipEmail.Location = new System.Drawing.Point(11, 79);
             this.lblShipEmail.Name = "lblShipEmail";
-            this.lblShipEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblShipEmail.Size = new System.Drawing.Size(41, 13);
             this.lblShipEmail.TabIndex = 6;
-            this.lblShipEmail.Text = "Email";
+            this.lblShipEmail.Text = "Email:  ";
             // 
             // lblShipName
             // 
             this.lblShipName.AutoSize = true;
             this.lblShipName.Location = new System.Drawing.Point(11, 51);
             this.lblShipName.Name = "lblShipName";
-            this.lblShipName.Size = new System.Drawing.Size(35, 13);
+            this.lblShipName.Size = new System.Drawing.Size(44, 13);
             this.lblShipName.TabIndex = 7;
-            this.lblShipName.Text = "Name";
+            this.lblShipName.Text = "Name:  ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(223, 8);
+            this.label4.Location = new System.Drawing.Point(237, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 15);
             this.label4.TabIndex = 2;
             this.label4.Text = "Payment Details";
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(220, 248);
+            this.splitter1.TabIndex = 0;
+            this.splitter1.TabStop = false;
             // 
             // l
             // 
@@ -210,14 +232,6 @@
             this.l.Size = new System.Drawing.Size(58, 15);
             this.l.TabIndex = 1;
             this.l.Text = "Subtotal: ";
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(216, 248);
-            this.splitter1.TabIndex = 0;
-            this.splitter1.TabStop = false;
             // 
             // label1
             // 
@@ -240,16 +254,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Customer Info";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Shipping Details";
-            // 
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
@@ -260,11 +264,20 @@
             this.lblSubtotal.TabIndex = 1;
             this.lblSubtotal.Text = "$00.0";
             // 
+            // lblPaymentMethod
+            // 
+            this.lblPaymentMethod.AutoSize = true;
+            this.lblPaymentMethod.Location = new System.Drawing.Point(237, 110);
+            this.lblPaymentMethod.Name = "lblPaymentMethod";
+            this.lblPaymentMethod.Size = new System.Drawing.Size(99, 13);
+            this.lblPaymentMethod.TabIndex = 10;
+            this.lblPaymentMethod.Text = "Payment Method:   ";
+            // 
             // FrmOrderDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 450);
+            this.ClientSize = new System.Drawing.Size(886, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -306,5 +319,6 @@
         private System.Windows.Forms.Label lblBillingName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label lblPaymentMethod;
     }
 }

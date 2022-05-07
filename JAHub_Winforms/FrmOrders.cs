@@ -69,20 +69,27 @@ namespace JAHub_Winforms
         {
             try
             {
-                Order order = new Order
-                {
-                    OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value,
+                Order order = new Order();
+                order.OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value
 
 
-                };
+                
                 order.FetchOrderData();
                 _frmShop.OpenChildForm(new FrmOrderDetails(order));
 
             }
             catch (Exception ex)
             {
+                if(ex is NullReferenceException || ex is IndexOutOfRangeException)
+                {
+                    MessageBox.Show("Please  Ensure that One (1) Item is selected");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
-                throw ex;
+                
             }
             
             
