@@ -25,69 +25,77 @@ namespace JAHub_ASPWebforms
         usrOrganizationsBlock organizationsBlock;
         protected void Page_Init(object sender, EventArgs e)
         {
-            if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
+            if (!IsPostBack)
             {
-                // 
+                if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
+                {
+                    // 
 
-            }
-            else if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
-            {
+                }
+                else if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
+                {
 
+                }
             }
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
+            if (!IsPostBack)
             {
-                if (fullRegistration)
+                if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
                 {
+                    if (fullRegistration)
+                    {
+                        GenerateFullRegistration();
+                    }
+                    else
+                    {
+                        GeneratePartialRegistration();
+                    }
+
+                }
+                else if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
+                {
+                    lblRadaRegistrationHeading.Text = "Edit/View Information";
+                    btnSubmit.Text = "Update Record";
+                    FindControl("divAccountCreation").Visible = false;
+
                     GenerateFullRegistration();
-                }
-                else
-                {
-                    GeneratePartialRegistration();
-                }
 
+                    if (!IsPostBack)
+                    {
+                        Farmer farmer = new Farmer();
+                        farmer.GetFullRecordFromDatabase((int)Session["UserId"]);
+
+                        nameBlock.FirstName = farmer.FirstName;
+                        nameBlock.MiddleName = farmer.MiddleName;
+                        nameBlock.LastName = farmer.LastName;
+
+                        var date = (DateTime)farmer.DateOfBirth;
+
+                        dateOfBirthBlock.Day = date.Day;
+                        dateOfBirthBlock.Month = date.Month;
+                        dateOfBirthBlock.Year = date.Year;
+
+                        trnBlock.TaxRegistrationNumber = farmer.TaxRegistrationNumber;
+
+                        contactBlock.Email = farmer.Email;
+                        contactBlock.PhoneNumbers = farmer.PhoneNumbers;
+
+                        industryBlock.NumberOfEmployees = farmer.NumberOfEmployees;
+                        industryBlock.UsesHeavyMachinery = farmer.UsesHeavyMachinery;
+
+                        holdingsBlock.LandInformation = farmer.OwnedLand;
+
+                        organizationsBlock.Organizations = farmer.Organizations;
+                    }
+                    // what if a postback happens?
+                }
             }
-            else if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
-            {
-                lblRadaRegistrationHeading.Text = "Edit/View Information";
-                btnSubmit.Text = "Update Record";
-                FindControl("divAccountCreation").Visible = false;
-
-                GenerateFullRegistration();
-
-                if (!IsPostBack)
-                {
-                    Farmer farmer = new Farmer();
-                    farmer.GetFullRecordFromDatabase((int)Session["UserId"]);
-
-                    nameBlock.FirstName = farmer.FirstName;
-                    nameBlock.MiddleName = farmer.MiddleName;
-                    nameBlock.LastName = farmer.LastName;
-
-                    var date = (DateTime)farmer.DateOfBirth;
-
-                    dateOfBirthBlock.Day = date.Day;
-                    dateOfBirthBlock.Month = date.Month;
-                    dateOfBirthBlock.Year = date.Year;
-
-                    trnBlock.TaxRegistrationNumber = farmer.TaxRegistrationNumber;
-
-                    contactBlock.Email = farmer.Email;
-                    contactBlock.PhoneNumbers = farmer.PhoneNumbers;
-
-                    industryBlock.NumberOfEmployees = farmer.NumberOfEmployees;
-                    industryBlock.UsesHeavyMachinery = farmer.UsesHeavyMachinery;
-
-                    holdingsBlock.LandInformation = farmer.OwnedLand;
-                    
-                    organizationsBlock.Organizations = farmer.Organizations;
-                }
-                // what if a postback happens?
-            }
+            
+            
         }
 
         protected void btnCreateNewAccount_Click(object sender, EventArgs e)
@@ -129,7 +137,7 @@ namespace JAHub_ASPWebforms
             nameBlock = (usrNameBlock)LoadControl("~/Verification/usrNameBlock.ascx");
             //addressBlock = (usrAddressBlock)LoadControl("~/Verification/usrAddressBlock.ascx");
             contactBlock = (usrContactBlock)LoadControl("~/Verification/usrContactBlock.ascx");
-            dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verificaton/usrDateOfBirthBlock.ascx");
+            dateOfBirthBlock = (usrDateOfBirthBlock)LoadControl("~/Verification/usrDateOfBirthBlock.ascx");
             //holdingsBlock = (usrHoldingsBlock)LoadControl("~/Verificaton/usrHoldingsBlock.ascx");
             trnBlock = (usrTrnBlock)LoadControl("~/Verification/usrTrnBlock.ascx");
             //industryBlock = (usrIndustryBlock)LoadControl("~/Verificaton/usrIndustryBlock.ascx");

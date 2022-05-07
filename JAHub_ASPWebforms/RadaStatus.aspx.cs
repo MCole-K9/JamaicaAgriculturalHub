@@ -111,11 +111,11 @@ namespace JAHub_ASPWebforms
         {
             if (FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
             {
-                Response.Redirect("~/RadaRegistration");
+                Server.Transfer("~/RadaRegistration.aspx");
             }
             else if (FarmerRegistrationPhase == RadaRegistrationType.FullyConnected)
             {
-                Response.Redirect("~/RadaRegistration");
+                Server.Transfer("~/RadaRegistration.aspx");
             }
         }
     }

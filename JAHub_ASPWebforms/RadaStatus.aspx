@@ -13,7 +13,7 @@
 
         <div class="row">
             <asp:Button runat="server" ID="btnRegisterOrViewInformation" Visible="false"  
-                PostBackUrl="~/RadaRegistration.aspx" CssClass="btn btn-default col-lg-4 input-sm"/>
+                OnClick="btnRegisterOrViewInformation_Click" CssClass="btn btn-default col-lg-4 input-sm"/>
         </div>
     </div>
 
