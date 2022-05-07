@@ -9,8 +9,17 @@ namespace JAHub_ASPWebforms.Verification
 {
     public partial class usrPhoneNumberBlock : System.Web.UI.UserControl
     {
-        bool isPhoneNumberValid;
-        public String PhoneNumber => txtPhoneNumber.Text;
+        public String PhoneNumber
+        {
+            get
+            {
+                return txtPhoneNumber.Text;
+            }
+            set
+            {
+                txtPhoneNumber.Text = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,11 +30,5 @@ namespace JAHub_ASPWebforms.Verification
             
         }
 
-        public usrPhoneNumberBlock(string PhoneNumber)
-        {
-            txtPhoneNumber.Text = PhoneNumber;
-
-            isPhoneNumberValid = true;
-        }
     }
 }

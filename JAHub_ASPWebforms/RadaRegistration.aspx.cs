@@ -75,6 +75,11 @@ namespace JAHub_ASPWebforms
                     dateOfBirthBlock.Year = date.Year;
 
                     trnBlock.TaxRegistrationNumber = farmer.TaxRegistrationNumber;
+
+                    contactBlock.Email = farmer.Email;
+                    contactBlock.PhoneNumbers = farmer.PhoneNumbers;
+
+
                 }
                 // what if a postback happens?
             }

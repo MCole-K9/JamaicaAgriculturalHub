@@ -13,7 +13,22 @@ namespace JAHub_ASPWebforms.Verification
         List<String> _productsList = new List<String>();
         List<LandInformation> _landInformationList = new List<LandInformation>();
 
-        public List<LandInformation> LandInformation => _landInformationList;
+        public List<LandInformation> LandInformation
+        {
+            get
+            {
+                return _landInformationList;
+            }
+            set
+            {
+                _landInformationList.Clear();
+                phLandBlock.Controls.Clear();
+
+
+
+            }
+
+        }
         public List<String> ProductList => _productsList;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,9 +39,17 @@ namespace JAHub_ASPWebforms.Verification
         public usrHoldingsBlock()
         {
             // Create a product block in the product block placeholder
-            phProducts.Controls.Add((usrProductBlock)LoadControl("~/Verification/usrProductBlock.ascx.cs"));
+            usrProductBlock productBlock = (usrProductBlock)LoadControl("~/Verification/usrProductBlock.ascx.cs");
+            _productsList.Add(productBlock.Product);
 
-            phLandBlock.Controls.Add((usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx.cs"));
+            phProducts.Controls.Add(productBlock);
+
+
+
+            usrLandBlock landblock = (usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx.cs");
+            _landInformationList.Add(landblock.LandInformation);
+
+            phLandBlock.Controls.Add(landblock);
 
             // Create a Land block in the landblock holder
             // Empty constructor, nothing worth caring about
@@ -44,77 +67,19 @@ namespace JAHub_ASPWebforms.Verification
         }
         
         // pretty much everything here needs a rewrite
-        public bool IsBlockValid()
-        {
-            bool isListValid = true;
 
-            foreach (usrProductBlock product in phProducts.Controls)
-            {
-                if (product.IsBlockValid())
-                {
-                    _productsList.Add(product.Product);
-                }
-                else
-                {
-                    isListValid = false;
-                    _productsList.Clear();
-                    break;
-                }
-            }
-
-            foreach (usrLandBlock land in phLandBlock.Controls)
-            {
-                if (land.IsBlockValid())
-                {
-                    _landInformationList.Add(land.LandInformation);
-                }
-                else
-                {
-                    isListValid = false;
-                    _landInformationList.Clear();
-                }
-            }
-
-            if (isListValid)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            return false;
-        }
-
-        public void SetControlFocus()
-        {
-            foreach (usrLandBlock land in phLandBlock.Controls)
-            {
-                if (!land.IsBlockValid())
-                {
-                    //land.SetControlFocus();
-                    return;
-                }
-            }
-
-            foreach (usrProductBlock product in phProducts.Controls)
-            {
-                if (!product.IsBlockValid())
-                {
-                    //product.SetControlFocus();
-                    return;
-                }
-            }
-        }
+        
 
         protected void btnAddLandEntry_Click(object sender, EventArgs e)
         {
             phLandBlock.Controls.Add((usrLandBlock)LoadControl("~/Verification/usrLandBlock"));
+            
             btnRemoveLandEntry.Visible = true;
         }
 
         protected void btnRemoveLandEntry_Click(object sender, EventArgs e)
         {
+
             phLandBlock.Controls.RemoveAt(phLandBlock.Controls.Count - 1);
 
             if (phLandBlock.Controls.Count == 1)
