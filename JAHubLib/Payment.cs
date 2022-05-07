@@ -20,6 +20,14 @@ namespace JAHubLib
         public string BillingCity { get; set; }
         public string BIllingParish { get; set; }
 
+        public string BillingName
+        {
+            get
+            {
+                return BillingFirstName + " " + BillingLastName;
+            }
+        }
+
         public void FetchPaymentID()
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))

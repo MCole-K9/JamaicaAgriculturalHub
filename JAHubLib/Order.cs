@@ -23,6 +23,15 @@ namespace JAHubLib
         public Payment PaymentDetails { get; set; }
         public List<OrderItem> Items { get; set; }
 
+        public string ShipName
+        {
+            get
+            {
+                return ShipFirstName + " " + ShipLastName; 
+            }
+        }
+        
+
         public Order()
         {
             OrderId = 0;
