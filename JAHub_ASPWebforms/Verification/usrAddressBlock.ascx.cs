@@ -13,13 +13,39 @@ namespace JAHub_ASPWebforms.Verification
          * [x] write custom validation for textboxes with logic 'either all are filled in or none are to be valid'
          */
 
-        bool isTownValid = false;
-        bool isPoBoxValid = false;
-        bool isParishValid = false;
-
-        public String AddressTown => txtAddressTown.Text;
-        public String AddressPostOffice => txtAddressPostOffice.Text;
-        public String AddressParish => txtAddressParish.Text;
+        public String AddressTown
+        {
+            get
+            {
+                return txtAddressTown.Text;
+            }
+            set
+            {
+                txtAddressTown.Text = value;
+            }
+        }
+        public String AddressPostOffice
+        {
+            get
+            {
+                return txtAddressPostOffice.Text;
+            }
+            set
+            {
+                txtAddressPostOffice.Text = value;
+            }
+        }
+        public String AddressParish
+        {
+            get
+            {
+                return txtAddressParish.Text;
+            }
+            set
+            {
+                txtAddressParish.Text = value;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,33 +63,8 @@ namespace JAHub_ASPWebforms.Verification
             txtAddressPostOffice.Text = poBox;
             txtAddressParish.Text = parish;
 
-            // This is necessary to prevent an oversight that affects submission if you use a parameterised
-            // construction
-            isParishValid = true;
-            isPoBoxValid = true;
-            isTownValid = true;
         }
 
-        public bool IsBlockValid()
-        {
-            if (isTownValid)
-            {
-                if (isPoBoxValid)
-                {
-                    if (isParishValid)
-                    {
-                        return true;
-                    }
-                }
-            }
-            
-            return false;
-        }
-
-        public void SetControlFocus()
-        {
-            //SetFocusOnError is relevant to this, but i don't understand it well enough to use it yet
-        }
 
         public void txtAddressTown_Validating(object sender, ServerValidateEventArgs e)
         {

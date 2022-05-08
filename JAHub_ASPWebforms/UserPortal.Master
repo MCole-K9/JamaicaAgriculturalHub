@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserPortal.master.cs" Inherits="JAHub_ASPWebforms.UserPortal" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Jamaica Agricultural Hub</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="Resources/farmer-icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="StyleSheet2.css" rel="stylesheet" />
+    <link href="UserPortalCss.css" rel="stylesheet" />
+    
+
+    <%--<link href="StyleSheet2.css" rel="stylesheet" />--%>
+
+    
+    
+
+    <style>
+
+        body{
+            padding: 0;
+
+        }
+
+        .fit-content-y{
+            height: fit-content;
+        }
+        .fit-content-x{
+            width: fit-content;
+        }
+
+        
+        .navbar-default {
+            background-color: #20b2aa;
+        }
+
+       
+        .content-container {
+            box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            -webkit-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            -moz-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
+            border-radius: 6px;
+        }
+        
+    
+    </style>
+
+     <script type="text/javascript">
+
+         // K.S.: Necessary to make Administration Option only visible when the user is an admin
+         function makeAdmininstrationVisible(){
+             if (Session.getItem('UserRole') == 1){
+                 $("#btnAdministration").removeClass('hidden');
+             }
+         }
+
+         $(document).ready(makeAdmininstrationVisible);
+
+      
+         
+        
+
+
+     </script>
+
+    <script src="https://kit.fontawesome.com/860ff83f21.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />               
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <nav class="navbar navbar-default no-margin">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header fixed-brand">
+          <button type="button" class="navbar-toggle collapsed fit-content-x" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+  						<span class="sr-only">Toggle Navigation</span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  						<span class="icon-bar"></span>
+  					</button>
+         <a class="navbar-brand" href="#">Jamaica Agricultural Hub</a>
+      </div>
+      <!-- navbar-header-->
+      
+   </nav>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-lg-2">
+                    <div id="wrapper">
+                        <!-- Sidebar -->
+                        <div id="sidebar-wrapper">
+                            <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+                                <li class="active">
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x"></i></span>Security</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o fa-stack-1x "></i></span>Grants</a>
+                                </li>
+                                <li>
+                                    <a href="~/RadaStatus.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bar-chart fa-stack-1x "></i></span>Rada Status</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-9 col-lg-10">
+                    <!-- your page content -->
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <hr />
+   
+</body>
+</html>

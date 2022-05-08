@@ -62,8 +62,8 @@ namespace JAHub_Winforms
                 trnBlock = new usrTrnBlock();
                 flpFormEntryControls.Controls.Add(trnBlock);
 
-                imageBlock = new usrUploadImageBlock();
-                flpFormEntryControls.Controls.Add(imageBlock);
+                //imageBlock = new usrUploadImageBlock();
+                //flpFormEntryControls.Controls.Add(imageBlock);
 
                 industryBlock = new usrIndustryBlock();
                 flpFormEntryControls.Controls.Add(industryBlock);
@@ -136,7 +136,7 @@ namespace JAHub_Winforms
                     else
                     {
                         //ScrollControlIntoView(nameBlock);
-                        //nameBlock.SetControlFocus();
+                        nameBlock.SetControlFocus();
 
                         message = "Errors found in Name section. Please fix them and " +
                             "resubmit your appliication";
@@ -154,7 +154,7 @@ namespace JAHub_Winforms
                     else
                     {
                         //ScrollControlIntoView(dateBlock);
-                        //dateBlock.SetControlFocus();
+                        dateBlock.SetControlFocus();
 
                         message = "Errors found in Date of Birth section. Please fix them and " +
                             "resubmit your appliication";
@@ -173,7 +173,7 @@ namespace JAHub_Winforms
                     else
                     {
                         //ScrollControlIntoView(contactBlock);
-                        //contactBlock.SetControlFocus();
+                        contactBlock.SetControlFocus();
 
                         message = "Errors found in Contact section. Please fix them and " +
                             "resubmit your appliication";
@@ -190,7 +190,7 @@ namespace JAHub_Winforms
                 else
                 {
                     //ScrollControlIntoView(trnBlock);
-                    //trnBlock.SetControlFocus();
+                    trnBlock.SetControlFocus();
 
                     message = "Errors found in Contact section. Please fix them and " +
                         "resubmit your appliication";
@@ -200,13 +200,13 @@ namespace JAHub_Winforms
 
 
                 // I'm ignoring this until i have time to fix wtvs
-                if(isBlockOkay)
-                {
-                    if (!(imageBlock.ProfilePicture == null))
-                    {
-                        farmer.IdPicture = imageBlock.ProfilePicture;
-                    }
-                }
+                //if(isBlockOkay)
+                //{
+                //    if (!(imageBlock.ProfilePicture == null))
+                //    {
+                //        farmer.IdPicture = imageBlock.ProfilePicture;
+                //    }
+                //}
 
                 if (isBlockOkay)
                 {
@@ -223,7 +223,7 @@ namespace JAHub_Winforms
                     else
                     {
                         //ScrollControlIntoView(holdingsBlock);
-                        //holdingsBlock.SetControlFocus();
+                        holdingsBlock.SetControlFocus();
 
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";
@@ -244,12 +244,13 @@ namespace JAHub_Winforms
                 {
                     if (industryBlock.IsBlockValid())
                     {
-
+                        farmer.UsesHeavyMachinery = industryBlock.UsesHeavyMachinery;
+                        farmer.NumberOfEmployees = Decimal.ToInt32(industryBlock.NumberOfEmployees);
                     }
                     else
                     {
                         //ScrollControlIntoView(industryBlock);
-                        //industryBlock.SetControlFocus();
+                        industryBlock.SetControlFocus();
                         
                         message = "Errors found in Holdings section. Please fix them and " +
                             "resubmit your appliication";

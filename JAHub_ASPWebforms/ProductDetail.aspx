@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="JAHub_ASPWebforms.ProductDetail" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="JAHub_ASPWebforms.ProductDetail" EnableViewState="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -163,15 +163,18 @@
                                 <img class="star fit-content-y" src="https://vtdics.com/ead22/whitestar.png"/>
                                 <p id="clr-rating" class="d-none" onclick="deselectStars()">Clear Rating</p>
                             </div>
+                            <asp:RangeValidator ID="rvRating" runat="server" ErrorMessage="You have not Selected a Rating" Display="Dynamic" ControlToValidate="hidRating" MaximumValue="5" MinimumValue="1" CssClass="v-text" BackColor="White"></asp:RangeValidator>
                             <div class="form-group" style="width: 100%">
                                 <label for="headline">Healine/Summery:</label>
-                                <input style="max-width: 100%" runat="server" type="text" class="form-control" id="headline">
+                                <input style="max-width: 100%" enableviewstate="true" runat="server" type="text" class="form-control" id="headline">
                             </div>
+                            <asp:RequiredFieldValidator ID="rfvHeadline" runat="server" ErrorMessage="Healine Is Required" ControlToValidate="headline" CssClass="v-text"></asp:RequiredFieldValidator>
 
                             <div class="form-group">
                                 <label for="comment">Comment:</label>
-                                <textarea runat="server" class="form-control" rows="8" id="comment"></textarea>
+                                <textarea runat="server" enableviewstate="true" class="form-control" rows="8" id="comment"></textarea>
                             </div>
+                            <asp:RequiredFieldValidator ID="rfvComment" runat="server" ErrorMessage="Comment Is Required" ControlToValidate="comment" CssClass="v-text"></asp:RequiredFieldValidator>
                             <div style="display: flex; justify-content: end">
                                 <asp:Button CssClass="btn btn-primary text-center" ID="btnReviewSubmit" runat="server" OnClick="btnReviewSubmit_Click" Text="Submit" Width="70px" />
                             </div>
@@ -183,7 +186,7 @@
     </div>
 
     <%--Holdings the star rating--%>
-    <input type="hidden" name="hidRating" id="hidRating" runat="server" enableviewstate="true" />
+    <input type="number" name="hidRating" id="hidRating" runat="server"  enableviewstate="true" value="0" style="visibility: hidden"/>
 
     <script type="text/javascript">
 

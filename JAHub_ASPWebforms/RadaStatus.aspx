@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RadaStatus.aspx.cs" Inherits="JAHub_ASPWebforms.RadaStatus" 
-    MasterPageFile="~/Site.Master"%>
-
-<!DOCTYPE html>
+    MasterPageFile="~/UserPortal.Master"%>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent" ID="RadaStatus">
     <div>
@@ -14,7 +12,8 @@
         </div>
 
         <div class="row">
-            <asp:Button runat="server" ID="btnRegisterOrViewInformation" Visible="false" />
+            <asp:Button runat="server" ID="btnRegisterOrViewInformation" Visible="false"  
+                OnClick="btnRegisterOrViewInformation_Click" CssClass="btn btn-default col-lg-4 input-sm"/>
         </div>
     </div>
 

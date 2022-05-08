@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnOrder = new FontAwesome.Sharp.IconButton();
             this.btnCart = new FontAwesome.Sharp.IconButton();
             this.btnProducts = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -40,7 +40,7 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlNav.Controls.Add(this.iconButton2);
+            this.pnlNav.Controls.Add(this.btnOrder);
             this.pnlNav.Controls.Add(this.btnCart);
             this.pnlNav.Controls.Add(this.btnProducts);
             this.pnlNav.Controls.Add(this.pnlLogo);
@@ -50,27 +50,28 @@
             this.pnlNav.Size = new System.Drawing.Size(141, 497);
             this.pnlNav.TabIndex = 0;
             // 
-            // iconButton2
+            // btnOrder
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Shopware;
-            this.iconButton2.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 217);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
-            this.iconButton2.Size = new System.Drawing.Size(141, 47);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.Text = "Products";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.btnOrder.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrder.FlatAppearance.BorderSize = 0;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOrder.IconChar = FontAwesome.Sharp.IconChar.Shopware;
+            this.btnOrder.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOrder.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnOrder.IconSize = 30;
+            this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrder.Location = new System.Drawing.Point(0, 217);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Padding = new System.Windows.Forms.Padding(20, 0, 30, 0);
+            this.btnOrder.Size = new System.Drawing.Size(141, 47);
+            this.btnOrder.TabIndex = 4;
+            this.btnOrder.Text = "Orders";
+            this.btnOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnCart
             // 
@@ -159,7 +160,7 @@
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Panel pnlLogo;
         private FontAwesome.Sharp.IconButton btnProducts;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnOrder;
         private FontAwesome.Sharp.IconButton btnCart;
         private System.Windows.Forms.Panel pnlForm;
     }

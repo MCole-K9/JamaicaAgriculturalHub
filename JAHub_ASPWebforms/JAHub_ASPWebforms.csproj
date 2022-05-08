@@ -51,6 +51,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -168,7 +169,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\UserPortalCss.css" />
     <Content Include="CreateBlog.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Dashboard.css" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
     <Content Include="Grants.aspx" />
@@ -210,6 +214,7 @@
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
+    <Content Include="UserPortalCss.css" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
     <Content Include="CreateGrants.aspx" />
@@ -357,6 +362,13 @@
     </Compile>
     <Compile Include="CreateBlog.aspx.designer.cs">
       <DependentUpon>CreateBlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -525,6 +537,13 @@
     <Compile Include="ucWebBlog.ascx.designer.cs">
       <DependentUpon>ucWebBlog.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserPortal.Master.cs">
+      <DependentUpon>UserPortal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPortal.Master.designer.cs">
+      <DependentUpon>UserPortal.Master</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="Verification\usrAddressBlock.ascx.cs">
       <DependentUpon>usrAddressBlock.ascx</DependentUpon>
@@ -647,6 +666,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="UserPortal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -18,7 +18,7 @@ namespace JAHub_ASPWebforms.Account
         {
             Session.Clear();
 
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("Default.aspx");
         }
     }
 }

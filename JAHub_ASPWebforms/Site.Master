@@ -27,6 +27,9 @@
             -moz-box-shadow: 3px -4px 30px -2px rgba(171,171,171,0.75);
             border-radius: 6px;
         }
+        .v-text{
+            color: red;
+        }
 
     </style>
      <script type="text/javascript">
@@ -79,9 +82,9 @@
                         <li><a runat="server" href="~/Shop">Shop</a></li>
                         <li><a runat="server" href="~/Grants">Grants</a></li>
                         <li><a runat="server" href="~/Blog">Blog</a></li>
+                        <li><a runat="server" href="~/RadaStatus">User Portal</a></li>
                         <li id="liAdmin" runat="server"><a runat="server" href="~/AdministrationPage" id="btnAdministration">Admininstration</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Register">About</a></li>
                         <%--<li><a runat="server" href="~/UserProfile">Profile(temp)</a></li>--%>
                     </ul>
                     <asp:PlaceHolder runat="server" ID="phAccount"></asp:PlaceHolder>
