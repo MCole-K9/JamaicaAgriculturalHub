@@ -36,6 +36,7 @@ namespace JAHub_ASPWebforms
 
         protected void btnAddProduct_ServerClick(object sender, EventArgs e)
         {
+            Session["ProdToEdit"] = null;
             Response.Redirect("AddProduct.aspx");
         }
     }
