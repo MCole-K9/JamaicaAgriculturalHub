@@ -123,7 +123,25 @@ namespace JAHub_Winforms
             SqlConnection connection = new SqlConnection(Utilities.getConnectionString());
             connection.Open();
             SqlCommand cmd = new SqlCommand($"DELETE FROM Blog WHERE ID = {displayedBlog.BlogID}", connection);
-            cmd.ExecuteNonQuery();
+            int i = cmd.ExecuteNonQuery();
+            if(i != 0)
+            {
+                MessageBox.Show("Blog Successfully Deleted!");
+                if (Utils.IsFormOpen("FrmBlog"))
+                {
+                    foreach (var form in this.MdiParent.MdiChildren)
+                    {
+                        if (form.Text == "FrmBlog")
+                        {
+                            form.Close();
+                        }
+                    }
+                }
+                FrmBlog frmBlog = new FrmBlog();
+                frmBlog.MdiParent = this.MdiParent;
+                frmBlog.Show();
+                this.Close();
+            }
         }
     }
 

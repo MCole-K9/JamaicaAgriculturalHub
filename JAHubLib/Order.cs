@@ -14,36 +14,36 @@ namespace JAHubLib
         public DateTime OrderDate { get; set; }
         public int OrderNumber { get; set; }
         public float TotalAmount { get; set; }
-        public Customer Customer { get; set; }
         public string ShipStreetAddress { get; set; }
         public string ShipCity { get; set; }
         public string ShipParish { get; set; }
+        public string ShipFirstName { get; set; }
+        public string ShipLastName { get; set; }
+        public string ShipEmail { get; set; }
         public Payment PaymentDetails { get; set; }
         public List<OrderItem> Items { get; set; }
+
+        public string ShipName
+        {
+            get
+            {
+                return ShipFirstName + " " + ShipLastName; 
+            }
+        }
+        
 
         public Order()
         {
             OrderId = 0;
             OrderNumber = 0;
             TotalAmount = 0;
-            Customer = new Customer();
             ShipStreetAddress = "";
             ShipCity = "";
             ShipParish = "";
             PaymentDetails = new Payment();
             Items = new List<OrderItem>();
         }
-        //Incomplete 
-        public void FetchOrderData()
-        {
-            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
-            {
-                connection.Open();
-
-                string query = $"SELECT * from [Order] WHERE Customer = {Customer.CustomerID}";
-            }
-        }
-
+       
         //Fetches Last Order Made by customer
         //Incomplete but in use
         public void FetchLastOrderData(int customerID)
@@ -61,14 +61,51 @@ namespace JAHubLib
                     {
                         this.OrderId = (int)sqlData["ID"];
                         this.OrderDate = (DateTime)sqlData["OrderDate"];
-                        
+                        this.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
                     }
                 }
             }
+            FetchOrderItems();
         }
 
+        public void FetchOrderData()
+        {
+            using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+            {
+                connection.Open();
+
+                string query = $"SELECT * from [Order] AS O " +
+                    $" Inner JOIN Payment as Pymt " +
+                    $" ON O.PaymentDetails = Pymt.ID " +
+                    $" WHERE O.ID = {this.OrderId}";
+
+                SqlCommand cmd = new SqlCommand(query, connection);
+                using (SqlDataReader sqlData = cmd.ExecuteReader())
+                {
+                    if (sqlData.Read())
+                    {
+                        this.OrderDate = (DateTime)sqlData["OrderDate"];
+                        this.TotalAmount = float.Parse(sqlData["Subtotal"].ToString());
+                        this.ShipFirstName = sqlData["ShipFirstName"].ToString();
+                        this.ShipLastName = sqlData["ShipLastName"].ToString();
+                        this.ShipEmail = sqlData["ShipEmail"].ToString();
+                        this.ShipStreetAddress = sqlData["ShipStreetAddress"].ToString();
+                        this.ShipCity = sqlData["ShipCity"].ToString();
+                        this.ShipParish = sqlData["ShipParish"].ToString();
+                        this.PaymentDetails.PaymentType = sqlData["PaymentType"].ToString();
+                        this.PaymentDetails.BillingFirstName = sqlData["BillingFirstName"].ToString();
+                        this.PaymentDetails.BillingLastName = sqlData["BillingLastName"].ToString();
+                        this.PaymentDetails.BillingEmail = sqlData["BillingEmail"].ToString();
+                        this.PaymentDetails.BillingStreetAddress = sqlData["BillingStreetAddress"].ToString();
+                        this.PaymentDetails.BillingCity = sqlData["BillingCity"].ToString();
+                        this.PaymentDetails.BIllingParish = sqlData["BillingParish"].ToString();
+                    }
+                }
+            }
+            FetchOrderItems();
+        }
         
-        private void FetchOrderItems()
+        public void FetchOrderItems()
         {
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -106,7 +143,7 @@ namespace JAHubLib
                     }
                 }
             }
-            FetchOrderItems();
+            
 
         }
 

@@ -168,6 +168,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblpercentage1;
 
         /// <summary>
+        /// ZRMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ZRMessage;
+
+        /// <summary>
         /// pnlReviews control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlReviews;
+
+        /// <summary>
+        /// rvRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvRating;
 
         /// <summary>
         /// headline control.
@@ -186,6 +204,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText headline;
 
         /// <summary>
+        /// rfvHeadline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHeadline;
+
+        /// <summary>
         /// comment control.
         /// </summary>
         /// <remarks>
@@ -193,6 +220,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea comment;
+
+        /// <summary>
+        /// rfvComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvComment;
 
         /// <summary>
         /// btnReviewSubmit control.
@@ -210,6 +246,6 @@ namespace JAHub_ASPWebforms
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidRating;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl hidRating;
     }
 }

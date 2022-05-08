@@ -14,7 +14,7 @@ namespace JAHub_Winforms
     public partial class FrmPayment : Form
     {
         private FrmShippingCheckout _shippingCheckout;
-        private string paymentType;
+        private string paymentType = "Credit/Debit Card";
         private Order newOrder;
         public FrmPayment()
         {
@@ -70,6 +70,8 @@ namespace JAHub_Winforms
             LoadOrderSummery();
             CaluculateSubtotal(Cart.ShoppingCart);
 
+            lblName.Text = $"{newOrder.ShipFirstName } {newOrder.ShipLastName}";
+            lblEmail.Text = newOrder.ShipEmail;
             lblStreetAddress.Text = newOrder.ShipStreetAddress;
             lblTown.Text = newOrder.ShipCity;
             lblParish.Text = newOrder.ShipParish;
@@ -144,7 +146,7 @@ namespace JAHub_Winforms
                 }
                 else
                 {
-                    paymentType = "Credit/Debit Card ***123}"; //$"Credit/Debit Card ***{txtCardNumber.Text.Substring(11, 4)}";
+                    this.paymentType = "Credit/Debit Card"; //$"Credit/Debit Card ***{txtCardNumber.Text.Substring(11, 4)}";
 
                 }
 
@@ -181,6 +183,9 @@ namespace JAHub_Winforms
                 }
                 else
                 {
+                    newOrder.PaymentDetails.BillingFirstName = txtFirstName.Text;
+                    newOrder.PaymentDetails.BillingLastName = txtLastName.Text;
+                    newOrder.PaymentDetails.BillingEmail = txtEmail.Text;
                     newOrder.PaymentDetails.BillingStreetAddress = txtStreetAddress.Text;
                     newOrder.PaymentDetails.BillingCity = txtCity.Text;
                     newOrder.PaymentDetails.BIllingParish = txtParish.Text;
@@ -189,16 +194,20 @@ namespace JAHub_Winforms
             else
             {
 
-                newOrder.PaymentDetails.PaymentType = this.paymentType;
 
                 if (chkBillingIsShipping.Checked)
                 {
+                    newOrder.PaymentDetails.BillingFirstName = newOrder.ShipFirstName;
+                    newOrder.PaymentDetails.BillingLastName = newOrder.ShipLastName;
+                    newOrder.PaymentDetails.BillingEmail = newOrder.ShipEmail; 
                     newOrder.PaymentDetails.BillingStreetAddress = newOrder.ShipStreetAddress;
                     newOrder.PaymentDetails.BillingCity = newOrder.ShipCity;
                     newOrder.PaymentDetails.BIllingParish = newOrder.ShipParish;
                 }
 
                 Customer customer = new Customer(true);
+
+                newOrder.PaymentDetails.PaymentType = this.paymentType;
 
                 if (customer.MakeOrder(newOrder) > 0)
                 {
@@ -215,7 +224,12 @@ namespace JAHub_Winforms
                 }
             }
 
-            
+           
+        }
+
+        private void pnlBillingAddress_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -117,6 +117,12 @@
     <Compile Include="FrmManageProducts.Designer.cs">
       <DependentUpon>FrmManageProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrders.Designer.cs">
+      <DependentUpon>FrmOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,20 @@
     <Compile Include="Moderation\usrInfractionAdder.Designer.cs">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderDetails.Designer.cs">
+      <DependentUpon>FrmOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -337,6 +357,12 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrFarmerProduct.Designer.cs">
       <DependentUpon>UsrFarmerProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shop_Controls\UsrOrderItem.Designer.cs">
+      <DependentUpon>UsrOrderItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Shop_Controls\UsrOrderSumItem.cs">
       <SubType>UserControl</SubType>
@@ -503,6 +529,9 @@
     <EmbeddedResource Include="FrmManageProducts.resx">
       <DependentUpon>FrmManageProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrders.resx">
+      <DependentUpon>FrmOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPayment.resx">
       <DependentUpon>FrmPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +608,9 @@
     <EmbeddedResource Include="Moderation\usrInfractionAdder.resx">
       <DependentUpon>usrInfractionAdder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderDetails.resx">
+      <DependentUpon>FrmOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -592,6 +624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UsrFarmerProduct.resx">
       <DependentUpon>UsrFarmerProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop_Controls\UsrOrderItem.resx">
+      <DependentUpon>UsrOrderItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shop_Controls\UsrOrderSumItem.resx">
       <DependentUpon>UsrOrderSumItem.cs</DependentUpon>
@@ -635,6 +670,17 @@
     <EmbeddedResource Include="Verification\usrUploadImage.resx">
       <DependentUpon>usrUploadImage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Orders.xsc">
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </None>
+    <None Include="Orders.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Orders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Orders.xss">
+      <DependentUpon>Orders.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

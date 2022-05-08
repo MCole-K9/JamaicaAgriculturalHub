@@ -7,47 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Moderation
+namespace JAHub_ASPWebforms.Shop_Controls
 {
 
 
-    public partial class usrViewInfraction
+    public partial class UsrOrder
     {
 
         /// <summary>
-        /// lblDateOfEntry control.
+        /// ShipStreetAdress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDateOfEntry;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShipStreetAdress;
 
         /// <summary>
-        /// lblReason control.
+        /// ShipCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReason;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShipCity;
 
         /// <summary>
-        /// lblAddedById control.
+        /// ShipParish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddedById;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShipParish;
 
         /// <summary>
-        /// btnClearReason control.
+        /// OrderDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClearReason;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl OrderDate;
+
+        /// <summary>
+        /// Subtotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Subtotal;
+
+        /// <summary>
+        /// btnViewOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnViewOrder;
     }
 }

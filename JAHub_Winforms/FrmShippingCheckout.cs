@@ -79,6 +79,9 @@ namespace JAHub_Winforms
             else
             {
                 Order newOrder = new Order();
+                newOrder.ShipFirstName = txtFirstName.Text;
+                newOrder.ShipLastName = txtLastName.Text;
+                newOrder.ShipEmail = txtEmailAddress.Text;
                 newOrder.ShipStreetAddress = txtStreetAddress.Text;
                 newOrder.ShipCity = txtCity.Text;
                 newOrder.ShipParish = txtParish.Text;

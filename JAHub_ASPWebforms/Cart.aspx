@@ -27,8 +27,11 @@
             <div class="content-container container-fluid">
                 <h2>Shopping Cart</h2>
                 <hr />
+                <div id="ECMessage" runat="server">
+                    <h4>No Items Have Been Added To Your Cart</h4>
+                    <p>Add a Product To Your Cart From Our Shop Page</p>
+                </div>
                 <asp:Panel ID="pnlCart" runat="server">
-
                 </asp:Panel>
              </div>  
         </div>

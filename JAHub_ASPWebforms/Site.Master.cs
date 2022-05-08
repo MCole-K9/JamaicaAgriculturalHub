@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using JAHubLib;
 using JAHub_ASPWebforms.Account;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace JAHub_ASPWebforms
 {
@@ -77,13 +78,19 @@ namespace JAHub_ASPWebforms
                 usrNavbarAccountLogout accountLogoutSection = (usrNavbarAccountLogout)LoadControl("~/Account/usrNavbarAccountLogout.ascx");
 
                 phAccount.Controls.Add(accountLogoutSection);
-                
-                // this should show some kind of "currently logged in as"
-                // include:
-                // * First Name
-                // * Last Name
-                // * UserId
-                // * Role
+
+                // Using this to make certain items only visible given a certain user role
+                switch (Session["UserRole"])
+                {
+                    default:
+                        // this shouldn't actually happen
+                        break;
+                    case UserRole.Admin:
+                        liAdmin.Visible = true;
+                        btnAdministration.Visible = true;
+                        break;
+                }
+
             }
             else
             {
@@ -91,16 +98,9 @@ namespace JAHub_ASPWebforms
 
                 phAccount.Controls.Add(loginRegister);
 
-                // K.S. Using this to check to see if the user is an admin, this is probably bad UI design but tbh...
-                // also leaving this here in case i need it later, not presently used
-                switch (Session["UserRole"])
-                {
-                    default:
-                        // this shouldn't actually happen
-                        break;
-                    case UserRole.Admin:
-                        break;
-                }
+
+                liAdmin.Visible = false;
+                btnAdministration.Visible = false;
             }
         }
 

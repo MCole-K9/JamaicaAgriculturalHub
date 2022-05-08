@@ -33,6 +33,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.WebControls.Panel pnlOrderItems;
 
         /// <summary>
+        /// Subtotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Subtotal;
+
+        /// <summary>
         /// ShipName control.
         /// </summary>
         /// <remarks>
@@ -87,14 +96,23 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl BillingName;
 
         /// <summary>
-        /// Billing Email control.
+        /// BillingEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl BillingEmail;
-        
+
+        /// <summary>
+        /// PaymentMethod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PaymentMethod;
+
         /// <summary>
         /// BillingStreetAddress control.
         /// </summary>

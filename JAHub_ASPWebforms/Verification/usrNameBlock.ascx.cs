@@ -15,13 +15,39 @@ namespace JAHub_ASPWebforms.Verification
         // why is the css not showing?
         // how do i do validation?
 
-        bool isFirstNameValid;
-        bool isMiddleNameValid;
-        bool isLastNameValid;
-
-        public String FirstName => txtFirstName.Text;
-        public String MiddleName => txtMiddleName.Text;
-        public String LastName => txtLastName.Text;
+        public String FirstName
+        {
+            get
+            {
+                return txtFirstName.Text;
+            }
+            set
+            {
+                txtFirstName.Text = value;
+            }
+        }
+        public String MiddleName
+        {
+            get
+            {
+                return txtMiddleName.Text;
+            }
+            set
+            {
+                txtMiddleName.Text = value;
+            }
+        }
+        public String LastName
+        {
+            get
+            {
+                return txtLastName.Text;
+            }
+            set
+            {
+                txtLastName.Text = value;
+            }
+        }
 
 
         public usrNameBlock()
@@ -29,27 +55,10 @@ namespace JAHub_ASPWebforms.Verification
 
         }
 
-        public usrNameBlock(String firstName, String middleName, String lastName)
-        {
-            txtFirstName.Text = firstName;
-            txtMiddleName.Text = middleName;
-            txtLastName.Text = lastName;
-
-            isFirstNameValid = true;
-            isMiddleNameValid = true;
-            isLastNameValid = true;
-        }
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
-        }
-
-        // copying the signature of these in case i need them
-        public void IsBlockValid()
-        {
-            // Need to know how Page.IsValid affects this
         }
 
         public void SetControlFocus()

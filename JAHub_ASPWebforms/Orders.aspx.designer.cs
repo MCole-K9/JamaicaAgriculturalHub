@@ -11,16 +11,16 @@ namespace JAHub_ASPWebforms
 {
 
 
-    public partial class Administration
+    public partial class Orders
     {
 
         /// <summary>
-        /// phAdministration control.
+        /// pnlOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phAdministration;
+        protected global::System.Web.UI.WebControls.Panel pnlOrders;
     }
 }

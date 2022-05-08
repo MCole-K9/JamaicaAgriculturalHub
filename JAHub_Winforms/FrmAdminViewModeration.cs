@@ -152,7 +152,14 @@ namespace JAHub_Winforms
 
                     foreach (DataRow row in dtbAddedInfractions.Rows)
                     {
+                        if (row[3].ToString().Contains('\''))
+                        {
+                            String replacementValue = row[3].ToString().Replace("\'", "''");
+                            row[3] = replacementValue;
+                        }
+                        
                         command += $"('{row[0]}', {row[1]}, {row[2]}, '{row[3]}')";
+
 
                         if(dtbAddedInfractions.Rows.IndexOf(row) == dtbAddedInfractions.Rows.Count - 1)
                         {
@@ -163,6 +170,9 @@ namespace JAHub_Winforms
                             command += ", ";
                         }
                     }
+
+                    //command.Replace(" '", "''");
+                    //command.Replace("\"", "\\" + "\"");
 
                     SqlCommand addNewInfractions = new SqlCommand(command, connection);
 

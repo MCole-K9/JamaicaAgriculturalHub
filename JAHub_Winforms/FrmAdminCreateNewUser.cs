@@ -32,7 +32,6 @@ namespace JAHub_Winforms
             // This is just in case i have anything in the cmb already
             cmbUserRole.Items.Clear();
 
-            // Creating a datacolumn for ID
             DataColumn idColumn = new DataColumn();
             idColumn.ColumnName = "Id";
             idColumn.DataType = typeof(UserRole);
@@ -56,8 +55,6 @@ namespace JAHub_Winforms
 
                 SqlDataReader reader = command.ExecuteReader();
 
-
-
                 while (reader.Read())
                 {
                     DataRow row;
@@ -75,6 +72,7 @@ namespace JAHub_Winforms
             cmbUserRole.DataSource = userRoleTable;
             cmbUserRole.DisplayMember = "UserRole";
             cmbUserRole.ValueMember = "Id";
+            
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
@@ -199,6 +197,7 @@ namespace JAHub_Winforms
 
                                 switch ((UserRole)cmbUserRole.SelectedValue)
                                 {
+
                                     case UserRole.Customer:
                                         command = $"INSERT INTO Customer (UserID) VALUES ({newUser.UserID})";
                                         break;
@@ -215,8 +214,10 @@ namespace JAHub_Winforms
 
 
                                 SqlCommand populateTable = new SqlCommand(command, connection);
-
-                                populateTable.ExecuteNonQuery();
+                                if (command != "")
+                                {
+                                    populateTable.ExecuteNonQuery();
+                                }
 
                                 connection.Close();
                             }
