@@ -6,22 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using JAHubLib;
 
-namespace JAHub_ASPWebforms
+namespace JAHub_ASPWebforms.GrantDisplay_Controls
 {
-   
-    public partial class Grantdetails : System.Web.UI.Page
+    public partial class GeneralGrantInfo : System.Web.UI.UserControl
     {
-        Grantinfo grantinfo = new Grantinfo();
 
-        Grantdetails(Grantinfo g)
+      /*public  GeneralGrantInfo(Grantinfo g) 
         {
-            grantinfo = g;
-            tAGrantdescription.Value = g.GrantDescription;
             tAGrantRequirement.Value = g.Requirement;
+            tAGarantDescription.Value = g.GrantDescription;
             txtApplicationNumber.Text = g.Application_Form;
             txtTitle.Text = g.Title;    
-
-        }
+        }*/
         protected void Page_Load(object sender, EventArgs e)
         {
 
