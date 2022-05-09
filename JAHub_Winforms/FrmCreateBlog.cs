@@ -142,11 +142,11 @@ namespace JAHub_Winforms
                                     form.Close();
                                 }
                             }
-                            FrmBlog frmBlog = new FrmBlog();
-                            frmBlog.MdiParent = this.MdiParent;
-                            frmBlog.Show();
-                            this.Close();
                         }
+                        FrmBlog frmBlog = new FrmBlog();
+                        frmBlog.MdiParent = this.MdiParent;
+                        frmBlog.Show();
+                        this.Close();
                     }
                     catch (Exception ex)
                     {

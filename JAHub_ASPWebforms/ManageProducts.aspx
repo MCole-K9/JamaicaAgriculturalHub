@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPortal.Master" AutoEventWireup="true" CodeFile="ManageProducts.aspx.cs" Inherits="JAHub_ASPWebforms.ManageProducts" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPortal.Master" AutoEventWireup="true" CodeFile="ManageProducts.aspx.cs" EnableViewState="false" Inherits="JAHub_ASPWebforms.ManageProducts" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div style="margin: 40px 0 ">

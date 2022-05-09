@@ -7,48 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms
+namespace JAHub_ASPWebforms.GrantDisplay_Controls
 {
 
 
-    public partial class WebForm1
+    public partial class GeneralGrantInfo
     {
 
         /// <summary>
-        /// txtTitle control.
+        /// PnlDisplayUserControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
-
-        /// <summary>
-        /// txtApplicationNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApplicationNumber;
-
-        /// <summary>
-        /// tAGrantdescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea tAGrantdescription;
-
-        /// <summary>
-        /// ShowDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ShowDate;
+        protected global::System.Web.UI.WebControls.Panel PnlDisplayUserControl;
 
         /// <summary>
         /// tAGrantRequirement control.
@@ -60,21 +33,30 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlTextArea tAGrantRequirement;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// cbSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.CheckBox cbSelect;
 
         /// <summary>
-        /// btnSubmit control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
+
+        /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GrantDetails.aspx.cs" Inherits="JAHub_ASPWebforms.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Grantdetails.aspx.cs" Inherits="JAHub_ASPWebforms.Grantdetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
@@ -18,24 +18,24 @@
         <div class="form-group">
             <label class=" lblCreateGrant" for="title">
             Title:</label>
-            <input type="text" class="form-control" id="txtTitle" , placeholder="RADA Grant" required runrat ="server">
+            <asp:TextBox class="form-control" style="max-width:400px" ID="txtTitle" placeholder="RADA Grant" required="txtTitle"   runat="server" ReadOnly="True"></asp:TextBox>
         </div>
         <div class="form-group">
             <label for="title">
             Application Number:</label>
-            <input type="text" class="form-control" id="txtApplicationNumber" , placeholder="0124" required runrat="server">
+             <asp:TextBox class="form-control" ID="txtApplicationNumber" style="max-width:400px" placeholder="#9948" required="txtApplication"   runat="server" ReadOnly="True"></asp:TextBox>
         </div>
         <div class="form-group">
             <label for="GrantDecription" class="lblCreateGrant">
             <strong>Description</strong>:</label>
-            <textArea class="form-control" id="tAGrantdescription" style="height:350px;" runat="server" cols="20" name="S1" rows="1"> </textArea>
+            <textArea class="form-control" id="tAGrantdescription" style="height:350px;" readonly runat="server" cols="20" name="S1" rows="1"> </textArea>
         </div>
         <div class="form-group">
             <label for="GrantRequirement" class="lblCreateGrant">
             <strong>Requirements</strong>:</label>
-            <textArea class="form-control" id="tAGrantRequirement" style="height:350px;" runat="server" cols="20" name="S2" rows="1"> </textArea>
+            <textArea class="form-control" id="tAGrantRequirement" style="height:350px;" runat="server" readonly  cols="20" name="S2" rows="1"> </textArea>
         </div>
-        <div  class="col-md-5" style = "margin-top:50px;">
+        <div  class="col-md-5" style = "margin-top:50px;">read
             <h3>Upload File</h3>
             <asp:FileUpload ID="FileUpload1"  runat="server" AllowMultiple="true" Height="44px" Width="290px"/>
         </div>

@@ -72,36 +72,43 @@
                                 <div class="form-group">
                                     <label for="ShipFirstName">First Name:</label>
                                     <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipFirstName">
+                                    <asp:RequiredFieldValidator ID="rfvShipFirstName" runat="server" ErrorMessage="First Name Required" CssClass="v-text" ControlToValidate="ShipFirstName" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="ShipLastName">Last Name:</label>
                                     <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipLastName">
+                                    <asp:RequiredFieldValidator ID="rfvShipLastName" runat="server" ErrorMessage="Last Name Required" CssClass="v-text" ControlToValidate="ShipLastName" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
                                     <label for="ShipEmail">Email Address:</label>
                                     <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipEmail">
+                                    <asp:RequiredFieldValidator ID="rfvShipEmail" runat="server" ErrorMessage="Email Required" CssClass="v-text" ControlToValidate="ShipEmail" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revShipEmail" runat="server" ErrorMessage="Invalid Email Address" CssClass="v-text" ControlToValidate="ShipEmail" ValidationExpression="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" Display="Dynamic"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
                                     <label for="ShipStreetAdress">Street Address:</label>
-                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipStreetAdress">
+                                    <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipStreetAddress">
+                                    <asp:RequiredFieldValidator ID="rfvShipStreetAddress" runat="server" ErrorMessage="Street Address Required" ControlToValidate="ShipStreetAddress" CssClass="v-text" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="ShipCity">City/Town:</label>
                                     <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipCity">
+                                    <asp:RequiredFieldValidator ID="rfvShipCity" runat="server" ErrorMessage="City is Required" ControlToValidate="ShipCity" CssClass="v-text" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="ShipParish">Parish:</label>
                                     <input type="text" class="form-control" runat="server" style="max-width: 100%" id="ShipParish">
+                                    <asp:RequiredFieldValidator ID="rfvShipParish" runat="server" ErrorMessage="Parish is Required" ControlToValidate="ShipParish" CssClass="v-text" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -144,7 +151,7 @@
                             </div>
                             <div class="acc-content">
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-6 col-md-offset-4">
+                                    <div class="col-xs-12 col-md-6 col-md-offset-3">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <div class="row">
@@ -163,9 +170,11 @@
                                                         <div class="form-group">
                                                             <label>CARD NUMBER</label>
                                                             <div class="input-group">
-                                                                <input type="tel" class="form-control" placeholder="Valid Card Number" />
+                                                                <input id="CardNum" runat="server" type="tel" class="form-control" placeholder="Valid Card Number" />
                                                                 <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
                                                             </div>
+                                                            <asp:RequiredFieldValidator ID="rfvCardNumber" runat="server" ErrorMessage="Card Number Required" CssClass="v-text" ControlToValidate="CardNum" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                            <asp:RegularExpressionValidator ID="revCardNumber" runat="server" ErrorMessage="Invalid Card Number" CssClass="v-text" ControlToValidate="CardNum" ValidationExpression="\d{4}((-|\s)?)\d{4}((-|\s)?)\d{4}((-|\s)?)\d{4}" Display="Dynamic"></asp:RegularExpressionValidator>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -173,13 +182,16 @@
                                                     <div class="col-xs-7 col-md-7 fit-content-y">
                                                         <div class="form-group">
                                                             <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                                            <input type="tel" class="form-control" placeholder="MM / YY" />
+                                                            <input id="ExpirDate" runat="server" type="tel" class="form-control" placeholder="MM / YY" />
+                                                            <asp:RequiredFieldValidator ID="rfvExpir" runat="server" ErrorMessage="Expiration Date Required" CssClass="v-text" ControlToValidate="ExpirDate" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                            <asp:RegularExpressionValidator ID="revExpir" runat="server" ErrorMessage="Invalid Expiration Date" CssClass="v-text" ControlToValidate="ExpirDate" ValidationExpression="\d{2}\/\d{2}" Display="Dynamic"></asp:RegularExpressionValidator>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-5 col-md-5 pull-right fit-content-y">
                                                         <div class="form-group">
-                                                            <label>CV CODE</label>
-                                                            <input type="tel" class="form-control" placeholder="CVC" />
+                                                            <label>CVV</label>
+                                                            <input id="CVV" runat="server" type="tel" class="form-control" placeholder="CVV" />
+                                                            <asp:RequiredFieldValidator ID="rfvCVV" runat="server" ErrorMessage="CVV Required" CssClass="v-text" ControlToValidate="CVV" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -187,7 +199,8 @@
                                                     <div class="col-xs-12 fit-content-y">
                                                         <div class="form-group">
                                                             <label>CARD OWNER</label>
-                                                            <input type="text" class="form-control" placeholder="Card Owner Name" />
+                                                            <input runat="server" id="CardHolder" type="text" class="form-control" placeholder="Card Owner Name" />
+                                                            <asp:RequiredFieldValidator ID="rfvCardHolder" runat="server" ErrorMessage="Card Holder Name Required" ControlToValidate="CardHolder" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -225,36 +238,43 @@
                                 <div class="form-group">
                                     <label for="BillingFirstNam">First Name:</label>
                                     <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingFirstName">
+                                    <asp:RequiredFieldValidator ID="rfvBillingFirstName" runat="server" ErrorMessage="First Name Required" ControlToValidate="BillingFirstName" CssClass="v-text" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="BillingLastName">Last Name:</label>
                                     <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingLastName">
+                                    <asp:RequiredFieldValidator ID="rfvBillingLastName" runat="server" ErrorMessage="Last Name is Required" ControlToValidate="BillingLastName" CssClass="v-text" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
                                     <label for="BillingEmail">Email Address:</label>
                                     <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingEmail">
+                                    <asp:RequiredFieldValidator ID="rfvBillingEmail" runat="server" ErrorMessage="Email is Required" CssClass="v-text" ControlToValidate="BillingEmail" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="revBillingEmail" runat="server" ErrorMessage="RegularExpressionValidator" CssClass="v-text" ControlToValidate="BillingEmail" ValidationExpression="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" Display="Dynamic"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                             <div class="col-lg-12 fit-content-y">
                                 <div class="form-group">
                                     <label for="BillingStreetAdress">Street Address:</label>
-                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingStreetAdress">
+                                    <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingStreetAddress">
+                                    <asp:RequiredFieldValidator ID="rfvBillingStreetAddress" runat="server" ErrorMessage="Street Address is Required" CssClass="v-text" ControlToValidate="BillingStreetAddress" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="BillingCity">City/Town:</label>
                                     <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BillingCity">
+                                    <asp:RequiredFieldValidator ID="rfvBillingCity" runat="server" ErrorMessage="City is Required" CssClass="v-text" ControlToValidate="BillingCity" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-lg-6 fit-content-y">
                                 <div class="form-group">
                                     <label for="BIllingParish">Parish:</label>
                                     <input type="text" class="form-control" style="max-width: 100%" runat="server" id="BIllingParish">
+                                    <asp:RequiredFieldValidator ID="rfvBillingParish" runat="server" ErrorMessage="Parish is Required" CssClass="v-text" ControlToValidate="BillingParish" Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -293,12 +313,12 @@
             $('.nav-tabs > .active').next('li').find('a').trigger('click');
 
             //Billing is Shipping by Default 
-            $("#BillingFirstName").val($("#ShipFirstName").val());
-            $("#BillingLastName").val($("#ShipLastName").val());
-            $("#BillingEmail").val($("#ShipEmail").val());
-            $("#BillingStreetAdress").val($("#ShipStreetAdress").val());
-            $("#BillingCity").val($("#ShipCity").val());
-            $("#BillingParish").val($("#ShipParish").val());
+            $("#" + "<%=BillingFirstName.ClientID%>").val($("#" + "<%=ShipFirstName.ClientID%>").val());
+            $("#" + "<%=BillingLastName.ClientID%>").val($("#" + "<%=ShipLastName.ClientID%>").val());
+            $("#" + "<%=BillingEmail.ClientID%>").val($("#" + "<%=ShipEmail.ClientID%>").val());
+            $("#" + "<%=BillingStreetAddress.ClientID%>").val($("#" + "<%=ShipStreetAddress.ClientID%>").val());
+            $("#" + "<%=BillingCity.ClientID%>").val($("#" + "<%=ShipCity.ClientID%>").val());
+            $("#" + "<%=BIllingParish.ClientID%>").val($("#" + "<%=ShipParish.ClientID%>").val());
         });
 
         $("#btnBack").on("click", (event) => {
@@ -316,7 +336,24 @@
             /* Toggle between adding and removing the "active" class,
                        to highlight the button that controls the panel */
 
+            if ($(this).val() === "Paypal") {
 
+              
+
+                //Setting To valid data.. Unable to disable validators
+                $("#" + "<%=CardNum.ClientID%>").val(4354999999999999);
+                $("#" + "<%=ExpirDate.ClientID%>").val("01/45");
+                $("#" + "<%=CVV.ClientID%>").val(245);
+                $("#" + "<%=CardHolder.ClientID%>").val("some name");
+
+
+            } else {
+
+                $("#" + "<%=CardNum.ClientID%>").val("");
+                $("#" + "<%=ExpirDate.ClientID%>").val("");
+                $("#" + "<%=CVV.ClientID%>").val("");
+                $("#" + "<%=CardHolder.ClientID%>").val("");
+            }
 
             $(this).toggleClass("active");
 
@@ -367,12 +404,12 @@
 
             if (!billingShippingRdb.checked) {
 
-                $("#BillingFirstName").val("");
-                $("#BillingLastName").val("");
-                $("#BillingEmail").val("");
-                $("#BillingStreetAdress").val("");
-                $("#BillingCity").val("");
-                $("#BillingParish").val("");
+                $("#" + "<%=BillingFirstName.ClientID%>").val("");
+                $("#" + "<%=BillingLastName.ClientID%>").val("");
+                $("#" + "<%=BillingEmail.ClientID%>").val("");
+                $("#" + "<%=BillingStreetAddress.ClientID%>").val("");
+                $("#" + "<%=BillingCity.ClientID%>").val("");
+                $("#" + "<%=BIllingParish.ClientID%>").val("");
 
                 $("#BillingAddress").css("display", "block");
 
@@ -380,12 +417,12 @@
                 
             } else {
 
-                $("#BillingFirstName").val($("#ShipFirstName").val());
-                $("#BillingLastName").val($("#ShipLastName").val());
-                $("#BillingEmail").val($("#ShipEmail").val());
-                $("#BillingStreetAdress").val($("#ShipStreetAdress").val());
-                $("#BillingCity").val($("#ShipCity").val());
-                $("#BillingParish").val($("#ShipParish").val());
+                $("#" + "<%=BillingFirstName.ClientID%>").val($("#" + "<%=ShipFirstName.ClientID%>").val());
+                $("#" + "<%=BillingLastName.ClientID%>").val($("#" + "<%=ShipLastName.ClientID%>").val());
+                $("#" + "<%=BillingEmail.ClientID%>").val($("#" + "<%=ShipEmail.ClientID%>").val());
+                $("#" + "<%=BillingStreetAddress.ClientID%>").val($("#" + "<%=ShipStreetAddress.ClientID%>").val());
+                $("#" + "<%=BillingCity.ClientID%>").val($("#" + "<%=ShipCity.ClientID%>").val());
+                $("#" + "<%=BIllingParish.ClientID%>").val($("#" + "<%=ShipParish.ClientID%>").val());
 
 
                 $("#BillingAddress").css("display", "none");

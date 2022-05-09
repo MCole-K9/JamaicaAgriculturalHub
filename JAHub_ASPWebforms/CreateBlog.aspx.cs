@@ -34,20 +34,22 @@ namespace JAHub_ASPWebforms
 
         protected void btnPost_Click(object sender, EventArgs e)
         {
-            if (txtBlogBody.Value == " " || txtDescription.Value == "" || txtTitle.Value == "")
+            string ParsedBody = txtBlogBody.Value.Replace("'", "''");
+            if (ParsedBody == "" || txtDescription.Value == "" || txtTitle.Value == "")
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "alertFunction", "alert(\"Fill Out All Feilds\")", true);
             }
             else
             {
-                Blog b = (Blog)Session["BlogForEdit"];
-                string ParsedBody = txtBlogBody.Value.Replace("'", "''");
-                b.BlogBody = ParsedBody;
-                b.Description = txtDescription.Value;
-                b.Title = txtTitle.Value;
+               
 
                 if (Session["BlogForEdit"] != null)
                 {
+                    Blog b = (Blog)Session["BlogForEdit"];
+                    
+                    b.BlogBody = ParsedBody;
+                    b.Description = txtDescription.Value;
+                    b.Title = txtTitle.Value;
                     try
                     {
                         b.UpdateBlogPost(b);
@@ -63,7 +65,8 @@ namespace JAHub_ASPWebforms
                 {
                     try
                     {
-                        b.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBody);
+                        Blog newBlog = new Blog();
+                        newBlog.CreateBlogPost((int)Session["UserId"], txtTitle.Value, txtDescription.Value, ParsedBody);
                         Response.Redirect("~/Blog.aspx");
                     }
                     catch (Exception ex)
