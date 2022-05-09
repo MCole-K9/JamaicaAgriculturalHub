@@ -7,9 +7,9 @@
         <uc:AddressBlock runat="server" ID="addressBlock" />
     </div>
     <div class="row">
-        <asp:TextBox runat="server" ID="txtLandMeasurement" CssClass="col-lg-3"></asp:TextBox>
+        <asp:TextBox runat="server" ID="txtLandMeasurement" CssClass="col-lg-3 input-sm"></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="reqLandMeasurement" ControlToValidate="txtLandMeasurement"
-            ErrorMessage="Field is Required" CssClass="text text-danger col-lg-3" />
+            ErrorMessage="Field is Required" CssClass="text text-danger col-lg-3 input-sm" />
     </div>
 
 </div>

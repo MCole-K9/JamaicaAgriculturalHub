@@ -68,24 +68,17 @@ namespace JAHub_ASPWebforms.Verification
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public usrHoldingsBlock()
-        {
-            // Create a product block in the product block placeholder
-            usrProductBlock productBlock = (usrProductBlock)LoadControl("~/Verification/usrProductBlock.ascx.cs");
+            usrProductBlock productBlock = (usrProductBlock)LoadControl("~/Verification/usrProductBlock.ascx");
             _productsList.Add(productBlock.Product);
 
             phProducts.Controls.Add(productBlock);
 
 
 
-            usrLandBlock landblock = (usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx.cs");
+            usrLandBlock landblock = (usrLandBlock)LoadControl("~/Verification/usrLandBlock.ascx");
             _landInformationList.Add(landblock.LandInformation);
 
             phLandBlock.Controls.Add(landblock);
-
         }
 
         protected void btnAddLandEntry_Click(object sender, EventArgs e)

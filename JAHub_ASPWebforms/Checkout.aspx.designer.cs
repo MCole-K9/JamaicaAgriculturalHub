@@ -24,6 +24,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText ShipFirstName;
 
         /// <summary>
+        /// rfvShipFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShipFirstName;
+
+        /// <summary>
         /// ShipLastName control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText ShipLastName;
+
+        /// <summary>
+        /// rfvShipLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShipLastName;
 
         /// <summary>
         /// ShipEmail control.
@@ -42,13 +60,40 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText ShipEmail;
 
         /// <summary>
-        /// ShipStreetAdress control.
+        /// rfvShipEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText ShipStreetAdress;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShipEmail;
+
+        /// <summary>
+        /// revShipEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revShipEmail;
+
+        /// <summary>
+        /// ShipStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ShipStreetAddress;
+
+        /// <summary>
+        /// rfvShipStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShipStreetAddress;
 
         /// <summary>
         /// ShipCity control.
@@ -60,6 +105,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText ShipCity;
 
         /// <summary>
+        /// rfvShipCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShipCity;
+
+        /// <summary>
         /// ShipParish control.
         /// </summary>
         /// <remarks>
@@ -67,6 +121,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText ShipParish;
+
+        /// <summary>
+        /// rfvShipParish control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShipParish;
 
         /// <summary>
         /// CartCount control.
@@ -87,6 +150,96 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.WebControls.Panel pnlOrderSummery;
 
         /// <summary>
+        /// CardNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl CardNum;
+
+        /// <summary>
+        /// rfvCardNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCardNumber;
+
+        /// <summary>
+        /// revCardNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCardNumber;
+
+        /// <summary>
+        /// ExpirDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl ExpirDate;
+
+        /// <summary>
+        /// rfvExpir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvExpir;
+
+        /// <summary>
+        /// revExpir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revExpir;
+
+        /// <summary>
+        /// CVV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl CVV;
+
+        /// <summary>
+        /// rfvCVV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCVV;
+
+        /// <summary>
+        /// CardHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText CardHolder;
+
+        /// <summary>
+        /// rfvCardHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCardHolder;
+
+        /// <summary>
         /// BillingFirstName control.
         /// </summary>
         /// <remarks>
@@ -94,6 +247,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText BillingFirstName;
+
+        /// <summary>
+        /// rfvBillingFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBillingFirstName;
 
         /// <summary>
         /// BillingLastName control.
@@ -105,6 +267,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText BillingLastName;
 
         /// <summary>
+        /// rfvBillingLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBillingLastName;
+
+        /// <summary>
         /// BillingEmail control.
         /// </summary>
         /// <remarks>
@@ -114,13 +285,40 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText BillingEmail;
 
         /// <summary>
-        /// BillingStreetAdress control.
+        /// rfvBillingEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText BillingStreetAdress;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBillingEmail;
+
+        /// <summary>
+        /// revBillingEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revBillingEmail;
+
+        /// <summary>
+        /// BillingStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText BillingStreetAddress;
+
+        /// <summary>
+        /// rfvBillingStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBillingStreetAddress;
 
         /// <summary>
         /// BillingCity control.
@@ -132,6 +330,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText BillingCity;
 
         /// <summary>
+        /// rfvBillingCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBillingCity;
+
+        /// <summary>
         /// BIllingParish control.
         /// </summary>
         /// <remarks>
@@ -139,6 +346,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText BIllingParish;
+
+        /// <summary>
+        /// rfvBillingParish control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBillingParish;
 
         /// <summary>
         /// btnPlaceOrder control.

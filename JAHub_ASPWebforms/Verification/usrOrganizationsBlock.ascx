@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrOrganizationsBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrOrganizationsBlock" %>
 
 <div class="row">
+    <h4>Organizations</h4>
     <p class="row">Please list any relevant Organizations or Commodity Boards you may be a part of, 
         (for example: The Coffee Growers Association). 
         If you are not a part of any organization, leave this field blank</p>

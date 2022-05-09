@@ -11,34 +11,43 @@ namespace JAHub_ASPWebforms
 {
 
 
-    public partial class WebFrmBlog
+    public partial class EditBlog
     {
 
         /// <summary>
-        /// txtSearch control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTitle;
 
         /// <summary>
-        /// dropDownSort control.
+        /// txtDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropDownSort;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescription;
 
         /// <summary>
-        /// pnlBlogContainer control.
+        /// txtBlogBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlBlogContainer;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtBlogBody;
+
+        /// <summary>
+        /// btnPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPost;
     }
 }

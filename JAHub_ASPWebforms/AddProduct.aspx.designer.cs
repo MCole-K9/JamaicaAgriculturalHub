@@ -42,6 +42,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText ProductName;
 
         /// <summary>
+        /// rfvProductName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProductName;
+
+        /// <summary>
         /// Price control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,24 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText Price;
+
+        /// <summary>
+        /// rfvPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrice;
+
+        /// <summary>
+        /// revPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPrice;
 
         /// <summary>
         /// Stock control.
@@ -60,6 +87,15 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText Stock;
 
         /// <summary>
+        /// rfvStock control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvStock;
+
+        /// <summary>
         /// CategoryDropDown control.
         /// </summary>
         /// <remarks>
@@ -67,6 +103,15 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList CategoryDropDown;
+
+        /// <summary>
+        /// rfvCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategory;
 
         /// <summary>
         /// btnSave control.
