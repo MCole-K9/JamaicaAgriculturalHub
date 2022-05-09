@@ -15,31 +15,31 @@ namespace JAHub_ASPWebforms
     {
 
         /// <summary>
-        /// Button1 control.
+        /// btnToday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnToday;
 
         /// <summary>
-        /// Button2 control.
+        /// btnLast7Days control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnLast7Days;
 
         /// <summary>
-        /// Button3 control.
+        /// btnThisMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button btnThisMonth;
 
         /// <summary>
         /// lblNumberOfOrders control.
@@ -69,13 +69,13 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.WebControls.Label lblTotalProfits;
 
         /// <summary>
-        /// GridView1 control.
+        /// dgvProductsShort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView dgvProductsShort;
 
         /// <summary>
         /// Panel1 control.
@@ -85,5 +85,23 @@ namespace JAHub_ASPWebforms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
+
+        /// <summary>
+        /// lblTotalCustomers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalCustomers;
+
+        /// <summary>
+        /// lblTotalProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalProducts;
     }
 }
