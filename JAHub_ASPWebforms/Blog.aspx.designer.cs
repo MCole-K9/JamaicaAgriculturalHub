@@ -24,31 +24,13 @@ namespace JAHub_ASPWebforms
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtSearch;
 
         /// <summary>
-        /// btnSearch control.
+        /// dropDownSort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
-
-        /// <summary>
-        /// btnSortby control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSortby;
-
-        /// <summary>
-        /// selSort control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect selSort;
+        protected global::System.Web.UI.WebControls.DropDownList dropDownSort;
 
         /// <summary>
         /// pnlBlogContainer control.

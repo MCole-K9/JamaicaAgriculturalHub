@@ -14,15 +14,15 @@
 
               <div class="form-group">
                 <h4><label for="title">Title:</label></h4>
-                <input type="text" class="form-control" id="txtTitle" runat="server">
+                <input type="text" class="form-control" id="txtTitle" runat="server" required>
               </div>
               <div class="form-group">
                 <h4><label for="description">Description:</label></h4>
-                <input type="text" class="form-control" id="txtDescription" runat="server">
+                <input type="text" class="form-control" id="txtDescription" runat="server" required>
               </div>
             <div class="form-group">
                 <h4><label for="blogbody" class="lblBody">Body:</label></h4>
-                <textArea class="form-control" id="txtBlogBody" style="height:500px;" runat="server"> </textArea>
+                <textArea class="form-control" id="txtBlogBody" style="height:500px;" runat="server" required> </textArea>
               </div>
             <asp:button type="button" class="btn btn-primary btnPost" runat="server" id="btnPost" OnClick="btnPost_Click" Text="Save"></asp:button>
               
