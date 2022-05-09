@@ -84,7 +84,7 @@ namespace JAHub_ASPWebforms
         {
             Blog displayedBlog = (Blog)Session["BlogData"];
             Session["BlogForEdit"] = displayedBlog;
-            Response.Redirect("~/CreateBlog.aspx");
+            Response.Redirect("~/EditBlog.aspx");
         }
     }
 }
