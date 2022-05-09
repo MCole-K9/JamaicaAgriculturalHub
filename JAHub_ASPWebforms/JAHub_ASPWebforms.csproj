@@ -176,6 +176,8 @@
     <Content Include="Dashboard.css" />
     <Content Include="Default.aspx" />
     <Content Include="DisplayBlog.aspx" />
+    <Content Include="GrantDisplay_Controls\ucGeneralGrantInfo.ascx" />
+    <Content Include="GrantOfficerGrants.aspx" />
     <Content Include="Grants.aspx" />
     <Content Include="ManageProducts.aspx" />
     <Content Include="OrderDetails.aspx" />
@@ -219,7 +221,7 @@
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
     <Content Include="CreateGrants.aspx" />
-    <Content Include="GrantDetails.aspx" />
+    <Content Include="Grantdetails.aspx" />
     <Content Include="WebForm3.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -395,6 +397,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GrantDisplay_Controls\ucGeneralGrantInfo.ascx.cs">
+      <DependentUpon>ucGeneralGrantInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GrantDisplay_Controls\ucGeneralGrantInfo.ascx.designer.cs">
+      <DependentUpon>ucGeneralGrantInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GrantOfficerGrants.aspx.cs">
+      <DependentUpon>GrantOfficerGrants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GrantOfficerGrants.aspx.designer.cs">
+      <DependentUpon>GrantOfficerGrants.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Grants.aspx.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,6 +418,7 @@
     <Compile Include="Grants.aspx.designer.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Grant_Controls\ucGrantDisplay.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Administration\usrAddInfraction.ascx.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
@@ -651,12 +668,12 @@
     <Compile Include="CreateGrants.aspx.designer.cs">
       <DependentUpon>CreateGrants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GrantDetails.aspx.cs">
-      <DependentUpon>GrantDetails.aspx</DependentUpon>
+    <Compile Include="Grantdetails.aspx.cs">
+      <DependentUpon>Grantdetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GrantDetails.aspx.designer.cs">
-      <DependentUpon>GrantDetails.aspx</DependentUpon>
+    <Compile Include="Grantdetails.aspx.designer.cs">
+      <DependentUpon>Grantdetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm3.aspx.cs">
       <DependentUpon>WebForm3.aspx</DependentUpon>
