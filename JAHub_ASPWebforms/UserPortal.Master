@@ -18,7 +18,7 @@
     <link href="UserPortalCss.css" rel="stylesheet" />
     
 
-    <%--<link href="StyleSheet2.css" rel="stylesheet" />--%>
+   
 
     
     
@@ -105,7 +105,7 @@
   						<span class="icon-bar"></span>
   						<span class="icon-bar"></span>
   					</button>
-         <a class="navbar-brand" href="#">Jamaica Agricultural Hub</a>
+         <a class="navbar-brand" href="./">Jamaica Agricultural Hub</a>
       </div>
       <!-- navbar-header-->
       
@@ -123,10 +123,10 @@
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
+                                    <a href="Dashboard.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x"></i></span>Security</a>
+                                    <a href="Security.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x"></i></span>Security</a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>

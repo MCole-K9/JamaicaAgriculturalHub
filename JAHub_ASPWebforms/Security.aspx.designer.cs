@@ -11,97 +11,79 @@ namespace JAHub_ASPWebforms
 {
 
 
-    public partial class Dashboard
+    public partial class Security
     {
 
         /// <summary>
-        /// btnToday control.
+        /// txtOldPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnToday;
+        protected global::System.Web.UI.WebControls.TextBox txtOldPassword;
 
         /// <summary>
-        /// btnLast7Days control.
+        /// RequiredFieldValidatorOldPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLast7Days;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorOldPassword;
 
         /// <summary>
-        /// btnThisMonth control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnThisMonth;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// lblNumberOfOrders control.
+        /// RequiredFieldValidatorPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumberOfOrders;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPassword;
 
         /// <summary>
-        /// lblTotalRevenue control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalRevenue;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
 
         /// <summary>
-        /// lblTotalProfits control.
+        /// RequiredFieldValidatorConPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalProfits;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorConPassword;
 
         /// <summary>
-        /// dgvProductsShort control.
+        /// CompareValidatorConPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvProductsShort;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorConPassword;
 
         /// <summary>
-        /// Panel1 control.
+        /// btnUpdatePassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-
-        /// <summary>
-        /// lblTotalCustomers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalCustomers;
-
-        /// <summary>
-        /// lblTotalProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalProducts;
+        protected global::System.Web.UI.WebControls.Button btnUpdatePassword;
     }
 }
