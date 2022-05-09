@@ -39,24 +39,37 @@ namespace JAHub_ASPWebforms
         {
             Order order = new Order();
 
-            order.ShipStreetAddress = ShipStreetAdress.Value;
+            order.ShipFirstName = ShipFirstName.Value;
+            order.ShipLastName = ShipLastName.Value;
+            order.ShipEmail = ShipEmail.Value;
+            order.ShipStreetAddress = ShipStreetAddress.Value;
             order.ShipCity = ShipCity.Value;
             order.ShipParish = ShipParish.Value;
 
-            bool shippingIsBiling = bool.Parse(hidBillingIsShipping.Value);
+            order.PaymentDetails.BillingFirstName = BillingFirstName.Value;
+            order.PaymentDetails.BillingLastName = BillingLastName.Value;
+            order.PaymentDetails.BillingEmail = BillingEmail.Value;
+            order.PaymentDetails.BillingStreetAddress = BillingStreetAddress.Value;
+            order.PaymentDetails.BillingCity = BillingCity.Value;
+            order.PaymentDetails.BIllingParish = BIllingParish.Value;
 
-            if (shippingIsBiling)
-            {
-                order.PaymentDetails.BillingStreetAddress = order.ShipStreetAddress;
-                order.PaymentDetails.BillingCity = order.ShipCity;
-                order.PaymentDetails.BIllingParish = order.ShipParish;
-            }
-            else
-            {
-                order.PaymentDetails.BillingStreetAddress = BillingStreetAdress.Value;
-                order.PaymentDetails.BillingCity = BillingCity.Value;
-                order.PaymentDetails.BIllingParish = BIllingParish.Value;
-            }
+
+            //bool shippingIsBiling = bool.Parse(hidBillingIsShipping.Value);
+
+            //if (shippingIsBiling)
+            //{
+            //    order.PaymentDetails.BillingStreetAddress = order.ShipStreetAddress;
+            //    order.PaymentDetails.BillingCity = order.ShipCity;
+            //    order.PaymentDetails.BIllingParish = order.ShipParish;
+            //}
+            //else
+            //{
+            //    order.PaymentDetails.BillingStreetAddress = BillingStreetAddress.Value;
+            //    order.PaymentDetails.BillingCity = BillingCity.Value;
+            //    order.PaymentDetails.BIllingParish = BIllingParish.Value;
+            //}
+
+
             order.PaymentDetails.PaymentType = hidPaymentMethod.Value;
 
             Customer customer = new Customer(true);
