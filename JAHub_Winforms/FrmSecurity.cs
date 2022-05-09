@@ -105,6 +105,7 @@ namespace JAHub_Winforms
                 sda.Fill(dt);
                 sqlcmd.ExecuteNonQuery();
                 MessageBox.Show("Your password as changed successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 connection.Close();
                 check = true;
             }
@@ -132,12 +133,12 @@ namespace JAHub_Winforms
         private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
             bool UpdateSuccess = false;
-            if (ValidatingOldPassword() == true && ValidatingNewPassword() ==true && ValidatingConfirmPassword() == true)
+            if (ValidatingOldPassword()  && ValidatingNewPassword()  && ValidatingConfirmPassword() == true)
             {
-               
-
+                txtConfirmPassword.Clear();
+                txtNewPassword.Clear();
+                txtOldPassword.Clear();
                 UpdateSuccess = true;
-             
 
             }
             else
@@ -150,8 +151,5 @@ namespace JAHub_Winforms
                 
 
         }
-
-
-
-     }
+    }
 }
