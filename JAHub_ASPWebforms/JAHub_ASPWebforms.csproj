@@ -418,7 +418,6 @@
     <Compile Include="Grants.aspx.designer.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Grant_Controls\ucGrantDisplay.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Administration\usrAddInfraction.ascx.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
