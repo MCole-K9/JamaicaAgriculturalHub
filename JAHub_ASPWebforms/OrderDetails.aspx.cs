@@ -38,11 +38,15 @@ namespace JAHub_ASPWebforms
                 
                 if(this.order != null)
                 {
+                    ShipName.InnerText = order.ShipName;
+                    ShipEmail.InnerText = order.ShipEmail;
                     ShipStreetAdress.InnerText = order.ShipStreetAddress;
                     ShipCity.InnerText = order.ShipCity;
                     ShipParish.InnerText = order.ShipParish;
 
                     PaymentMethod.InnerText = order.PaymentDetails.PaymentType;
+                    BillingName.InnerText = order.PaymentDetails.BillingName;
+                    BillingEmail.InnerText = order.PaymentDetails.BillingEmail;
                     BillingStreetAddress.InnerText = order.PaymentDetails.BillingStreetAddress;
                     BillingCity.InnerText = order.PaymentDetails.BillingCity;
                     BillingParish.InnerText = order.PaymentDetails.BIllingParish;
