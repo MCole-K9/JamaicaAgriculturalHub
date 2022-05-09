@@ -135,7 +135,7 @@
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o fa-stack-1x "></i></span>Grants</a>
                                 </li>
                                 <li>
-                                    <a href="~/RadaStatus.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bar-chart fa-stack-1x "></i></span>Rada Status</a>
+                                    <a href="RadaStatus.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bar-chart fa-stack-1x "></i></span>Rada Status</a>
                                 </li>
                             </ul>
                         </div>
