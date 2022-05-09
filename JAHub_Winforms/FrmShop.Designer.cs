@@ -34,7 +34,10 @@
             this.btnProducts = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.pnlNav.SuspendLayout();
+            this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNav
@@ -121,6 +124,7 @@
             // 
             // pnlLogo
             // 
+            this.pnlLogo.Controls.Add(this.pcbLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
@@ -137,6 +141,17 @@
             this.pnlForm.Size = new System.Drawing.Size(659, 497);
             this.pnlForm.TabIndex = 1;
             // 
+            // pcbLogo
+            // 
+            this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbLogo.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
+            this.pcbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(141, 123);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLogo.TabIndex = 0;
+            this.pcbLogo.TabStop = false;
+            // 
             // FrmShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +165,8 @@
             this.Text = "FrmShop";
             this.Load += new System.EventHandler(this.FrmShop_Load);
             this.pnlNav.ResumeLayout(false);
+            this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +180,6 @@
         private FontAwesome.Sharp.IconButton btnOrder;
         private FontAwesome.Sharp.IconButton btnCart;
         private System.Windows.Forms.Panel pnlForm;
+        private System.Windows.Forms.PictureBox pcbLogo;
     }
 }
