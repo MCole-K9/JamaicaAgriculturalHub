@@ -207,6 +207,10 @@
     <Content Include="Resources\grant-icon.jpg" />
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Resources\landscape.jpg" />
+    <Content Include="Resources\order-delivery.png" />
+    <Content Include="Resources\profit.png" />
+    <Content Include="Resources\revenue.png" />
+    <Content Include="Security.aspx" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
     <Content Include="Shop_Controls\UsrFarmerProduct.ascx" />
     <Content Include="Shop_Controls\UsrOrder.ascx" />
@@ -214,6 +218,8 @@
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
+    <Content Include="Signup.aspx" />
+    <Content Include="SignupCss.css" />
     <Content Include="UserPortalCss.css" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
@@ -459,6 +465,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -514,6 +527,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrReview.ascx.designer.cs">
       <DependentUpon>UsrReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

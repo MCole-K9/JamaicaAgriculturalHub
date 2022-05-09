@@ -51,7 +51,7 @@ namespace JAHub_Winforms
         {
             var btn = (Button)button;
             //Highlight button
-            btn.BackColor = btnProfileHome.FlatAppearance.BorderColor;
+            btn.BackColor = btnMyAccount.FlatAppearance.BorderColor;
             btn.ForeColor = Color.White;
 
             // Reset button to deffualt state
@@ -68,15 +68,24 @@ namespace JAHub_Winforms
         private void FrmProfile_Load(object sender, EventArgs e)
         {
             OpenChildForm(new FrmDashboard());
-            //FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //this.panelHomeContainer.Controls.Add(frmDashboard);
-            //frmDashboard.Show();
+            FrmDashboard frmDashboard = new FrmDashboard();
+
+            if (Session.UserRole != UserRole.Farmer)
+            {
+                OpenChildForm(new FrmAccount());
+                HighlightButtons(btnMyAccount);
+
+            }
 
             // (K.S.) Assumption: Only customers (who wish to register as farmers) and farmers should be able to see 
             // btnRadaStatus (and its associated forms)
-            if (Session.UserRole == UserRole.Customer || Session.UserRole == UserRole.Farmer)
+                if (Session.UserRole == UserRole.Customer || Session.UserRole == UserRole.Farmer)
             {
                 btnRadaStatus.Visible = true;
+            }
+            else if (Session.UserRole == UserRole.Customer || Session.UserRole == UserRole.GrantOfficer || Session.UserRole == UserRole.Admin)
+            {
+                btnDashboard.Visible = false;
             }
             else
             {
@@ -91,15 +100,6 @@ namespace JAHub_Winforms
 
         }
 
-            private void btnProfileHome_Click(object sender, EventArgs e)
-        {
-            OpenChildForm( new FrmProfileHome());
-                //FrmProfileHome frmHome = new FrmProfileHome() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                //this.panelHomeContainer.Controls.Add(frmHome);
-                //frmHome.Show();
-                HighlightButtons(sender); //or pass the button name as a arg instead of sender
-        }
-
         
         private void btnDashboard_Leave(object sender, EventArgs e)
         {
@@ -110,18 +110,12 @@ namespace JAHub_Winforms
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmDashboard());
-            //FrmDashboard frmDashboard = new FrmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //this.panelHomeContainer.Controls.Add(frmDashboard);
-            //frmDashboard.Show();
             HighlightButtons(btnDashboard);
         }
 
         private void btnMyAccount_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmAccount());
-            //FrmAccount frmAccount = new FrmAccount() { Dock = DockStyle.Fill,TopLevel = false, TopMost = true};
-            //this.panelHomeContainer.Controls.Add(frmAccount);
-            //frmAccount.Show();
             HighlightButtons(btnMyAccount);
         }
 
@@ -135,6 +129,7 @@ namespace JAHub_Winforms
         private void btnManageProducts_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmManageProducts(this));
+            HighlightButtons(btnManageProducts);
         }
 
 
@@ -155,21 +150,25 @@ namespace JAHub_Winforms
         private void btnCreateGrnat_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmCreateGrant());
+            HighlightButtons(sender);
         }
 
         private void btnEditGrant_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmCreateGrant());
+            HighlightButtons(sender);
         }
 
         private void btnViewGrants_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmViewAllMyApplication());
+            HighlightButtons(sender);
         }
 
         private void btnRadaStatus_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmRadaStatus(this));
+            HighlightButtons(sender);
         }
     }
 }
