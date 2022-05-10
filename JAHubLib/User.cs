@@ -15,7 +15,20 @@ namespace JAHubLib
         public string MiddleName { set; get; }
         public string LastName { set; get; }
         public string Password { set; get; }
-        public string Email { set; get; } 
+
+        private string _email;
+        public string Email
+        {
+            get
+            {
+                return _email.ToLower();
+            }
+
+            set
+            {
+                _email = value.ToLower();
+            }
+        } 
         
         
         public UserRole UserRole { get; set; }

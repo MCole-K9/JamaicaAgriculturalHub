@@ -26,7 +26,7 @@
     </div>
     <div class="row center-block">
         <div class="center-block">
-            <asp:Label runat="server" ID="lblEmail" EnableViewState="False" Text="Email: " CssClass="col-1g-1 input-sm text" />
+            <asp:Label runat="server" ID="lblEmail" EnableViewState="False" Text="Email*: " CssClass="col-1g-1 input-sm text" />
             <asp:TextBox runat="server" ID="txtEmail" EnableViewState="False" CausesValidation="True"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="reqEmail" ControlToValidate="txtEmail" ErrorMessage="Field cannot be blank!" />
             <asp:RegularExpressionValidator runat="server" ErrorMessage="Must be a Valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -47,7 +47,7 @@
             </div>-->
             <div class="row center-block">
                 <div class="form-group center-block">
-                    <asp:Label runat="server" CssClass="form-label col-1g-2" EnableViewState="False">Password: </asp:Label>
+                    <asp:Label runat="server" CssClass="form-label col-1g-2" EnableViewState="False">Password*: </asp:Label>
                     <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="SingleLine" EnableViewState="False" CausesValidation="True" ViewStateMode="Inherit"></asp:TextBox>
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
                         ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
@@ -56,14 +56,14 @@
             </div>
             <div class="row center-block">
                 <div class="form-group center-block">
-                    <asp:Label runat="server" CssClass="form-label col-1g-3" EnableViewState="False">Re-Type Password: </asp:Label>
+                    <asp:Label runat="server" CssClass="form-label col-1g-3" EnableViewState="False">Re-Type Password*: </asp:Label>
                     <asp:TextBox runat="server" ID="txtPasswordSecond" CssClass="" TextMode="SingleLine" EnableViewState="False" />
                     <asp:CustomValidator runat="server" ID="cusPasswordSecond" ControlToValidate="txtPasswordSecond" 
                         ErrorMessage="" OnServerValidate="cusPasswordSecond_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordSecond" runat="server" ControlToValidate="txtPasswordSecond" ErrorMessage="Field Cannot be Blank!"/>
                 </div>
             </div>
-                <asp:Button runat="server" ID="btnSubmit" Text="Create New User" CssClass="btn btn-default" OnClick="btnSubmit_Click" CausesValidation="False" />
+                <asp:Button runat="server" ID="btnSubmit" Text="Edit User Information" CssClass="btn btn-default" OnClick="btnSubmit_Click" CausesValidation="False" />
         </ContentTemplate>
     </asp:UpdatePanel>
 

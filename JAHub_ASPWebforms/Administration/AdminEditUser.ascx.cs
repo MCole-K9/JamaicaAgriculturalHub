@@ -85,8 +85,9 @@ namespace JAHub_ASPWebforms.Administration
                 newUser.MiddleName = nbNewUserName.MiddleName;
                 newUser.Email = txtEmail.Text;
                 newUser.Password = txtPasswordOnce.Text;
+                newUser.UserID = this.UserId;
 
-                //newUser.UpdateUserRecord();
+                newUser.UpdateUserRecord();
 
                 isWriteSuccessful = true;
             }

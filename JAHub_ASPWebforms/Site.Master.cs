@@ -80,10 +80,11 @@ namespace JAHub_ASPWebforms
                 phAccount.Controls.Add(accountLogoutSection);
 
                 // Using this to make certain items only visible given a certain user role
-                switch (Session["UserRole"])
+                switch ((UserRole)Session["UserRole"])
                 {
                     default:
-                        // this shouldn't actually happen
+                        liAdmin.Visible = false;
+
                         break;
                     case UserRole.Admin:
                         liAdmin.Visible = true;
