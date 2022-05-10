@@ -44,13 +44,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.orderDataGridView = new System.Windows.Forms.DataGridView();
-            this.orderTableAdapter = new JAHub_Winforms.OrdersTableAdapters.OrderTableAdapter();
-            this.tableAdapterManager = new JAHub_Winforms.OrdersTableAdapters.TableAdapterManager();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.customerToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.customerToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.btnViewOrder = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +53,13 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTableAdapter = new JAHub_Winforms.OrdersTableAdapters.OrderTableAdapter();
+            this.tableAdapterManager = new JAHub_Winforms.OrdersTableAdapters.TableAdapterManager();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.customerToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.customerToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.btnViewOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingNavigator)).BeginInit();
             this.orderBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
@@ -101,7 +101,7 @@
             this.orderBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.orderBindingNavigator.Name = "orderBindingNavigator";
             this.orderBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.orderBindingNavigator.Size = new System.Drawing.Size(936, 25);
+            this.orderBindingNavigator.Size = new System.Drawing.Size(939, 25);
             this.orderBindingNavigator.TabIndex = 1;
             this.orderBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -150,7 +150,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -203,60 +202,6 @@
             this.orderDataGridView.Name = "orderDataGridView";
             this.orderDataGridView.Size = new System.Drawing.Size(936, 323);
             this.orderDataGridView.TabIndex = 2;
-            // 
-            // orderTableAdapter
-            // 
-            this.orderTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.OrderTableAdapter = this.orderTableAdapter;
-            this.tableAdapterManager.UpdateOrder = JAHub_Winforms.OrdersTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customerToolStripLabel,
-            this.customerToolStripTextBox,
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(936, 25);
-            this.fillByToolStrip.TabIndex = 3;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // customerToolStripLabel
-            // 
-            this.customerToolStripLabel.Name = "customerToolStripLabel";
-            this.customerToolStripLabel.Size = new System.Drawing.Size(62, 22);
-            this.customerToolStripLabel.Text = "Customer:";
-            // 
-            // customerToolStripTextBox
-            // 
-            this.customerToolStripTextBox.Enabled = false;
-            this.customerToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.customerToolStripTextBox.Name = "customerToolStripTextBox";
-            this.customerToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            this.customerToolStripTextBox.Click += new System.EventHandler(this.customerToolStripTextBox_Click);
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
-            // btnViewOrder
-            // 
-            this.btnViewOrder.Location = new System.Drawing.Point(0, 415);
-            this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnViewOrder.TabIndex = 4;
-            this.btnViewOrder.Text = "View Order";
-            this.btnViewOrder.UseVisualStyleBackColor = true;
-            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -313,11 +258,64 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Subtotal";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
+            // orderTableAdapter
+            // 
+            this.orderTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.OrderTableAdapter = this.orderTableAdapter;
+            this.tableAdapterManager.UpdateOrder = JAHub_Winforms.OrdersTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customerToolStripLabel,
+            this.customerToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(939, 25);
+            this.fillByToolStrip.TabIndex = 3;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // customerToolStripLabel
+            // 
+            this.customerToolStripLabel.Name = "customerToolStripLabel";
+            this.customerToolStripLabel.Size = new System.Drawing.Size(62, 22);
+            this.customerToolStripLabel.Text = "Customer:";
+            // 
+            // customerToolStripTextBox
+            // 
+            this.customerToolStripTextBox.Enabled = false;
+            this.customerToolStripTextBox.Name = "customerToolStripTextBox";
+            this.customerToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.customerToolStripTextBox.Click += new System.EventHandler(this.customerToolStripTextBox_Click);
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
+            // btnViewOrder
+            // 
+            this.btnViewOrder.Location = new System.Drawing.Point(12, 405);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(128, 33);
+            this.btnViewOrder.TabIndex = 4;
+            this.btnViewOrder.Text = "View Order";
+            this.btnViewOrder.UseVisualStyleBackColor = true;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
+            // 
             // FrmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 450);
+            this.ClientSize = new System.Drawing.Size(939, 450);
             this.Controls.Add(this.btnViewOrder);
             this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.orderDataGridView);
