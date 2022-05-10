@@ -34,7 +34,9 @@
 </div>
 
 <asp:SqlDataSource runat="server" ID="dsInfractions" SelectCommand="SELECT [ID], [TimeStamp], [Admin], [Reason] FROM [Infraction];" 
-    ConnectionString="Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8"  />
+    ConnectionString="Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8">
+    <SelectParameters></SelectParameters>
+</asp:SqlDataSource>
 
 
 <div class="row">
