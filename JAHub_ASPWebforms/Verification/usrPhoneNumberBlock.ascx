@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrPhoneNumberBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrPhoneNumberBlock" %>
 
-<div class="row">
+<div class="row col-1g-5">
     <asp:Label runat="server" ID="lblPhoneNumber" CssClass="text text-right col-lg-3 input-sm">Phone Number:</asp:Label>
     <asp:TextBox runat="server" ID="txtPhoneNumber" CssClass="col-lg-3 input-sm"></asp:TextBox>
     <asp:RegularExpressionValidator runat="server" ID="regPhoneNumber" ControlToValidate="txtPhoneNumber"

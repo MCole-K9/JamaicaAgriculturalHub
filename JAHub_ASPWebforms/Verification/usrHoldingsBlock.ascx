@@ -2,7 +2,7 @@
 <%@ Reference Control="~/Verification/usrLandBlock.ascx" %>
 <%@ Reference Control="~/Verification/usrProductBlock.ascx" %>
 
-<div class="row">
+<div class="row col-1g-5">
     <h4>Holdings</h4>
     <div class="row">
         <asp:PlaceHolder runat="server" ID="phProducts"></asp:PlaceHolder>
@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <asp:PlaceHolder runat="server" ID="phLandBlock"></asp:PlaceHolder>
-        <asp:Button runat="server" ID="btnAddLandEntry" Text="Add Land Entry" CssClass="btn btn-default col-lg-1 input-sm" OnClick="btnAddLandEntry_Click" />
-        <asp:Button runat="server" ID="btnRemoveLandEntry"  Text="Remove Land Entry" Visible="false" CssClass="btn btn-default col-lg-1 input-sm" OnClick="btnRemoveLandEntry_Click" />
+        <asp:Button runat="server" ID="btnAddLandEntry" Text="Add Land Entry" CssClass="btn btn-default col-lg-2 input-sm" OnClick="btnAddLandEntry_Click" />
+        <asp:Button runat="server" ID="btnRemoveLandEntry"  Text="Remove Land Entry" Visible="false" CssClass="btn btn-default col-lg-2 input-sm" OnClick="btnRemoveLandEntry_Click" />
     </div>  
 </div>
