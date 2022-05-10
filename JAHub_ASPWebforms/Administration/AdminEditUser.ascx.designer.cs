@@ -60,13 +60,13 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.UpdatePanel udpPassword;
 
         /// <summary>
-        /// chkShowPassword control.
+        /// chkPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkShowPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox chkPassword;
 
         /// <summary>
         /// txtPasswordOnce control.

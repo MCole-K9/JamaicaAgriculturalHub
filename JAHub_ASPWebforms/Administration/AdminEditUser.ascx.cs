@@ -53,12 +53,12 @@ namespace JAHub_ASPWebforms.Administration
 
         protected void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (!chkShowPassword.Checked)
+            if (!chkPassword.Checked)
             {
-                chkShowPassword.Checked = true;
+                chkPassword.Checked = true;
             }
 
-            if (chkShowPassword.Checked == true)
+            if (chkPassword.Checked == true)
             {
                 txtPasswordOnce.TextMode = TextBoxMode.SingleLine;
                 txtPasswordSecond.TextMode = TextBoxMode.SingleLine;
