@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrAddressBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrAddressBlock" %>
 
-<div class="row col-1g-5">
+<div class="row">
     <div class="row">
         <asp:Label runat="server" ID="lblAddressTown" CssClass="col-lg-1 col-md-2 col-sm-3 col-xs-3 text input-sm">Town</asp:Label>
         <asp:TextBox runat="server" ID="txtAddressTown" CssClass="form-control col-lg-3 input-sm"></asp:TextBox>

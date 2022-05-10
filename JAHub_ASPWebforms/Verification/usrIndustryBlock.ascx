@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrIndustryBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrIndustryBlock" %>
 
-<div class="row col-1g-5">
+<div class="row">
     <h4>Industry-Related Information</h4>
     <div class="row">
         <p>Number of Employees</p><asp:TextBox runat="server" ID="txtNumberOfEmployees" CssClass="col-lg-3 input-sm"></asp:TextBox>

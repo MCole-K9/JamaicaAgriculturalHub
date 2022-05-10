@@ -2,7 +2,7 @@
 <%@ Reference Control="~/Verification/usrLandBlock.ascx" %>
 <%@ Reference Control="~/Verification/usrProductBlock.ascx" %>
 
-<div class="row col-1g-5">
+<div class="row">
     <h4>Holdings</h4>
     <div class="row">
         <asp:PlaceHolder runat="server" ID="phProducts"></asp:PlaceHolder>

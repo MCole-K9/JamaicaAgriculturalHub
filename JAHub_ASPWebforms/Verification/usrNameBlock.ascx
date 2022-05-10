@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrNameBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrNameBlock" %>
 
-<div class="row col-1g-5">
+<div class="row">
     <h4 class="text">Name *</h4>
     <div class="row">
         <asp:Label runat="server" ID="lblFirstName" BorderStyle="None" CssClass="text text-right col-lg-1 input-sm">First Name</asp:Label>

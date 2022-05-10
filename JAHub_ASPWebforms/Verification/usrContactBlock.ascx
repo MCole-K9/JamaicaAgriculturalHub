@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrContactBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrContactBlock" %>
 <%@ Reference Control="~/Verification/usrPhoneNumberBlock.ascx"%>
 
-<div class="row col-1g-5">
+<div class="row">
     <h4>Contact Information</h4>
     <div class="row">
         <asp:Label runat="server" ID="lblEmail" CssClass="text col-lg-1 col-md-2 col-sm-3 col-xs-3 input-sm">Email:</asp:Label>
@@ -13,7 +13,9 @@
         <asp:PlaceHolder runat="server" ID="phPhoneNumbers"/>
     </div>
     <div class="row">
-        <asp:Button runat="server" ID="btnAddPhoneNumber" OnClick="btnAddPhoneNumber_Click" CssClass="btn btn-default col-lg-2 input-sm"/>
-        <asp:Button runat="server" ID="btnRemovePhoneNumber" Visible="false" OnClick="btnRemovePhoneNumber_Click" CssClass="btn btn-default col-lg-2 input-sm"/>
+        <asp:Button runat="server" ID="btnAddPhoneNumber" OnClick="btnAddPhoneNumber_Click" 
+            Text="Add Phone Number" CssClass="btn btn-default col-lg-2 input-sm"/>
+        <asp:Button runat="server" ID="btnRemovePhoneNumber" Visible="false" OnClick="btnRemovePhoneNumber_Click" 
+            Text="Remove Phone Number" CssClass="btn btn-default col-lg-2 input-sm"/>
     </div>
 </div>

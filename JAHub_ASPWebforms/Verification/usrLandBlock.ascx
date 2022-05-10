@@ -2,7 +2,7 @@
 
 <%@ Register Src="~/Verification/usrAddressBlock.ascx" TagPrefix="uc" TagName="AddressBlock" %>
 
-<div class="row col-1g-5">
+<div class="row">
     <div class="row">
         <uc:AddressBlock runat="server" ID="addressBlock" />
     </div>

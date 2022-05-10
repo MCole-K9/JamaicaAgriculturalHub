@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="usrDateOfBirthBlock.ascx.cs" Inherits="JAHub_ASPWebforms.Verification.usrDateOfBirthBlock" %>
 
-<div class="row col-1g-5">
+<div class="row">
     <h4 class="text">Date Of Birth*</h4>
     <div class="row">
         <div class="row center-block">
