@@ -24,7 +24,7 @@ namespace JAHub_ASPWebforms
                     lblFullName.Text = sdr.GetValue(0).ToString();
                     lblGender.Text = sdr.GetValue(1).ToString();
                     lblEmail.Text = sdr.GetValue(2).ToString();
-                    lbl
+                   
                 }
                 sdr.Close();
             }
