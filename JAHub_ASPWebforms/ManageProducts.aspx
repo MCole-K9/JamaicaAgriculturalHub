@@ -10,6 +10,10 @@
             
             <h3>Your Products</h3>
             <hr />
+            <div id="NPMessage" runat="server">
+                    <h4>You Current Do Not Have any Products</h4>
+                    <p>Click Add Product To Get Started</p>
+              </div>
             <div class="row">
                 <asp:Panel ID="pnlFarmerProducts" runat="server">
                 </asp:Panel>

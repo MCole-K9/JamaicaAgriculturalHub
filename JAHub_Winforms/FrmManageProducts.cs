@@ -36,7 +36,7 @@ namespace JAHub_Winforms
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            _frmProfile.OpenChildForm(new FrmAddEditProduct());
+            _frmProfile.OpenChildForm(new FrmAddEditProduct(this._frmProfile));
         }
 
         private void FrmManageProducts_Load(object sender, EventArgs e)

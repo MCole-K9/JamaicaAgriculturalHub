@@ -16,11 +16,11 @@
         }
 
 
-    .fields .input-field {
+     .input-field {
         display: flex;
         width: calc(100% / 3 - 15px);
         flex-direction: column;
-        margin: 4px 0;
+        margin: 4px 0 35px;
     }
 
     .input-field label {
@@ -88,65 +88,42 @@
                 </div>
             </div>
 
-            <div class="form" style="border: 1px solid #000000; margin-top: 2rem; height:100%">
+            <div class="Error " style="padding-top: 2%">
+                 <asp:Label ID="lblMessage" runat="server" Text="Label" Visible="False"></asp:Label>
+            </div>
+
+            <div class="form" style="border: 1px solid #000000; margin-top: 2rem; height: 100%">
                 <div class="password-form" style="padding: 20px;">
                     <div class="fields">
 
                         <div class="input-field">
                             <label>Enter old password</label>
-
-                            <asp:TextBox ID="txtOldPassword" runat="server" placeholder="Enter a password"></asp:TextBox>
-
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorOldPassword" runat="server" ErrorMessage="Enter a Password" ControlToValidate="txtOldPassword" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-
+                            <asp:TextBox ID="txtOldPassword" runat="server" placeholder="Enter old password" TextMode="Password"></asp:TextBox>
+                            <asp:CustomValidator ID="CustomValidatorOldPassword" runat="server" ControlToValidate="txtOldPassword" Display="Dynamic" ErrorMessage="Password dosen't match old password" ForeColor="Red" OnServerValidate="CustomValidatorOldPassword_ServerValidate"></asp:CustomValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorOldPassword" runat="server" ErrorMessage="Enter old Password" ControlToValidate="txtOldPassword" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
 
                         <div class="input-field">
                             <label>Enter a password</label>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <asp:TextBox ID="txtPassword" runat="server" placeholder="Enter a password"></asp:TextBox>
-                                    </td>
-                                    <td style="width: 262px">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ErrorMessage="Enter a Password" ControlToValidate="txtPassword" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    </td>
-                                </tr>
-                            </table>
+                            <asp:TextBox ID="txtPassword" runat="server" placeholder="Enter a password" TextMode="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ErrorMessage="Enter a Password" ControlToValidate="txtPassword" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                         </div>
 
                         <div class="input-field">
                             <label>Confirm password</label>
-                             <table>
-                                <tr>
-                                    <td>
-                                        <asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Re-enter your password"></asp:TextBox>
-                                    </td>
-                                    <td style="width: 232px">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorConPassword" runat="server" ErrorMessage="This field can't be blank" ControlToValidate="txtConfirmPassword" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    </td>
-                                    <td>
-                                        <asp:CompareValidator ID="CompareValidatorConPassword" runat="server" ErrorMessage="Password not Matched" ControlToValidate="txtConfirmPassword" ForeColor="Red" ControlToCompare="txtPassword" Display="Dynamic"></asp:CompareValidator>
-                                    </td>
-                                </tr>
-                            </table>
+                            <asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Re-enter your password" TextMode="Password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorConPassword" runat="server" ErrorMessage="This field can't be blank" ControlToValidate="txtConfirmPassword" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="CompareValidatorConPassword" runat="server" ErrorMessage="Password not Matched" ControlToValidate="txtConfirmPassword" ForeColor="Red" ControlToCompare="txtPassword" Display="Dynamic"></asp:CompareValidator>
                         </div>
-                        <div class="paragraph">
-                            <p>Make sure it's at  least 8 characters including Numbers, Symbols, and Uppercase or Lowercase letters.</p>
-                        </div>
+
 
                     </div>
                 </div>
-                
+
 
                 <div class="auto-style1">
-                    <asp:Button class="btnUpdate" ID="btnUpdatePassword" runat="server" Text="Update Password" style="width: 50%; margin-left: 30%" OnClick="btnUpdatePassword_Click" />
+                    <asp:Button class="btnUpdate" ID="btnUpdatePassword" runat="server" Text="Update Password" Style="width: 50%; margin-left: 30%" OnClick="btnUpdatePassword_Click" />
                 </div>
-                
-                <%--<button class="btn" id="btnSubmit" runat="server"  onserverclick="btnsubmitserverclick" style="width: 50%; margin-left: 30%">
-                    <span class="btnText">Submit</span>
-                    <i class="uil uil-navigator"></i>
-                </button>--%>
             </div>
 
        

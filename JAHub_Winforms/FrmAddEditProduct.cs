@@ -16,17 +16,20 @@ namespace JAHub_Winforms
     {
         private Product product;
         bool inEditMode;
-        public FrmAddEditProduct()
+        FrmProfile frmProfile;
+        public FrmAddEditProduct(FrmProfile frmProfile)
         {
             InitializeComponent();
             this.product = new Product();
             inEditMode = false;
+            this.frmProfile = frmProfile;
         }
-        public FrmAddEditProduct(Product product)
+        public FrmAddEditProduct(Product product, FrmProfile frmProfile)
         {
             InitializeComponent();
             this.product = product;
             inEditMode = true;
+            this.frmProfile = frmProfile;
         }
         private void PopulateFields()
         {
@@ -34,6 +37,7 @@ namespace JAHub_Winforms
             txtProductName.Text = product.Name;
             txtPrice.Text = product.Price.ToString();
             txtStock.Text = product.Stock.ToString();
+            cboCategory.SelectedValue = product.Category;
             
         }
         private void label1_Click(object sender, EventArgs e)
@@ -101,7 +105,7 @@ namespace JAHub_Winforms
                     if (farmer.UpdateProduct(product) > 0)
                     {
                         MessageBox.Show("Item Updated Succesfully");
-
+                        frmProfile.ClickManageProduct();
                     }
                 }
                 else
@@ -109,6 +113,7 @@ namespace JAHub_Winforms
                     if (farmer.AddProduct(product) > 0)
                     {
                         MessageBox.Show("Item Added Succesfully");
+                        frmProfile.ClickManageProduct();
                     }
                 }
             }
@@ -122,8 +127,7 @@ namespace JAHub_Winforms
             lblAddUpdate.Text = inEditMode ? "Update Product" : "Add Product";
             btnAddChangeImage.Text = inEditMode ? "Change Image" : "Add Image";
 
-            if (inEditMode)
-                PopulateFields();
+            
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -145,6 +149,8 @@ namespace JAHub_Winforms
                 cboCategory.SelectedIndex = -1;
                 cboCategory.Text = "Select an Item";
             }
+            if (inEditMode)
+                PopulateFields();
 
         }
 

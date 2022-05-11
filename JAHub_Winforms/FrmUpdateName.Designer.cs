@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdateName));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblJAHAccontlabel1 = new System.Windows.Forms.Label();
+            this.btnBack = new FontAwesome.Sharp.IconButton();
             this.lblNamelabel = new System.Windows.Forms.Label();
             this.lblUpdateNameInfolabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,7 +48,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProviderFirstName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderLastName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnBack = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFirstName)).BeginInit();
@@ -75,6 +75,22 @@
             this.lblJAHAccontlabel1.Size = new System.Drawing.Size(118, 25);
             this.lblJAHAccontlabel1.TabIndex = 3;
             this.lblJAHAccontlabel1.Text = "JAH Account";
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.btnBack.IconColor = System.Drawing.Color.Black;
+            this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBack.IconSize = 30;
+            this.btnBack.Location = new System.Drawing.Point(84, 49);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(61, 30);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblNamelabel
             // 
@@ -214,22 +230,6 @@
             this.errorProviderLastName.ContainerControl = this;
             this.errorProviderLastName.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLastName.Icon")));
             // 
-            // btnBack
-            // 
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnBack.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.btnBack.IconColor = System.Drawing.Color.Black;
-            this.btnBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBack.IconSize = 30;
-            this.btnBack.Location = new System.Drawing.Point(84, 49);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(61, 30);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // FrmUpdateName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,9 +242,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblUpdateNameInfolabel);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmUpdateName";
-            this.Text = "FrmUpdateName";
+            this.Text = "Update Name";
             this.Load += new System.EventHandler(this.FrmUpdateName_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

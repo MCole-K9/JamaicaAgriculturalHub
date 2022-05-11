@@ -12,7 +12,7 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Customer customer = new Customer(1);
+            Customer customer = new Customer(true);
 
             LoadOrders(customer.GetOrders());
 
@@ -21,15 +21,21 @@ namespace JAHub_ASPWebforms
         {
             pnlOrders.Controls.Clear();
             int index = 0;
-            foreach (var order in  orders)
+            if(orders.Count > 0)
             {
-                Shop_Controls.UsrOrder usrOrder = (Shop_Controls.UsrOrder)Page.LoadControl("~/Shop_Controls/UsrOrder.ascx");
-                usrOrder.SetOrder(order);
-                usrOrder.SetIDSequence(index);
-                pnlOrders.Controls.Add(usrOrder);
+                foreach (var order in orders)
+                {
+                    Shop_Controls.UsrOrder usrOrder = (Shop_Controls.UsrOrder)Page.LoadControl("~/Shop_Controls/UsrOrder.ascx");
+                    usrOrder.SetOrder(order);
+                    usrOrder.SetIDSequence(index);
+                    pnlOrders.Controls.Add(usrOrder);
 
-                index++;
+                    index++;
+                }
+                NOMessage.Attributes.Add("style", "display: none");
             }
+            
+            
         }
     }
 }

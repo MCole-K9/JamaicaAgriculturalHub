@@ -39,7 +39,7 @@ namespace JAHub_Winforms.Shop_Controls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _frmManageProducts._frmProfile.OpenChildForm(new FrmAddEditProduct(_product));
+            _frmManageProducts._frmProfile.OpenChildForm(new FrmAddEditProduct(_product, _frmManageProducts._frmProfile));
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -51,6 +51,7 @@ namespace JAHub_Winforms.Shop_Controls
                 if (farmer.DeleteProduct(_product) > 0)
                 {
                     MessageBox.Show("Item Sucessfully Deleted");
+                    _frmManageProducts._frmProfile.ClickManageProduct();
                 }
             }
             

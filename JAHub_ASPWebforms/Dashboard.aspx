@@ -18,11 +18,11 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Work', 11],
-                ['Eat', 2],
-                ['Commute', 2],
-                ['Watch TV', 2],
-                ['Sleep', 7]
+                ['Apple', 11],
+                ['Banana', 2],
+                ['Yam', 2],
+                ['Orange', 2],
+                ['grape', 7]
             ]);
 
             var options = {
@@ -46,12 +46,12 @@
 
         function drawStuff() {
             var data = new google.visualization.arrayToDataTable([
-                ['Opening Move', 'Percentage'],
-                ["King's pawn (e4)", 44],
-                ["Queen's pawn (d4)", 31],
-                ["Knight to King 3 (Nf3)", 12],
-                ["Queedden's bishop pawn (c4)", 10],
-                ['Other', 3]
+                ['Opening Move', 'Days'],
+                ["Monday ", 44],
+                ["Tuesday  ", 31],
+                ["Wednesday ", 12],
+                ["Thursday's ", 10],
+                ['Friday', 3]
             ]);
 
             var options = {
