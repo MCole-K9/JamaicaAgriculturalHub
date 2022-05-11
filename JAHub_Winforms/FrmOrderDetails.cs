@@ -41,7 +41,7 @@ namespace JAHub_Winforms
             lblShipStreetAddress.Text += order.ShipStreetAddress;
             lblShipTown.Text += order.ShipCity;
             lblShipParish.Text += order.ShipParish;
-            lblShipName.Text += order.ShipEmail;
+            lblShipEmail.Text += order.ShipEmail;
 
             lblPaymentMethod.Text += order.PaymentDetails.PaymentType;
             lblBillingName.Text += order.PaymentDetails.BillingName;
