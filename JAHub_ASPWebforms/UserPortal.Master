@@ -120,7 +120,7 @@
                         <div id="sidebar-wrapper">
                             <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
                                 <li class="active">
-                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
+                                    <a href="MyAccount.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
                                 </li>
                                 <li>
                                     <a href="Dashboard.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
