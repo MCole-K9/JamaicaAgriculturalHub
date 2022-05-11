@@ -68,7 +68,6 @@ namespace JAHub_Winforms
         private void FrmProfile_Load(object sender, EventArgs e)
         {
             OpenChildForm(new FrmDashboard());
-            FrmDashboard frmDashboard = new FrmDashboard();
 
             if (Session.UserRole != UserRole.Farmer)
             {
