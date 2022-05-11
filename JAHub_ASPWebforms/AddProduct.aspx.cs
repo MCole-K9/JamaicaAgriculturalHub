@@ -69,6 +69,10 @@ namespace JAHub_ASPWebforms
                 {
                     product = (Product)Session["ProdToEdit"];
                 }
+                else
+                {
+                    this.product = new Product();
+                }
                   
                     
                 if (fupProductImage.HasFile)
