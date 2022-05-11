@@ -12,7 +12,7 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Farmer farmer = new Farmer(1);
+            Farmer farmer = new Farmer(true);
             LoadProducts(farmer.GetFarmerProducts());   
         }
 

@@ -95,7 +95,7 @@ namespace JAHub_ASPWebforms
                 product.Price = float.Parse(Price.Value);
                 product.Stock = int.Parse(Stock.Value);
 
-                Farmer farmer = new Farmer(1);
+                Farmer farmer = new Farmer(true);
 
                 if (Session["ProdToEdit"] == null)
                 {
