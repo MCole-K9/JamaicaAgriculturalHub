@@ -170,5 +170,10 @@ namespace JAHub_Winforms
             OpenChildForm(new FrmRadaStatus(this));
             HighlightButtons(sender);
         }
+
+        public void ClickManageProduct()
+        {
+            btnManageProducts.PerformClick();
+        }
     }
 }
