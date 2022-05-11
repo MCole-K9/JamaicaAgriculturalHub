@@ -7,6 +7,10 @@
         <div class="content-container" style="padding: 40px 40px; max-width: 90%; margin: 0 auto;">
             <h3>Orders</h3>
             <hr />
+            <%--CodeBehind Changes Visibility--%>
+             <div id="NOMessage" runat="server">
+                    <h4>You Have Not Made Any Orders.</h4>
+              </div>
             <div class="row" style="padding: 0 20px;">
                 <asp:Panel ID="pnlOrders" runat="server">
                 </asp:Panel>
