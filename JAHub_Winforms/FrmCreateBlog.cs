@@ -131,7 +131,8 @@ namespace JAHub_Winforms
                     Blog newBlog = new Blog();
                     try
                     {
-                        newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, rtbBody.Text);
+                        string ParsedBody = rtbBody.Text.Replace("'", "''");
+                        newBlog.CreateBlogPost(Session.UserId, txtTitle.Text, rtbDescription.Text, ParsedBody);
                         MessageBox.Show("Blog Post Created!");
                         if (Utils.IsFormOpen("FrmBlog"))
                         {
