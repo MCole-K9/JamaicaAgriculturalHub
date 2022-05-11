@@ -6,11 +6,16 @@
         margin-top:1.4rem;
     }
 
-    .date-buttons{
-        margin-left: 40rem;
-    }
+.date-buttons {
+    /*display: flex;*/
+    position: absolute;
+    top: 2.4rem;
+    margin-left: 40rem;
+    
+    
+}
 
-.box {
+    .box {
     height: 30px;
     width: 150px;
     margin-left: 20px;
@@ -22,43 +27,72 @@
         box-shadow: 1px 1px 1px 1px #888888;
     }
 
-    main .insights{
+     .insights{
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     width: 100rem;
-    gap: 1.6rem;
+    gap: 2rem;
     }
 
 
-    main .insights > div {
-       background: #808080;
-       padding: 15px;
-       border-radius: 20px;
+    .insights > div {
+       /*background: #;*/
+       padding: 1px;
+       border-radius: 10px;
        margin-top: 1rem;
        box-shadow: 0 0.1rem 1rem  #000000 ;
        transition: all 300ms ease;
-        
-        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     }
 
 
-    main .insights > div:hover {
+    .insights > div:hover {
         box-shadow: none;
     }
 
-    main .insights > div .middle{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .insights > div .middle{
+        display: inline-block;
+        padding-left: 20%;
+       
     }
 
-main .charts{
+    .charts{
     /*width: 20px;*/
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     width: 100rem;
     gap: 1.6rem;
-}
+    }
+
+    .piechart {
+        width: 900px;
+        height: 500px;
+    }
+
+    .countercharts {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        width: 100rem;
+        gap: 1.6rem;
+        /*margin-top: 20px*/
+    }
+
+    .dgvprodshort {
+        border: 1px solid #000000;
+    }
+
+    .pnlTotalCounter {
+        border: 1px solid #000000;
+    }
+
+    
+    .content {
+        display: block;
+        /*align-items: center;*/
+        justify-content: space-between;
+        padding-left: 10px;
+        padding: 10px;
+    }
+
 
 
 

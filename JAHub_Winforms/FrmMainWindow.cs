@@ -221,15 +221,6 @@ namespace JAHub_Winforms
 
         private void FrmMainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            try
-            {
-                Utilities.DeleteImages();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show($"{ex.GetType().ToString()} Message: {ex.Message}");
-            }
             
         }
 

@@ -102,7 +102,7 @@ namespace JAHub_Winforms
             {
                 connection.Open();
 
-                String command = "SELECT ID, TimeStamp, Admin, Reason FROM [Infraction];";
+                String command = $"SELECT ID, TimeStamp, Admin, Reason FROM [Infraction] WHERE [User] = {_userId};";
 
                 SqlCommand infractionsQuery = new SqlCommand (command, connection);
 

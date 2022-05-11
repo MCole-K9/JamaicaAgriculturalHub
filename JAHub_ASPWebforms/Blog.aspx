@@ -24,21 +24,23 @@
             <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" id="txtSearch" runat="server"/>
                     <div class="input-group-btn">
-                      <asp:button runat="server" class="btn btn-primary btnSearch" type="submit" ID="btnSearch" OnClick="btnSearch_Click" Text="Search">
-                      </asp:button>
+                      <button runat="server" class="btn btn-primary btnSearch" type="submit" onserverclick="btnSearch_Click" Text="Search">
+                          <span class="glyphicon glyphicon-search"></span>
+                      </button>
                     </div>
                   </div>
 
             <div class="input-group cboSort" style="width:fit-content">
-                <asp:button runat="server" class="btn btn-primary btnSort" type="submit" ID="btnSortby" OnClick="btnSortby_Click" Text="Sort by:"></asp:button>
-              <select runat="server" class="form-control" id="selSort" style="width:150px;">
-                 <option value="" disabled selected>Select an option</option>
-                <option>Oldest</option>
-                <option>Rating</option>
-                <option>A-Z</option>
-                <option>Z-A</option>
-              </select>
+                <p style="font-size: large; display: flex; flex-direction: column; justify-content: center;">Sort:</p>
+             <asp:DropDownList ID="dropDownSort" runat="server" Width="150px" AutoPostBack="true" OnSelectedIndexChanged="dropDownSort_SelectedIndexChanged">
+                <asp:ListItem Text="Select an option" Selected="True"/>
+                <asp:ListItem Text="Oldest" Value="Oldest"/>
+                <asp:ListItem Text="Rating" Value="Rating"/>
+                <asp:ListItem Text="A-Z" Value="A-Z"/>
+                <asp:ListItem Text="Z-A" Value="Z-A"/>
+            </asp:DropDownList>
             </div>
+           
         </div>
                   
         <div style="height:600px; margin-bottom: 50px;">

@@ -129,7 +129,8 @@ namespace JAHub_Winforms
             {
                 if (txtEmail.Text.IndexOf(".", txtEmail.Text.IndexOf("@")) > txtEmail.Text.IndexOf("@"))
                 {
-                   errorProvider.SetError(txtEmail, "");
+                    txtEmail.CharacterCasing = CharacterCasing.Lower;
+                    errorProvider.SetError(txtEmail, "");
 
                     isEmailValid = true;
                     chk = true;
@@ -143,13 +144,7 @@ namespace JAHub_Winforms
                 isEmailValid = false;
                 chk = false; 
             }
-            //else if(CheckifEmailExist() )
-            //{
-            //    errorProvider.SetError(txtEmail, "This Email account is already a member.");
-            //    //txtEmail.Focus();
-            //    chk = false;
-            //}
-             
+
             else
             {
                 errorProvider.SetIconAlignment(txtEmail, ErrorIconAlignment.MiddleRight);
@@ -235,7 +230,7 @@ namespace JAHub_Winforms
                     cmd.Parameters.AddWithValue("@Password", txtConfirmPassword.Text.Trim());
                     cmd.Parameters.AddWithValue("@UserRole", 2);
                     cmd.ExecuteNonQuery();
-                    connection.Close();
+                    //connection.Close();
                     MessageBox.Show("Account created successfully,now login with your cridentials.","Signup Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FrmLogin login = new FrmLogin();
                     login.MdiParent = this.MdiParent;

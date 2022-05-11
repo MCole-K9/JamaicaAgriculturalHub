@@ -11,7 +11,7 @@ namespace JAHub_ASPWebforms.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblUserInformation.Text = $"{Session["FirstName"]} {Session["LastName"]} (UserID: {Session["UserId"]}; Role: {Session["UserRole"]}";
+            lblUserInformation.Text = $"{Session["FirstName"]} {Session["LastName"]} (UserID: {Session["UserId"]}; Role: {Session["UserRole"]})";
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

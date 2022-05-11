@@ -21,7 +21,7 @@ namespace JAHub_Winforms
             SqlCommand cmd = new SqlCommand("SELECT * FROM Blog", connection);
             connection.Open();
             SqlDataReader sqlData = cmd.ExecuteReader();
-            // TODO: this is to be done
+            // TODO: Reminder to use the "Task List" Feature more in VS
             Utils.DisplayBlogsFromDatabase(sqlData, pnlContainer);
             connection.Close();
         }

@@ -46,14 +46,14 @@ namespace JAHub_ASPWebforms
             }
         }
 
-        protected void btnSortby_Click(object sender, EventArgs e)
+        protected void dropDownSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(selSort.Value != "")
+            if (dropDownSort.SelectedValue != "")
             {
                 pnlBlogContainer.Controls.Clear();
                 int IDinc = 0;
                 List<Blog> blogs = new List<Blog>();
-                switch (selSort.Value)
+                switch (dropDownSort.SelectedValue)
                 {
                     case "A-Z":
                         blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsAscending");
@@ -66,6 +66,9 @@ namespace JAHub_ASPWebforms
                         break;
                     case "Oldest":
                         blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsNewest");
+                        break;
+                    default:
+                        blogs = Util.DisplayBlogsToWeb("EXEC SortBlogsOldest");
                         break;
                 }
                 foreach (Blog blog in blogs)

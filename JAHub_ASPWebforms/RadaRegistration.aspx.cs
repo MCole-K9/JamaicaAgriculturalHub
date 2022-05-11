@@ -42,6 +42,11 @@ namespace JAHub_ASPWebforms
         {
             if (!IsPostBack)
             {
+                if(Session["UserId"] == null)
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
+                
                 if (PreviousPage.FarmerRegistrationPhase == RadaRegistrationType.NotRegistered)
                 {
                     lblRadaRegistrationHeading.Text = "Register with Rada";

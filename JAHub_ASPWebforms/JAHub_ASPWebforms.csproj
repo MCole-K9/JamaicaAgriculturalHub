@@ -170,6 +170,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\UserPortalCss.css" />
+    <Content Include="EditBlog.aspx" />
     <Content Include="CreateBlog.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Dashboard.css" />
@@ -209,6 +210,10 @@
     <Content Include="Resources\grant-icon.jpg" />
     <Content Include="Resources\grapes.jpg" />
     <Content Include="Resources\landscape.jpg" />
+    <Content Include="Resources\order-delivery.png" />
+    <Content Include="Resources\profit.png" />
+    <Content Include="Resources\revenue.png" />
+    <Content Include="Security.aspx" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
     <Content Include="Shop_Controls\UsrFarmerProduct.ascx" />
     <Content Include="Shop_Controls\UsrOrder.ascx" />
@@ -216,6 +221,8 @@
     <Content Include="Shop_Controls\UsrOrderSumItem.ascx" />
     <Content Include="Shop_Controls\UsrProduct.ascx" />
     <Content Include="Shop_Controls\UsrReview.ascx" />
+    <Content Include="Signup.aspx" />
+    <Content Include="SignupCss.css" />
     <Content Include="UserPortalCss.css" />
     <Content Include="ucWebBlog.ascx" />
     <Content Include="Blog.aspx" />
@@ -358,6 +365,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditBlog.aspx.cs">
+      <DependentUpon>EditBlog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBlog.aspx.designer.cs">
+      <DependentUpon>EditBlog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateBlog.aspx.cs">
       <DependentUpon>CreateBlog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -410,7 +424,6 @@
     <Compile Include="Grants.aspx.designer.cs">
       <DependentUpon>Grants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Grant_Controls\ucGrantDisplay.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Administration\usrAddInfraction.ascx.cs">
       <DependentUpon>usrAddInfraction.ascx</DependentUpon>
@@ -476,6 +489,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -531,6 +551,13 @@
     </Compile>
     <Compile Include="Shop_Controls\UsrReview.ascx.designer.cs">
       <DependentUpon>UsrReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

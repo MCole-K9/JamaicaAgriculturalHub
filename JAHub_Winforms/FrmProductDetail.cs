@@ -48,7 +48,7 @@ namespace JAHub_Winforms
             foreach (var rating in ratings)
             {
                 ProgressBar progressBar = new ProgressBar();
-                progressBar.Value = (int)rating;
+                progressBar.Value = (int)rating < 0 ? 0: (int)rating;
                 progressBar.Margin = new Padding(0, 0, 0, 20);
                 fpnlProgress.Controls.Add(progressBar);
 

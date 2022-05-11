@@ -7,30 +7,66 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JAHub_ASPWebforms.Administration
+namespace JAHub_ASPWebforms
 {
 
 
-    public partial class AdminEditUser
+    public partial class Signup
     {
 
         /// <summary>
-        /// nbNewUserName control.
+        /// txtFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::JAHub_ASPWebforms.Verification.usrNameBlock nbNewUserName;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
 
         /// <summary>
-        /// lblEmail control.
+        /// RequiredFieldValidatorFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorFirstName;
+
+        /// <summary>
+        /// txtMiddleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMiddleName;
+
+        /// <summary>
+        /// RequiredFieldValidatorMiddleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorMiddleName;
+
+        /// <summary>
+        /// txtLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
+
+        /// <summary>
+        /// RequiredFieldValidatorLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorLastName;
 
         /// <summary>
         /// txtEmail control.
@@ -42,111 +78,93 @@ namespace JAHub_ASPWebforms.Administration
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// reqEmail control.
+        /// RequiredFieldValidatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
 
         /// <summary>
-        /// udpPassword control.
+        /// RegularExpressionValidatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel udpPassword;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
 
         /// <summary>
-        /// chkPassword control.
+        /// Gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox chkPassword;
+        protected global::System.Web.UI.WebControls.DropDownList Gender;
 
         /// <summary>
-        /// txtPasswordOnce control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPasswordOnce;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// cusPasswordOnce control.
+        /// RequiredFieldValidatorPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cusPasswordOnce;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPassword;
 
         /// <summary>
-        /// reqPasswordOnce control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPasswordOnce;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
 
         /// <summary>
-        /// txtPasswordSecond control.
+        /// RequiredFieldValidatorConPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPasswordSecond;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorConPassword;
 
         /// <summary>
-        /// cusPasswordSecond control.
+        /// CompareValidatorConPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cusPasswordSecond;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorConPassword;
 
         /// <summary>
-        /// reqPasswordSecond control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPasswordSecond;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// btnSubmit control.
+        /// btnSubmit1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-
-        /// <summary>
-        /// lblSubmitTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubmitTitle;
-
-        /// <summary>
-        /// lblSubmitText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubmitText;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSubmit1;
     }
 }
