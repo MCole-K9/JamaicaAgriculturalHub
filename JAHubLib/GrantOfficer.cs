@@ -52,8 +52,8 @@ namespace JAHubLib
 
         public int CreateGrant(Grantinfo grantinfo)
         {
-            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Deadline,GrantOfficer)" +
-                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}')";
+            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Deadline,GrantOfficer,Application_Form)" +
+                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},{grantinfo.GrantOfficerId},'{grantinfo.Application_Form}')";
 
             Utilities.executeInputQuery(query);
             return 1;
