@@ -16,17 +16,20 @@ namespace JAHub_Winforms
     {
         private Product product;
         bool inEditMode;
-        public FrmAddEditProduct()
+        FrmProfile frmProfile;
+        public FrmAddEditProduct(FrmProfile frmProfile)
         {
             InitializeComponent();
             this.product = new Product();
             inEditMode = false;
+            this.frmProfile = frmProfile;
         }
-        public FrmAddEditProduct(Product product)
+        public FrmAddEditProduct(Product product, FrmProfile frmProfile)
         {
             InitializeComponent();
             this.product = product;
             inEditMode = true;
+            this.frmProfile = frmProfile;
         }
         private void PopulateFields()
         {
@@ -102,7 +105,7 @@ namespace JAHub_Winforms
                     if (farmer.UpdateProduct(product) > 0)
                     {
                         MessageBox.Show("Item Updated Succesfully");
-
+                        frmProfile.ClickManageProduct();
                     }
                 }
                 else
@@ -110,6 +113,7 @@ namespace JAHub_Winforms
                     if (farmer.AddProduct(product) > 0)
                     {
                         MessageBox.Show("Item Added Succesfully");
+                        frmProfile.ClickManageProduct();
                     }
                 }
             }
