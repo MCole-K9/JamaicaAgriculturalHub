@@ -83,7 +83,7 @@ namespace JAHub_Winforms
             grantinfo.Requirement = rtbrequirement.Text;
             grantinfo.GrantDescription = rtbdescription.Text;
             grantinfo.Title = txtcreategranttitle.Text;
-            grantinfo.Application_Form = txtapplicationnumber.Text;
+            grantinfo.Application_Form = Int32.Parse(txtapplicationnumber.Text);
             grantinfo.UpdateGrant(grantinfo.ID);
         }
     }
