@@ -77,13 +77,13 @@
         </div>
         <div class="col-lg-3 fit-content-y">
             <div class="container-fluid content-container text-center" style="padding: 20px">
-                <h4>Farmer Name</h4>
+                <h4 id="FarmerName" runat="server">Farmer Name</h4>
                 <img src="http://vtdics.com/ead22/Avatar.png" />
 
             </div>
         </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 fit-content-y ">
+        <div class="col-lg-12 col-md-12 col-sm-12 fit-content-y " style="margin-top: 20px">
             <div class="row">
                 <div class="col-lg-4 fit-content-y" >
                     <div class="">

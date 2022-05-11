@@ -30,6 +30,7 @@ namespace JAHub_ASPWebforms
             imgProduct.Src = product.Image;
             lblProductName.InnerText = product.Name;
             lblProductPrice.InnerText = $"${product.Price} Per Lbs";
+            FarmerName.InnerText = $"{product.Farmer.FirstName} {product.Farmer.LastName}";
         }
         private void LoadReviews()
         {
