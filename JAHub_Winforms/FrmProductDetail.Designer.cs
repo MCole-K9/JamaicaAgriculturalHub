@@ -109,6 +109,7 @@
             this.btnBuyNow.TabIndex = 2;
             this.btnBuyNow.Text = "Buy Now";
             this.btnBuyNow.UseVisualStyleBackColor = true;
+            this.btnBuyNow.Click += new System.EventHandler(this.btnBuyNow_Click);
             // 
             // btnAddToCart
             // 
@@ -118,6 +119,7 @@
             this.btnAddToCart.TabIndex = 2;
             this.btnAddToCart.Text = "Add To Cart";
             this.btnAddToCart.UseVisualStyleBackColor = true;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // gbQty
             // 
@@ -139,6 +141,7 @@
             this.txtQty.TabIndex = 2;
             this.txtQty.Text = "1";
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
             // 
             // btnPlus
             // 
@@ -152,6 +155,7 @@
             this.btnPlus.Size = new System.Drawing.Size(43, 24);
             this.btnPlus.TabIndex = 1;
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // btnMinus
             // 
@@ -165,6 +169,7 @@
             this.btnMinus.Size = new System.Drawing.Size(43, 24);
             this.btnMinus.TabIndex = 0;
             this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // LblQty
             // 

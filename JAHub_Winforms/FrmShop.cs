@@ -38,9 +38,9 @@ namespace JAHub_Winforms
             childForm.Show();
 
         }
-        public void OpenProductDetails(Product product)
+        public void OpenProductDetails(Product product, FrmShop frmShop)
         {
-            OpenChildForm(new FrmProductDetail(product));
+            OpenChildForm(new FrmProductDetail(product, frmShop));
         }
 
         private void FrmShop_Load(object sender, EventArgs e)
