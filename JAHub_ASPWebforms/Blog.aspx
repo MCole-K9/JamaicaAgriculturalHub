@@ -31,7 +31,7 @@
                   </div>
 
             <div class="input-group cboSort" style="width:fit-content">
-                <p style="font-size: large; display: flex; flex-direction: column; justify-content: center;">Sort:</p>
+                <p style="font-size: large; display: flex; flex-direction: column; justify-content: center; margin: 0;">Sort:</p>
              <asp:DropDownList ID="dropDownSort" runat="server" Width="150px" AutoPostBack="true" OnSelectedIndexChanged="dropDownSort_SelectedIndexChanged">
                 <asp:ListItem Text="Select an option" Selected="True"/>
                 <asp:ListItem Text="Oldest" Value="Oldest"/>
