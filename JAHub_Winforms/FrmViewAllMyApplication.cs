@@ -47,7 +47,7 @@ namespace JAHub_Winforms
                     grantinfo.requirement = reader["Requirements"].ToString();
                     grantinfo.GrantDescription = reader["Description"].ToString();
                     grantinfo.ExpiryDate = (DateTime)reader["Deadline"];
-                    grantinfo.Application_Form = reader["Application_Form"].ToString();
+                    grantinfo.Application_Form = (int)reader["Application_Form"];
                     grantinfo.GrantOfficerId = (int)reader["GrantOfficer"];
                     grantinfo.Title = reader["Title"].ToString();
 
@@ -135,7 +135,7 @@ namespace JAHub_Winforms
 
         private void btnUpdateGrant_Click(object sender, EventArgs e)
         {
-            if (!Utils.IsFormOpen(" FrmViewAllMyApplication"))
+           /* if (!Utils.IsFormOpen(" FrmViewAllMyApplication"))
             {
 
                 FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();
@@ -151,7 +151,7 @@ namespace JAHub_Winforms
                         form.BringToFront();
                     }
                 }
-            }
+            }*/
            
         }
     }

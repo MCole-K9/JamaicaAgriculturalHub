@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGrantDetails));
             this.txtapplicationnumber = new System.Windows.Forms.TextBox();
             this.txtcreategranttitle = new System.Windows.Forms.TextBox();
             this.lblrequirements = new System.Windows.Forms.Label();
@@ -37,13 +36,13 @@
             this.rtbdescription = new System.Windows.Forms.RichTextBox();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.btnuploadfile = new System.Windows.Forms.Button();
-            this.pbfile = new System.Windows.Forms.PictureBox();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.lblexpirydategrantdetails = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
+            this.txtFileInfo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlNav.SuspendLayout();
@@ -126,7 +125,7 @@
             // 
             // btnuploadfile
             // 
-            this.btnuploadfile.Location = new System.Drawing.Point(542, 940);
+            this.btnuploadfile.Location = new System.Drawing.Point(542, 864);
             this.btnuploadfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnuploadfile.Name = "btnuploadfile";
             this.btnuploadfile.Size = new System.Drawing.Size(88, 38);
@@ -134,17 +133,6 @@
             this.btnuploadfile.Text = "Upload File";
             this.btnuploadfile.UseVisualStyleBackColor = true;
             this.btnuploadfile.Click += new System.EventHandler(this.btnuploadfile_Click);
-            // 
-            // pbfile
-            // 
-            this.pbfile.Image = ((System.Drawing.Image)(resources.GetObject("pbfile.Image")));
-            this.pbfile.Location = new System.Drawing.Point(433, 720);
-            this.pbfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbfile.Name = "pbfile";
-            this.pbfile.Size = new System.Drawing.Size(315, 194);
-            this.pbfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbfile.TabIndex = 74;
-            this.pbfile.TabStop = false;
             // 
             // btnHome
             // 
@@ -212,15 +200,33 @@
             this.lblexpirydategrantdetails.TabIndex = 76;
             this.lblexpirydategrantdetails.Text = "deadline";
             // 
+            // txtFileInfo
+            // 
+            this.txtFileInfo.Location = new System.Drawing.Point(636, 872);
+            this.txtFileInfo.Name = "txtFileInfo";
+            this.txtFileInfo.Size = new System.Drawing.Size(195, 22);
+            this.txtFileInfo.TabIndex = 77;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1073, 988);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 78;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmGrantDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 1055);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtFileInfo);
             this.Controls.Add(this.lblexpirydategrantdetails);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.btnuploadfile);
-            this.Controls.Add(this.pbfile);
             this.Controls.Add(this.lblExpirationDate);
             this.Controls.Add(this.txtapplicationnumber);
             this.Controls.Add(this.txtcreategranttitle);
@@ -231,7 +237,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmGrantDetails";
             this.Text = "Grant Details";
-            ((System.ComponentModel.ISupportInitialize)(this.pbfile)).EndInit();
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlNav.ResumeLayout(false);
@@ -249,12 +254,14 @@
         private System.Windows.Forms.RichTextBox rtbdescription;
         private System.Windows.Forms.Label lblExpirationDate;
         private System.Windows.Forms.Button btnuploadfile;
-        private System.Windows.Forms.PictureBox pbfile;
         private FontAwesome.Sharp.IconButton btnHome;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Label lblexpirydategrantdetails;
         private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtFileInfo;
+        private System.Windows.Forms.Button button1;
+        //private System.Windows.Forms.Button btnSubmit;
     }
 }

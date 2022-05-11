@@ -143,7 +143,7 @@ namespace JAHub_Winforms
             {
                 // Customers see: Home, Shop, User Profile
                 miAdmin.Visible = false;
-                miBlog.Visible = false;
+                miBlog.Visible = true;
                 miHome.Visible = true;
                 miShop.Visible = true;
                 miUserProfile.Visible = true;
@@ -167,7 +167,7 @@ namespace JAHub_Winforms
             {
                 // Grant Officers see: Grants, Home
 
-                miAdmin.Visible = false;
+                miAdmin.Visible = true;
                 miBlog.Visible = false;
                 miHome.Visible= true;
                 miShop.Visible = false;

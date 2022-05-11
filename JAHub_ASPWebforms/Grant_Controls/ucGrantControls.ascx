@@ -1,8 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucGrantControls.ascx.cs" Inherits="JAHub_ASPWebforms.Grant_Controls.ucGrantControls" %>
 
-<asp:Panel ID="PnlDisplayUserControl" runat="server">
-    <div class ="container">
-    
+
+<div class ="container">
+    <asp:Panel ID="PnlDisplayUserControl" runat="server">
     <div class="form-group">
         <label for="GrantRequirement" class="lblCreateGrant"><strong>Grant Details</strong>:</label>
         <textArea class="form-control" id="tAGrantRequirement" style="height:350px; width: 466px;" runat="server" name="S1" rows="1"> </textArea>
@@ -21,9 +21,9 @@
     </div>
 
 
+    </asp:Panel>
+</div>
 
-   </div>
-</asp:Panel>
 
 
   <style>

@@ -153,11 +153,11 @@
     <Compile Include="FrmGeneralGrantInfo.Designer.cs">
       <DependentUpon>FrmGeneralGrantInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGrantOfficer.cs">
+    <Compile Include="FrmFilledApplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmGrantOfficer.Designer.cs">
-      <DependentUpon>FrmGrantOfficer.cs</DependentUpon>
+    <Compile Include="FrmFilledApplication.Designer.cs">
+      <DependentUpon>FrmFilledApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRadaRegister.cs">
       <SubType>Form</SubType>
@@ -511,8 +511,8 @@
     <EmbeddedResource Include="FrmGrantDetails.resx">
       <DependentUpon>FrmGrantDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmGrantOfficer.resx">
-      <DependentUpon>FrmGrantOfficer.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFilledApplication.resx">
+      <DependentUpon>FrmFilledApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

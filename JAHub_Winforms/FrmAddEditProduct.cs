@@ -34,6 +34,7 @@ namespace JAHub_Winforms
             txtProductName.Text = product.Name;
             txtPrice.Text = product.Price.ToString();
             txtStock.Text = product.Stock.ToString();
+            cboCategory.SelectedValue = product.Category;
             
         }
         private void label1_Click(object sender, EventArgs e)
@@ -122,8 +123,7 @@ namespace JAHub_Winforms
             lblAddUpdate.Text = inEditMode ? "Update Product" : "Add Product";
             btnAddChangeImage.Text = inEditMode ? "Change Image" : "Add Image";
 
-            if (inEditMode)
-                PopulateFields();
+            
 
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
@@ -145,6 +145,8 @@ namespace JAHub_Winforms
                 cboCategory.SelectedIndex = -1;
                 cboCategory.Text = "Select an Item";
             }
+            if (inEditMode)
+                PopulateFields();
 
         }
 

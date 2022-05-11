@@ -16,14 +16,17 @@ namespace JAHub_Winforms
     {
         private Product _product;
         private int rating;
+        private FrmShop frmShop;
         public FrmProductDetail()
         {
             InitializeComponent();
         }
-        public FrmProductDetail(Product product)
+        public FrmProductDetail(Product product, FrmShop frmShop)
         {
             InitializeComponent();
             this._product = product;
+            this.frmShop = frmShop;
+
         }
         private void PopulateFields()
         {
@@ -48,7 +51,7 @@ namespace JAHub_Winforms
             foreach (var rating in ratings)
             {
                 ProgressBar progressBar = new ProgressBar();
-                progressBar.Value = (int)rating;
+                progressBar.Value = (int)rating < 0 ? 0: (int)rating;
                 progressBar.Margin = new Padding(0, 0, 0, 20);
                 fpnlProgress.Controls.Add(progressBar);
 
@@ -234,6 +237,87 @@ namespace JAHub_Winforms
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            int qtyValue;
+            bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+
+            if (inputIsInt && qtyValue > 0)
+            {
+                txtQty.Text = qtyValue.ToString();
+
+                txtQty.BackColor = Color.White;
+            }
+            else
+            {
+                txtQty.BackColor = Color.Red;
+            }
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            int qtyValue;
+            bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+
+            if (inputIsInt)
+            {
+                qtyValue++;
+                txtQty.Text = qtyValue.ToString();
+
+            }
+            else
+            {
+                MessageBox.Show("Please Ensure that only a number is inputed");
+            }
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            int qtyValue;
+            bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+
+            if (inputIsInt && qtyValue > 0)
+            {
+                qtyValue--;
+                txtQty.Text = qtyValue.ToString();
+
+            }
+            else
+            {
+                MessageBox.Show("Please Ensure that only a postitive number is inputed");
+            }
+        }
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            int qtyValue;
+            bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+
+
+            if (inputIsInt && qtyValue > 0)
+            {
+
+                Cart.AddToCart(this._product, qtyValue);
+
+            }
+
+        }
+
+        private void btnBuyNow_Click(object sender, EventArgs e)
+        {
+            int qtyValue;
+            bool inputIsInt = int.TryParse(txtQty.Text.Trim(), out qtyValue);
+
+
+            if (inputIsInt && qtyValue > 0)
+            {
+
+                Cart.AddToCart(this._product, qtyValue);
+                this.frmShop.OpenChildForm(new FrmShippingCheckout());
+
+            }
         }
     }
 }

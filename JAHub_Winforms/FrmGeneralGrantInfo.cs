@@ -39,7 +39,7 @@ namespace JAHub_Winforms
                         grantinfo.GrantDescription = sqlRead["Description"].ToString();
                         grantinfo.Requirement = sqlRead["Requirements"].ToString();
                         grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
-                        grantinfo.Application_Form = sqlRead["Application_Form"].ToString();
+                        grantinfo.Application_Form = (int)sqlRead["Application_Form"];
                         grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
                         grantinfo.Title = sqlRead["Title"].ToString();
 
@@ -64,7 +64,7 @@ namespace JAHub_Winforms
         private void btnGrantHome_Click (object sender, EventArgs e)
         {
 
-            if (!Utils.IsFormOpen(" FrmGeneralGrantInfo"))
+           /* if (!Utils.IsFormOpen(" FrmGeneralGrantInfo"))
             {
 
                 FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
@@ -80,13 +80,13 @@ namespace JAHub_Winforms
                         form.BringToFront();
                     }
                 }
-            }
+            }*/
 
         }
         
         private void btnApplyforGrant_Click(object sender, EventArgs e)
         {
-            if (!Utils.IsFormOpen(" FrmGrantDetails"))
+           /* if (!Utils.IsFormOpen(" FrmGrantDetails"))
             {
 
                 FrmGrantDetails frmGrantDetails = new FrmGrantDetails();
@@ -102,7 +102,7 @@ namespace JAHub_Winforms
                         form.BringToFront();
                     }
                 }
-            }
+            }*/
            
         }
 

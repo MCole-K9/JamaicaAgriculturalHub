@@ -70,17 +70,24 @@ namespace JAHub_Winforms
             try
             {
                 Order order = new Order();
-                order.OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value;
+                order.OrderId = (int)orderDataGridView.SelectedRows[0].Cells[0].Value > 0 ? (int)orderDataGridView.SelectedRows[0].Cells[0].Value : 0;
 
 
+                if(order.OrderId > 0)
+                {
+                    order.FetchOrderData();
+                    _frmShop.OpenChildForm(new FrmOrderDetails(order));
+                }
+                else
+                {
+                    throw new NullReferenceException("Order Id Not Set");
+                }
                 
-                order.FetchOrderData();
-                _frmShop.OpenChildForm(new FrmOrderDetails(order));
 
             }
             catch (Exception ex)
             {
-                if(ex is NullReferenceException || ex is IndexOutOfRangeException)
+                if(ex is ArgumentOutOfRangeException || ex is NullReferenceException || ex is IndexOutOfRangeException )
                 {
                     MessageBox.Show("Please  Ensure that One (1) Item is selected");
                 }

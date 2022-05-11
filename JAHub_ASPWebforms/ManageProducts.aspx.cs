@@ -12,7 +12,7 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Farmer farmer = new Farmer(1);
+            Farmer farmer = new Farmer(true);
             LoadProducts(farmer.GetFarmerProducts());   
         }
 
@@ -22,14 +22,19 @@ namespace JAHub_ASPWebforms
             //Loop through the product list and renders it on the product form
 
             int index = 0;
-            foreach (var product in products)
-            {
-                Shop_Controls.UsrFarmerProduct usrFarmerProduct = (Shop_Controls.UsrFarmerProduct)Page.LoadControl("~/Shop_Controls/UsrFarmerProduct.ascx");
-                usrFarmerProduct.SetProduct(product);
-                usrFarmerProduct.SetIDSequence(index);
-                pnlFarmerProducts.Controls.Add(usrFarmerProduct);
+            if(products.Count != 0){
 
-                index++;
+                foreach (var product in products)
+                {
+                    Shop_Controls.UsrFarmerProduct usrFarmerProduct = (Shop_Controls.UsrFarmerProduct)Page.LoadControl("~/Shop_Controls/UsrFarmerProduct.ascx");
+                    usrFarmerProduct.SetProduct(product);
+                    usrFarmerProduct.SetIDSequence(index);
+                    pnlFarmerProducts.Controls.Add(usrFarmerProduct);
+
+                    index++;
+                }
+
+                NPMessage.Attributes.Add("style", "display: none");
             }
 
         }
