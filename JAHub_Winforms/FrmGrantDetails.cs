@@ -23,8 +23,9 @@ namespace JAHub_Winforms
 
         public FrmGrantDetails(Grantinfo g)
         {
-           grantinfo = g;
+           
             InitializeComponent();
+            grantinfo = g;
             lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
             txtcreategranttitle.Text = grantinfo.Title;
             rtbdescription.Text = grantinfo.GrantDescription;
@@ -37,12 +38,12 @@ namespace JAHub_Winforms
         private void FrmGrantDetails_Load (object sender, EventArgs e)
         {
             Size = new Size(1102, 1200);
-
+            //grantinfo.D
             lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
             txtcreategranttitle.Text = grantinfo.Title;
             rtbdescription.Text = grantinfo.GrantDescription;
             rtbrequirement.Text = grantinfo.Requirement;
-            txtapplicationnumber.Text =  (grantinfo.Application_Form.ToString());
+            //txtapplicationnumber.Text =  (grantinfo.Application_Form.ToString());
             
             
 
@@ -60,7 +61,7 @@ namespace JAHub_Winforms
 
                 //Utilities.FTPFileUpload(grantinfo.FilePath, grantinfo.FileName);
 
-                grantinfo.CreateApplication(txtFileInfo.Text);
+                //grantinfo.CreateApplication(txtFileInfo.Text);
 
                
             }

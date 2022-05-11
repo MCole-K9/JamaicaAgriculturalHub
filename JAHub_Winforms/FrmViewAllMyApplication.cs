@@ -47,7 +47,7 @@ namespace JAHub_Winforms
                     grantinfo.requirement = reader["Requirements"].ToString();
                     grantinfo.GrantDescription = reader["Description"].ToString();
                     grantinfo.ExpiryDate = (DateTime)reader["Deadline"];
-                    grantinfo.Application_Form = (int)reader["Application_Form"];
+                    //grantinfo.Application_Form = (int)reader["Application_Form"];
                     grantinfo.GrantOfficerId = (int)reader["GrantOfficer"];
                     grantinfo.Title = reader["Title"].ToString();
 

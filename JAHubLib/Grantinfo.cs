@@ -34,7 +34,7 @@ namespace JAHubLib
         public int ID { get; set; }
         
 
-
+       // Grantinfo grantinfo = new Grantinfo(); 
         public Grantinfo()
         {
             GrantDescription = "";
@@ -172,7 +172,7 @@ namespace JAHubLib
         {
             Grantinfo grantinfo = new Grantinfo();
             grantinfo.FileName=filename;    
-            string query = $"INSERT INTO [Grant] (FileName)" +
+            string query = $"INSERT INTO [Grant] (FileName,)" +
                     $"Values ( '{grantinfo.FileName}')";
 
             Utilities.executeInputQuery(query);

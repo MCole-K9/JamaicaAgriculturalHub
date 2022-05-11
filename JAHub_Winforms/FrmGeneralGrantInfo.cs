@@ -19,6 +19,7 @@ namespace JAHub_Winforms
         public FrmGeneralGrantInfo()
         {
             InitializeComponent();
+            DisplayGrantinfo(); 
         }
 
 
@@ -39,7 +40,7 @@ namespace JAHub_Winforms
                         grantinfo.GrantDescription = sqlRead["Description"].ToString();
                         grantinfo.Requirement = sqlRead["Requirements"].ToString();
                         grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
-                        grantinfo.Application_Form = (int)sqlRead["Application_Form"];
+                       // grantinfo.Application_Form = (int)sqlRead["Application_Form"];
                         grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
                         grantinfo.Title = sqlRead["Title"].ToString();
 
@@ -56,7 +57,7 @@ namespace JAHub_Winforms
         {
 
           //  Size = new Size(1102, 1200);
-            DisplayGrantinfo();
+          //  DisplayGrantinfo();
            
 
         }
