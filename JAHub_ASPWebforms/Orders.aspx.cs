@@ -12,7 +12,7 @@ namespace JAHub_ASPWebforms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Customer customer = new Customer(1);
+            Customer customer = new Customer(true);
 
             LoadOrders(customer.GetOrders());
 
