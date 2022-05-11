@@ -19,7 +19,7 @@ namespace JAHubLib
         public string requirement;
         private DateTime expiryDate;
         private string filePath;
-        private string application_Form;
+        private int application_Form;
 
 
 
@@ -28,7 +28,7 @@ namespace JAHubLib
         public string FileName { get; set; }
         public DateTime ExpiryDate { get; set; }
         public string Requirement { get; set; }
-        public string Application_Form { get; set; }
+        public int Application_Form { get; set; }
         public int GrantOfficerId { get; set; }
         public string FilePath { get; set; }
         public int ID { get; set; }
@@ -43,7 +43,7 @@ namespace JAHubLib
             requirement = "";
             ExpiryDate = DateTime.Now;
             ID = 0;
-            Application_Form = "";
+            Application_Form = 0;
             GrantOfficerId = 0;
             FilePath = "";
             
@@ -92,7 +92,7 @@ namespace JAHubLib
                         grantinfo.GrantDescription = sqlRead["Description"].ToString();
                         grantinfo.Requirement = sqlRead["Requirements"].ToString();
                         grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
-                        grantinfo.Application_Form = sqlRead["Application_Form"].ToString();
+                        grantinfo.Application_Form = (int)sqlRead["Application_Form"];
                         grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
                         grantinfo.Title = sqlRead["Title"].ToString();
 
@@ -138,11 +138,58 @@ namespace JAHubLib
             return filename;
         }
 
-     }
 
 
-       
-    
+        public int FetchGrantApplication(int grantapplication)
+        {
+                Grantinfo grantinfo = new Grantinfo();
+          
+                int grantApplication = 0;
+                using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
+                {
+                    connection.Open();
+
+                    string query = $"SELECT Application_Form FROM [Grant_application] WHERE Application_Form = {grantapplication}";
+
+                    SqlCommand cmd = new SqlCommand(query, connection);
+
+                    SqlDataReader sqlData = cmd.ExecuteReader();
+
+                    while (sqlData.Read())
+                    {
+                        grantApplication = (int)sqlData["Application_Form"];
+
+
+                    }
+                    sqlData.Close();
+
+                }
+                return grantapplication;
+            
+        }
+
+        public int CreateApplication(string filename)
+        {
+            Grantinfo grantinfo = new Grantinfo();
+            grantinfo.FileName=filename;    
+            string query = $"INSERT INTO [Grant] (FileName)" +
+                    $"Values ( '{grantinfo.FileName}')";
+
+            Utilities.executeInputQuery(query);
+            return 1;
+
+        }
+
+        public int CreateGrant(Grantinfo grantinfo)
+        {
+            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Deadline,GrantOfficer,Application_Form)" +
+                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}','{grantinfo.Application_Form}')";
+
+            Utilities.executeInputQuery(query);
+            return 1;
+
+        }
+    }
 
 }
 

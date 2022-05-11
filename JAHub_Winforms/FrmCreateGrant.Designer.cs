@@ -49,6 +49,8 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtapplicationnumber = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
             this.pnlNav.SuspendLayout();
             this.pnlLogo.SuspendLayout();
@@ -117,7 +119,7 @@
             this.btnCreateGrant.TabIndex = 32;
             this.btnCreateGrant.Text = "Submit";
             this.btnCreateGrant.UseVisualStyleBackColor = true;
-            this.btnCreateGrant.Click += new System.EventHandler(this.btnCreateGrant_Click);
+            this.btnCreateGrant.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblExpirationDate
             // 
@@ -207,6 +209,7 @@
             this.btnDeleteGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteGrant.UseVisualStyleBackColor = false;
+            this.btnDeleteGrant.Visible = false;
             // 
             // btnViewall
             // 
@@ -231,6 +234,7 @@
             this.btnViewall.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewall.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewall.UseVisualStyleBackColor = false;
+            this.btnViewall.Visible = false;
             // 
             // btncreatetesting
             // 
@@ -279,6 +283,7 @@
             this.btnCreateBlog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreateBlog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreateBlog.UseVisualStyleBackColor = false;
+            this.btnCreateBlog.Visible = false;
             // 
             // btnBlogs
             // 
@@ -331,7 +336,27 @@
             this.txtapplicationnumber.Name = "txtapplicationnumber";
             this.txtapplicationnumber.Size = new System.Drawing.Size(118, 15);
             this.txtapplicationnumber.TabIndex = 65;
-            this.txtapplicationnumber.Text = "Application  #";
+            this.txtapplicationnumber.Text = "#12345";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1006, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 27);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Application #";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(284, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 27);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Title";
             // 
             // FrmCreateGrant
             // 
@@ -341,6 +366,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1182, 1055);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtapplicationnumber);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.txtcreategranttitle);
@@ -389,5 +416,7 @@
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.TextBox txtapplicationnumber;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.btnApplyforGrant = new FontAwesome.Sharp.IconButton();
             this.btngrantHome = new FontAwesome.Sharp.IconButton();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pbgeneralgrantinfonav = new System.Windows.Forms.PictureBox();
@@ -53,8 +52,8 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(549, 53);
             this.richTextBox1.TabIndex = 42;
-            this.richTextBox1.Text = "Please click \'View more\' on available grants to see further information about gra" +
-    "nts";
+            this.richTextBox1.Text = "Please click \'View more\' on available grants to apply and\n see further informatio" +
+    "n about grants";
             // 
             // label1
             // 
@@ -81,7 +80,6 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlNav.Controls.Add(this.btnApplyforGrant);
             this.pnlNav.Controls.Add(this.btngrantHome);
             this.pnlNav.Controls.Add(this.pnlLogo);
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
@@ -90,31 +88,6 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(194, 822);
             this.pnlNav.TabIndex = 63;
-            // 
-            // btnApplyforGrant
-            // 
-            this.btnApplyforGrant.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnApplyforGrant.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnApplyforGrant.FlatAppearance.BorderSize = 0;
-            this.btnApplyforGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApplyforGrant.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplyforGrant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnApplyforGrant.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.btnApplyforGrant.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnApplyforGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnApplyforGrant.IconSize = 30;
-            this.btnApplyforGrant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApplyforGrant.Location = new System.Drawing.Point(0, 209);
-            this.btnApplyforGrant.Margin = new System.Windows.Forms.Padding(4);
-            this.btnApplyforGrant.Name = "btnApplyforGrant";
-            this.btnApplyforGrant.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.btnApplyforGrant.Size = new System.Drawing.Size(194, 58);
-            this.btnApplyforGrant.TabIndex = 3;
-            this.btnApplyforGrant.Text = "Apply";
-            this.btnApplyforGrant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApplyforGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnApplyforGrant.UseVisualStyleBackColor = false;
-            this.btnApplyforGrant.Click += new System.EventHandler(this.btnApplyforGrant_Click);
             // 
             // btngrantHome
             // 
@@ -211,7 +184,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Panel pnlNav;
-        private FontAwesome.Sharp.IconButton btnApplyforGrant;
         private FontAwesome.Sharp.IconButton btngrantHome;
         private System.Windows.Forms.Panel pnlLogo;
         private FontAwesome.Sharp.IconButton btnDeleteGrant;

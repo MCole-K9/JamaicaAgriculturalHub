@@ -10,14 +10,14 @@
             <h4 id="ProductPrice" runat="server">Product Price</h4>
 
             <div style="display: flex; justify-content:space-between; margin: 20px 0 0 0;">
-                <button id="btnViewProduct" runat="server"  onserverclick="btnViewProduct_ServerClick"> View</button>
-                <button id="btnAddToCart" onserverclick="btnAddToCart_ServerClick" runat="server">Add to Cart</button>
+                <button id="btnViewProduct" runat="server"  class="btn btn-default" onserverclick="btnViewProduct_ServerClick"> View</button>
+                <button id="btnAddToCart" class="btn btn-default"  onserverclick="btnAddToCart_ServerClick" runat="server">Add to Cart</button>
             </div>
         </div>
     </div>
 </div>
 
 
-    
+  
  
     

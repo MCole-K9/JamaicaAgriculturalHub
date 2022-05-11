@@ -167,7 +167,7 @@ namespace JAHub_Winforms
             {
                 // Grant Officers see: Grants, Home
 
-                miAdmin.Visible = false;
+                miAdmin.Visible = true;
                 miBlog.Visible = false;
                 miHome.Visible= true;
                 miShop.Visible = false;

@@ -129,7 +129,7 @@
                                     <a href="Security.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x"></i></span>Security</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>
+                                    <a href="ManageProducts.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o fa-stack-1x "></i></span>Grants</a>
