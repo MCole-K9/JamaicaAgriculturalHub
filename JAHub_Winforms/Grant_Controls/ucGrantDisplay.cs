@@ -14,7 +14,7 @@ namespace JAHub_Winforms.Grant_Controls
 {
     public partial class ucGrantDisplay : UserControl
     {
-        Grantinfo grantinfo = new Grantinfo();
+        Grantinfo grantinfo;
         private object MdiParent;
 
         public ucGrantDisplay()
@@ -22,30 +22,33 @@ namespace JAHub_Winforms.Grant_Controls
            
             InitializeComponent();
         }
-        public ucGrantDisplay(Grantinfo grantinfo)
+        public ucGrantDisplay(Grantinfo g)
         {
-            
+            grantinfo = g;
             InitializeComponent();
             txtUcAgencyName.Text = grantinfo.Title;
             rtbGrantDescription.Text = grantinfo.GrantDescription;
-            
+           
            
         }
 
+       
         private void btnViewGrant_Click(object sender, EventArgs e)
         {
             if (!Utils.IsFormOpen(" FrmGrantDetails"))
             {
 
-                FrmGrantDetails frmGrantDetails = new FrmGrantDetails();
-                frmGrantDetails.MdiParent = (Form)MdiParent;
+                FrmGrantDetails frmGrantDetails = new FrmGrantDetails(grantinfo);
+                
+                //frmGrantDetails.MdiParent = (Form)MdiParent;
                 frmGrantDetails.Show();
-                var form = frmGrantDetails;
-                form.BringToFront();
+                //var form = frmGrantDetails;
+                //form.BringToFront();
 
             }
 
         }
+
        
     }
 }

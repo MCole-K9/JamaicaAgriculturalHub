@@ -95,7 +95,7 @@
             this.btngrantHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btngrantHome.FlatAppearance.BorderSize = 0;
             this.btngrantHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btngrantHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btngrantHome.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btngrantHome.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btngrantHome.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btngrantHome.IconColor = System.Drawing.SystemColors.ButtonFace;
@@ -162,6 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1083, 822);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.pnlContainer);

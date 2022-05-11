@@ -143,7 +143,7 @@ namespace JAHub_Winforms
 
             btnViewGrants.Show();
             HighlightButtons(btnViewGrants);
-            OpenChildForm(new FrmCreateGrant());
+            OpenChildForm(new FrmViewAllMyApplication());
             
         }
 

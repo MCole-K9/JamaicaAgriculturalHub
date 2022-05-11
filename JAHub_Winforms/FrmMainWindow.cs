@@ -241,9 +241,9 @@ namespace JAHub_Winforms
 //<<<<<<< HEAD
         private void adminToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            FrmViewAllMyApplication frmViewAllMyApplication = new FrmViewAllMyApplication();    
-            frmViewAllMyApplication.MdiParent=this; 
-            frmViewAllMyApplication.Show(); 
+            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();    
+            frmGeneralGrantInfo.MdiParent=this; 
+            frmGeneralGrantInfo .Show(); 
         }
 
         private void farmerToolStripMenuItem_Click(object sender, EventArgs e)

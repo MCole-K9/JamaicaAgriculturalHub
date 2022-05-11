@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCreateGrant));
             this.btnuploadfile = new System.Windows.Forms.Button();
-            this.pbfile = new System.Windows.Forms.PictureBox();
             this.rtbdescription = new System.Windows.Forms.RichTextBox();
             this.lbltitlcreategrant = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +49,7 @@
             this.txtapplicationnumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbfile)).BeginInit();
+            this.txtFileinfo = new System.Windows.Forms.TextBox();
             this.pnlNav.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,7 +57,7 @@
             // 
             // btnuploadfile
             // 
-            this.btnuploadfile.Location = new System.Drawing.Point(398, 983);
+            this.btnuploadfile.Location = new System.Drawing.Point(398, 851);
             this.btnuploadfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnuploadfile.Name = "btnuploadfile";
             this.btnuploadfile.Size = new System.Drawing.Size(88, 38);
@@ -67,17 +65,6 @@
             this.btnuploadfile.Text = "Upload File";
             this.btnuploadfile.UseVisualStyleBackColor = true;
             this.btnuploadfile.Click += new System.EventHandler(this.btnuploadfile_Click);
-            // 
-            // pbfile
-            // 
-            this.pbfile.Image = ((System.Drawing.Image)(resources.GetObject("pbfile.Image")));
-            this.pbfile.Location = new System.Drawing.Point(289, 763);
-            this.pbfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbfile.Name = "pbfile";
-            this.pbfile.Size = new System.Drawing.Size(315, 194);
-            this.pbfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbfile.TabIndex = 10;
-            this.pbfile.TabStop = false;
             // 
             // rtbdescription
             // 
@@ -112,7 +99,7 @@
             // 
             // btnCreateGrant
             // 
-            this.btnCreateGrant.Location = new System.Drawing.Point(761, 983);
+            this.btnCreateGrant.Location = new System.Drawing.Point(935, 963);
             this.btnCreateGrant.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateGrant.Name = "btnCreateGrant";
             this.btnCreateGrant.Size = new System.Drawing.Size(82, 38);
@@ -358,6 +345,13 @@
             this.label4.TabIndex = 67;
             this.label4.Text = "Title";
             // 
+            // txtFileinfo
+            // 
+            this.txtFileinfo.Location = new System.Drawing.Point(492, 859);
+            this.txtFileinfo.Name = "txtFileinfo";
+            this.txtFileinfo.Size = new System.Drawing.Size(230, 22);
+            this.txtFileinfo.TabIndex = 68;
+            // 
             // FrmCreateGrant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -366,6 +360,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1182, 1055);
+            this.Controls.Add(this.txtFileinfo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtapplicationnumber);
@@ -379,14 +374,12 @@
             this.Controls.Add(this.btnCreateGrant);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbltitlcreategrant);
-            this.Controls.Add(this.pbfile);
             this.Controls.Add(this.rtbdescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmCreateGrant";
             this.Text = "Create Grant";
             this.Load += new System.EventHandler(this.FrmCreateGrant_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbfile)).EndInit();
             this.pnlNav.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -397,7 +390,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnuploadfile;
-        private System.Windows.Forms.PictureBox pbfile;
         private System.Windows.Forms.RichTextBox rtbdescription;
         private System.Windows.Forms.Label lbltitlcreategrant;
         private System.Windows.Forms.Label label1;
@@ -418,5 +410,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtFileinfo;
     }
 }

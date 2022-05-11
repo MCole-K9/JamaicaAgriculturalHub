@@ -29,10 +29,42 @@ namespace JAHub_Winforms
 
         }
 
+        public string uploadfile(string filename)
+        {
+            System.Windows.Forms.OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "txt | *.txt";
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //Grantinfo grantinfo = new Grantinfo();
+                grantinfo.FilePath = openFileDialog.FileName;
+                grantinfo.FileName = openFileDialog.SafeFileName;
+
+                //Utilities.FTPFileUpload(grantinfo.FilePath, grantinfo.FileName);
+
+                //grantinfo.CreateApplication(txtFileInfo.Text);
+
+
+            }
+            return filename;
+        }
+
         private void btnuploadfile_Click(object sender, EventArgs e)
         {
 
-           // grantinfo.uploadfile(Int16.Parse (grantinfo.Application_Form);
+            uploadfile(txtFileinfo.Text);
+            txtFileinfo.Text = grantinfo.FileName;
+            //CreateApplication(grantinfo);   
+
+        }
+
+        public int CreateApplication(Grantinfo grantinfoFile)
+        {
+            grantinfoFile = grantinfo;
+
+            string query = $"INSERT INTO [Grant_application] (Filled_Application,Grant) " + $"Values ( '{grantinfoFile.FileName}', {grantinfoFile.GrantOfficerId})";
+
+            Utilities.executeInputQuery(query);
+            return 1;
 
         }
 
@@ -68,8 +100,8 @@ namespace JAHub_Winforms
                 grantinfo.Requirement = rtbrequirement.Text;
                 grantinfo.ExpiryDate = dtpExpirydate.Value;
                 grantinfo.Title = txtcreategranttitle.Text;
-                grantinfo.Application_Form = int.Parse(txtapplicationnumber.Text);
-                grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
+                //grantinfo.Application_Form = int.Parse(txtapplicationnumber.Text);
+               // grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
                 
                 grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
                 grantOfficer.CreateGrant(grantinfo);
@@ -79,15 +111,8 @@ namespace JAHub_Winforms
                 dtpExpirydate.ResetText();
                 txtcreategranttitle.Clear();
                 txtapplicationnumber.ResetText();
-
-                
-
-            
-
-          
-
-
-
         }
+
+        
     }
 }
