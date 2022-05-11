@@ -124,11 +124,6 @@
                 <div class="auto-style1">
                     <asp:Button class="btnUpdate" ID="btnUpdatePassword" runat="server" Text="Update Password" Style="width: 50%; margin-left: 30%" OnClick="btnUpdatePassword_Click" />
                 </div>
-
-                <%--<button class="btn" id="btnSubmit" runat="server"  onserverclick="btnsubmitserverclick" style="width: 50%; margin-left: 30%">
-                    <span class="btnText">Submit</span>
-                    <i class="uil uil-navigator"></i>
-                </button>--%>
             </div>
 
        

@@ -26,12 +26,13 @@ namespace JAHub_Winforms
             using (SqlConnection connection = new SqlConnection(Utilities.getConnectionString()))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("select FirstName+ ' ' +LastName as FullName, Gender from [dbo].[User] where ID = " + Session.UserId, connection);
+                SqlCommand cmd = new SqlCommand("select FirstName+ ' ' +LastName as FullName, Gender, EmailAddress from [dbo].[User] where ID = " + Session.UserId, connection);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 while (sdr.Read())
                 {
                     lblDisplaysUserName.Text = sdr.GetValue(0).ToString();
                     lblDiaplayGender.Text = sdr.GetValue(1).ToString();
+                    lblDisplayemail.Text = sdr.GetValue(2).ToString();
                 }
                 sdr.Close();
             } 
@@ -40,7 +41,7 @@ namespace JAHub_Winforms
 
         private void btnUpdateName_Click(object sender, EventArgs e)
         {
-
+            
             FrmUpdateName frmUpdateName = new FrmUpdateName();
             frmUpdateName.MdiParent = this.MdiParent;
             frmUpdateName.Show();

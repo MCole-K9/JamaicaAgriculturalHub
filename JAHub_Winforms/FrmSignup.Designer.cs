@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSignup));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblWelcomeToJAHlabel = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.lblLastNamelabel = new System.Windows.Forms.Label();
             this.lblFirstNamelabel = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblWelcomeToJAHlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,6 +76,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 418);
             this.panel1.TabIndex = 0;
+            // 
+            // lblWelcomeToJAHlabel
+            // 
+            this.lblWelcomeToJAHlabel.AutoSize = true;
+            this.lblWelcomeToJAHlabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcomeToJAHlabel.ForeColor = System.Drawing.Color.White;
+            this.lblWelcomeToJAHlabel.Location = new System.Drawing.Point(9, 136);
+            this.lblWelcomeToJAHlabel.Name = "lblWelcomeToJAHlabel";
+            this.lblWelcomeToJAHlabel.Size = new System.Drawing.Size(187, 40);
+            this.lblWelcomeToJAHlabel.TabIndex = 5;
+            this.lblWelcomeToJAHlabel.Text = "           Welcome To\r\nJamaica Agricultural Hub\r\n";
             // 
             // lblLogin
             // 
@@ -179,6 +190,7 @@
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(347, 275);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(210, 20);
             this.txtConfirmPassword.TabIndex = 12;
             // 
@@ -186,6 +198,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(347, 213);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(210, 20);
             this.txtPassword.TabIndex = 11;
             // 
@@ -319,17 +332,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
-            // 
-            // lblWelcomeToJAHlabel
-            // 
-            this.lblWelcomeToJAHlabel.AutoSize = true;
-            this.lblWelcomeToJAHlabel.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeToJAHlabel.ForeColor = System.Drawing.Color.White;
-            this.lblWelcomeToJAHlabel.Location = new System.Drawing.Point(9, 136);
-            this.lblWelcomeToJAHlabel.Name = "lblWelcomeToJAHlabel";
-            this.lblWelcomeToJAHlabel.Size = new System.Drawing.Size(187, 40);
-            this.lblWelcomeToJAHlabel.TabIndex = 5;
-            this.lblWelcomeToJAHlabel.Text = "           Welcome To\r\nJamaica Agricultural Hub\r\n";
             // 
             // FrmSignup
             // 

@@ -180,6 +180,7 @@
     <Content Include="GrantOfficerGrants.aspx" />
     <Content Include="Grants.aspx" />
     <Content Include="ManageProducts.aspx" />
+    <Content Include="MyAccount.aspx" />
     <Content Include="OrderDetails.aspx" />
     <Content Include="Orders.aspx" />
     <Content Include="RadaRegistration.aspx" />
@@ -213,6 +214,8 @@
     <Content Include="Resources\order-delivery.png" />
     <Content Include="Resources\profit.png" />
     <Content Include="Resources\revenue.png" />
+    <Content Include="Resources\right-arrows %282%29.png" />
+    <Content Include="Resources\right-arrows.png" />
     <Content Include="Security.aspx" />
     <Content Include="Shop_Controls\UsrCartItem.ascx" />
     <Content Include="Shop_Controls\UsrFarmerProduct.ascx" />
@@ -229,6 +232,7 @@
     <Content Include="CreateGrants.aspx" />
     <Content Include="Grantdetails.aspx" />
     <Content Include="WebForm3.aspx" />
+    <Content Include="Resources\concept-of-user-profile-1886533-1597944.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -438,6 +442,13 @@
     </Compile>
     <Compile Include="Administration\usrInfractionItem.ascx.designer.cs">
       <DependentUpon>usrInfractionItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyBlogs.aspx.cs">
       <DependentUpon>MyBlogs.aspx</DependentUpon>
