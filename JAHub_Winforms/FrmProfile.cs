@@ -74,12 +74,13 @@ namespace JAHub_Winforms
             {
                 OpenChildForm(new FrmAccount());
                 HighlightButtons(btnMyAccount);
+                btnManageProducts.Visible = false;
 
             }
 
             // (K.S.) Assumption: Only customers (who wish to register as farmers) and farmers should be able to see 
             // btnRadaStatus (and its associated forms)
-                if (Session.UserRole == UserRole.Customer || Session.UserRole == UserRole.Farmer)
+            if (Session.UserRole == UserRole.Customer || Session.UserRole == UserRole.Farmer)
             {
                 btnRadaStatus.Visible = true;
             }
@@ -95,7 +96,7 @@ namespace JAHub_Winforms
                 btnViewGrants.Visible = false;
                 btnEditGrant.Visible = false;
                 btnCreateGrnat.Visible = false;
-
+           
 
 
         }
