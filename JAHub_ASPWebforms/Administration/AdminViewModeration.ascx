@@ -33,8 +33,12 @@
     </div>
 </div>
 
-<asp:SqlDataSource runat="server" ID="dsInfractions" SelectCommand="SELECT [ID], [TimeStamp], [Admin], [Reason] FROM [Infraction];" 
-    ConnectionString="Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8"  />
+<asp:SqlDataSource runat="server" ID="dsInfractions" SelectCommand="SELECT [ID], [TimeStamp], [Admin], [Reason] FROM [Infraction] WHERE [User]=@UserId;" 
+    ConnectionString="Data Source=jamaicaagriculturalhub.mssql.somee.com;Initial Catalog=jamaicaagriculturalhub;Persist Security Info=True;User ID=Ethan_Hughs_SQLLogin_1;Password=yq8mavdef8">
+    <SelectParameters>
+        <asp:Parameter Name="UserId" Type="Int32"/>
+    </SelectParameters>
+</asp:SqlDataSource>
 
 
 <div class="row">

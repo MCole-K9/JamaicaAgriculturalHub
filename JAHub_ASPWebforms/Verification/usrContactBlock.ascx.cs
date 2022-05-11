@@ -38,7 +38,7 @@ namespace JAHub_ASPWebforms.Verification
                 
                 foreach (string phoneNumber in _phoneNumbers)
                 {
-                    usrPhoneNumberBlock phoneNumberBlock = (usrPhoneNumberBlock)LoadControl("~/Verificaton/usrPhoneNumberBlock.ascx");
+                    usrPhoneNumberBlock phoneNumberBlock = (usrPhoneNumberBlock)LoadControl("~/Verification/usrPhoneNumberBlock.ascx");
                     phoneNumberBlock.PhoneNumber = phoneNumber;
                     phPhoneNumbers.Controls.Add(phoneNumberBlock);
                 }
@@ -46,7 +46,11 @@ namespace JAHub_ASPWebforms.Verification
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            // here is probably where i distinguish between parameter add and non params
+            if (PhoneNumbers.Count == 0)
+            {
+                usrPhoneNumberBlock phoneNumberBlock = (usrPhoneNumberBlock)LoadControl("~/Verification/usrPhoneNumberBlock.ascx");
+                phPhoneNumbers.Controls.Add(phoneNumberBlock);
+            }
         }
 
         protected void btnAddPhoneNumber_Click(object sender, EventArgs e)

@@ -37,18 +37,17 @@
     
     <asp:UpdatePanel runat="server" ID="udpPassword" UpdateMode="Conditional" ChildrenAsTriggers="True">
         <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="chkShowPassword" EventName="CheckedChanged" />
             <asp:AsyncPostBackTrigger ControlID="btnSubmit" EventName="Click" />
         </Triggers>
         <ContentTemplate>
-            <!--<div class="row">
-                <asp:CheckBox runat="server" ID="chkShowPassword" Text="Show Password:" TextAlign="Left" CssClass="col-lg-2 input-sm" 
-                    OnCheckedChanged="chkShowPassword_CheckedChanged" AutoPostBack="True" CausesValidation="False" EnableViewState="False" />
-            </div>-->
+            <div class="row">
+                <label for="chkPassword" class="text">Show Password:</label>
+                <input id="chkPassword" type="checkbox" class="checkbox" runat="server" onserverchange="chkShowPassword_CheckedChanged" />
+            </div>
             <div class="row center-block">
                 <div class="form-group center-block">
                     <asp:Label runat="server" CssClass="form-label col-1g-2" EnableViewState="False">Password*: </asp:Label>
-                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="SingleLine" EnableViewState="False" CausesValidation="True" ViewStateMode="Inherit"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPasswordOnce" CssClass="" TextMode="SingleLine" EnableViewState="False" CausesValidation="True" ViewStateMode="Inherit" />
                     <asp:CustomValidator ID="cusPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" 
                         ErrorMessage="" OnServerValidate="cusPasswordOnce_ServerValidate" EnableClientScript="False" />
                     <asp:RequiredFieldValidator ID="reqPasswordOnce" runat="server" ControlToValidate="txtPasswordOnce" ErrorMessage="Field Cannot be Blank!"/>

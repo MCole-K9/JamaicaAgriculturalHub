@@ -45,7 +45,7 @@ namespace JAHub_ASPWebforms.Administration
 
 
                     String command = "INSERT INTO Infraction (TimeStamp, Infraction.[User], Infraction.[Admin], Reason) VALUES " +
-                        $"({currentTime}, {UserId}, {JAHubLib.Session.UserId}, {txtReason.Text}";
+                        $"({currentTime}, {UserId}, {JAHubLib.Session.UserId}, '{txtReason.Text}');";
 
 
                     SqlCommand addNewInfractions = new SqlCommand(command, connection);
