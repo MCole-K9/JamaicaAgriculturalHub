@@ -119,23 +119,26 @@
                         <!-- Sidebar -->
                         <div id="sidebar-wrapper">
                             <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
-                                <li class="active">
+                                <li id="myaccount" class="active">
                                     <a href="MyAccount.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-user fa-stack-1x "></i></span>My Account</a>
                                 </li>
-                                <li>
+                                <li id="dashboard">
                                     <a href="Dashboard.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
                                 </li>
-                                <li>
+                                <li id="security">
                                     <a href="Security.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-lock fa-stack-1x"></i></span>Security</a>
                                 </li>
-                                <li>
+                                <li id="manageproducts">
                                     <a href="ManageProducts.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cart-plus fa-stack-1x "></i></span>Manage Products</a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-file-text-o fa-stack-1x "></i></span>Grants</a>
                                 </li>
-                                <li>
+                                <li id="radastatus">
                                     <a href="RadaStatus.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bar-chart fa-stack-1x "></i></span>Rada Status</a>
+                                </li>
+                                <li id="orders">
+                                    <a href="Orders.aspx"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bar-chart fa-stack-1x "></i></span>Orders</a>
                                 </li>
                             </ul>
                         </div>
