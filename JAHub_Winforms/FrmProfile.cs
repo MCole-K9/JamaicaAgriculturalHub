@@ -175,5 +175,11 @@ namespace JAHub_Winforms
         {
             btnManageProducts.PerformClick();
         }
+
+        private void btnViewApplicantion_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmFilledApplication());
+            HighlightButtons(sender);
+        }
     }
 }

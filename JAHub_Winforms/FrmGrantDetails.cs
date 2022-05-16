@@ -23,30 +23,22 @@ namespace JAHub_Winforms
 
         public FrmGrantDetails(Grantinfo g)
         {
-           
             InitializeComponent();
             grantinfo = g;
             lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
             txtcreategranttitle.Text = grantinfo.Title;
             rtbdescription.Text = grantinfo.GrantDescription;
             rtbrequirement.Text = grantinfo.Requirement;
-            txtapplicationnumber.Text =  (grantinfo.Application_Form).ToString();
-           
+           // txtapplicationnumber.Text =  grantinfo.Application_Form;
         }
 
 
         private void FrmGrantDetails_Load (object sender, EventArgs e)
         {
-            Size = new Size(1102, 1200);
-            //grantinfo.D
             lblexpirydategrantdetails.Text = grantinfo.ExpiryDate.ToString();
             txtcreategranttitle.Text = grantinfo.Title;
             rtbdescription.Text = grantinfo.GrantDescription;
             rtbrequirement.Text = grantinfo.Requirement;
-            //txtapplicationnumber.Text =  (grantinfo.Application_Form.ToString());
-            
-            
-
         }
 
         public string uploadfile(string filename)
@@ -55,36 +47,24 @@ namespace JAHub_Winforms
             openFileDialog.Filter = "txt | *.txt";
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //Grantinfo grantinfo = new Grantinfo();
                 grantinfo.FilePath = openFileDialog.FileName;
                 grantinfo.FileName = openFileDialog.SafeFileName;
-
                 //Utilities.FTPFileUpload(grantinfo.FilePath, grantinfo.FileName);
-
-                //grantinfo.CreateApplication(txtFileInfo.Text);
-
-               
+                
             }
             return filename;
         }
 
         private void btnuploadfile_Click(object sender, EventArgs e)
-        {
-             
-            grantApplication.GrantApplicationId = grantinfo.Application_Form;
-            //grantApplication.FilledApplication = uploadfile(grantApplication.FilledApplication);
+        { 
+           // grantApplication.GrantApplicationId = grantinfo.Application_Form;
             txtFileInfo.Text = grantApplication.FilledApplication.ToString();
-
             uploadfile(txtFileInfo.Text);
             txtFileInfo.Text = grantinfo.FileName;
-
+            grantApplication.FilledApplication = txtFileInfo.Text;
         }
 
-        private void btnHome_Click (object sender, EventArgs e)
-        {
-            FrmGeneralGrantInfo frmGeneralGrantInfo = new FrmGeneralGrantInfo();
-            frmGeneralGrantInfo.ShowDialog();   
-        }
+       
 
         private void btnSubmit(object sender, EventArgs e)
         {
@@ -97,9 +77,10 @@ namespace JAHub_Winforms
         {
             FrmFilledApplication frmFilledApplication = new FrmFilledApplication(grantinfo);
             txtFileInfo.ResetText();    
+            lblexpirydategrantdetails.ResetText();
+            grantApplication.GrantApplicationId = grantinfo.GrantOfficerId;
+            grantApplication.CreateApplication(grantApplication);
+            FrmEditGrantInfo frmEditGrantInfo = new FrmEditGrantInfo(grantinfo);
         }
     }
 }
-
-
-

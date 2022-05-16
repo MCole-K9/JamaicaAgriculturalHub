@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlgrantcontainer = new System.Windows.Forms.Panel();
-            this.btnviewmore = new System.Windows.Forms.Button();
             this.CbSelected = new System.Windows.Forms.CheckBox();
             this.btnUpdategrant = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -40,7 +39,6 @@
             // 
             // pnlgrantcontainer
             // 
-            this.pnlgrantcontainer.Controls.Add(this.btnviewmore);
             this.pnlgrantcontainer.Controls.Add(this.CbSelected);
             this.pnlgrantcontainer.Controls.Add(this.btnUpdategrant);
             this.pnlgrantcontainer.Controls.Add(this.btnDelete);
@@ -51,23 +49,10 @@
             this.pnlgrantcontainer.Size = new System.Drawing.Size(782, 309);
             this.pnlgrantcontainer.TabIndex = 0;
             // 
-            // btnviewmore
-            // 
-            this.btnviewmore.BackColor = System.Drawing.SystemColors.Menu;
-            this.btnviewmore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnviewmore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnviewmore.Location = new System.Drawing.Point(607, 34);
-            this.btnviewmore.Name = "btnviewmore";
-            this.btnviewmore.Size = new System.Drawing.Size(96, 29);
-            this.btnviewmore.TabIndex = 6;
-            this.btnviewmore.Text = "View More";
-            this.btnviewmore.UseVisualStyleBackColor = false;
-            this.btnviewmore.Click += new System.EventHandler(this.btnviewmore_Click);
-            // 
             // CbSelected
             // 
             this.CbSelected.AutoSize = true;
-            this.CbSelected.Location = new System.Drawing.Point(680, 207);
+            this.CbSelected.Location = new System.Drawing.Point(660, 207);
             this.CbSelected.Name = "CbSelected";
             this.CbSelected.Size = new System.Drawing.Size(18, 17);
             this.CbSelected.TabIndex = 5;
@@ -99,31 +84,35 @@
             // 
             // rtbgrantdescription
             // 
-            this.rtbgrantdescription.BackColor = System.Drawing.SystemColors.Menu;
-            this.rtbgrantdescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbgrantdescription.BackColor = System.Drawing.Color.White;
+            this.rtbgrantdescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbgrantdescription.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbgrantdescription.Location = new System.Drawing.Point(10, 89);
             this.rtbgrantdescription.Name = "rtbgrantdescription";
             this.rtbgrantdescription.Size = new System.Drawing.Size(718, 96);
             this.rtbgrantdescription.TabIndex = 2;
             this.rtbgrantdescription.Text = "";
+            this.rtbgrantdescription.TextChanged += new System.EventHandler(this.rtbgrantdescription_TextChanged);
             // 
             // txtviewgranttitle
             // 
-            this.txtviewgranttitle.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtviewgranttitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtviewgranttitle.BackColor = System.Drawing.Color.White;
+            this.txtviewgranttitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtviewgranttitle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtviewgranttitle.Location = new System.Drawing.Point(8, 35);
             this.txtviewgranttitle.Name = "txtviewgranttitle";
-            this.txtviewgranttitle.Size = new System.Drawing.Size(152, 15);
+            this.txtviewgranttitle.Size = new System.Drawing.Size(152, 30);
             this.txtviewgranttitle.TabIndex = 1;
             // 
             // UserControlDisplayGrant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnlgrantcontainer);
             this.Name = "UserControlDisplayGrant";
-            this.Size = new System.Drawing.Size(780, 343);
+            this.Size = new System.Drawing.Size(786, 343);
             this.pnlgrantcontainer.ResumeLayout(false);
             this.pnlgrantcontainer.PerformLayout();
             this.ResumeLayout(false);
@@ -138,6 +127,5 @@
         private System.Windows.Forms.CheckBox CbSelected;
         private System.Windows.Forms.Button btnUpdategrant;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnviewmore;
     }
 }

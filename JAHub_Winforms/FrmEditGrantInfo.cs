@@ -67,11 +67,7 @@ namespace JAHub_Winforms
             frmViewAllMyApplication.ShowDialog();   
         }
 
-        private void btnDeleteGrant_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnUpdateGrant_Click(object sender, EventArgs e)
         {
             FrmEditGrantInfo frmEditGrantInfo = new FrmEditGrantInfo();
@@ -80,11 +76,45 @@ namespace JAHub_Winforms
 
         private void btnupdateform_Click(object sender, EventArgs e)
         {
+            
+        }
+
+       
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            if (rtbdescription == null)
+            {
+                MessageBox.Show("Please enter description", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                rtbdescription.Focus();
+            }
+
+            if (rtbrequirement == null)
+            {
+                MessageBox.Show("Please enter requirements", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                rtbrequirement.Focus();
+
+            }
+
+
+            if (txtcreategranttitle == null)
+            {
+                MessageBox.Show("Please enter title", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtcreategranttitle.Focus();
+            }
+
+            if (txtFileInfo== null)
+            {
+                MessageBox.Show("Please enter title", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtFileInfo.Focus();
+            }
             grantinfo.Requirement = rtbrequirement.Text;
             grantinfo.GrantDescription = rtbdescription.Text;
             grantinfo.Title = txtcreategranttitle.Text;
-            grantinfo.Application_Form = Int32.Parse(txtapplicationnumber.Text);
-            grantinfo.UpdateGrant(grantinfo.ID);
+            grantinfo.Application_Form = txtFileInfo.Text;
+            txtFileInfo.ResetText();
+            //grantinfo.UpdateGrant(grantinfo);
         }
     }
 }

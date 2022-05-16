@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JAHubLib;
-using System.Windows.Forms;
+
 
 namespace JAHub_Winforms.Grant_Controls
 {
@@ -39,16 +39,24 @@ namespace JAHub_Winforms.Grant_Controls
             {
 
                 FrmGrantDetails frmGrantDetails = new FrmGrantDetails(grantinfo);
-                
-                //frmGrantDetails.MdiParent = (Form)MdiParent;
+                frmGrantDetails.MdiParent = this.FindForm().MdiParent;
                 frmGrantDetails.Show();
-                //var form = frmGrantDetails;
-                //form.BringToFront();
-
             }
+
+            if (Utils.IsFormOpen("FrmGeneralGrantInfo"))
+            {
+                foreach (var form in this.FindForm().MdiParent.MdiChildren)
+                {
+                    if (form.Text == "FrmGeneralGrantInfo")
+                    {
+                        form.Close();
+                    }
+                }
+            }
+        }
 
         }
 
        
     }
-}
+

@@ -62,7 +62,7 @@ namespace JAHub_Winforms
 
         private void FrmViewAllMyApplication_Load(object sender, EventArgs e)
         {
-            Size = new Size(1102, 1200);
+            //Size = new Size(1102, 1200);
             Grantinfo grantinfo = new Grantinfo();
             grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
 

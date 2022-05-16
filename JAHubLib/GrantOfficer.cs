@@ -12,13 +12,9 @@ namespace JAHubLib
     public class GrantOfficer : User
     {
 
-        private string agencyName;
+       
         private int grantofficerId;
-        public string AgencyName
-        {
-            get { return agencyName; }
-            set { agencyName = value; }
-        }
+       
         public int GrantOfficerId
         {
             get { return grantofficerId; }
@@ -50,16 +46,7 @@ namespace JAHubLib
             return grantOId;
         }
 
-        public int CreateGrant(Grantinfo grantinfo)
-        {
-            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Deadline,GrantOfficer)" +
-                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},{grantinfo.GrantOfficerId})";
-
-            Utilities.executeInputQuery(query);
-            return 1;
-
-        }
-
+    
      
     }
 }

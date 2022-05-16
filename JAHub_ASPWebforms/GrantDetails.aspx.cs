@@ -18,7 +18,7 @@ namespace JAHub_ASPWebforms
             grantinfo = g;
             tAGrantdescription.Value = g.GrantDescription;
             tAGrantRequirement.Value = g.Requirement;
-            txtApplicationNumber.Text = g.Application_Form;
+            //txtApplicationNumber.Text = g.Application_Form;
             txtTitle.Text = g.Title;    
 
         }

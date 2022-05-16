@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtapplicationnumber = new System.Windows.Forms.TextBox();
             this.txtcreategranttitle = new System.Windows.Forms.TextBox();
             this.lblrequirements = new System.Windows.Forms.Label();
             this.rtbrequirement = new System.Windows.Forms.RichTextBox();
@@ -42,47 +41,41 @@
             this.pnlNav = new System.Windows.Forms.Panel();
             this.lblexpirydategrantdetails = new System.Windows.Forms.Label();
             this.txtFileInfo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmitMyApplication = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlNav.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtapplicationnumber
-            // 
-            this.txtapplicationnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtapplicationnumber.Location = new System.Drawing.Point(967, 27);
-            this.txtapplicationnumber.Name = "txtapplicationnumber";
-            this.txtapplicationnumber.ReadOnly = true;
-            this.txtapplicationnumber.Size = new System.Drawing.Size(118, 15);
-            this.txtapplicationnumber.TabIndex = 71;
-            this.txtapplicationnumber.Text = "Application _Form";
-            // 
             // txtcreategranttitle
             // 
-            this.txtcreategranttitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtcreategranttitle.Location = new System.Drawing.Point(245, 27);
+            this.txtcreategranttitle.BackColor = System.Drawing.Color.White;
+            this.txtcreategranttitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtcreategranttitle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcreategranttitle.Location = new System.Drawing.Point(245, 142);
             this.txtcreategranttitle.Name = "txtcreategranttitle";
             this.txtcreategranttitle.ReadOnly = true;
-            this.txtcreategranttitle.Size = new System.Drawing.Size(266, 15);
+            this.txtcreategranttitle.Size = new System.Drawing.Size(266, 32);
             this.txtcreategranttitle.TabIndex = 70;
-            this.txtcreategranttitle.Text = "Title";
             // 
             // lblrequirements
             // 
             this.lblrequirements.AutoSize = true;
-            this.lblrequirements.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblrequirements.Location = new System.Drawing.Point(241, 382);
+            this.lblrequirements.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrequirements.Location = new System.Drawing.Point(241, 497);
             this.lblrequirements.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblrequirements.Name = "lblrequirements";
-            this.lblrequirements.Size = new System.Drawing.Size(165, 27);
+            this.lblrequirements.Size = new System.Drawing.Size(120, 19);
             this.lblrequirements.TabIndex = 69;
             this.lblrequirements.Text = "Requirements";
             // 
             // rtbrequirement
             // 
-            this.rtbrequirement.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbrequirement.Location = new System.Drawing.Point(243, 411);
+            this.rtbrequirement.BackColor = System.Drawing.Color.White;
+            this.rtbrequirement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbrequirement.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbrequirement.Location = new System.Drawing.Point(243, 526);
             this.rtbrequirement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbrequirement.Name = "rtbrequirement";
             this.rtbrequirement.ReadOnly = true;
@@ -93,18 +86,20 @@
             // lbldecription
             // 
             this.lbldecription.AutoSize = true;
-            this.lbldecription.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldecription.Location = new System.Drawing.Point(240, 102);
+            this.lbldecription.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldecription.Location = new System.Drawing.Point(240, 217);
             this.lbldecription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldecription.Name = "lbldecription";
-            this.lbldecription.Size = new System.Drawing.Size(206, 27);
+            this.lbldecription.Size = new System.Drawing.Size(149, 19);
             this.lbldecription.TabIndex = 67;
             this.lbldecription.Text = "Grant Description";
             // 
             // rtbdescription
             // 
-            this.rtbdescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbdescription.Location = new System.Drawing.Point(244, 138);
+            this.rtbdescription.BackColor = System.Drawing.Color.White;
+            this.rtbdescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbdescription.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbdescription.Location = new System.Drawing.Point(244, 253);
             this.rtbdescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbdescription.Name = "rtbdescription";
             this.rtbdescription.ReadOnly = true;
@@ -115,17 +110,17 @@
             // lblExpirationDate
             // 
             this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirationDate.Location = new System.Drawing.Point(240, 639);
+            this.lblExpirationDate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpirationDate.Location = new System.Drawing.Point(240, 754);
             this.lblExpirationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(126, 27);
+            this.lblExpirationDate.Size = new System.Drawing.Size(93, 19);
             this.lblExpirationDate.TabIndex = 72;
             this.lblExpirationDate.Text = "Deadline :";
             // 
             // btnuploadfile
             // 
-            this.btnuploadfile.Location = new System.Drawing.Point(542, 864);
+            this.btnuploadfile.Location = new System.Drawing.Point(542, 880);
             this.btnuploadfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnuploadfile.Name = "btnuploadfile";
             this.btnuploadfile.Size = new System.Drawing.Size(88, 38);
@@ -151,13 +146,12 @@
             this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(27, 0, 40, 0);
-            this.btnHome.Size = new System.Drawing.Size(188, 58);
+            this.btnHome.Size = new System.Drawing.Size(207, 58);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pnlLogo
             // 
@@ -166,7 +160,7 @@
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(188, 151);
+            this.pnlLogo.Size = new System.Drawing.Size(207, 151);
             this.pnlLogo.TabIndex = 0;
             // 
             // pictureBox1
@@ -174,7 +168,7 @@
             this.pictureBox1.Image = global::JAHub_Winforms.Properties.Resources.farmer_icon;
             this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(201, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -188,47 +182,61 @@
             this.pnlNav.Location = new System.Drawing.Point(0, 0);
             this.pnlNav.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(188, 1055);
+            this.pnlNav.Size = new System.Drawing.Size(207, 1055);
             this.pnlNav.TabIndex = 75;
             // 
             // lblexpirydategrantdetails
             // 
             this.lblexpirydategrantdetails.AutoSize = true;
-            this.lblexpirydategrantdetails.Location = new System.Drawing.Point(430, 648);
+            this.lblexpirydategrantdetails.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblexpirydategrantdetails.Location = new System.Drawing.Point(430, 760);
             this.lblexpirydategrantdetails.Name = "lblexpirydategrantdetails";
-            this.lblexpirydategrantdetails.Size = new System.Drawing.Size(60, 16);
+            this.lblexpirydategrantdetails.Size = new System.Drawing.Size(0, 17);
             this.lblexpirydategrantdetails.TabIndex = 76;
-            this.lblexpirydategrantdetails.Text = "deadline";
             // 
             // txtFileInfo
             // 
-            this.txtFileInfo.Location = new System.Drawing.Point(636, 872);
+            this.txtFileInfo.BackColor = System.Drawing.Color.White;
+            this.txtFileInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFileInfo.Location = new System.Drawing.Point(636, 886);
+            this.txtFileInfo.Multiline = true;
             this.txtFileInfo.Name = "txtFileInfo";
-            this.txtFileInfo.Size = new System.Drawing.Size(195, 22);
+            this.txtFileInfo.Size = new System.Drawing.Size(213, 30);
             this.txtFileInfo.TabIndex = 77;
             // 
-            // button1
+            // btnSubmitMyApplication
             // 
-            this.button1.Location = new System.Drawing.Point(1073, 988);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSubmitMyApplication.Location = new System.Drawing.Point(1062, 1004);
+            this.btnSubmitMyApplication.Name = "btnSubmitMyApplication";
+            this.btnSubmitMyApplication.Size = new System.Drawing.Size(86, 39);
+            this.btnSubmitMyApplication.TabIndex = 78;
+            this.btnSubmitMyApplication.Text = "Submit";
+            this.btnSubmitMyApplication.UseVisualStyleBackColor = true;
+            this.btnSubmitMyApplication.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(245, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 27);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Title";
             // 
             // FrmGrantDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 1055);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSubmitMyApplication);
             this.Controls.Add(this.txtFileInfo);
             this.Controls.Add(this.lblexpirydategrantdetails);
             this.Controls.Add(this.pnlNav);
             this.Controls.Add(this.btnuploadfile);
             this.Controls.Add(this.lblExpirationDate);
-            this.Controls.Add(this.txtapplicationnumber);
             this.Controls.Add(this.txtcreategranttitle);
             this.Controls.Add(this.lblrequirements);
             this.Controls.Add(this.rtbrequirement);
@@ -246,7 +254,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtapplicationnumber;
         private System.Windows.Forms.TextBox txtcreategranttitle;
         private System.Windows.Forms.Label lblrequirements;
         private System.Windows.Forms.RichTextBox rtbrequirement;
@@ -261,7 +268,8 @@
         private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtFileInfo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubmitMyApplication;
+        private System.Windows.Forms.Label label1;
         //private System.Windows.Forms.Button btnSubmit;
     }
 }

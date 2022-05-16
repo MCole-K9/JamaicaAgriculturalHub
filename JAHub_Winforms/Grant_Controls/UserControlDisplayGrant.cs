@@ -57,8 +57,13 @@ namespace JAHub_Winforms.Grant_Controls
             {
                 FrmEditGrantInfo frmEditGrantInfo1 = new FrmEditGrantInfo(grantinfo);
                 frmEditGrantInfo.Show();
-                grantinfo.UpdateGrant(grantinfo.ID);
+               // grantinfo.UpdateGrant(grantinfo);
             }
+        }
+
+        private void rtbgrantdescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
