@@ -1,51 +1,46 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucGeneralGrantInfo.ascx.cs" Inherits="JAHub_ASPWebforms.GrantDisplay_Controls.GeneralGrantInfo" %>
 
-<div class ="container mt-5">
-    <asp:Panel ID="PnlDisplayUserControl" class ="max-width" runat="server">
-    <div class="form-group">
-        <label for="GrantRequirement" class="lblCreateGrant"><strong>Grant Details</strong>:</label>
-        <textArea class="form-control" id="tAGrantRequirement" style="height:300px; width: 400px;" runat="server" name="S1" rows="1"> </textArea>
-    </div>
-   
-        <div  >
-        <asp:CheckBox ID="cbSelect" runat="server" />  
-    </div>
-
-    <div class="col-md-5" >
-        <asp:Button ID="btnUpdate" runat="server" class="btn btn-secondary button" Text="Update" type="button" />
-        <asp:Button ID="btnDelete" runat="server" class="btn btn-secondary button" Text="Delete" type="button" />
-    </div>
-
-    <div class="col-md-6" >
-    </div>
-
-    
+<style type="text/css">
+    .auto-style1 {
+        width: 100%;
+    }
+    #Text1 {
+        width: 456px;
+        height: 151px;
+    }
+    .auto-style2 {
+        width: 623px;
+    }
+</style>
 
 
-    </asp:Panel>
-</div>
+<table cellspacing="1" class="auto-style1">
+    <tr>
+        <td class="auto-style2">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style2">
+            <input id="Text1" type="text" /></td>
+        <td>
+            <asp:CheckBox ID="CheckBox1" runat="server" />
+        </td>
+    </tr>
+    <tr>
+        <td class="auto-style2">
+            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="Button2" runat="server" Text="Button" />
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style2">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style2">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
 
 
- <style>
-        .container{
-            padding: 0;
-        }
-        input[type="text"]{
-            max-width: 50%;
-        }
-        .lblCreateGrant
-        {
-            margin-top:30px;
-            max-width:100px;
-                
-        }
-        .button{
-            width: 75px;
-            height: 34px;
-           /* margin-right: calc(100% - 75px*/);
-        }
-      
-    </style>
-
-
-</asp:Content>

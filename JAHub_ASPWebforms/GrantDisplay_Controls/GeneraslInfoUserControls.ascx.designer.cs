@@ -11,7 +11,7 @@ namespace JAHub_ASPWebforms.GrantDisplay_Controls
 {
 
 
-    public partial class GeneralGrantInfo
+    public partial class GeneraslInfoUserControls
     {
 
         /// <summary>
@@ -31,14 +31,5 @@ namespace JAHub_ASPWebforms.GrantDisplay_Controls
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

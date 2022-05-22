@@ -26,10 +26,10 @@ namespace JAHub_ASPWebforms
             grantinfo.Application_Form = txtApplicationNumber.Text;
             grantinfo.Title = txtTitle.Text;
             grantinfo.GrantDescription = tAGrantdescription.Value;
-            grantOfficer.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(JAHubLib.Session.UserId);
+            grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(JAHubLib.Session.UserId);
 
             grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(JAHubLib.Session.UserId);
-            grantOfficer.CreateGrant(grantinfo);
+            grantinfo.CreateGrant(grantinfo);
 
             txtApplicationNumber.Text = string.Empty;
             txtTitle.Text = string.Empty;

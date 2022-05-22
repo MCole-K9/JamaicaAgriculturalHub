@@ -15,12 +15,12 @@ namespace JAHub_ASPWebforms
     {
 
         /// <summary>
-        /// ucGeneralGrantInfo control.
+        /// USERCONTROL_GrantDDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::JAHub_ASPWebforms.GrantDisplay_Controls.GeneralGrantInfo ucGeneralGrantInfo;
+        protected global::JAHub_ASPWebforms.Grant_Controls.USERCONTROL_GrantDDisplay USERCONTROL_GrantDDisplay;
     }
 }
