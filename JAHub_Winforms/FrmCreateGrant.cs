@@ -23,8 +23,8 @@ namespace JAHub_Winforms
 
         private void FrmCreateGrant_Load(object sender, EventArgs e)
         {
-            pnlNav.Size = new System.Drawing.Size(188, 804);
-            Size = new Size(1102, 1200);
+           // pnlNav.Size = new System.Drawing.Size(188, 804);
+          //  Size = new Size(1102, 1200);
 
 
         }
@@ -74,11 +74,11 @@ namespace JAHub_Winforms
              frmCreateGrant.MdiParent = this.MdiParent;
              frmCreateGrant.Show();*/
 
-            if (rtbdescription == null)
-            {
-                MessageBox.Show("Please enter description", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                rtbdescription.Focus();
-            }
+                if (rtbdescription == null)
+                {
+                    MessageBox.Show("Please enter description", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    rtbdescription.Focus();
+                }
 
                 if (rtbrequirement == null)
                 {
@@ -94,23 +94,33 @@ namespace JAHub_Winforms
                     txtcreategranttitle.Focus();
                 }
 
+                    if (txtFileinfo == null)
+                {
+                    MessageBox.Show("Please enter title", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtFileinfo.Focus();
+                }
+
+
+
 
                 GrantOfficer grantOfficer = new GrantOfficer();
                 grantinfo.GrantDescription = rtbdescription.Text;
                 grantinfo.Requirement = rtbrequirement.Text;
                 grantinfo.ExpiryDate = dtpExpirydate.Value;
                 grantinfo.Title = txtcreategranttitle.Text;
-                //grantinfo.Application_Form = int.Parse(txtapplicationnumber.Text);
-               // grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
+                grantinfo.FileName = txtFileinfo.Text;
+
+              
                 
                 grantinfo.GrantOfficerId = GrantOfficer.FetchGrantOfficerID(Session.UserId);
-                grantOfficer.CreateGrant(grantinfo);
+                grantinfo.CreateGrant(grantinfo);
 
                 rtbdescription.Clear();
                 rtbrequirement.Clear();
                 dtpExpirydate.ResetText();
                 txtcreategranttitle.Clear();
-                txtapplicationnumber.ResetText();
+                txtFileinfo.ResetText();    
+              
         }
 
         

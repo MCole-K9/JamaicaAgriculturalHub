@@ -28,7 +28,7 @@ namespace JAHubLib
         public string FileName { get; set; }
         public DateTime ExpiryDate { get; set; }
         public string Requirement { get; set; }
-        public int Application_Form { get; set; }
+        public string Application_Form { get; set; }
         public int GrantOfficerId { get; set; }
         public string FilePath { get; set; }
         public int ID { get; set; }
@@ -43,7 +43,7 @@ namespace JAHubLib
             requirement = "";
             ExpiryDate = DateTime.Now;
             ID = 0;
-            Application_Form = 0;
+            Application_Form = "";
             GrantOfficerId = 0;
             FilePath = "";
             
@@ -92,7 +92,7 @@ namespace JAHubLib
                         grantinfo.GrantDescription = sqlRead["Description"].ToString();
                         grantinfo.Requirement = sqlRead["Requirements"].ToString();
                         grantinfo.ExpiryDate = (DateTime)sqlRead["Deadline"];
-                        grantinfo.Application_Form = (int)sqlRead["Application_Form"];
+                        grantinfo.Application_Form = sqlRead["Application_Form"].ToString();
                         grantinfo.GrantOfficerId = (int)sqlRead["GrantOfficer"];
                         grantinfo.Title = sqlRead["Title"].ToString();
 
@@ -179,16 +179,17 @@ namespace JAHubLib
             return 1;
 
         }
-
         public int CreateGrant(Grantinfo grantinfo)
         {
-            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Deadline,GrantOfficer,Application_Form)" +
-                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', {grantinfo.ExpiryDate.ToString("yyyy-mm-dd")},'{grantinfo.GrantOfficerId}','{grantinfo.Application_Form}')";
+            string query = $"INSERT INTO [Grant] ( Title,Description,Requirements,Application_Form,Deadline,GrantOfficer) " +
+                    $"Values ( '{grantinfo.Title}','{grantinfo.GrantDescription}', '{grantinfo.Requirement}', '{grantinfo.FileName}', {grantinfo.ExpiryDate.ToString("dd-MM-yyyy")},{grantinfo.GrantOfficerId})";
 
             Utilities.executeInputQuery(query);
             return 1;
 
         }
+
+
     }
 
 }

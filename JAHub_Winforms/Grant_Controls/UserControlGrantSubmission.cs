@@ -14,6 +14,7 @@ namespace JAHub_Winforms.Grant_Controls
     public partial class UserControlGrantSubmission : UserControl
     {
         Grantinfo grantinfo = new Grantinfo();
+        GrantApplication GrantApplication = new GrantApplication();
       
         public UserControlGrantSubmission()
         {
@@ -22,11 +23,12 @@ namespace JAHub_Winforms.Grant_Controls
             //lblfilename.Text =grantApplication.FilledApplication;
         }
 
-        public UserControlGrantSubmission(Grantinfo gr)
+        public UserControlGrantSubmission(GrantApplication grantapplication)
         {
-           grantinfo = gr;   
-            
-            lblfilename.Text = grantinfo.FileName;
+           GrantApplication = grantapplication;
+            InitializeComponent();
+            lblfilename.Text = GrantApplication.FilledApplication;
+           
             
         }
     }

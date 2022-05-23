@@ -52,6 +52,9 @@ namespace JAHub_ASPWebforms
                     /*Grant_Controls.UserControlDisplayGrant userControlDisplayGrant = new Grant_Controls.UserControlDisplayGrant(grantinfo);
                     pnlContainerAdminViewGrants.Controls.Add(userControlDisplayGrant);
                     userControlDisplayGrant.Dock = DockStyle.Top;*/
+
+                   /// Grant_Controls.USERCONTROL_GrantDDisplay uSERCONTROL_GrantDDisplay = new Grant_Controls.USERCONTROL_GrantDDisplay(grantinfo);
+
                 }
 
                 connection.Close();

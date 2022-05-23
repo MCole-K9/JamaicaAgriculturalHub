@@ -1094,7 +1094,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-    width: 1088px;
+    width: 644px;
     }
 a {
   color: #337ab7;
@@ -4186,7 +4186,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: 0;
 }
 .nav-justified {
-  width: 100%;
+  width: 92%;
 }
 .nav-justified > li {
   float: none;

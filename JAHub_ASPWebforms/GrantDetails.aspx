@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-        <nav class="navbar navbar-default">
+      <%--  <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="WfHome">Home</a></li>
@@ -12,7 +12,7 @@
                     <li class ="active"><a href="WfDeleteGrants">View All Grants</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav>--%>
     </div>
     <div class =" container mt-5">
         <div class="form-group">

@@ -34,9 +34,9 @@
             // 
             // btnDownload
             // 
-            this.btnDownload.Location = new System.Drawing.Point(82, 98);
+            this.btnDownload.Location = new System.Drawing.Point(263, 20);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(96, 23);
+            this.btnDownload.Size = new System.Drawing.Size(96, 35);
             this.btnDownload.TabIndex = 0;
             this.btnDownload.Text = "Download ";
             this.btnDownload.UseVisualStyleBackColor = true;
@@ -44,7 +44,7 @@
             // lblfilename
             // 
             this.lblfilename.AutoSize = true;
-            this.lblfilename.Location = new System.Drawing.Point(101, 59);
+            this.lblfilename.Location = new System.Drawing.Point(13, 28);
             this.lblfilename.Name = "lblfilename";
             this.lblfilename.Size = new System.Drawing.Size(58, 16);
             this.lblfilename.TabIndex = 3;
@@ -57,7 +57,7 @@
             this.Controls.Add(this.lblfilename);
             this.Controls.Add(this.btnDownload);
             this.Name = "UserControlGrantSubmission";
-            this.Size = new System.Drawing.Size(291, 150);
+            this.Size = new System.Drawing.Size(383, 66);
             this.ResumeLayout(false);
             this.PerformLayout();
 

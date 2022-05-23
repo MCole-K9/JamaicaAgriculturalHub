@@ -13,15 +13,15 @@ namespace JAHub_ASPWebforms
     {
         Grantinfo grantinfo = new Grantinfo();
 
-        Grantdetails(Grantinfo g)
-        {
-            grantinfo = g;
-            tAGrantdescription.Value = g.GrantDescription;
-            tAGrantRequirement.Value = g.Requirement;
-            txtApplicationNumber.Text = g.Application_Form;
-            txtTitle.Text = g.Title;    
+        //Grantdetails(Grantinfo g)
+        //{
+        //    grantinfo = g;
+        //    tAGrantdescription.Value = g.GrantDescription;
+        //    tAGrantRequirement.Value = g.Requirement;
+        //    //txtApplicationNumber.Text = g.Application_Form;
+        //    txtTitle.Text = g.Title;    
 
-        }
+        //}
         protected void Page_Load(object sender, EventArgs e)
         {
 

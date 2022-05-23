@@ -42,17 +42,18 @@
             this.pnlGrantContainer.Controls.Add(this.txtUcAgencyName);
             this.pnlGrantContainer.Controls.Add(this.rtbGrantDescription);
             this.pnlGrantContainer.Controls.Add(this.btnViewGrant);
+            this.pnlGrantContainer.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGrantContainer.Location = new System.Drawing.Point(0, 0);
             this.pnlGrantContainer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGrantContainer.Name = "pnlGrantContainer";
-            this.pnlGrantContainer.Size = new System.Drawing.Size(738, 137);
+            this.pnlGrantContainer.Size = new System.Drawing.Size(738, 247);
             this.pnlGrantContainer.TabIndex = 48;
             // 
             // txtUcAgencyName
             // 
             this.txtUcAgencyName.BackColor = System.Drawing.SystemColors.Menu;
             this.txtUcAgencyName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUcAgencyName.Font = new System.Drawing.Font("Century Gothic", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUcAgencyName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUcAgencyName.Location = new System.Drawing.Point(11, 9);
             this.txtUcAgencyName.Name = "txtUcAgencyName";
             this.txtUcAgencyName.Size = new System.Drawing.Size(174, 37);
@@ -60,15 +61,15 @@
             // 
             // rtbGrantDescription
             // 
-            this.rtbGrantDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbGrantDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbGrantDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rtbGrantDescription.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbGrantDescription.Location = new System.Drawing.Point(11, 58);
+            this.rtbGrantDescription.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbGrantDescription.Location = new System.Drawing.Point(11, 87);
             this.rtbGrantDescription.Margin = new System.Windows.Forms.Padding(4);
             this.rtbGrantDescription.Name = "rtbGrantDescription";
             this.rtbGrantDescription.ReadOnly = true;
             this.rtbGrantDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbGrantDescription.Size = new System.Drawing.Size(709, 64);
+            this.rtbGrantDescription.Size = new System.Drawing.Size(709, 116);
             this.rtbGrantDescription.TabIndex = 51;
             this.rtbGrantDescription.Text = "";
             // 
@@ -76,10 +77,11 @@
             // 
             this.btnViewGrant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnViewGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewGrant.Location = new System.Drawing.Point(620, 18);
+            this.btnViewGrant.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewGrant.Location = new System.Drawing.Point(600, 18);
             this.btnViewGrant.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewGrant.Name = "btnViewGrant";
-            this.btnViewGrant.Size = new System.Drawing.Size(100, 28);
+            this.btnViewGrant.Size = new System.Drawing.Size(120, 45);
             this.btnViewGrant.TabIndex = 48;
             this.btnViewGrant.Text = "View more";
             this.btnViewGrant.UseVisualStyleBackColor = true;
@@ -89,11 +91,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnlGrantContainer);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucGrantDisplay";
-            this.Size = new System.Drawing.Size(737, 149);
+            this.Size = new System.Drawing.Size(742, 251);
             this.pnlGrantContainer.ResumeLayout(false);
             this.pnlGrantContainer.PerformLayout();
             this.ResumeLayout(false);
